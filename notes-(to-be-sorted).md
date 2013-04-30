@@ -1,5 +1,21 @@
 #Starting points#
 
+##Possibilities##
++ what would be gained/lost by js, removing java altogether
++ processing-lite, js syntax
++ processing-js bridge to c++ compiles
++ installations without c++
++ processing as web dev
+
+##Approaches##
++ a bunch of different scenarios - writing out what code for that would look like
++ speculative source code - examples or hack usable
+
+##Goals##
++ processing identity - running in browser, barrier to entry low
++ primary audience - hard-core programmers, 19yr old design students
++ system+api
++ as a library, focus what processing does and doesn’t do
 
 ##Research##
 
@@ -86,7 +102,9 @@
 	+ start everything with a
 	+ use async module
 + Library spec
-+ IDE - http://js.processing.org/learning/ide
++ https://github.com/daniellmb/JavaScript-Scope-Context-Coloring
++ http://codemirror.net/
++ http://www.jslint.com/
 
 
 ##Core classes##
@@ -111,23 +129,3 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 + easy way to define your own events, bind listeners
 
 
-
-##Possibilities##
-+ what would be gained/lost by js, removing java altogether
-+ processing-lite, js syntax
-+ processing-js bridge to c++ compiles
-+ installations without c++
-+ processing as web dev
-
-##Approaches##
-+ a bunch of different scenarios - writing out what code for that would look like
-+ speculative source code - examples or hack usable
-
-+ processing identity - running in browser, barrier to entry low
-+ primary audience - hard-core programmers, 19yr old design students
-+ system+api
-+ as a library, focus what processing does and doesn’t do
-
-+ https://github.com/daniellmb/JavaScript-Scope-Context-Coloring
-+ http://codemirror.net/
-+ http://www.jslint.com/
