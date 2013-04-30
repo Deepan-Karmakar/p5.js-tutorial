@@ -94,9 +94,9 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 
 
 ##What js things could be improved?##
-	+ libraries - documentready annoying, processing-js handles loading order for you (modernizer.js, queue.js), waits to execute
-	+ (controlled loading and execution built-in)
-	+ canvas/error handling
++ libraries - documentready annoying, processing-js handles loading order for you (modernizer.js, queue.js), waits to execute
++ (controlled loading and execution built-in)
++ canvas/error handling
 + Library spec?
 + IDE
 + live-coding
