@@ -53,7 +53,7 @@
 	+ event driven vs linear/loop based
 + Focus on browser experience? What about node, etc.
 + Network connectivity, manipulating dom, interfacing with other elts outside canvas, user interface built-on elts that processing doesn't have, multiple drawing surfaces, interfaces with other libraries / also spec for other - maybe IDE adds in auto (like import library feature).
-
++ question - limited to canvas?
 
 ##Keep same##
 + primitives
@@ -97,6 +97,9 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 + libraries - documentready annoying, processing-js handles loading order for you (modernizer.js, queue.js), waits to execute
 + (controlled loading and execution built-in)
 + canvas/error handling
+
+
+##Other notes##
 + Library spec?
 + IDE
 + live-coding
@@ -109,23 +112,21 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 
 
 
-+ question - limited to canvas?
-
+##Possibilities##
 + what would be gained/lost by js, removing java altogether
 + processing-lite, js syntax
 + processing-js bridge to c++ compiles
 + installations without c++
 + processing as web dev
 
+##Approaches##
 + a bunch of different scenarios - writing out what code for that would look like
 + speculative source code - examples or hack usable
 
 + processing identity - running in browser, barrier to entry low
 + primary audience - hard-core programmers, 19yr old design students
-
 + system+api
 + as a library, focus what processing does and doesn’t do
-
 
 + https://github.com/daniellmb/JavaScript-Scope-Context-Coloring
 + http://codemirror.net/
