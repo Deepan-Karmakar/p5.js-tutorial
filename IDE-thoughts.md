@@ -1,6 +1,5 @@
 
-
-##IDE##
+##Notes / considerations##
 + web developer tools
 + processing-js as entry point to web development
 + more transparent, more standard web structure
