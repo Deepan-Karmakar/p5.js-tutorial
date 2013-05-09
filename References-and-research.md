@@ -20,6 +20,9 @@
     + Transliteration vs. translation (Despite the fact that the entire Processing API is available to you, it’s best to work in idiomatic Ruby as much as possible.)
     + [Ruby-Processing in practice](https://github.com/jashkenas/learning-processing-with-ruby)
 + [ofxJavaScript (running JS in OF)](https://code.google.com/p/ofxjavascript/)
+    + Uses [Mozilla SpiderMonkey](https://developer.mozilla.org/en-US/docs/SpiderMonkey). 
+    + Exposes several classes of openframeworks library to Javascript, allows you to call C++ functions from Javascript, call Javascript functions from C++, or create your "own" Javascript classes.
+    + [ofLiveCoding](https://code.google.com/p/oflivecoding)
 + [Ringo](http://ringojs.org) - (based on Rhino) runs JS on Java and adds "goodies"
 + [Ringo Java integration docs](http://ringojs.org/documentation/java_integration)
 
