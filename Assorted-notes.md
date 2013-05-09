@@ -34,8 +34,6 @@
 + Network connectivity, manipulating dom, interfacing with other elts outside canvas, user interface built-on elts that processing doesn't have, multiple drawing surfaces, interfaces with other libraries / also spec for other - maybe IDE adds in auto (like import library feature).
 + question - limited to canvas?
 
-##Keep same##
-+ primitives
 
 
 ##Considerations##
@@ -75,3 +73,6 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 + easy way to define your own events, bind listeners
 
 
+##Current Processing JavaScript mode##
++ [processing.org/learning/javascript/](http://processing.org/learning/javascript/)
++ [github.com/jeresig/processing-js](https://github.com/jeresig/processing-js)
