@@ -1,4 +1,4 @@
-##js great parts##
+##JS great parts##
 + Functions as first class objects
 	Functions in Simplified JavaScript are lambdas with lexical scoping.
 + Dynamic objects with prototypal inheritance
@@ -7,7 +7,7 @@
 	This is a very convenient notation for creating new objects and arrays. JavaScript literals were the inspiration for the JSON data interchange format.
 
 
-##js messy/confusing parts##
+##JS messy/confusing parts##
 
 + global vars
 + scope
