@@ -76,3 +76,6 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 ##Current Processing JavaScript mode##
 + [processing.org/learning/javascript/](http://processing.org/learning/javascript/)
 + [github.com/jeresig/processing-js](https://github.com/jeresig/processing-js)
++ Processing.js is really two things: a Processing-to-JavaScript translator; and an implementation of the Processing API (e.g., functions like line(), stroke(), etc.) written in JavaScript instead of Java.
++ Nothing new to learn - Processing.js automatically converts your Processing code to JavaScript. This means that you don't have to learn JavaScript in order to run your code in a browser.
++ Does not currently support libraries.
