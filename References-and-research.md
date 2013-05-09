@@ -8,8 +8,9 @@
 + [github.com/daniellmb/JavaScript-Scope-Context-Coloring](https://github.com/daniellmb/JavaScript-Scope-Context-Coloring) - Experiment in switching between syntax highlighting and scope colorizing built on JSLint and CodeMirror.
 + [CodeMirror](http://codemirror.net/) - JavaScript component that provides a code editor in the browser. For supported languages, it will color your code, and optionally help with indentation. Also provides API and CSS theming system for customizing to fit your application, and extending it with new functionality.
 + [JSLint](http://www.jslint.com/)
-+ [sketch.processing.org](http://sketch.processing.org/)
 + [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
++ [sketch.processing.org](http://sketch.processing.org/)
++ [Processing helper](http://processingjs.org/tools/processing-helper.html)
 
 ## Processing/Javascript + other languages
 + [Ruby-Processing](https://github.com/jashkenas/ruby-processing) - Ruby syntax but utilizes the ease of Processing for drawing
