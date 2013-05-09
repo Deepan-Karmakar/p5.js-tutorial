@@ -8,6 +8,8 @@
 + [github.com/daniellmb/JavaScript-Scope-Context-Coloring](https://github.com/daniellmb/JavaScript-Scope-Context-Coloring) - Experiment in switching between syntax highlighting and scope colorizing built on JSLint and CodeMirror.
 + [CodeMirror](http://codemirror.net/) - JavaScript component that provides a code editor in the browser. For supported languages, it will color your code, and optionally help with indentation. Also provides API and CSS theming system for customizing to fit your application, and extending it with new functionality.
 + [JSLint](http://www.jslint.com/)
++ [sketch.processing.org](http://sketch.processing.org/)
++ [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
 
 ## Processing/Javascript + other languages
 + [Ruby-Processing](https://github.com/jashkenas/ruby-processing) - Ruby syntax but utilizes the ease of Processing for drawing
@@ -20,6 +22,8 @@
 
 + [Plask](http://www.plask.org) - JS based creative coding env, Uses: V8, Skia, NodeJS, Cocoa & OpenGL, FreeImage, Syphon
 + [Plask on github](https://github.com/deanm/plask)
++ [two.js](http://jonobr1.github.io/two.js/) - two-dimensional drawing api geared towards modern web browsers. It is renderer agnostic enabling the same api to draw in multiple contexts: svg, canvas, and webgl. Aims to make the creation and animation of flat shapes easier and more concise, does not support text or image. Built in scene graph, animation loop, svg interpreter.
++ [paper.js](paperjs.org) - vector graphics scripting framework that runs on top of the HTML5 Canvas. It offers a clean Scene Graph / DOM and a lot of powerful functionality to create and work with vector graphics and bezier curves, largely compatible with Scriptographer
 
 
 ## Javascript engines / performance
