@@ -80,3 +80,4 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 + Nothing new to learn - Processing.js automatically converts your Processing code to JavaScript. This means that you don't have to learn JavaScript in order to run your code in a browser.
 + Does not currently support libraries.
 + Possible to write native JS code inside sketch, but not intended use.
++ Simulates synchronous I/O using Directives (preloading assets).
