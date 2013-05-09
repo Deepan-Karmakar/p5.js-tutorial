@@ -2,7 +2,7 @@
 
 + [Khan Academy Computer Science](https://www.khanacademy.org/cs)
 + [Studio Sketchpad](http://sketchpad.cc)
-+ [Light Table](http://www.lighttable.com)
++ [Light Table](http://www.lighttable.com) - desktop editor allows realtime modification of running code
 + [Sublime](http://www.sublimetext.com/)
 + [paper.js editor](http://paperjs.org/static/editor/) 
 + [github.com/daniellmb/JavaScript-Scope-Context-Coloring](https://github.com/daniellmb/JavaScript-Scope-Context-Coloring) - Experiment in switching between syntax highlighting and scope colorizing built on JSLint and CodeMirror.
