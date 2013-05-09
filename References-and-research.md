@@ -14,7 +14,7 @@
 
 ## Processing/Javascript + other languages
 + [Ruby-Processing](https://github.com/jashkenas/ruby-processing) - Ruby syntax but utilizes the ease of Processing for drawing
-++ Uses regular Ruby for generating sketches, exporting applications and applets; and uses Java via JRuby for running Processing.
+** Uses regular Ruby for generating sketches, exporting applications and applets; and uses Java via JRuby for running Processing.
 ++ Supports live coding, includes a control panel.
 ++ Convenience method for searching through methods $app.find_method("ellipse") will return a list of the method names that may match what you’re looking for: “ellipse”, “ellipseMode”, and “ellipse_mode”.
 ++ Transliteration vs. translation (Despite the fact that the entire Processing API is available to you, it’s best to work in idiomatic Ruby as much as possible.)
