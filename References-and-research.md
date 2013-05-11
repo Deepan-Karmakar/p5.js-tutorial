@@ -17,7 +17,7 @@
 + [codebender](http://codebender.cc/) - arduino editor with sharing [github.com/codebendercc](https://github.com/codebendercc/)
 
 
-## Processing/JavaScript + other languages
+## Processing / JavaScript + other languages
 + [Ruby-Processing](https://github.com/jashkenas/ruby-processing) - Ruby syntax but utilizes the ease of Processing for drawing
     + Uses regular Ruby for generating sketches, exporting applications and applets; and uses Java via JRuby for running Processing.
     + Supports live coding, includes a control panel.
