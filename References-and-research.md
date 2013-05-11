@@ -46,3 +46,4 @@
 [http://stackoverflow.com/questions/9060841/rhino-vs-spidermonkey-performance-tests](http://stackoverflow.com/questions/9060841/rhino-vs-spidermonkey-performance-tests)
 + C++ binding 
 [http://stackoverflow.com/questions/93692/which-javascript-engine-would-you-embed-in-your-application](http://stackoverflow.com/questions/93692/which-javascript-engine-would-you-embed-in-your-application)
++ desktop JS development [http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript](http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript)
