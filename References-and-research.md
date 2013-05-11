@@ -1,6 +1,10 @@
 ## IDEs / learning
 
 + [Khan Academy Computer Science](https://www.khanacademy.org/cs)
+    + built on top of ace editor, processingjs, jshint
+    + real-time code execution - many tools to take advantage of this (number pickers, color picker, image picker)
+    + extensive error correction / suggestion
++ [JSHint](http://www.jshint.com/)
 + [Studio Sketchpad](http://sketchpad.cc)
 + [Light Table](http://www.lighttable.com) - desktop editor allows realtime modification of running code
 + [Sublime](http://www.sublimetext.com/)
