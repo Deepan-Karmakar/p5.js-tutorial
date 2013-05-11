@@ -4,6 +4,7 @@
     + built on top of ace editor, processingjs, jshint
     + real-time code execution - many tools to take advantage of this (number pickers, color picker, image picker)
     + extensive error correction / suggestion
+    + [philosophy behind khan academy cs](http://ejohn.org/blog/introducing-khan-cs/)
 + [JSHint](http://www.jshint.com/) -  tool to detect errors and potential problems in JavaScript code and to enforce chosen coding conventions, flexible, easily adjusted to enforce particular coding guidelines and environment
 + [Studio Sketchpad](http://sketchpad.cc)
 + [Light Table](http://www.lighttable.com) - desktop editor allows realtime modification of running code
