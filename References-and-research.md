@@ -29,7 +29,8 @@
     + Exposes several classes of openframeworks library to Javascript, allows you to call C++ functions from Javascript, call Javascript functions from C++, or create your "own" Javascript classes.
     + [ofLiveCoding](https://code.google.com/p/oflivecoding)
 + [Ringo](http://ringojs.org) - (based on Rhino) runs JS on Java and adds "goodies"
-+ [Ringo Java integration docs](http://ringojs.org/documentation/java_integration)
+    + allows use of any java class
+    + [Ringo Java integration docs](http://ringojs.org/documentation/java_integration)
 
 ## JS creative coding libraries
 
