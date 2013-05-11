@@ -17,7 +17,7 @@
 + [codebender](http://codebender.cc/) - arduino editor with sharing [github.com/codebendercc](https://github.com/codebendercc/)
 
 
-## Processing/Javascript + other languages
+## Processing/JavaScript + other languages
 + [Ruby-Processing](https://github.com/jashkenas/ruby-processing) - Ruby syntax but utilizes the ease of Processing for drawing
     + Uses regular Ruby for generating sketches, exporting applications and applets; and uses Java via JRuby for running Processing.
     + Supports live coding, includes a control panel.
@@ -39,11 +39,15 @@
 + [paper.js](paperjs.org) - vector graphics scripting framework that runs on top of the HTML5 Canvas. It offers a clean Scene Graph / DOM and a lot of powerful functionality to create and work with vector graphics and bezier curves, largely compatible with Scriptographer
 
 
-## Javascript engines / performance
+## JavaScript engines / performance
 + Explains differences in JS engines quite nicely
 [http://stackoverflow.com/questions/2137320/javascript-engines-advantages](http://stackoverflow.com/questions/2137320/javascript-engines-advantages)
 + Performance
 [http://stackoverflow.com/questions/9060841/rhino-vs-spidermonkey-performance-tests](http://stackoverflow.com/questions/9060841/rhino-vs-spidermonkey-performance-tests)
 + C++ binding 
 [http://stackoverflow.com/questions/93692/which-javascript-engine-would-you-embed-in-your-application](http://stackoverflow.com/questions/93692/which-javascript-engine-would-you-embed-in-your-application)
+
+
+
+## JS desktop apps
 + desktop JS development [http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript](http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript)
