@@ -45,6 +45,10 @@
     + allows use of any java class
     + [Ringo Java integration docs](http://ringojs.org/documentation/java_integration)
 
+## Other native code on web
++ [Chrome Native Client](https://developers.google.com/native-client)
++ [Flash c++ compiler](http://gaming.adobe.com/technologies/flascc/)
+
 
 ## JavaScript engines / performance
 + Explains differences in JS engines quite nicely
