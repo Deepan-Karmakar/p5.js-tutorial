@@ -34,3 +34,4 @@
 + [ICE Coder](http://icecoder.net/) - pure browser IDE
 + [ACE editor](http://ace.ajax.org/)
 + [codebender](http://codebender.cc/) - arduino editor with sharing [github.com/codebendercc](https://github.com/codebendercc/)
++ [dat.GUI](https://code.google.com/p/dat-gui/)
