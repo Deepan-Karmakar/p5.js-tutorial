@@ -24,6 +24,12 @@ See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#r
 + [Ringo](http://ringojs.org) - (based on Rhino) runs JS on Java and adds "goodies"
     + allows use of any java class
     + [Ringo Java integration docs](http://ringojs.org/documentation/java_integration)
++ [quil](https://github.com/quil/quil) - processing + clojure
++ [python mode for processing](https://github.com/martinleopold/PythonMode)
++ [another processing in python lib](https://github.com/jdf/processing.py)
++ [coffeescript mode for processing](https://github.com/fjenett/coffeescript-mode-processing) 
++ [scala + processing](http://spde.technically.us/Spde.html)
+
 
 ## Other native code on web
 + [Chrome Native Client](https://developers.google.com/native-client)
