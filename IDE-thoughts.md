@@ -35,3 +35,4 @@
 + [ACE editor](http://ace.ajax.org/)
 + [codebender](http://codebender.cc/) - arduino editor with sharing [github.com/codebendercc](https://github.com/codebendercc/)
 + [dat.GUI](https://code.google.com/p/dat-gui/)
++ [tributary](http://tributary.io/tributary/2958568/) - experimental environment for rapidly prototyping visualization code
