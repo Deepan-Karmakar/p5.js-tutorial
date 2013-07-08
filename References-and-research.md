@@ -55,5 +55,5 @@ See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#r
 
 
 ## Other references (for extensions)
-+ (jQuery API)[http://api.jquery.com/]
-+ (HTML5 overview)[https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5]
++ [jQuery API](http://api.jquery.com/)
++ [HTML5 overview](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
