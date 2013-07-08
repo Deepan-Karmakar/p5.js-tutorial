@@ -52,3 +52,8 @@ See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#r
 + [Awesomium](http://awesomium.com/
 + [QT Webkit](http://qt.digia.com/Product/Library/Qt-WebKit/)
 + [Berkelium](http://berkelium.org/)
+
+
+## Other references (for extensions)
++ (jQuery API)[http://api.jquery.com/]
++ (HTML5 overview)[https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5]
