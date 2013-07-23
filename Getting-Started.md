@@ -13,6 +13,6 @@ Example html file:
 </html>
 ```
 
-Alternatively, you can [download the whole project](https://github.com/lmccart/processing-js/archive/master.zip) and copy the example folder to any location you like and editing the sketch.js file.
+Alternatively, you can [download the whole project](https://github.com/lmccart/processing-js/archive/master.zip) and copy the example folder to any location you like and edit the sketch.js file.
 
 
