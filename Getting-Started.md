@@ -70,3 +70,10 @@ var draw = function() {
 }
 ```
 This program creates a window that is 480 pixels wide and 120 pixels high, and then starts drawing white circles at the position of the mouse. When a mouse button is pressed, the circle color changes to black. We'll explain more about the elements of this program in detail later. For now, run the code, move the mouse, and click to experience it.
+
+
+#### Examples and Reference
+
+You can see more examples [here].
+You can see the reference [here].
+
