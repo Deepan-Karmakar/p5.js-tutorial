@@ -1,3 +1,3 @@
-[Getting Started](https://github.com/lmccart/js-processing/wiki/Getting-Started)
+[Getting Started](https://github.com/lmccart/js-processing/wiki/Getting-Started) -- Create and run your first sketch!
 
-[Research Documentation](https://github.com/lmccart/js-processing/wiki/Research-Documentation)
+[Research Documentation](https://github.com/lmccart/js-processing/wiki/Research-Documentation) -- This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is here.
