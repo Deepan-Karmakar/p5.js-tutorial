@@ -13,6 +13,7 @@
 + all the benefits, but executes like it's in the browser
 
 ##References##
++ [CodeCosmos](http://bob.ippoli.to/archives/2013/07/18/codecosmos-tech/)
 + [sketch.paperjs.org](http://sketch.paperjs.org/)
 + [Khan Academy Computer Science](https://www.khanacademy.org/cs)
     + built on top of ace editor, processingjs, jshint
