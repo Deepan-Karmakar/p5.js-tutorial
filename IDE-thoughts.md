@@ -23,6 +23,7 @@
 + [JSHint](http://www.jshint.com/) -  tool to detect errors and potential problems in JavaScript code and to enforce chosen coding conventions, flexible, easily adjusted to enforce particular coding guidelines and environment
 + [Studio Sketchpad](http://sketchpad.cc)
 + [Light Table](http://www.lighttable.com) - desktop editor allows realtime modification of running code
++ [Brackets](http://brackets.io/) - "open-source editor for web design and development built on top of web technologies such as HTML, CSS and JavaScript"
 + [Sublime](http://www.sublimetext.com/)
 + [paper.js editor](http://paperjs.org/static/editor/) 
 + [github.com/daniellmb/JavaScript-Scope-Context-Coloring](https://github.com/daniellmb/JavaScript-Scope-Context-Coloring) - Experiment in switching between syntax highlighting and scope colorizing built on JSLint and CodeMirror.
