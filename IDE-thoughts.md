@@ -32,6 +32,7 @@
 + [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
 + [sketch.processing.org](http://sketch.processing.org/)
 + [Processing helper](http://processingjs.org/tools/processing-helper.html)
++ [OpenProcessing](http://www.openprocessing.org/sketch/create) - has a page to create, run, stop a simple sketch from scratch
 + [Komodo Edit](http://www.activestate.com/komodo-edit) - free, open source version based on Mozilla XULRunner (like Firefox), comes with SpiderMonkey JS engine included and uses Scintilla as code editor
 + [ICE Coder](http://icecoder.net/) - pure browser IDE
 + [ACE editor](http://ace.ajax.org/)
