@@ -10,7 +10,7 @@ Example index.html file:
     <script src="pjs.js"></script>
     <script src="sketch.js"></script>
   </head>
-  <body>
+  <body onload="pCreate()">
   </body>
 </html>
 ```
