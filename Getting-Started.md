@@ -32,7 +32,7 @@ You can use the code editor of your choice. Instructions for getting set up with
 
 **Getting Started with Light Table**
 
-1. Download and install [Light Table](www.lighttable.com).
+1. Download and install [Light Table](http://www.lighttable.com).
 
 
 ### Your First Sketch
