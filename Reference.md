@@ -13,18 +13,18 @@ void setup() {
 }
 
 void draw() {
-	// draw stuff
+  // draw stuff
 }
 ```
 
 
 ```javascript
 var setup = function() {
-	// setup stuff
+  // setup stuff
 };
 
 var draw = function() {
-	// draw stuff
+  // draw stuff
 };
 ```
 
