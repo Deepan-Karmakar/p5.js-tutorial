@@ -1,4 +1,4 @@
-##Basics
+###Basics
 
 The Processing-JS language looks very similar to the Processing language with a few changes:
 + Variables do not have a type. Use var instead of float, int, double, long, char, String, Array, etc.
@@ -28,7 +28,7 @@ var draw = function() {
 };
 ```
 
-##Supported Functions
+###Supported Functions
 See the [API page](https://github.com/lmccart/processing-js/blob/master/api.md) for currently supported functions from Processing, as well as new ones supported in Processing-JS.
 
 See the [API progress page](https://github.com/lmccart/processing-js/blob/master/api-progress.md) for API progress and future support.
