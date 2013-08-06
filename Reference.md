@@ -29,6 +29,8 @@ var draw = function() {
 ```
 
 ###Supported Functions
-See the [API page](https://github.com/lmccart/processing-js/blob/master/api.md) for currently supported functions from Processing, as well as new ones supported in Processing-JS.
+####[> API page](https://github.com/lmccart/processing-js/blob/master/api.md)
+Currently supported functions from Processing, as well as new ones supported in Processing-JS.
 
-See the [API progress page](https://github.com/lmccart/processing-js/blob/master/api-progress.md) for API progress and future support.
+####[> API progress page](https://github.com/lmccart/processing-js/blob/master/api-progress.md)
+API progress and future support.
