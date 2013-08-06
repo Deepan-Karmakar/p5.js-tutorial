@@ -75,5 +75,7 @@ This program creates a window that is 480 pixels wide and 120 pixels high, and t
 ### Examples and Reference
 
 ####[> Examples](https://github.com/lmccart/processing-js/wiki/Examples)
+Short, prototypical programs exploring the basics of programming with Processing-JS.
 
 ####[> Reference](https://github.com/lmccart/processing-js/wiki/Reference)
+The functionality supported by Processing-JS.
