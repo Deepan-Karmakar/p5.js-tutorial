@@ -1,6 +1,6 @@
 ### Download / File Setup
 
-Download the pjs.js file and create a new index.html file and a new sketch.js file. You want to link to pjs.js and your sketch.js file in the head of the html file.
+Download the pjs.js file and create a new index.html file and a new sketch.js file. You want to link to pjs.js and your sketch.js file in the head of the html file.  Make sure all three files are in the same folder.
 
 Example index.html file:
 ```
