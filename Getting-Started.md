@@ -28,7 +28,7 @@ You can use the code editor of your choice. Instructions for getting set up with
 2. Open Sublime. Go to the File menu and choose Open... and choose the folder that your html and js files are located in. On the left sidebar, you should now see the folder name at the top, with a list of the files contained in the folder directly below.
 3. Click on your sketch.js file and it will open on the right where you can edit it.
 
-![Sublime Text](http://i.imgur.com/FMb8VX0.png)
+![Sublime Text](http://i.imgur.com/6eSgLGu.png)
 
 4. Open a web browser and type localhost/path/to/your/index.html file in the address bar to view your sketch.
 
