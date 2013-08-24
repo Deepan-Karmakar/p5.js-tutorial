@@ -16,8 +16,8 @@ Examples coming soonish.
 ##### Statements and Comments
 
     var setup = function(){
-      // The size function is a statement that tells the computer 
-      // how large to make the window.
+      // The createGraphics function is a statement that tells the computer 
+      // how large to make the drawing space.
       // Each function statement has zero or more parameters. 
       // Parameters are data passed into the function
       // and are used as values for telling the computer what to do.
