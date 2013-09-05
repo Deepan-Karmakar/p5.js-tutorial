@@ -1,3 +1,5 @@
+[https://github.com/lmccart/processing-js/wiki/Examples#learning-processing](Learning processing)
+
 ### Learning Processing ###
 The first 10 chapters of examples from Dan Shiffman's [Learning Processing](http://www.learningprocessing.com/examples/) book have been ported. You can view them here: https://github.com/lmccart/processing-js/tree/master/examples/learningprocessing.
 
