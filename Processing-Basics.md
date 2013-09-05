@@ -1,7 +1,4 @@
-#### Basic Processing
-1. Basic structure
-
-##### Statements and Comments
+### Statements and Comments
 
     var setup = function(){
       // The createGraphics function is a statement that tells the computer 
@@ -21,14 +18,22 @@
 ![Statement and Comments](http://i.imgur.com/x1evK7y.png)
 
 
+### Form
 
-2. Form
-3. Data
-4. Arrays
-5. Control
-6. Image
-7. Shape
-8. Color
-9. Math
-10. Input
-11. Transform
+### Data
+
+### Arrays
+
+### Control
+
+### Image
+
+### Shape
+
+### Color
+
+### Math
+
+### Input
+
+### Transform
