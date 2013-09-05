@@ -20,7 +20,7 @@ Alternatively, you can [download the whole project](https://github.com/lmccart/p
 
 ### Environment
 
-You can use the code editor of your choice. Instructions for getting set up with [Sublime Text 2](http://www.sublimetext.com/) or [Light Table](www.lighttable.com) are included below.
+You can use the code editor of your choice. Instructions for getting set up with [Sublime Text 2](http://www.sublimetext.com/) are included below.
 
 **Getting Started with Sublime Text 2**
 
@@ -31,11 +31,6 @@ You can use the code editor of your choice. Instructions for getting set up with
 ![Sublime Text](http://i.imgur.com/6eSgLGu.png)
 
 4. Open a web browser and type localhost/path/to/your/index.html file in the address bar to view your sketch.
-
-
-**Getting Started with Light Table**
-
-1. Download and install [Light Table](http://www.lighttable.com).
 
 
 ### Your First Sketch
