@@ -3,8 +3,8 @@ The first 10 chapters of examples from Dan Shiffman's [Learning Processing](http
 
 ### Other examples
 
-[Processing basics](https://github.com/lmccart/processing-js/wiki/Processing-Basics)
+[Processing basics](https://github.com/lmccart/processing-js/wiki/Processing-Basics) - the basics of drawing in the canvas.
 
-[Beyond the canvas](https://github.com/lmccart/processing-js/wiki/DOM-Extensions)
+[Beyond the canvas](https://github.com/lmccart/processing-js/wiki/DOM-Extensions) - creating and manipulating elements on the page beyond the canvas.
 
-[Example wishlist](https://github.com/lmccart/processing-js/wiki/Example-Wishlist)
+[Example wishlist](https://github.com/lmccart/processing-js/wiki/Example-Wishlist) - examples and tutorials we wish we had, get in touch if you'd like to contribute one!
