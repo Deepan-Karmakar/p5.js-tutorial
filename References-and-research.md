@@ -54,6 +54,11 @@ See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#r
 + [Berkelium](http://berkelium.org/)
 
 
+## JS and physical computing 
++ [coder for rPi](http://googlecreativelab.github.io/coder/)
++ [espruino](http://www.kickstarter.com/projects/48651611/espruino-javascript-for-things)
+
+
 ## Other references (for extensions)
 + [jQuery API](http://api.jquery.com/)
 + [HTML5 overview](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
