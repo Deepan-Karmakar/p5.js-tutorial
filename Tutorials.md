@@ -5,7 +5,7 @@ The first 10 chapters of examples from Dan Shiffman's [Learning Processing](http
 
 [Processing basics](https://github.com/lmccart/processing-js/wiki/Processing-Basics) - the basics of drawing in the canvas.
 
-[Processing syntax conversion](https://github.com/lmccart/processing-js/wiki/Conversion) - Processing > Processing-JS and back!
+[Processing syntax conversion](https://github.com/lmccart/processing-js/wiki/Processing-syntax-conversion) - Processing > Processing-JS and back!
 
 [Beyond the canvas](https://github.com/lmccart/processing-js/wiki/DOM-Extensions) - creating and manipulating elements on the page beyond the canvas.
 
