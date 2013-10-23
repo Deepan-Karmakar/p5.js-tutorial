@@ -175,7 +175,18 @@ void segment(float x, float y, float a) {        // **change** var segment = fun
 
 ####About variables
 
-In Processing-JS, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using the symbol "var". In Processing, you must specify the variable type.
+In Processing-JS, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using the symbol "var". In Processing, you must specify the variable type. Here is a summary of the supported Processing data types (take from Getting Started with Processing).
+
+Name | Description | Range of values
+int | Integers (whole numbers) | -2,147,483,648 to 2,147,483,647
+float | Floating-point values | -3.40282347E+38 to 3.40282347E+38
+boolean | Logical value | true or false
+char | Single character | A-z, 0-9, and symbols
+String | Sequence of characters | Any letter, word, sentence, and so on
+PImage | PNG, JPG, or GIF image | N/A
+PFont | VLW font; use the Create Font tool to make | N/A
+PShape | SVG file | N/A
+
 
 ###Supported functions
 ####[> API page](https://github.com/lmccart/processing-js/blob/master/api.md)
