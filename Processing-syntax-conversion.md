@@ -5,6 +5,8 @@ The Processing-JS language looks very similar to the Processing language with a 
 + A var can be anything -- any of the types mentioned, but also functions.
 + Rather than specifying a return type for functions, they are assigned to vars. See the example below.
 
+###Conversion examples
+
 ####Basic sketch
 
 ```java
@@ -61,8 +63,8 @@ var draw = function() {                   // **change** void draw() to var setup
  * Adapted by Evelyn Eastmond
  */
 
-var x = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];  // **change** float[] x = new float[20] to be an array of 20 0's
-var y = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];  // **change** float[] y = new float[20] to be an array of 20 0's
+var x = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];  // **change** float[] x = new float[20] to array of 20 0's
+var y = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];  // **change** float[] y = new float[20] to array of 20 0's
 var segLength = 18;                                 // **change** float to var
 
 var setup = function() {                    // **change** void setup() to var setup = function()
@@ -79,7 +81,7 @@ var draw = function() {                     // **change** void draw() to var dra
   }
 }
 
-var dragSegment = function(i, xin, yin) {   // **change** void drawSegment() to var drawSegment() = function. remove type delcarations
+var dragSegment = function(i, xin, yin) {   // **change** void drawSegment() to var drawSegment() = function, remove type declarations
   var dx = xin - x[i];                      // **change** float to var
   var dy = yin - y[i];                      // **change** float to var
   var angle = atan2(dy, dx);                // **change** float to var, atan2() is the same
@@ -88,7 +90,7 @@ var dragSegment = function(i, xin, yin) {   // **change** void drawSegment() to 
   segment(x[i], y[i], angle);               // function calls are the same
 }
 
-var segment = function(x, y, a) {           // **change** void segment() to var segment = function(). remove type delcarations
+var segment = function(x, y, a) {           // **change** void segment() to var segment = function(), remove type declarations
   pushMatrix();                             // pushMatrix() is the same
   translate(x, y);                          // translate() is the same
   rotate(a);                                // rotate() is the same
@@ -165,6 +167,7 @@ void segment(float x, float y, float a) {        // **change** var segment = fun
 }
 ```
 
+####About variables
 
 
 
