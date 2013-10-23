@@ -33,6 +33,9 @@ var draw = function() {
 ```
 
 ####Converting a Processing sketch to Processing-JS
+
+Here are two examples of sketches that have been converted from Processing to Processing-JS. The changes made are shown in the comments, all the other lines remained the same.
+
 ```javascript
 /**
  * This example can be found in the Processing examples package
@@ -103,6 +106,7 @@ var segment = function(x, y, a) {           // **change** void segment() to var 
 
 ####Converting a Processing-JS sketch to Processing
 
+Here are two examples of sketches that have been converted from Processing-JS to Processing. The changes made are shown in the comments, all the other lines remained the same.
 
 ```java
 /**
