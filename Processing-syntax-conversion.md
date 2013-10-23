@@ -9,6 +9,8 @@ The Processing-JS language looks very similar to the Processing language with a 
 
 ####Basic sketch
 
+This is the basic setup for a Processing and Processing-JS sketch. Note that Processing-JS will also require an empty HTML file that links to the Processing-JS library and your sketch file in the header (see (getting started)[https://github.com/lmccart/processing-js/wiki/Getting-Started]).
+
 ```java
 void setup() {
   // setup stuff
