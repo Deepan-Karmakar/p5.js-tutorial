@@ -69,6 +69,10 @@ var draw = function() {
 ```
 This program creates a window that is 480 pixels wide and 120 pixels high, and then starts drawing white circles at the position of the mouse. When a mouse button is pressed, the circle color changes to black. We'll explain more about the elements of this program in detail later. For now, run the code, move the mouse, and click to experience it.
 
+### Getting started for Processing users
+
+####[> Processing syntax conversion](https://github.com/lmccart/processing-js/wiki/Processing-syntax-conversion)
+Learn how to convert from Processing to Processing-JS.
 
 ### Examples and Reference
 
