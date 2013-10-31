@@ -76,7 +76,7 @@ Learn how to convert from Processing to Processing-JS.
 
 ### Examples and Reference
 
-####[> Examples](https://github.com/lmccart/processing-js/wiki/Examples)
+####[> Tutorials](https://github.com/lmccart/processing-js/wiki/Tutorials)
 Short, prototypical programs exploring the basics of programming with Processing-JS.
 
 ####[> Reference](https://github.com/lmccart/processing-js/wiki/Reference)
