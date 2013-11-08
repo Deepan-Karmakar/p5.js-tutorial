@@ -83,6 +83,32 @@ function draw() {
 
 You can use a ```style()``` method on any element and pass it an inline CSS string programmatically to be applied to that element.
 
+```javascript
+var text;
+var canvas;
+
+function setup() {
+
+  text = createHTML("This is an HTML string with style!");
+  canvas = createGraphics(600, 400);
+
+  text.position(50, 50);
+  text.style("font-family: monospace; background-color: #FF0000; color: #FFFFFF; font-size: 18pt; padding: 10px;");
+  canvas.position(150, 150);
+  canvas.class("lemon");
+
+}
+
+function draw() {
+
+  background(220, 180, 200);
+  ellipse(width/2, height/2, 100, 100);
+  ellipse(width/4, height/2, 50, 50);
+
+}
+```
+
+
 Here are some more resources for looking up and learning about CSS:
 + [CSS basics overview](http://html.net/tutorials/css/lesson2.php)
 + [W3Schools CSS reference](http://www.w3schools.com/cssref/default.asp)
@@ -112,22 +138,3 @@ you can use context() and then call custom functions
 elements can have a class() (multiple elements can share a class)
 var donkeys = find('donkey')
 find() finds all the elements with a class and returns them into an array
-17-8
-just like the inline CSS we showed you last week, you can use a style() function on any element and pass it an inline CSS string programmatically
-
-
-
-
-### Multiple canvases, switching contexts.
-
-### createImage
-
-### createElement -- links to html references.
-
-### Modifying elements -- id, class, size, position.
-
-### style() -- links to css references.
-
-### Element listeners.
-
-### Accessors
