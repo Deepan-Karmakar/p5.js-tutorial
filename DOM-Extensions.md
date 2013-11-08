@@ -78,6 +78,63 @@ function draw() {
 }
 ```
 
+### Using find
+
+You can use ```find()``` to search for all elements with a particular class or id.
+
+```javascript
+// We define the canvas variables outside of setup so we can access them from anywhere in the sketch.
+var canvas0;
+var canvas1;
+var canvas2;
+
+function setup() {
+
+  // We are still calling createGraphics like before, but now we are storing a pointer to each one.
+  canvas0 = createGraphics(200, 200);
+  canvas1 = createGraphics(200, 200);
+  canvas2 = createGraphics(200, 200);
+
+  // Here we call methods of each element to set the position and id.
+  // Use view-source to look at the HTML generated from this code when you load the sketch in your browser.
+  // Let's give the first two canvases class donkey, and the third class yogurt.
+  canvas0.position(50, 50);
+  canvas0.class('donkey');
+  canvas1.position(300, 50);
+  canvas1.class('donkey');
+  canvas2.position(550, 50);
+  canvas2.class('yogurt');
+};
+
+
+function draw() {
+
+  // Tell the program to draw into canvas0.
+  context(canvas0);
+  background(50, 120, 80);
+
+  // Tell the program to draw into canvas1.
+  context(canvas1);
+  background(120, 180, 200);
+
+  // Tell the program to draw into canvas1.
+  context(canvas2);
+  background(220, 180, 200);
+  
+}
+
+// On key press, hide all elements with class donkey.
+function keyPressed() {
+  // The find command returns an array of elements with class donkey. 
+  // If none are found, it returns an empty array [].
+  var donkeys = find('donkey');
+  // We can then iterate through the array and hide all the elements.
+  for (var i=0; i<donkeys.length; i++) {
+    donkeys[i].hide();
+  }
+}
+```
+
 
 ### Setting style
 
