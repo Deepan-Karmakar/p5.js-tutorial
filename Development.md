@@ -1,4 +1,3 @@
-You will need [grunt.js](http://gruntjs.com/) and [npm](https://npmjs.org/).
 
 ###Getting started
 
