@@ -111,6 +111,7 @@ function draw() {
 
 Here are some more resources for looking up and learning about CSS:
 + [CSS basics overview](http://html.net/tutorials/css/lesson2.php)
++ [W3Schools CSS overview](http://www.w3schools.com/css/css_howto.asp)
 + [W3Schools CSS reference](http://www.w3schools.com/cssref/default.asp)
 + [HTML & CSS book](http://htmlandcssbook.com/)
   
