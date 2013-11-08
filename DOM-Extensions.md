@@ -78,6 +78,28 @@ function draw() {
 }
 ```
 
+### Creating HTML images
+17-2
+createHTMLImage() creates an <img>
+context() tells p5.js which element to draw to
+
+### Element specific listeners
+17-3
+elements have mouseOver() and mouseOut() methods that let you bind functions to these events per element (these are not global now)
+elements have hide() and show() methods
+17-4
+elements have mousePressed() methods that let you bind functions to this event per element
+keyPressed() does not need to be bound, it’s global
+
+### Using multiple canvases
+
+17-5
+you can make more than one canvas!
+use context() to switch which one you are drawing to
+17-6
+you can use context() and then call custom functions
+
+
 ### Using find
 
 You can use ```find()``` to search for all elements with a particular class or id.
@@ -171,27 +193,3 @@ Here are some more resources for looking up and learning about CSS:
 + [W3Schools CSS reference](http://www.w3schools.com/cssref/default.asp)
 + [HTML & CSS book](http://htmlandcssbook.com/)
   
-
-
-elements can have position() and id() (id is unique, only one element)
-draw methods happen on whichever element was most recently created
-17-1
-can embed HTML within createHTML(), such as links
-17-2
-createHTMLImage() creates an <img>
-context() tells p5.js which element to draw to
-17-3
-elements have mouseOver() and mouseOut() methods that let you bind functions to these events per element (these are not global now)
-elements have hide() and show() methods
-17-4
-elements have mousePressed() methods that let you bind functions to this event per element
-keyPressed() does not need to be bound, it’s global
-17-5
-you can make more than one canvas!
-use context() to switch which one you are drawing to
-17-6
-you can use context() and then call custom functions
-17-7
-elements can have a class() (multiple elements can share a class)
-var donkeys = find('donkey')
-find() finds all the elements with a class and returns them into an array
