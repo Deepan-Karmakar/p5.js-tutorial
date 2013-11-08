@@ -1,6 +1,6 @@
 You likely started out with p5.js drawing graphics using the HTML5 canvas, a special element you can draw graphics into. However, p5.js can also be used to create and interact with HTML elements outside of the graphics canvas.
 
-When you call ```createGraphics(w, h)``` you create a graphics canvas to draw into with the specified width and height. However, you can also keep a pointer to this canvas by storing it in a variable. With this pointer we can call methods of the element itself, to set the position, id or class, for instance.
+When you call ```createGraphics(w, h)``` you create a graphics canvas to draw into with the specified width and height. However, you can also keep a pointer to this canvas by storing it in a variable. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. The position is relative to the upper left of the window.
 
 ```javascript
 var canvas;
@@ -29,34 +29,48 @@ function draw() {
 }
 ```
 
-In addition to ```createGraphics(w, h)```, you can also add HTML elements directly using ```createHTML(html)```, which creates a DIV on the page with the given HTML. In the example below, a DIV with text is created, in addition to the graphics canvas.
+In addition to ```createGraphics(w, h)```, you can also add HTML elements directly using ```createHTML(html)```, which creates a DIV on the page with the given HTML. In the example below, a DIV with text is created, in addition to the graphics canvas, and the position is set for each.
 
 ```javascript
 var text;
 var canvas;
 
 function setup() {
-
-  // Try switching the order of these two lines. You notice that it breaks when you put them the other way.
-  // This is because the most the program tries to draw into the most recently created element.
-  // If you create the HTML element second, it doesn't make work to draw background and ellipse into it
-  // because drawing only works with graphics elements.
   text = createHTML("This is an HTML string!");
   canvas = createGraphics(600, 400);
-
   text.position(50, 50);
   canvas.position(300, 50);
-
 }
 
-
 function draw() {
-
   // These commands are applied to whichever element was most recently created.
   background(220, 180, 200);
   ellipse(width/2, height/2, 100, 100);
   ellipse(width/4, height/2, 50, 50);
+}
+```
 
+Try switching the order of the createHTML and createGraphics lines. You notice that it breaks when you put them the other way. This is because the most the program tries to draw into the most recently created element. If you create the HTML element second, it doesn't make work to draw background and ellipse into it because drawing only works with graphics elements. In order to tell the program to draw into the canvas element, use the ```context(elt)``` function in draw, passing in the pointer to the element you want to draw into.
+
+```javascript
+var text;
+var canvas;
+
+function setup() {
+  canvas = createGraphics(600, 400);
+  text = createHTML("This is an HTML string!");
+
+  text.position(50, 50);
+  canvas.position(300, 50);
+}
+
+function draw() {
+  // The program is set to draw into text because it was created last
+  // but calling context tells the program to draw into canvas instead.
+  context(canvas);
+  background(220, 180, 200);
+  ellipse(width/2, height/2, 100, 100);
+  ellipse(width/4, height/2, 50, 50);
 }
 ```
 
