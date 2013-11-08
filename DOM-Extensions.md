@@ -81,6 +81,14 @@ function draw() {
 
 ### Setting style
 
+You can use a ```style()``` method on any element and pass it an inline CSS string programmatically to be applied to that element.
+
+Here are some more resources for looking up and learning about CSS:
++ [CSS basics overview](http://html.net/tutorials/css/lesson2.php)
++ [W3Schools CSS reference](http://www.w3schools.com/cssref/default.asp)
++ [HTML & CSS book](http://htmlandcssbook.com/)
+  
+
 
 elements can have position() and id() (id is unique, only one element)
 draw methods happen on whichever element was most recently created
