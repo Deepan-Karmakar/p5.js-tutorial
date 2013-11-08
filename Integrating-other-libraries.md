@@ -36,15 +36,62 @@ Buzz is a web audio library, download it at http://buzz.jaysalvat.com/. Browse t
 
 In this first example, we play a sound within ```setup()```.
 ```javascript
+var mySound = new buzz.sound("rhodes_loop.wav");
 
+function setup() {
+  mySound.play();
+}
 ```
 
-Next, let's play a sound.
-```javascript
+In the next example, you see we can also draw an image into canvas in the same sketch. The audio playing does not conflict with the drawing, but works side by side. The audio file is loaded in setup, then triggered to play on mousePressed.
 
+```javascript
+var mySound = new buzz.sound('rhodes_loop.wav');
+var myImage;
+
+function setup() {
+  createGraphics(300, 300);
+  myImage =  loadImage('red.jpg');
+}
+
+function draw()) {
+  // Draw graphics as normal
+  background(255, 200, 200);
+  image(myImage, 20, 20, 150, 150);
+}
+
+function mousePressed() {
+  // Using the third-party library to call play() on the buzz object
+  mySound.play();
+}
 ```
 
-Finally, let's do something.
+Finally, let's integrate the canvas and audio. Only when you click directly on the image does the audio start; it is stopped on keyPressed.
+ 
 ```javascript
+// Initializing a variable using the third-party library buzz object
+var mySound = new buzz.sound('rhodes_loop.wav');
+var myImage;
 
+function setup() {
+  createGraphics(300, 300);
+  myImage =  loadImage('red.jpg');
+};
+
+function draw() {
+  background(255, 200, 200);
+  image(myImage, 20, 20, 150, 150);
+};
+
+function mousePressed() {
+  // Check to see if mouse press is on top of image
+  if (mouseX > 20 && mouseX < 170 && mouseY > 20 && mouseY < 170) {
+    mySound.play(); // Start playing the sound
+    mySound.loop(); // Loop the sound once it's playing
+  }
+}
+
+function keyPressed() {
+  mySound.stop(); // Stop the sound
+}
 ```
