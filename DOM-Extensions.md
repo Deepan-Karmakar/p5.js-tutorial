@@ -3,16 +3,16 @@ You likely started out with p5.js drawing graphics using the HTML5 canvas, a spe
 When you call ```createGraphics(w, h)``` you create a graphics canvas to draw into with the specified width and height. However, you can also keep a pointer to this canvas by storing it in a variable. With this pointer we can call methods of the element itself, to set the position, id or class, for instance.
 
 ```javascript
+var canvas;
+
 function setup() {
 
   // We are still calling createGraphics like in the past, but now we are storing the result as a variable.
   // This way we can call methods of the element, to set the position for instance.
-  var canvas = createGraphics(600, 400);
+  canvas = createGraphics(600, 400);
 
   // Here we call methods of each element to set the position and id, try changing these values.
   // Use the inspector to look at the HTML generated from this code when you load the sketch in your browser.
-  text.position(50, 50);
-  text.id("apple");
   canvas.position(300, 50);
   canvas.class("lemon");
 
@@ -28,6 +28,39 @@ function draw() {
 
 }
 ```
+
+In addition to ```createGraphics(w, h)```, you can also add HTML elements directly using ```createHTML(html)```, which creates a DIV on the page with the given HTML. In the example below, a DIV with text is created, in addition to the graphics canvas.
+
+```javascript
+var text;
+var canvas;
+
+function setup() {
+
+  // Try switching the order of these two lines. You notice that it breaks when you put them the other way.
+  // This is because the most the program tries to draw into the most recently created element.
+  // If you create the HTML element second, it doesn't make work to draw background and ellipse into it
+  // because drawing only works with graphics elements.
+  text = createHTML("This is an HTML string!");
+  canvas = createGraphics(600, 400);
+
+  text.position(50, 50);
+  canvas.position(300, 50);
+
+}
+
+
+function draw() {
+
+  // These commands are applied to whichever element was most recently created.
+  background(220, 180, 200);
+  ellipse(width/2, height/2, 100, 100);
+  ellipse(width/4, height/2, 50, 50);
+
+}
+```
+
+
 elements can have position() and id() (id is unique, only one element)
 draw methods happen on whichever element was most recently created
 17-1
