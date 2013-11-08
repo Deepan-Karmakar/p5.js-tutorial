@@ -95,8 +95,7 @@ function setup() {
   canvas1 = createGraphics(200, 200);
   canvas2 = createGraphics(200, 200);
 
-  // Here we call methods of each element to set the position and id.
-  // Use view-source to look at the HTML generated from this code when you load the sketch in your browser.
+  // Here we call methods of each element to set the position and class.
   // Let's give the first two canvases class donkey, and the third class yogurt.
   canvas0.position(50, 50);
   canvas0.class('donkey');
