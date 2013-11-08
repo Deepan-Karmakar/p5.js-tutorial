@@ -11,11 +11,11 @@ Google searches are the best way to find JS libraries
 + “leapmotion” + “JS”
 
 Here are some interesting libraries to check out:
-+ (Buzz)[http://buzz.jaysalvat.com/] - web audio
-+ (two.js)[http://jonobr1.github.io/two.js] - two dimensional drawing
-+ (three.js)[http://threejs.org] - three dimensional graphics
-+ (d3.js)[http://d3js.org] - data visualization
-+ (boxbox)[http://incompl.github.io/boxbox] - physics engine
++ [Buzz](http://buzz.jaysalvat.com/) - web audio
++ [two.js](http://jonobr1.github.io/two.js) - two dimensional drawing
++ [three.js](http://threejs.org) - three dimensional graphics
++ [d3.js](http://d3js.org) - data visualization
++ [boxbox](http://incompl.github.io/boxbox) - physics engine
 
 Important note: web browsers, JS versions, etc, will matter. We will not go into specifics here, but know that this will be an issue. Most libraries will state in their documentation minimum requirements your browser or hardware must meet.
 
