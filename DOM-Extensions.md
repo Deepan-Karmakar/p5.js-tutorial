@@ -103,7 +103,7 @@ function setup() {
   canvas1.class('donkey');
   canvas2.position(550, 50);
   canvas2.class('yogurt');
-};
+}
 
 
 function draw() {
