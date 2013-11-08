@@ -1,4 +1,3 @@
-
 ###Getting started
 
 1. Download and install [npm](https://npmjs.org/).
@@ -19,3 +18,8 @@ npm install
 ```
 grunt
 ```
+
+###Overview
+```src``` This directory contains all the source code for the library. The code is broken up into folders and files corresponding with the [Processing reference page](processing.org/reference/). Additionally, there is a core folder that holds constants, and internal helper functions and variables.
+
+```dist``` This directory contains all the source code for the library. The code is broken up into folders and files corresponding with the [Processing reference page](processing.org/reference/). Additionally, there is a core folder that holds constants, and internal helper functions and variables.
