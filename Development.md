@@ -11,7 +11,8 @@ npm install -g grunt-cli
 ```
 git clone git@github.com:USERNAME/processing-js.git
 ```
-4. Install dependencies via npm.
+4. Navigate into the project folder and install dependencies via npm.
 ```
+cd processing-js/
 npm install
 ```
