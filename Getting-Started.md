@@ -15,7 +15,7 @@ Example index.html file:
 </html>
 ```
 
-Alternatively, you can [download the whole project](https://github.com/lmccart/processing-js/archive/master.zip) and copy the example folder to any location you like and edit the sketch.js file.
+Alternatively, you can [download the whole project](https://github.com/lmccart/p5.js/archive/master.zip) and copy the example folder to any location you like and edit the sketch.js file.
 
 
 ### Environment
@@ -71,13 +71,13 @@ This program creates a window that is 480 pixels wide and 120 pixels high, and t
 
 ### Getting started for Processing users
 
-####[> Processing syntax conversion](https://github.com/lmccart/processing-js/wiki/Processing-syntax-conversion)
-Learn how to convert from Processing to Processing-JS.
+####[> Processing syntax conversion](https://github.com/lmccart/p5.js/wiki/Processing-syntax-conversion)
+Learn how to convert from Processing to p5.js.
 
 ### Examples and Reference
 
-####[> Tutorials](https://github.com/lmccart/processing-js/wiki/Tutorials)
-Short, prototypical programs exploring the basics of programming with Processing-JS.
+####[> Tutorials](https://github.com/lmccart/p5.js/wiki/Tutorials)
+Short, prototypical programs exploring the basics of programming with p5.JS.
 
-####[> Reference](https://github.com/lmccart/processing-js/wiki/Reference)
-The functionality supported by Processing-JS.
+####[> Reference](https://github.com/lmccart/p5.js/wiki/Reference)
+The functionality supported by p5.JS.
