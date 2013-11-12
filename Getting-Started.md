@@ -54,11 +54,11 @@ One of the most difficult things about getting started with programming is that 
 
 Next, we'll skip ahead to a sketch that's a little more exciting. Delete the text from the last example, and try this:
 ```
-var setup = function() {
+function setup() {
   createGraphics(480, 120);
 }
 
-var draw = function() {
+function draw() {
   if (isMousePressed()) {
     fill(0);
   } else {
