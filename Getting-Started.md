@@ -15,7 +15,7 @@ Example index.html file:
 </html>
 ```
 
-Alternatively, you can [download the whole project](https://github.com/lmccart/p5.js/archive/master.zip) and copy the example folder to any location you like and edit the sketch.js file.
+Alternatively, you can [download the whole project](https://github.com/lmccart/p5.js/archive/master.zip) and copy the examples/empty-example folder to any location you like and edit the sketch.js file.
 
 
 ### Environment
