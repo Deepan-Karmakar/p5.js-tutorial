@@ -1,5 +1,5 @@
 ### Statements and Comments
-
+```javascript
     function setup(){
       // The createGraphics function is a statement that tells the computer 
       // how large to make the drawing space.
@@ -14,7 +14,7 @@
       // which color (or gray value) to make the background of the display window 
       background(204, 153, 0);
     }
-
+```
 ![Statement and Comments](http://i.imgur.com/x1evK7y.png)
 
 
