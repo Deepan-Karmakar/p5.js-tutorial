@@ -56,12 +56,11 @@
     }
 
     function draw(){
-      // The background function is a statement that 
-      // tells the computer which color (or gray value) 
-      // to make the background of the display window.
+      // The line tells the computer which color to make 
+      // the background of the drawing space.
       background(204, 153, 0);
 
-      // The line tells the computer to draw an ellipse,
+      // This line tells the computer to draw an ellipse,
       // with the center 50 pixels over from the left and
       // 50 pixels down from the top, with a width and 
       // height of 80 pixels.
