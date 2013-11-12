@@ -56,7 +56,7 @@
     }
 
     function draw(){
-      // The line tells the computer which color to make 
+      // This line tells the computer which color to make 
       // the background of the drawing space.
       background(204, 153, 0);
 
