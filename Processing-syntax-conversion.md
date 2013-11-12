@@ -4,13 +4,13 @@ The p5.js language looks very similar to the Processing language with a few chan
 + Variables do not have a type. Use var instead of float, int, double, long, char, String, Array, etc.
 + A var can be anything -- any of the types mentioned, but also functions.
 + Rather than specifying a return type for functions, they are assigned to vars. See the example below.
-+ Currently, not all Processing functionality is supported in Processing-JS, and the syntax for a few have changed slightly. See [API](https://github.com/lmccart/p5.js/blob/master/api.md) and [API progress](https://github.com/lmccart/p5.js/blob/master/api-progress.md) for up-to-date documentation of all supported functions and future plans.
++ Currently, not all Processing functionality is supported in p5.js, and the syntax for a few have changed slightly. See [API](https://github.com/lmccart/p5.js/blob/master/api.md) and [API progress](https://github.com/lmccart/p5.js/blob/master/api-progress.md) for up-to-date documentation of all supported functions and future plans.
 
 ###Conversion examples
 
 ####Basic sketch
 
-This is the basic setup for a Processing and Processing-JS sketch. Note that p5.js will also require an empty HTML file that links to the p5.js library and your sketch file in the header (see [getting started](https://github.com/lmccart/p5.js/wiki/Getting-Started)).
+This is the basic setup for a Processing and p5.js sketch. Note that p5.js will also require an empty HTML file that links to the p5.js library and your sketch file in the header (see [getting started](https://github.com/lmccart/p5.js/wiki/Getting-Started)).
 
 ```java
 void setup() {
