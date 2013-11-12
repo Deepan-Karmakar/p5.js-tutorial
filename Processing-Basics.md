@@ -1,6 +1,6 @@
 ### Statements and Comments
 
-    var setup = function(){
+    function setup(){
       // The createGraphics function is a statement that tells the computer 
       // how large to make the drawing space.
       // Each function statement has zero or more parameters. 
@@ -9,7 +9,7 @@
       createCanvas(640, 360);
     }
 
-    var draw = function(){
+    function draw(){
       // The background function is a statement that tells the computer
       // which color (or gray value) to make the background of the display window 
       background(204, 153, 0);
