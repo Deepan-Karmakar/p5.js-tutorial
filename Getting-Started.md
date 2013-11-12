@@ -1,13 +1,13 @@
 ### Download / File Setup
 
-Download the pjs.js file and create a new index.html file and a new sketch.js file. You want to link to pjs.js and your sketch.js file in the head of the html file.  Make sure all three files are in the same folder.
+Download the p5.js file and create a new index.html file and a new sketch.js file. You want to link to p5.js and your sketch.js file in the head of the html file.  Make sure all three files are in the same folder.
 
 Example index.html file:
 ```
 <!doctype html>
 <html>
   <head>
-    <script src="pjs.js"></script>
+    <script src="p5.js"></script>
     <script src="sketch.js"></script>
   </head>
   <body>
@@ -35,7 +35,7 @@ You can use the code editor of your choice. Instructions for getting set up with
 
 ### Your First Sketch
 
-[PEND: rewrite for pjs]
+[PEND: rewrite for p5.js]
 You're now running the Processing Development Environment (or PDE). There's not much to it; the large area is the Text Editor, and there's a row of buttons across the top; this is the toolbar. Below the editor is the Message Area, and below that is the Console. The Message Area is used for one line messages, and the Console is used for more technical details.
 
 In your editor, type the following:
