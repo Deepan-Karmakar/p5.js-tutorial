@@ -7,11 +7,11 @@ npm install -g grunt-cli
 ```
 3. Fork and clone this library. 
 ```
-git clone git@github.com:USERNAME/processing-js.git
+git clone git@github.com:USERNAME/p5.js.git
 ```
 4. Navigate into the project folder and install dependencies via npm.
 ```
-cd processing-js/
+cd p5.js/
 npm install
 ```
 5. To create the dist library from src, run Grunt.
@@ -29,7 +29,7 @@ grunt
 
 ```tests/``` Contains unit testing files.
 
-```examples/``` Contains code examples including a port of all of Dan Shiffman's [Learning Processing](learningprocessing.com), as well as an empty-empty example that demonstrates setting up a sketch, and examples related to specific [tutorials](https://github.com/lmccart/processing-js/wiki/Tutorials).
+```examples/``` Contains code examples including a port of all of Dan Shiffman's [Learning Processing](learningprocessing.com), as well as an empty-empty example that demonstrates setting up a sketch, and examples related to specific [tutorials](https://github.com/lmccart/p5.js/wiki/Tutorials).
 
 ```api.md``` Contains most up to date record of everything implemented. PLEASE UPDATE THIS IF YOU CHANGE THE API!
 
