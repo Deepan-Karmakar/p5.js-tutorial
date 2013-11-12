@@ -32,7 +32,7 @@ One last criteria for choosing a library is documentation. Documentation makes o
 
 ### Example: using Buzz
 
-Buzz is a web audio library, download it at http://buzz.jaysalvat.com/. Browse the documentation at http://buzz.jaysalvat.com/documentation/buzz/. (See example [Integrating-other-libraries/0](https://github.com/lmccart/processing-js/tree/master/examples/tutorials/Integrating-other-libraries/0).)
+Buzz is a web audio library, download it at http://buzz.jaysalvat.com/. Browse the documentation at http://buzz.jaysalvat.com/documentation/buzz/. (See example [Integrating-other-libraries/0](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/0).)
 
 In this first example, we play a sound within ```setup()```.
 ```javascript
@@ -43,7 +43,7 @@ function setup() {
 }
 ```
 
-In the next example, you see we can also draw an image into canvas in the same sketch. The audio playing does not conflict with the drawing, but works side by side. The audio file is loaded in setup, then triggered to play on mousePressed. (See example [Integrating-other-libraries/1](https://github.com/lmccart/processing-js/tree/master/examples/tutorials/Integrating-other-libraries/1).)
+In the next example, you see we can also draw an image into canvas in the same sketch. The audio playing does not conflict with the drawing, but works side by side. The audio file is loaded in setup, then triggered to play on mousePressed. (See example [Integrating-other-libraries/1](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/1).)
 
 ```javascript
 var mySound = new buzz.sound('rhodes_loop.wav');
@@ -66,7 +66,7 @@ function mousePressed() {
 }
 ```
 
-Finally, let's integrate the canvas and audio. Only when you click directly on the image does the audio start; it is stopped on keyPressed. (See example [Integrating-other-libraries/2](https://github.com/lmccart/processing-js/tree/master/examples/tutorials/Integrating-other-libraries/2).)
+Finally, let's integrate the canvas and audio. Only when you click directly on the image does the audio start; it is stopped on keyPressed. (See example [Integrating-other-libraries/2](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/2).)
  
 ```javascript
 // Initializing a variable using the third-party library buzz object
