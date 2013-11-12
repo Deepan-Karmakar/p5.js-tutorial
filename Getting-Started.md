@@ -77,7 +77,7 @@ Learn how to convert from Processing to p5.js.
 ### Examples and Reference
 
 ####[> Tutorials](https://github.com/lmccart/p5.js/wiki/Tutorials)
-Short, prototypical programs exploring the basics of programming with p5.JS.
+Short, prototypical programs exploring the basics of programming with p5.js.
 
 ####[> Reference](https://github.com/lmccart/p5.js/wiki/Reference)
-The functionality supported by p5.JS.
+The functionality supported by p5.js.
