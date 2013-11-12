@@ -1,4 +1,4 @@
-[Getting started](https://github.com/lmccart/p5.sj/wiki/Getting-Started) -- Create and run your first sketch!
+[Getting started](https://github.com/lmccart/p5.js/wiki/Getting-Started) -- Create and run your first sketch!
 
 [Reference](https://github.com/lmccart/p5.js/wiki/Reference) -- The functionality supported by p5.js.
 
