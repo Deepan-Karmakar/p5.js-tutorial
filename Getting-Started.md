@@ -35,16 +35,19 @@ You can use the code editor of your choice. Instructions for getting set up with
 
 ### Your First Sketch
 
-[PEND: rewrite for p5.js]
-You're now running the Processing Development Environment (or PDE). There's not much to it; the large area is the Text Editor, and there's a row of buttons across the top; this is the toolbar. Below the editor is the Message Area, and below that is the Console. The Message Area is used for one line messages, and the Console is used for more technical details.
-
 In your editor, type the following:
 ```
-ellipse(50, 50, 80, 80);
-```
-This line of code means "draw an ellipse, with the center 50 pixels over from the left and 50 pixels down from the top, with a width and height of 80 pixels." If you are using Light Table, your sketch should automatically update. If not, refresh your page view in your browser.
+function setup() {
 
-If you've typed everything correctly, you'll see this appear in the Display Window:
+}
+
+function draw() {
+     ellipse(50, 50, 80, 80);
+}
+```
+This line of code means "draw an ellipse, with the center 50 pixels over from the left and 50 pixels down from the top, with a width and height of 80 pixels." 
+
+Refresh your page view in your browser, if you've typed everything correctly, you'll see this appear in the Display Window:
 
 
 
