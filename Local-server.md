@@ -21,8 +21,6 @@ Lion has a built in web server, all you have to do is enable it and place the fi
 2. Place your project somewhere inside /Sites/.
 3. View it at http://localhost/~username/.
 
-There's some further info here http://georgebutler.com/blog/setting-up-local-web-server-on-os-x-snow-leopard-10-6/.
-
 There's some further info here https://discussions.apple.com/docs/DOC-3083.
 
 
