@@ -2,8 +2,6 @@ Some functionality (loading external files, for example) works as expected when 
 
 ###Mac OS X
 
-####Snow Leopard (10.6)
-
 Snow Leopard has a built in web server, all you have to do is enable it and place the files in the right place.
 
 1. Turn on the web server. In Snow Leopard, go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box. In Lion, Mountain Lion, or Maverick, open Terminal and type:
