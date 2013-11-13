@@ -37,4 +37,11 @@ In Mountain Lion the enable web server option has been removed, but you can set 
 There's some further info here https://discussions.apple.com/docs/DOC-3083.
 
 
-###Windows
+####Windows
+
+1. Download WampServer from [http://www.wampserver.com/en/](http://www.wampserver.com/en/).
+2. Install WampServer and follow instructions.
+3. The “www” directory will be automatically created (usually c:\wamp\www).
+4. Create a subdirectory in “www” and put your HTML/JS files inside.
+5. Open your internet browser and go to the URL : http://localhost/yourfile.html.
+
