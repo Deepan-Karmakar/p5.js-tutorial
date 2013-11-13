@@ -43,7 +43,8 @@ sudo vi /etc/apache2/users/<your short user name>.conf
 ```
 Then press ```<esc>``` and then type ```ZZ``` to save and quit.
 6. Finally, turn on the server! For Mountain Lion, go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
-For Lion, type: ```
+For Lion, type: 
+```
 sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ``` 
 Lion has a built in web server, all you have to do is enable it and place the files in the right place.
