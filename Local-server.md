@@ -13,7 +13,37 @@ Snow Leopard has a built in web server, all you have to do is enable it and plac
 There's some further info here http://georgebutler.com/blog/setting-up-local-web-server-on-os-x-snow-leopard-10-6/.
 
 
-####Lion (10.7)
+####Lion (10.7) and Mountain Lion (10.8)
+
+In Lion and Mountain Lion the enable web server option has been removed, but you can set it up manually.
+
+
+
+1. Open terminal.
+2. Type ```sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist```. This turns on the server.
+3. Type:
+```
+mkdir ~/Sites
+```
+This creates the place your server will look for your files.
+4. Type:
+```cd /etc/apache2/users
+ls
+``` Check whether you have a file like ```<your short user name>.conf```. 
+5. If that file doesn't exist, you will need to create it with:
+```
+sudo vi /etc/apache2/users/<your short user name>.conf
+```
+
+Use the following as the content:
+<Directory "/Users/<your short user name>/Sites/">
+    Options Indexes MultiViews
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+</Directory>
+ 
+In vi, press <esc> and then ZZ to save and quit.
 
 Lion has a built in web server, all you have to do is enable it and place the files in the right place.
 
@@ -26,11 +56,6 @@ There's some further info here https://discussions.apple.com/docs/DOC-3083.
 
 ####Mountain Lion (10.8)
 
-In Mountain Lion the enable web server option has been removed, but you can set it up manually.
-
-1. Open terminal.
-2. Type ```sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist```. This turns on the server.
-2. Type ```mkdir ~/Sites```. This creates the place your server will look for your files.
 3. Navigate to the Sites folder and place your project somewhere inside it.
 3. View it at http://localhost/~username/.
 
@@ -44,4 +69,3 @@ There's some further info here https://discussions.apple.com/docs/DOC-3083.
 3. The “www” directory will be automatically created (usually c:\wamp\www).
 4. Create a subdirectory in “www” and put your HTML/JS files inside.
 5. Open your internet browser and go to the URL : http://localhost/yourfile.html.
-
