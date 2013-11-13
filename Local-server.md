@@ -41,10 +41,7 @@ sudo vi /etc/apache2/users/<your short user name>.conf
 </Directory>
 ```
 Then press ```<esc>``` and then type ```ZZ``` to save and quit.
-
-
 6. Finally, turn on the server! For Mountain Lion, go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
-
 For Lion, type: ```
 sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ``` 
