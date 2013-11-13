@@ -25,8 +25,8 @@ mkdir ~/Sites
 
 3. Type:
 ```
-cd /etc/apache2/users ls
-``` 
+sudo vi /etc/apache2/users/<your short user name>.conf
+```
 4. Check whether you have a file like ```<your short user name>.conf```. If that file doesn't exist, you will need to create it with:
 ```
 sudo vi /etc/apache2/users/<your short user name>.conf
