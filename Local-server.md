@@ -28,9 +28,9 @@ mkdir ~/Sites
 cd /etc/apache2/users
 ls
 ```
-4. Check whether you have a file like ```<your short user name>.conf```. If that file doesn't exist, you will need to create it with:
+4. Check whether you have a file like ``username.conf```. If that file doesn't exist, you will need to create it with:
 ```
-sudo vi /etc/apache2/users/<your short user name>.conf
+sudo vi /etc/apache2/users/username.conf
 ```
 5. Copy and past the following into the window:
 ```
