@@ -6,24 +6,18 @@ Some functionality (loading external files, for example) works as expected when 
 
 Snow Leopard has a built in web server, all you have to do is enable it and place the files in the right place.
 
-1. Go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
-2. Place your project somewhere inside /Library/WebServer/Documents/.
-3. View it at http://localhost.
-
-There's some further info here http://georgebutler.com/blog/setting-up-local-web-server-on-os-x-snow-leopard-10-6/.
-
-
-####Lion (10.7) and Mountain Lion (10.8)
-
-In Lion and Mountain Lion the enable web server option has been removed, but you can set it up manually.
-
-1. Open terminal.
-2. Type:
+1. Turn on the web server. In Snow Leopard, go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box. In Lion, Mountain Lion, or Maverick, open Terminal and type:
 ```
 sudo apachectl start
 ```
+2. Enable permissions, type:
+```
+sudo chown root:<your username> -R /Library/WebServer/Documents
+
+sudo chmod 755 -R /Library/WebServer/Documents
+```
 3. Place your project somewhere inside /Library/WebServer/Documents/.
-4. View it at http://localhost/.
+4. View it at http://localhost.
 
 
 ###Windows
