@@ -24,10 +24,8 @@ mkdir ~/Sites
 ```
 
 3. Type:
-```javascript
-cd /etc/apache2/users
-ls
-
+```
+cd /etc/apache2/users ls
 ``` 
 4. Check whether you have a file like ```<your short user name>.conf```. If that file doesn't exist, you will need to create it with:
 ```
