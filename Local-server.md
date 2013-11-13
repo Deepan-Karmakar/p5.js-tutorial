@@ -17,52 +17,46 @@ There's some further info here http://georgebutler.com/blog/setting-up-local-web
 
 In Lion and Mountain Lion the enable web server option has been removed, but you can set it up manually.
 
-
-
 1. Open terminal.
-2. Type ```sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist```. This turns on the server.
-3. Type:
+2. Create the place your server will look for your files, type:
 ```
 mkdir ~/Sites
 ```
-This creates the place your server will look for your files.
-4. Type:
+
+3. Type:
 ```cd /etc/apache2/users
 ls
-``` Check whether you have a file like ```<your short user name>.conf```. 
-5. If that file doesn't exist, you will need to create it with:
+``` 
+4. Check whether you have a file like ```<your short user name>.conf```. If that file doesn't exist, you will need to create it with:
 ```
 sudo vi /etc/apache2/users/<your short user name>.conf
 ```
-
-Use the following as the content:
+5. Copy and past the following into the window:
+```
 <Directory "/Users/<your short user name>/Sites/">
     Options Indexes MultiViews
     AllowOverride None
     Order allow,deny
     Allow from all
 </Directory>
- 
-In vi, press <esc> and then ZZ to save and quit.
+```
+Then press ```<esc>``` and then type ```ZZ``` to save and quit.
 
+
+6. Finally, turn on the server! For Mountain Lion, go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
+
+For Lion, type: ```
+sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+``` 
 Lion has a built in web server, all you have to do is enable it and place the files in the right place.
 
-1. Go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
-2. Place your project somewhere inside /Sites/.
-3. View it at http://localhost/~username/.
+7. Place your project somewhere inside /Sites/.
+8. Finally, view it at http://localhost/~username/!
 
 There's some further info here https://discussions.apple.com/docs/DOC-3083.
 
 
-####Mountain Lion (10.8)
-
-3. Navigate to the Sites folder and place your project somewhere inside it.
-3. View it at http://localhost/~username/.
-
-There's some further info here https://discussions.apple.com/docs/DOC-3083.
-
-
-####Windows
+###Windows
 
 1. Download WampServer from [http://www.wampserver.com/en/](http://www.wampserver.com/en/).
 2. Install WampServer and follow instructions.
