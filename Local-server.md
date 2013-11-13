@@ -47,6 +47,7 @@ For Lion, type:
 ```
 sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ``` 
+
 7. Place your project somewhere inside /Sites/.
 8. Finally, view it at http://localhost/~username/!
 
