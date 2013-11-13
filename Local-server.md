@@ -47,8 +47,6 @@ For Lion, type:
 ```
 sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ``` 
-Lion has a built in web server, all you have to do is enable it and place the files in the right place.
-
 7. Place your project somewhere inside /Sites/.
 8. Finally, view it at http://localhost/~username/!
 
