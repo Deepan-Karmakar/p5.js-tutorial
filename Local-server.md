@@ -1,6 +1,6 @@
 Some functionality (loading external files, for example) works as expected when the files are placed online via FTP. However, if you try to view them locally, you see some kind of "cross-origin" errors in console. The solution to this is to view them using what's called a local web server. This tutorial includes instructions for setting this up on Mac OSX and Windows.
 
-###Mac OSX
+###Mac OS X
 
 ####Snow Leopard (10.6)
 
