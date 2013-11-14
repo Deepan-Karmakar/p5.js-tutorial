@@ -19,26 +19,3 @@
 ```
 ![Statement and Comments](http://i.imgur.com/x1evK7y.png)
 
-
-### Form
-
-### Data
-
-### Arrays
-
-### Control
-
-### Image
-
-### Shape
-
-### Color
-
-### Math
-
-### Input
-
-### Transform
-
-
-### Statements and Comments
