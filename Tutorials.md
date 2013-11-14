@@ -1,5 +1,9 @@
-### Learning processing examples 
-The first 10 chapters of examples from Dan Shiffman's [Learning Processing](http://www.learningprocessing.com/examples/) book have been ported. You can view them here: https://github.com/lmccart/p5.js/tree/master/examples/learningprocessing.
+### Examples
+
+[Learning Processing](https://github.com/lmccart/p5.js/tree/master/examples/learningprocessing) - the first 10 chapters of examples from Dan Shiffman's [Learning Processing](http://www.learningprocessing.com/examples/) book have been ported.
+
+[RISD Intro Creative Programming examples](http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/examples.html) - class examples covering basics of programming with p5.js.
+
 
 ### Tutorials
 
