@@ -13,7 +13,7 @@ The first 10 chapters of examples from Dan Shiffman's [Learning Processing](http
 
 [Working with other libraries](https://github.com/lmccart/p5.js/wiki/Integrating-other-libraries) - finding, adding, and integrating other JS libraries.
 
-[Enabling a local server](https://github.com/lmccart/p5.js/wiki/Local-server) - some functionality (loading external files, for example) requires the use of a local server for local development. This tutorial includes instructions for setting this up on Mac OSX and Windows.
+[Enabling a local server](https://github.com/lmccart/p5.js/wiki/Local-server) - some functionality (loading external files, for example) requires the use of a local server for local development. This tutorial includes instructions for setting this up on Mac OSX, Windows, and Linux.
 
 [Development](https://github.com/lmccart/p5.js/wiki/Development) - getting started and overview for those that want to contribute to development.
 
