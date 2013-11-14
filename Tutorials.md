@@ -9,7 +9,7 @@
 
 [Getting started](https://github.com/lmccart/p5.js/wiki/Getting-Started) - set up your environment and create your first sketch.
 
-[Processing basics](https://github.com/lmccart/p5.js/wiki/Processing-Basics) - the basics of drawing in the canvas.
+[p5.js basics](https://github.com/lmccart/p5.js/wiki/Processing-Basics) - the basics of drawing in the canvas.
 
 [Processing syntax conversion](https://github.com/lmccart/p5.js/wiki/Processing-syntax-conversion) - Processing > p5.js and back!
 
