@@ -25,3 +25,10 @@ sudo chmod 755 -R /Library/WebServer/Documents
 3. The “www” directory will be automatically created (usually c:\wamp\www).
 4. Create a subdirectory in “www” and put your HTML/JS files inside.
 5. Open your internet browser and go to the URL : http://localhost/yourfile.html.
+
+
+###Linux
+
+1. Install apache2 via apt-get.
+2. Place your project somewhere inside /var/www/.
+3. View it at http://localhost.
