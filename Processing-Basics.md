@@ -1,4 +1,5 @@
-### Statements and Comments
+### Coming soon...
+
 ```javascript
     function setup(){
       // The createGraphics function is a statement that 
