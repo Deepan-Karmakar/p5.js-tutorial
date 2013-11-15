@@ -11,6 +11,7 @@ Google searches are the best way to find JS libraries
 + “leapmotion” + “JS”
 
 Here are some interesting libraries to check out:
++ [list of creative coding libraries](http://www.wholepixel.com/libs)
 + [Buzz](http://buzz.jaysalvat.com/) - web audio
 + [two.js](http://jonobr1.github.io/two.js) - two dimensional drawing
 + [three.js](http://threejs.org) - three dimensional graphics
