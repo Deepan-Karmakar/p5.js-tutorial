@@ -148,12 +148,92 @@ var draw = function() {
 
 
 ### Element specific listeners
-17-3
-elements have mouseOver() and mouseOut() methods that let you bind functions to these events per element (these are not global now)
-elements have hide() and show() methods
-17-4
-elements have mousePressed() methods that let you bind functions to this event per element
-keyPressed() does not need to be bound, it’s global
+
+Every elements has it's own ```mouseOver()```, ```mouseOut()``` methods that get called when you move the mouse over or off of the individual element. Each element also has a ```hide()``` and ```show()``` method. (See [DOM-extensions/3](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/3).)
+
+```
+var img;
+var canvas;
+
+function setup() {
+  canvas = createGraphics(400, 400);
+  img = createHTMLImage("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+
+  img.position(190, 50);
+  img.size(200, AUTO);
+
+  canvas.position(300, 50);
+  // Attach listeners for mouse events related to canvas
+  canvas.mouseOver(uniHide);
+  canvas.mouseOut(uniShow);
+}
+
+function draw() {
+  // Tell program to draw into canvas since img was last created element.
+  context(canvas);
+  noStroke();
+  background(220, 180, 200);
+  fill(180, 200, 40);
+  strokeWeight(6);
+  stroke(180, 100, 240);
+  for (var i=0; i<width; i+=15) {
+    line(i, 0, i, height);
+  }
+}
+
+// Create functions for hiding and showing uni image. These will be hooked into mouse events related to canvas above.
+function uniHide() {
+  img.hide();
+}
+
+function uniShow() {
+  img.show();
+}
+```
+Elements also have ```mousePressed()``` methods that let you connection functions to the mousePressed event per element. This is different than using the global ```mousePressed()``` method, which gets triggered anytime the mouse is clicked anywhere. With these element specific handlers, the function is only called when you click directly on the element. (See [DOM-extensions/4](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/4).)
+
+```
+var img;
+var canvas;
+
+function setup() {
+  canvas = createGraphics(400, 400);
+  img = createHTMLImage("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+
+  img.position(190, 50);
+  img.size(200, AUTO);
+  // Attach listeners for mouse events related to img.
+  img.mousePressed(uniHide);
+
+  canvas.position(300, 50);
+}
+
+function draw() {
+  context(canvas);
+  noStroke();
+  background(220, 180, 200);
+  fill(180, 200, 40);
+  strokeWeight(6);
+  stroke(180, 100, 240);
+  for (var i=0; i<width; i+=15) {
+    line(i, 0, i, height);
+  }
+}
+
+// Create functions for hiding and showing uni image. These will be hooked into mouse events related to canvas above.
+function uniHide() {
+  img.hide();
+}
+
+function uniShow() {
+  img.show();
+}
+
+// Define keyPressed behavior. This one doesn't need to be hooked in, it's automatically called on key press.
+function keyPressed() {
+  uniShow();
+}
+```
 
 ### Using multiple canvases
 
