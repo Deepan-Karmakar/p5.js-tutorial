@@ -223,7 +223,7 @@ function keyPressed() {
 
 ### Setting style
 
-You can use a ```style()``` method on any element and pass it an inline CSS string programmatically to be applied to that element.
+You can use a ```style()``` method on any element and pass it an inline CSS string programmatically to be applied to that element. (See [DOM-extensions/8](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/8).)
 
 ```javascript
 var text;
@@ -249,7 +249,7 @@ function draw() {
 
 }
 ```
-
+![screenshot](http://i.imgur.com/8vujAih.png)
 
 Here are some more resources for looking up and learning about CSS:
 + [CSS basics overview](http://html.net/tutorials/css/lesson2.php)
