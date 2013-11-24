@@ -57,7 +57,7 @@ In the previous example we are just placing a text string into the element, but 
 ```
 var text = createHTML("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
 ```
-
+![screenshot](http://i.imgur.com/cPhyPC9.png)
 
 
 ### Setting draw context
