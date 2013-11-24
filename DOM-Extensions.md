@@ -53,6 +53,13 @@ function draw() {
 ```
 ![screenshot](http://i.imgur.com/VqFxvTU.png)
 
+In the previous example we are just placing a text string into the element, but the element can really contain any HTML.  (See [DOM-extensions/0](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/1).) Try replacing the line:
+```
+var text = createHTML("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
+```
+
+
+
 ### Setting draw context
 
 Try switching the order of the createHTML and createGraphics lines. You notice that it breaks when you put them the other way. This is because the most the program tries to draw into the most recently created element. If you create the HTML element second, it doesn't make work to draw background and ellipse into it because drawing only works with graphics elements. In order to tell the program to draw into the canvas element, use the ```context(elt)``` function in draw, passing in the pointer to the element you want to draw into.
