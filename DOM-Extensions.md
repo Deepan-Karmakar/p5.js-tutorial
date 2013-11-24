@@ -51,7 +51,7 @@ function draw() {
   ellipse(width/4, height/2, 50, 50);
 }
 ```
-![screenshot](https://github.com/lmccart/p5.js/blob/master/examples/tutorials/DOM-extensions/dom_0.png)
+![screenshot](http://i.imgur.com/VqFxvTU.png)
 
 ### Setting draw context
 
