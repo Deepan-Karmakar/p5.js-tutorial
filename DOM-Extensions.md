@@ -117,7 +117,7 @@ var draw = function() {
 
 };
 ```
-![screenshot](http://imgur.com/fqk89sj)
+![screenshot](http://imgur.com/fqk89sj.png)
 
 But we notice
 
