@@ -31,6 +31,8 @@ function draw() {
 }
 ```
 
+### Creating other HTML elements
+
 In addition to ```createGraphics(w, h)```, you can also add HTML elements directly using ```createHTML(html)```, which creates a DIV on the page with the given HTML. In the example below, a DIV with text is created, in addition to the graphics canvas, and the position is set for each.
 
 ```javascript
@@ -53,12 +55,10 @@ function draw() {
 ```
 ![screenshot](http://i.imgur.com/VqFxvTU.png)
 
-In the previous example we are just placing a text string into the element, but the element can really contain any HTML.  (See [DOM-extensions/0](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/1).) Try replacing the line:
+In the previous example we are just placing a text string into the element, but the element can really contain any HTML.  (See [DOM-extensions/1](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/1).) Try replacing the line:
 ```
 var text = createHTML("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
 ```
-![screenshot](http://i.imgur.com/cPhyPC9.png)
-
 
 ### Setting draw context
 
@@ -87,9 +87,39 @@ function draw() {
 ```
 
 ### Creating HTML images
-17-2
-createHTMLImage() creates an <img>
-context() tells p5.js which element to draw to
+
+createHTML(html) can be used to create any HTML element, but if want to create an image specifically you can use createHTMLImage(src). In the example below we create an image and a canvas, setting the position and size for each. 
+
+```
+var img;
+var canvas;
+
+var setup = function() {
+
+  img = createHTMLImage("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+  canvas = createGraphics(400, 400);
+
+  img.position(190, 50);
+  img.size(200, AUTO); // Use AUTO to have the height or width auto scale. 
+  canvas.position(300, 50);
+};
+
+var draw = function() {
+
+  noStroke();
+  background(220, 180, 200);
+  fill(180, 200, 40);
+  strokeWeight(6);
+  stroke(180, 100, 240);
+  for (var i=0; i<width; i+=15) {
+    line(i, 0, i, height);
+  }
+
+};
+```
+![screenshot](http://imgur.com/fqk89sj)
+
+But we notice
 
 ### Element specific listeners
 17-3
