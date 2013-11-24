@@ -157,9 +157,39 @@ keyPressed() does not need to be bound, it’s global
 
 ### Using multiple canvases
 
-17-5
-you can make more than one canvas!
-use context() to switch which one you are drawing to
+In addition to adding other HTML elements and images, you can make more than one canvas and draw into each of them. Use context() to switch which one you are drawing to. (See [DOM-extensions/5](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/5).)
+
+```
+var canvas0;
+var canvas1;
+
+function setup() {
+
+  canvas0 = createGraphics(200, 200);
+  canvas1 = createGraphics(600, 400);
+
+  canvas0.position(50, 50);
+  canvas1.position(300, 50);
+}
+
+function draw() {
+
+  // Tell the program to draw into canvas0.
+  context(canvas0);
+  background(120, 180, 200);
+  ellipse(width/2, height/2, 100, 100);
+
+  // Tell the program to draw into canvas1.
+  context(canvas1);
+  background(50, 120, 80);
+  rect(width/4, height/4, width/2, height/2);
+
+  // Tell the program to switch back to drawing into canvas0.
+  // context(canvas0);
+  // line(0, 0, width, height);
+}
+```
+![screenshot](http://i.imgur.com/k6S4Ve9.png)
 
 It may be useful to break out the sections of code that are intended for different canvas elements into their own functions. Try switching the placement of drawRectCanvas() and drawEllipseCanvas() lines. (See [DOM-extensions/6](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/6).)
 
