@@ -160,9 +160,48 @@ keyPressed() does not need to be bound, it’s global
 17-5
 you can make more than one canvas!
 use context() to switch which one you are drawing to
-17-6
-you can use context() and then call custom functions
 
+It may be useful to break out the sections of code that are intended for different canvas elements into their own functions. Try switching the placement of drawRectCanvas() and drawEllipseCanvas() lines. (See [DOM-extensions/6](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/6).)
+
+```
+var canvas0;
+var canvas1;
+
+function setup() {
+
+  canvas0 = createGraphics(200, 200);
+  canvas1 = createGraphics(600, 400);
+
+  canvas0.position(50, 50);
+  canvas1.position(300, 50);
+}
+
+function draw() {
+
+  // Tell the program to draw into canvas0.
+  context(canvas0);
+  // Call the method to draw the contents of the canvas.
+  drawEllipseCanvas();
+
+
+  // Tell the program to draw into canvas1.
+  context(canvas1);
+  // Call the method to draw the contents of the canvas.
+  drawRectCanvas();
+  
+}
+
+// Additional drawing functions.
+function drawEllipseCanvas() {
+  background(120, 180, 200);
+  ellipse(width/2, height/2, 100, 100);
+}
+
+function drawRectCanvas() {
+  background(50, 120, 80);
+  rect(width/4, height/4, width/2, height/2);
+}
+```
 
 ### Using find
 
