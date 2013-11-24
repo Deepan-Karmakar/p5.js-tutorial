@@ -166,7 +166,7 @@ you can use context() and then call custom functions
 
 ### Using find
 
-You can use ```find()``` to search for all elements with a particular class or id.
+You can use ```find()``` to search for all elements with a particular class or id. find() first searches for any elements whose id match the given argument, and returns an array of them. If none are found, it searches for any elements whose class match, and returns an array of them. If none are found, it returns an empty array. (See [DOM-extensions/7](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/7).)
 
 ```javascript
 // We define the canvas variables outside of setup so we can access them from anywhere in the sketch.
@@ -219,6 +219,7 @@ function keyPressed() {
   }
 }
 ```
+![screenshot](http://i.imgur.com/IeAdO2J.png)
 
 
 ### Setting style
