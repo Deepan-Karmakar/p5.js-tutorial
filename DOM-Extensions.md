@@ -60,30 +60,6 @@ In the previous example we are just placing a text string into the element, but 
 var text = createHTML("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
 ```
 
-### Setting draw context
-
-```javascript
-var text;
-var canvas;
-
-function setup() {
-  canvas = createGraphics(600, 400);
-  text = createHTML("This is an HTML string!");
-
-  text.position(50, 50);
-  canvas.position(300, 50);
-}
-
-function draw() {
-  // The program is set to draw into text because it was created last
-  // but calling context tells the program to draw into canvas instead.
-  context(canvas);
-  background(220, 180, 200);
-  ellipse(width/2, height/2, 100, 100);
-  ellipse(width/4, height/2, 50, 50);
-}
-```
-
 ### Creating HTML images
 
 createHTML(html) can be used to create any HTML element, but if want to create an image specifically you can use createHTMLImage(src). In the example below we create an image and a canvas, setting the position and size for each. 
@@ -116,6 +92,9 @@ var draw = function() {
 };
 ```
 ![screenshot](http://imgur.com/fqk89sj.png)
+
+
+### Setting draw context
 
 You notice that the canvas draws on top of the image. This is because createGraphics was called after createHTMLImage. But what if we want it underneath? First, flip the two create lines in setup.
 ```
@@ -151,7 +130,8 @@ var setup = function() {
 
 var draw = function() {
 
-  // Tell program to draw into canvas since img was last created element.
+  // The program is set to draw into text because it was created last
+  // but calling context tells the program to draw into canvas instead.
   context(canvas);
   noStroke();
   background(220, 180, 200);
