@@ -62,8 +62,6 @@ var text = createHTML("Here is some text and <a href='http://i.imgur.com/WXaUlrK
 
 ### Setting draw context
 
-Try switching the order of the createHTML and createGraphics lines. You notice that it breaks when you put them the other way. This is because the most the program tries to draw into the most recently created element. If you create the HTML element second, it doesn't make work to draw background and ellipse into it because drawing only works with graphics elements. In order to tell the program to draw into the canvas element, use the ```context(elt)``` function in draw, passing in the pointer to the element you want to draw into.
-
 ```javascript
 var text;
 var canvas;
@@ -119,7 +117,55 @@ var draw = function() {
 ```
 ![screenshot](http://imgur.com/fqk89sj.png)
 
-But we notice
+You notice that the canvas draws on top of the image. This is because createGraphics was called after createHTMLImage. But what if we want it underneath? First, flip the two create lines in setup.
+```
+canvas = createGraphics(400, 400);
+img = createHTMLImage("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+```
+
+Now if you run it, you probably only see the image, and if you open console to inspect you will see an error. This is because of the commands in your draw function. Your program keeps track of which element it's working with, and when you draw something (with background(), fill(), or line(), for example), it tries to draw it into the current element. By default, your program assumes whichever element you most recently created is the current element. If you create the image element second, it doesn't work to draw background and ellipse into it because drawing only works with graphics elements. 
+
+However, in this case, we want to switch that, to tell the program to draw into the graphics element instead of the image. In order to tell the program to draw into the canvas element, use the ```context(elt)``` function in draw, passing in the pointer to the element you want to draw into. (See [DOM-extensions/2](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/2).)
+
+At the beginning of your draw function, add the line:
+```
+context(canvas);
+```
+
+So your full code looks like this:
+```
+var img;
+var canvas;
+
+var setup = function() {
+
+  canvas = createGraphics(400, 400);
+  img = createHTMLImage("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+
+  img.position(190, 50);
+  img.size(200, AUTO);
+
+  canvas.position(300, 50);
+};
+
+
+var draw = function() {
+
+  // Tell program to draw into canvas since img was last created element.
+  context(canvas);
+  noStroke();
+  background(220, 180, 200);
+  fill(180, 200, 40);
+  strokeWeight(6);
+  stroke(180, 100, 240);
+  for (var i=0; i<width; i+=15) {
+    line(i, 0, i, height);
+  }
+
+};
+```
+![screenshot](http://i.imgur.com/DKkblHb.png)
+
 
 ### Element specific listeners
 17-3
