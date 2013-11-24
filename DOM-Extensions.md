@@ -208,14 +208,12 @@ function drawRectCanvas() {
 You can use ```find()``` to search for all elements with a particular class or id. find() first searches for any elements whose id match the given argument, and returns an array of them. If none are found, it searches for any elements whose class match, and returns an array of them. If none are found, it returns an empty array. (See [DOM-extensions/7](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/7).)
 
 ```javascript
-// We define the canvas variables outside of setup so we can access them from anywhere in the sketch.
 var canvas0;
 var canvas1;
 var canvas2;
 
 function setup() {
 
-  // We are still calling createGraphics like before, but now we are storing a pointer to each one.
   canvas0 = createGraphics(200, 200);
   canvas1 = createGraphics(200, 200);
   canvas2 = createGraphics(200, 200);
