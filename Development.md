@@ -41,6 +41,8 @@ The testing is done with [grunt-mocha](https://github.com/kmiyashiro/grunt-mocha
 To get started:
 
 ```
-cd test
+cd p5.js/
 npm install
 ```
+
+Add test files corresponding to files in ```src```. Link to the src and test files in ```test.html```.
