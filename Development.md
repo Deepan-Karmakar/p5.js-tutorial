@@ -44,4 +44,4 @@ cd p5.js/
 npm install
 ```
 
-Add test files corresponding to files in `src`. Link to the src and test files in `test.html`.
+Add test files corresponding to files in `src`. Link to the src and test files in `test.html`. Run the tests with `grunt mocha`.
