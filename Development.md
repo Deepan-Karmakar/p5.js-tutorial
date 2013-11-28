@@ -35,3 +35,4 @@ grunt
 
 ```api-progress.md``` Contains the status of the API, including implemented, removed, still to do.
 
+###Testing
