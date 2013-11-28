@@ -38,9 +38,3 @@ grunt
 ###Testing
 
 The testing is done with [grunt-mocha](https://github.com/kmiyashiro/grunt-mocha) which uses [mocha](http://visionmedia.github.io/mocha/) test framework with [phantomjs](http://phantomjs.org/download.html). To get started:
-
-```
-cd test
-npm install
-```
-Add test files corresponding to files in ```src```. Link to the src and test files in ```test.html```.
