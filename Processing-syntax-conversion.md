@@ -199,3 +199,12 @@ Currently supported functions from Processing, as well as new ones supported in 
 
 ####[> API progress page](https://github.com/lmccart/p5.js/blob/master/api-progress.md)
 API progress and future support.
+
+
+###Finding examples
+
+You can find a lot of example code on <a href="http://openprocessing.org/">OpenProcessing</a>, a website for sharing Processing sketches.
+
+Dan Shiffman's <a href="http://www.learningprocessing.com/">Learning Processing</a> and <a href="http://natureofcode.com/">The Nature of Code</a> books online also have a lot of Processing examples and tutorials.
+
+The <a href="http://processing.org/examples/">Processing site</a> contains many examples for using the functions of the API.
