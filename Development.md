@@ -17,7 +17,6 @@ npm install
 5. To create the dist library from src, run Grunt.
 ```
 grunt
-grunt requirejs
 ```
 
 ###Overview
