@@ -45,7 +45,7 @@ function draw() {
 This line of code means "draw an ellipse, with the center 50 pixels over from the left and 50 pixels down from the top, with a width and height of 80 pixels." 
 
 Refresh your page view in your browser, if you've typed everything correctly, you'll see this appear in the Display Window:
-
+![Browser, pointed to a local HTML file, with a circle drawn in the top left corner of the viewport](http://i.imgur.com/FkEZGuE.png)
 
 
 If you didn't type it correctly, the Message Area will turn red and complain about an error. If this happens, make sure that you've copied the example code exactly: the numbers should be contained within parentheses and have commas between each of them, and the line should end with a semicolon.
