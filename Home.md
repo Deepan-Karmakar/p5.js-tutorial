@@ -6,4 +6,6 @@
 
 [Troubleshooting](https://github.com/lmccart/p5.js/wiki/Troubleshooting) -- Help with common problems.
 
+[Development](https://github.com/lmccart/p5.js/wiki/Development) -- How to contribute to p5.
+
 [Research documentation](https://github.com/lmccart/p5.js/wiki/Research-Documentation) -- This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is here.
