@@ -47,6 +47,8 @@ grunt
 
 ###Testing
 
+With all new functions implemented, please include unit tests and inline documentation. A good example for how to format and write inline documentation can be seen in [PImage](https://github.com/lmccart/p5.js/blob/master/src/image/image.js). Examples of unit tests can be found in the [test/unit](https://github.com/lmccart/p5.js/tree/master/test/unit) directory. Directions for adding your own tests and including them are below.
+
 The testing is done with [grunt-mocha](https://github.com/kmiyashiro/grunt-mocha) which uses [mocha](http://visionmedia.github.io/mocha/) test framework with [phantomjs](http://phantomjs.org/download.html). 
 To get started:
 
