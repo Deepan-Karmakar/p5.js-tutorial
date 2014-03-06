@@ -12,7 +12,7 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
 
 ###Setup
 
-1. Download and install [npm](https://npmjs.org/).
+1. Download and install [npm](https://npmjs.org/). The easiest way to do this is to just install [node](http://nodejs.org/).
 2. Install [Grunt](http://gruntjs.com/getting-started). 
 ```
 npm install -g grunt-cli
