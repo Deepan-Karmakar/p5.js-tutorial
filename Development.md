@@ -8,6 +8,8 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
 
 3. **Contribute in some other way** -- Write to [lauren](mailto:laurmccarthy@gmail.com) or [evelyn](mailto:evhan55@gmail.com) and let us know what you're thinking! It is our intention that there should be many ways to contribute to p5.js, from writing code, to creating examples, tutorials and documentation, to thinking about workshops and education, to working on branding and design, and anything else you can dream up. Get in touch and we can talk about ways you might participate.
 
+4. **Join the conversation** - On IRC/Freenode: **#p5js**
+
 ###Setup
 
 1. Download and install [npm](https://npmjs.org/).
