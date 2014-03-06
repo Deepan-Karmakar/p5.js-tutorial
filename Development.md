@@ -60,6 +60,6 @@ cd p5.js/
 npm install
 ```
 
-2. Add test files corresponding to files in `src` (more info about phrasing [here](http://chaijs.com/api/bdd/)). 
+2. Add test files corresponding to files in `src` (more info about assert style (TDD) phrasing [here](http://chaijs.com/api/assert/)). 
 3. Link to the src and test files in `test.html`. 
 4. Run the tests with `grunt mocha`.
