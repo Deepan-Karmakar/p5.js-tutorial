@@ -136,13 +136,13 @@ var s = function( sketch ) {
   return sketch;
 };
 
-P5(s, node);
+P5(node, s);
 ```
 
 Note that the above is functionally equivalent to below, either may be used, but the above will be the recommended syntax for beginners as we feel it's clearer.
 
 ```javascript
-P5(function( sketch ) {
+P5(node, function( sketch ) {
  
   var gray = 0; 
  
@@ -159,5 +159,5 @@ P5(function( sketch ) {
     gray += 10;
   }
  
-}, node);
+});
 ```
