@@ -108,7 +108,7 @@ var s = function( sketch ) {
   return sketch;
 };
 
-p5(s);
+P5(s);
 
 // CASE 1: node specified
 // Node is either a canvas element or any generic element.
@@ -136,13 +136,13 @@ var s = function( sketch ) {
   return sketch;
 };
 
-p5(node, s);
+P5(node, s);
 ```
 
 Note that the above is functionally equivalent to below, either may be used, but the above will be the recommended syntax for beginners as we feel it's clearer.
 
 ```javascript
-p5(node, function( sketch ) {
+P5(node, function( sketch ) {
  
   var gray = 0; 
  
