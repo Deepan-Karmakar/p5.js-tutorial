@@ -111,7 +111,9 @@ var s = function( sketch ) {
 P5(s);
 
 // CASE 1: node specified
-// Node is either a canvas element or any generic element. if it is a canvas, p5 will attach to it. if it is another type of element, a canvas with p5 attached will be inserted inside of it.
+// Node is either a canvas element or any generic element.
+// If it is a canvas, P5 will attach to it.
+// If it is another type of element, a canvas with P5 attached will be inserted inside of it.
 // Note that "sketch" is arbitrary and a user may replace it any variable name.
 
 var s = function( sketch ) {
