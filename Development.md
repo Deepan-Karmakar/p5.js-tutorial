@@ -25,7 +25,7 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
 ```
 npm install -g grunt-cli
 ```
-3. Fork and clone this library. 
+3. [Fork and clone](https://help.github.com/articles/fork-a-repo) this library. 
 ```
 git clone git@github.com:USERNAME/p5.js.git
 ```
@@ -38,6 +38,7 @@ npm install
 ```
 grunt
 ```
+6. [Submit a pull request](https://help.github.com/articles/creating-a-pull-request).
 
 ###Overview
 
