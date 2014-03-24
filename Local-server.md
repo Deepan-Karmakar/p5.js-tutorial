@@ -4,7 +4,7 @@ Some functionality (loading external files, for example) works as expected when 
 
 If you need a quick web server running and you don't want to mess with setting up apache or something similar, then Python can help. Python comes with a simple builtin HTTP server. With the help of this little HTTP server you can turn any directory in your system into your web server directory. The only thing you need to have installed is Python.
 
-[Python SimpleHTTPServer tutorial](http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python)
+[Python SimpleHTTPServer tutorial](http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver)
 
 ##Apache Server
 
