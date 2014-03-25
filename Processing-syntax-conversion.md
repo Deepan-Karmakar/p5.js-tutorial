@@ -194,10 +194,10 @@ PShape | SVG file | N/A
 
 Currently, not all Processing functionality is supported in p5.js, and the syntax for a few have changed slightly, refer to the API pages for further documentation.
 
-####[> API page](https://github.com/lmccart/p5.js/blob/master/api.md)
+####[> API page](https://github.com/lmccart/p5.js/wiki/API)
 Currently supported functions from Processing, as well as new ones supported in p5.js.
 
-####[> API progress page](https://github.com/lmccart/p5.js/blob/master/api-progress.md)
+####[> API progress page](https://github.com/lmccart/p5.js/wiki/API-Progress)
 API progress and future support.
 
 
