@@ -1,8 +1,23 @@
 ### Download / File Setup
 
-Download the p5.js file and create a new index.html file and a new sketch.js file. You want to link to p5.js and your sketch.js file in the head of the html file.  Make sure all three files are in the same folder.
+Download the [p5.js](https://github.com/lmccart/p5.js/blob/master/dist/p5.js) file and create a new index.html file and a new sketch.js file.  sketch.js is where you will write your p5.js code and index.html will bring it all together (linking your code with the p5.js framework).
 
-Example index.html file:
+Later as you start to do more to integrate a p5.js sketch into a larger web page you can add all sorts of stuff to your html file.  For now, all you need to know is that you should reference your sketch and p5.js using the [`<script>` tag](http://www.w3schools.com/tags/tag_script.asp).  A `<script>` tag allows you to write JavaScript directly into the html file like so:
+
+```
+<script>
+alert("this code will trigger a browser alert");
+</script>
+```
+
+What we'll do instead is reference JavaScript code in separate files (sketch.js and p5.js).  
+
+```
+<script src="p5.js"></script>
+```
+
+A full example index.html file looks like so:
+
 ```
 <!doctype html>
 <html>
@@ -14,6 +29,8 @@ Example index.html file:
   </body>
 </html>
 ```
+
+Note that this assumes that all three files `index.html`, `sketch.js`, and `p5.js` are in the same directory.
 
 Alternatively, you can [download the whole project](https://github.com/lmccart/p5.js/archive/master.zip) and copy the examples/empty-example folder to any location you like and edit the sketch.js file.
 
