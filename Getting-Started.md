@@ -34,6 +34,11 @@ Note that this assumes that all three files `index.html`, `sketch.js`, and `p5.j
 
 Alternatively, you can [download the whole project](https://github.com/lmccart/p5.js/archive/master.zip) and copy the examples/empty-example folder to any location you like and edit the sketch.js file.
 
+We should also mention that you can reference the `p5.js` file hosted online.  All versions of p5.js are stored in a CDN ("Content Delivery Network").  You can see a history of these versions here: [p5.js CDN](http://cdnjs.com/libraries/p5.js/).  In this case you can simply say:
+
+```
+    <script src="http://cdnjs.com/libraries/p5.js/"></script>
+```
 
 ### Environment
 
