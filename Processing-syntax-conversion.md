@@ -46,7 +46,7 @@ Here are two examples of sketches that have been converted from Processing to p5
  */
 
 function setup() {           // **change** void setup() to function setup()
-  createGraphics(640, 360);  // **change** size() to createGraphics()
+  createCanvas(640, 360);    // **change** size() to createCanvas()
   stroke(255);               // stroke() is the same
   noFill();                  // noFill() is the same
 }
@@ -74,7 +74,7 @@ var y = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];  // **change** float[] y = ne
 var segLength = 18;                                 // **change** float to var
 
 function setup() {                          // **change** void setup() to function setup()
-  createGraphics(640, 360);                 // **change** size() to createGrphics()
+  createCanvas(640, 360);                   // **change** size() to createCanvas()
   strokeWeight(9);                          // strokeWeight() is the same
   stroke(255, 100);                         // stroke() is the same
 }
@@ -117,7 +117,7 @@ Here are two examples of sketches that have been converted from p5.js to Process
  */
 
 void setup() {                         // **change** function setup() to void setup()
-  size(640, 360);                      // **change** createGraphics() to size()
+  size(640, 360);                      // **change** createCanvas() to size()
   stroke(255);
   noFill();
 }
@@ -143,7 +143,7 @@ float[] y = new float[20];                       // **change** array of 0's to b
 float segLength = 18;                            // **change** var to float
 
 void setup() {                                   // **change** function setup() to void setup() 
-  size(640, 360);                                // **change** createGraphics() to size()
+  size(640, 360);                                // **change** createCanvas() to size()
   strokeWeight(9);
   stroke(255, 100);
 }
