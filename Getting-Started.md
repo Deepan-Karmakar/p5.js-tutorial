@@ -51,7 +51,6 @@ You can use the code editor of your choice. Instructions for getting set up with
 ![Sublime Text](http://i.imgur.com/6eSgLGu.png)
 3. Open a web browser and type localhost/path/to/your/index.html file in the address bar to view your sketch.
 
-
 ### Your First Sketch
 
 In your editor, type the following:
@@ -69,10 +68,9 @@ This line of code means "draw an ellipse, with the center 50 pixels over from th
 Refresh your page view in your browser, if you've typed everything correctly, you'll see this appear in the Display Window:
 ![Browser, pointed to a local HTML file, with a circle drawn in the top left corner of the viewport](http://i.imgur.com/FkEZGuE.png)
 
+If you didn't type it correctly, you might not see anything. If this happens, make sure that you've copied the example code exactly: the numbers should be contained within parentheses and have commas between each of them, and the line should end with a semicolon.
 
-If you didn't type it correctly, the Message Area will turn red and complain about an error. If this happens, make sure that you've copied the example code exactly: the numbers should be contained within parentheses and have commas between each of them, and the line should end with a semicolon.
-
-One of the most difficult things about getting started with programming is that you have to be very specific about the syntax. The Processing software isn't always smart enough to know what you mean, and can be quite fussy about the placement of punctuation. You'll get used to it with a little practice.
+One of the most difficult things about getting started with programming is that you have to be very specific about the syntax. The browser isn't always smart enough to know what you mean, and can be quite fussy about the placement of punctuation. You'll get used to it with a little practice.  Depending on the browser you are using, you can also see errors by looking at the JavaScript "console".  In chrome, for example, this is under View->Developer-JavaScript Console.
 
 Next, we'll skip ahead to a sketch that's a little more exciting. Delete the text from the last example, and try this:
 ```
