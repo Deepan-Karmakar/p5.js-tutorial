@@ -36,4 +36,4 @@ The [global](https://github.com/lmccart/p5.js/tree/master/examples/instantiation
      * IDE
      * WebGL 
      * Node.js + Websockets + p5.js
-     * Arudino Yun + p5.js
+     * Arudino Yun or Physical stuffs + p5.js
