@@ -31,4 +31,4 @@ The [global](https://github.com/lmccart/p5.js/tree/master/examples/instantiation
      * For [trig functions](https://github.com/lmccart/p5.js/wiki/API#trigonometry).
      * For [environment functions](https://github.com/lmccart/p5.js/wiki/API#environment).
 
-10. Something else you are excited about?
+10. **Something else you are excited about?**
