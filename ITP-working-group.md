@@ -26,10 +26,9 @@
      * What are the different options for using each?
 The [global](https://github.com/lmccart/p5.js/tree/master/examples/instantiation-global) and [instance](https://github.com/lmccart/p5.js/tree/master/examples/instantiation-instance) example cases are a good place to start.
 
-7. Unit tests for [time and date functions](https://github.com/lmccart/p5.js/wiki/API#time--date).
-
-8. Unit tests for [trig functions](https://github.com/lmccart/p5.js/wiki/API#trigonometry).
-
-9. Unit tests for [environment functions](https://github.com/lmccart/p5.js/wiki/API#environment).
+7. **Unit tests** 
+     * For [time and date functions](https://github.com/lmccart/p5.js/wiki/API#time--date).
+     * For [trig functions](https://github.com/lmccart/p5.js/wiki/API#trigonometry).
+     * For [environment functions](https://github.com/lmccart/p5.js/wiki/API#environment).
 
 10. Something else you are excited about?
