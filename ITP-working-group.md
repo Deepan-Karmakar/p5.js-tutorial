@@ -1,4 +1,5 @@
-####[DEVELOPER DOC](https://github.com/lmccart/p5.js/wiki/Development)
+
+####[Developer doc](https://github.com/lmccart/p5.js/wiki/Development)
 
 ##Projects list
 
