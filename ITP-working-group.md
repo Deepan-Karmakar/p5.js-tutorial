@@ -11,11 +11,20 @@
 
 3. Developer page, extended version. This could be a great task for someone less experienced with JS or JS development. You could start by copying the current developer page into a new wiki page, then working through each step of the development setup process, and add a few sentences/paragraphs of lay mans explanation anywhere you would have liked to see it.
 
-4. Short tutorial for writing unit tests.
+4. Short tutorial for writing unit tests. This tutorial could include:
+* A little background on what is unit testing -- what is it and why do it? (Some of this could probably be pulled from a general tutorial on unit testing.)
+* Short explanation of the tools: [mocha](visionmedia.github.io/mocha/), [chai](chaijs.com).
+* How to figure out which tests to write, and how many? (This could probably be pulled from a general tutorial on unit testing.)
+* TDD assertion style, and how to actually write the tests (syntax).
+* How to add your tests and run them (test.html, `grunt`).
 
 5. Short tutorial for writing JSDoc inline comments.
 
-6. Tutorial for sketch instantiation -- global and instance modes.
+6. Tutorial for sketch instantiation -- global and instance modes. This functionality was recently added! Now we need some explanation:
+* Why use global vs instance mode?
+* Explanation of syntax for each setup. For instance mode, some explanation of closures, scope.
+* What are the different options for using each?
+The [global](https://github.com/lmccart/p5.js/tree/master/examples/instantiation-global) and [instance](https://github.com/lmccart/p5.js/tree/master/examples/instantiation-instance) example cases are a good place to start.
 
 7. Unit tests for [time and date functions](https://github.com/lmccart/p5.js/wiki/API#time--date).
 
