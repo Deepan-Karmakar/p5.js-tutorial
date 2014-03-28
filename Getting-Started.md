@@ -37,7 +37,12 @@ Alternatively, you can [download the whole project](https://github.com/lmccart/p
 We should also mention that you can reference the `p5.js` file hosted online.  All versions of p5.js are stored in a CDN ("Content Delivery Network").  You can see a history of these versions here: [p5.js CDN](http://cdnjs.com/libraries/p5.js/).  In this case you can simply say:
 
 ```
-    <script src="http://cdnjs.com/libraries/p5.js/"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/VERSION_NUMBER/p5.min.js"></script>
+```
+
+For example:
+```
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.2.2/p5.min.js"></script>
 ```
 
 ### Environment
