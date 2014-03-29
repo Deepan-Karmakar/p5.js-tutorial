@@ -4,8 +4,8 @@ This extended guide doesn't assume familiarity with concepts like unit testing, 
 
 The development of P5 is collaborative: we encourage you to participate and help us shape it. Here are some ways to contribute:
 
-- **Help us document.** P5's main documentation is generated automatically based on structured comments written in the code describing classes, functions and their parameters. Browsing the files in the `src` folder and adding documentation where it's missing is a great way to get familiarized with p5. See syntax details [below].
-- **Help us test.** P5 is tested using a unit testing framework. This means that for each feature there should be a test that asserts whether it does what it's supposed to do. Each time we generate a distribution of p5, all unit tests are run. This allows us to make changes more confidently: if all tests pass, we know we didn't break anything; if some tests fail, we know exactly what did. You can take a look at the existing tests in the `tests` folder. Adding tests to functions that don't have them is also a great way to get started. See how to do this in the [testing section].
+- **Add documentation to the code.** P5's main documentation is generated automatically based on structured comments written in the code describing classes, functions and their parameters. Browsing the files in the `src` folder and adding documentation where it's missing is a great way to get familiarized with p5. See syntax details [below].
+- **Create unit tests.** P5 is tested using a unit testing framework. This means that for each feature there should be a test that asserts whether it does what it's supposed to do. Each time we generate a distribution of p5, all unit tests are run. This allows us to make changes more confidently: if all tests pass, we know we didn't break anything; if some tests fail, we know exactly what did. You can take a look at the existing tests in the `tests` folder. Adding tests to functions that don't have them is also a great way to get started. See how to do this in the [testing section].
 - **Fix a bug.** Explain how Issues list is used in this project. 
 - **Add a feature.**
 
