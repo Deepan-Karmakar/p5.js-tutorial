@@ -1,5 +1,7 @@
 ####[DEVELOPER DOC](https://github.com/lmccart/p5.js/wiki/Development)
 
+If you are working on one of these things, create an issue on github and place your github username in brackets in the title, so others can collaborate rather than duplicate!
+
 ###Projects list
 
 1. **DOM manipulation.** The intention with this library is not to limit to the canvas, and to allow access to DIVs and other elements. It's not meant to replace jQuery, but to give some basic access to the DOM in a way that is intuitive and useful. This [tutorial](https://github.com/lmccart/p5.js/wiki/DOM-Extensions) describes the current functionality. This area of functionality is just a first draft, and some further thought in terms of functionality and syntax would be really useful.
