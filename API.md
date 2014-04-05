@@ -97,6 +97,7 @@ For now these functions link to the current [Processing.org reference](http://pr
 
 
 ####2D Primitives
++ [arc()](http://processing.org/reference/arc_.html)
 + [ellipse()](http://processing.org/reference/ellipse_.html)
 + [line()](http://processing.org/reference/line_.html)
 + [point()](http://processing.org/reference/point_.html)
@@ -106,7 +107,13 @@ For now these functions link to the current [Processing.org reference](http://pr
 
 ####Curves
 + [bezier()](http://processing.org/reference/bezier_.html)
-
++ bezierDetail()
++ bezierPoint()
++ bezierTangent()
++ curve()
++ curveDetail()
++ curvePoint()
++ curveTangent()
 
 ####Attributes
 + [ellipseMode()](http://processing.org/reference/ellipseMode_.html)
