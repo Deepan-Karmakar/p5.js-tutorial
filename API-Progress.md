@@ -128,7 +128,7 @@ See [API page](https://github.com/lmccart/p5.js/wiki/API) for currently supporte
 + PShape
 
 ####2D Primitives
-+ arc()
++ __arc()__
 + __ellipse()__
 + __line()__
 + __point()__
@@ -138,13 +138,13 @@ See [API page](https://github.com/lmccart/p5.js/wiki/API) for currently supporte
 
 ####Curves
 + __bezier()__
-+ bezierDetail()
-+ bezierPoint()
-+ bezierTangent()
-+ curve()
-+ curveDetail()
-+ curvePoint()
-+ curveTangent()
++ __bezierDetail()__
++ __bezierPoint()__
++ __bezierTangent()__
++ __curve()__
++ __curveDetail()__
++ __curvePoint()__
++ __curveTangent()__
 + curveTightness()
 
 ####_3D Primitives_
@@ -206,7 +206,7 @@ See [API page](https://github.com/lmccart/p5.js/wiki/API) for currently supporte
 + __keyCode__
 + __keyPressed()__
 + ~~keyPressed~~
-+ __iskeyPressed()__
++ __isKeyPressed()__
 + __keyReleased()__
 + __keyTyped()__
 
@@ -220,7 +220,7 @@ See [API page](https://github.com/lmccart/p5.js/wiki/API) for currently supporte
 + ~~loadJSONObject()~~
 + __loadStrings()__
 + loadTable()
-+ loadXML()
++ __loadXML()__
 + open()
 + parseXML()
 + saveTable()
@@ -348,7 +348,7 @@ See [API page](https://github.com/lmccart/p5.js/wiki/API) for currently supporte
 + __imageMode()__
 + __loadImage()__
 + noTint()
-+ requestImage()
++ ~~requestImage()~~
 + tint()
 
 ####Textures
@@ -505,9 +505,6 @@ See [API page](https://github.com/lmccart/p5.js/wiki/API) for currently supporte
 + __get(id)__
 + __get(class)__
 
-####Set context
-+ __context(id)__
-+ __context(obj)__
 
 ####PElement
 + __id(id)__
