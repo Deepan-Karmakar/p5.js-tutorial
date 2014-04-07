@@ -341,17 +341,14 @@ See documentation for all functions below on the [DOM extensions page](https://g
 + AUTO
 
 ####Create
-+ createElement(html)
-+ createDOMImage(src)
-+ createGraphics(w, h)
++ createHTML(html)
++ createHTMLImage(src)
++ createCanvas(w, h)
 
 ####Access
-+ get(id)
-+ get(class)
++ getID(id)
++ getClass(class)
 
-####Set context
-+ context(id)
-+ context(obj)
 
 ####PElement
 + id(id)
