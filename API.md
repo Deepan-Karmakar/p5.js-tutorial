@@ -346,7 +346,7 @@ See documentation for all functions below on the [DOM extensions page](https://g
 + createCanvas(w, h)
 
 ####Access
-+ getID(id)
++ getId(id)
 + getClass(class)
 
 
