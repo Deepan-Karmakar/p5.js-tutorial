@@ -70,7 +70,7 @@ The `@return` is identical to `@params`, but without the name. It should be the 
 @return {type} Description of the data returned.
 ```
 
-###Specify final for constants
+###Specify other tags
 
 Use `@final` if a property or variable is a constant:
 
@@ -82,6 +82,18 @@ Use `@final` if a property or variable is a constant:
      * @final
      */
     PI: PI
+```
+
+Use `@private` if a property or variable is a private variable (default is `@public` so no need to specify).
+
+```
+    /**
+     * _start calls preload() setup() and draw()
+     * 
+     * @method _start
+     * @private
+     */
+     p5.prototype._start = function () {
 ```
 
 ###Specify module for files
