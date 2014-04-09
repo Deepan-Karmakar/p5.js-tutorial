@@ -32,6 +32,20 @@ You must specify one of these for the element to appear in the docs, with the na
    */
 ```
 
+```
+  /**
+   *
+   * Calculates the magnitude (length) of the vector and returns the result
+   * as a float (this is simply the equation <em>sqrt(x*x + y*y + z*z)</em>.)
+   *
+   * @method mag
+   * @return {number} magnitude (length) of the vector
+   */
+   PVector.prototype.mag = function () {
+    return Math.sqrt(this.magSq());
+   };
+```
+
 ###Specify parameters
 
 For methods, any `@params` should be specified. They should not be formatted with spaces, tabs, etc, and should follow the standard:
