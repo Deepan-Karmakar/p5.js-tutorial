@@ -5,13 +5,32 @@ You must specify one of these for the element to appear in the docs, with the na
 
 ```
    /**
-     * The x component of the vector
-     * @property x
-     * @type {Number}
-     */
+    * The x component of the vector
+    * @property x
+    * @type {Number}
+    */
     this.x = x || 0;
 ```
 
+```
+
+  /**
+   * Draw an arc
+   *
+   * If x, y, width, height, start and stop are the only params provided, draws an
+   * open pie.
+   * If mode is provided draws the arc either open, chord or pie, dependant
+   * on the variable provided
+   *
+   * @param  {Number} x x-coordinate of the arc's ellipse
+   * @param  {Number} y y-coordinate of the arc's ellipse
+   * @param  {Number} width width of the arc's ellipse by default
+   * @param  {Number} height height of the arc's ellipse by default
+   * @param  {Number} start angle to start the arc, specified in radians
+   * @param  {Number} stop angle to stop the arc, specified in radians
+   * @param  {String} [mode] optional parameter to determine the way of drawing the arc
+   */
+```
 
 ###Specify parameters
 
@@ -27,7 +46,9 @@ If the parameter is optional, add square brackets around the name:
 @param {type} [name] Description here.
 ```
 
-The `@return` is identical, but without the name (should be the last element in `@method`):
+###Specify return type
+
+The `@return` is identical to `@params`, but without the name. It should be the last element in `@method`. The JS types are: String, Number, Boolean, Object, Array, Null, and Undefined. If there is no return type, do not include `@return`. 
 
 ```
 @return {type} Description of the data returned.
