@@ -1,3 +1,5 @@
+By adding inline documentation, a reference can be automatically generated. This document outlines the tags and information to include in your documentation so that it shows up in the reference, formatted properly.
+
 ###Specify element type and description
 
 There are 4 kinds of elements: `@class`, `@method`, `@property`, `@event`.
