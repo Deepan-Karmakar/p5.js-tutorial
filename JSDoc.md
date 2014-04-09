@@ -1,4 +1,4 @@
-By adding inline documentation, a reference can be automatically generated. This document outlines the tags and information to include in your documentation so that it shows up in the reference, formatted properly.
+By adding inline documentation in the p5.js source code, a reference can be automatically generated. This document outlines the tags and information to include in your documentation so that it shows up in the reference, formatted properly. The reference is auto-generated from the source code periodically, so it may take a few days for your documentation to show up in the reference. If it's been longer than a few days or you're having other problems email [laurmccarthy@gmail.com](mailto:laurmccarthy@gmail.com).
 
 ###Specify element type and description
 
