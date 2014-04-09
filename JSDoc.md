@@ -1,5 +1,7 @@
+###Specify element type and description
+
 There are 4 kinds of elements: `@class`, `@method`, `@property`, `@event`.
-You must specify one of these for the element to appear in the docs, with the name of the element after it.
+You must specify one of these for the element to appear in the docs, with the name of the element after it. The description should appear on top and should not be formatted with spaces, tabs, etc.
 
 ```
    /**
@@ -10,7 +12,10 @@ You must specify one of these for the element to appear in the docs, with the na
     this.x = x || 0;
 ```
 
-The description should appear on top and should not be formatted with spaces, tabs, etc. same for `@params`, in methods only, that must follow the standard:
+
+###Specify parameters
+
+For methods, any `@params` should be specified. They should not be formatted with spaces, tabs, etc, and should follow the standard:
 
 ```
 @param {type} name Description here, no problem how long.
@@ -24,9 +29,11 @@ If the parameter is optional, add square brackets around the name:
 
 The `@return` is identical, but without the name (should be the last element in `@method`):
 
-```javascript
+```
 @return {type} Description of the data returned.
 ```
+
+###Specify final for constants
 
 Use `@final` if a property or variable is a constant:
 
@@ -40,6 +47,7 @@ Use `@final` if a property or variable is a constant:
     PI: PI
 ```
 
+###Specify module for files
 
 The top of each *file* should contain a `@module` tag at the top of the file. Modules should correspond to JavaScript files (or require.js modules). They can work as groups in the lists of items. see here: http://p5js.org/api/#methods (the modules are COLOR, IMAGE, PVECTOR, etc.). 
 
@@ -51,6 +59,9 @@ define(function (require) {
   // code here
 };
 ```
+
+
+###Constructors
 
 Constructors are defined with `@class`. Each constructor should have the tag `@class` followed by the name of the class, as well as the tag `@constructor`, and any `@param` tags required.
 
@@ -67,6 +78,7 @@ Constructors are defined with `@class`. Each constructor should have the tag `@c
    }
 ```
 
+###Adding example code
 
 Optionally, you can add examples with `@example`. Example code can be placed between `<code></code>` tags with comments included. Each `<code>` block is automatically run on a canvas of 200x200 pixels.
 
