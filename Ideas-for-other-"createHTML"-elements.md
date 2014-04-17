@@ -30,11 +30,12 @@ var input = createInput(TEXT,"age");
 
 input.text("Enter your age here");
 
+// An event for when the user types into the text field?
 input.keyPressed(typing);
 
 var typing = function() {};
 
-var theusertyped = input.getText();
+var s = input.getInput(); // what the user has entered
 ```
 
 or
@@ -46,7 +47,14 @@ var input = createTextInput("age");
 ```
 var range = createInput(RANGE,"size",10,100);
 //<input type="range" name="size" min="10" max="100">
-r val = range.getValue();
+
+range.moved(itmoved);  // an event for when the user changes the slider?
+
+var itmoved = function() {};
+
+var val = range.getValue(); // the current value of the slider
+
+
 ```
 
 or
