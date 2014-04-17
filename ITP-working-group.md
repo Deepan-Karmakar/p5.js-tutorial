@@ -1,5 +1,5 @@
 ####[DEVELOPER DOC](https://github.com/lmccart/p5.js/wiki/Development)
-####[INLINE DOCS GUIDE](https://github.com/lmccart/p5.js/wiki/JSDoc)
+####[INLINE DOCS GUIDE](https://github.com/lmccart/p5.js/wiki/Inline-documentation)
 
 **If you are working on one of these things, create an issue on github and place your github username in brackets in the title, so others can collaborate rather than duplicate!**
 
