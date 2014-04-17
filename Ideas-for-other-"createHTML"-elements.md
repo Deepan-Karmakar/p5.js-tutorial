@@ -25,3 +25,4 @@ var typing = function() {
 var theusertyped = input.getText();
 ```
 
+
