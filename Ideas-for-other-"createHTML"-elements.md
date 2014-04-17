@@ -18,8 +18,8 @@ var button = createButton("blah blah");
 // <button type="button">blah blah</button>
 
 button.mousePressed(clicky);
-var clicky = function() {
-};
+
+var clicky = function() {};
 ```
 
 ### Input elements?
@@ -31,8 +31,8 @@ var input = createInput(TEXT,"age");
 input.text("Enter your age here");
 
 input.keyPressed(typing);
-var typing = function() {
-};
+
+var typing = function() {};
 
 var theusertyped = input.getText();
 ```
