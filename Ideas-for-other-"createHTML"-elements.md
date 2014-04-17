@@ -9,6 +9,11 @@ I'm working on several examples for ITP's "Creative JavaScript" class where I'm 
 ```
 var link = createLink("blah blah");
 // <a href="#">blah blah</a>
+
+// an event for when the link is clicked
+button.mousePressed(clicky);
+
+var clicky = function() {};
 ```
 
 ### Buttons?
@@ -17,6 +22,7 @@ var link = createLink("blah blah");
 var button = createButton("blah blah");
 // <button type="button">blah blah</button>
 
+// an event for when the button is clicked
 button.mousePressed(clicky);
 
 var clicky = function() {};
