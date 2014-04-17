@@ -14,8 +14,9 @@ var clicky = function() {
 
 ```
 var input = createInput("age");
-input.text("Enter your age here");
 // <input type="text" name="age"></input>
+
+input.text("Enter your age here");
 
 input.keyPressed(typing);
 var typing = function() {
