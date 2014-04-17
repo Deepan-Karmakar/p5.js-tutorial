@@ -11,7 +11,7 @@
      * [Example 5-2](http://p5js.org/workshop/examples/example_5-2/sketch.js) demonstrates how to write your sketch to support both touch and mouse depending on device, but maybe we want a smart function or wrapper that automatically returns mouseX/Y or touchX/Y depending on device.
      * Right now there is `touchStarted`, `touchMoved`, and `touchEnded`. Should there be more functions to support touch?
 
-3. **Developer page, extended version.** This could be a great task for someone less experienced with JS or JS development. You could start by copying the [current developer page](https://github.com/lmccart/p5.js/wiki/Development) into a new wiki page, then working through each step of the development setup process, and add a few sentences/paragraphs of lay mans explanation anywhere you would have liked to see it.
+3. **Developer page, extended version. [LUISA]** This could be a great task for someone less experienced with JS or JS development. You could start by copying the [current developer page](https://github.com/lmccart/p5.js/wiki/Development) into a new wiki page, then working through each step of the development setup process, and add a few sentences/paragraphs of lay mans explanation anywhere you would have liked to see it.
 
 4. **Short tutorial for writing unit tests.** This tutorial could include:
      * A little background on what is unit testing -- what is it and why do it? (Some of this could probably be pulled from a general tutorial on unit testing.)
