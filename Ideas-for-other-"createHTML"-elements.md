@@ -53,8 +53,6 @@ range.moved(itmoved);  // an event for when the user changes the slider?
 var itmoved = function() {};
 
 var val = range.getValue(); // the current value of the slider
-
-
 ```
 
 or
