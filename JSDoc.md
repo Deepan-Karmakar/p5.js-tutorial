@@ -136,3 +136,10 @@ Optionally, you can add examples with `@example`. Example code can be placed bet
 <code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, CHORD);</code>
 <code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, PIE);</code>
 ```
+
+
+###Generating documentation
+
+Run `grunt yui` to regenerate the documentation. You can view it locally in docs/reference. (Just the methods page is populated currently, this will eventually be consolidated into one page without tabs.)
+
+Periodically, the reference folder is copied over to p5js.org.
