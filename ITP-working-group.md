@@ -20,7 +20,7 @@
      * TDD assertion style, and how to actually write the tests (syntax).
      * How to add your tests and run them (test.html, `grunt`).
 
-5. **Short tutorial for writing JSDoc inline comments.**
+5. *Short tutorial for writing JSDoc inline comments. [DONE]*
 
 6. **Tutorial for sketch instantiation** -- global and instance modes. This functionality was recently added! Now we need some explanation:
      * Why use global vs instance mode?
