@@ -6,7 +6,7 @@
 
 - **JavaScript and its community** p5.js aims to make web development practices more accessible to beginners by modeling proper JavaScript design patterns and usage, while abstracting them where necessary. As an open source library, p5.js also includes the wider JavaScript community in its creation, documentation and dissemination.
 
-- **Processing and its community** p5.js is a direct response to the Processing language and it's community, and aims to make the transition from Processing to JavaScript easy and clear.  Supporting the Processing API and community is a priority for p5.js, while also opening up to the new possibilities of creative coding on the web, and taking a Processing-style approach to exposing that API to beginners.
+- **Processing and its community** p5.js is a direct response to the Processing language and it's community, and aims to make the transition from Processing to JavaScript easy and clear.  Supporting the Processing API and community is a priority for p5.js, while also expanding to include the new possibilities of creative coding on the web, and taking a Processing-style approach to exposing that API to beginners.
 
 ## How is p5.js different from Processing.js?
 
