@@ -72,3 +72,21 @@ npm install
 2. Add test files corresponding to files in `src` (more info about Chai assert style TDD phrasing [here](http://chaijs.com/api/assert/)). 
 3. Link to the src and test files in `test.html`. 
 4. Run the tests with `grunt mocha`.
+
+### Master branch development
+
+Develop on the `master` branch if you are applying hotfixes to the **current API**.
+
+1. Clone p5.js master
+2. Make changes
+3. Commit and push changes
+4. Submit a PR against master
+
+### Development branch development
+
+Develop on the `development` branch if you are making significant **API changes**.
+
+1. Clone p5.js development
+2. Make changes
+3. Commit and push changes
+4. Submit a PR against development
