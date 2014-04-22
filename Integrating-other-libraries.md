@@ -17,6 +17,7 @@ Here are some interesting libraries to check out:
 + [three.js](http://threejs.org) - three dimensional graphics
 + [d3.js](http://d3js.org) - data visualization
 + [boxbox](http://incompl.github.io/boxbox) - physics engine
++ [hammerjs](http://eightmedia.github.io/hammer.js/) - multi touch support
 
 Important note: web browsers, JS versions, etc, will matter. We will not go into specifics here, but know that this will be an issue. Most libraries will state in their documentation minimum requirements your browser or hardware must meet.
 
