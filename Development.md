@@ -77,16 +77,18 @@ npm install
 
 Develop on the `master` branch if you are applying hotfixes to the **current API**.
 
-1. Clone p5.js master
-2. Make changes
+1. Fork p5.js
+2. Make local changes
 3. Commit and push changes
-4. Submit a PR against master
+4. Submit a PR against the `p5.js/master` branch
 
 ### Development branch development
 
 Develop on the `development` branch if you are making significant **API changes**.
 
-1. Clone p5.js development
-2. Make changes
+1. Clone p5.js
+2. Checkout the 'development' branch for local development
+   `git checkout -b development origin/development`
+3. Make changes
 3. Commit and push changes
-4. Submit a PR against development
+4. Submit a PR against the `p5.js/development`
