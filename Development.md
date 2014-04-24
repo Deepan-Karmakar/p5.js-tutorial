@@ -2,9 +2,9 @@
 
 Interested in contributing? Awesome! First, figure out what you'd like to do (a good place to start is the [issues list](https://github.com/lmccart/p5.js/issues)):
 
-1. **Fix a bug** -- If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. Go ahead and fix it and submit a PR (see below for instructions for getting set up for development). We are also in the process of adding unit tests and more inline documentation, so if the function you are fixing doesn't have these, please consider adding these as well.
+1. **Fix a bug** -- If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. Go ahead and fix it and submit a PR (see below for instructions for getting set up for development). We are also in the process of adding unit tests and more inline documentation, so if the function you are fixing doesn't have these, please consider adding these as well. [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
 
-2. **Implement a new feature(s)** -- First, write to [lauren](mailto:laurmccarthy@gmail.com) or [evelyn](mailto:evhan55@gmail.com) to let us know you're interested! If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. __Note: new features will require tests and inline documentation!__
+2. **Implement a new feature(s)** -- First, write to [lauren](mailto:laurmccarthy@gmail.com) or [evelyn](mailto:evhan55@gmail.com) to let us know you're interested! If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. [Submit the change to the development branch.](https://github.com/lmccart/p5.js/wiki/Development#development-branch-development)__Note: new features will require tests and inline documentation!__
     - JS Style guide:
         - We recommend looking at [idiomatic.js](https://github.com/rwaldron/idiomatic.js/) for a JS style guide
     - Inline documentation:
