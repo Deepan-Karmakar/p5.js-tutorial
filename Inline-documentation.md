@@ -140,9 +140,7 @@ Optionally, you can add examples with `@example`. Example code can be placed bet
 
 ###Generating documentation
 
-Running `grunt` automatically regenerates the documentation in addition to compiling the code.
-
-Run `grunt yui` to only regenerate the documentation. You can view it locally in docs/reference (note that you need to be running a server for it to display correctly).
+Running `grunt` automatically regenerates the documentation in addition to compiling the code. You can view it locally in docs/reference (note that you need to be running a server for it to display correctly).
 
 Run `grunt requirejs:yuidoc_theme` if you have made changes to the core JS files behind the yuidoc reference page (not inline documentation changes to src). This regenerates the templates, then run `grunt yui` to regenerate the referenced based on the updated theme.
 
