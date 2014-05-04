@@ -8,10 +8,7 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
     - JS Style guide:
         - We recommend looking at [idiomatic.js](https://github.com/rwaldron/idiomatic.js/) for a JS style guide
     - Inline documentation:
-        - [Style guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/JSDoc) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
-        - JSDoc documentation style:
-            - [JSDoc Page](http://usejsdoc.org/)
-            - [JSDoc Wikipedia Page](http://en.wikipedia.org/wiki/JSDoc)
+        - [Style guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
     - Unit tests:
         - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to do this.
         - This helps ensure that the code you write keeps working far into the future when further updates and changes are made.
