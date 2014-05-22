@@ -18,7 +18,6 @@
 ###Tools
 + [JSHint](http://www.jshint.com/) -  tool to detect errors and potential problems in JavaScript code and to enforce chosen coding conventions, flexible, easily adjusted to enforce particular coding guidelines and environment
 + [JSLint](http://www.jslint.com/)
-+ [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
 
 ###Editors
 + [Comparison of JavaScript-based source code editors](http://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_source_code_editors)
@@ -39,7 +38,7 @@
 + [CodeMirror](http://codemirror.net/) - JavaScript component that provides a code editor in the browser. For supported languages, it will color your code, and optionally help with indentation. Also provides API and CSS theming system for customizing to fit your application, and extending it with new functionality.
 + [sketch.processing.org](http://sketch.processing.org/)
 + [Processing helper](http://processingjs.org/tools/processing-helper.html)
-+ [OpenProcessing](http://www.openprocessing.org/sketch/create) - has a page to create, run, stop a simple sketch from scratch
+
 + [Komodo Edit](http://www.activestate.com/komodo-edit) - free, open source version based on Mozilla XULRunner (like Firefox), comes with SpiderMonkey JS engine included and uses Scintilla as code editor
 + [ICE Coder](http://icecoder.net/) - pure browser IDE
 + [ACE editor](http://ace.ajax.org/)
@@ -49,3 +48,5 @@
 + [jsfiddle](http://jsfiddle.net/)
 + [livecoding.io](http://livecoding.io/)
 + [codepen](http://codepen.io/)
++ [OpenProcessing](http://www.openprocessing.org/sketch/create) - has a page to create, run, stop a simple sketch from scratch
++ [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
