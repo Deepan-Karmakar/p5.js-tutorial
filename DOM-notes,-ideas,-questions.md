@@ -2,6 +2,12 @@
 https://github.com/lmccart/p5.js/wiki/DOM-Extensions
 
 
+## Current DOM issues open
+
+* [Fullscreen API and presentation mode](https://github.com/lmccart/p5.js/issues/197)
+* [specifying DIV ID with global mode, remove support of canvas ID/node specification?](https://github.com/lmccart/p5.js/issues/201)
+* [multi-argument createHTML methods](https://github.com/lmccart/p5.js/issues/202)
+* [other create methods (see below for more notes)](https://github.com/lmccart/p5.js/issues/192)
 
 ## Other HTML elements to address 
 
