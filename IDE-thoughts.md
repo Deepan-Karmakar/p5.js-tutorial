@@ -15,6 +15,7 @@
 ##References##
 
 + [Comparison of JavaScript-based source code editors](http://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_source_code_editors)
++ [atom.io](https://atom.io/) - open source, hackable editor created by github
 + [CodeCosmos](http://bob.ippoli.to/archives/2013/07/18/codecosmos-tech/)
 + [sketch.paperjs.org](http://sketch.paperjs.org/)
 + [Khan Academy Computer Science](https://www.khanacademy.org/cs)
