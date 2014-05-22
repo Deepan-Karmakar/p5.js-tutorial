@@ -1,5 +1,7 @@
 ### Current DOM API documentation (more or less)
-https://github.com/lmccart/p5.js/wiki/DOM-Extensions
+* https://github.com/lmccart/itp-creative-js/wiki/Week-3#html-manipulation-with-p5js
+* [tutorial](https://github.com/lmccart/p5.js/wiki/DOM-Extensions)
+* [examples](https://github.com/lmccart/itp-creative-js/tree/master/week3)
 
 
 ## Current DOM issues open
