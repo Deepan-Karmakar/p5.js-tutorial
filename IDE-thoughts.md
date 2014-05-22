@@ -14,25 +14,29 @@
 
 ##References##
 
+
+###Tools
++ [JSHint](http://www.jshint.com/) -  tool to detect errors and potential problems in JavaScript code and to enforce chosen coding conventions, flexible, easily adjusted to enforce particular coding guidelines and environment
++ [JSLint](http://www.jslint.com/)
++ [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
+
+###Editors
 + [Comparison of JavaScript-based source code editors](http://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_source_code_editors)
 + [atom.io](https://atom.io/) - open source, hackable editor created by github
 + [CodeCosmos](http://bob.ippoli.to/archives/2013/07/18/codecosmos-tech/)
-+ [sketch.paperjs.org](http://sketch.paperjs.org/)
 + [Khan Academy Computer Science](https://www.khanacademy.org/cs)
     + built on top of ace editor, processingjs, jshint
     + real-time code execution - many tools to take advantage of this (number pickers, color picker, image picker)
     + extensive error correction / suggestion
     + [philosophy behind khan academy cs](http://ejohn.org/blog/introducing-khan-cs/)
-+ [JSHint](http://www.jshint.com/) -  tool to detect errors and potential problems in JavaScript code and to enforce chosen coding conventions, flexible, easily adjusted to enforce particular coding guidelines and environment
+
 + [Studio Sketchpad](http://sketchpad.cc)
 + [Light Table](http://www.lighttable.com) - desktop editor allows realtime modification of running code
 + [Brackets](http://brackets.io/) - "open-source editor for web design and development built on top of web technologies such as HTML, CSS and JavaScript"
 + [Sublime](http://www.sublimetext.com/)
-+ [paper.js editor](http://paperjs.org/static/editor/) 
++ [sketch.paperjs.org](http://sketch.paperjs.org/) / [paper.js editor](http://paperjs.org/static/editor/) 
 + [github.com/daniellmb/JavaScript-Scope-Context-Coloring](https://github.com/daniellmb/JavaScript-Scope-Context-Coloring) - Experiment in switching between syntax highlighting and scope colorizing built on JSLint and CodeMirror.
 + [CodeMirror](http://codemirror.net/) - JavaScript component that provides a code editor in the browser. For supported languages, it will color your code, and optionally help with indentation. Also provides API and CSS theming system for customizing to fit your application, and extending it with new functionality.
-+ [JSLint](http://www.jslint.com/)
-+ [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
 + [sketch.processing.org](http://sketch.processing.org/)
 + [Processing helper](http://processingjs.org/tools/processing-helper.html)
 + [OpenProcessing](http://www.openprocessing.org/sketch/create) - has a page to create, run, stop a simple sketch from scratch
