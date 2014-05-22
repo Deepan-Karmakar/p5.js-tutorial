@@ -1,9 +1,11 @@
-Current DOM API documentation (more or less):
+### Current DOM API documentation (more or less)
 https://github.com/lmccart/p5.js/wiki/DOM-Extensions
 
 
 
+## Other HTML elements to address 
 
+(From @shiffman)
 I'm working on several examples for ITP's "Creative JavaScript" class where I'm having to break into the Document object directly.
 
 * [Button and Slider](https://github.com/lmccart/itp-creative-js/tree/master/week3/button_slider)
