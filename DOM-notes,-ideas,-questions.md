@@ -1,4 +1,4 @@
-### Current DOM API documentation (more or less)
+## Current DOM API documentation (more or less)
 * https://github.com/lmccart/itp-creative-js/wiki/Week-3#html-manipulation-with-p5js
 * [tutorial](https://github.com/lmccart/p5.js/wiki/DOM-Extensions)
 * [ITP creative-js examples](https://github.com/lmccart/itp-creative-js/tree/master/week3)
