@@ -11,6 +11,7 @@
 * [specifying DIV ID with global mode, remove support of canvas ID/node specification?](https://github.com/lmccart/p5.js/issues/201)
 * [multi-argument createHTML methods](https://github.com/lmccart/p5.js/issues/202)
 * [other create methods (see below for more notes)](https://github.com/lmccart/p5.js/issues/192)
+* [bonzo](https://github.com/ded/bonzo)?
 
 ## Other HTML elements to address 
 
