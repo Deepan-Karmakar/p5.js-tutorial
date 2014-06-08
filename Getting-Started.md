@@ -84,7 +84,7 @@ function setup() {
 }
 
 function draw() {
-  if (mouseIsPressed()) {
+  if (mouseIsPressed) {
     fill(0);
   } else {
     fill(255);
