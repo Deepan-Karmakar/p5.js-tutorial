@@ -1,4 +1,4 @@
-By adding inline documentation in the p5.js source code, a reference can be automatically generated. This document outlines the tags and information to include in your documentation so that it shows up in the reference, formatted properly. The reference is auto-generated from the source code periodically, so it may take a few days for your documentation to show up in the reference. If it's been longer than a few days or you're having other problems email [laurmccarthy@gmail.com](mailto:laurmccarthy@gmail.com).
+By adding inline documentation in the p5.js source code, a reference can be automatically generated. This document outlines the tags and information to include in your documentation so that it shows up in the reference, formatted properly. The reference is auto-generated from the source code periodically, so it may take a few days for your documentation to show up in the reference. If it's been longer than a few days or you're having other problems email [hello@p5js.org](mailto:hello@p5js.org).
 
 See below for the basics, more specifics about yuidoc style [here](http://yui.github.io/yuidoc/syntax/index.html).
 ###Specify element type and description
@@ -141,10 +141,8 @@ Optionally, you can add examples with `@example`. Example code can be placed bet
 
 ###Generating documentation
 
-Run `grunt` to automatically regenerate the documentation in addition to compiling the code. You can view it locally in docs/reference (note that you need to be running a server for it to display correctly).
-
-Run `grunt yui` to regenerate documentation without recompiling the code. If you notice the page not updating, try deleting the `reference/` folder and running the command again.
+Run `grunt yui` to regenerate documentation without recompiling the code. You can view it locally in docs/reference (note that you need to be running a server for it to display correctly). If you notice the page not updating, try deleting the `reference/` folder and running the command again.
 
 Run `grunt requirejs:yuidoc_theme` if you have made changes to the core JS files behind the yuidoc reference page (not inline documentation changes to src). This regenerates the templates, then run `grunt yui` to regenerate the referenced based on the updated theme.
 
-Periodically, the reference folder is copied over to p5js.org.
+Periodically, the reference folder is manually copied over to p5js.org.
