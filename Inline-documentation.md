@@ -1,6 +1,7 @@
 By adding inline documentation in the p5.js source code, a reference can be automatically generated. This document outlines the tags and information to include in your documentation so that it shows up in the reference, formatted properly. The reference is auto-generated from the source code periodically, so it may take a few days for your documentation to show up in the reference. If it's been longer than a few days or you're having other problems email [hello@p5js.org](mailto:hello@p5js.org).
 
-See below for the basics, more specifics about yuidoc style [here](http://yui.github.io/yuidoc/syntax/index.html).
+See below for the basics, more specifics about yuidoc style [here](http://yui.github.io/yuidoc/syntax/index.html). __Please limit line length to 70 columns, start new lines when it runs over.
+
 ###Specify element type and description
 
 There are 4 kinds of elements: `@class`, `@method`, `@property`, `@event`.
@@ -130,7 +131,7 @@ Constructors are defined with `@class`. Each constructor should have the tag `@c
 
 ###Adding example code
 
-Optionally, you can add examples with `@example`. Example code can be placed between `<code></code>` tags with comments included. Each `<code>` block is automatically run on a canvas of 200x200 pixels.
+Optionally, you can add examples with `@example`. Example code can be placed between `<code></code>` tags with comments included. Each `<code>` block is automatically run on a canvas of 200x200 pixels. Please see other src files to make sure it is formatted correctly.
 
 ```
 @example <code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, OPEN);</code>
