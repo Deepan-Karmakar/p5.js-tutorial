@@ -12,9 +12,11 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
     - Unit tests:
         - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to do this.
         - This helps ensure that the code you write keeps working far into the future when further updates and changes are made.
+
 3. **Add unit tests or documentation for existing code**
     - [Style guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
     - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to add unit tests.
+
 4. **Contribute in some other way** -- Write to [lauren](mailto:laurmccarthy@gmail.com) or [evelyn](mailto:evhan55@gmail.com) and let us know what you're thinking! It is our intention that there should be many ways to contribute to p5.js, from writing code, to creating examples, tutorials and documentation, to thinking about workshops and education, to working on branding and design, and anything else you can dream up. Get in touch and we can talk about ways you might participate.
 
 5. **Join the conversation** - On IRC/Freenode: **#p5js**
