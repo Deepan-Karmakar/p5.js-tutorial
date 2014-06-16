@@ -13,7 +13,7 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
         - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to do this.
         - This helps ensure that the code you write keeps working far into the future when further updates and changes are made.
 
-3. **Add unit tests or documentation for existing code** [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
+3. **Add unit tests or documentation for existing code** -- Let us know which areas you're working on so we don't duplicate efforts! [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
     - [Style guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
     - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to add unit tests.
 
