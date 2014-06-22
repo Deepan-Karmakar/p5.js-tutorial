@@ -142,8 +142,8 @@ Optionally, you can add examples with `@example`. Example code can be placed bet
 
 ###Generating documentation
 
-Run `grunt yui` to regenerate documentation without recompiling the code. You can view it locally in docs/reference (note that you need to be running a server for it to display correctly). If you notice the page not updating, try deleting the `reference/` folder and running the command again.
+Run `grunt requirejs:yuidoc_theme` once first to generate all local files needed. Run it again anytime you make changes to the core JS files behind the yuidoc reference page. These are changes in files located in the yuidoc-p5-theme-src folder, NOT inline documentation changes to src. This regenerates the templates, then run `grunt yui` to regenerate the referenced based on the updated theme.
 
-Run `grunt requirejs:yuidoc_theme` if you have made changes to the core JS files behind the yuidoc reference page (not inline documentation changes to src). This regenerates the templates, then run `grunt yui` to regenerate the referenced based on the updated theme.
+Run `grunt yui` to regenerate documentation without recompiling the code. You can view it locally in docs/reference (note that you need to be running a server for it to display correctly). If you notice the page not updating, try deleting the `reference/` folder and running the command again.
 
 Periodically, the reference folder is manually copied over to p5js.org.
