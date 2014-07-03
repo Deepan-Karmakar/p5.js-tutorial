@@ -2,9 +2,9 @@
 
 Interested in contributing? Awesome! First, figure out what you'd like to do (a good place to start is the [issues list](https://github.com/lmccart/p5.js/issues)):
 
-1. **Fix a bug** -- If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. Go ahead and fix it and submit a PR (see below for instructions for getting set up for development). We are also in the process of adding unit tests and more inline documentation, so if the function you are fixing doesn't have these, please consider adding these as well. [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
+* **Fix a bug** -- If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. Go ahead and fix it and submit a PR (see below for instructions for getting set up for development). We are also in the process of adding unit tests and more inline documentation, so if the function you are fixing doesn't have these, please consider adding these as well. [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
 
-2. **Implement a new feature(s)** -- First, write to [hello@p5js.org](mailto:hello@p5js.org) to let us know you're interested! If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. [Submit the change to the development branch.](https://github.com/lmccart/p5.js/wiki/Development#development-branch-development) __Note: new features will require tests and inline documentation!__
+* **Implement a new feature(s)** -- First, write to [hello@p5js.org](mailto:hello@p5js.org) to let us know you're interested! If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. [Submit the change to the development branch.](https://github.com/lmccart/p5.js/wiki/Development#development-branch-development) __Note: new features will require tests and inline documentation!__
     - JS Style guide:
         - We recommend looking at [idiomatic.js](https://github.com/rwaldron/idiomatic.js/) for a JS style guide
     - Inline documentation:
@@ -13,13 +13,13 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
         - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to do this.
         - This helps ensure that the code you write keeps working far into the future when further updates and changes are made.
 
-3. **Add unit tests or documentation for existing code** -- Let us know which areas you're working on so we don't duplicate efforts! [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
+* **Add unit tests or documentation for existing code** -- Let us know which areas you're working on so we don't duplicate efforts! [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
     - See the [guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
     - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to add unit tests.
 
-4. **Add examples** -- Add to the examples on the [p5js.org learning page](http://p5js.org/learning/#examples). See this [guide](https://github.com/lmccart/p5js.org/wiki/Adding-examples) for details.
+* **Add examples** -- Add to the examples on the [p5js.org learning page](http://p5js.org/learning/#examples). See this [guide](https://github.com/lmccart/p5js.org/wiki/Adding-examples) for details.
 
-5. **Contribute in some other way** -- Write to [hello@p5js.org](mailto:hello@p5js.org) and let us know what you're thinking! It is our intention that there should be many ways to contribute to p5.js, from writing code, to creating examples, tutorials and documentation, to thinking about workshops and education, to working on branding and design, and anything else you can dream up. Get in touch and we can talk about ways you might participate.
+* **Contribute in some other way** -- Write to [hello@p5js.org](mailto:hello@p5js.org) and let us know what you're thinking! It is our intention that there should be many ways to contribute to p5.js, from writing code, to creating examples, tutorials and documentation, to thinking about workshops and education, to working on branding and design, and anything else you can dream up. Get in touch and we can talk about ways you might participate.
 
 ###Setup
 
