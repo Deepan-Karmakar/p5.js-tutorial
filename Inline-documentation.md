@@ -131,12 +131,15 @@ Constructors are defined with `@class`. Each constructor should have the tag `@c
 
 ###Adding example code
 
-Optionally, you can add examples with `@example`. Example code can be placed between `<code></code>` tags with comments included. Each `<code>` block is automatically run on a canvas of 200x200 pixels. Please see other src files to make sure it is formatted correctly.
+Optionally, you can add examples with `@example`. Example code can be placed between `<code></code>` tags with comments included. Unless otherwise specified with a `setup()` function, each `<code>` block is automatically run on a canvas of 100x100 pixels with a gray background. Please see examples in other src files to make sure it is formatted correctly.
 
 ```
-@example <code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, OPEN);</code>
+@example
+<div>
+<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, OPEN);</code>
 <code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, CHORD);</code>
 <code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, PIE);</code>
+</div>
 ```
 
 
