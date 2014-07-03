@@ -4,7 +4,7 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
 
 1. **Fix a bug** -- If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. Go ahead and fix it and submit a PR (see below for instructions for getting set up for development). We are also in the process of adding unit tests and more inline documentation, so if the function you are fixing doesn't have these, please consider adding these as well. [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
 
-2. **Implement a new feature(s)** -- First, write to [lauren](mailto:laurmccarthy@gmail.com) or [evelyn](mailto:evhan55@gmail.com) to let us know you're interested! If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. [Submit the change to the development branch.](https://github.com/lmccart/p5.js/wiki/Development#development-branch-development) __Note: new features will require tests and inline documentation!__
+2. **Implement a new feature(s)** -- First, write to [hello@p5js.org](mailto:hello@p5js.org) to let us know you're interested! If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. [Submit the change to the development branch.](https://github.com/lmccart/p5.js/wiki/Development#development-branch-development) __Note: new features will require tests and inline documentation!__
     - JS Style guide:
         - We recommend looking at [idiomatic.js](https://github.com/rwaldron/idiomatic.js/) for a JS style guide
     - Inline documentation:
@@ -17,9 +17,7 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
     - [Style guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
     - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to add unit tests.
 
-4. **Contribute in some other way** -- Write to [lauren](mailto:laurmccarthy@gmail.com) or [evelyn](mailto:evhan55@gmail.com) and let us know what you're thinking! It is our intention that there should be many ways to contribute to p5.js, from writing code, to creating examples, tutorials and documentation, to thinking about workshops and education, to working on branding and design, and anything else you can dream up. Get in touch and we can talk about ways you might participate.
-
-5. **Join the conversation** - On IRC/Freenode: **#p5js**
+4. **Contribute in some other way** -- Write to [hello@p5js.org](mailto:hello@p5js.org) and let us know what you're thinking! It is our intention that there should be many ways to contribute to p5.js, from writing code, to creating examples, tutorials and documentation, to thinking about workshops and education, to working on branding and design, and anything else you can dream up. Get in touch and we can talk about ways you might participate.
 
 ###Setup
 
