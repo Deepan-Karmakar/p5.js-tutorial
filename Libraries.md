@@ -1,4 +1,8 @@
-A p5.js library can be any JavaScript code that extends or adds to the p5.js core functionality. Two libraries are included with the p5.js download, [p5.dom.js](http://localhost/p5js.org/site/reference/#/libraries/dom) and [p5.sound.js](http://localhost/p5js.org/site/reference/#/libraries/sound). Other contributed libraries can be found on the [libraries page](http://p5js.org/libraries/). 
+A p5.js library can be any JavaScript code that extends or adds to the p5.js core functionality. 
+
+##Adding a library to your project
+
+Two libraries are included with the p5.js download, [p5.dom.js](http://localhost/p5js.org/site/reference/#/libraries/dom) and [p5.sound.js](http://localhost/p5js.org/site/reference/#/libraries/sound). Other contributed libraries can be found on the [libraries page](http://p5js.org/libraries/). 
 
 To include a library in your sketch, link it into your HTML file, after you have linked in p5.js. An example HTML file might look like this:
 ```html
