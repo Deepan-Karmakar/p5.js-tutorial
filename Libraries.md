@@ -32,6 +32,15 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
   ```
   When the DOM library is included in a project, `createImg()` can be called just like `createCanvas()` or `background()`.
 
+* Use private functions for internal helpers, functions not intended to be called by users. In the example above `addElement()` is function in p5.dom.js, it is not bound to `p5.prototype`.
+
+* You can extend p5.js classes as well, by adding methods to their prototypes. In the example below, `p5.Element.prototype` is extended with the `html()` method, that sets the inner html of the element.
+  ```javascript
+  p5.Element.prototype.html = function(html) {
+    this.elt.innerHTML = html;
+  };
+  ```
+
 code
 - extend p5
 - extend p5 classes
