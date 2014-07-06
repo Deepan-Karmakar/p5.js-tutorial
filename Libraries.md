@@ -47,19 +47,22 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
 * **You can also create your own classes.** Your library may not extend p5 or p5 classes at all, but instead just offer extra classes that can be instantiated and used in conjunction with the library. Or it may do some mix of both.
 
 ### Naming
-* **Don't overwrite p5 functions or properties.** When you are extending p5.prototype, be careful not to use the names of existing properties or functions. You can use [.hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) to test names. For example, the following line placed at the top of your library file will print true because the `rect()` method exists:
+* **Don't overwrite p5 functions or properties.** When you are extending p5.prototype, be careful not to use the names of existing properties or functions. You can use [hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) to test names. For example, the following line placed at the top of your library file will print true because the `rect()` method exists:
 
   ```javascript
   console.log(p5.prototype.hasOwnProperty('rect'));
   ```
 
-* p5.js has two modes, global mode and instance mode. In global mode, all p5 properties and methods are 
-- don't overwrite p5 functions
-- don't overwrite global functions, or be clear if you do
-- classes no p5.
-- library p5.lowercase.js
+* **Similarly, don't overwrite p5 class functions or properties.** If you are extending p5.Image, p5.Vector, p5.Element, etc, follow the same protocol as above.
 
-packaging
+* p5.js has two modes, global mode and instance mode. In global mode, all p5 properties and methods are bound to the window object, allowing users to call methods like `background()` without having to prefix it with anything. However, this means you need to be careful not to overwrite native JavaScript functionality. You can test existing JS names by typing them into console or with a quick google search.
+
+* Classes are typically capitalized, and methods and properties begin with lowercase. Classes in p5 are prefixed with p5. We would like to keep this namespace for p5 core classes only, so when you create your own classes, do not include the p5. prefix. You are welcome to create your own prefix, or just give them non-prefixed names.
+
+* p5.js library filenames are also prefixed with p5, but the next word is lowercase, to distinguish them from classes. For example, p5.dom.js and p5.sound.js. You are encouraged to follow this format for naming your file.
+
+
+### Packaging
 - single file
 - create documentation
 - create examples
