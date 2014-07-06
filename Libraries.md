@@ -3,9 +3,9 @@ A p5.js library can be any JavaScript code that extends or adds to the p5.js cor
 To include a library in your sketch, link it into your HTML file, after you have linked in p5.js. An example HTML file might look like this:
 ```html
 <head>
-  <script language="javascript" type="text/javascript" src="p5.js"></script>
-  <script language="javascript" type="text/javascript" src="p5.sound.js"></script>
-  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <script type="text/javascript" src="p5.js"></script>
+  <script type="text/javascript" src="p5.sound.js"></script>
+  <script type="text/javascript" src="sketch.js"></script>
 </head>
 
 <body>
