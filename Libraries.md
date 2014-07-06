@@ -1,4 +1,4 @@
-A p5.js library can be any JavaScript code that extends or adds to the p5.js core functionality. 
+A p5.js library can be any JavaScript code that extends or adds to the p5.js core functionality. There are two categories of libraries. Core libraries (DOM and Sound) are part of the p5.js distribution, while contributed libraries are developed, owned, and maintained by members of the Processing community.
 
 ###Adding a library to your project
 
