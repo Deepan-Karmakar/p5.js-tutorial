@@ -15,7 +15,6 @@ To include a library in your sketch, link it into your HTML file, after you have
 <body>
 </body>
 ```
-
 ##Creating a new library
 
 There are a lot of different ways to write and use JavaScript, so we leave this up to you. What follows are some notes about having your library work well with p5.js.
@@ -39,6 +38,10 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
   p5.Element.prototype.html = function(html) {
     this.elt.innerHTML = html;
   };
+  ```
+* Use `_registerPreloadFunc()` to register functions with p5 that may be called in `preload()`. Typically, with some asynchronous functions (like loading a sound, image, or other external file), there are both synchronous and asynchronous options offered. For example, `loadStrings(path, [callback])` accepts an optional second callback argument - a function that is called after the loadStrings function completes. However, a user may also call loadStrings in `preload()` without a callback, and the p5.js will wait until everything in `preload()` completes before moving on to `setup()`. A number of core methods have this preload option (`loadImage`, `loadJSON`, `loadStrings`, `loadXML`, etc). If you would like to register a method of your own call `_registerPreloadFunc()` with the name of the method to register. The example below shows a line in the Sound library that registers `loadSound()`.
+  ```javascript
+  p5.prototype._registerPreloadFunc('loadSound');
   ```
 
 code
