@@ -1,6 +1,6 @@
 A p5.js library can be any JavaScript code that extends or adds to the p5.js core functionality. 
 
-##Adding a library to your project
+###Adding a library to your project
 
 Two libraries are included with the p5.js download, [p5.dom.js](http://localhost/p5js.org/site/reference/#/libraries/dom) and [p5.sound.js](http://localhost/p5js.org/site/reference/#/libraries/sound). Other contributed libraries can be found on the [libraries page](http://p5js.org/libraries/). 
 
@@ -16,10 +16,7 @@ To include a library in your sketch, link it into your HTML file, after you have
 </body>
 ```
 
-- what is a library?
-- where to get a library?
-- how to include a library?
-- how to make a library?
+###Creating a new library
 
 Most libraries may not need that much functionality, but they may want to implement the `dispose()` call, which is called as the applet is closed. Many libraries, especially those with native code, need this to properly shut down.
 
