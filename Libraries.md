@@ -57,9 +57,9 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
 
 * p5.js has two modes, global mode and instance mode. In global mode, all p5 properties and methods are bound to the window object, allowing users to call methods like `background()` without having to prefix it with anything. However, this means you need to be careful not to overwrite native JavaScript functionality. You can test existing JS names by typing them into console or with a quick google search.
 
-* Classes are typically capitalized, and methods and properties begin with lowercase. Classes in p5 are prefixed with p5. We would like to keep this namespace for p5 core classes only, so when you create your own classes, do not include the p5. prefix. You are welcome to create your own prefix, or just give them non-prefixed names.
+* **Classes are typically capitalized, and methods and properties begin with lowercase.** Classes in p5 are prefixed with p5. We would like to keep this namespace for p5 core classes only, so when you create your own, **do not include the p5. prefix for class names**. You are welcome to create your own prefix, or just give them non-prefixed names.
 
-* p5.js library filenames are also prefixed with p5, but the next word is lowercase, to distinguish them from classes. For example, p5.dom.js and p5.sound.js. You are encouraged to follow this format for naming your file.
+* **p5.js library filenames are also prefixed with p5, but the next word is lowercase**, to distinguish them from classes. For example, p5.dom.js and p5.sound.js. You are encouraged to follow this format for naming your file.
 
 
 ### Packaging
