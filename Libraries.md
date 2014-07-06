@@ -63,6 +63,12 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
 
 
 ### Packaging
-- single file
-- create documentation
-- create examples
+* **Create a single JS file that contains your library.** This makes it easy for users to link it into their projects. You might also think about having options for both the normal JS file and a [minified](http://jscompress.com/) version for faster loading.
+
+* **Contributed libraries are hosted, documented, and maintained by their creators.** This could be on github, on a separate website, or somewhere else.
+
+* **Documentation is key!** The documentation for your library should be in some place easy to find for users that download and use your library. The documentation for contributed libraries will not be included in the main p5.js reference, but you may want to follow a similar format. See these examples of a [library overview page](http://localhost/p5js.org/site/reference/#/libraries/sound), [class overview page](http://localhost/p5js.org/site/reference/#p5.Vector), and [method page](http://localhost/p5js.org/site/reference/#p5/arc).
+
+* **Examples are great, too!** They show people what your library can do. Because this is all JavaScript, people can see them running online before they download anything. [jsfiddle](http://jsfiddle.net/) and [codepen](http://codepen.io) are two great easy options for hosting examples.
+
+* **Let us know!** Once your library is ready for distribution, send an email to [hello@p5js.org](mailto:hello@p5js.org) with a link and some info. We'll include it on the [libraries page](http://p5js.org/libraries/)!
