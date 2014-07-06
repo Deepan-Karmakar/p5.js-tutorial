@@ -44,15 +44,18 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
   ```javascript
   p5.prototype._registerPreloadFunc('loadSound');
   ```
+* **You can also create your own classes.** Your library may not extend p5 or p5 classes at all, but instead just offer extra classes that can be instantiated and used in conjunction with the library. Or it may do some mix of both.
 
-code
-- extend p5
-- extend p5 classes
+### Naming
+* **Don't overwrite p5 functions or properties.** When you are extending p5.prototype, be careful not to use the names of existing properties or functions. You can use [.hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) to test names. For example, the following line placed at the top of your library file will print true because the `rect()` method exists:
+
+  ```javascript
+  console.log(p5.prototype.hasOwnProperty('rect'));
+  ```
+
+* p5.js has two modes, global mode and instance mode. In global mode, all p5 properties and methods are 
 - don't overwrite p5 functions
 - don't overwrite global functions, or be clear if you do
-- _registerPreloadFunc
-
-naming
 - classes no p5.
 - library p5.lowercase.js
 
