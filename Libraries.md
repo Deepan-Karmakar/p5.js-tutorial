@@ -30,6 +30,7 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
     return addElement(elt);
   };
   ```
+  When the DOM library is included in a project, `createImg()` can be called just like `createCanvas()` or `background()`.
 
 code
 - extend p5
