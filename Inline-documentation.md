@@ -136,19 +136,32 @@ Optionally, you can add examples with `@example`. Example code can be placed bet
 ```
 @example
 <div>
-<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, OPEN);</code>
-<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, CHORD);</code>
-<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, PIE);</code>
+<code>
+arc(50, 55, 50, 50, 0, HALF_PI);
+noFill();
+arc(50, 55, 60, 60, HALF_PI, PI);
+arc(50, 55, 70, 70, PI, PI+QUARTER_PI);
+arc(50, 55, 80, 80, PI+QUARTER_PI, TWO_PI);
+</code>
 </div>
 ```
 
-You can have multiple examples for one function, just make sure each has it's own `<div>` wrapping. If you do not want the example to render with canvas (ie you just want the code to show up), include the class "norender" in the div:
+You can have multiple examples for one function, just make sure each has it's own `<div>` wrapping. 
+```
+@example
+<div>
+<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, OPEN);</code>
+</div>
+<div>
+<code>arc(50, 50, 80, 80, 0, PI, OPEN);</code>
+</div>
+```
+
+If you do not want the example to render with canvas (ie you just want the code to show up), include the class "norender" in the div:
 ```
 @example
 <div class="norender">
 <code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, OPEN);</code>
-<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, CHORD);</code>
-<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, PIE);</code>
 </div>
 ```
 
