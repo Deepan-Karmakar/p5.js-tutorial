@@ -142,6 +142,15 @@ Optionally, you can add examples with `@example`. Example code can be placed bet
 </div>
 ```
 
+You can have multiple examples for one function, just make sure each has it's own `<div>` wrapping. If you do not want the example to render with canvas (ie you just want the code to show up), include the class "norender" in the div:
+```
+@example
+<div class="norender">
+<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, OPEN);</code>
+<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, CHORD);</code>
+<code>arc(50, 50, 80, 80, 0, PI+QUARTER_PI, PIE);</code>
+</div>
+```
 
 ###Generating documentation
 
