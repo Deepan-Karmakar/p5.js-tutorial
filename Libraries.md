@@ -44,6 +44,12 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
   ```javascript
   p5.prototype._registerPreloadFunc('loadSound');
   ```
+* **Use `_registerRemoveFunc()` to register functions with p5 that should be called when their code calls `remove()`.** These are things like cleaning up DOM elements, stopping intervals and timeouts, and cleaning up any variables. Note that in some cases, you may want to leave this call up to the user, rather than calling automatically. For example, with p5.dom, it is up to the user to call `removeElements()` to clear the DOM elements created. This allows the user to call `remove()` on their sketch but leave DOM elements behind.
+
+  ```javascript
+  p5.prototype._registerRemoveFunc('p5.prototype.removeElements');
+  ```
+
 * **You can also create your own classes.** Your library may not extend p5 or p5 classes at all, but instead just offer extra classes that can be instantiated and used in conjunction with the library. Or it may do some mix of both.
 
 ### Naming
