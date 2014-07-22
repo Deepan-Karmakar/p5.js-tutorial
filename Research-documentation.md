@@ -2,8 +2,6 @@
 
 [References and research](https://github.com/lmccart/p5.js/wiki/References-and-research)
 
-[Possible directions](https://github.com/lmccart/p5.js/wiki/Possible-directions)
-
 [IDE thoughts](https://github.com/lmccart/p5.js/wiki/IDE-thoughts)
 
 [Assorted notes](https://github.com/lmccart/p5.js/wiki/Assorted-notes)
