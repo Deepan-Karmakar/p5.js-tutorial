@@ -165,6 +165,8 @@ If you do not want the example to render with canvas (ie you just want the code 
 </div>
 ```
 
+If you need to link to external asset files, put them in [/docs/yuidoc-p5-theme/assets](https://github.com/lmccart/p5.js/tree/master/docs/yuidoc-p5-theme/assets) and then link to them with "assets/filename.ext" in the code. See the [tint example](http://p5js.org/site/reference/#/p5/tint).
+
 ###Generating documentation
 
 Run `grunt requirejs:yuidoc_theme` once first to generate all local files needed. Run it again anytime you make changes to the core JS files behind the yuidoc reference page. These are changes in files located in the yuidoc-p5-theme-src folder, NOT inline documentation changes to src. This regenerates the templates, then run `grunt yui` to regenerate the referenced based on the updated theme.
