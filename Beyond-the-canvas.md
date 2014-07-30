@@ -2,16 +2,16 @@ You likely started out with p5.js drawing graphics using the HTML5 canvas, a spe
 
 ### Storing pointers and calling methods
 
-When you call ```createGraphics(w, h)``` you create a graphics canvas to draw into with the specified width and height. However, you can also keep a pointer to this canvas by storing it in a variable. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. The position is relative to the upper left of the window. (See [DOM-extensions/0](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/0).)
+When you call ```createCanvas(w, h)``` you create a graphics canvas to draw into with the specified width and height. However, you can also keep a pointer to this canvas by storing it in a variable. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. The position is relative to the upper left of the window. (See [DOM-extensions/0](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/0).)
 
 ```javascript
 var canvas;
 
 function setup() {
 
-  // We are still calling createGraphics like in the past, but now we are storing the result as a variable.
+  // We are still calling createCanvas like in the past, but now we are storing the result as a variable.
   // This way we can call methods of the element, to set the position for instance.
-  canvas = createGraphics(600, 400);
+  canvas = createCanvas(600, 400);
 
   // Here we call methods of each element to set the position and id, try changing these values.
   // Use the inspector to look at the HTML generated from this code when you load the sketch in your browser.
