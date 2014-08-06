@@ -1,4 +1,4 @@
-This tutorial is not entirely up to date, though it will be soon! The best place to look right now is the [p5.dom library reference page](http://p5js.org/reference/#/libraries/p5.dom).
+**This tutorial is not entirely up to date, though it will be soon! The best place to look right now is the [p5.dom library reference page](http://p5js.org/reference/#/libraries/p5.dom).**
 
 You likely started out with p5.js drawing graphics using the HTML5 canvas, a special element you can draw graphics into. However, p5.js can also be used to create and interact with HTML elements outside of the graphics canvas.
 
