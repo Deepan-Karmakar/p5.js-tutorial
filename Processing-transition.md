@@ -10,7 +10,7 @@ The p5.js language looks very similar to the Processing language with a few chan
 + The variable `mousePressed` has been replaced with `isMousePressed`.
 + In addition to mouse events, there are touch events, the mapping is like this:
      + `mouseX` ~ `touchX`
-     + `mouseY` ~ `mouseY`
+     + `mouseY` ~ `touchY`
      + `mousePressed()` ~ `touchStarted()`
      + `mouseDragged()` ~ `touchMoved()`
      + `mouseReleased()` ~ `touchEnded()`
