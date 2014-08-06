@@ -1,10 +1,29 @@
-###Overview of changes
+###Overview of differences
 
 The p5.js language looks very similar to the Processing language with a few changes:
-+ Variables do not have a type. Use var instead of float, int, double, long, char, String, Array, etc.
+
++ Because you can think of your sketch as more than just the drawing canvas, `size()` has been replaced with `createCanvas()`, to suggest the possibility of creating other elements.
++ `frameRate(num)` sets the frame rate, but the `frameRate` variable has been removed. To get the current frame rate, call `frameRate()` with no arguments.
++ JavaScript doesn't always load things synchronously, there are a couple options to deal with this:
+     + All load methods take an optional callback argument. That is, a function that gets called after the file has been loaded. 
+     + Alternatively, you can place load calls in a `preload()` method that happens before `setup()`. If a preload method exists, setup waits until everything inside is loaded, see this [image example](http://p5js.org/site/learn/examples/Image_Alpha_Mask.php).
++ The variable `mousePressed` has been replaced with `isMousePressed`.
++ In addition to mouse events, there are touch events, the mapping is like this:
+     + `mouseX` ~ `touchX`
+     + `mouseY` ~ `mouseY`
+     + `mousePressed()` ~ `touchStarted()`
+     + `mouseDragged()` ~ `touchMoved()`
+     + `mouseReleased()` ~ `touchEnded()`
+     + There is a `touches[]` array that contains a series of objects with x and y properties corresponding to the position of each finger.
++ `push/popMatrix()`, and `push/popStyle()` have been replaced with `push()` and `pop()`, the equivalent of calling both matrix and style methods together.
++ By default, everything is in the global namespace, and you can create your sketches like you do with Processing. However, there is something we call "instance mode" for creating a p5 sketch that plays nice with the rest of the code running on your page. See this [instance mode example](http://p5js.org/learn/examples/Instance_Mode_Instantiation.php) and this [global vs instance mode tutorial](https://github.com/lmccart/itp-creative-js/wiki/Week-5#global-and-instance-mode).
++ Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no 3D, PShape or PFont equivalent. See the [reference](http://p5js.org/reference/) for up to date documentation of what functions work.
+ 
+###Some things about JavaScript
++ Variables do not have a type. Use var instead of float, int, double, long, char, String, Array, etc. You do not need to specify return types or parameter types for functions.
 + A var can be anything -- any of the types mentioned, but also functions.
-+ Rather than specifying a return type for functions, they are assigned to vars. See the example below.
-+ Currently, not all Processing functionality is supported in p5.js, and the syntax for a few have changed slightly. See [API](https://github.com/lmccart/p5.js/wiki/API) and [API progress](https://github.com/lmccart/p5.js/wiki/API-Progress) for up-to-date documentation of all supported functions and future plans.
++ Arrays are constructed very simply (no need for Processing ArrayList anymore) and have many built-in features, see this [array example](http://p5js.org/learn/examples/Arrays_Array.php) and more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
++ JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/learn/examples/Objects_Objects.php) and more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
 
 ###Conversion examples
 
@@ -97,11 +116,11 @@ function drawSegment(i, xin, yin) {         // **change** void drawSegment() to 
 }
 
 function segment(x, y, a) {                 // **change** void segment() to function segment(), remove type declarations
-  pushMatrix();                             // pushMatrix() is the same
+  push();                            		// pushMatrix() becomes push()
   translate(x, y);                          // translate() is the same
   rotate(a);                                // rotate() is the same
   line(0, 0, segLength, 0);                 // line() is the same
-  popMatrix();                              // popMatrix() is the same
+  pop();                              		// popMatrix() becomes pop()
 }
 ```
 
@@ -188,23 +207,3 @@ String | Sequence of characters | Any letter, word, sentence, and so on
 PImage | PNG, JPG, or GIF image | N/A
 PFont | VLW font; use the Create Font tool to make | N/A
 PShape | SVG file | N/A
-
-
-###Supported functions
-
-Currently, not all Processing functionality is supported in p5.js, and the syntax for a few have changed slightly, refer to the API pages for further documentation.
-
-####[> API page](https://github.com/lmccart/p5.js/wiki/API)
-Currently supported functions from Processing, as well as new ones supported in p5.js.
-
-####[> API progress page](https://github.com/lmccart/p5.js/wiki/API-Progress)
-API progress and future support.
-
-
-###Finding examples
-
-You can find a lot of example code on <a href="http://openprocessing.org/">OpenProcessing</a>, a website for sharing Processing sketches.
-
-Dan Shiffman's <a href="http://www.learningprocessing.com/">Learning Processing</a> and <a href="http://natureofcode.com/">The Nature of Code</a> books online also have a lot of Processing examples and tutorials.
-
-The <a href="http://processing.org/examples/">Processing site</a> contains many examples for using the functions of the API.
