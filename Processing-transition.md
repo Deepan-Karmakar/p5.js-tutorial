@@ -207,3 +207,10 @@ String | Sequence of characters | Any letter, word, sentence, and so on
 PImage | PNG, JPG, or GIF image | N/A
 PFont | VLW font; use the Create Font tool to make | N/A
 PShape | SVG file | N/A
+
+
+
+###What next?
+
++ Check out the [p5.js reference](http://p5js.org/reference/) for up to date documentation.
++ Play with the examples and demos on the [learn page](http://p5js.org/learn).
