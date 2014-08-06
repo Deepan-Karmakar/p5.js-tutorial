@@ -41,12 +41,14 @@ Current work on the Processing JS port is focused on being able to be code compa
 + Programming in a visual arts context
 + Made for teaching programming
 + Bridge to other languages
-+ Provide educational infrastructure
-+ Developed through workshops, forums etc
 + Simple publishing for sharing
++ Provide educational infrastructure (tutorials, videos, books)
 + Community infrastructure
 + Extensible through libraries
-+ Export to diverse media and formats
-+ Concise IDE, scale to professional IDE.
++ Import/Export to diverse media and formats
++ Concise IDE, scale to professional IDE
++ Free to download
++ Open Source
++ Developed through workshops, forums, etc.
         
         
