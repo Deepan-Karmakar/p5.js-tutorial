@@ -20,7 +20,7 @@ To include a library in your sketch, link it into your HTML file, after you have
 There are a lot of different ways to write and use JavaScript, so we leave this up to you. What follows are some notes about having your library work well with p5.js.
 
 ###Code
-* **You can extend p5 core functionality by adding methods to `p5.prototype`.** For example, the following code in p5.dom.js extends p5 to add a `createDiv()` method that adds an HTML image element to the DOM. 
+* **You can extend p5 core functionality by adding methods to `p5.prototype`.** For example, the following code in p5.dom.js extends p5 to add a `createImg()` method that adds an HTML image element to the DOM. 
 
   ```javascript
   p5.prototype.createImg = function(src) {
