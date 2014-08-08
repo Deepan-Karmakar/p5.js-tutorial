@@ -22,7 +22,7 @@ Here are some interesting libraries to check out:
 Important note: web browsers, JS versions, etc, will matter. We will not go into specifics here, but know that this will be an issue. Most libraries will state in their documentation minimum requirements your browser or hardware must meet.
 
 ### How to read documentation
-One last criteria for choosing a library is documentation. Documentation makes or breaks a good code library.  Libraries code is often dense and difficult to read. Good documentation is any accompanying text/images, tutorials, examples and descriptions of how to use the library. Before deciding to use a library, do a quick sanity check that the webpage has seemingly good documentation to go along with it, because that will be your compass as you try to use the new library.
+One last criteria for choosing a library is documentation. Documentation makes or breaks a good code library.  Library code is often dense and difficult to read. Good documentation is any accompanying text/images, tutorials, examples and descriptions of how to use the library. Before deciding to use a library, do a quick sanity check that the webpage has seemingly good documentation to go along with it, because that will be your compass as you try to use the new library.
 
 ### How to download and include a JS library
 1. When you finally find a library, go to the project’s download page and look for a download to a .js file that contains all the library code, this file is usually not very big and not meant for editing.  It’s just meant to be included in your web project as extra capabilities.  Think of it like adding reinforcements to your structure.
