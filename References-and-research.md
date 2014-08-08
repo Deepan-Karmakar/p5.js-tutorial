@@ -7,7 +7,7 @@ See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#r
 + [Plask](http://www.plask.org) - JS based creative coding env, Uses: V8, Skia, NodeJS, Cocoa & OpenGL, FreeImage, Syphon
 + [Plask on github](https://github.com/deanm/plask)
 + [two.js](http://jonobr1.github.io/two.js/) - two-dimensional drawing api geared towards modern web browsers. It is renderer agnostic enabling the same api to draw in multiple contexts: svg, canvas, and webgl. Aims to make the creation and animation of flat shapes easier and more concise, does not support text or image. Built in scene graph, animation loop, svg interpreter.
-+ [paper.js](paperjs.org) - vector graphics scripting framework that runs on top of the HTML5 Canvas. It offers a clean Scene Graph / DOM and a lot of powerful functionality to create and work with vector graphics and bezier curves, largely compatible with Scriptographer
++ [paper.js](http://paperjs.org/) - vector graphics scripting framework that runs on top of the HTML5 Canvas. It offers a clean Scene Graph / DOM and a lot of powerful functionality to create and work with vector graphics and bezier curves, largely compatible with Scriptographer
 
 
 ## Processing / JavaScript + other languages
