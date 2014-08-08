@@ -53,7 +53,7 @@ var myImage;
 
 function setup() {
   createGraphics(300, 300);
-  myImage =  loadImage('red.jpg');
+  myImage = loadImage('red.jpg');
 }
 
 function draw()) {
