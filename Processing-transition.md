@@ -84,7 +84,7 @@ function draw() {                         // **change** void draw() to function 
 /**
  * This example can be found in the Processing examples package
  * that comes with the Processing PDE.
- * Processing > Examples > Basics > Form > Bezier
+ * Processing > Examples > Topics > Interaction > Follow3
  * Adapted by Evelyn Eastmond
  */
 
