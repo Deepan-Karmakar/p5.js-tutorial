@@ -56,7 +56,7 @@ function setup() {
   myImage = loadImage('red.jpg');
 }
 
-function draw()) {
+function draw() {
   // Draw graphics as normal
   background(255, 200, 200);
   image(myImage, 20, 20, 150, 150);
