@@ -61,7 +61,7 @@ Typically, with some asynchronous functions (like loading a sound, image, or oth
   p5.prototype.registerMethod('remove', p5.prototype.doRemoveStuff);
   ```
   
-  * **remove** Called when `remove()` is called.
+  * **remove** — Called when `remove()` is called.
 
 
 ####You can also create your own classes.
