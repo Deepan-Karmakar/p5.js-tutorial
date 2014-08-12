@@ -44,14 +44,14 @@ In the example below, `p5.Element.prototype` is extended with the `html()` metho
   };
   ```
   
-####Use `registerPreloadMethod()` to register names of methods with p5 that may be called in `preload()`.
+####Use registerPreloadMethod() to register names of methods with p5 that may be called in `preload()`.
 Typically, with some asynchronous functions (like loading a sound, image, or other external file), there are both synchronous and asynchronous options offered. For example, `loadStrings(path, [callback])` accepts an optional second callback argument - a function that is called after the loadStrings function completes. However, a user may also call loadStrings in `preload()` without a callback, and the p5.js will wait until everything in `preload()` completes before moving on to `setup()`. If you would like to register a method of your own call `registerPreloadMethod()` with the name of the method to register. The example below shows a line in the Sound library that registers `loadSound()`.
 
   ```javascript
   p5.prototype.registerPreloadMethod('loadSound');
   ```
   
-####Use `registerMethod()` to register functions with p5 that should be called at various times.
+####Use registerMethod() to register functions with p5 that should be called at various times.
 
   ```javascript
   p5.prototype.doRemoveStuff = function() { 
