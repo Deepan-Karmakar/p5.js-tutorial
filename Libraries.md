@@ -39,16 +39,22 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
     this.elt.innerHTML = html;
   };
   ```
-* **Use `_registerPreloadFunc()` to register functions with p5 that may be called in `preload()`.** Typically, with some asynchronous functions (like loading a sound, image, or other external file), there are both synchronous and asynchronous options offered. For example, `loadStrings(path, [callback])` accepts an optional second callback argument - a function that is called after the loadStrings function completes. However, a user may also call loadStrings in `preload()` without a callback, and the p5.js will wait until everything in `preload()` completes before moving on to `setup()`. If you would like to register a method of your own call `_registerPreloadFunc()` with the name of the method to register. The example below shows a line in the Sound library that registers `loadSound()`.
+* **Use `registerPreloadMethod()` to register names of methods with p5 that may be called in `preload()`.** Typically, with some asynchronous functions (like loading a sound, image, or other external file), there are both synchronous and asynchronous options offered. For example, `loadStrings(path, [callback])` accepts an optional second callback argument - a function that is called after the loadStrings function completes. However, a user may also call loadStrings in `preload()` without a callback, and the p5.js will wait until everything in `preload()` completes before moving on to `setup()`. If you would like to register a method of your own call `registerPreloadMethod()` with the name of the method to register. The example below shows a line in the Sound library that registers `loadSound()`.
 
   ```javascript
-  p5.prototype._registerPreloadFunc('loadSound');
+  p5.prototype.registerPreloadMethod('loadSound');
   ```
-* **Use `_registerRemoveFunc()` to register functions with p5 that should be called when their code calls `remove()`.** These are things like cleaning up DOM elements, stopping intervals and timeouts, and cleaning up any variables. Note that in some cases, you may want to leave this call up to the user, rather than calling automatically. For example, with p5.dom, it is up to the user to call `removeElements()` to clear the DOM elements created. This allows the user to call `remove()` on their sketch but leave DOM elements behind.
+  
+* **Use `registerMethod()` to register functions with p5 that should be called at various times.** 
 
   ```javascript
-  p5.prototype._registerRemoveFunc('removeElements');
+  p5.prototype.doRemoveStuff = function() { 
+  	// library cleanup stuff
+  }
+  p5.prototype.registerMethod('remove', p5.prototype.doRemoveStuff);
   ```
+      * **remove** Called when `remove()` is called.
+
 
 * **You can also create your own classes.** Your library may not extend p5 or p5 classes at all, but instead just offer extra classes that can be instantiated and used in conjunction with the library. Or it may do some mix of both.
 
