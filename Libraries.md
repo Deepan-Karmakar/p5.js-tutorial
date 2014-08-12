@@ -21,7 +21,7 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
 
 ##Code
 
-###You can extend p5 core functionality by adding methods to p5.prototype.
+####You can extend p5 core functionality by adding methods to p5.prototype.
 For example, the following code in p5.dom.js extends p5 to add a `createImg()` method that adds an HTML image element to the DOM. 
 
   ```javascript
@@ -33,10 +33,10 @@ For example, the following code in p5.dom.js extends p5 to add a `createImg()` m
   ```
   When the DOM library is included in a project, `createImg()` can be called just like `createCanvas()` or `background()`.
 
-###Use private functions for internal helpers.
+####Use private functions for internal helpers.
 Functions not intended to be called by users. In the example above `addElement()` is function in p5.dom.js, it is not bound to `p5.prototype`.
 
-###You can extend p5.js classes as well, by adding methods to their prototypes.
+####You can extend p5.js classes as well, by adding methods to their prototypes.
 In the example below, `p5.Element.prototype` is extended with the `html()` method, that sets the inner html of the element.
   ```javascript
   p5.Element.prototype.html = function(html) {
@@ -44,14 +44,14 @@ In the example below, `p5.Element.prototype` is extended with the `html()` metho
   };
   ```
   
-###Use `registerPreloadMethod()` to register names of methods with p5 that may be called in `preload()`.
+####Use `registerPreloadMethod()` to register names of methods with p5 that may be called in `preload()`.
 Typically, with some asynchronous functions (like loading a sound, image, or other external file), there are both synchronous and asynchronous options offered. For example, `loadStrings(path, [callback])` accepts an optional second callback argument - a function that is called after the loadStrings function completes. However, a user may also call loadStrings in `preload()` without a callback, and the p5.js will wait until everything in `preload()` completes before moving on to `setup()`. If you would like to register a method of your own call `registerPreloadMethod()` with the name of the method to register. The example below shows a line in the Sound library that registers `loadSound()`.
 
   ```javascript
   p5.prototype.registerPreloadMethod('loadSound');
   ```
   
-###Use `registerMethod()` to register functions with p5 that should be called at various times.
+####Use `registerMethod()` to register functions with p5 that should be called at various times.
 
   ```javascript
   p5.prototype.doRemoveStuff = function() { 
@@ -63,7 +63,7 @@ Typically, with some asynchronous functions (like loading a sound, image, or oth
   * **remove** Called when `remove()` is called.
 
 
-###You can also create your own classes.
+####You can also create your own classes.
 Your library may not extend p5 or p5 classes at all, but instead just offer extra classes that can be instantiated and used in conjunction with the library. Or it may do some mix of both.
 
 ##Naming
