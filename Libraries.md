@@ -53,6 +53,7 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
   }
   p5.prototype.registerMethod('remove', p5.prototype.doRemoveStuff);
   ```
+
       * **remove** Called when `remove()` is called.
 
 
