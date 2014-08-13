@@ -62,6 +62,7 @@ Typically, with some asynchronous functions (like loading a sound, image, or oth
   ```
   
   * **remove** — Called when `remove()` is called.
+  * more to come shortly, lining up roughly with this list https://github.com/processing/processing/wiki/Library-Basics#library-methods
 
 
 ####You can also create your own classes.
