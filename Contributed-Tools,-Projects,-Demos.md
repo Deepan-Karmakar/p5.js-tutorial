@@ -4,5 +4,5 @@ Simple app for the creation of p5.js sketches. Similar to [openframeworks-projec
 * [github](https://github.com/frederickk/Sketch-Creator)
 * [vimeo demo](https://vimeo.com/99052459)
 
-### [p5.js seed project](https://github.com/winkerVSbecks/p5js-seed)
+#### [p5.js seed project](https://github.com/winkerVSbecks/p5js-seed)
 You can use this project to quickly bootstrap your p5js project and a supporting dev environment. The seed contains a basic p5js application and is pre-configured to install the p5js framework and a bunch of development tools such as a simple server and live-reload. 
