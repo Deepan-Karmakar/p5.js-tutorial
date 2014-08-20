@@ -12,3 +12,4 @@ Note that examples included may be using older versions of p5.js and might not b
 
 
 ###Tutorials
+* [Embedding p5.js](https://github.com/lmccart/p5.js/wiki/Embedding-p5.js) - different ways of including sketches on existing sites or blogs.
