@@ -13,6 +13,7 @@ Embed code for the iframe:
 `<iframe src="http://lauren-mccarthy.com/test/p5.js" width="600px" height="400px"></iframe>`
 
 and styling for the iframe:
+
 `<style>iframe { border: none; }</style>`
 
 Only trick here is you need to manually set the size of the iframe, so it works best of things are a standard size.
