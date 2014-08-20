@@ -8,9 +8,11 @@ http://lauren-mccarthy.com/test/p5.js/
 And here it is embedded in wordpress using the code below:<br>
 http://lauren-mccarthy.com/inmotion/2014/08/test-post-1/
 
-Embed code for the iframe:<br>`<iframe src="http://lauren-mccarthy.com/test/p5.js" width="600px" height="400px"></iframe>`
+Embed code for the iframe:
+```html<iframe src="http://lauren-mccarthy.com/test/p5.js" width="600px" height="400px"></iframe>`
 
-and styling for the iframe:<br>`<style>iframe { border: none; }</style>`
+and styling for the iframe:
+```html<style>iframe { border: none; }</style>`
 
 Only trick here is you need to manually set the size of the iframe, so it works best of things are a standard size.
 
