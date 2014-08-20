@@ -74,7 +74,7 @@ background(100);
 
 ####Customizing
 
-If you include [prism](http://prismjs.com/) you can add code highlighting, too. You will need to link to both [prism.js](https://github.com/lmccart/p5js.org/blob/master/js/vendor/prism.js) and [prism.css](https://github.com/lmccart/p5js.org/blob/master/css/prism.css) in the header of your page:
+If you include [prism](http://prismjs.com/) you can add code highlighting, too. You will need to link to both [prism.js](https://github.com/lmccart/p5js.org/blob/master/js/vendor/prism.js) and [prism.css](https://github.com/lmccart/p5js.org/blob/master/css/prism.css) in the header of your page. The CSS file can be modified to highlight and color as you wish.
 
 ```html
 <!-- code highlighting -->
