@@ -23,7 +23,22 @@ Only trick here is you need to manually set the size of the iframe, so it works 
 
 ###Using render.js
 
-You can also use the render.js script, see this [wordpress post example](http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/). This is used for the editable examples in the reference, see [this example](http://p5js.org/reference/#p5/colorMode). You can embed a live sketch like this:
+You can also use the render.js script, see this [wordpress post example](http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/). This is used for the editable examples in the reference, see [this example](http://p5js.org/reference/#p5/colorMode). 
+
+In the header of your page you will need to link in a few files in addition to render.js:
+```html
+<!-- p5.js library -->
+<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/p5.min.js"></script>
+<!-- optional addons for sound/dom examples -->
+<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/p5.sound.js"></script>
+<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/p5.dom.js"></script>
+<!-- rendering scripts -->
+<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/render.js"></script>
+```
+
+
+You can embed a live sketch like this:
 ```html
 <div class="example">
 <pre>
