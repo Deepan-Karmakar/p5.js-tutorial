@@ -13,7 +13,7 @@ Embed code for the iframe:
 <iframe src="http://lauren-mccarthy.com/test/p5.js" width="600px" height="400px"></iframe>
 ```
 
-and styling for the iframe:
+and styling for the iframe (this could directly into a wordpress post or in a stylesheet):
 ```html
 <style>iframe { border: none; }</style>
 ```
