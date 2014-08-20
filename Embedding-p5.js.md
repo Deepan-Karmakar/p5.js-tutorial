@@ -1,3 +1,5 @@
+You can always just host the HTML and JS files of your sketch online and visit the URL where they're located to see them running. However, you might want to integrate/embed a sketch into an existing page or blog. Here are a few ways to do it.
+
 ##Using iframes
 
 The simplest solution is to use iframes. For classes, I have students host their work and turn in a link to running sketches. Then I can embed their sketches or examples I create in iframes on a wordpress blog or class site.
