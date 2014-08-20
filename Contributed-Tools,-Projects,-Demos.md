@@ -1,3 +1,6 @@
+This is a place for p5.js related tools, helpers, tutorials, and demos. Things others might use or learn from.
+Feel free to add things you create here (just click the "Edit" button). As this page starts to fill up more we can add more organization.
+
 ####[p5.js sketch creator](http://blog.kennethfrederick.de/2014/06/sketch-creator.html)
 Simple app for the creation of p5.js sketches. Similar to [openframeworks-project generator](https://github.com/ofZach/project-creator) and [cinder-tinderbox](https://github.com/cinder/TinderBox-Mac), this app will create a directory with all dependencies (html, css, js, etc.) required for a p5.js project. Created by [Ken Frederick](http://kennethfrederick.de/). 
 * [overview](http://blog.kennethfrederick.de/2014/06/sketch-creator.html)
