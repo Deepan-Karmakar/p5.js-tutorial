@@ -82,6 +82,15 @@ If you include [prism](http://prismjs.com/) you can add code highlighting, too. 
 <link rel="stylesheet" href="path/to/prism.css" type="text/css"/>
 ```
 
+If you want to hide the code and just show the sketch, you could add a line like this:
+```html
+<style> .example{ display: none; } </style>
+```
+
+If you want to show the code but hide just the buttons to edit the code displayed, you could add a line like this:
+```html
+<style> .edit_space{ display: none; } </style>
+
 ###Using ace
 
 I am using the render.js script for the reference examples because it is lighter and lets me hack to make things work with examples with no setup/draw. I am using ace editor on the learn/examples pages because it's less hacky and has better editing support. This one would require a little custom configuration, you could start with this tutorial here: http://ace.c9.io/#nav=howto. 
