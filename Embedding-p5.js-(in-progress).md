@@ -28,13 +28,13 @@ You can also use the render.js script, see this [wordpress post example](http://
 In the header of your page you will need to link in a few files in addition to render.js:
 ```html
 <!-- p5.js library -->
-<script type="text/javascript" src="p5.min.js"></script>
+<script type="text/javascript" src="path/to/p5.min.js"></script>
 <!-- optional addons for sound/dom examples -->
-<script type="text/javascript" src="p5.sound.js"></script>
-<script type="text/javascript" src="p5.dom.js"></script>
+<script type="text/javascript" src="path/to/p5.sound.js"></script>
+<script type="text/javascript" src="path/to/p5.dom.js"></script>
 <!-- scripts for rendering -->
-<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="render.js"></script>
+<script type="text/javascript" src="path/to/jquery.min.js"></script>
+<script type="text/javascript" src="path/to/render.js"></script>
 ```
 
 
@@ -78,8 +78,8 @@ https://gist.github.com/lmccart/69586b68a9c505222d15
 
 ```html
 <!-- code highlighting -->
-<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/prism.js"></script> 
-<link rel="stylesheet" href="http://lauren-mccarthy.com/test/p5.js/prism.css" type="text/css"/>
+<script type="text/javascript" src="path/to/prism.js"></script> 
+<link rel="stylesheet" href="path/to/prism.css" type="text/css"/>
 ```
 
 ###Using ace
