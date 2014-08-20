@@ -74,8 +74,7 @@ background(100);
 ```
 
 
-Note that you will also need jquery (you can grab this one http://p5js.org/js/vendor/jquery-1.9.1.min.js), and I recommend using this updated render.js that I just tweaked a little (https://gist.github.com/lmccart/b3242051abafd660f4a3). If you include prism.js and prism.css you get code highlighting, too. Here's a snippet of the header I'm using on my blog:
-https://gist.github.com/lmccart/69586b68a9c505222d15
+If you include [prism](http://prismjs.com/) you can add code highlighting, too. You will need to link to both [prism.js](https://github.com/lmccart/p5js.org/blob/master/js/vendor/prism.js) and [prism.css](https://github.com/lmccart/p5js.org/blob/master/css/prism.css) in the header of your page:
 
 ```html
 <!-- code highlighting -->
