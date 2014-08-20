@@ -5,7 +5,7 @@ The simplest solution is to use iframes. In the past I've had students host thei
 For example, here is the sketch running:
 http://lauren-mccarthy.com/test/p5.js/
 
-And here it is embedded in wordpress using the code below:
+And here it is embedded in wordpress using the code below:<br>
 http://lauren-mccarthy.com/inmotion/2014/08/test-post-1/
 
 Embed code for the iframe:
