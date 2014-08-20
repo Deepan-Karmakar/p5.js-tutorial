@@ -90,6 +90,7 @@ If you want to hide the code and just show the sketch, you could add a line like
 If you want to show the code but hide just the buttons to edit the code displayed, you could add a line like this:
 ```html
 <style> .edit_space{ display: none; } </style>
+```
 
 ###Using ace
 
