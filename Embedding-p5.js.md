@@ -40,7 +40,7 @@ In the head of your page you will need to link in a few files in addition to ren
 <script type="text/javascript" src="path/to/render.js"></script>
 ```
 
-You can embed a live sketch like this:
+In the body of your page or post you can embed a live sketch like this:
 ```html
 <div class="example">
 <pre>
