@@ -5,8 +5,8 @@ Note that examples included may be using older versions of p5.js and might not b
 
 ###Class / workshop syllabi
 
-* [Creative JavaScript, NYU ITP S14](http://github.com/lmccart/itp-creative-js)
-* [Intro to Creative Programming, RISD D+M F13](http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/index.html)
+* [Creative JavaScript, NYU ITP S14](http://github.com/lmccart/itp-creative-js) - examples and notes
+* [Intro to Creative Programming, RISD D+M F13](http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/index.html) - many examples
 
 ###Tools
 
