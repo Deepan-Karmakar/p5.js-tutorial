@@ -15,7 +15,7 @@ Embed code for the iframe:
 
 and styling for the iframe (this could directly into a wordpress post or in a stylesheet):
 ```html
-<style>iframe { border: none; }</style>
+<style> iframe{ border: none; }</style>
 ```
 
 Only trick here is you need to manually set the size of the iframe, so it works best of things are a standard size.
