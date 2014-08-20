@@ -9,7 +9,9 @@ And here it is embedded in wordpress using the code below:<br>
 http://lauren-mccarthy.com/inmotion/2014/08/test-post-1/
 
 Embed code for the iframe:
-```html<iframe src="http://lauren-mccarthy.com/test/p5.js" width="600px" height="400px"></iframe>```
+```html
+<iframe src="http://lauren-mccarthy.com/test/p5.js" width="600px" height="400px"></iframe>
+```
 
 and styling for the iframe:
 ```html<style>iframe { border: none; }</style>```
