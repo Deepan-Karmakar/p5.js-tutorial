@@ -25,7 +25,7 @@ Only trick here is you need to manually set the size of the iframe, so it works 
 
 You can also use the [render.js](https://github.com/lmccart/p5js.org/blob/master/js/render.js) script, see this [wordpress post example](http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/). This is used for the editable examples in the reference, see this [reference example](http://p5js.org/reference/#p5/colorMode). 
 
-In the header of your page you will need to link in a few files in addition to render.js (all files can be found [here](https://github.com/lmccart/p5js.org/tree/master/js)):
+In the header of your page you will need to link in a few files in addition to render.js (all files can be found [here](https://github.com/lmccart/p5js.org/tree/master/js)). _If you are using a system like wordpress, you will need to put these links directly into the header code, not in the body of your post._
 
 ```html
 <!-- p5.js library -->
