@@ -28,13 +28,13 @@ You can also use the render.js script, see this [wordpress post example](http://
 In the header of your page you will need to link in a few files in addition to render.js:
 ```html
 <!-- p5.js library -->
-<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/p5.min.js"></script>
+<script type="text/javascript" src="p5.min.js"></script>
 <!-- optional addons for sound/dom examples -->
-<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/p5.sound.js"></script>
-<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/p5.dom.js"></script>
+<script type="text/javascript" src="p5.sound.js"></script>
+<script type="text/javascript" src="p5.dom.js"></script>
 <!-- rendering scripts -->
-<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/render.js"></script>
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="render.js"></script>
 ```
 
 
