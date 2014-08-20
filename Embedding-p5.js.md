@@ -23,7 +23,7 @@ Only trick here is you need to manually set the size of the iframe, so it works 
 
 ###Using render.js
 
-You can also use the render.js script, see an example [here](http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/). This is used for the editable examples in the reference, see [this example](http://p5js.org/reference/#p5/colorMode). You can embed a live sketch like this:
+You can also use the render.js script, see this [wordpress post example](http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/). This is used for the editable examples in the reference, see [this example](http://p5js.org/reference/#p5/colorMode). You can embed a live sketch like this:
 ```html
 <div class="example">
 <pre>
