@@ -103,8 +103,8 @@ The examples on the [learn page](http://p5js.org/learn/#examples) use [ace edito
 
 ####CodePen
 
-[CodePen](http://codepen.io/) is a web-based editor with a cute interface. It has some nice features that let you embed your pens in other sites, text them to a phone for easy mobile access to a link, and fork. It is nice for workshop settings where you don't want people to spend much time getting set up / downloading editors, etc. You will need to link to the [CDN](jsdelivr.com/#!p5.js) to include p5.js libraries. The formatting gets a little wonky if you try to magnify it for class demonstrations on screen, but there are also "pro" and "professor" modes that I haven't coughed up the $ to try.
+[CodePen](http://codepen.io/) is a web-based editor with a cute interface. It has some nice features that let you embed your pens in other sites, text them to a phone for easy mobile access to a link, and fork. It is nice for workshop settings where you don't want people to spend much time getting set up / downloading editors, etc. You will need to link to the [CDN](http://jsdelivr.com/#!p5.js) to include p5.js libraries. The formatting gets a little wonky if you try to magnify it for class demonstrations on screen, but there are also "pro" and "professor" modes that I haven't coughed up the $ to try.
 
 ####JSFiddle
 
-[JSFiddle](http://jsfiddle.net) is similar to codepen, slightly different interface but similar features. This can also be [embedded](http://doc.jsfiddle.net/use/embedding.html) on external sites and forked. You will need to link to the [CDN](jsdelivr.com/#!p5.js) to include p5.js libraries.
+[JSFiddle](http://jsfiddle.net) is similar to codepen, slightly different interface but similar features. This can also be [embedded](http://doc.jsfiddle.net/use/embedding.html) on external sites and forked. You will need to link to the [CDN](http://jsdelivr.com/#!p5.js) to include p5.js libraries.
