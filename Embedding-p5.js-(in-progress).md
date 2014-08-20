@@ -97,6 +97,6 @@ If you want to show the code but hide just the buttons to edit the code displaye
 ####Ace editor
 The examples on the [learn page](http://p5js.org/learn/#examples) use [ace editor](http://ace.c9.io/#nav=about) rather than the render.js script because it's less hacky and has better support for editing (it includes linting, dynamic code highlighting, etc). This one requires a little custom configuration, there is a tutorial to get you started here: http://ace.c9.io/#nav=howto. 
 
-####codepen.io
+####CodePen
 
-http://codepen.io/
+[CodePen](http://codepen.io/) is a web-based editor with a cute interface. It has some nice features that let you embed your pens, text it to a phone for easy mobile access to a link, and fork pens. It is nice for workshop settings where you don't want people to spend much time getting set up / downloading editors, etc. You will need to link to the [CDN](jsdelivr.com/#!p5.js) to include p5.js libraries. The formatting gets a little wonky if you try to magnify it for class demonstrations on screen, but there are also "pro" and "professor" modes that I haven't coughed up the $ to try.
