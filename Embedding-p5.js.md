@@ -14,7 +14,9 @@ Embed code for the iframe:
 ```
 
 and styling for the iframe:
-```html<style>iframe { border: none; }</style>```
+```html
+<style>iframe { border: none; }</style>
+```
 
 Only trick here is you need to manually set the size of the iframe, so it works best of things are a standard size.
 
