@@ -32,7 +32,7 @@ In the header of your page you will need to link in a few files in addition to r
 <!-- optional addons for sound/dom examples -->
 <script type="text/javascript" src="p5.sound.js"></script>
 <script type="text/javascript" src="p5.dom.js"></script>
-<!-- rendering scripts -->
+<!-- scripts for rendering -->
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="render.js"></script>
 ```
@@ -76,6 +76,11 @@ background(100);
 Note that you will also need jquery (you can grab this one http://p5js.org/js/vendor/jquery-1.9.1.min.js), and I recommend using this updated render.js that I just tweaked a little (https://gist.github.com/lmccart/b3242051abafd660f4a3). If you include prism.js and prism.css you get code highlighting, too. Here's a snippet of the header I'm using on my blog:
 https://gist.github.com/lmccart/69586b68a9c505222d15
 
+```html
+<!-- code highlighting -->
+<script type="text/javascript" src="http://lauren-mccarthy.com/test/p5.js/prism.js"></script> 
+<link rel="stylesheet" href="http://lauren-mccarthy.com/test/p5.js/prism.css" type="text/css"/>
+```
 
 ###Using ace
 
