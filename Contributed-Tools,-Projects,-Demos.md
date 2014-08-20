@@ -13,4 +13,4 @@ You can use this project to quickly bootstrap your p5js project and a supporting
 
 ##Examples
 
-* https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js
+* [Nature of Code p5.js examples](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js) examples from Dan Shiffman's [Nature of Code](http:// natureofcode.com) ported to p5.js.
