@@ -92,6 +92,6 @@ If you want to show the code but hide just the buttons to edit the code displaye
 <style> .edit_space{ display: none; } </style>
 ```
 
-###Using ace
+##Using ace editor
 
-I am using the render.js script for the reference examples because it is lighter and lets me hack to make things work with examples with no setup/draw. I am using ace editor on the learn/examples pages because it's less hacky and has better editing support. This one would require a little custom configuration, you could start with this tutorial here: http://ace.c9.io/#nav=howto. 
+The examples on the [learn page](http://p5js.org/learn/#examples) use [ace editor](http://ace.c9.io/#nav=about) rather than the render.js script because it's less hacky and has better support for editing (it includes linting, dynamic code highlighting, etc). This one requires a little custom configuration, there is a tutorial to get you started here: http://ace.c9.io/#nav=howto. 
