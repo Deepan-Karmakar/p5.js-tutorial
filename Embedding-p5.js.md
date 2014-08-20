@@ -24,7 +24,8 @@ Only trick here is you need to manually set the size of the iframe, so it works 
 ###Using render.js
 
 If you want to use the render script, you can embed a live sketch like this:
-`<div class="example">
+```html
+<div class="example">
 <pre>
 <code class="language-javascript">
 function setup() {
@@ -38,7 +39,8 @@ function draw() {
 </pre>
 </div>
 
-<script>renderCode()</script>`
+<script>renderCode()</script>
+```
 
 The key parts are the layout of the HTML (div.example > pre > code), and the renderCode() call at the end.
 http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/
