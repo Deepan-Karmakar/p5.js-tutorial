@@ -23,7 +23,7 @@ Only trick here is you need to manually set the size of the iframe, so it works 
 
 ###Using render.js
 
-You can also use the render.js script. This is used for the editable examples in the reference, see [this example](http://p5js.org/reference/#p5/colorMode). You can embed a live sketch like this:
+You can also use the render.js script, see an example [here](http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/). This is used for the editable examples in the reference, see [this example](http://p5js.org/reference/#p5/colorMode). You can embed a live sketch like this:
 ```html
 <div class="example">
 <pre>
@@ -42,7 +42,9 @@ function draw() {
 <script>renderCode()</script>
 ```
 
-The key parts are the layout of the HTML (div.example > pre > code), and the renderCode() call at the end. Note that this script also will support sketches with no setup or draw, though the p5.js library on it's own will not. This hack is just for the purposes of showing simple snippets, like in the reference.
+The key parts are the layout of the HTML (div.example > pre > code), and the renderCode() call at the end. 
+
+Note that this script also will support sketches with no setup or draw, though the p5.js library on it's own will not. This hack is just for the purposes of showing simple snippets, like in the reference.
 ```html
 <div class="example">
 <pre>
