@@ -1,6 +1,6 @@
 ##Using iframes
 
-The simplest solution is to use iframes. In the past I've had students host their work and submit a link to running sketches as turn in. Then I can embed their sketches or examples I create in iframes on a wordpress blog or class site.
+The simplest solution is to use iframes. For classes, I have students host their work and turn in a link to running sketches. Then I can embed their sketches or examples I create in iframes on a wordpress blog or class site.
 
 For example, here is the sketch running:<br>
 http://lauren-mccarthy.com/test/p5.js/
