@@ -1,5 +1,7 @@
 **This is a place for p5.js related tools, helpers, tutorials, examples, and demos. Things others might use or learn from. Feel free to add things you create here (just click the "Edit" button).**
 
+For syllabi or teaching specific materials and tools, please see the [education page](https://github.com/lmccart/p5.js/wiki/Education).
+
 ##Tools
 
 ####[p5.js sketch creator](http://blog.kennethfrederick.de/2014/06/sketch-creator.html)
