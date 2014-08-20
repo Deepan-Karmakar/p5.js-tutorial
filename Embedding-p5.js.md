@@ -23,7 +23,7 @@ Only trick here is you need to manually set the size of the iframe, so it works 
 
 ###Using render.js
 
-If you want to use the render script, you can embed a live sketch like this:
+You can also use the render.js script. This is used for the editable examples in the reference, see [this example](http://p5js.org/reference/#p5/colorMode). You can embed a live sketch like this:
 ```html
 <div class="example">
 <pre>
@@ -42,8 +42,19 @@ function draw() {
 <script>renderCode()</script>
 ```
 
-The key parts are the layout of the HTML (div.example > pre > code), and the renderCode() call at the end.
-http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/
+The key parts are the layout of the HTML (div.example > pre > code), and the renderCode() call at the end. Note that this script also will support sketches with no setup or draw, though the p5.js library on it's own will not. This hack is just for the purposes of showing simple snippets, like in the reference.
+```html
+<div class="example">
+<pre>
+<code class="language-javascript">
+background(100);
+</code>
+</pre>
+</div>
+
+<script>renderCode()</script>
+```
+
 
 Note that you will also need jquery (you can grab this one http://p5js.org/js/vendor/jquery-1.9.1.min.js), and I recommend using this updated render.js that I just tweaked a little (https://gist.github.com/lmccart/b3242051abafd660f4a3). If you include prism.js and prism.css you get code highlighting, too. Here's a snippet of the header I'm using on my blog:
 https://gist.github.com/lmccart/69586b68a9c505222d15
