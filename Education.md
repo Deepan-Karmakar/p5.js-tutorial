@@ -3,7 +3,7 @@
 
 ####Class / workshop syllabi
 
-* [Creative JavaScript, NYU ITP Spring 2014](http://github.com/lmccart/itp-creative-js)
-* [Intro to Creative Programming, RISD D+M Fall 2013](http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/index.html) - note: not all examples are up to date!
+* [Creative JavaScript, NYU ITP S2014](http://github.com/lmccart/itp-creative-js)
+* [Intro to Creative Programming, RISD D+M F2013](http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/index.html) - note: not all examples are up to date!
 
 ####Tutorials
