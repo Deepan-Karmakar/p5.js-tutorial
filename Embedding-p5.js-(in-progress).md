@@ -105,4 +105,4 @@ The examples on the [learn page](http://p5js.org/learn/#examples) use [ace edito
 
 ####JSFiddle
 
-[JSFiddle](http://jsfiddle.net) is similar to codepen, slightly different interface but similar features. This can also be [embedded](http://doc.jsfiddle.net/use/embedding.html) on external sites. You will need to link to the [CDN](jsdelivr.com/#!p5.js) to include p5.js libraries.
+[JSFiddle](http://jsfiddle.net) is similar to codepen, slightly different interface but similar features. This can also be [embedded](http://doc.jsfiddle.net/use/embedding.html) on external sites and forked. You will need to link to the [CDN](jsdelivr.com/#!p5.js) to include p5.js libraries.
