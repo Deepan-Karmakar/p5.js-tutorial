@@ -2,19 +2,15 @@
 
 The simplest solution is to use iframes. In the past I've had students host their work and submit a link to running sketches as turn in. Then I can embed their sketches or examples I create in iframes on a wordpress blog or class site.
 
-For example, here is the sketch running:
+For example, here is the sketch running:<br>
 http://lauren-mccarthy.com/test/p5.js/
 
 And here it is embedded in wordpress using the code below:<br>
 http://lauren-mccarthy.com/inmotion/2014/08/test-post-1/
 
-Embed code for the iframe:
+Embed code for the iframe:<br>`<iframe src="http://lauren-mccarthy.com/test/p5.js" width="600px" height="400px"></iframe>`
 
-`<iframe src="http://lauren-mccarthy.com/test/p5.js" width="600px" height="400px"></iframe>`
-
-and styling for the iframe:
-
-`<style>iframe { border: none; }</style>`
+and styling for the iframe:<br>`<style>iframe { border: none; }</style>`
 
 Only trick here is you need to manually set the size of the iframe, so it works best of things are a standard size.
 
