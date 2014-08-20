@@ -20,7 +20,7 @@ and styling for the iframe (this could directly into a wordpress post or in a st
 <style> iframe{ border: none; } </style>
 ```
 
-Only trick here is you need to manually set the size of the iframe, so it works best if things are a standard size.
+Only trick here is that you need to manually set the size of the iframe, so it works best if things are a standard size.
 
 
 ##Using render.js
