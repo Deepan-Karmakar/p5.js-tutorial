@@ -15,7 +15,7 @@ You can use this project to quickly bootstrap your p5js project and a supporting
 
 ##Examples
 
-* [Nature of Code x p5.js](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js) - examples from Dan Shiffman's [Nature of Code](http:// natureofcode.com) ported to p5.js.
+* [Nature of Code x p5.js](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js) - examples from Dan Shiffman's [Nature of Code](http://natureofcode.com) ported to p5.js.
 * **Monash University Creative Coding Sketches on p5** - Sketches from the Creative Coding Course found at [FutureLearn](https://www.futurelearn.com/courses/creative-coding) given by Jon McCormack from Monash University. Separated by weeks:
   1. Week 1:
     * [w1_01 "Draw your name!"](http://jsfiddle.net/juansrx/czy94wq3/)
