@@ -1,16 +1,16 @@
 **This tutorial is not entirely up to date, though it will be soon! The best place to look right now is the [p5.dom library reference page](http://p5js.org/reference/#/libraries/p5.dom).**
 
-You likely started out with p5.js drawing graphics using the HTML5 canvas, a special element you can draw graphics into. However, p5.js can also be used to create and interact with HTML elements outside of the graphics canvas.
+As you have seen, createCanvas creates an HTML5 Canvas, a special element you can draw graphics into. However, using the p5.dom add-on library, p5.js can also be used to create and interact with HTML elements outside of the graphics canvas. This tutorial will explain more about how to use p5.dom.
 
-First, you will need to include the p5.dom.js file in your html. If you are using the example project it should already be there, you just need to uncomment the line. Otherwise, [download]() the file and add this line to your HTML header:
+First, you will need to include the p5.dom.js file in your html. If you are using the example project it should already be there, you just need to uncomment the line in index.html that links to it. Otherwise, [download](https://github.com/lmccart/p5.js/blob/master/lib/addons/p5.dom.js) the file and add this line to your HTML header:
 
 ```html
 <script type='text/javascript' src='relative/path/to/your/p5.dom.js'>
 ```
 
-### Storing pointers and calling methods
+## Storing pointers and calling methods
 
-When you call ```createCanvas(w, h)``` you create a graphics canvas to draw into with the specified width and height. However, you can also keep a pointer to this canvas by storing it in a variable. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. The position is relative to the upper left of the window. (See [DOM-extensions/0](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/0).)
+When you call ```createCanvas(w, h)``` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. 
 
 ```javascript
 var canvas;
@@ -38,6 +38,40 @@ function draw() {
 
 }
 ```
+
+### Using parent()
+
+When a new element is added using one of the create methods (either a canvas, div, img, etc), you may notice that it doesn't show up in the upper left corner (0,0), but instead appends to the end of the page. The elements are also affected by any existing CSS styling you may have set for the page. The guiding idea here is that p5 does as little as possible to mess with your page, so elements follow the flow of the page rather than disrupting anything. Then, if you'd like to arrange things differently, you can use p5 methods or CSS styling.
+
+If you would like to specify a location for the element, rather than appending directly to the end, you can use the `parent()` method. In the `<body>` of your html file, create a container where you would like your canvas to get inserted, with ID of your choice:
+
+```html
+<div id='myContainer'></div>
+```
+
+Then use a variable to store a pointer to the element you created, and call `.parent()` on this variable:
+
+```javascript
+function setup() {
+  var myCanvas = createCanvas(600, 400);
+  myCanvas.parent('myContainer');
+}
+```
+
+
+### Using position()
+
+Maybe you don't care which div container your elements end up in, but just want to set their position on the page. In this case you could use `position(x, y)`. Calling this method overrides the default positioning of the element (by applying a CSS style `position:absolute`), allowing you to give it a position relative to the upper left of the window (0,0). The example below creates a <div> element and positions it at (100,100).
+
+```javascript
+function setup() {
+  var myCanvas = createCanvas(600, 400);
+  myCanvas.position(100, 100);
+}
+```
+
+Note that the examples above refer to createCanvas(), but they work the same for any of the createXX() methods.
+
 
 ### Creating other HTML elements
 
