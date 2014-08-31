@@ -39,11 +39,11 @@ function draw() {
 }
 ```
 
-### Using parent()
+### Using .parent()
 
 When a new element is added using one of the create methods (either a canvas, div, img, etc), you may notice that it doesn't show up in the upper left corner (0,0), but instead appends to the end of the page. The elements are also affected by any existing CSS styling you may have set for the page. The guiding idea here is that p5 does as little as possible to mess with your page, so elements follow the flow of the page rather than disrupting anything. Then, if you'd like to arrange things differently, you can use p5 methods or CSS styling.
 
-If you would like to specify a location for the element, rather than appending directly to the end, you can use the `parent()` method. In the `<body>` of your html file, create a container where you would like your canvas to get inserted, with ID of your choice:
+If you would like to specify a location for the element, rather than appending directly to the end, you can use the `.parent()` method. In the `<body>` of your html file, create a container where you would like your canvas to get inserted, with ID of your choice:
 
 ```html
 <div id='myContainer'></div>
@@ -59,9 +59,9 @@ function setup() {
 ```
 
 
-### Using position()
+### Using .position()
 
-Maybe you don't care which div container your elements end up in, but just want to set their position on the page. In this case you could use `position(x, y)`. Calling this method overrides the default positioning of the element (by applying a CSS style `position:absolute`), allowing you to give it a position relative to the upper left of the window (0,0). The example below creates a <div> element and positions it at (100,100).
+Maybe you don't care which div container your elements end up in, but just want to set their position on the page. In this case you could use `.position(x, y)`. Calling this method overrides the default positioning of the element (by applying a CSS style `position:absolute`), allowing you to give it a position relative to the upper left of the window (0,0). The example below creates a div element and positions it at (100,100).
 
 ```javascript
 function setup() {
