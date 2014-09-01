@@ -72,6 +72,7 @@ function setup() {
 
 Note that the examples above refer to createCanvas(), but they work the same for any of the createXX() methods.
 
+
 ## Creating other HTML elements
 
 In addition to ```createCanvas(w, h)```, there are a number of other methods like `createDiv()`, `createP()`, `createA()`, etc (see the [reference](http://p5js.org/reference/#/libraries/p5.dom) for full listing). In the example below, a div with text is created, in addition to the graphics canvas, and the position is set for each.
@@ -134,18 +135,40 @@ function draw() {
 ![screenshot](http://imgur.com/fqk89sj.png)
 
 
+## Creating HTML media elements
 
-### Element specific listeners
 
-Every elements has it's own ```mouseOver()```, ```mouseOut()``` methods that get called when you move the mouse over or off of the individual element. Each element also has a ```hide()``` and ```show()``` method. (See [DOM-extensions/3](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/3).)
+
+## Using createElement()
+
+The [p5.dom API](http://p5js.org/reference/#/libraries/p5.dom) supports a subset of all the HTML elements possible. If you'd like to add an element that does not have a specific create method, you can use the general `createElement()` method. The first argument to createElement is the tag name, and the second, optional argument is the content to be placed within the element. In the example before, an H1 heading element is created.
 
 ```
+var h1;
+var canvas;
+
+function setup() {
+  h1 = createElement('h1', 'this is some heading text');
+  canvas = createCanvas(400, 400);
+}
+```
+
+See [this page](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list) for a full list of HTML elements you can create.
+
+
+## Element specific listeners
+
+Every elements has it's own `mouseOver()`, `mouseOut()` methods that get called when you move the mouse over or off of the individual element. To program a specific action to happen when one of these events occurs, you pass in either a function or the name of a function as the argument to these methods. 
+
+In the example below, we are attaching a behavior that hides the uniforn image when you mouse over the canvas, and shows it again when you mouse out (off of) the canvas.
+
+```javascript
 var img;
 var canvas;
 
 function setup() {
-  canvas = createGraphics(400, 400);
-  img = createHTMLImage("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+  canvas = createCanvas(400, 400);
+  img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
 
   img.position(190, 50);
   img.size(200, AUTO);
@@ -157,7 +180,7 @@ function setup() {
 }
 
 function draw() {
-  // Tell program to draw into canvas since img was last created element.
+  // All drawing happens in the canvas.
   context(canvas);
   noStroke();
   background(220, 180, 200);
@@ -178,7 +201,18 @@ function uniShow() {
   img.show();
 }
 ```
-Elements also have ```mousePressed()``` methods that let you connection functions to the mousePressed event per element. This is different than using the global ```mousePressed()``` method, which gets triggered anytime the mouse is clicked anywhere. With these element specific handlers, the function is only called when you click directly on the element. (See [DOM-extensions/4](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/4).)
+
+In the example above, we pass in the function names uniHide and uniShow. You could achieve the same result by passing in a whole function without a name, this nameless function is known as an "anonymous function".
+
+```javascript
+canvas.mouseOver(function() {
+	img.hide();
+})
+```
+
+###Element vs global listeners
+
+Elements also have `mousePressed()` methods that let you connect functions to the mousePressed event on a per element level. Important: this is different than using the global `mousePressed()` method, which gets triggered anytime the mouse is clicked anywhere. With these element specific handlers, the function is __only__ called when you click directly on the element.
 
 ```
 var img;
@@ -208,7 +242,8 @@ function draw() {
   }
 }
 
-// Create functions for hiding and showing uni image. These will be hooked into mouse events related to canvas above.
+// Create functions for hiding and showing uni image. 
+// These will be hooked into mouse events related to canvas above.
 function uniHide() {
   img.hide();
 }
@@ -217,97 +252,38 @@ function uniShow() {
   img.show();
 }
 
-// Define keyPressed behavior. This one doesn't need to be hooked in, it's automatically called on key press.
+// Define global keyPressed behavior. This one doesn't need to be hooked in, it's a global listener, automatically fired on key press.
 function keyPressed() {
   uniShow();
 }
 ```
 
-### Using find
-
-You can use ```find()``` to search for all elements with a particular class or id. find() first searches for any elements whose id match the given argument, and returns an array of them. If none are found, it searches for any elements whose class match, and returns an array of them. If none are found, it returns an empty array. (See [DOM-extensions/7](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/7).)
+Here is one more example illustrating the difference between global and element specific listeners. In this example, every click on the page anywhere makes the background lighter. However, only clicks directly on the canvas change the size of the ellipse.
 
 ```javascript
-var canvas0;
-var canvas1;
-var canvas2;
+var gray = 0;
+var diameter = 5;
 
-function setup() {
-
-  canvas0 = createGraphics(200, 200);
-  canvas1 = createGraphics(200, 200);
-  canvas2 = createGraphics(200, 200);
-
-  // Here we call methods of each element to set the position and class.
-  // Let's give the first two canvases class donkey, and the third class yogurt.
-  canvas0.position(50, 50);
-  canvas0.class('donkey');
-  canvas1.position(300, 50);
-  canvas1.class('donkey');
-  canvas2.position(550, 50);
-  canvas2.class('yogurt');
-}
-
-
-function draw() {
-
-  // Tell the program to draw into canvas0.
-  context(canvas0);
-  background(50, 120, 80);
-
-  // Tell the program to draw into canvas1.
-  context(canvas1);
-  background(120, 180, 200);
-
-  // Tell the program to draw into canvas1.
-  context(canvas2);
-  background(220, 180, 200);
-  
-}
-
-// On key press, hide all elements with class donkey.
-function keyPressed() {
-  // The find command returns an array of elements with class donkey. 
-  // If none are found, it returns an empty array [].
-  var donkeys = find('donkey');
-  // We can then iterate through the array and hide all the elements.
-  for (var i=0; i<donkeys.length; i++) {
-    donkeys[i].hide();
-  }
-}
-```
-![screenshot](http://i.imgur.com/IeAdO2J.png)
-
-
-### Setting style
-
-You can use a ```style()``` method on any element and pass it an inline CSS string programmatically to be applied to that element. (See [DOM-extensions/8](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/8).)
-
-```javascript
-var text;
-var canvas;
-
-function setup() {
-
-  text = createHTML("This is an HTML string with style!");
-  canvas = createGraphics(600, 400);
-
-  text.position(50, 50);
-  text.style("font-family: monospace; background-color: #FF0000; color: #FFFFFF; font-size: 18pt; padding: 10px;");
-  canvas.position(150, 150);
-  canvas.class("lemon");
-
+function setup(){
+  var canvas = 	createCanvas(200, 200);
+  canvas.mousePressed(incDiameter);
 }
 
 function draw() {
-
-  background(220, 180, 200);
-  ellipse(width/2, height/2, 100, 100);
-  ellipse(width/4, height/2, 50, 50);
-
+  background(gray);
+  ellipse(width/2, height/2, diameter, diameter);
 }
+
+function mousePressed() {
+  gray = gray + 10;
+}
+
+function incDiameter() {
+	diameter = diameter + 5;
+}
+
 ```
-![screenshot](http://i.imgur.com/8vujAih.png)
+
 
 Here are some more resources for looking up and learning about CSS:
 + [CSS basics overview](http://html.net/tutorials/css/lesson2.php)
