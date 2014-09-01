@@ -72,18 +72,17 @@ function setup() {
 
 Note that the examples above refer to createCanvas(), but they work the same for any of the createXX() methods.
 
+## Creating other HTML elements
 
-### Creating other HTML elements
-
-In addition to ```createGraphics(w, h)```, you can also add HTML elements directly using ```createHTML(html)```, which creates a DIV on the page with the given HTML. In the example below, a DIV with text is created, in addition to the graphics canvas, and the position is set for each.
+In addition to ```createCanvas(w, h)```, there are a number of other methods like `createDiv()`, `createP()`, `createA()`, etc (see the [reference](http://p5js.org/reference/#/libraries/p5.dom) for full listing). In the example below, a div with text is created, in addition to the graphics canvas, and the position is set for each.
 
 ```javascript
 var text;
 var canvas;
 
 function setup() {
-  text = createHTML("This is an HTML string!");
-  canvas = createGraphics(600, 400);
+  text = createDiv("This is an HTML string!");
+  canvas = createCanvas(600, 400);
   text.position(50, 50);
   canvas.position(300, 50);
 }
@@ -97,31 +96,31 @@ function draw() {
 ```
 ![screenshot](http://i.imgur.com/VqFxvTU.png)
 
-In the previous example we are just placing a text string into the element, but the element can really contain any HTML.  (See [DOM-extensions/1](https://github.com/lmccart/p5.js/tree/master/examples/tutorials/DOM-extensions/1).) Try replacing the line:
-```
-var text = createHTML("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
+In the previous example we are just placing a text string into the element, but the element can really contain any HTML. Try replacing this line and notice how some of the text becomes clickable.
+
+```javascript
+var text = createDiv("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
 ```
 
-### Creating HTML images
+## Creating HTML images
 
-createHTML(html) can be used to create any HTML element, but if want to create an image specifically you can use createHTMLImage(src). In the example below we create an image and a canvas, setting the position and size for each. 
+If want to create an image specifically you can use createImg(src). An HTML image differs from one drawn in the canvas using `image()`. You don't need to use `loadImage()`, and you don't need to draw it every frame; once you create it, the image exists on the page until you remove it. Also note that this image is a single element in itself, and if you drag your mouse over it you will notice that it's highlightable. This means that you can attach handlers for mouse events directly to this element, but more on that later. In the example below we create an image and a canvas, setting the position and size for each. 
 
 ```
 var img;
 var canvas;
 
-var setup = function() {
+function setup() {
 
-  img = createHTMLImage("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
-  canvas = createGraphics(400, 400);
+  img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+  canvas = createCanvas(400, 400);
 
   img.position(190, 50);
   img.size(200, AUTO); // Use AUTO to have the height or width auto scale. 
   canvas.position(300, 50);
-};
+}
 
-var draw = function() {
-
+function draw() {
   noStroke();
   background(220, 180, 200);
   fill(180, 200, 40);
@@ -130,8 +129,7 @@ var draw = function() {
   for (var i=0; i<width; i+=15) {
     line(i, 0, i, height);
   }
-
-};
+}
 ```
 ![screenshot](http://imgur.com/fqk89sj.png)
 
