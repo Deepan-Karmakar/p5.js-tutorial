@@ -107,7 +107,7 @@ var text = createDiv("Here is some text and <a href='http://i.imgur.com/WXaUlrK.
 
 If want to create an image specifically you can use createImg(src). An HTML image differs from one drawn in the canvas using `image()`. You don't need to use `loadImage()`, and you don't need to draw it every frame; once you create it, the image exists on the page until you remove it. Also note that this image is a single element in itself, and if you drag your mouse over it you will notice that it's highlightable. This means that you can attach handlers for mouse events directly to this element, but more on that later. In the example below we create an image and a canvas, setting the position and size for each. 
 
-```
+```javascript
 var img;
 var canvas;
 
