@@ -1,5 +1,7 @@
 As you have seen, createCanvas creates an HTML5 Canvas, a special element you can draw graphics into. However, using the p5.dom add-on library, p5.js can also be used to create and interact with HTML elements outside of the graphics canvas. This tutorial will explain more about how to use p5.dom.
 
+## Including the p5.dom library
+
 First, you will need to include the p5.dom.js file in your HTML. If you are using the example project it should already be there, you just need to uncomment the line in index.html that links to it. Otherwise, [download](https://github.com/lmccart/p5.js/blob/master/lib/addons/p5.dom.js) the file and add this line to your HTML header:
 
 ```html
@@ -8,13 +10,12 @@ First, you will need to include the p5.dom.js file in your HTML. If you are usin
 
 ## Storing pointers and calling methods
 
-When you call `createCanvas(w, h)` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. 
+When you call `createCanvas(w, h)` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. A full listing of methods is [here](http://p5js.org/reference/#/p5.Element). Not all of these methods listed will work or make sense for every element, so you have to use your judgment a bit. For example, calling `value()` on a slider returns or sets it's value, but calling it on canvas would have no effect.
 
 ```javascript
 var canvas;
 
 function setup() {
-
   // We are still calling createCanvas like in the past, but now 
   // we are storing the result as a variable. This way we can 
   // call methods of the element, to set the position for instance.
@@ -26,19 +27,20 @@ function setup() {
   // code when you load the sketch in your browser.
   canvas.position(300, 50);
   canvas.class("lemon");
-
 }
 
-
 function draw() {
-
   // These commands are applied to the graphics canvas as normal.
   background(220, 180, 200);
   ellipse(width/2, height/2, 100, 100);
   ellipse(width/4, height/2, 50, 50);
-
 }
 ```
+
+There is one important distinction between working with elements on an element level, vs calling methods like `rect()` or `fill()` to draw directly into the canvas. When drawing in canvas while the loop is running, you typically need to redraw everything in the scene every frame. For example, if you want a rectangle to continue to appear on the screen, you include the command `rect()` in draw, which redraws this rectangle many times per second.
+
+However, when you are working with elements, they hold a static state that you can change at any time by calling one of their methods. In the example above, the canvas is positioned at (300, 50) relative to the upper left corner. This method is called only once in setup, after that it stays in position and does not need to be reset every frame.
+
 
 ### Using parent()
 
@@ -140,7 +142,32 @@ function draw() {
 
 ## Creating HTML media elements
 
+There are also create methods for adding elements that deal with media—`createVideo()`, `createAudio()`, and `createCapture()`. These methods create a p5.MediaElement, which has some [additional methods](http://p5js.org/reference/#/p5.MediaElement) beyond those of a normal p5.Element. The example below demonstrates toggling a video with a button, see it running [here](http://p5js.org/learn/examples/Dom_Video.php).
 
+```javascript
+var playing = false;
+var fingers;
+var button;
+
+function setup() {
+  fingers = createVideo('assets/fingers.mov');
+  button = createButton('play');
+  button.mousePressed(toggleVid); // attach button listener
+}
+
+// plays or pauses the video depending on current state
+function toggleVid() {
+  if (playing) {
+    fingers.pause();
+    button.html('play');
+  } else {
+    fingers.loop();
+    button.html('pause');
+  }
+  playing = !playing;
+}
+```
+Not all browsers will support these media capabilities, you can lookup which are supported by each browser at [caniuse.com](http://caniuse.com/).
 
 ## Using createElement()
 
@@ -370,6 +397,8 @@ Alternatively, you can also input all CSS properties as one, as a single string 
 text.style("font-family:monospace; background-color:#FF0000; color:#FFFFFF; font-size:18pt; padding:10px;");
 ```
 
+###Using a CSS stylesheet
+
 Another way to incorporate this into your sketch is by creating your own stylesheet. To do this, create a file called something like style.css. Add a link to this file in the head of your HTML file.
 
 ```html
@@ -409,10 +438,15 @@ In style.css:
 }
 ```
 
+### More CSS resources
+
 Here are some more resources for looking up and learning about CSS:
 + [MDN CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 + [CSS basics overview](http://html.net/tutorials/css/lesson2.php)
 + [W3Schools CSS overview](http://www.w3schools.com/css/css_howto.asp)
 + [MDN CSS tutorial](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started)
 + [HTML & CSS book](http://htmlandcssbook.com/)
-  
+
+## What next?
+
+There is a lot more you can do with this library than is covered here, so explore the methods and classes you find in the [reference](http://p5js.org/reference/#/libraries/p5.dom). This library is a bit experimental and in development, so if you find bugs or have suggestions please [post an issue](https://github.com/lmccart/p5.js/issues). The [forum](forum.processing.org/two/) is the best place for more general programming questions.
