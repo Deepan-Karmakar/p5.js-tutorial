@@ -108,6 +108,8 @@ In the previous example we are just placing a text string into the element, but 
 var text = createDiv("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
 ```
 
+Each of these methods create a p5.Element, which is a wrapper around an HTML element, giving simplified access to many of it's main properties. However, if you want to access the underlying HTML element, you can use the `.elt` property. There is a reference for all properties of the element [here](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement).
+
 ## Creating HTML images
 
 If want to create an image specifically you can use createImg(src). An HTML image differs from one drawn in the canvas using `image()`. You don't need to use `loadImage()`, and you don't need to draw it every frame; once you create it, the image exists on the page until you remove it. Also note that this image is a single element in itself, and if you drag your mouse over it you will notice that it's highlightable. This means that you can attach handlers for mouse events directly to this element, but more on that later. In the example below we create an image and a canvas, setting the position and size for each. 
@@ -142,7 +144,9 @@ function draw() {
 
 ## Creating HTML media elements
 
-There are also create methods for adding elements that deal with media—`createVideo()`, `createAudio()`, and `createCapture()`. These methods create a p5.MediaElement, which has some [additional methods](http://p5js.org/reference/#/p5.MediaElement) beyond those of a normal p5.Element. The example below demonstrates toggling a video with a button, see it running [here](http://p5js.org/learn/examples/Dom_Video.php).
+There are also create methods for adding elements that deal with media—`createVideo()`, `createAudio()`, and `createCapture()`. These methods create a p5.MediaElement, which has some [additional methods](http://p5js.org/reference/#/p5.MediaElement) beyond those of a normal p5.Element. Again, while many features of HTML5 media are made accessible through the p5.dom API, there is [more native functionality](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement). Remember that you can use `.elt` to access the underlying element and access any of the native properties.
+
+The example below demonstrates toggling a video with a button, see it running [here](http://p5js.org/learn/examples/Dom_Video.php).
 
 ```javascript
 var playing = false;
@@ -355,7 +359,7 @@ function keyPressed() {
 }
 ```
 
-Note that with these methods, when we say "returns an element", we mean it returns a p5.Element object. A p5.Element is a wrapper around an HTML element, given simplified access to many of it's main properties. However, if you want to access the underlying HTML element, you can use the `.elt` property. There is a reference for all properties of the element [here](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement).
+Note that with these methods, when we say "returns an element", we mean it returns a p5.Element object. If you want to access the underlying HTML element, you can use the `.elt` property. There is a reference for all properties of the element [here](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement).
 
 
 
