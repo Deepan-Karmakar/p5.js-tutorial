@@ -214,7 +214,7 @@ canvas.mouseOver(function() {
 
 Elements also have `mousePressed()` methods that let you connect functions to the mousePressed event on a per element level. Important: this is different than using the global `mousePressed()` method, which gets triggered anytime the mouse is clicked anywhere. With these element specific handlers, the function is __only__ called when you click directly on the element.
 
-```
+```javascript
 var img;
 var canvas;
 
