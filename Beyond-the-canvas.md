@@ -449,4 +449,6 @@ Here are some more resources for looking up and learning about CSS:
 
 ## What next?
 
-There is a lot more you can do with this library than is covered here, so explore the methods and classes you find in the [reference](http://p5js.org/reference/#/libraries/p5.dom). This library is a bit experimental and in development, so if you find bugs or have suggestions please [post an issue](https://github.com/lmccart/p5.js/issues). The [forum](forum.processing.org/two/) is the best place for more general programming questions.
+* There is a lot more you can do with this library than is covered here, so explore the methods and classes you find in the [reference](http://p5js.org/reference/#/libraries/p5.dom). 
+* This library is a bit experimental and in development, so if you find bugs or have suggestions please [post an issue](https://github.com/lmccart/p5.js/issues). 
+* The [forum](forum.processing.org/two/) is the best place for more general programming questions.
