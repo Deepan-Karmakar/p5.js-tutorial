@@ -1,4 +1,3 @@
-**This tutorial is not entirely up to date, though it will be soon! The best place to look right now is the [p5.dom library reference page](http://p5js.org/reference/#/libraries/p5.dom).**
 As you have seen, createCanvas creates an HTML5 Canvas, a special element you can draw graphics into. However, using the p5.dom add-on library, p5.js can also be used to create and interact with HTML elements outside of the graphics canvas. This tutorial will explain more about how to use p5.dom.
 
 First, you will need to include the p5.dom.js file in your HTML. If you are using the example project it should already be there, you just need to uncomment the line in index.html that links to it. Otherwise, [download](https://github.com/lmccart/p5.js/blob/master/lib/addons/p5.dom.js) the file and add this line to your HTML header:
@@ -337,7 +336,7 @@ Note that with these methods, when we say "returns an element", we mean it retur
 
 Unlike a canvas, which you draw into to affect the way it looks, other HTML elements can be styled using what is called [CSS (Cascading Style Sheets)](https://developer.mozilla.org/en-US/docs/Web/CSS). CSS is a language used to describe the presentation of HTML elements rendered on screen, allowing you to set things like background color, font size, font color, padding, etc.
 
-In p5.js, you can use a `style()` method on any element to set CSS properties.
+In p5.js, you can use a `style()` method on any element to set CSS properties. See the [MDN CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) for a full listing of properties you can set.
 
 ```javascript
 var text;
@@ -377,7 +376,7 @@ Another way to incorporate this into your sketch is by creating your own stylesh
 <link rel="stylesheet" type="text/css" href="style.css">
 ```
 
-In the CSS file, you add what are called "rules", or lines that determine how various elements are presented. You can define these rules based on the HTML tag (p, div, span, etc), an element class (prefaced with "."), or an element id (prefaced with "#"). The below example renders the same as the previous example, but uses a CSS stylesheet instead of the `.style()` method.
+In the CSS file, you add what are called "rules", or lines that determine how various elements are presented. You can define these rules based on the HTML tag (p, div, span, etc), an element class (prefaced with "."), or an element id (prefaced with "#"). The below example renders the same as the previous example, but uses a CSS stylesheet instead of the `.style()` method. Note that in this case, no quotes are placed around either the property names or the values.
 
 ```javascript
 var text;
@@ -411,8 +410,9 @@ In style.css:
 ```
 
 Here are some more resources for looking up and learning about CSS:
++ [MDN CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 + [CSS basics overview](http://html.net/tutorials/css/lesson2.php)
 + [W3Schools CSS overview](http://www.w3schools.com/css/css_howto.asp)
-+ [W3Schools CSS reference](http://www.w3schools.com/cssref/default.asp)
++ [MDN CSS tutorial](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started)
 + [HTML & CSS book](http://htmlandcssbook.com/)
   
