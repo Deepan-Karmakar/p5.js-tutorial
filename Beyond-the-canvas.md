@@ -1,8 +1,7 @@
 **This tutorial is not entirely up to date, though it will be soon! The best place to look right now is the [p5.dom library reference page](http://p5js.org/reference/#/libraries/p5.dom).**
-
 As you have seen, createCanvas creates an HTML5 Canvas, a special element you can draw graphics into. However, using the p5.dom add-on library, p5.js can also be used to create and interact with HTML elements outside of the graphics canvas. This tutorial will explain more about how to use p5.dom.
 
-First, you will need to include the p5.dom.js file in your html. If you are using the example project it should already be there, you just need to uncomment the line in index.html that links to it. Otherwise, [download](https://github.com/lmccart/p5.js/blob/master/lib/addons/p5.dom.js) the file and add this line to your HTML header:
+First, you will need to include the p5.dom.js file in your HTML. If you are using the example project it should already be there, you just need to uncomment the line in index.html that links to it. Otherwise, [download](https://github.com/lmccart/p5.js/blob/master/lib/addons/p5.dom.js) the file and add this line to your HTML header:
 
 ```html
 <script type='text/javascript' src='relative/path/to/your/p5.dom.js'>
@@ -10,19 +9,22 @@ First, you will need to include the p5.dom.js file in your html. If you are usin
 
 ## Storing pointers and calling methods
 
-When you call ```createCanvas(w, h)``` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. 
+When you call `createCanvas(w, h)` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. 
 
 ```javascript
 var canvas;
 
 function setup() {
 
-  // We are still calling createCanvas like in the past, but now we are storing the result as a variable.
-  // This way we can call methods of the element, to set the position for instance.
+  // We are still calling createCanvas like in the past, but now 
+  // we are storing the result as a variable. This way we can 
+  // call methods of the element, to set the position for instance.
   canvas = createCanvas(600, 400);
 
-  // Here we call methods of each element to set the position and id, try changing these values.
-  // Use the inspector to look at the HTML generated from this code when you load the sketch in your browser.
+  // Here we call methods of each element to set the position 
+  // and id, try changing these values.
+  // Use the inspector to look at the HTML generated from this 
+  // code when you load the sketch in your browser.
   canvas.position(300, 50);
   canvas.class("lemon");
 
@@ -39,11 +41,11 @@ function draw() {
 }
 ```
 
-### Using .parent()
+### Using parent()
 
 When a new element is added using one of the create methods (either a canvas, div, img, etc), you may notice that it doesn't show up in the upper left corner (0,0), but instead appends to the end of the page. The elements are also affected by any existing CSS styling you may have set for the page. The guiding idea here is that p5 does as little as possible to mess with your page, so elements follow the flow of the page rather than disrupting anything. Then, if you'd like to arrange things differently, you can use p5 methods or CSS styling.
 
-If you would like to specify a location for the element, rather than appending directly to the end, you can use the `.parent()` method. In the `<body>` of your html file, create a container where you would like your canvas to get inserted, with ID of your choice:
+If you would like to specify a location for the element, rather than appending directly to the end, you can use the `.parent()` method. In the `<body>` of your HTML file, create a container where you would like your canvas to get inserted, with ID of your choice:
 
 ```html
 <div id='myContainer'></div>
@@ -59,9 +61,9 @@ function setup() {
 ```
 
 
-### Using .position()
+### Using position()
 
-Maybe you don't care which div container your elements end up in, but just want to set their position on the page. In this case you could use `.position(x, y)`. Calling this method overrides the default positioning of the element (by applying a CSS style `position:absolute`), allowing you to give it a position relative to the upper left of the window (0,0). The example below creates a div element and positions it at (100,100).
+Maybe you don't care which div container your elements end up in, but just want to set their position on the page. In this case you could use `.position(x, y)`. Calling this method overrides the default positioning of the element (by applying a CSS style `position:absolute`), allowing you to give it a position relative to the upper left of the window (0,0). The example below creates a <div> element and positions it at (100,100).
 
 ```javascript
 function setup() {
@@ -71,6 +73,8 @@ function setup() {
 ```
 
 Note that the examples above refer to createCanvas(), but they work the same for any of the createXX() methods.
+
+
 
 
 ## Creating other HTML elements
@@ -284,6 +288,127 @@ function incDiameter() {
 
 ```
 
+### Searching for elements
+
+Assigning an element a class or id may be useful in styling the element with a CSS stylesheet, or for finding the element on the page.
+
+You can use `.class()` to assign the element to a named class. It is up to you what name you choose for the class. Multiple elements in a document can have the same class value. You can use `.id()` to assign an id to the element. It is up to you what name you choose for the id. The id name must be unique in the document, meaning no other element on the page should have the same id.
+
+There are a couple of methods for finding elements already on the page.  `getElement(id)` returns the element on the page with given id or null if none is found, while `getElements(className)` returns an array of all elements with given className, or an empty array if none are found.
+
+```javascript
+var myDiv0;
+var myDiv1;
+var myDiv2;
+
+function setup() {
+
+  myDiv0 = createDiv('this is div 0');
+  myDiv1 = createDiv('this is div 1');
+  myDiv2 = createDiv('this is div 2');
+
+  // Here we call methods of each element to set the position and class.
+  // Let's give the first two canvases class donkey, and the third class yogurt.
+  myDiv0.position(50, 50);
+  myDiv0.class('donkey');
+  myDiv1.position(300, 50);
+  myDiv1.class('donkey');
+  myDiv2.position(550, 50);
+  myDiv2.class('yogurt');
+}
+
+// On key press, hide all elements with class donkey.
+function keyPressed() {
+  // getElements() returns an array of elements with class donkey. 
+  // If none are found, it returns an empty array [].
+  var donkeys = getElements('donkey');
+  // We can then iterate through the array and hide all the elements.
+  for (var i=0; i<donkeys.length; i++) {
+    donkeys[i].hide();
+  }
+}
+```
+
+Note that with these methods, when we say "returns an element", we mean it returns a p5.Element object. A p5.Element is a wrapper around an HTML element, given simplified access to many of it's main properties. However, if you want to access the underlying HTML element, you can use the `.elt` property. There is a reference for all properties of the element [here](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement).
+
+
+
+## Setting style
+
+Unlike a canvas, which you draw into to affect the way it looks, other HTML elements can be styled using what is called [CSS (Cascading Style Sheets)](https://developer.mozilla.org/en-US/docs/Web/CSS). CSS is a language used to describe the presentation of HTML elements rendered on screen, allowing you to set things like background color, font size, font color, padding, etc.
+
+In p5.js, you can use a `style()` method on any element to set CSS properties.
+
+```javascript
+var text;
+var canvas;
+
+function setup() {
+  text = createP("This is an HTML string with style!");
+  canvas = createCanvas(600, 400);
+
+  text.position(50, 50);
+  text.style("font-family", "monospace");
+  text.style("background-color", "#FF0000");
+  text.style("color", "#FFFFFF");
+  text.style("font-size", "18pt");
+  text.style("padding", "10px");
+  canvas.position(150, 150);
+}
+
+function draw() {
+  background(220, 180, 200);
+  ellipse(width/2, height/2, 100, 100);
+  ellipse(width/4, height/2, 50, 50);
+}
+```
+![screenshot](http://i.imgur.com/8vujAih.png)
+
+
+Alternatively, you can also input all CSS properties as one, as a single string separated by semicolons.
+
+```javascript
+text.style("font-family:monospace; background-color:#FF0000; color:#FFFFFF; font-size:18pt; padding:10px;");
+```
+
+Another way to incorporate this into your sketch is by creating your own stylesheet. To do this, create a file called something like style.css. Add a link to this file in the head of your HTML file.
+
+```html
+<link rel="stylesheet" type="text/css" href="style.css">
+```
+
+In the CSS file, you add what are called "rules", or lines that determine how various elements are presented. You can define these rules based on the HTML tag (p, div, span, etc), an element class (prefaced with "."), or an element id (prefaced with "#"). The below example renders the same as the previous example, but uses a CSS stylesheet instead of the `.style()` method.
+
+```javascript
+var text;
+var canvas;
+
+function setup() {
+  text = createP("This is an HTML string with style!");
+  canvas = createCanvas(600, 400);
+  text.position(50, 50);
+  text.class("lemon"); // assign a class to be used by the CSS sheet
+  canvas.position(150, 150);
+}
+
+function draw() {
+  background(220, 180, 200);
+  ellipse(width/2, height/2, 100, 100);
+  ellipse(width/4, height/2, 50, 50);
+}
+```
+
+In style.css:
+
+```css
+.lemon {
+	font-family: monospace;
+	background-color: #FF0000;
+	color: #FFFFFF;
+	font-size: 18pt;
+	padding: 10px;
+}
+```
 
 Here are some more resources for looking up and learning about CSS:
 + [CSS basics overview](http://html.net/tutorials/css/lesson2.php)
