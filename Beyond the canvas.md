@@ -453,14 +453,15 @@ Here are some more resources for looking up and learning about CSS:
 
 ## Removing things
 
-You can remove any element by calling it's `.remove()` method.
+You can remove any element by calling it's `.remove()` method. This removes any event handlers connected to the element, and removes the element from the page.
 
 ```javascript
 var myDiv = createDiv('this is some text');
 myDiv.remove();
 ```
 
-You can remove all elements created by p5.dom (not the canvas) using removeElements().
+`removeElements()` will remove all elements created by p5, except any canvas / graphics elements created by createCanvas or createGraphics. Any event handlers will be removed from these elements, and the element is removed from the page.
+
 ```javascript
 function setup() {
   createCanvas(100, 100);
@@ -472,7 +473,7 @@ function mousePressed() {
 }
 ```
 
-Also, you can remove the entire p5 sketch by calling `remove()`. This will remove the canvas and any elements created by p5.js or the p5.dom library. It will also stop the draw loop and unbind any properties or methods from the window global scope.
+Also, you can remove the entire p5 sketch by calling `remove()`. This will remove the canvas and any elements created by p5.js or the p5.dom library. It will also stop the draw loop, remove any event listeners, and unbind any properties or methods from the window global scope.
 
 ```javascript
 function setup() {
