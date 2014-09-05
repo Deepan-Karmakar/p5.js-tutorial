@@ -473,7 +473,7 @@ function mousePressed() {
 }
 ```
 
-Also, you can remove the entire p5 sketch by calling `remove()`. This will remove the canvas and any elements created by p5.js or the p5.dom library. It will also stop the draw loop, remove any event listeners, and unbind any properties or methods from the window global scope.
+Also, you can remove the entire p5 sketch by calling `remove()`. This will remove the canvas and any elements created by p5.js or the p5.dom library. It will also stop the draw loop, remove any event listeners, and unbind any properties or methods from the window global scope. One variable, `p5` will be left in case you wanted to use it to create a new sketch. If you like, you can set `p5 = null` to remove all traces.
 
 ```javascript
 function setup() {
