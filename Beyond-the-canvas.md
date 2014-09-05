@@ -460,7 +460,7 @@ var myDiv = createDiv('this is some text');
 myDiv.remove();
 ```
 
-You can remove all elements created by p5.dom (not the canvas) using `removeElements()`.
+You can remove all elements created by p5.dom (not the canvas) using removeElements().
 ```javascript
 function setup() {
   createCanvas(100, 100);
@@ -468,7 +468,7 @@ function setup() {
   createP('this is a paragraph'); 
 }
 function mousePressed() {
-  removeElements(); // this will remove the div and p, but not canvas
+  removeElements(); // this will remove the div and p, not canvas
 }
 ```
 
