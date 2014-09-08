@@ -30,5 +30,10 @@ You can use this project to quickly bootstrap your p5js project and a supporting
     * [w2_03 "n squares"](http://jsfiddle.net/juansrx/rs363mf1/)
     * [w2_03_Interaction_mouse](http://jsfiddle.net/juansrx/4fwydtfv/)
     * [w2_04 "The Clocks"](http://jsfiddle.net/juansrx/ve3wrupy/)
+    * [w2_04_Interaction_keyboard](http://jsfiddle.net/juansrx/wudbqdwy/)
+    * [w2_05 "Moving Patterns 1"](http://jsfiddle.net/juansrx/m2mkx98a/)
+    * [w2_05_AdvancedGraphics](http://jsfiddle.net/juansrx/ggsfzhjL/)
+    * [w2_06 "Moving Patterns 2"](http://jsfiddle.net/juansrx/t0cnm41t/)
+    * [25 Squares gone to party (Proposed solution to exercise)](http://jsfiddle.net/juansrx/ud4g3331/)
 
   More examples coming soon.
