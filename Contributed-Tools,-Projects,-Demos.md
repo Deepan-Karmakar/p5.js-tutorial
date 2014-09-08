@@ -23,6 +23,6 @@ You can use this project to quickly bootstrap your p5js project and a supporting
     * [w1_03 "Draw your name! (part 3)"](http://jsfiddle.net/juansrx/4porpxL5/)
     * [w1_04 "Graphics Shapes and Drawing Order"](http://jsfiddle.net/juansrx/rLL086ju/)
   2. Week 2:
-   * [w2_01 "Nine Squares"](http://jsfiddle.net/juansrx/rnquna93/)
+    * [w2_01 "Nine Squares"](http://jsfiddle.net/juansrx/rnquna93/)
 
   More examples coming soon.
