@@ -26,5 +26,9 @@ You can use this project to quickly bootstrap your p5js project and a supporting
     * [w2_01 "Nine Squares"](http://jsfiddle.net/juansrx/rnquna93/)
     * [w2_01_ConditionsAndBranching_if](http://jsfiddle.net/juansrx/mzrosxq7/)
     * [w2_02 "Nine Squares, part 2"](http://jsfiddle.net/juansrx/zym6waus/)
+    * [w2_02_ConditionsAndBranching_switch](http://jsfiddle.net/juansrx/4j0r4m7r/)
+    * [w2_03 "n squares"](http://jsfiddle.net/juansrx/rs363mf1/)
+    * [w2_03_Interaction_mouse](http://jsfiddle.net/juansrx/4fwydtfv/)
+    * [w2_04 "The Clocks"](http://jsfiddle.net/juansrx/ve3wrupy/)
 
   More examples coming soon.
