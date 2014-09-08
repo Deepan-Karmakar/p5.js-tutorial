@@ -25,5 +25,6 @@ You can use this project to quickly bootstrap your p5js project and a supporting
   2. Week 2:
     * [w2_01 "Nine Squares"](http://jsfiddle.net/juansrx/rnquna93/)
     * [w2_01_ConditionsAndBranching_if](http://jsfiddle.net/juansrx/mzrosxq7/)
+    * [w2_02 "Nine Squares, part 2"](http://jsfiddle.net/juansrx/zym6waus/)
 
   More examples coming soon.
