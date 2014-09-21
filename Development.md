@@ -30,7 +30,7 @@ npm install -g grunt-cli
 ```
 3. [Fork and clone](https://help.github.com/articles/fork-a-repo) this library. 
 ```
-git clone git@github.com:lmccart/p5.js.git
+git clone git@github.com:lmccart/p5.js.git`
 ```
 4. Navigate into the project folder and install dependencies via npm.
 ```
