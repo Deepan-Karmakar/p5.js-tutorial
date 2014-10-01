@@ -22,7 +22,7 @@ and styling for the iframe (this could directly into a wordpress post or in a st
 
 Only trick here is that you need to manually set the size of the iframe, so it works best if things are a standard size.
 
-##Using p5.js embedder
+##Using p5.js WordPress plugin
 
 [WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts. See the readme included with the plugin for instructions.
 
