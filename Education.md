@@ -11,7 +11,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Programming from A to Z](https://github.com/shiffman/Programming-from-A-to-Z-F14) - procedural analysis and generation of text-based data using JavaScript and p5.js
 
 ###Tools
-
+* [WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts
 
 ###Tutorials
 * [Embedding p5.js](https://github.com/lmccart/p5.js/wiki/Embedding-p5.js) - different ways of including sketches on existing sites or blogs.
