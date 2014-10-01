@@ -24,7 +24,7 @@ Only trick here is that you need to manually set the size of the iframe, so it w
 
 ##Using p5.js embedder
 
-* [WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts. See the readme included with the plugin for instructions.
+[WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts. See the readme included with the plugin for instructions.
 
 
 ##Using render.js
