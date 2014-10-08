@@ -46,7 +46,7 @@
 + [dat.GUI](https://code.google.com/p/dat-gui/)
 + [tributary](http://tributary.io/tributary/2958568/) - experimental environment for rapidly prototyping visualization code
 + [jsfiddle](http://jsfiddle.net/)
-+ [livecoding.io](http://livecoding.io/)
++ [livecoding.io](https://github.com/gabrielflorit/livecoding)
 + [codepen](http://codepen.io/)
 + [OpenProcessing](http://www.openprocessing.org/sketch/create) - has a page to create, run, stop a simple sketch from scratch
 + [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
