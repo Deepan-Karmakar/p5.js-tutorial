@@ -35,5 +35,15 @@ You can use this project to quickly bootstrap your p5js project and a supporting
     * [w2_05_AdvancedGraphics](http://jsfiddle.net/juansrx/ggsfzhjL/)
     * [w2_06 "Moving Patterns 2"](http://jsfiddle.net/juansrx/t0cnm41t/)
     * [25 Squares gone to party (Proposed solution to exercise)](http://jsfiddle.net/juansrx/ud4g3331/)
+  3. Week 3:
+    * [w3_01 "Using map() to map mouse co-ordinates to background colour"](http://jsfiddle.net/juansrx/Lqahtj7v/)
+    * [w3_02 "Array with sin()"](http://jsfiddle.net/juansrx/pnokeavu/)
+    * [w3_02 "Processing functions"](http://jsfiddle.net/juansrx/7kq77zm7/)
+    * [w3_03 "Using sin(), cos(), dist() to make a dynamic pattern"](http://jsfiddle.net/juansrx/5qa1beb2/)
+    * [w3_04 "Spinning top: curved motion with sin() and cos()"](http://jsfiddle.net/juansrx/mt6jcwwt/)
+    * [w3_05 "Spinning top: dynamic motion"](http://jsfiddle.net/juansrx/ho766ekz/)
+    * [w3_06 "Rule-based system"](http://jsfiddle.net/juansrx/myv5kg9t/)
+    * [w3_06 "Rule-based system: final version"](http://jsfiddle.net/juansrx/orb3kmjk/)
+    * [Rainbow Tops (Proposed solution to excercise)] (http://jsfiddle.net/juansrx/namq3has/)
 
   More examples coming soon.
