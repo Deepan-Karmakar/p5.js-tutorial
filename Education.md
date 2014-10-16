@@ -9,6 +9,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Intro to Creative Programming, RISD D+M F13](http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/index.html) - many examples
 * [Introduction to Interactive Computing, TCNJ F14](http://coursescript.com/calendar.php?course=5) - examples and notes
 * [Programming from A to Z](https://github.com/shiffman/Programming-from-A-to-Z-F14) - procedural analysis and generation of text-based data using JavaScript and p5.js
+* [Mobile Art Workshop](https://github.com/whichlight/mobile-art-intro) - intro to p5, websockets, interactivity, and sound for mobile web art
 
 ###Tools
 * [WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts
