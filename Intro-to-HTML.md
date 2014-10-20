@@ -14,7 +14,7 @@ For example, the line below contains a block of text surrounded by paragraph (p)
 Elements can also contain other elements within them. The tag `<em>` indicates that the content enclosed within should be italicized.
 
 ```html
-<p>This is a paragraph with <em>some italicized text</em> in it.</p>
+<p>This is a paragraph with <em>italicized text</em> in it.</p>
 ```
 
 When rendered in the browser, the line above will produce text that looks like this:
