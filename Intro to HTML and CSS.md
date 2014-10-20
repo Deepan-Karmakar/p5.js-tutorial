@@ -121,3 +121,11 @@ The img tag adds an image to the page. It also contains an attribute to specify 
 Attributes provide extra information necessary to a tag to work properly (such as the src attribute on the `<img>` tag or the href attribute on the `<a>` tag) or just provide some optional information. An attribute generally consists of an attribute name and an attribute value (usually surrounded by quotes), with an = sign between them.
 
 You can see all the attributes and the tags they are associated with in the [mdn attribute reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
+
+##Reference
+  * [Mozilla HTML guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML)
+  * [HTML tag cheatsheet](http://www.simplehtmlguide.com/cheatsheet.php)
+  * [HTML tag reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+  * [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS)
+  * [Lynda.com HTML essentials](http://www.lynda.com/HTML-tutorials/HTML-Essential-Training/170427-2.html)
+  * [Lynda.com CSS fundamentals](http://www.lynda.com/Web-Interactive-CSS-tutorials/CSS-Fundamentals/80436-2.html)
