@@ -63,6 +63,20 @@ The hierarchical, nested structure of HTML is sometimes referred to as the Docum
 `<h1>...</h1>` (also h2, h3, h4, etc..) are used for various headings, in decreasing size. If you think of your page like an outline, h1 could be used for the top level section headings, h2 for the secondary headings, etc. 
 
 ####Line breaks
+
+Your browser ignores line breaks in your html. So these two blocks would render the same:
+
+```html
+<p>This is a paragraph with no line breaks.</p>
+```
+
+```html
+<p>This is a
+paragraph
+with no line
+breaks.</p>
+```
+
 <br /> Line break (you'll notice that this tag doesn't have any content and therefore is both an begin and end tag, with the slash)
 <!-- ... --> Comments
 <a href="http://...">...</a> Link to another page. The "href=""" portion is an attribute. Many tags have optional attributes.
