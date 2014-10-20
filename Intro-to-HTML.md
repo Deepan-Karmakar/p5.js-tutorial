@@ -15,3 +15,7 @@ Elements can also contain other elements within them. The tag `<em>` indicates t
 
 ```html
 <p>This is a paragraph with <em>some italicized text</em> in it.</p>
+```
+
+When rendered in the browser, the line above will produce text that looks like this:
+<p>This is a paragraph with <em>some italicized text</em> in it.</p>
