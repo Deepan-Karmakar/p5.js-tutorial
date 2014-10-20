@@ -1,3 +1,5 @@
+#HTML
+
 HTML is a markup language. It tells the web browser how to structure and display content. Every HTML file is just a text document. If you open it in a text editor you see words and markup, but if you open it in your browser you see formatted text with no markup symbols.
 
 
@@ -122,7 +124,9 @@ Attributes provide extra information necessary to a tag to work properly (such a
 
 You can see all the attributes and the tags they are associated with in the [mdn attribute reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
 
-##Reference
+#CSS
+
+#Reference
   * [Mozilla HTML guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML)
   * [HTML tag cheatsheet](http://www.simplehtmlguide.com/cheatsheet.php)
   * [HTML tag reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
