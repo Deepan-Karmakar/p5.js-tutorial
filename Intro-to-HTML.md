@@ -82,15 +82,14 @@ However, you can specify line breaks by using the `<br>` tag. Note that you do n
 ```html
 <p>This is a<br>
 paragraph<br>
-with no line<br>
+with line<br>
 breaks.</p>
 ```
-
 Renders like this:
 
 <p>This is a<br>
 paragraph<br>
-with no line<br>
+with line<br>
 breaks.</p>
 
 <br /> Line break (you'll notice that this tag doesn't have any content and therefore is both an begin and end tag, with the slash)
