@@ -122,10 +122,4 @@ Attributes provide extra information necessary to a tag to work properly (such a
 
 You can see all the attributes and the tags they are associated with in the [mdn attribute reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
 
-##Reference
 
-* Mozilla HTML developer guide: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML
-* All HTML tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-* HTML tag cheatsheet: http://www.simplehtmlguide.com/cheatsheet.php
-* All HTML attributes for the tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-* CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
