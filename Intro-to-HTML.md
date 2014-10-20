@@ -77,6 +77,22 @@ with no line
 breaks.</p>
 ```
 
+However, you can specify line breaks by using the `<br>` tag. Note that you do not need a closing tag for the line break tag, since there is no content in between. 
+
+```html
+<p>This is a<br>
+paragraph<br>
+with no line<br>
+breaks.</p>
+```
+
+Renders like this:
+
+<p>This is a<br>
+paragraph<br>
+with no line<br>
+breaks.</p>
+
 <br /> Line break (you'll notice that this tag doesn't have any content and therefore is both an begin and end tag, with the slash)
 <!-- ... --> Comments
 <a href="http://...">...</a> Link to another page. The "href=""" portion is an attribute. Many tags have optional attributes.
