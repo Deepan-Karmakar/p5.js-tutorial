@@ -49,14 +49,14 @@ The hierarchical, nested structure of HTML is sometimes referred to as the Docum
 
 ##Other common tags
 
-<html> start and end HTML
-<head> head of page, not actual content
-<title> title of page
-<body> body of page, where the content goes
-<div> content section
-<p> paragraph
-<b> bold
-<h1></h1> (also h2, h3, h4, etc..) various headings, in decreasing size. 
+`<html>` start and end HTML
+`<head>` head of page, not actual content
+`<title>` title of page
+`<body>` body of page, where the content goes
+`<div>` content section
+`<p>` paragraph
+`<b>` bold
+`<h1>` (also h2, h3, h4, etc..) various headings, in decreasing size. 
 
 <br /> Line break (you'll notice that this tag doesn't have any content and therefore is both an begin and end tag, with the slash)
 <!-- ... --> Comments
