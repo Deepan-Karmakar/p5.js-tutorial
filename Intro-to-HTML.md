@@ -97,10 +97,22 @@ breaks.</p>
 
 ####Links `<a>`
 
+The `<a>` tag indicates a link. It also has some extra information between the a and the > character, letting you designate the destination of the link.
+
+```html
+Click on <a href="http://p5js.org">this text</a>.
+```
+
+Renders as:
+
+Click on <a href="http://p5js.org">this text</a>.
+
 <a href="http://...">...</a> Link to another page. The "href=""" portion is an attribute. Many tags have optional attributes.
 
 
 ####Images `<img>`
 
+The `<img>` tag adds an image to the page. 
+Some elements do not contain any text content or any other elements. These are empty elements and need no closing tag
 
 ##Attributes
