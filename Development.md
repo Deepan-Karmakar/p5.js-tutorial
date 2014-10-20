@@ -1,6 +1,6 @@
 ###Getting started
 
-Interested in contributing? Awesome! First, figure out what you'd like to do (a good place to start is the [issues list](https://github.com/lmccart/p5.js/issues)):
+Interested in contributing? Awesome! First, figure out what you'd like to do (a good place to start is the [issues list](https://github.com/lmccart/p5.js/issues) and [development checklist](https://github.com/lmccart/p5.js/wiki/Development---Checklist)):
 
 * **Fix a bug** -- If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. Go ahead and fix it and submit a PR (see below for instructions for getting set up for development). We are also in the process of adding unit tests and more inline documentation, so if the function you are fixing doesn't have these, please consider adding these as well. [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
 
