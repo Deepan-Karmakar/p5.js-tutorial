@@ -1,4 +1,4 @@
-HTML is a markup language. It tells the web browser how to structure and display content. 
+HTML is a markup language. It tells the web browser how to structure and display content. Every HTML file is just a text document. If you open it in a text editor you see words and markup, but if you open it in your browser you see formatted text with no markup symbols.
 
 
 ##Tags
