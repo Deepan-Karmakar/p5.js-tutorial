@@ -57,7 +57,10 @@ The hierarchical, nested structure of HTML is sometimes referred to as the Docum
 * `<p>...</p>` paragraph
 * `<b>...</b>` bold
 * `<em>...</em>` italic
-* `<h1>...</h1>` (also h2, h3, h4, etc..) various headings, in decreasing size. If you think of your page like an outline, h1 could be used for the top level section headings, h2 for the secondary headings, etc. 
+
+####Headings
+
+`<h1>...</h1>` (also h2, h3, h4, etc..) are used for various headings, in decreasing size. If you think of your page like an outline, h1 could be used for the top level section headings, h2 for the secondary headings, etc. 
 
 ####Line breaks
 <br /> Line break (you'll notice that this tag doesn't have any content and therefore is both an begin and end tag, with the slash)
