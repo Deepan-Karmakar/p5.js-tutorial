@@ -97,18 +97,24 @@ breaks.</p>
 
 ####Links `<a>`
 
-The `<a>` tag indicates a link. It also has some extra information between the a and the > character, letting you designate the destination of the link.
+The a tag indicates a link. It also has some extra information between the a and the > character, letting you designate the destination of the link. This extra href field is known as an attribute.
 
 ```html
 Click on <a href="http://p5js.org">this text</a>.
 ```
 The line above renders as:
-Click on <a href="http://p5js.org">this text</a>.
 
+Click on <a href="http://p5js.org">this text</a>.
 
 ####Images `<img>`
 
-The `<img>` tag adds an image to the page. 
-Some elements do not contain any text content or any other elements. These are empty elements and need no closing tag
+The img tag adds an image to the page. It also contains an attribute to specify the source of the image to display. The img element does not contain any text content or any other elements. Since it is an empty element, it doesn't need a closing tag. Instead, the forward slash from the closing tag is stuck just inside of the > character at the end of the opening tag.
+
+```html
+<img src="bubbles.jpg" />
+```
 
 ##Attributes
+
+Attributes provide extra information necessary to a tag to work properly (such as the src attribute on the `<img>` tag or the href attribute on the `<a>` tag) or just provide some optional information. An attribute generally consists of an attribute name and an attribute value (usually surrounded by quotes), with an = sign between them.
+
