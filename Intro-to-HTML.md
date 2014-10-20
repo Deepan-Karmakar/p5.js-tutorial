@@ -19,3 +19,21 @@ Elements can also contain other elements within them. The tag `<em>` indicates t
 
 When rendered (opened) in the browser, the line above will look like this:
 <p>This is a paragraph with <em>some italicized text</em> in it.</p>
+
+##An HTML page
+
+Often, elements contain other elements to create a hierarchal structure. This is how an html page is built. The chunk below represents a very simple but complete html page.
+
+```html
+<html>
+  <head>
+    <title>The page title</title>
+  </head>
+
+  <body>
+    <p>This is a basic page with a paragraph in it.</p>
+  </body>
+</html>
+```
+
+All of the content on the page is surrounded by one set of <html> tags. Within this, there are two sections - the head and the body. The head contains metadata about the page that does not show up on the page itself, for example, the title (as shown above). This section might also include links to other files that are incorporated in the page (more on this later). The body section is where all the content that shows up on the page goes, like the paragraph element we see above.
