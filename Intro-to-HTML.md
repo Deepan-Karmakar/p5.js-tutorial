@@ -95,9 +95,9 @@ with line<br>
 breaks.</p>
 
 
-####Links <a>
+####Links `<a>`
 
 <a href="http://...">...</a> Link to another page. The "href=""" portion is an attribute. Many tags have optional attributes.
 
 
-####Hyperlinks
+####Images `<img>`
