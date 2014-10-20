@@ -59,6 +59,7 @@ The hierarchical, nested structure of HTML is sometimes referred to as the Docum
 * `<em>...</em>` italic
 * `<!-- ... -->` comments
 
+
 ####Headings `<h1>`, `<h2>`
 
 `<h1>...</h1>` (also h2, h3, h4, etc..) are used for various headings, in decreasing size. If you think of your page like an outline, h1 could be used for the top level section headings, h2 for the secondary headings, etc. 
@@ -94,7 +95,7 @@ with line<br>
 breaks.</p>
 
 
-####Hyperlinks
+####Links <a>
 
 <a href="http://...">...</a> Link to another page. The "href=""" portion is an attribute. Many tags have optional attributes.
 
