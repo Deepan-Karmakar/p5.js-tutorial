@@ -47,3 +47,18 @@ The body section is where all the content that shows up on the page goes, like t
 
 The hierarchical, nested structure of HTML is sometimes referred to as the Document Object Model, or DOM. You can think of the page (DOM) as a tree with parents and children — think of a family tree. Being able to access elements of the tree comes into play when we want to manipulate the HTML with CSS or JavaScript.
 
+##Other common tags
+
+<html> start and end HTML
+<head> head of page, not actual content
+<title> title of page
+<body> body of page, where the content goes
+<div> content section
+<p> paragraph
+<b> bold
+<h1></h1> (also h2, h3, h4, etc..) various headings, in decreasing size. 
+
+<br /> Line break (you'll notice that this tag doesn't have any content and therefore is both an begin and end tag, with the slash)
+<!-- ... --> Comments
+<blink>...</blink> Make your text blink
+<a href="http://...">...</a> Link to another page. The "href=""" portion is an attribute. Many tags have optional attributes.
