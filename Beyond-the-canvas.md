@@ -493,5 +493,6 @@ function mousePressed() {
 
 * There is a lot more you can do with this library than is covered here, so explore the methods and classes you find in the [reference](http://p5js.org/reference/#/libraries/p5.dom). 
 * See more examples in the DOM section on the [learn page](p5js.org/learn/#examples).
+* If you'd like to learn more about HTML and the DOM in general, see this [intro to HTML](https://github.com/lmccart/p5.js/wiki/Intro-to-HTML)
 * This library is a bit experimental and in development, so if you find bugs or have suggestions please [post an issue](https://github.com/lmccart/p5.js/issues). 
 * The [forum](forum.processing.org/two/) is the best place for more general programming questions.
