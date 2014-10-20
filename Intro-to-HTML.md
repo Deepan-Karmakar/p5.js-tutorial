@@ -102,12 +102,8 @@ The `<a>` tag indicates a link. It also has some extra information between the a
 ```html
 Click on <a href="http://p5js.org">this text</a>.
 ```
-
-Renders as:
-
+The line above renders as:
 Click on <a href="http://p5js.org">this text</a>.
-
-<a href="http://...">...</a> Link to another page. The "href=""" portion is an attribute. Many tags have optional attributes.
 
 
 ####Images `<img>`
