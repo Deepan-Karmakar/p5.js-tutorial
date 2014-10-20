@@ -57,12 +57,13 @@ The hierarchical, nested structure of HTML is sometimes referred to as the Docum
 * `<p>...</p>` paragraph
 * `<b>...</b>` bold
 * `<em>...</em>` italic
+* `<!-- ... -->` comments
 
-####Headings
+####Headings `<h1>`, `<h2>`
 
 `<h1>...</h1>` (also h2, h3, h4, etc..) are used for various headings, in decreasing size. If you think of your page like an outline, h1 could be used for the top level section headings, h2 for the secondary headings, etc. 
 
-####Line breaks
+####Line breaks `<br>`
 
 Your browser ignores line breaks in your html. So these two blocks would render the same:
 
@@ -92,6 +93,10 @@ paragraph<br>
 with line<br>
 breaks.</p>
 
-<br /> Line break (you'll notice that this tag doesn't have any content and therefore is both an begin and end tag, with the slash)
-<!-- ... --> Comments
+
+####Hyperlinks
+
 <a href="http://...">...</a> Link to another page. The "href=""" portion is an attribute. Many tags have optional attributes.
+
+
+####Hyperlinks
