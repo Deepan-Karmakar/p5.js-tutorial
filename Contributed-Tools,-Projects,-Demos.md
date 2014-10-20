@@ -45,5 +45,6 @@ You can use this project to quickly bootstrap your p5js project and a supporting
     * [w3_06 "Rule-based system"](http://jsfiddle.net/juansrx/myv5kg9t/)
     * [w3_06 "Rule-based system: final version"](http://jsfiddle.net/juansrx/orb3kmjk/)
     * [Rainbow Tops (Proposed solution to excercise)] (http://jsfiddle.net/juansrx/namq3has/)
+* [Network visualization](http://hanbyul-here.net/etc/2014_thesis_network/index.html) by Hanbyul Jo - [code](https://github.com/hanbyul-here/thesis_network)
 
   More examples coming soon.
