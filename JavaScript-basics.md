@@ -89,7 +89,7 @@ var m = true;
 
 ### Object
 
-
+An object can be thought of as a collection of properties. These properties can be values of any type, including other objects, which enables building complex data structures. Arrays are a special type of object, more on this later.
 
 ### Null and undefined
 
