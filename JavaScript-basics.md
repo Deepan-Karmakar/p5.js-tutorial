@@ -205,6 +205,46 @@ if (x > 5) {
 }
 ```
 
+**multiple conditions**
+```javascript
+var x = 1;
+if (x > -5 && x < 5) {
+  // execute some code!
+}
+```
+
+```javascript
+var x = "puddings";
+if (x.length === 8 || x.indexOf("ding") === -1) {
+  // execute some code!
+}
+```
+
+# Loops
+
+## While
+
+Just as with our conditional (if / else) statements a while loop employs boolean test that must evaluate to true in order for the instructions enclosed in the curly brackets to be executed. The difference is that the instructions continue to be executed until the test condition becomes false.
+
+```javascript
+var x = 0;
+while (x < 10) {
+  console.log(x);
+  x++;
+}
+```
+
+## For loops
+
+Since this is a common use of a loop (creating a variable, checking it's value and incrementing by a certain amount) there exists an even quicker way to do the above, all in one step. You can read this as, create variable x and set it to 0, while x is less than 10, do the following. Increment x by 1 at the end.
+
+```javascript
+for (var x = 0; x < 10; x++) {
+  console.log(x);
+}
+```
+
+
 # Arrays
 
 # Functions
