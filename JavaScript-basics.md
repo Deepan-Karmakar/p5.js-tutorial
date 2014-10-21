@@ -75,8 +75,42 @@ var x = 'hello';
 var y = "maybe tomorrow";
 ```
 
-There are a number of built-in JavaScript methods that let you manipulate strings. You can see them all [here](http://www.w3schools.com/js/js_string_methods.asp), a few of the most common follow:
+There are a number of built-in JavaScript properties and methods that let you manipulate strings. You can see them all [here](http://www.w3schools.com/js/js_string_methods.asp), a few of the most common follow.
 
+#### length
+
+#### indexOf(str)
+
+Returns the index of (the position of) the first occurrence of a specified text in a string. Returns -1 if the search string is not found.
+
+```javascript
+var str = "I like to eat apples.";
+var pos = str.indexOf("eat");
+console.log(pos); // 10
+pos = str.indexOf("pears");
+console.log(pos); // -1 
+```
+#### substring(start, end)
+
+Extracts a part of a string and returns the extracted part in a new string. The method takes 2 parameters: the starting index, and the ending index.
+
+```javascript
+var str = "I like to eat apples.";
+var newStr = str.substring(2, 6);
+console.log(newStr); // "like"
+```
+
+#### toLowerCase(), toUpperCase()
+
+These functions convert the string to all lower or all upper case.
+
+```javascript
+var str = "I like to eat apples.";
+var lowerStr = str.toLowerCase();
+console.log(lowerStr); // "i like to eat apples."
+var upperStr = str.toUpperCase();
+console.log(upperStr); // "I LIKE TO EAT APPLES."
+```
 
 ### Boolean
 
