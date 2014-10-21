@@ -179,7 +179,7 @@ y = x;
 
 # Code formatting
 
-**Comments**
+## Comments
 
 Comments in JavaScript are similar to comments in Java or C:
 ```javascript         
