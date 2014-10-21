@@ -268,6 +268,18 @@ globalLocalTest();
 	
 console.log("outside function global: " + xGlobal);
 console.log("outside function local: " + xLocal);
+```
+
+Be careful about reinitializing an existing global variable. You will not see any error, but it could end up confusing things.
+
+```javascript
+var a = 10;
+function doStuff() {
+  var a = "cats"; // ok, but don't!
+  console.log(a);
+}
+console.log(a);
+```
 
 # Code formatting
 
