@@ -126,10 +126,24 @@ You can see all the attributes and the tags they are associated with in the [mdn
 
 #CSS
 
+Cascading Style Sheets, or CSS, is used to tell web browsers how to style and display HTML-structured text. While HTML defines the content, CSS supplies the presentation. Separating the content from the style makes the code easier to read and also allows us to more easily swap out one style for another.
+
+You can set style properties inline using the style attribute. Inside the quotes, you place one or more property:value pairs, separated by semicolons.
+```html
+<p style=”width:400px; background:#FF0000; font-size: 18px;”>This is some text.</p>
+```
+
+The line above renders in the browser like this:
+<p style=”width:400px; background:#FF0000; font-size: 18px;”>This is some text.</p>
+
+You can find all css style attributes in this [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS). This is just the most basic way of adding CSS styling. Another alternative is to separate out the CSS into it's own file, getting us closer to the separate content and style goal mentioned above (more on this later!).
+
+
 #Reference
   * [Mozilla HTML guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML)
   * [HTML tag cheatsheet](http://www.simplehtmlguide.com/cheatsheet.php)
   * [HTML tag reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+  * [Mozilla CSS guide](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started)
   * [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS)
   * [Lynda.com HTML essentials](http://www.lynda.com/HTML-tutorials/HTML-Essential-Training/170427-2.html)
   * [Lynda.com CSS fundamentals](http://www.lynda.com/Web-Interactive-CSS-tutorials/CSS-Fundamentals/80436-2.html)
