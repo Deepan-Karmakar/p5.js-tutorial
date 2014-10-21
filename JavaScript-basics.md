@@ -256,7 +256,8 @@ for (var x = 0; x < 10; x++) {
 
 ### Comments
 
-Comments in JavaScript are similar to comments in Java or C:
+It is a good idea to add comments to your code so you can remember what you're doing and debug when things go wrong. Commenting can also be useful for quickly removing or adding back in chunks of code (safer than deleting the chunk). Comments in JavaScript are similar to comments in Java or C.
+
 ```javascript         
   // single line comment   
 ```
