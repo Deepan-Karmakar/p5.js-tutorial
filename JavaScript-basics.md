@@ -157,28 +157,17 @@ y = x;
 # Operators
 
 ### Assignment
-=
+* `=`
 
 ### Mathematical
 * + addition
 * - subtraction
-* * multiplication
+* `*` multiplication
 * / division
 * % modulo
 * ++ add one shorthand
 * -- subtract one shorthand
 
-```javascript
-var x = 0;
-x = x + 1;
-console.log(x);
-x = x + x;
-console.log(x);
-x = x/2;
-console.log(x);
-x = 7 * 8;
-console.log(x);
-```
 
         
 Relational Operators:
