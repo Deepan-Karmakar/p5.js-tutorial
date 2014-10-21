@@ -142,7 +142,57 @@ var cars;              // value is undefined
 var person = null;     // value is null
 ```
 
+## Assignment
+
+Once variables are declared, you are free to assign values to them and subsequently use them in operations.
+
+```javascript
+var x = 5;
+x = 5 + 5;
+x = "cat";
+var y = 5.5;
+y = x;
+```
+
 # Operators
+
+### Assignment
+=
+
+### Mathematical
+* + addition
+* - subtraction
+* * multiplication
+* / division
+* % modulo
+* ++ add one shorthand
+* -- subtract one shorthand
+
+```javascript
+var x = 0;
+x = x + 1;
+console.log(x);
+x = x + x;
+console.log(x);
+x = x/2;
+console.log(x);
+x = 7 * 8;
+console.log(x);
+```
+
+        
+Relational Operators:
+>= (greater than or equal to)
+<= (less than or equal to) 
+== (equality) 
+!= (inequality) 
+=== (equality with type checking) 
+!== (inequality with type checking) 
+
+Logical Operators: Sometime called boolean logic
+|| (logical OR)
+&& (logical AND)
+! (logical NOT)
 
 # Logic
 
