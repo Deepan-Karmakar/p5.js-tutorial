@@ -234,7 +234,7 @@ while (x < 10) {
 }
 ```
 
-## For loops
+## For
 
 Since this is a common use of a loop (creating a variable, checking it's value and incrementing by a certain amount) there exists an even quicker way to do the above, all in one step. You can read this as, create variable x and set it to 0, while x is less than 10, do the following. Increment x by 1 at the end.
 
