@@ -168,7 +168,42 @@ y = x;
 * `&&` logical AND
 * `!` logical NOT
 
-# Logic
+# Conditionals
+
+Conditionals allow your program to execute a block of code based on the result of an expression that utilizes relational or logical (boolean) operators.
+
+**if**
+
+```javascript
+var x = 1;
+if (x > 0) {
+  // execute some code
+}
+```
+
+**if, else**
+
+```javascript
+var x = 1;
+if (x > 0) {
+  // execute some code
+} else {
+  // execute some other code
+}
+```
+
+**if, else if, else**
+
+```javascript
+var x = 1;
+if (x > 5) {
+  // execute some code
+} else if (x < -5) {
+  // execute some other code
+} else {
+  // execute some other other code
+}
+```
 
 # Arrays
 
