@@ -100,7 +100,7 @@ var newStr = str.substring(2, 6);
 console.log(newStr); // "like"
 ```
 
-#### toLowerCase(), toUpperCase()
+**toLowerCase(), toUpperCase()**
 
 These functions convert the string to all lower or all upper case.
 
