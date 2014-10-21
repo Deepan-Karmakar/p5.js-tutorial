@@ -369,6 +369,10 @@ function doStuff() {
 console.log(a);
 ```
 
+# Arrays
+
+# Objects
+
 # Code formatting
 
 ### Comments
