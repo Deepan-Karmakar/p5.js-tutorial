@@ -303,7 +303,30 @@ drawEllipse(mouseX, mouseY);
 
 ### Returning a value
 
-The 
+The functions above take some action or change the state of the program, but they don't return any value. If you want your function return a value, include a line starting with `return` followed by the value to return as the last line in your function.
+
+```javascript
+function addNumbers(a, b) {
+  var c = a + b;
+  return c;
+}
+var result = addNumbers(3, -10);
+console.log(result); // -7
+```
+
+```javascript
+// p5.js has some built-in functions like this
+var x = random(100);
+console.log(x);
+
+// you can write your own using p5.js functions, too
+function addJitter(x) {
+  var y = x + random(-1, 1); // uses p5.js random fxn within
+  return y;
+}
+var result = addJitter(10);
+console.log(result); // 10.3 or 9.8 or...
+```
 
 
 # Variable scope
