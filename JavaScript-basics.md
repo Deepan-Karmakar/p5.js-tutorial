@@ -244,9 +244,6 @@ for (var x = 0; x < 10; x++) {
 }
 ```
 
-
-# Arrays
-
 # Functions
 
 A function is a block of reusable code. It is useful because you can reuse it, executing it many times. Functions also help structure and organize your code.
