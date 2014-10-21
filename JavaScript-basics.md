@@ -267,3 +267,17 @@ Comments in JavaScript are similar to comments in Java or C:
     comment
   */
 ```
+
+### Indentation
+
+Whenever you introduce curly braces, you should indent everything inside. You can use two spaces or four, but be consistent. This will help you make sense of your code later.
+
+```javascript
+function doStuff(x) {
+  if (x > 0) {
+    console.log("x is greater than 0");
+  } else {
+    console.log("x is not greater than 0");
+  }
+}
+```
