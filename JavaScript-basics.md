@@ -28,7 +28,9 @@ You can also write JavaScript in file external to the HTML and point to that fil
 
 Comments in JavaScript are similar to comments in Java or C:
 ```javascript         
-  // Single Line Comment        
+  // Single Line Comment   
+```
+```javascript     
   /* 
     Multiple
     Line
