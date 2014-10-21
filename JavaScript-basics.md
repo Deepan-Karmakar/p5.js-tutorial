@@ -77,9 +77,15 @@ var y = "maybe tomorrow";
 
 There are a number of built-in JavaScript properties and methods that let you manipulate strings. You can see them all [here](http://www.w3schools.com/js/js_string_methods.asp), a few of the most common follow.
 
-#### length
+**length**
 
-#### indexOf(str)
+Gives the length of the string.
+
+```javascript
+var str = "I like to eat pickles."
+console.log(str.length); // 22
+
+**indexOf(str)**
 
 Returns the index of (the position of) the first occurrence of a specified text in a string. Returns -1 if the search string is not found.
 
@@ -90,7 +96,8 @@ console.log(pos); // 10
 pos = str.indexOf("pears");
 console.log(pos); // -1 
 ```
-#### substring(start, end)
+
+**substring(start, end)**
 
 Extracts a part of a string and returns the extracted part in a new string. The method takes 2 parameters: the starting index, and the ending index.
 
