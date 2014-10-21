@@ -23,4 +23,15 @@ You can also write JavaScript in file external to the HTML and point to that fil
 ```html
 <script type="text/javascript" src="myscript.js"></script>
 ```
-		
+
+##Comments
+
+Comments in JavaScript are similar to comments in Java or C:
+```javascript         
+  // Single Line Comment        
+  /* 
+    Multiple
+    Line
+    Comment
+  */
+```
