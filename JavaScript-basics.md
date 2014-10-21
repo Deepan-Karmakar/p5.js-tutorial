@@ -320,7 +320,7 @@ function makeSuper(person) {
   return "super "+person;
 }
 var name = makeSuper(name);
-console.log(name);
+console.log(name); // "super jenny"
 ```
 
 ```javascript
