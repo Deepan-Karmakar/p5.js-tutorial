@@ -315,6 +315,15 @@ console.log(result); // -7
 ```
 
 ```javascript
+var name = "jenny";
+function makeSuper(person) {
+  return "super "+person;
+}
+var name = makeSuper(name);
+console.log(name);
+```
+
+```javascript
 // p5.js has some built-in functions like this
 var x = random(100);
 console.log(x);
