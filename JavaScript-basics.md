@@ -48,6 +48,47 @@ In order to see the console on Chrome, select "View" > "Developer" > "JavaScript
 
 ## Variables
 
+A variable stores a value in memory so that it can be used later in a program. The variable can be used many times within a single program, and the value is easily changed while the program is running.
+
+The primary reason we use variables is to avoid repeating ourselves in the code. If you are typing the same number more than once, consider making it into a variable to make your code more general and easier to update.
+
+###Data Types
+
+JavaScript is a "loosely typed" or "dynamic" language, meaning you don't have to declare the types of variables ahead of time. The type will get determined automatically while the program is being processed. Other languages such as Java are strictly typed and each variable must declare the type of the data it will contain. Even though you don't have to declare types, JavaScript does have different data types.
+
+####Number
+
+A number with a decimal point. In other languages this is typically called a float. Even if you don't explicitly include a decimal point, the processor will interpret it as a floating point number.
+
+```javascript
+var x = 5; // interpreted as 5.0 
+var y = 1.223;
+var z = -300;
+```
+
+####String
+
+A series of characters. These can be defined with either single or double quotes.
+
+```javascript
+var x = 'hello';
+var y = "maybe tomorrow";
+```
+
+There are a number of built-in JavaScript methods that let you manipulate strings. You can see them all [here](http://www.w3schools.com/js/js_string_methods.asp), a few of the most common follow:
+
+
+####Boolean
+
+A "true" or "false" value. 
+
+```javascript
+var n = false;
+var m = true;
+```
+
+
+
 ## Operators
 
 ## Logic
