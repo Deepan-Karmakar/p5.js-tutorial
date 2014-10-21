@@ -251,6 +251,23 @@ for (var x = 0; x < 10; x++) {
 
 # Variable scope
 
+Variables that you declare inside a function are local to that function. Variables declared outside of any function are known as "global variables" and can be accessed from anywhere in the program.
+
+If I have a function called blah and inside blah I declare a variable called "counter", I can not refer to counter outside of the function. In the case that I want to use the value of counter outside of the function, I either have to declare it outside of the function or return it's value.
+
+```javascript
+var xGlobal = "global";
+	
+function globalLocalTest() {
+  var xLocal = "local";
+  console.log("inside function global: " + xGlobal);
+  console.log("inside function local: " + xLocal);		
+}
+	
+globalLocalTest();
+	
+console.log("outside function global: " + xGlobal);
+console.log("outside function local: " + xLocal);
 
 # Code formatting
 
