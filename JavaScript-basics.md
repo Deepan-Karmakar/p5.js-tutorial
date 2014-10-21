@@ -3,7 +3,7 @@ JavaScript is a scripting language that is typically used on web pages where it 
 Although the JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
 
 
-# The `<script>` tag
+# `<script>` tag
 
 JavaScript can be placed anywhere within an HTML document, although it is typically included in the "head" section of the HTML, and is specified by the use of `<script>` tags:
 
@@ -248,6 +248,63 @@ for (var x = 0; x < 10; x++) {
 # Arrays
 
 # Functions
+
+A function is a block of reusable code. It is useful because you can reuse it, executing it many times. Functions also help structure and organize your code.
+
+To create a function, you write the word `function` followed by the function name, a set of parentheses, and a set of curly braces. Within the curly braces is the code that will be executed when the function is run.
+
+```javascript
+function doSomething() {
+  // stuff happens here
+}
+doSomething(); // call the function
+```
+
+```javascript
+function sayHello() {
+  console.log("hello");
+}
+sayHello(); // call the function
+```
+
+```javascript
+// with p5.js
+function changeBackground() {
+  background(random(255), random(255), random(255));
+}
+```
+
+### Function parameters
+
+A function can also accept values as input, known as arguments or parameters. In this case, the parameters (names representing the values) are listed inside the parentheses of the function, separated by commas. Note that these parameters are not the names of actual variables in your program, but are variables limited to the scope of the function. When a function is run, the values passed in are temporarily assigned to the parameter defined in the function, until the function completes its execution.
+
+```javascript
+function sayHello(person) {
+  console.log("hello "+person);
+}
+sayHello("jenny");
+```
+
+```javascript
+function addNumbers(a, b) {
+  var c = a + b;
+  console.log(c);
+}
+addNumbers(3, -10);
+```
+
+```javascript
+// with p5.js
+function drawEllipse(x, y) {
+  ellipse(x, y, 50, 50);
+}
+drawEllipse(mouseX, mouseY);
+```
+
+### Returning a value
+
+The 
+
 
 # Variable scope
 
