@@ -7,16 +7,20 @@ Although the JavaScript has "Java" in it's name, it isn't related other than by 
 
 JavaScript can be placed anywhere within an HTML document, although it is typically included in the "head" section of the HTML, and is specified by the use of <script> tags:
 
+```html
 <html>              
-	<head>              
-		<script type="text/javascript">              
-			//JavaScript goes here
+  <head>              
+    <script type="text/javascript">              
+      //JavaScript goes here
 
-		</script>
-	</head>              
+    </script>
+  </head>              
 </html>              
-		
-You can also write JavaScript in file external to the HTML and point to that file in a "script" tag.
+```
+	
+You can also write JavaScript in file external to the HTML and point to that file in a script tag.
 
+```html
 <script type="text/javascript" src="myscript.js"></script>
+```
 		
