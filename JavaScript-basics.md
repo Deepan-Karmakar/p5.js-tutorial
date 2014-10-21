@@ -89,12 +89,12 @@ var m = true;
 
 
 
-## Operators
+# Operators
 
-## Logic
+# Logic
 
-## Arrays
+# Arrays
 
-## Functions
+# Functions
 
-## Variable scope
+# Variable scope
