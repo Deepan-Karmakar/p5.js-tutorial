@@ -84,6 +84,7 @@ Gives the length of the string.
 ```javascript
 var str = "I like to eat pickles."
 console.log(str.length); // 22
+```
 
 **indexOf(str)**
 
