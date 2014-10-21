@@ -58,10 +58,10 @@ JavaScript is a "loosely typed" or "dynamic" language, meaning you don't have to
 
 ### Number
 
-A number with a decimal point. In other languages this is typically called a float. Even if you don't explicitly include a decimal point, the processor will interpret it as a floating point number.
+A number with a decimal point. In other languages this is typically called a float. It can be written with or without the decimal point, the processor will interpret it as a floating point number.
 
 ```javascript
-var x = 5; // interpreted as 5.0 
+var x = 5;
 var y = 1.223;
 var z = -300;
 ```
@@ -80,14 +80,25 @@ There are a number of built-in JavaScript methods that let you manipulate string
 
 ### Boolean
 
-A "true" or "false" value. 
+A "true" or "false" value. Boolean variables are often used for conditional testing and keeping track of state.
 
 ```javascript
 var n = false;
 var m = true;
 ```
 
+### Object
 
+
+
+### Null and undefined
+
+The value of a variable with no value is undefined. Variables can be emptied by setting the value to null.
+
+```javascript
+var cars;              // value is undefined
+var person = null;     // value is null
+```
 
 # Operators
 
