@@ -160,28 +160,26 @@ y = x;
 * `=`
 
 ### Mathematical
-* + addition
-* - subtraction
+* `+` addition
+* `-` subtraction
 * `*` multiplication
-* / division
-* % modulo
-* ++ add one shorthand
-* -- subtract one shorthand
+* `/` division
+* `%` modulo
+* `++` add one shorthand
+* `--` subtract one shorthand
 
+### Relational
+* `>=` greater than or equal to
+* `<=` less than or equal to
+* `==` equality 
+* `!=` inequality 
+* `===` equality with type checking 
+* `!==` inequality with type checking 
 
-        
-Relational Operators:
->= (greater than or equal to)
-<= (less than or equal to) 
-== (equality) 
-!= (inequality) 
-=== (equality with type checking) 
-!== (inequality with type checking) 
-
-Logical Operators: Sometime called boolean logic
-|| (logical OR)
-&& (logical AND)
-! (logical NOT)
+### Logical
+* `||` logical OR
+* `&&` logical AND
+* `!` logical NOT
 
 # Logic
 
