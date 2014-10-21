@@ -37,3 +37,23 @@ Comments in JavaScript are similar to comments in Java or C:
     comment
   */
 ```
+
+## Console
+
+One of the first things we probably want to learn is how to get debugging output. You can write to the console by using the built-in console.log method:
+```javascript
+console.log("hello");
+```
+In order to see the console on Chrome, select "View" > "Developer" > "JavaScript Console". Use it often!
+
+## Variables
+
+## Operators
+
+## Logic
+
+## Arrays
+
+## Functions
+
+## Variable scope
