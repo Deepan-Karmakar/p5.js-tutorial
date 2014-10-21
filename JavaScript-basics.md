@@ -24,19 +24,6 @@ You can also write JavaScript in file external to the HTML and point to that fil
 <script type="text/javascript" src="myscript.js"></script>
 ```
 
-# Comments
-
-Comments in JavaScript are similar to comments in Java or C:
-```javascript         
-  // single line comment   
-```
-```javascript     
-  /* 
-    multiple
-    line
-    comment
-  */
-```
 
 # Console
 
@@ -188,3 +175,20 @@ y = x;
 # Functions
 
 # Variable scope
+
+
+# Code formatting
+
+**Comments**
+
+Comments in JavaScript are similar to comments in Java or C:
+```javascript         
+  // single line comment   
+```
+```javascript     
+  /* 
+    multiple
+    line
+    comment
+  */
+```
