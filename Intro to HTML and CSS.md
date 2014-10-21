@@ -118,6 +118,12 @@ The img tag adds an image to the page. It also contains an attribute to specify 
 <img src="bubbles.jpg" />
 ```
 
+The source can be relative to the html file you are working with (above), or it can be a full url (below). In the example above, the bubbles.jpg file would need to be located in the same directory as the html file.
+
+```html
+<img src="https://raw.githubusercontent.com/lmccart/p5.js/master/examples/p5.Image/unicorn.jpg" />
+```
+
 ##Attributes
 
 Attributes provide extra information necessary to a tag to work properly (such as the src attribute on the `<img>` tag or the href attribute on the `<a>` tag) or just provide some optional information. An attribute generally consists of an attribute name and an attribute value (usually surrounded by quotes), with an = sign between them.
