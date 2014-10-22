@@ -402,8 +402,44 @@ for (var i=0; i<3; i++) {
 console.log(arr); // ["I love mushrooms", "I love cheerios", "I love sparking water"]
 ```
 
+Like strings, arrays have some built-in convenience properties and methods. You can see them all in the [MDN array reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods), a few of the common ones follow.
 
+**length**
 
+Gives the length (number of items) of the array. This can be useful for iterating over arrays.
+
+```javascript
+var arr = [3, 5, 19];
+for (var i=0; i<arr.length; i++) {
+  arr[i] *= 2;
+}
+console.log(arr.length); // 3
+console.log(arr); // [6, 10, 38]
+```
+
+**push()**
+
+Adds (pushes) a new element to the end of the array, increasing the length of the array by 1.
+
+```javascript
+var arr = [30, 10, 0];
+arr.push(true);
+console.log(arr.length); // 4
+console.log(arr); // [30, 10, 0, true]
+```
+
+**indexOf(elt)**
+
+Returns the index of given element, or returns -1 if it's not found.
+
+```javascript
+var array = [2, 5, 9];
+var index = array.indexOf(2); // 0
+index = array.indexOf(7); // -1
+index = array.indexOf(9, 2); // 2
+index = array.indexOf(2, -1); // -1
+index = array.indexOf(2, -3); // 0
+```
 
 # Objects
 
