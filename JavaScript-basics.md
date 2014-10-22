@@ -381,7 +381,7 @@ var misc = ["pumpkin", 10.4, "dog", false, -1]; // arrays can have items of diff
 var more_misc = ["dustpan", "k", fruits, misc]; // arrays can contain other arrays
 ```
 
-You can place items in the array by index, the first item in an array has index 0.
+You can place or access items in the array by index, the first item in an array has index 0.
 
 ```javascript
 var arr = [];
@@ -389,7 +389,19 @@ arr[0] = "moss";
 arr[1] = "sludge";
 arr[2] = "mold";
 console.log(arr); // ["moss", "sludge", "mold"]
+console.log(arr[1]); // "sludge"
 ```
+
+You can use a for loop to iterate over an array.
+
+```javascript
+var arr = ["mushrooms", "cheerios", "sparkling water"];
+for (var i=0; i<3; i++) {
+  arr[i] = "I love "+arr[i];
+}
+console.log(arr); // ["I love mushrooms", "I love cheerios", "I love sparking water"]
+```
+
 
 
 
