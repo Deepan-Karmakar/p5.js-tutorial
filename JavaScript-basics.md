@@ -371,6 +371,28 @@ console.log(a);
 
 # Arrays
 
+Arrays are used to store multiple objects or values in one variable. To create an array, use square brackets, and place any number of items separated by commas in between.
+
+```javascript
+var arr = []; // empty array
+var fruits = ["apple", "dragonfruit", "banana", "starfruit"];
+var ages = [10, 21, 89, 3, 68];
+var misc = ["pumpkin", 10.4, "dog", false, -1]; // arrays can have items of different datatypes
+var more_misc = ["dustpan", "k", fruits, misc]; // arrays can contain other arrays
+```
+
+You can place items in the array by index, the first item in an array has index 0.
+
+```javascript
+var arr = [];
+arr[0] = "moss";
+arr[1] = "sludge";
+arr[2] = "mold";
+console.log(arr); // ["moss", "sludge", "mold"]
+```
+
+
+
 # Objects
 
 # Code formatting
