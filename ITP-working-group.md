@@ -23,6 +23,7 @@
 5. Thinking about text:
  * https://github.com/lmccart/p5.js/issues/60
  * https://github.com/lmccart/p5.js/issues/356
+ * [Some materials are here from my A to Z class](http://shiffman.net/teaching/a2z/visualization/)
 
 6. Thinking about svgs and pdf export:
  * https://github.com/lmccart/p5.js/issues/37
