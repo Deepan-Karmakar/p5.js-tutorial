@@ -6,10 +6,10 @@
 ###Projects list
 
 1. **DOM manipulation.** The intention with this library is not to limit to the canvas, and to allow access to DIVs and other elements. It's not meant to replace jQuery, but to give some basic access to the DOM in a way that is intuitive and useful. This [tutorial](https://github.com/lmccart/p5.js/wiki/DOM-Extensions) describes the current functionality. This area of functionality is just a first draft, and some further thought in terms of functionality and syntax would be really useful.
-* https://github.com/lmccart/p5.js/issues/389
-* https://github.com/lmccart/p5.js/issues/391
-* https://github.com/lmccart/p5.js/issues/395
-* https://github.com/lmccart/p5.js/issues/394
+ * https://github.com/lmccart/p5.js/issues/389
+ * https://github.com/lmccart/p5.js/issues/391
+ * https://github.com/lmccart/p5.js/issues/395
+ * https://github.com/lmccart/p5.js/issues/394
 
 
 2. **Touch interactions.** Examples 5-0 through 5-3 here http://p5js.org/workshop/, demonstrate the current supported touch functionality. However, there are a few more questions to think about.
@@ -21,11 +21,11 @@
 4. Some file I/O stuff to finish up: https://github.com/lmccart/p5.js/issues/40
 
 5. Thinking about text:
-* https://github.com/lmccart/p5.js/issues/60
-* https://github.com/lmccart/p5.js/issues/356
+ * https://github.com/lmccart/p5.js/issues/60
+ * https://github.com/lmccart/p5.js/issues/356
 
 6. Thinking about svgs and pdf export:
-https://github.com/lmccart/p5.js/issues/37
+ * https://github.com/lmccart/p5.js/issues/37
 
 7. Various [bugs and issues](https://github.com/lmccart/p5.js/issues).
 
