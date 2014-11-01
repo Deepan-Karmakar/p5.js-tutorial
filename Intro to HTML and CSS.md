@@ -152,3 +152,4 @@ Read more about CSS in this [CSS and layouts tutorial](https://github.com/lmccar
   * [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS)
   * [Lynda.com HTML essentials](http://www.lynda.com/HTML-tutorials/HTML-Essential-Training/170427-2.html)
   * [Lynda.com CSS fundamentals](http://www.lynda.com/Web-Interactive-CSS-tutorials/CSS-Fundamentals/80436-2.html)
+  * [Tutorial: CSS and layouts](https://github.com/lmccart/p5.js/wiki/Intro-to-CSS-and-layouts)
