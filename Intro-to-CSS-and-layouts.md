@@ -1,6 +1,6 @@
 #CSS
 
-Cascading Style Sheets, or CSS, is used to tell web browsers how to style and display HTML-structured text. While HTML defines the content, CSS supplies the presentation. Separating the content from the style makes the code easier to read and also allows us to more easily swap out one style for another.
+Cascading Style Sheets, or CSS, is used to tell web browsers how to style and display HTML-structured text. While HTML defines the content and structure, CSS supplies the form and style. Separating the content from the style makes the code easier to read and also allows us to more easily swap out one style for another.
 
 ###Inline styling
 
