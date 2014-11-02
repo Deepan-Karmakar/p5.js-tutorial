@@ -141,7 +141,7 @@ You can set style properties inline using the style attribute. Inside the quotes
 
 You can find all css style attributes in this [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS). This is just the most basic way of adding CSS styling. Another alternative is to separate out the CSS into it's own file, getting us closer to the separate content and style goal mentioned above (more on this later!).
 
-Read more about CSS in this [CSS and layouts tutorial](https://github.com/lmccart/p5.js/wiki/Intro-to-CSS-and-layouts).
+__Read more about CSS in this [CSS and layouts tutorial](https://github.com/lmccart/p5.js/wiki/Intro-to-CSS-and-layouts).__
 
 
 #Reference
