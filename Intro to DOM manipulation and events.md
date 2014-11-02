@@ -95,6 +95,37 @@ Many JS applications perform _actions_ as a response to _events_. An event is a 
 2. Window events. For example, a "resize" event happens when a browser window is resized.
 3. Other events, like "load", "readystatechange". They are used in AJAX and for other needs.
 
+##Registering an event handler
+
+In order to make your code respond to an event, you register an _event handler_, a function that is called when a particular event happens. The simplest way to do this is by setting an element's attribute for the corresponding event.
+
+```html
+<html>
+  <head></head>
+  <body>
+    <p id="gargoyle">I <b>love</b> pandas.</p>
+
+    <script type="text/javascript">
+      var elt = document.getElementById("gargoyle");
+      elt.onclick = function() {
+        alert("clicked!");
+      }
+    </script>
+  </body>
+</html>
+```
+
+By assigning the "onclick" attribute of the element, an alert will be fired every time that element is clicked. You could also modify the element when the click event happens. Within an event handler function, the variable "this" is automatically assigned to the element that received the event.
+
+```javascript
+var elt = document.getElementById("gargoyle");
+elt.onclick = function() {
+  this.innerHTML = "I was clicked.";
+  // the line above could also be written as
+  // elt.innerHTML = "I was clicked.";
+}
+```
+
 
 ##Reference
 * [W3Schools DOM tutorial](http://www.w3schools.com/js/js_htmldom.asp)
