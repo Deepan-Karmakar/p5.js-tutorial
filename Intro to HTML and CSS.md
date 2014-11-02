@@ -253,6 +253,8 @@ If there is a conflict of property values, the more immediate rule will be follo
 
 #Positioning and layout using HTML and CSS
 
+Coming soon...
+
 #Reference
   * [Mozilla HTML guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML)
   * [HTML tag cheatsheet](http://www.simplehtmlguide.com/cheatsheet.php)
