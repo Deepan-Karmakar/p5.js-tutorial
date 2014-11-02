@@ -130,7 +130,7 @@ Attributes provide extra information necessary to a tag to work properly (such a
 
 You can see all the attributes and the tags they are associated with in the [MDN attribute reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes).
 
-#CSS
+#CSS, briefly
 
 Cascading Style Sheets, or CSS, is used to tell web browsers how to style and display HTML-structured text. While HTML defines the content, CSS supplies the presentation. Separating the content from the style makes the code easier to read and also allows us to more easily swap out one style for another.
 
