@@ -202,6 +202,8 @@ p {
 </html>
 ```
 
+![](http://i.imgur.com/IQzFK9H.png)
+
 In the example above, everything within a paragraph tag is green and has 20px font. The text within the div with id "first-section" has monospace font. Any text with class "donkeys" has a pink background.
 
 ###CSS rule hierarchy
