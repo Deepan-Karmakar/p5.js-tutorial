@@ -142,11 +142,11 @@ Two common attributes are "class" and "id", both of which are used to identify p
 
 Class and id names can be anything you like, they have no particular meaning in themselves. The are used more like labels or selectors in CSS or JS code. Use a class when you have more than one element you want to share the same class (maybe you want to style them all the same, for example). Use an id when there is only one element on the page with that id (this could be useful for programmatically accessing this particular element in JS). 
 
+An element can have more than one class, but not more than one id. When there is more than one class, the class names are separated by spaces.
+
 ```html
 <div class="tomato bottom">This div has class tomato and class bottom.</div>
 ```
-
-An element can have more than one class, but not more than one id. When there is more than one class, the class names are separated by spaces.
 
 #CSS
 
