@@ -38,7 +38,7 @@ You could type this JS code directly into console and see the result. You could 
 </html>
 ```
 
-###getElementsByClassName, getElementsByTagName
+###getElementsByClassName(), getElementsByTagName()
 
 getElementsByClassName and getElementsByTagName work very similar to getElementById except both return an array of elements instead of just one element. getElementsByClassName returns an array of all elements with the given class, getElementsByTagName returns an array of all elements with given tag. With either method, if none are found, an empty array ([]) is returned.
 
