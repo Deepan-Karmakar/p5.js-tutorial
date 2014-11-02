@@ -29,6 +29,7 @@ You could type this JS code directly into console and see the result. You could 
   <head></head>
   <body>
     <p id="gargoyle"></p>
+
     <script type="text/javascript">
       var elt = document.getElementById("gargoyle");
       console.log(elt);
@@ -46,12 +47,20 @@ The innerHTML property is a pointer to the HTML content within a particular elem
   <head></head>
   <body>
     <p id="gargoyle">I <b>love</b> pandas.</p>
+
     <script type="text/javascript">
       var elt = document.getElementById("gargoyle");
       console.log(elt.innerHTML); // I <b>love</b> pandas.
     </script>
   </body>
 </html>
+```
+
+You can also change the content within the element, by setting the innerHTML property equal to some new value.
+
+```javascript
+var elt = document.getElementById("gargoyle");
+elt.innerHTML = "Veggie burgers are<br>so tasty.";
 ```
 
 ##Reference
