@@ -22,7 +22,7 @@ var elt = document.getElementById("gargoyle");
 console.log(elt);
 ```
 
-You could type this JS code directly into console and see the result. You could also put it directly into the HTML page using the `<script>` tag.
+You could type this JS code directly into console and see the result. You could also put it directly into the HTML page using the `<script>` tag. Note that this script is placed in the body of the page, rather than the head. This has to do with the order that things are loaded and run when you open a page. More on this in the [window.onload]() section.
 
 ```html
 <html>
@@ -32,6 +32,23 @@ You could type this JS code directly into console and see the result. You could 
     <script type="text/javascript">
       var elt = document.getElementById("gargoyle");
       console.log(elt);
+    </script>
+  </body>
+</html>
+```
+
+###innerHTML
+
+The innerHTML property is a pointer to the HTML content within a particular element, allowing you to easily access or change the content. The example below is similar to the previous one, but it prints the HTML within the element.
+
+```html
+<html>
+  <head></head>
+  <body>
+    <p id="gargoyle">I <b>love</b> pandas.</p>
+    <script type="text/javascript">
+      var elt = document.getElementById("gargoyle");
+      console.log(elt.innerHTML); // I <b>love</b> pandas.
     </script>
   </body>
 </html>
