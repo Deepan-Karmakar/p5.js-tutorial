@@ -230,13 +230,15 @@ p {
   </head>
   <body>
     <div id="first-section">
-      <p>I am in the first section.</p>
-      <p class="donkeys">I am also in the first section with class donkeys.</p>
+      I'm in the first section
+      <p>I'm a paragraph in the first section.</p>
+      <p class="donkeys">I'm a paragraph in the first section with class donkeys.</p>
     </div>
 
     <div id="second-section">
-      <p>I am in the second section.</p>
-      <p class="donkeys">I am also in the second section with class donkeys.</p>
+      I'm in the second section
+      <p>I'm a paragraph in the second section.</p>
+      <p class="donkeys">I'm a paragraph in the second section with class donkeys.</p>
     </div>
   </body>
 </html>
