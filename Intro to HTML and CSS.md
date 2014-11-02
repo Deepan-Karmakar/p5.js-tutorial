@@ -130,19 +130,57 @@ Attributes provide extra information necessary to a tag to work properly (such a
 
 You can see all the attributes and the tags they are associated with in the [MDN attribute reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes).
 
-#CSS, briefly
+#CSS
 
 Cascading Style Sheets, or CSS, is used to tell web browsers how to style and display HTML-structured text. While HTML defines the content, CSS supplies the presentation. Separating the content from the style makes the code easier to read and also allows us to more easily swap out one style for another.
+
+##Using inline styling
 
 You can set style properties inline using the style attribute. Inside the quotes, you place one or more property:value pairs, separated by semicolons.
 ```html
 <p style="width:400px; background:#FF0000; font-size: 18px;">This is some text.</p>
 ```
 
-You can find all css style attributes in this [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS). This is just the most basic way of adding CSS styling. Another alternative is to separate out the CSS into it's own file, getting us closer to the separate content and style goal mentioned above (more on this later!).
+You can find all css style attributes in this [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS). 
 
-__Read more about CSS in this [CSS and layouts tutorial](https://github.com/lmccart/p5.js/wiki/Intro-to-CSS-and-layouts).__
 
+##Using an external stylesheet
+
+Another alternative is to separate out the CSS into it's own file, getting us closer to the separate content and style goal mentioned above. In this case, you start by making a new file with file extension `.css`, and linking it into the `<head>` of your HTML file using the `<link>` tag.
+
+```html
+<link href="style.css" type="text/css">
+```
+
+When using inline css, style properties are set per element, but when you use an external stylesheet you define "rules" that get applied more generally to elements. The format for a rule is like this:
+
+```css
+selector { 
+ property: value; 
+}
+```
+
+The first part, the selector, tells the browser which elements in the page to apply the rule to. This selector is followed by a set of curly braces that enclose one or more property:value pairs. These pairs work just like the inline css, the [property](https://developer.mozilla.org/en-US/docs/Web/CSS) to be set and the value for that property, separated by a colon and followed by a semicolon.
+
+The selector can be one of several different things: 
+1. an HTML tag name, such as "p" or "h1"
+2. a class name, prefixed by ".", such as ".gargoyles" or ".detail"
+3. an id, prefixed by "#", such as "#main" or "#marshmallows"
+
+```css
+p {
+  color: blue;
+  font-size: 20px;
+}
+
+.donkeys {
+  padding: 10px;
+}
+
+#middle {
+  font-family: monospace;
+}
+```
 
 #Reference
   * [Mozilla HTML guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML)
