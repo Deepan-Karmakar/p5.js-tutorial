@@ -38,6 +38,24 @@ You could type this JS code directly into console and see the result. You could 
 </html>
 ```
 
+###getElementsByClassName, getElementsByTagName
+
+getElementsByClassName and getElementsByTagName work very similar to getElementById except both return an array of elements instead of just one element. getElementsByClassName returns an array of all elements with the given class, getElementsByTagName returns an array of all elements with given tag. With either method, if none are found, an empty array ([]) is returned.
+
+<html>
+  <head></head>
+  <body>
+    <div class="orange"></div>
+    <div class="sponge"></div>
+    <script type="text/javascript">
+      var elt1 = document.getElementsByClassName("orange");
+      console.log(elt1); // returns an array with one element
+      var elt2 = document.getElementsByTagName("div");
+      console.log(elt2); // returns an array with two elements
+    </script>
+  </body>
+</html>
+
 ###innerHTML
 
 The innerHTML property is a pointer to the HTML content within a particular element, allowing you to easily access or change the content. The example below is similar to the previous one, but it prints the HTML within the element.
