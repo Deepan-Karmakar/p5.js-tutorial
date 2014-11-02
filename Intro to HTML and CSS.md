@@ -251,6 +251,7 @@ p {
 
 If there is a conflict of property values, the more immediate rule will be followed, overriding any enclosing parent rules. This is what is meant by the word "cascading" in Cascading Style Sheet (CSS).
 
+##Positioning and layout using HTML and CSS
 
 #Reference
   * [Mozilla HTML guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML)
