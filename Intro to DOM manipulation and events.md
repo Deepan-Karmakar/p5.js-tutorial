@@ -87,6 +87,15 @@ var elt = document.getElementById("gargoyle");
 elt.innerHTML = "Veggie burgers are<br>so tasty.";
 ```
 
+#Events
+
+Many JS applications perform _actions_ as a response to _events_. An event is a signal from the browser that something has happened. There are several different types of events:
+
+1. DOM events, which are initiated by DOM-elements. For example, a "click" event happens when an element is clicked, a "mouseover" event happens when a mouse pointer comes over an element.
+2. Window events. For example, a "resize" event happens when a browser window is resized.
+3. Other events, like "load", "readystatechange". They are used in AJAX and for other needs.
+
+
 ##Reference
 * [W3Schools DOM tutorial](http://www.w3schools.com/js/js_htmldom.asp)
 * [Mozilla DOM tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
