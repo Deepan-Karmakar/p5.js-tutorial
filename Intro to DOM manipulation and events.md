@@ -22,6 +22,20 @@ var elt = document.getElementById("gargoyle");
 console.log(elt);
 ```
 
+You could type this JS code directly into console and see the result. You could also put it directly into the HTML page using the `<script>` tag.
+
+```html
+<html>
+  <head></head>
+  <body>
+    <p id="gargoyle"></p>
+    <script type="text/javascript">
+      var elt = document.getElementById("gargoyle");
+      console.log(elt);
+    </script>
+  </body>
+</html>
+```
 
 ##Reference
 * [W3Schools DOM tutorial](http://www.w3schools.com/js/js_htmldom.asp)
