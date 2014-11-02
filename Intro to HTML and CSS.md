@@ -244,7 +244,7 @@ p {
 </html>
 ```
 
-![](http://imgur.com/fXdHJDX)
+![](http://i.imgur.com/fXdHJDX.png)
 
 If there is a conflict of property values, the more immediate rule will be followed, overriding any enclosing parent rules. This is what is meant by the word "cascading" in Cascading Style Sheet (CSS).
 
