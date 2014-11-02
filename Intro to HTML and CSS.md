@@ -165,6 +165,7 @@ selector {
 The first part, the selector, tells the browser which elements in the page to apply the rule to. This selector is followed by a set of curly braces that enclose one or more property:value pairs. These pairs work just like the inline css, the [property](https://developer.mozilla.org/en-US/docs/Web/CSS) to be set and the value for that property, separated by a colon and followed by a semicolon.
 
 The selector can be one of several different things: 
+
 1. an HTML tag name, such as "p" or "h1"
 2. a class name, prefixed by ".", such as ".gargoyles" or ".detail"
 3. an id, prefixed by "#", such as "#main" or "#marshmallows"
