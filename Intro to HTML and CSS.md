@@ -152,6 +152,8 @@ Another alternative is to separate out the CSS into it's own file, getting us cl
 <link href="style.css" type="text/css">
 ```
 
+###Defining CSS rules
+
 When using inline css, style properties are set per element, but when you use an external stylesheet you define "rules" that get applied more generally to elements. The format for a rule is like this:
 
 ```css
@@ -169,18 +171,77 @@ The selector can be one of several different things:
 
 ```css
 p {
-  color: blue;
+  color: green;
   font-size: 20px;
 }
 
 .donkeys {
-  padding: 10px;
+  background: pink;
 }
 
-#middle {
+#first-section {
   font-family: monospace;
 }
 ```
+
+```html
+<html>
+  <head>
+    <link href="style.css" type="text/css">
+  </head>
+  <body>
+    <div id="first-section">
+      I am in the first section.
+    </div>
+
+    <div id="second-section">
+      <p>I am a paragraph in the second section.</p>
+      <p class="donkeys">I am also a paragraph in the second section with class donkeys.</p>
+    </div>
+  </body>
+</html>
+```
+
+In the example above, everything within a paragraph tag is green and has 20px font. The text within the div with id "first-section" has monospace font. Any text with class "donkeys" has a pink background.
+
+###CSS rule hierarchy
+
+The rules propagate inwards, so every element will have the styling of it's own properties and tags as well as those of any enclosing. In the example below, notice how the paragraph with class "donkeys" has all of the CSS properties for "p", ".donkeys", and "#first-section" applied.
+
+```css
+p {
+  color: green;
+  font-size: 20px;
+}
+
+.donkeys {
+  background: pink;
+}
+
+#first-section {
+  font-family: monospace;
+}
+```
+
+```html
+<html>
+  <head>
+    <link href="style.css" type="text/css">
+  </head>
+  <body>
+    <div id="first-section">
+      <p>I am in the first section.</p>
+      <p class="donkeys">I am also in the first section with class donkeys.</p>
+    </div>
+
+    <div id="second-section">
+      <p>I am in the second section.</p>
+      <p class="donkeys">I am also in the second section with class donkeys.</p>
+    </div>
+  </body>
+</html>
+```
+
 
 #Reference
   * [Mozilla HTML guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML)
