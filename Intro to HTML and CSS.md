@@ -130,6 +130,19 @@ Attributes provide extra information necessary to a tag to work properly (such a
 
 You can see all the attributes and the tags they are associated with in the [MDN attribute reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes).
 
+###class and id
+
+Two common attributes are "class" and "id", both of which are used to identify particular elements when adding [CSS rules](https://github.com/lmccart/p5.js/wiki/Intro-to-HTML-and-CSS#using-an-external-stylesheet) or manipulating the page using JS. 
+
+```html
+<p class="tomato">This paragraph has class tomato.</p>
+<p id="main">This paragraph has id main.</p>
+<div class="tomato" id="gooba">This div has class tomato and id gooba.</div>
+<div class="tomato bottom">This div has class tomato and class bottom.</div>
+```
+
+Class and id names can be anything you like, they have no particular meaning in themselves. The are used more like labels or selectors in CSS or JS code. Use a class when you have more than one element you want to share the same class (maybe you want to style them all the same, for example). Use an id when there is only one element on the page with that id (this could be useful for programmatically accessing this particular element in JS). An element can have more than one class, but not more than one id.
+
 #CSS
 
 Cascading Style Sheets, or CSS, is used to tell web browsers how to style and display HTML-structured text. While HTML defines the content, CSS supplies the presentation. Separating the content from the style makes the code easier to read and also allows us to more easily swap out one style for another.
