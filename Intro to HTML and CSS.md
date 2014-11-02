@@ -206,7 +206,7 @@ In the example above, everything within a paragraph tag is green and has 20px fo
 
 ###CSS rule hierarchy
 
-The rules propagate inwards, so every element will have the styling of it's own properties and tags as well as those of any enclosing. In the example below, notice how the paragraph with class "donkeys" has all of the CSS properties for "p", ".donkeys", and "#first-section" applied.
+The rules propagate inwards, so every element will have the styling of it's own properties and tags as well as those of any enclosing. In the example below, notice how the paragraph with class "donkeys" has all of the CSS properties for "p", ".donkeys", and "#first-section" applied. 
 
 ```css
 p {
@@ -241,6 +241,8 @@ p {
   </body>
 </html>
 ```
+
+If there is a conflict of property values, the more immediate rule will be followed, overriding any enclosing parent rules.
 
 
 #Reference
