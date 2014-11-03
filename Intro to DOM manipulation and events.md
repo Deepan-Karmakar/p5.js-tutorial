@@ -191,3 +191,6 @@ The load event happens when the HTML page has fully loaded.
 ##Reference
 * [W3Schools DOM tutorial](http://www.w3schools.com/js/js_htmldom.asp)
 * [Mozilla DOM tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+
+* [DOM manipulation with p5.js](https://github.com/lmccart/p5.js/wiki/Beyond-the-canvas#element-specific-listeners)
+* [event listeners with p5.js](https://github.com/lmccart/p5.js/wiki/Beyond-the-canvas#element-specific-listeners)
