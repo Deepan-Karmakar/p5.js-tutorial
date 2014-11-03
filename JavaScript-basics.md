@@ -559,7 +559,37 @@ this.greet = function() {
 }
 ```
 
+Calling this method of an instance looks similar to accessing properties.
+
+```javascript
+var cat0 = new Cat();
+cat0.greet(); // "Hello I'm Margot"
+
+cat0.name = "Sam";
+cat0.greet(); // "Hello I'm Sam";
+```
+
 ## Using parameters
+
+You can also pass parameters into the constructor function, the same way parameters are passed into any function.
+
+```javascript 
+function Cat(name, age) {
+  this.name = name;
+  this.age = age;
+  this.color = "Black";
+
+  this.greet = function() {
+    console.log("Hello, I'm " + this.name);
+  }
+}
+
+var cat0 = new Cat("Joanie", 10);
+var cat1 = new Cat("Jay", 2);
+
+cat0.greet(); // "Hello, I'm Joanie"
+cat1.greet(); // "Hello, I'm Jay"
+```
 
 # Code formatting
 
