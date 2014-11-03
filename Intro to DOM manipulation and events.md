@@ -97,7 +97,7 @@ Many JS applications perform _actions_ as a response to _events_. An event is a 
 
 ##Registering an event handler
 
-In order to make your code respond to an event, you register an _event handler_, a function that is called when a particular event happens. The simplest way to do this is by setting an element's attribute for the corresponding event.
+In order to make your code respond to an event, you register an _event handler_, a function that is called when a particular event happens. To do this you can use the `addEventListener(event, fxn)` function, something like this:
 
 ```html
 <html>
@@ -106,10 +106,14 @@ In order to make your code respond to an event, you register an _event handler_,
     <p id="gargoyle">I <b>love</b> pandas.</p>
 
     <script type="text/javascript">
-      var elt = document.getElementById("gargoyle");
-      elt.onclick = function() {
+      // define a function that can be called
+      function showAlert() {
         alert("clicked!");
       }
+      // grab the element you want to attach the event to
+      var elt = document.getElementById("gargoyle");
+      // attach the function for chosen event
+      elt.addEventListener("click", "showAlert");
     </script>
   </body>
 </html>
