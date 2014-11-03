@@ -125,7 +125,7 @@ In order to make your code respond to an event, you register an _event handler_,
 
 In the example above, the `doSomething()` function will be called or "fired" every time a click event happens on that element. So every time you click on the paragraph with id "gargoyle", an alert will appear. 
 
-###Using this
+##Using this
 
 You could also modify the element when the click event happens. Within an event handler function, the variable "this" is automatically assigned to the element that received the event.
 
@@ -140,7 +140,7 @@ var elt = document.getElementById("gargoyle");
 elt.addEventListener("click", doSomething);
 ```
 
-###Input events
+##Input events
 
 There are a lot of different input events detected by the browser, you can see a full list on [Mozilla event reference](https://developer.mozilla.org/en-US/docs/Web/Events). Some useful ones include:
 
@@ -164,7 +164,22 @@ elt.addEventListener("mouseover", showHello);
 elt.addEventListener("mouseout", showGoodbye);
 ```
 
-###Window events
+##Window events
+
+All of the events so far have been element specific, that is, you attach them to a single element, and they are fired only when that element receives the event. There are also some events that happen on a global window level, two examples are `resize` and `load`. In this case, you say `window.` instead of `element.`.
+
+###resize
+
+The resize event happens when the browser window is resized.
+
+```javascript
+var n = 0;
+window.attachEventListener("resize", alertResized);
+function alertResized() {
+  n++;
+  alert("I've been resized " + n + " times.");
+}
+```
 
 ##Reference
 * [W3Schools DOM tutorial](http://www.w3schools.com/js/js_htmldom.asp)
