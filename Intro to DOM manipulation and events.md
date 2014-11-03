@@ -97,7 +97,7 @@ Many JS applications perform _actions_ as a response to _events_. An event is a 
 
 ##Registering an event handler
 
-In order to make your code respond to an event, you register an _event handler_, a function that is called when a particular event happens. To do this you can use the `addEventListener(event, fxn)` function, something like this:
+In order to make your code respond to an event, you register an _event handler_, a function that is called when a particular event happens. To do this you can use the `addEventListener(event, fxn)` function. This function takes two arguments - the name of the event to listen for, and the function that gets called when the event happens.
 
 ```html
 <html>
@@ -107,29 +107,33 @@ In order to make your code respond to an event, you register an _event handler_,
 
     <script type="text/javascript">
       // define a function that can be called
-      function showAlert() {
+      function doSomething() {
         alert("clicked!");
       }
+
       // grab the element you want to attach the event to
       var elt = document.getElementById("gargoyle");
+
       // attach the function for chosen event
-      elt.addEventListener("click", "showAlert");
+      elt.addEventListener("click", "doSomething");
     </script>
   </body>
 </html>
 ```
 
-By assigning the "onclick" attribute of the element, the assigned function will be called or "fired" every time a click event happens on that element. So every time you click on the paragraph with id "gargoyle", an alert will appear. 
+In the example above, the `doSomething()` function will be called or "fired" every time a click event happens on that element. So every time you click on the paragraph with id "gargoyle", an alert will appear. 
 
 You could also modify the element when the click event happens. Within an event handler function, the variable "this" is automatically assigned to the element that received the event.
 
 ```javascript
-var elt = document.getElementById("gargoyle");
-elt.onclick = function() {
+function doSomething() {
   this.innerHTML = "I was clicked.";
   // the line above could also be written as
   // elt.innerHTML = "I was clicked.";
 }
+
+var elt = document.getElementById("gargoyle");
+elt.addEventListener("click", doSomething);
 ```
 
 
