@@ -99,7 +99,7 @@ Many JS applications perform _actions_ as a response to _events_. An event is a 
 
 ##Registering an event handler
 
-In order to make your code respond to an event, you register an _event handler_, a function that is called when a particular event happens. To do this you can use the `addEventListener(event, fxn)` function. This function takes two arguments - the name of the event to listen for, and the function that gets called when the event happens.
+In order to make your code respond to an event, you register an _event handler_, a function that is called when a particular event happens. To do this you can use the `addEventListener(event, fxn)` function. This function takes two arguments - the name of the event to listen for, and the name of the function that gets called when the event happens.
 
 ```html
 <html>
@@ -163,6 +163,8 @@ var elt = document.getElementById("gargoyle");
 elt.addEventListener("mouseover", showHello);
 elt.addEventListener("mouseout", showGoodbye);
 ```
+
+###Window events
 
 ##Reference
 * [W3Schools DOM tutorial](http://www.w3schools.com/js/js_htmldom.asp)
