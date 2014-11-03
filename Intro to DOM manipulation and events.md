@@ -198,7 +198,54 @@ window.attachEventListener("resize", doSomething);
 
 ###load
 
-The load event happens when the HTML page has fully loaded.
+The load event happens when the HTML page has fully loaded. It is a way to specify what to do when a document is done loading, it also signifies when it is safe to call elements on the DOM:
+
+```javascript
+function init() {
+  var elt = document.getElementById('mydiv');
+  alert(elt.innerHTML);
+}				
+window.addEventListener('load', init);			
+```
+
+Some of the examples above show some JS code in the body of the HTML. This is another way of ensuring the page loads before the JS starts to act on it, but it's not ideal. It's cleaner to have the JS code in the head of the HTML file (or in a separate JS file linked in the head). So the better way to do things is to use the load event.	
+
+Converting this example from above:
+
+```html
+<html>
+  <head></head>
+  <body>
+    <p id="gargoyle">I <b>love</b> pandas.</p>
+
+    <script type="text/javascript">
+      var elt = document.getElementById("gargoyle");
+      console.log(elt.innerHTML);
+    </script>
+  </body>
+</html>
+```
+
+The JS code gets wrapped in a function called init (or whatever you like), and added as the event handler for the load event using addEventListener:
+
+```html
+<html>
+  <head>
+    <script type="text/javascript">
+      function init() {
+        var elt = document.getElementById("gargoyle");
+        console.log(elt.innerHTML);
+      }
+      window.addEventListener("load", init);
+    </script>
+  </head>
+  <body>
+    <p id="gargoyle">I <b>love</b> pandas.</p>
+  </body>
+</html>
+```
+
+Note that if you didn't add the function wrapper and event listener and just moved the code from the body to the head of the HTML file, it would run too soon, and the console.log message would be empty.
 
 ##Reference
 
