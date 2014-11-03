@@ -483,7 +483,7 @@ var cat2 = {};
 
 ## Adding properties
 
-Properties are variables within the object. They can be set in the constructor by including a line in the form `this.propertyName = propertyValue;`.
+Properties are variables within the object. They can be set in the constructor by including a line in the form `this.propertyName = propertyValue;`. Within an object constructor function, there is a special variable "this" that always refers to the new instance that is being created. So when the function includes `this.propertyName = propertyValue;` it is saying that all new instances will be automatically assigned the given properties and values upon instantiation.
 
 ```javascript
 function Cat() {
@@ -505,14 +505,59 @@ You can access and modify these properties directly by using `.propertyName`.
 
 ```javascript
 console.log(cat0.name);  // "Margot"
-console.log(cat0.color); // "Black"
 cat0.name = "Sam";       // change name to Sam
 console.log(cat0.name);  // "Sam"
+
 cat0.age++;              // increment age by 1
 console.log(cat0.age);   // 9
+
+console.log(cat0.color); // "Black"
 ```
 
 ## Adding methods
+
+While properties are like variables within an object, methods are like functions within an object. They are set and accessed in much the same way.
+
+```javascript
+function Cat() {
+  // set some properties
+  this.name = "Margot";
+  this.age = 8;
+  this.color = "Black";
+
+  // set some methods
+  this.greet = function() {
+    console.log("Hello, I'm "+this.name);
+  }
+```
+
+The constructor function above sets some properties of Cat, then it adds one method, "greet". This line looks kind of like a function definition, but is a slightly different format. With a normal function, you may be used to something like this:
+
+```javascript
+function doSomething() {
+  console.log("I'm doing something!");
+}
+```
+
+However, it's important to know that the above function could be rewritten like this:
+
+```javascript
+var doSomething = function() {
+  console.log("I'm doing something!");
+};
+```
+
+These two definitions are the same, just written differently. In both cases what is happening is that a function is defined and assigned to a variable name of your choosing. Remember in JS, a variable can be anything - a string, a number, a boolean, etc - but also a function. 
+
+In the first case, this variable name is stuck after the word function, in the second, the variable is explicitly stated first, then the function is assigned. They mean the same thing, so it's helpful to get used to seeing both forms.
+
+So turning back to the method declaration, it starts to look more familiar. It's very similar to the new function definition format we just saw, but `var functionName = ` is replaced with `this.functionName = `. This is because, just like the properties, we use `this.` to say that the method belongs to the object being created.
+
+```javascript
+this.greet = function() {
+  console.log("Hello, I'm "+this.name);
+}
+```
 
 ## Using parameters
 
