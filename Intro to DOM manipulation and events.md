@@ -198,7 +198,7 @@ window.attachEventListener("resize", doSomething);
 
 ###load
 
-The load event happens when the HTML page has fully loaded. It is a way to specify what to do when a document is done loading, it also signifies when it is safe to call elements on the DOM:
+The load event happens when the HTML page has fully loaded. It is a way to specify what to do when a document is done loading, it also signifies when it is safe to call elements on the DOM.
 
 ```javascript
 function init() {
