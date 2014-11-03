@@ -443,6 +443,79 @@ index = array.indexOf(2, -3); // 0
 
 # Objects
 
+JavaScript doesn't have a "class" statement like Java or C++, instead it just uses functions as classes. Defining a class is as easy as defining a function.
+
+```javascript
+function Cat() {
+
+}
+```
+
+The code above creates a constructor function for a Cat object. It is a very simple object with no properties or methods.
+
+## Creating a new instance
+
+To create a new instance of an object using a constructor, you write "new" followed by the name of the class and a set of parentheses.
+
+```javascript
+var cat0 = new Cat();
+```
+
+If you were to log this object to the console you will notice that it prints an empty set of curly braces.
+
+```javascript
+console.log(cat0); // Cat {}
+```
+
+ That is really all this object is, and you could have created the same thing by writing:
+
+```javascript
+var cat0 = {};
+```
+
+However, creating the constructor function is useful when you want to make more than one instance of the object, especially if you have set properties or methods for the object.
+
+```javascript
+var cat0 = {};
+var cat1 = {};
+var cat2 = {};
+```
+
+## Adding properties
+
+Properties are variables within the object. They can be set in the constructor by including a line in the form `this.propertyName = propertyValue;`.
+
+```javascript
+function Cat() {
+  this.name = "Margot";
+  this.age = 8;
+  this.color = "Black";
+}
+```
+
+If you create and log a Cat object now you will notice that the new instance now has properties, rather than just empty curly braces.
+
+```javascript
+var cat0 = new Cat();
+console.log(cat0); // Cat {name: "Margot", age: 8, color: "Black"}
+}
+```
+
+You can access and modify these properties directly by using `.propertyName`.
+
+```javascript
+console.log(cat0.name);  // "Margot"
+console.log(cat0.color); // "Black"
+cat0.name = "Sam";       // change name to Sam
+console.log(cat0.name);  // "Sam"
+cat0.age++;              // increment age by 1
+console.log(cat0.age);   // 9
+```
+
+## Adding methods
+
+## Using parameters
+
 # Code formatting
 
 ### Comments
