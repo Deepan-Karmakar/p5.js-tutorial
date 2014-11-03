@@ -104,11 +104,11 @@ In order to make your code respond to an event, you register an _event handler_,
 The basic form is like this:
 
 ```javascript
-element.addEventListener('event name', functionToRun);
-
 functionToRun() {
   // code to execute
 }		
+
+element.addEventListener('event name', functionToRun);
 ```
 
 Here is a working example:
