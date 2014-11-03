@@ -571,7 +571,7 @@ cat0.greet(); // "Hello I'm Sam";
 
 ## Using parameters
 
-You can also pass parameters into the constructor function, the same way parameters are passed into any function.
+You can also pass parameters into the constructor function, the same way parameters are passed into any function. The arguments are listed within the parentheses for the constructor function, separated by commas.
 
 ```javascript 
 function Cat(name, age) {
