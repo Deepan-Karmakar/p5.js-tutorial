@@ -138,6 +138,29 @@ var elt = document.getElementById("gargoyle");
 elt.addEventListener("click", doSomething);
 ```
 
+###Input events
+
+There are a lot of different input events detected by the browser, you can see a full list on [Mozilla event reference](https://developer.mozilla.org/en-US/docs/Web/Events). Some useful ones include:
+
+* __mouse__ - mousedown, mousemove, mouseup, mouseover, mouseout, mousewheel
+* __touch__ - touchstart, touchmove, touchend, touchenter, touchleave
+* __keyboard__ - keydown, keypress, keyup
+
+The example below attaches listeners for `mouseover` and `mouseout` to a single element.
+
+```javascript
+function showHello() {
+  this.innerHTML = "hi there!";
+}
+
+function showGoodbye() {
+  this.innerHTML = "goodbye :(";
+}
+
+var elt = document.getElementById("gargoyle");
+elt.addEventListener("mouseover", showHello);
+elt.addEventListener("mouseout", showGoodbye);
+```
 
 ##Reference
 * [W3Schools DOM tutorial](http://www.w3schools.com/js/js_htmldom.asp)
