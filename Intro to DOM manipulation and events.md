@@ -101,6 +101,18 @@ Many JS applications perform _actions_ as a response to _events_. An event is a 
 
 In order to make your code respond to an event, you register an _event handler_, a function that is called when a particular event happens. To do this you can use the `addEventListener(event, fxn)` function. This function takes two arguments - the name of the event to listen for, and the name of the function that gets called when the event happens.
 
+The basic form is like this:
+
+```javascript
+element.addEventListener('event name', functionToRun);
+
+functionToRun() {
+  // code to execute
+}		
+```
+
+Here is a working example:
+
 ```html
 <html>
   <head></head>
