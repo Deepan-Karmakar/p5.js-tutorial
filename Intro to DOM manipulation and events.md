@@ -174,6 +174,9 @@ The resize event happens when the browser window is resized.
 
 ```javascript
 function doSomething() {
+  // in this case, "this" doesn't point to an element
+  // "this" refers to the window since that's where
+  // the event occurred, so we have to grab it to use it
   var elt = document.getElementById("gargoyle");
   elt.innerHTML("I've been resized!");
 }
