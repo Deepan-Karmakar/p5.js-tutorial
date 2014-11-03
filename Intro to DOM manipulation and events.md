@@ -123,6 +123,8 @@ In order to make your code respond to an event, you register an _event handler_,
 
 In the example above, the `doSomething()` function will be called or "fired" every time a click event happens on that element. So every time you click on the paragraph with id "gargoyle", an alert will appear. 
 
+###Using this
+
 You could also modify the element when the click event happens. Within an event handler function, the variable "this" is automatically assigned to the element that received the event.
 
 ```javascript
