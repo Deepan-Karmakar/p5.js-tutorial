@@ -1,3 +1,5 @@
+This tutorial provides a general overview to HTML and CSS, no p5.js involved. If you'd like to use the p5.dom library to do some of these things, check out the [beyond the canvas](https://github.com/lmccart/p5.js/wiki/Beyond-the-canvas) tutorial.
+
 #The Document Object Model (DOM)
 
 The Document Object Model (DOM) is a programming interface for HTML documents. Meaning, it provides a way to use code (JavaScript, for example) to access and modify the structure, style, and content of an HTML page.
