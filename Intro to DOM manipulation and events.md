@@ -202,7 +202,7 @@ The load event happens when the HTML page has fully loaded.
 
 ##Reference
 
-__general__
+__General__
 
 * [W3Schools DOM tutorial](http://www.w3schools.com/js/js_htmldom.asp)
 * [Mozilla DOM tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
