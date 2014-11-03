@@ -173,12 +173,12 @@ All of the events so far have been element specific, that is, you attach them to
 The resize event happens when the browser window is resized.
 
 ```javascript
-var n = 0;
-window.attachEventListener("resize", alertResized);
-function alertResized() {
-  n++;
-  alert("I've been resized " + n + " times.");
+function doSomething() {
+  var elt = document.getElementById("gargoyle");
+  elt.innerHTML("I've been resized!");
 }
+
+window.attachEventListener("resize", doSomething);
 ```
 
 ##Reference
