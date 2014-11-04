@@ -119,6 +119,8 @@ var m = true;
 ### Object
 
 An object can be thought of as a collection of properties. These properties can be values of any type, including other objects, which enables building complex data structures. Arrays are a special type of object, more on this later.
+* Read more [about arrays](https://github.com/lmccart/p5.js/wiki/JavaScript-basics#arrays)
+* Read more [about objects](https://github.com/lmccart/p5.js/wiki/JavaScript-basics#objects)
 
 ### Null and undefined
 
