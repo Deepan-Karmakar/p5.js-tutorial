@@ -245,7 +245,7 @@ The JS code gets wrapped in a function called init (or whatever you like), and a
 </html>
 ```
 
-Note that if you didn't add the function wrapper and event listener and just moved the code from the body to the head of the HTML file, it would run too soon, and the console.log message would be empty.
+Note that if you didn't add the function wrapper and event listener and just moved the code from the body to the head of the HTML file, it would run too soon, and it would print an error in console.
 
 ##Reference
 
