@@ -107,8 +107,37 @@ elt.style.background = "pink";
 elt.style.padding = "18px";
 ```
 
+#setTimeout, setInterval
 
-###Changing style (.style)
+Sometimes it's useful to be able to schedule a function call for some time in the future. To handle this there are two functions - setTimeout and setInterval. Both functions take two arguments, the function to be executed, and a delay amount (in milliseconds). setTimeout schedules a one-time function call, while setInterval schedules a recurring function call. Note that when you pass in the function to be called no quotes or parentheses are needed, you are passing the variable pointing to the function.
+
+```javascript
+function doSomething() {
+  console.log("hi");
+}
+
+setTimeout(doSomething, 3000); // call doSomething in 3 seconds
+```
+
+```javascript
+function doSomething() {
+  console.log("hi");
+}
+
+setInterval(doSomething, 3000); // call doSomething every 3 seconds
+```
+
+Or combining this with the innerHTML example from above:
+
+```javascript
+function changeText() {
+  var elt = document.getElementById("gargoyle");
+  elt.innerHTML = "Veggie burgers are<br>so tasty."; // changes inner html
+}
+
+setInterval(changeText, 1000); // happens every 1000 milliseconds
+```
+
 #Events
 
 Many JS applications perform _actions_ as a response to _events_. An event is a signal from the browser that something has happened. There are several different types of events:
