@@ -64,7 +64,7 @@ getElementsByClassName and getElementsByTagName work very similar to getElementB
 
 ##Modifying elements
 
-###innerHTML
+###Changing HTML content (.innerHTML)
 
 The innerHTML property is a pointer to the HTML content within a particular element, allowing you to easily access or change the content. The example below is similar to the previous one, but it prints the HTML within the element.
 
@@ -89,6 +89,26 @@ var elt = document.getElementById("gargoyle");
 elt.innerHTML = "Veggie burgers are<br>so tasty.";
 ```
 
+###Changing an attribute
+
+You can change an element's attribute using a similar form, but replacing "innerHTML" with your desired attribute tag. The example changes the src attribute of an image.
+
+```javascript
+var myImg = document.getElementById("myImageID");
+myImg.src = "booya.jpg";
+```
+
+You can also change the style attribute of an element. In this case, you use the style attribute tag, which is followed by another "." and the particular style property to change.
+
+```javascript
+var elt = document.getElementById("firstParagraph");
+elt.style.color = "red";
+elt.style.background = "pink";
+elt.style.padding = "18px";
+```
+
+
+###Changing style (.style)
 #Events
 
 Many JS applications perform _actions_ as a response to _events_. An event is a signal from the browser that something has happened. There are several different types of events:
