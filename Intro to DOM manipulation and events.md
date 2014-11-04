@@ -193,7 +193,7 @@ function doSomething() {
   elt.innerHTML("I've been resized!");
 }
 
-window.attachEventListener("resize", doSomething);
+window.addEventListener("resize", doSomething);
 ```
 
 ###load
