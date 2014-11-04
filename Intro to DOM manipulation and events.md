@@ -135,6 +135,19 @@ function changeText() {
   elt.innerHTML = "Veggie burgers are<br>so tasty."; // changes inner html
 }
 
+setTimeout(changeText, 1000); // happens in 1000 milliseconds
+```
+
+One more example with setInterval and innerHTML:
+
+```javascript
+function changeText() {
+  var elt = document.getElementById("gargoyle");
+  var str = elt.innerHTML;
+  var newStr = str.substring(0, str.length-1);
+  elt.innerHTML = newStr; // changes inner html
+}
+
 setInterval(changeText, 1000); // happens every 1000 milliseconds
 ```
 
