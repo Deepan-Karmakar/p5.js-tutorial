@@ -190,7 +190,7 @@ function doSomething() {
   // "this" refers to the window since that's where
   // the event occurred, so we have to grab it to use it
   var elt = document.getElementById("gargoyle");
-  elt.innerHTML("I've been resized!");
+  elt.innerHTML = "I've been resized!";
 }
 
 window.addEventListener("resize", doSomething);
