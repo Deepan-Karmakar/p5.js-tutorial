@@ -169,7 +169,7 @@ You can find all css style attributes in this [CSS reference](https://developer.
 Another alternative is to separate out the CSS into it's own file, getting us closer to the separate content and style goal mentioned above. In this case, you start by making a new file with file extension `.css`, and linking it into the `<head>` of your HTML file using the `<link>` tag.
 
 ```html
-<link ref="style.css" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 ```
 
 ###Defining CSS rules
