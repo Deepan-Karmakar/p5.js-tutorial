@@ -107,9 +107,9 @@ function doText(data) {
 ```
 
 
-##jQuery
+# AJAX with jQuery
 
-##APIs
+# Useful APIs
 * http://openweathermap.org/API
 * http://developer.nytimes.com/
 * http://www.theguardian.com/open-platform
