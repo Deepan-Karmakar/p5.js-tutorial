@@ -6,6 +6,7 @@ JS is "single threaded and synchronous", meaning everything runs in order that i
 AJAX (Asynchronous JavaScript and XML) is a technique for communicating with a server and dynamically altering a page without leaving the page. It can be used to send as well as receive information in a variety of formats, including JSON, XML, HTML, and text files. It is made possible with the [XMLHttpRequest object](http://www.w3schools.com/XML/xml_http.asp), a built-in feature of your browser. 
 
 This diagram illustrates the basic flow:
+
 ![](http://www.w3schools.com/ajax/ajax.gif)
 
 AJAX is a bit difficult to get working in a cross platform manner but their are quite a few libraries out there that have done the hard work. Following are some examples with p5.js and jQuery, but first, a brief note about callbacks.
@@ -61,6 +62,51 @@ A JSON object is an unordered set of name/value pairs. An object begins with `{`
 ##XML
 
 [XML](https://en.wikipedia.org/wiki/XML) (Extensible Markup Language) is another popular format for providing machine readable data to and from web services.
+
+```xml
+<breakfast_menu>
+<food>
+<name>Belgian Waffles</name>
+<price>$5.95</price>
+<description>
+Two of our famous Belgian Waffles with plenty of real maple syrup
+</description>
+<calories>650</calories>
+</food>
+<food>
+<name>Strawberry Belgian Waffles</name>
+<price>$7.95</price>
+<description>
+Light Belgian waffles covered with strawberries and whipped cream
+</description>
+<calories>900</calories>
+</food>
+<food>
+<name>Berry-Berry Belgian Waffles</name>
+<price>$8.95</price>
+<description>
+Light Belgian waffles covered with an assortment of fresh berries and whipped cream
+</description>
+<calories>900</calories>
+</food>
+<food>
+<name>French Toast</name>
+<price>$4.50</price>
+<description>
+Thick slices made from our homemade sourdough bread
+</description>
+<calories>600</calories>
+</food>
+<food>
+<name>Homestyle Breakfast</name>
+<price>$6.95</price>
+<description>
+Two eggs, bacon or sausage, toast, and our ever-popular hash browns
+</description>
+<calories>950</calories>
+</food>
+</breakfast_menu>
+```
 
 # AJAX with p5.js
 
