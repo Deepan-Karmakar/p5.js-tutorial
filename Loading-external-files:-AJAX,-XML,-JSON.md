@@ -5,6 +5,9 @@ JS is "single threaded and synchronous", meaning everything runs in order that i
 
 AJAX (Asynchronous JavaScript and XML) is a technique for communicating with a server and dynamically altering a page without leaving the page. It can be used to send as well as receive information in a variety of formats, including JSON, XML, HTML, and text files. It is made possible with the [XMLHttpRequest object](http://www.w3schools.com/XML/xml_http.asp), a built-in feature of your browser. 
 
+This diagram illustrates the basic flow:
+![](http://www.w3schools.com/ajax/ajax.gif)
+
 AJAX is a bit difficult to get working in a cross platform manner but their are quite a few libraries out there that have done the hard work. Following are some examples with p5.js and jQuery, but first, a brief note about callbacks.
 
 ##Callbacks
