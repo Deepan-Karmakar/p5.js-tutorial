@@ -32,7 +32,7 @@ You will see callbacks used in p5.js and jQuery to tell the program what to do a
 
 A JSON object is an unordered set of name/value pairs. An object begins with `{` (left brace) and ends with `}` (right brace). Each name is followed by `:` (colon) and the name/value pairs are separated by `,` (commas). The name is always a string, the value can be a string, number, boolean, array, or a nested object.
    
-```
+```json
 {
   "firstName": "John",
   "lastName": "Smith",
@@ -65,46 +65,30 @@ A JSON object is an unordered set of name/value pairs. An object begins with `{`
 
 ```xml
 <breakfast_menu>
-<food>
-<name>Belgian Waffles</name>
-<price>$5.95</price>
-<description>
-Two of our famous Belgian Waffles with plenty of real maple syrup
-</description>
-<calories>650</calories>
-</food>
-<food>
-<name>Strawberry Belgian Waffles</name>
-<price>$7.95</price>
-<description>
-Light Belgian waffles covered with strawberries and whipped cream
-</description>
-<calories>900</calories>
-</food>
-<food>
-<name>Berry-Berry Belgian Waffles</name>
-<price>$8.95</price>
-<description>
-Light Belgian waffles covered with an assortment of fresh berries and whipped cream
-</description>
-<calories>900</calories>
-</food>
-<food>
-<name>French Toast</name>
-<price>$4.50</price>
-<description>
-Thick slices made from our homemade sourdough bread
-</description>
-<calories>600</calories>
-</food>
-<food>
-<name>Homestyle Breakfast</name>
-<price>$6.95</price>
-<description>
-Two eggs, bacon or sausage, toast, and our ever-popular hash browns
-</description>
-<calories>950</calories>
-</food>
+  <food>
+    <name>Belgian Waffles</name>
+    <price>$5.95</price>
+    <description>
+      Two of our famous Belgian Waffles with plenty of real maple syrup
+    </description>
+    <calories>650</calories>
+  </food>
+  <food>
+    <name>Strawberry Belgian Waffles</name>
+    <price>$7.95</price>
+    <description>
+      Light Belgian waffles covered with strawberries and whipped cream
+    </description>
+    <calories>900</calories>
+  </food>
+  <food>
+    <name>French Toast</name>
+    <price>$4.50</price>
+    <description>
+      Thick slices made from our homemade sourdough bread
+    </description>
+    <calories>600</calories>
+  </food>
 </breakfast_menu>
 ```
 
