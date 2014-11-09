@@ -108,7 +108,6 @@ loadStrings loads a text file and returns an array of strings. It takes two argu
 function setup() {
   createCanvas(600, 400);
   fill(0);
-  noLoop();
 
   loadStrings("lines.txt", doText);
 }
@@ -126,7 +125,6 @@ Note that if you tried to do something like the following, nothing shows up. Thi
 function setup() {
   createCanvas(600, 400);
   fill(0);
-  noLoop();
 
   var data = loadStrings("lines.txt");
   doText(data); // this won't work!
