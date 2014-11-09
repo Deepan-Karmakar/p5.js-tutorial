@@ -161,7 +161,7 @@ JSON file:
 }
 ```
 
-JS:
+JS file:
 ```javascript
 
 function setup() {
