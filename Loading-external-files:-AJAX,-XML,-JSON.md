@@ -140,6 +140,38 @@ function doText(data) {
 ```
 
 
+###loadJSON
+
+loadJSON loads a JSON file and returns a JavaScript object. It takes two arguments, the path to the file, and the callback function. When the server has returned the JSON data and it has been parsed, drawData is run with the result automatically passed in as the variable "data".
+
+```javascript
+
+function setup() {
+  createCanvas(600, 400);
+  noLoop();
+  noStroke();
+  textSize(20);
+  loadJSON("data.json", drawData);
+}
+
+function drawData(data) {
+
+    background(120, 180, 200);
+
+    // person 1 bubble
+    fill(155, 30, 180, 180);
+    ellipse(250, 200, data.person1.age * 5, data.person1.age * 5); // person1.age = 30
+    fill(255);
+    text(data.person1.name, 210, 200); // person1.name = Morgan
+
+    // person 2 bubble
+    fill(180, 180, 34, 180);
+    ellipse(350, 200, data.person2.age * 5, data.person2.age * 5); // person2.age = 32
+    fill(255);
+    text(data.person2.name, 330, 200); // person2.name = Joss
+}
+```
+
 # AJAX with jQuery
 
 # Useful APIs
