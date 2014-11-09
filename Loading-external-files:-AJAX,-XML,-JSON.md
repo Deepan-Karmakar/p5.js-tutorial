@@ -146,7 +146,6 @@ loadJSON loads a JSON file and returns a JavaScript object. It takes two argumen
 
 function setup() {
   createCanvas(600, 400);
-  noLoop();
   noStroke();
   textSize(20);
   loadJSON("data.json", drawData);
