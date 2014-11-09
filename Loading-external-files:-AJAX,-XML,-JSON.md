@@ -61,7 +61,7 @@ A JSON object is an unordered set of name/value pairs. An object begins with `{`
 
 ##XML
 
-[XML](https://en.wikipedia.org/wiki/XML) (Extensible Markup Language) is another popular format for providing machine readable data to and from web services.
+[XML](https://en.wikipedia.org/wiki/XML) (Extensible Markup Language) is another popular format for providing machine readable data to and from web services. XML is made up of tags, similar to HTML, but unlike HTML, there are no predefined tags (like h1, p, html, etc), instead you make up your own.
 
 ```xml
 <breakfast_menu>
