@@ -142,6 +142,26 @@ function doText(data) {
 
 loadJSON loads a JSON file and returns a JavaScript object. It takes two arguments, the path to the file, and the callback function. When the server has returned the JSON data and it has been parsed, drawData is run with the result automatically passed in as the variable "data".
 
+JSON file:
+```json
+{ "person1" : {
+    "name": "Morgan",
+    "age": "30",
+    "location": "Boston",
+    "desire": "Singing",
+    "fear": "Violence"
+  },
+  "person2": {
+    "name": "Joss",
+    "age": "42",
+    "location": "Boston",
+    "desire": "Hiking",
+    "fear": "Irrationality"
+  }
+}
+```
+
+JS:
 ```javascript
 
 function setup() {
