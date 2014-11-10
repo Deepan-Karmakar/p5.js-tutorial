@@ -195,7 +195,33 @@ void segment(float x, float y, float a) {        // **change** function segment(
 
 ####About variables
 
-In p5.js, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using the symbol "var". In Processing, you must specify the variable type. Here is a summary of the supported Processing data types (table borrowed from [Getting Started with Processing](http://shop.oreilly.com/product/0636920000570.do)).
+In p5.js, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using the symbol "var". In Processing, you must specify the variable type. 
+
+For example, instead of:
+
+```javascript
+boolean button = false;
+```
+
+you'd write
+```javascript
+var button = false;
+```
+
+or 
+
+instead of:
+
+```javascript
+float x = 100.3;
+```
+
+you'd write
+```javascript
+var x = 100.3;
+```
+
+Here is a summary of the supported Processing data types (table borrowed from [Getting Started with Processing](http://shop.oreilly.com/product/0636920000570.do)).
 
 Name | Description | Range of values
 --- | --- | ---
