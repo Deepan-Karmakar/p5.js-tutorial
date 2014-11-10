@@ -220,6 +220,28 @@ loadXML loads an XML file and returns an XML object. It takes two arguments, the
 
 ###preload
 
+If you'd prefer not to deal with asynchronous callbacks, p5.js also has a function called "preload" that lets you load external files synchronously before setup is run. If a preload function is defined, setup will wait until any load calls within have finished. This allows you to access the file data in setup and draw without needing a callback. Nothing besides load calls should be inside preload (loadImage, loadJSON, loadStrings, loadXML, etc).
+
+```javascript
+var lines;
+
+function preload() {
+  lines = loadStrings("lines.txt");
+}
+
+function setup() {
+  createCanvas(600, 400);
+  textSize(20);
+  fill(0);
+  noLoop();
+}
+
+function draw() {
+  for (var i=0; i<lines.length; i++) {
+    text(lines[i], 5, 20*i+20);
+  }
+}
+```
 
 # AJAX with jQuery
 
