@@ -186,6 +186,34 @@ function drawData(data) {
 }
 ```
 
+In addition to local files, loadJSON can also load external URLs. Unfortunately, there are quite a few security restrictions on making AJAX requests across domains. If you are interested in investigating those and how to overcome them, checkout this: http://www.html5rocks.com/en/tutorials/cors/. Fortunately, since we are using libraries such as p5.js we don't have to worry so much.
+
+[openweathermap.org](http://openweathermap.org/) has a pretty easy to use API for weather data in cities around the world.
+
+```javascript
+var bubbles = [];
+
+function setup() {
+  createCanvas(600, 400);
+  noStroke();
+  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=NewYork,USA', drawWeather); 
+}
+
+function drawWeather(weather) {
+
+  // Get the loaded JSON data
+  console.log(weather); // inspect the weather JSON
+  var humidity = weather.main.humidity; // get the main.humidity out of the loaded JSON
+  console.log(humidity); // inspect the humidity in the console
+
+  background(40, 90, 200);
+  fill(0, 255, 255, humidity); // use the humidity value to set the alpha
+  for (var i = 0; i < 50; i++) {
+    ellipse(random(width), random(height), 30, 30);
+  }
+}
+```
+
 ###loadXML
 
 loadXML loads an XML file and returns an XML object. It takes two arguments, the path to the file, and the callback function. It's a little messier to work with XML objects, but you can learn about how to do that [here](http://www.w3schools.com/dom/dom_nodes_get.asp).
