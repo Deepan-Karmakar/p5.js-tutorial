@@ -245,7 +245,11 @@ function draw() {
 
 # AJAX with jQuery
 
-Rather that p5.js, you can also use jQuery to help with loading external files.
+Rather that p5.js, you can also use [jQuery](http://jquery.com/) to help with loading external files. jQuery is a JS library that helps with handling DOM manipulation, events, animation, and AJAX. In order to use the jquery library, you will need to include a link to it in the head of your html file.
+
+```javascript
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+```
 
 ```javascript
 $(document).ready(function(){
