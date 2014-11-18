@@ -59,6 +59,29 @@ A JSON object is an unordered set of name/value pairs. An object begins with `{`
 }
 ```
 
+
+If this were JSON data we loaded into a Javascript application, it would be stored in a variable, like this:
+
+```javascript
+var mydata = {
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25,
+  "address": {
+    "streetAddress": "21 2nd Street",
+    "city": "New York",
+    "state": "NY",
+    "postalCode": "10021"
+  }
+  ...
+};
+```
+Now you can access it with the variable `mydata`: 
+
+```javascript
+alert('I am at' + mydata.address.streetAddress);
+```
+
 ##XML
 
 [XML](https://en.wikipedia.org/wiki/XML) (Extensible Markup Language) is another popular format for providing machine readable data to and from web services. XML is made up of tags, similar to HTML, but unlike HTML, there are no predefined tags (like h1, p, html, etc), instead you make up your own.
