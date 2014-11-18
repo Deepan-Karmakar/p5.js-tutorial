@@ -284,10 +284,12 @@ $(document).ready(function(){
 ```
 
 # Useful APIs
-* http://openweathermap.org/API
-* http://developer.nytimes.com/
-* http://www.theguardian.com/open-platform
-* https://www.flickr.com/services/api/
-* http://web.mta.info/developers/developer-data-terms.html#data
+* OpenWeatherMap - http://openweathermap.org/API
+* NYTimes - http://developer.nytimes.com/
+* The Guardian - http://www.theguardian.com/open-platform
+* flickr - https://www.flickr.com/services/api/
+* MTA - http://web.mta.info/developers/developer-data-terms.html#data
+* Foursquare - https://developer.foursquare.com/
+* Sunlight Foundation - http://sunlightfoundation.com/api/
 * http://en.wikipedia.org/wiki/List_of_open_APIs
 * https://gist.github.com/afeld/4952991
