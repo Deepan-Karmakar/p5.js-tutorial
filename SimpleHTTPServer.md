@@ -36,7 +36,7 @@ Serving HTTP on 0.0.0.0 port 8000 ...
 
 This means the server is up and running at [localhost](http://en.wikipedia.org/wiki/Localhost) on port 8000.  And this means I can type `http://localhost:8000/` into the address of a web browser and I'll see:
 
-![localhost](images/localhost.png)
+![localhost](https://raw.githubusercontent.com/wiki/lmccart/itp-creative-js/images/localhost.png)
 
 # A couple more terminal tips
 
