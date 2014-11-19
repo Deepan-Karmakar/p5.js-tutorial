@@ -2,7 +2,7 @@
 
 To run SimpleHTTPServer, you are first going to want to become familiar using the Mac OS X terminal.  The terminal provides "shell" access to your computer.  You can browse directories and execute applications via text-based commands.  You can find the Terminal app in Applications->Utilities->Terminal.   Run it and you'll see something like.
 
-![Terminal](images/terminal.png)
+![Terminal](https://raw.githubusercontent.com/wiki/lmccart/itp-creative-js/images/terminal.png)
 
 The blinking cursor is the "prompt", where you can execute a command.  Here is a list of some common commands you'll need.
 
