@@ -8,7 +8,7 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
     - JS Style guide:
         - We recommend looking at [idiomatic.js](https://github.com/rwaldron/idiomatic.js/) for a JS style guide
     - Inline documentation:
-        - [Style guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
+        - [Style guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference.
     - Unit tests:
         - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to do this.
         - This helps ensure that the code you write keeps working far into the future when further updates and changes are made.
@@ -19,7 +19,7 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
 
 * **Add examples to the examples page** -- Add to the examples on the [p5js.org learning page](http://p5js.org/learn/#examples). See this [guide](https://github.com/lmccart/p5js.org/wiki/Adding-examples) for details.
 
-* **Add inline examples to the ref** -- 
+* **Add inline examples to the ref**
   * [List of examples needed](https://github.com/lmccart/p5.js/wiki/Development---Checklist)
   * [Guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) 
 
