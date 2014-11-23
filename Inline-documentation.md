@@ -2,6 +2,8 @@ By adding inline documentation in the p5.js source code, a reference can be auto
 
 See below for the basics, more specifics about yuidoc style [here](http://yui.github.io/yuidoc/syntax/index.html). __Please limit line length to 80 columns, starting new lines when it runs over.__
 
+__[List of examples needed](https://github.com/lmccart/p5.js/wiki/Development---Checklist)__
+
 ###Specify element type and description
 
 There are 4 kinds of elements: `@class`, `@method`, `@property`, `@event`.
