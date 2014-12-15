@@ -48,3 +48,4 @@ You can use this project to quickly bootstrap your p5js project and a supporting
 * [Network visualization](http://hanbyul-here.net/etc/2014_thesis_network/index.html) by Hanbyul Jo - [code](https://github.com/hanbyul-here/thesis_network)
 * [face tracking and p5.js](https://gist.github.com/lmccart/2273a047874939ad8ad1) - clmtracker.js + p5.js
 * [Saving animated gifs](http://antiboredom.github.io/p5-gif-example/) uses [gif.js](http://jnordberg.github.io/gif.js/) to create animated gifs from a sketch.
+* [device orientation example](https://gist.github.com/vanevery/5699b02ae7cd27f608ab)
