@@ -13,6 +13,9 @@ Simple app for the creation of p5.js sketches. Similar to [openframeworks-projec
 #### [p5.js seed project](https://github.com/winkerVSbecks/p5js-seed)
 You can use this project to quickly bootstrap your p5js project and a supporting dev environment. The seed contains a basic p5js application and is pre-configured to install the p5js framework and a bunch of development tools such as a simple server and live-reload. 
 
+#### [p5.js-cli](https://github.com/brysonian/p5.js-cli)
+Little node app to run a p5.js script from the command line.
+
 ##Examples
 
 ####[Nature of Code x p5.js](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js)
