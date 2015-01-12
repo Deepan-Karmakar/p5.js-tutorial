@@ -16,6 +16,9 @@ You can use this project to quickly bootstrap your p5js project and a supporting
 #### [p5.js-cli](https://github.com/brysonian/p5.js-cli)
 Little node app to run a p5.js script from the command line.
 
+#### [angular-p5.js](https://github.com/wxactly/angular-p5.js)
+AngularJS wrapper for p5.js
+
 ##Examples
 
 ####[Nature of Code x p5.js](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js)
