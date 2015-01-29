@@ -25,7 +25,7 @@ AngularJS wrapper for p5.js
 Examples from Dan Shiffman's [Nature of Code](http://natureofcode.com) ported to p5.js.
 
 
-####Monash University Creative Coding Sketches on p5
+####[Monash University Creative Coding Sketches on p5](https://github.com/juansrx/Monash-University-Creative-Coding-Examples-p5.js)
 Sketches from the Creative Coding Course found at [FutureLearn](https://www.futurelearn.com/courses/creative-coding) given by Jon McCormack from Monash University. Separated by weeks:
   1. Week 1:
     * [w1_01 "Draw your name!"](http://jsfiddle.net/juansrx/czy94wq3/)
