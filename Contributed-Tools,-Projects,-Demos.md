@@ -26,7 +26,8 @@ Examples from Dan Shiffman's [Nature of Code](http://natureofcode.com) ported to
 
 
 ####[Monash University Creative Coding Sketches on p5](https://github.com/juansrx/Monash-University-Creative-Coding-Examples-p5.js)
-Sketches from the Creative Coding Course found at [FutureLearn](https://www.futurelearn.com/courses/creative-coding) given by Jon McCormack from Monash University. Separated by weeks:
+Sketches from the Creative Coding Course found at [FutureLearn](https://www.futurelearn.com/courses/creative-coding) given by Jon McCormack from Monash University separated by weeks. See the link at the title for the
+github repository where all the examples can be found:
   1. Week 1:
     * [w1_01 "Draw your name!"](http://jsfiddle.net/juansrx/czy94wq3/)
     * [w1_02 "Draw your name! (part 2)"](http://jsfiddle.net/juansrx/4Ltubdg6/)
