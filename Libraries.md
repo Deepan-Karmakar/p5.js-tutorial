@@ -2,7 +2,7 @@ A p5.js library can be any JavaScript code that extends or adds to the p5.js cor
 
 #Adding a library to your project
 
-Two libraries are included with the p5.js download, [p5.dom.js](http://localhost/p5js.org/site/reference/#/libraries/dom) and [p5.sound.js](http://localhost/p5js.org/site/reference/#/libraries/sound). Other contributed libraries can be found on the [libraries page](http://p5js.org/libraries/). 
+Two libraries are included with the p5.js download, [p5.dom.js](http://p5js.org/reference/#/libraries/p5.dom) and [p5.sound.js](http://p5js.org/reference/#/libraries/p5.sound). Other contributed libraries can be found on the [libraries page](http://p5js.org/libraries/). 
 
 To include a library in your sketch, link it into your HTML file, after you have linked in p5.js. An example HTML file might look like this:
 ```html
@@ -93,7 +93,7 @@ Your library may not extend p5 or p5 classes at all, but instead just offer extr
 
 * **Contributed libraries are hosted, documented, and maintained by their creators.** This could be on github, on a separate website, or somewhere else.
 
-* **Documentation is key!** The documentation for your library should be in some place easy to find for users that download and use your library. The documentation for contributed libraries will not be included in the main p5.js reference, but you may want to follow a similar format. See these examples of a [library overview page](http://localhost/p5js.org/site/reference/#/libraries/sound), [class overview page](http://localhost/p5js.org/site/reference/#p5.Vector), and [method page](http://localhost/p5js.org/site/reference/#p5/arc).
+* **Documentation is key!** The documentation for your library should be in some place easy to find for users that download and use your library. The documentation for contributed libraries will not be included in the main p5.js reference, but you may want to follow a similar format. See these examples of a [library overview page](http://p5js.org/reference/#/libraries/p5.sound), [class overview page](http://p5js.org/reference/#/p5.Vector), and [method page](http://p5js.org/reference/#/p5/arc).
 
 * **Examples are great, too!** They show people what your library can do. Because this is all JavaScript, people can see them running online before they download anything. [jsfiddle](http://jsfiddle.net/) and [codepen](http://codepen.io) are two great easy options for hosting examples.
 
