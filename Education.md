@@ -11,7 +11,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Programming from A to Z](https://github.com/shiffman/Programming-from-A-to-Z-F14) - procedural analysis and generation of text-based data using JavaScript and p5.js
 * [Mobile Art Workshop](https://github.com/whichlight/mobile-art-intro) - intro to p5, websockets, interactivity, and sound for mobile web art
 * [Web Media, Moore College of Art S15](https://github.com/lee2sman/PDA203WebMedia) - intro to html, p5 and p5.js to generate web-based art projects
-* [Code as Medium, RISD S15](http://risd-creative-programming.github.io/s15-codeasmedium/examples.html), Evelyn Eastmond
+* [Code as Medium, RISD S15](http://risd-creative-programming.github.io/s15-codeasmedium/examples.html) (Evelyn Eastmond) - many interactive codepen examples!
 
 ###Tools
 * [WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts
