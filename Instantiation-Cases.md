@@ -88,7 +88,7 @@ function setup() {
 ```javascript
 // CASE 0: no node specified
 // Canvas is auto-generated and appended to body.
-const sketch = function(p) {
+var sketch = function(p) {
   var gray = 0; 
 
   p.setup = function() {
@@ -105,7 +105,7 @@ const sketch = function(p) {
   }
 };
 
-new p5(sketch); // or simply `p5(sketch)`;
+new p5(sketch);
 
 // CASE 1: node specified
 // Node is either a canvas element or any generic element.
@@ -113,7 +113,7 @@ new p5(sketch); // or simply `p5(sketch)`;
 // If it is another type of element, a canvas with P5 attached will be inserted inside of it.
 // Note that "sketch" is arbitrary and a user may replace it any variable name.
 
-const sketch = function(p) {
+var sketch = function(p) {
   var gray = 0;
 
   p.setup = function() {
@@ -130,7 +130,7 @@ const sketch = function(p) {
   }
 };
 
-new p5(sketch, node); // or simply `p5(sketch, node)` w/o `new`;
+new p5(sketch, node);
 ```
 
 Note that the above is functionally equivalent to below, either may be used, but the above will be the recommended syntax for beginners as we feel it's clearer.
