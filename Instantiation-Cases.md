@@ -88,27 +88,24 @@ function setup() {
 ```javascript
 // CASE 0: no node specified
 // Canvas is auto-generated and appended to body.
-var s = function( sketch ) {
-
+const sketch = function(p) {
   var gray = 0; 
 
-  sketch.setup = function() {
-    sketch.createCanvas(600, 400);
-    sketch.background(gray);
+  p.setup = function() {
+    p.createCanvas(600, 400);
+    p.background(gray);
   };
 
-  sketch.draw = function() {
-    sketch.rect(sketch.width/2, sketch.height/2, 200, 200);
+  p.draw = function() {
+    p.rect(p.width/2, p.height/2, 200, 200);
   }
 
-  sketch.mousePressed = function() {
+  p.mousePressed = function() {
     gray += 10;
   }
-
-  return sketch;
 };
 
-new p5(s);
+new p5(s); // or simply `p5(sketch)`;
 
 // CASE 1: node specified
 // Node is either a canvas element or any generic element.
@@ -116,49 +113,44 @@ new p5(s);
 // If it is another type of element, a canvas with P5 attached will be inserted inside of it.
 // Note that "sketch" is arbitrary and a user may replace it any variable name.
 
-var s = function( sketch ) {
+const sketch = function(p) {
+  var gray = 0;
 
-  var gray = 0; 
-
-  sketch.setup = function() {
-    sketch.createCanvas(600, 400);
-    sketch.background(gray);
+  p.setup = function() {
+    p.createCanvas(600, 400);
+    p.background(gray);
   };
 
-  sketch.draw = function() {
-    sketch.rect(sketch.width/2, sketch.height/2, 200, 200);
+  p.draw = function() {
+    p.rect(p.width/2, p.height/2, 200, 200);
   }
 
-  sketch.mousePressed = function() {
+  p.mousePressed = function() {
     gray += 10;
   }
-
-  return sketch;
 };
 
-new p5(s, node);
+new p5(sketch, node); // or simply `p5(sketch, node)` w/o `new`;
 ```
 
 Note that the above is functionally equivalent to below, either may be used, but the above will be the recommended syntax for beginners as we feel it's clearer.
 
 ```javascript
-p5(function( sketch ) {
- 
-  var gray = 0; 
- 
-  sketch.setup = function() {
-    sketch.createCanvas(600, 400);
-    sketch.background(gray);
+p5(function(p) {
+  var gray = 0;
+
+  p.setup = function() {
+    p.createCanvas(600, 400);
+    p.background(gray);
   };
- 
-  sketch.draw = function() {
-    sketch.rect(sketch.width/2, sketch.height/2, 200, 200);
+
+  p.draw = function() {
+    p.rect(p.width/2, p.height/2, 200, 200);
   }
- 
-  sketch.mousePressed = function() {
+
+  p.mousePressed = function() {
     gray += 10;
   }
- 
 }, node);
 ```
 
