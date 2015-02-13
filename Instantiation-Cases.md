@@ -105,7 +105,7 @@ const sketch = function(p) {
   }
 };
 
-new p5(s); // or simply `p5(sketch)`;
+new p5(sketch); // or simply `p5(sketch)`;
 
 // CASE 1: node specified
 // Node is either a canvas element or any generic element.
