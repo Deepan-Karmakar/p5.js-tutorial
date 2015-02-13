@@ -18,3 +18,6 @@ By default, all p5.js functions are in the global namespace (i.e. bound to the w
 
 Use the `.parent()` function, [see more info here](https://github.com/lmccart/p5.js/wiki/p5.js-overview#createcanvas).
 
+### How did this project originate?
+
+This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is [here](https://github.com/lmccart/p5.js/wiki/Research-Documentation).
