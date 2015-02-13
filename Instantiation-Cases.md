@@ -108,7 +108,7 @@ var s = function( sketch ) {
   return sketch;
 };
 
-p5(s);
+new p5(s); // or just p5(s);
 
 // CASE 1: node specified
 // Node is either a canvas element or any generic element.
@@ -136,13 +136,13 @@ var s = function( sketch ) {
   return sketch;
 };
 
-p5(node, s);
+new p5(s, node); // or just p5(s, node);
 ```
 
 Note that the above is functionally equivalent to below, either may be used, but the above will be the recommended syntax for beginners as we feel it's clearer.
 
 ```javascript
-p5(node, function( sketch ) {
+p5(function( sketch ) {
  
   var gray = 0; 
  
@@ -159,7 +159,7 @@ p5(node, function( sketch ) {
     gray += 10;
   }
  
-});
+}, node);
 ```
 
 Still have to think about whether to use 'new' or capitalize the constructor.
