@@ -1,7 +1,10 @@
 ### Do all the variables have to be in the global namespace? Can I run multiple sketches on one page?
 
-By default, all p5.js functions are in the global namespace (i.e. bound to the window object), meaning you can call them simply `ellipse()`, `fill()`, etc. However, this might be inconvenient if you are mixing with other JS libraries or writing long programs of your own. To solve this problem, there is something we call "instance mode", where all p5 functions are bound up in a single variable instead of polluting your global namespace. See more info here:
-https://github.com/lmccart/p5.js/wiki/p5.js-overview#instantiation--namespace
+By default, all p5.js functions are in the global namespace (i.e. bound to the window object), meaning you can call them simply `ellipse()`, `fill()`, etc. However, this might be inconvenient if you are mixing with other JS libraries or writing long programs of your own. To solve this problem, there is something we call "instance mode", where all p5 functions are bound up in a single variable instead of polluting your global namespace. See more info [here](https://github.com/lmccart/p5.js/wiki/p5.js-overview#instantiation--namespace).
+
+### How can I specify the HTML node where I want my canvas?
+
+Use the `.parent()` function, more [here](https://github.com/lmccart/p5.js/wiki/p5.js-overview#createcanvas).
 
 ###How is this different than Processing.js?
 
