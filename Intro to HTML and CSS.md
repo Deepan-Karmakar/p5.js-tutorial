@@ -1,4 +1,4 @@
-This tutorial provides a general overview to HTML and CSS, no p5.js involved. If you'd like to use the p5.dom library to do some of these things, check out the [beyond the canvas](https://github.com/lmccart/p5.js/wiki/Beyond-the-canvas) tutorial.
+This tutorial provides a general overview to HTML and CSS, no p5.js involved. If you'd like to use the p5.dom library to do some of these things, check out the [beyond the canvas](https://github.com/processing/p5.js/wiki/Beyond-the-canvas) tutorial.
 
 #HTML
 
@@ -134,7 +134,7 @@ You can see all the attributes and the tags they are associated with in the [MDN
 
 ###class and id
 
-Two common attributes are "class" and "id", both of which are used to identify particular elements when adding [CSS rules](https://github.com/lmccart/p5.js/wiki/Intro-to-HTML-and-CSS#using-an-external-stylesheet) or manipulating the page using JS. 
+Two common attributes are "class" and "id", both of which are used to identify particular elements when adding [CSS rules](https://github.com/processing/p5.js/wiki/Intro-to-HTML-and-CSS#using-an-external-stylesheet) or manipulating the page using JS. 
 
 ```html
 <p class="tomato">This paragraph has class tomato.</p>
@@ -283,4 +283,4 @@ Coming soon...
   * [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS)
   * [Lynda.com HTML essentials](http://www.lynda.com/HTML-tutorials/HTML-Essential-Training/170427-2.html)
   * [Lynda.com CSS fundamentals](http://www.lynda.com/Web-Interactive-CSS-tutorials/CSS-Fundamentals/80436-2.html)
-  * [Tutorial: CSS and layouts](https://github.com/lmccart/p5.js/wiki/Intro-to-CSS-and-layouts)
+  * [Tutorial: CSS and layouts](https://github.com/processing/p5.js/wiki/Intro-to-CSS-and-layouts)

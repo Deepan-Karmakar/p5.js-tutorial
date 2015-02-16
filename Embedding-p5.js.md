@@ -29,9 +29,9 @@ Only trick here is that you need to manually set the size of the iframe, so it w
 
 ##Using render.js
 
-You can also use this [render.js](https://github.com/lmccart/p5js.org/blob/master/js/render.js) script, see this [wordpress post example](http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/). This is used for the editable examples in the p5.js reference, see this [reference example](http://p5js.org/reference/#p5/colorMode). 
+You can also use this [render.js](https://github.com/processing/p5.js-website/blob/master/js/render.js) script, see this [wordpress post example](http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/). This is used for the editable examples in the p5.js reference, see this [reference example](http://p5js.org/reference/#p5/colorMode). 
 
-In the head of your page you will need to link in a few files in addition to render.js (all files can be found [here](https://github.com/lmccart/p5js.org/tree/master/js)). _If you are using a system like wordpress, you will need to put these links directly into the `<head>` code, not in the body of your post._
+In the head of your page you will need to link in a few files in addition to render.js (all files can be found [here](https://github.com/processing/p5.js-website/tree/master/js)). _If you are using a system like wordpress, you will need to put these links directly into the `<head>` code, not in the body of your post._
 
 ```html
 <!-- p5.js library -->
@@ -80,7 +80,7 @@ background(100);
 
 ####Customizing
 
-If you include [prism](http://prismjs.com/) you can add code highlighting, too. You will need to link to both [prism.js](https://github.com/lmccart/p5js.org/blob/master/js/vendor/prism.js) and [prism.css](https://github.com/lmccart/p5js.org/blob/master/css/prism.css) in the header of your page. The CSS file can be modified to highlight and color as you wish.
+If you include [prism](http://prismjs.com/) you can add code highlighting, too. You will need to link to both [prism.js](https://github.com/processing/p5.js-website/blob/master/js/vendor/prism.js) and [prism.css](https://github.com/processing/p5.js-website/blob/master/css/prism.css) in the header of your page. The CSS file can be modified to highlight and color as you wish.
 
 ```html
 <!-- code highlighting -->

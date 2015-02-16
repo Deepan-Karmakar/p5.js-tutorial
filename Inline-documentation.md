@@ -2,7 +2,7 @@ By adding inline documentation in the p5.js source code, a reference can be auto
 
 See below for the basics, more specifics about yuidoc style [here](http://yui.github.io/yuidoc/syntax/index.html). __Please limit line length to 80 columns, starting new lines when it runs over.__
 
-__[List of examples needed](https://github.com/lmccart/p5.js/wiki/Development---Checklist)__
+__[List of examples needed](https://github.com/processing/p5.js/wiki/Development---Checklist)__
 
 ###Specify element type and description
 
@@ -167,7 +167,7 @@ If you do not want the example to render with canvas (ie you just want the code 
 </div>
 ```
 
-If you need to link to external asset files, put them in [/docs/yuidoc-p5-theme/assets](https://github.com/lmccart/p5.js/tree/master/docs/yuidoc-p5-theme/assets) and then link to them with "assets/filename.ext" in the code. See the [tint example](http://p5js.org/site/reference/#/p5/tint).
+If you need to link to external asset files, put them in [/docs/yuidoc-p5-theme/assets](https://github.com/processing/p5.js/tree/master/docs/yuidoc-p5-theme/assets) and then link to them with "assets/filename.ext" in the code. See the [tint example](http://p5js.org/site/reference/#/p5/tint).
 
 ###Generating documentation
 

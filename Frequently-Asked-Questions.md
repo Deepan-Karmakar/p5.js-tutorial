@@ -12,12 +12,12 @@ We are also putting a lot of energy into making the documentation clear, for dev
 
 ### Do all the variables have to be in the global namespace? Can I run multiple sketches on one page?
 
-By default, all p5.js functions are in the global namespace (i.e. bound to the window object), meaning you can call them simply `ellipse()`, `fill()`, etc. However, this might be inconvenient if you are mixing with other JS libraries or writing long programs of your own. To solve this problem, there is something we call "instance mode", where all p5 functions are bound up in a single variable instead of polluting your global namespace. [See more info here.](https://github.com/lmccart/p5.js/wiki/p5.js-overview#instantiation--namespace)
+By default, all p5.js functions are in the global namespace (i.e. bound to the window object), meaning you can call them simply `ellipse()`, `fill()`, etc. However, this might be inconvenient if you are mixing with other JS libraries or writing long programs of your own. To solve this problem, there is something we call "instance mode", where all p5 functions are bound up in a single variable instead of polluting your global namespace. [See more info here.](https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace)
 
 ### How can I specify the HTML node where I want my canvas?
 
-Use the `.parent()` function, [see more info here](https://github.com/lmccart/p5.js/wiki/p5.js-overview#createcanvas).
+Use the `.parent()` function, [see more info here](https://github.com/processing/p5.js/wiki/p5.js-overview#createcanvas).
 
 ### How did this project originate?
 
-This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is [here](https://github.com/lmccart/p5.js/wiki/Research-Documentation).
+This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is [here](https://github.com/processing/p5.js/wiki/Research-Documentation).

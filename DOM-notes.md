@@ -1,16 +1,16 @@
 ## Current DOM API documentation 
 (more or less)
 * https://github.com/lmccart/itp-creative-js/wiki/Week-3#html-manipulation-with-p5js
-* [tutorial](https://github.com/lmccart/p5.js/wiki/DOM-Extensions)
+* [tutorial](https://github.com/processing/p5.js/wiki/DOM-Extensions)
 * [ITP creative-js examples](https://github.com/lmccart/itp-creative-js/tree/master/week3)
 * [p5.js workshop (see examples 9)](http://p5js.org/workshop/)
 
 ## Current DOM issues open
 
-* [Fullscreen API and presentation mode](https://github.com/lmccart/p5.js/issues/197)
-* [specifying DIV ID with global mode, remove support of canvas ID/node specification?](https://github.com/lmccart/p5.js/issues/201)
-* [multi-argument createHTML methods](https://github.com/lmccart/p5.js/issues/202)
-* [other create methods (see below for more notes)](https://github.com/lmccart/p5.js/issues/192)
+* [Fullscreen API and presentation mode](https://github.com/processing/p5.js/issues/197)
+* [specifying DIV ID with global mode, remove support of canvas ID/node specification?](https://github.com/processing/p5.js/issues/201)
+* [multi-argument createHTML methods](https://github.com/processing/p5.js/issues/202)
+* [other create methods (see below for more notes)](https://github.com/processing/p5.js/issues/192)
 * [bonzo](https://github.com/ded/bonzo)?
 
 ## Other HTML elements to address 

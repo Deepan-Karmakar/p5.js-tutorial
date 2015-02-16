@@ -1,4 +1,4 @@
-This tutorial provides a general overview to HTML and CSS, no p5.js involved. If you'd like to use the p5.dom library to do some of these things, check out the [beyond the canvas](https://github.com/lmccart/p5.js/wiki/Beyond-the-canvas) tutorial.
+This tutorial provides a general overview to HTML and CSS, no p5.js involved. If you'd like to use the p5.dom library to do some of these things, check out the [beyond the canvas](https://github.com/processing/p5.js/wiki/Beyond-the-canvas) tutorial.
 
 #The Document Object Model (DOM)
 
@@ -26,7 +26,7 @@ var elt = document.getElementById("gargoyle");
 console.log(elt);
 ```
 
-You could type this JS code directly into console and see the result. You could also put it directly into the HTML page using the `<script>` tag. Note that this script is placed in the body of the page, rather than the head. This has to do with the order that things are loaded and run when you open a page. More on this in the [load event](https://github.com/lmccart/p5.js/wiki/Intro-to-DOM-manipulation-and-events#load) section.
+You could type this JS code directly into console and see the result. You could also put it directly into the HTML page using the `<script>` tag. Note that this script is placed in the body of the page, rather than the head. This has to do with the order that things are loaded and run when you open a page. More on this in the [load event](https://github.com/processing/p5.js/wiki/Intro-to-DOM-manipulation-and-events#load) section.
 
 ```html
 <html>
@@ -318,5 +318,5 @@ __General__
 
 __p5.js__
 
-* [DOM manipulation with p5.js](https://github.com/lmccart/p5.js/wiki/Beyond-the-canvas#element-specific-listeners)
-* [event listeners with p5.js](https://github.com/lmccart/p5.js/wiki/Beyond-the-canvas#element-specific-listeners)
+* [DOM manipulation with p5.js](https://github.com/processing/p5.js/wiki/Beyond-the-canvas#element-specific-listeners)
+* [event listeners with p5.js](https://github.com/processing/p5.js/wiki/Beyond-the-canvas#element-specific-listeners)

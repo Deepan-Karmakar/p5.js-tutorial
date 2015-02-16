@@ -29,7 +29,7 @@ The p5.js language looks very similar to the Processing language with a few chan
 
 ####Basic sketch
 
-This is the basic setup for a Processing and p5.js sketch. Note that p5.js will also require an empty HTML file that links to the p5.js library and your sketch file in the header (see [getting started](https://github.com/lmccart/p5.js/wiki/Getting-Started)).
+This is the basic setup for a Processing and p5.js sketch. Note that p5.js will also require an empty HTML file that links to the p5.js library and your sketch file in the header (see [getting started](https://github.com/processing/p5.js/wiki/Getting-Started)).
 
 ```java
 void setup() {

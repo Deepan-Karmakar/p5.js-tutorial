@@ -1,6 +1,6 @@
 ### Download / File Setup
 
-Download the [`p5.js`](https://github.com/lmccart/p5.js/blob/master/dist/p5.js) file and create a new `index.html` file and a new `sketch.js` file.  `sketch.js` is where you will write your p5 code and `index.html` will bring it all together to be displayed on a web page.
+Download the [`p5.js`](https://github.com/processing/p5.js/blob/master/dist/p5.js) file and create a new `index.html` file and a new `sketch.js` file.  `sketch.js` is where you will write your p5 code and `index.html` will bring it all together to be displayed on a web page.
 
 Later as you start to do more to integrate a p5 sketch into a larger web page you can add all sorts of stuff to your html file.  For now, all you need to know is that you should reference `sketch.js` and `p5.js` using [the `<script>` tag](http://www.w3schools.com/tags/tag_script.asp).  A `<script>` tag allows you to write JavaScript directly into the html file like so:
 
@@ -32,7 +32,7 @@ A full example index.html file looks like so:
 
 Note that this assumes that all three files `index.html`, `sketch.js`, and `p5.js` are in the same directory.
 
-Alternatively, you can [download the whole project](https://github.com/lmccart/p5.js/archive/master.zip) and copy the examples/empty-example folder to any location you like and edit the sketch.js file.
+Alternatively, you can [download the whole project](https://github.com/processing/p5.js/archive/master.zip) and copy the examples/empty-example folder to any location you like and edit the sketch.js file.
 
 We should also mention that you can reference the `p5.js` file hosted online.  All versions of p5.js are stored in a CDN ("Content Delivery Network").  You can see a history of these versions here: [p5.js CDN](http://cdnjs.com/libraries/p5.js/).  In this case you can simply say:
 
@@ -96,13 +96,13 @@ This program creates a window that is 480 pixels wide and 120 pixels high, and t
 
 ### Getting started for Processing users
 
-####[> Processing syntax conversion](https://github.com/lmccart/p5.js/wiki/Processing-syntax-conversion)
+####[> Processing syntax conversion](https://github.com/processing/p5.js/wiki/Processing-syntax-conversion)
 Learn how to convert from Processing to p5.js.
 
 ### Examples and Reference
 
-####[> Tutorials](https://github.com/lmccart/p5.js/wiki/Tutorials)
+####[> Tutorials](https://github.com/processing/p5.js/wiki/Tutorials)
 Short, prototypical programs exploring the basics of programming with p5.js.
 
-####[> Reference](https://github.com/lmccart/p5.js/wiki/Reference)
+####[> Reference](https://github.com/processing/p5.js/wiki/Reference)
 The functionality supported by p5.js.

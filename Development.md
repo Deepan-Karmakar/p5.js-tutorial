@@ -1,27 +1,27 @@
 ###Getting started
 
-Interested in contributing? Awesome! First, figure out what you'd like to do (a good place to start is the [issues list](https://github.com/lmccart/p5.js/issues) and [development checklist](https://github.com/lmccart/p5.js/wiki/Development---Checklist)):
+Interested in contributing? Awesome! First, figure out what you'd like to do (a good place to start is the [issues list](https://github.com/processing/p5.js/issues) and [development checklist](https://github.com/processing/p5.js/wiki/Development---Checklist)):
 
-* **Fix a bug** -- If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. Go ahead and fix it and submit a PR (see below for instructions for getting set up for development). We are also in the process of adding unit tests and more inline documentation, so if the function you are fixing doesn't have these, please consider adding these as well. [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
+* **Fix a bug** -- If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. Go ahead and fix it and submit a PR (see below for instructions for getting set up for development). We are also in the process of adding unit tests and more inline documentation, so if the function you are fixing doesn't have these, please consider adding these as well. [Submit the change to the master branch.](https://github.com/processing/p5.js/wiki/Development#master-branch-development)
 
 * **Implement a new feature(s)** -- First, write to [hello@p5js.org](mailto:hello@p5js.org) to let us know you're interested! If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. __Note: new features will require tests and inline documentation!__
     - JS Style guide:
         - We recommend looking at [idiomatic.js](https://github.com/rwaldron/idiomatic.js/) for a JS style guide
     - Inline documentation:
-        - [Style guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference.
+        - [Style guide for p5.js inline docs](https://github.com/processing/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference.
     - Unit tests:
-        - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to do this.
+        - See the [testing section](https://github.com/processing/p5.js/wiki/Development#wiki-testing) for how to do this.
         - This helps ensure that the code you write keeps working far into the future when further updates and changes are made.
 
-* **Add unit tests or documentation for existing code** -- Let us know which areas you're working on so we don't duplicate efforts! [Submit the change to the master branch.](https://github.com/lmccart/p5.js/wiki/Development#master-branch-development)
-    - See the [guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
-    - See the [testing section](https://github.com/lmccart/p5.js/wiki/Development#wiki-testing) for how to add unit tests.
+* **Add unit tests or documentation for existing code** -- Let us know which areas you're working on so we don't duplicate efforts! [Submit the change to the master branch.](https://github.com/processing/p5.js/wiki/Development#master-branch-development)
+    - See the [guide for p5.js inline docs](https://github.com/processing/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
+    - See the [testing section](https://github.com/processing/p5.js/wiki/Development#wiki-testing) for how to add unit tests.
 
-* **Add examples to the examples page** -- Add to the examples on the [p5js.org learning page](http://p5js.org/learn/#examples). See this [guide](https://github.com/lmccart/p5js.org/wiki/Adding-examples) for details.
+* **Add examples to the examples page** -- Add to the examples on the [p5js.org learning page](http://p5js.org/learn/#examples). See this [guide](https://github.com/processing/p5.js-website/wiki/Adding-examples) for details.
 
 * **Add inline examples to the ref**
-  * [List of examples needed](https://github.com/lmccart/p5.js/wiki/Development---Checklist)
-  * [Guide for p5.js inline docs](https://github.com/lmccart/p5.js/wiki/Inline-documentation) 
+  * [List of examples needed](https://github.com/processing/p5.js/wiki/Development---Checklist)
+  * [Guide for p5.js inline docs](https://github.com/processing/p5.js/wiki/Inline-documentation) 
 
 * **Contribute in some other way** -- Write to [hello@p5js.org](mailto:hello@p5js.org) and let us know what you're thinking! It is our intention that there should be many ways to contribute to p5.js, from writing code, to creating examples, tutorials and documentation, to thinking about workshops and education, to working on branding and design, and anything else you can dream up. Get in touch and we can talk about ways you might participate.
 
@@ -54,11 +54,11 @@ grunt
 
 `tests/` Contains unit testing files.
 
-`examples/` Contains code examples including a port of all of Dan Shiffman's [Learning Processing](learningprocessing.com), as well as an empty-empty example that demonstrates setting up a sketch, and examples related to specific [tutorials](https://github.com/lmccart/p5.js/wiki/Tutorials).
+`examples/` Contains code examples including a port of all of Dan Shiffman's [Learning Processing](learningprocessing.com), as well as an empty-empty example that demonstrates setting up a sketch, and examples related to specific [tutorials](https://github.com/processing/p5.js/wiki/Tutorials).
 
 ###Testing
 
-With all new functions implemented, please include unit tests and inline documentation. A good example for how to format and write inline documentation can be seen in [PImage](https://github.com/lmccart/p5.js/blob/master/src/image/image.js). Examples of unit tests can be found in the [test/unit](https://github.com/lmccart/p5.js/tree/master/test/unit) directory. Directions for adding your own tests and including them are below.
+With all new functions implemented, please include unit tests and inline documentation. A good example for how to format and write inline documentation can be seen in [PImage](https://github.com/processing/p5.js/blob/master/src/image/image.js). Examples of unit tests can be found in the [test/unit](https://github.com/processing/p5.js/tree/master/test/unit) directory. Directions for adding your own tests and including them are below.
 
 The testing is done with [grunt-mocha](https://github.com/kmiyashiro/grunt-mocha) which uses [mocha](http://visionmedia.github.io/mocha/) test framework with [phantomjs](http://phantomjs.org/download.html). 
 To get started:

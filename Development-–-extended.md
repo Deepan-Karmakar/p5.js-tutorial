@@ -1,6 +1,6 @@
 [THIS IS A ROUGH DRAFT]
 
-This extended guide doesn't assume familiarity with concepts like unit testing, inline documentation, Javascript deployment workflows or specific tools like grunt or mocha. If you are comfortable with these and are looking for a quick start guide, please see [this page](https://github.com/lmccart/p5.js/wiki/Development).
+This extended guide doesn't assume familiarity with concepts like unit testing, inline documentation, Javascript deployment workflows or specific tools like grunt or mocha. If you are comfortable with these and are looking for a quick start guide, please see [this page](https://github.com/processing/p5.js/wiki/Development).
 
 The development of P5 is collaborative: we encourage you to participate and help us shape it. Here are some ways to contribute:
 

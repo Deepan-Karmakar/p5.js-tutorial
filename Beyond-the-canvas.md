@@ -2,7 +2,7 @@ As you have seen, createCanvas creates an HTML5 Canvas, a special element you ca
 
 ## Including the p5.dom library
 
-First, you will need to include the p5.dom.js file in your HTML. If you are using the example project it should already be there, you just need to uncomment the line in index.html that links to it. Otherwise, [download](https://github.com/lmccart/p5.js/blob/master/lib/addons/p5.dom.js) the file and add this line to your HTML header:
+First, you will need to include the p5.dom.js file in your HTML. If you are using the example project it should already be there, you just need to uncomment the line in index.html that links to it. Otherwise, [download](https://github.com/processing/p5.js/blob/master/lib/addons/p5.dom.js) the file and add this line to your HTML header:
 
 ```html
 <script type='text/javascript' src='relative/path/to/your/p5.dom.js'>
@@ -493,6 +493,6 @@ function mousePressed() {
 
 * There is a lot more you can do with this library than is covered here, so explore the methods and classes you find in the [reference](http://p5js.org/reference/#/libraries/p5.dom). 
 * See more examples in the DOM section on the [learn page](p5js.org/learn/#examples).
-* If you'd like to learn more about HTML and the DOM in general, see this [intro to HTML](https://github.com/lmccart/p5.js/wiki/Intro-to-HTML)
-* This library is a bit experimental and in development, so if you find bugs or have suggestions please [post an issue](https://github.com/lmccart/p5.js/issues). 
+* If you'd like to learn more about HTML and the DOM in general, see this [intro to HTML](https://github.com/processing/p5.js/wiki/Intro-to-HTML)
+* This library is a bit experimental and in development, so if you find bugs or have suggestions please [post an issue](https://github.com/processing/p5.js/issues). 
 * The [forum](forum.processing.org/two/) is the best place for more general programming questions.
