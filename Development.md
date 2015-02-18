@@ -73,6 +73,12 @@ npm install
 3. Link to the src and test files in `test.html`. 
 4. Run the tests with `grunt mocha`.
 
+#### Running tests in the browser
+Sometimes it is useful to run tests in browser especially when trying to debug test failures.  To run the tests in the browser:
+
+1. Run the connect server. ```grunt connect -keepalive```
+2. Open test/test.html in your favourite web browser.
+
 ### Master branch development
 
 1. Fork p5.js
