@@ -56,7 +56,12 @@ github repository where all the examples can be found:
     * [w3_06 "Rule-based system"](http://jsfiddle.net/juansrx/myv5kg9t/)
     * [w3_06 "Rule-based system: final version"](http://jsfiddle.net/juansrx/orb3kmjk/)
     * [Rainbow Tops (Proposed solution to excercise)] (http://jsfiddle.net/juansrx/namq3has/)
-
+  4. Week 4:
+    * Some of these examples require external resources, so I think is better to give the link to the
+      Github repository, so yo can download the examples and host them in a local web server, the
+      sixth example required a Perlin algorithm implementation I'm not sure I can use on my example, so
+      I left it out. [Here are the examples](https://github.com/juansrx/Monash-University-Creative-Coding-Examples-p5.js/tree/master/Week4)
+ 
 #### [Network visualization](http://hanbyul-here.net/etc/2014_thesis_network/index.html)
 By Hanbyul Jo - [code](https://github.com/hanbyul-here/thesis_network)
 #### [face tracking and p5.js](https://gist.github.com/lmccart/2273a047874939ad8ad1)
