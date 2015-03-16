@@ -29,21 +29,30 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
 
 1. Download and install [npm](https://npmjs.org/). The easiest way to do this is to just install [node](http://nodejs.org/).
 2. Install [Grunt](http://gruntjs.com/getting-started). 
-```
-npm install -g grunt-cli
-```
+   
+   ```
+   npm install -g grunt-cli
+   ```
+
 3. [Fork and clone](https://help.github.com/articles/fork-a-repo) this library. 
-```
-git clone git@github.com:lmccart/p5.js.git`
-```
+
+   ```
+   git clone git@github/processing/p5.js.git
+   ```
+
 4. Navigate into the project folder and install dependencies via npm.
-```
-cd p5.js/ npm install
-```
+   
+   ```
+   cd p5.js
+   npm install
+   ```
+
 5. To create the library from src, run Grunt. 
-```
-grunt
-```
+
+   ```
+   grunt
+   ```
+
 6. [Submit a pull request](https://help.github.com/articles/creating-a-pull-request).
 
 ###Overview
@@ -64,10 +73,11 @@ The testing is done with [grunt-mocha](https://github.com/kmiyashiro/grunt-mocha
 To get started:
 
 1. Install dependencies.
-```
-cd p5.js/
-npm install
-```
+
+   ```
+   cd p5.js/
+   npm install
+   ```
 
 2. Add test files corresponding to files in `src` (more info about Chai assert style TDD phrasing [here](http://chaijs.com/api/assert/)). 
 3. Link to the src and test files in `test.html`. 
