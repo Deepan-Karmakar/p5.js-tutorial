@@ -61,6 +61,10 @@ github repository where all the examples can be found:
       Github repository, so yo can download the examples and host them in a local web server, the
       sixth example required a Perlin algorithm implementation I'm not sure I can use on my example, so
       I left it out. [Here are the examples](https://github.com/juansrx/Monash-University-Creative-Coding-Examples-p5.js/tree/master/Week4)
+  5. Week 5:
+    * Some of these examples require an extra javascript file and/or a font (.otf) file. [Here are the examples](https://github.com/juansrx/Monash-University-Creative-Coding-Examples-p5.js/tree/master/Week5)
+  6. Week 6:
+    * [w6_01 "Recursive functions"](http://jsfiddle.net/juansrx/ogvb2k9y/)
  
 #### [Network visualization](http://hanbyul-here.net/etc/2014_thesis_network/index.html)
 By Hanbyul Jo - [code](https://github.com/hanbyul-here/thesis_network)
