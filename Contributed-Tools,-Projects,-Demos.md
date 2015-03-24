@@ -19,6 +19,9 @@ Little node app to run a p5.js script from the command line.
 #### [angular-p5.js](https://github.com/wxactly/angular-p5.js)
 AngularJS wrapper for p5.js
 
+#### [p5.js-screen-saver](https://github.com/mactkg/p5.js-screen-saver)
+You can create your original screen saver using p5.js!
+
 ##Examples
 
 ####[Nature of Code x p5.js](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js)
