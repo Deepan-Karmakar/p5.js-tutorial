@@ -9,7 +9,7 @@ This diagram illustrates the basic flow:
 
 ![](http://www.w3schools.com/ajax/ajax.gif)
 
-AJAX is a bit difficult to get working in a cross platform manner but their are quite a few libraries out there that have done the hard work. Following are some examples with p5.js and jQuery, but first, a brief note about callbacks.
+AJAX is a bit difficult to get working in a cross platform manner (see an example [here](http://stackoverflow.com/questions/9713058/sending-post-data-with-a-xmlhttprequest)) but there are quite a few libraries out there that have done the hard work. Following are some examples with p5.js and jQuery, but first, a brief note about callbacks.
 
 ##Callbacks
 A callback is a function that is passed to another function as a parameter, and called by that other function. A callback function is useful when working with asynchronous functions because it allows us to specify some code to execute after the first asynchronous task has completed.
