@@ -145,7 +145,7 @@ p5(function(p) {
   };
 
   p.draw = function() {
-    p.rect(p.width/2, p.height/2, 200, 200);
+    p.rect(p.width>>1, p.height>>1, 200, 200);
   }
 
   p.mousePressed = function() {
