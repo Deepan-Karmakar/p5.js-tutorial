@@ -2,6 +2,8 @@
 
 For syllabi or teaching specific materials and tools, please see the [education page](https://github.com/processing/p5.js/wiki/Education).
 
+##Demos
+* [Video intro tutorial: p5.js](http://www.creativebloq.com/web-design/new-tool-ideas-code-41514620), Scott Garner
 ##Tools
 
 ####[p5.js sketch creator](http://blog.kennethfrederick.de/2014/06/sketch-creator.html)
