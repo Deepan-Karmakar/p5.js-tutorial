@@ -136,19 +136,19 @@ new p5(sketch, node);
 Note that the above is functionally equivalent to below, either may be used, but the above will be the recommended syntax for beginners as we feel it's clearer.
 
 ```javascript
-p5(function(p) {
+p5(function (p) {
   var gray = 0;
 
-  p.setup = function() {
+  p.setup = function () {
     p.createCanvas(600, 400);
     p.background(gray);
   };
 
-  p.draw = function() {
+  p.draw = function () {
     p.rect(p.width>>1, p.height>>1, 200, 200);
   }
 
-  p.mousePressed = function() {
+  p.mousePressed = function () {
     gray += 10;
   }
 }, node);
