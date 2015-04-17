@@ -88,21 +88,21 @@ function setup() {
 ```javascript
 // CASE 0: no node specified
 // Canvas is auto-generated and appended to body.
-var sketch = function(p) {
+var sketch = function (p) {
   var gray = 0; 
 
-  p.setup = function() {
+  p.setup = function () {
     p.createCanvas(600, 400);
   };
 
-  p.draw = function() {
+  p.draw = function () {
     p.background(gray);
     p.rect(p.width/2, p.height/2, 200, 200);
-  }
+  };
 
-  p.mousePressed = function() {
+  p.mousePressed = function () {
     gray = (gray + 16) % 256;
-  }
+  };
 };
 
 new p5(sketch);
@@ -111,23 +111,23 @@ new p5(sketch);
 // Node is either a canvas element or any generic element.
 // If it is a canvas, P5 will attach to it.
 // If it is another type of element, a canvas with P5 attached will be inserted inside of it.
-// Note that "sketch" is arbitrary and a user may replace it any variable name.
+// Note that "sketch" is arbitrary and a user may replace it w/ any variable name.
 
 var sketch = function(p) {
   var gray = 0;
 
-  p.setup = function() {
+  p.setup = function () {
     p.createCanvas(600, 400);
   };
 
-  p.draw = function() {
+  p.draw = function () {
     p.background(gray);
     p.rect(p.width/2, p.height/2, 200, 200);
-  }
+  };
 
-  p.mousePressed = function() {
+  p.mousePressed = function () {
     gray = (gray + 16) % 256;
-  }
+  };
 };
 
 new p5(sketch, node);
@@ -146,11 +146,11 @@ p5(function (p) {
   p.draw = function () {
     p.background(gray);
     p.rect(p.width>>1, p.height>>1, 200, 200);
-  }
+  };
 
   p.mousePressed = function () {
     gray = (gray + 16) % 256;
-  }
+  };
 }, node);
 ```
 
