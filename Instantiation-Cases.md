@@ -149,7 +149,7 @@ p5(function (p) {
   };
 
   p.mousePressed = function () {
-    gray = (gray + 16) % 256;
+    gray = (gray + 0o20) % 0x100;
   };
 }, node);
 ```
