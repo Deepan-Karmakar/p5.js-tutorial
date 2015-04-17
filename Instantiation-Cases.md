@@ -93,15 +93,15 @@ var sketch = function(p) {
 
   p.setup = function() {
     p.createCanvas(600, 400);
-    p.background(gray);
   };
 
   p.draw = function() {
+    p.background(gray);
     p.rect(p.width/2, p.height/2, 200, 200);
   }
 
   p.mousePressed = function() {
-    gray += 10;
+    gray = (gray + 16) % 256;
   }
 };
 
@@ -118,15 +118,15 @@ var sketch = function(p) {
 
   p.setup = function() {
     p.createCanvas(600, 400);
-    p.background(gray);
   };
 
   p.draw = function() {
+    p.background(gray);
     p.rect(p.width/2, p.height/2, 200, 200);
   }
 
   p.mousePressed = function() {
-    gray += 10;
+    gray = (gray + 16) % 256;
   }
 };
 
@@ -141,15 +141,15 @@ p5(function (p) {
 
   p.setup = function () {
     p.createCanvas(600, 400);
-    p.background(gray);
   };
 
   p.draw = function () {
+    p.background(gray);
     p.rect(p.width>>1, p.height>>1, 200, 200);
   }
 
   p.mousePressed = function () {
-    gray += 10;
+    gray = (gray + 16) % 256;
   }
 }, node);
 ```
