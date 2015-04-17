@@ -141,6 +141,7 @@ p5(function (p) {
 
   p.setup = function () {
     p.createCanvas(600, 400);
+    noLoop();
   };
 
   p.draw = function () {
@@ -150,6 +151,7 @@ p5(function (p) {
 
   p.mousePressed = function () {
     gray = (gray + 020) % 0x100;
+    redraw();
   };
 }, node);
 ```
