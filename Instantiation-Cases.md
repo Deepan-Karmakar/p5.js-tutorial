@@ -113,7 +113,7 @@ new p5(sketch);
 // If it is another type of element, a canvas with P5 attached will be inserted inside of it.
 // Note that "sketch" is arbitrary and a user may replace it w/ any variable name.
 
-var sketch = function(p) {
+var sketch = function (p) {
   var gray = 0;
 
   p.setup = function () {
