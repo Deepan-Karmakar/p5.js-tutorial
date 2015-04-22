@@ -99,7 +99,7 @@ This program creates a window that is 480 pixels wide and 120 pixels high, and t
 ####[> Processing syntax conversion](https://github.com/processing/p5.js/wiki/Processing-syntax-conversion)
 Learn how to convert from Processing to p5.js.
 
-### Examples and Reference
+### Next Steps
 
 ####[> Tutorials](https://github.com/processing/p5.js/wiki/Tutorials)
 Short, prototypical programs exploring the basics of programming with p5.js.
@@ -107,7 +107,5 @@ Short, prototypical programs exploring the basics of programming with p5.js.
 ####[> Reference](https://github.com/processing/p5.js/wiki/Reference)
 The functionality supported by p5.js.
 
-### Next Steps
-
 ####[> Local Server](https://github.com/processing/p5.js/wiki/Local-server)
-When running p5 with the method described above, some functionality (loading external files, for example) leads to "cross-origin" console errors. The solution to this is to view them using a [local server](https://github.com/processing/p5.js/wiki/Local-server).
+With the above method, some functionality such as loading files may result in "cross-origin" console errors. This is because they rely on HTTP requests, which must be sent from a server. Here is a guide to running sketches from a [local server](https://github.com/processing/p5.js/wiki/Local-server).
