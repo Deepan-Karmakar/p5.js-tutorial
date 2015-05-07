@@ -16,7 +16,7 @@ The p5.js language looks very similar to the Processing language with a few chan
      + `mouseReleased()` ~ `touchEnded()`
      + There is a `touches[]` array that contains a series of objects with x and y properties corresponding to the position of each finger.
 + `push/popMatrix()`, and `push/popStyle()` have been replaced with `push()` and `pop()`, the equivalent of calling both matrix and style methods together.
-+ By default, everything is in the global namespace, and you can create your sketches like you do with Processing. However, there is something we call "instance mode" for creating a p5 sketch that plays nice with the rest of the code running on your page. See this [instance mode example](http://p5js.org/learn/examples/Instance_Mode_Instantiation.php) and this [global vs instance mode tutorial](https://github.com/lmccart/itp-creative-js/wiki/Week-5#global-and-instance-mode).
++ By default, everything is in the global namespace, and you can create your sketches like you do with Processing. However, there is something we call "instance mode" for creating a p5 sketch that plays nice with the rest of the code running on your page. See this [instance mode example](http://p5js.org/learn/examples/Instance_Mode_Instantiation.php) and this [global vs instance mode tutorial](https://github.com/lmccart/itp-creative-js/wiki/Spring-2014:-Week-5#global-and-instance-mode).
 + Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no 3D, PShape or PFont equivalent. See the [reference](http://p5js.org/reference/) for up to date documentation of what functions work.
  
 ###Some things about JavaScript
