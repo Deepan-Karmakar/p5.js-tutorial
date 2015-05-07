@@ -215,7 +215,6 @@ function setup() {
 
 function draw() {
   // All drawing happens in the canvas.
-  context(canvas);
   noStroke();
   background(220, 180, 200);
   fill(180, 200, 40);
@@ -265,7 +264,6 @@ function setup() {
 }
 
 function draw() {
-  context(canvas);
   noStroke();
   background(220, 180, 200);
   fill(180, 200, 40);
