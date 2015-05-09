@@ -81,7 +81,7 @@ To get started:
 
 2. Add test files corresponding to files in `src` (more info about Chai assert style TDD phrasing [here](http://chaijs.com/api/assert/)). 
 3. Link to the src and test files in `test.html`. 
-4. Run the tests with `grunt mocha`.
+4. Run the tests with `grunt test`.
 
 #### Running tests in the browser
 Sometimes it is useful to run tests in browser especially when trying to debug test failures.  To run the tests in the browser:
