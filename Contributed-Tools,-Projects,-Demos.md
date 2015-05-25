@@ -4,6 +4,7 @@ For syllabi or teaching specific materials and tools, please see the [education 
 
 ##Demos
 * [Video intro tutorial: p5.js](http://www.creativebloq.com/web-design/new-tool-ideas-code-41514620), Scott Garner
+* [differential equations with p5.js](http://students.learningtech.org/~pfarrell/p5_grid_zoom2.html), Peter Farrell
 
 ##Tools
 
