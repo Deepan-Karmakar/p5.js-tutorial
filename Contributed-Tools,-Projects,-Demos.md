@@ -25,6 +25,9 @@ AngularJS wrapper for p5.js
 #### [p5.js-screen-saver](https://github.com/mactkg/p5.js-screen-saver)
 You can create your original screen saver using p5.js!
 
+#### [sprite class for p5.js](https://github.com/n1ckfg/Animspritejs)
+Created by Nick Fox-Gieg.
+
 ##Examples
 
 ####[Nature of Code x p5.js](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js)
