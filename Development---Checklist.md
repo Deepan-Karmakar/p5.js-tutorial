@@ -144,7 +144,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 
 #### Image - Pixels
 * ~~pixels[]~~
-* blend()
+* ~~blend()~~
 * copy()
 * filter()
 * ~~get()~~
