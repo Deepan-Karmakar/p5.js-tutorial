@@ -185,13 +185,13 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * mouseWheel()
 
 #### Input - Time & Date
-* day()
-* hour()
-* minute()
-* millis()
-* month()
-* second()
-* year()
+* ~~day()~~
+* ~~hour()~~
+* ~~minute()~~
+* ~~millis()~~
+* ~~month()~~
+* ~~second()~~
+* ~~year()~~
 
 #### Input - Touch
 * touchX
