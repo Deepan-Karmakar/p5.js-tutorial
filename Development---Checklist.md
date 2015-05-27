@@ -136,10 +136,10 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
     * save()
 
 #### Image - Loading & Displaying
-* loadImage()
-* image()
+* ~~loadImage()~~
+* ~~image()~~
 * ~~tint()~~
-* noTint()
+* ~~noTint()~~
 * imageMode()
 
 #### Image - Pixels
