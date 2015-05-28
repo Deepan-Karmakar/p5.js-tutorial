@@ -42,25 +42,25 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~stroke()~~
 
 #### Constants
-* HALF_PI
-* PI
-* QUARTER_PI
-* TAU
-* TWO_PI
+* ~~HALF_PI~~
+* ~~PI~~
+* ~~QUARTER_PI~~
+* ~~TAU~~
+* ~~TWO_PI~~
 
 #### Data - Array Functions
-* append()
-* arrayCopy()
-* concat()
-* reverse()
-* shorten()
-* sort()
-* splice()
-* subset()
+* ~~append()~~
+* ~~arrayCopy()~~
+* ~~concat()~~
+* ~~reverse()~~
+* ~~shorten()~~
+* ~~sort()~~
+* ~~splice()~~
+* ~~subset()~~
 
 #### Data - Conversion
 * ~~float()~~
-* int()
+* ~~int()~~
 
 #### Data - String Functions
 * join()
