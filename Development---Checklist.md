@@ -110,7 +110,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~frameCount~~
 * focused *
 * ~~cursor()~~
-* frameRate()
+* ~~frameRate()~~
 * ~~noCursor()~~
 * ~~displayWidth~~
 * ~~displayHeight~~
