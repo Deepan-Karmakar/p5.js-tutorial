@@ -1,6 +1,6 @@
 ## Our stated goal:
 
-We support the current version of the browser, plus the previous major release of the browser.  We are not currently testing support for Opera.
+We support the current version of the browser, plus the previous major release of the browser.
 
 ## Potential issues:
 
@@ -22,3 +22,5 @@ As of May 2015, this means that we support:
 |Safari             |             v. 8  |  v. 7           |
 |iOS Safari         |             v. 8.3|  v. 7.1         |
 |Android Browser    |             v. 40 |  v. 4.4.4       | Does not support webGL.  <br> No support for WebAudio.
+
+*We are not currently supporting Opera.*
