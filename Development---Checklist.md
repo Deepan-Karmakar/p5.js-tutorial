@@ -243,7 +243,6 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * min()
 * norm()
 * pow()
-* constrain()
 * sq()
 * sqrt()
 
