@@ -63,16 +63,16 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~int()~~
 
 #### Data - String Functions
-* join()
-* match()
-* matchAll()
+* ~~join()~~
+* ~~match()~~
+* ~~matchAll()~~
 * nf()
-* nfc()
+* ~~nfc()~~
 * nfp()
 * nfs()
-* split()
+* ~~split()~~
 * splitTokens()
-* trim()
+* ~~trim()~~
 
 #### Data - Table
 * p5.Table
