@@ -229,12 +229,12 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
     * random3D()
 
 #### Math - Calculation
-* abs()
-* ceil()
-* constrain()
-* dist()
-* exp()
-* floor()
+* ~~abs()~~
+* ~~ceil()~~
+* ~~constrain()~~
+* ~~dist()~~
+* ~~exp()~~
+* ~~floor()~~
 * lerp()
 * log()
 * mag()
