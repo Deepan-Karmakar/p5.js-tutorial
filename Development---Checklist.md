@@ -140,13 +140,13 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~image()~~
 * ~~tint()~~
 * ~~noTint()~~
-* imageMode()
+* ~~imageMode()~~
 
 #### Image - Pixels
 * ~~pixels[]~~
 * ~~blend()~~
-* copy()
-* filter()
+* ~~copy()~~
+* ~~filter()~~
 * ~~get()~~
 * ~~loadPixels()~~
 * ~~set()~~
