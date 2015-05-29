@@ -222,7 +222,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
     * ~~heading()~~
     * ~~rotate()~~
     * ~~lerp()~~
-    * array()
+    * ~~array()~~
     * equals()
     * fromAngle()
     * random2D()
