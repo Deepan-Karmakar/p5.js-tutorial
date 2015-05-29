@@ -206,17 +206,17 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 #### Math
 * createVector()
 * ~~p5.Vector~~
-    * set()
+    * ~~set()~~
     * get()
-    * add()
-    * sub()
-    * mult()
-    * div()
+    * ~~add()~~
+    * ~~sub()~~
+    * ~~mult()~~
+    * ~~div()~~
     * mag()
     * magSq()
-    * dot()
-    * cross()
-    * dist()
+    * ~~dot()~~
+    * ~~cross()~~
+    * ~~dist()~~
     * normalize()
     * limit()
     * setMag()
