@@ -252,15 +252,15 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~noiseSeed()~~
 
 #### Math - Trigonometry
-* acos()
-* asin()
-* atan()
-* atan2()
-* cos()
-* sin()
-* tan()
-* degrees()
-* radians()
+* ~~acos()~~
+* ~~asin()~~
+* ~~atan()~~
+* ~~atan2()~~
+* ~~cos()~~
+* ~~sin()~~
+* ~~tan()~~
+* ~~degrees()~~
+* ~~radians()~~
 * angleMode()
 
 #### Math - Random
