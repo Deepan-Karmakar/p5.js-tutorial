@@ -207,23 +207,23 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~createVector()~~
 * ~~p5.Vector~~
     * ~~set()~~
-    * get()
     * ~~add()~~
     * ~~sub()~~
     * ~~mult()~~
     * ~~div()~~
     * ~~mag()~~
-    * magSq()
+    * ~~magSq()~~
     * ~~dot()~~
     * ~~cross()~~
     * ~~dist()~~
     * normalize()
-    * limit()
-    * setMag()
-    * heading()
-    * rotate()
+    * ~~limit()~~
+    * ~~setMag()~~
+    * ~~heading()~~
+    * ~~rotate()~~
     * ~~lerp()~~
     * array()
+    * equals()
     * fromAngle()
     * random2D()
     * random3D()
