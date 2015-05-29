@@ -212,7 +212,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
     * ~~sub()~~
     * ~~mult()~~
     * ~~div()~~
-    * mag()
+    * ~~mag()~~
     * magSq()
     * ~~dot()~~
     * ~~cross()~~
@@ -235,16 +235,16 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~dist()~~
 * ~~exp()~~
 * ~~floor()~~
-* lerp()
-* log()
-* mag()
-* map()
-* max()
-* min()
-* norm()
-* pow()
-* sq()
-* sqrt()
+* ~~lerp()~~
+* ~~log()~~
+* ~~mag()~~
+* ~~map()~~
+* ~~max()~~
+* ~~min()~~
+* ~~norm()~~
+* ~~pow()~~
+* ~~sq()~~
+* ~~sqrt()~~
 
 #### Math - Noise
 * ~~noise()~~
