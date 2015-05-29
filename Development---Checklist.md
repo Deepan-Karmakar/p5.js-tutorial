@@ -204,7 +204,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~touchEnded()~~
 
 #### Math
-* createVector()
+* ~~createVector()~~
 * ~~p5.Vector~~
     * ~~set()~~
     * get()
