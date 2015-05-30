@@ -108,7 +108,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 
 #### Environment
 * ~~frameCount~~
-* focused *
+* ~~focused~~
 * ~~cursor()~~
 * ~~frameRate()~~
 * ~~noCursor()~~
