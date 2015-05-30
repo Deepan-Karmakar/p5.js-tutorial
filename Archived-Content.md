@@ -1,3 +1,210 @@
+#Starting points#
+
+##Possibilities##
++ what would be gained/lost by js, removing java altogether
++ processing-lite, js syntax
++ processing-js bridge to c++ compiles
++ installations without c++
++ processing as web dev
+
+##Approaches##
++ a bunch of different scenarios - writing out what code for that would look like
++ speculative source code - examples or hack usable
+
+##Goals##
++ processing identity - running in browser, barrier to entry low
++ primary audience - hard-core programmers, 19yr old design students
++ system+api
++ as a library, focus what processing does and doesn’t do
+
+
+
+
+##Questions##
+
++ What is unique about javascript?
++ What are main ways it diverges/differs from java/processing?
+	+ dynamic vs static
+	+ loosely-typed vs strongly-typed
+	+ prototypal vs classical inheritance
+	+ functions as classes, constructors, methods
+	+ classical objects are hard, the only way to add a new member to a hard object is to create a new class. js objects are soft, a new member can be added to a soft object by simple assignment. shallow hierarchies are efficient and expressive, deep hierarchies are often inappropriate.
+	+ event driven vs linear/loop based
++ Focus on browser experience? What about node, etc.
++ Network connectivity, manipulating dom, interfacing with other elts outside canvas, user interface built-on elts that processing doesn't have, multiple drawing surfaces, interfaces with other libraries / also spec for other - maybe IDE adds in auto (like import library feature).
++ question - limited to canvas?
+
+
+
+##Considerations##
+
++ Prototypal inheritance vs emulating classical inheritance.
+	+  tool to make it more clear
++ Optimization
+	+  Embed instead of having to learn speed tricks?
++ Callbacks/async
+	+ helper fxn like newThread() method
+	+ identify what sync/async, async ones have callback methods. if you have your own, here's how, and how to specify callback or not
+	+ start everything with a
+	+ use async module
++ Library spec
++ https://github.com/daniellmb/JavaScript-Scope-Context-Coloring
++ http://codemirror.net/
++ http://www.jslint.com/
+
+
+##Core classes##
+PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing surfaces), and PVector.
+
+
+##What js things could be improved?##
++ libraries - documentready annoying, processing-js handles loading order for you (modernizer.js, queue.js), waits to execute
++ (controlled loading and execution built-in)
++ canvas/error handling
+
+
+##Other notes##
++ Library spec?
++ dynamic typing - better typeof method, switch statement
++ strict typeof
++ enforce a type of code, scope
++ jslint strict mode
++ pokeyoke
++ easy way to define your own events, bind listeners
+
+
+##Current Processing JavaScript mode##
++ [processing.org/learning/javascript/](http://processing.org/learning/javascript/)
++ [github.com/jeresig/processing-js](https://github.com/jeresig/processing-js)
++ Processing.js is really two things: a Processing-to-JavaScript translator; and an implementation of the Processing API (e.g., functions like line(), stroke(), etc.) written in JavaScript instead of Java.
++ Nothing new to learn - Processing.js automatically converts your Processing code to JavaScript. This means that you don't have to learn JavaScript in order to run your code in a browser.
++ Does not currently support libraries.
++ Possible to write native JS code inside sketch, but not intended use.
++ Simulates synchronous I/O using Directives (preloading assets).
+
+---
+
+##Notes / considerations##
++ web developer tools
++ processing-js as entry point to web development
++ more transparent, more standard web structure
++ standard javascript - quasi auto complete, strict mode, viz of var scope, sequence
++ live, quasi-live coding environment, dev tools built in
++ also use processing methods
++ visually represent what's going on, in terms of inheritance
++ find in reference
++ not too cluttered
++ all the benefits, but executes like it's in the browser
+
+##References##
+
+
+###Tools
++ [JSHint](http://www.jshint.com/) -  tool to detect errors and potential problems in JavaScript code and to enforce chosen coding conventions, flexible, easily adjusted to enforce particular coding guidelines and environment
++ [JSLint](http://www.jslint.com/)
+
+###Editors
++ [Comparison of JavaScript-based source code editors](http://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_source_code_editors)
++ [atom.io](https://atom.io/) - open source, hackable editor created by github
++ [CodeCosmos](http://bob.ippoli.to/archives/2013/07/18/codecosmos-tech/)
++ [Khan Academy Computer Science](https://www.khanacademy.org/cs)
+    + built on top of ace editor, processingjs, jshint
+    + real-time code execution - many tools to take advantage of this (number pickers, color picker, image picker)
+    + extensive error correction / suggestion
+    + [philosophy behind khan academy cs](http://ejohn.org/blog/introducing-khan-cs/)
+
++ [Studio Sketchpad](http://sketchpad.cc)
++ [Light Table](http://www.lighttable.com) - desktop editor allows realtime modification of running code
++ [Brackets](http://brackets.io/) - "open-source editor for web design and development built on top of web technologies such as HTML, CSS and JavaScript"
++ [Sublime](http://www.sublimetext.com/)
++ [sketch.paperjs.org](http://sketch.paperjs.org/) / [paper.js editor](http://paperjs.org/static/editor/) 
++ [github.com/daniellmb/JavaScript-Scope-Context-Coloring](https://github.com/daniellmb/JavaScript-Scope-Context-Coloring) - Experiment in switching between syntax highlighting and scope colorizing built on JSLint and CodeMirror.
++ [CodeMirror](http://codemirror.net/) - JavaScript component that provides a code editor in the browser. For supported languages, it will color your code, and optionally help with indentation. Also provides API and CSS theming system for customizing to fit your application, and extending it with new functionality.
++ [sketch.processing.org](http://sketch.processing.org/)
++ [Processing helper](http://processingjs.org/tools/processing-helper.html)
+
++ [Komodo Edit](http://www.activestate.com/komodo-edit) - free, open source version based on Mozilla XULRunner (like Firefox), comes with SpiderMonkey JS engine included and uses Scintilla as code editor
++ [ICE Coder](http://icecoder.net/) - pure browser IDE
++ [ACE editor](http://ace.ajax.org/)
++ [codebender](http://codebender.cc/) - arduino editor with sharing [github.com/codebendercc](https://github.com/codebendercc/)
++ [dat.GUI](https://code.google.com/p/dat-gui/)
++ [tributary](http://tributary.io/tributary/2958568/) - experimental environment for rapidly prototyping visualization code
++ [jsfiddle](http://jsfiddle.net/)
++ [livecoding.io](https://github.com/gabrielflorit/livecoding)
++ [codepen](http://codepen.io/)
++ [OpenProcessing](http://www.openprocessing.org/sketch/create) - has a page to create, run, stop a simple sketch from scratch
++ [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
+
+---
+
+## IDEs / learning
+
+See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#references](https://github.com/lmccart/js-processing/wiki/IDE-thoughts#references)
+
+## JS creative coding libraries
+
++ [Plask](http://www.plask.org) - JS based creative coding env, Uses: V8, Skia, NodeJS, Cocoa & OpenGL, FreeImage, Syphon
++ [Plask on github](https://github.com/deanm/plask)
++ [two.js](http://jonobr1.github.io/two.js/) - two-dimensional drawing api geared towards modern web browsers. It is renderer agnostic enabling the same api to draw in multiple contexts: svg, canvas, and webgl. Aims to make the creation and animation of flat shapes easier and more concise, does not support text or image. Built in scene graph, animation loop, svg interpreter.
++ [paper.js](http://paperjs.org/) - vector graphics scripting framework that runs on top of the HTML5 Canvas. It offers a clean Scene Graph / DOM and a lot of powerful functionality to create and work with vector graphics and bezier curves, largely compatible with Scriptographer
+
+
+## Processing / JavaScript + other languages
++ [Ruby-Processing](https://github.com/jashkenas/ruby-processing) - Ruby syntax but utilizes the ease of Processing for drawing
+    + Uses regular Ruby for generating sketches, exporting applications and applets; and uses Java via JRuby for running Processing.
+    + Supports live coding, includes a control panel.
+    + Convenience method for searching through methods $app.find_method("ellipse") will return a list of the method names that may match what you’re looking for: “ellipse”, “ellipseMode”, and “ellipse_mode”.
+    + Transliteration vs. translation (Despite the fact that the entire Processing API is available to you, it’s best to work in idiomatic Ruby as much as possible.)
+    + [Ruby-Processing in practice](https://github.com/jashkenas/learning-processing-with-ruby)
++ [ofxJavaScript (running JS in OF)](https://code.google.com/p/ofxjavascript/)
+    + Uses [Mozilla SpiderMonkey](https://developer.mozilla.org/en-US/docs/SpiderMonkey). 
+    + Exposes several classes of openframeworks library to Javascript, allows you to call C++ functions from Javascript, call Javascript functions from C++, or create your "own" Javascript classes.
+    + [ofLiveCoding](https://code.google.com/p/oflivecoding)
++ [Ringo](http://ringojs.org) - (based on Rhino) runs JS on Java and adds "goodies"
+    + allows use of any java class
+    + [Ringo Java integration docs](http://ringojs.org/documentation/java_integration)
++ [quil](https://github.com/quil/quil) - processing + clojure
++ [python mode for processing](https://github.com/martinleopold/PythonMode)
++ [another processing in python lib](https://github.com/jdf/processing.py)
++ [coffeescript mode for processing](https://github.com/fjenett/coffeescript-mode-processing) 
++ [scala + processing](http://spde.technically.us/Spde.html)
+
+
+## Other native code on web
++ [Chrome Native Client](https://developers.google.com/native-client)
++ [Flash c++ compiler](http://gaming.adobe.com/technologies/flascc/)
+
+
+## JavaScript engines / performance
++ Explains differences in JS engines quite nicely
+[http://stackoverflow.com/questions/2137320/javascript-engines-advantages](http://stackoverflow.com/questions/2137320/javascript-engines-advantages)
++ Performance
+[http://stackoverflow.com/questions/9060841/rhino-vs-spidermonkey-performance-tests](http://stackoverflow.com/questions/9060841/rhino-vs-spidermonkey-performance-tests)
++ C++ binding 
+[http://stackoverflow.com/questions/93692/which-javascript-engine-would-you-embed-in-your-application](http://stackoverflow.com/questions/93692/which-javascript-engine-would-you-embed-in-your-application)
+
+
+
+## JS desktop app platforms / libs
++ desktop JS development [http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript](http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript)
++ [appjs](http://appjs.org/) - HTML5 / CSS3, nodejs as backbone
++ [Awesomium](http://awesomium.com/
++ [QT Webkit](http://qt.digia.com/Product/Library/Qt-WebKit/)
++ [Berkelium](http://berkelium.org/)
+
+---
+
+#References and Research
+
+## JS and physical computing 
++ [coder for rPi](http://googlecreativelab.github.io/coder/)
++ [espruino](http://www.kickstarter.com/projects/48651611/espruino-javascript-for-things)
+
+
+## Other references (for extensions)
++ [jQuery API](http://api.jquery.com/)
++ [HTML5 overview](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+
 ---
 
 #Starting points#
