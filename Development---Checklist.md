@@ -166,15 +166,15 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~keyReleased()~~
 * ~~keyTyped()~~
 
-#### Input - Mouse (done, to be merged soon)
+#### Input - Mouse
 * ~~mouseX~~
 * ~~mouseY~~
 * ~~pmouseX~~
 * ~~pmouseY~~
-* winMouseX
-* winMouseY
-* pwinMouseX
-* pwinMouseY
+* ~~winMouseX~~
+* ~~winMouseY~~
+* ~~pwinMouseX~~
+* ~~pwinMouseY~~
 * ~~mouseButton~~
 * ~~mouseIsPressed~~
 * ~~mouseMoved()~~
@@ -182,7 +182,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~mousePressed()~~
 * ~~mouseReleased()~~
 * ~~mouseClicked()~~
-* mouseWheel()
+* ~~mouseWheel()~~
 
 #### Input - Time & Date
 * ~~day()~~
