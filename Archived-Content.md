@@ -1,3 +1,6 @@
+Research documentation -- This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is below.
+
+
 #Starting points#
 
 ##Possibilities##
