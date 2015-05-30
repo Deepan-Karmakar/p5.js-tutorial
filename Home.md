@@ -4,7 +4,7 @@
 
 [Reference](http://p5js.org/reference) -- The functionality supported by p5.js. This reference is in progress, not fully complete!
 
-[Learn](http://p5js.org/learn) -- Tutorials and short, prototypical examples exploring the basics of programming with p5.js.
+[Learn](http://p5js.org/tutorials/) -- Tutorials and short, prototypical examples exploring the basics of programming with p5.js.
 
 [Development](https://github.com/processing/p5.js/wiki/Development) -- How to contribute to p5.
 
