@@ -22,12 +22,12 @@ src/core/error_helpers.js
 ## Thought for the Future
 * Global Error catching. It would be very helpful to catch the errors the browser is throwing to the console, so we can match them up with friendly comments. So far we've tried window.onerror and the following with no success. 
 
-    var original = window.console;
-    
-    ["log", "warn", "error"].forEach(function(func){
-    window.console[func] = function(msg) {
+     var original = window.console;
+      
+     ["log", "warn", "error"].forEach(function(func){
+     window.console[func] = function(msg) {
       original[func].apply(original, arguments)
-    };
+     };
 
 * Checking that a number positive for nf() nfc() nfp() nfs()
 * Having the needed parameters only specified in the comments above the function. Rather than twice: once in the function and once above the function in the comments.  
