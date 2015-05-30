@@ -223,10 +223,10 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
     * ~~rotate()~~
     * ~~lerp()~~
     * ~~array()~~
-    * equals()
-    * fromAngle()
-    * random2D()
-    * random3D()
+    * ~~equals()~~
+    * ~~fromAngle()~~
+    * ~~random2D()~~
+    * ~~random3D()~~
 
 #### Math - Calculation
 * ~~abs()~~
