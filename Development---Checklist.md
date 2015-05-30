@@ -66,12 +66,12 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~join()~~
 * ~~match()~~
 * ~~matchAll()~~
-* nf()
+* ~~nf()~~
 * ~~nfc()~~
-* nfp()
-* nfs()
+* ~~nfp()~~
+* ~~nfs()~~
 * ~~split()~~
-* splitTokens()
+* ~~splitTokens()~~
 * ~~trim()~~
 
 #### Data - Table
@@ -319,9 +319,9 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~preload()~~
 * ~~setup()~~
 * ~~draw()~~
-* remove()
-* noLoop()
-* loop()
+* ~~remove()~~
+* ~~noLoop()~~
+* ~~loop()~~
 * ~~push()~~
 * ~~pop()~~
 * ~~redraw()~~
