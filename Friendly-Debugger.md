@@ -19,7 +19,7 @@ src/core/error_helpers.js
 * Having a spanish translation available. 
 * A more elaborate ascii welcome! 
 
-## Thought for the Future
+## Thoughts for the Future
 * Global Error catching. It would be very helpful to catch the errors the browser is throwing to the console, so we can match them up with friendly comments. So far we've tried window.onerror and the following with no success. 
 
      var original = window.console;
