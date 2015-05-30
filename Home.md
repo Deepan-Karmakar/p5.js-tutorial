@@ -1,4 +1,4 @@
-[Get started](https://github.com/processing/p5.js/wiki/Getting-Started) -- Create and run your first sketch!
+[Get started](http://p5js.org/get-started/) -- Create and run your first sketch!
 
 [p5.js overview](https://github.com/processing/p5.js/wiki/p5.js-overview) -- An overview of the main features and functionality of p5.js.
 
