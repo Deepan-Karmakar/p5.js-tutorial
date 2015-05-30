@@ -167,7 +167,7 @@ If you do not want the example to render with canvas (ie you just want the code 
 </div>
 ```
 
-If you need to link to external asset files, put them in [/docs/yuidoc-p5-theme/assets](https://github.com/processing/p5.js/tree/master/docs/yuidoc-p5-theme/assets) and then link to them with "assets/filename.ext" in the code. See the [tint example](http://p5js.org/site/reference/#/p5/tint).
+If you need to link to external asset files, put them in [/docs/yuidoc-p5-theme/assets](https://github.com/processing/p5.js/tree/master/docs/yuidoc-p5-theme/assets) and then link to them with "assets/filename.ext" in the code. See the [tint example](http://p5js.org/reference/#/p5/tint).
 
 ###Generating documentation
 
