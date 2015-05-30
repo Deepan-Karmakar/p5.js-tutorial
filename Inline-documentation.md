@@ -169,6 +169,10 @@ If you do not want the example to render with canvas (ie you just want the code 
 
 If you need to link to external asset files, put them in [/docs/yuidoc-p5-theme/assets](https://github.com/processing/p5.js/tree/master/docs/yuidoc-p5-theme/assets) and then link to them with "assets/filename.ext" in the code. See the [tint example](http://p5js.org/reference/#/p5/tint).
 
+On some code editors copy-pasting examples in the inline documentation may be awkward and require a lot of adjustments (tabs, asterisks, spaces). You can use this simple tool to beautify the code (and re-indent it to 2 spaces) and make it ready for a copy-paste
+[p5examplesFormatter](http://molleindustria.org/p5examplesFormatter/)
+[download as zip](http://molleindustria.org/p5examplesFormatter/p5examplesFormatter.zip)
+
 ###Generating documentation
 
 Run `grunt requirejs:yuidoc_theme` once first to generate all local files needed. Run it again anytime you make changes to the core JS files behind the yuidoc reference page. These are changes in files located in the yuidoc-p5-theme-src folder, NOT inline documentation changes to src. This regenerates the templates, then run `grunt yui` to regenerate the referenced based on the updated theme.
