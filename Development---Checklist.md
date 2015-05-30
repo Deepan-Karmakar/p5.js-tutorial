@@ -166,7 +166,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~keyReleased()~~
 * ~~keyTyped()~~
 
-#### Input - Mouse
+#### Input - Mouse (done, to be merged soon)
 * ~~mouseX~~
 * ~~mouseY~~
 * ~~pmouseX~~
