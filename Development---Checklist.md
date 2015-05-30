@@ -167,16 +167,16 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~keyTyped()~~
 
 #### Input - Mouse
-* mouseX
-* mouseY
-* pmouseX
-* pmouseY
+* ~~mouseX~~
+* ~~mouseY~~
+* ~~pmouseX~~
+* ~~pmouseY~~
 * winMouseX
 * winMouseY
 * pwinMouseX
 * pwinMouseY
-* mouseButton
-* mouseIsPressed
+* ~~mouseButton~~
+* ~~mouseIsPressed~~
 * ~~mouseMoved()~~
 * ~~mouseDragged()~~
 * ~~mousePressed()~~
