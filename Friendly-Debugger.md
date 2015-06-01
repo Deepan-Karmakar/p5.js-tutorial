@@ -12,7 +12,7 @@ src/core/error_helpers.js
 * They work in the IDE. 
 
 ## Known Limitations
-* It throws an error incorrectly when a function has multiple types it accepts. This comes up for image when you create graphics rather than. 
+* It throws an error incorrectly when a function has multiple types it accepts. This comes up for image when you create graphics rather than load an image directly. 
 * Only detects an error in loadXML and loadTable when the file is requested as a url and not as a file path. I think this has to do with the reqwest library as documented here: https://github.com/ded/reqwest/issues/177
 
 ## In The Works
