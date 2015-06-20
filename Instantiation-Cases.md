@@ -136,7 +136,7 @@ new p5(sketch, node);
 Note that the above is functionally equivalent to below, either may be used, but the above will be the recommended syntax for beginners as we feel it's clearer.
 
 ```javascript
-p5(function (p) {
+new p5(function (p) {
   var gray = 0;
 
   p.setup = function () {
