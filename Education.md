@@ -12,6 +12,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Mobile Art Workshop](https://github.com/whichlight/mobile-art-intro) - intro to p5, websockets, interactivity, and sound for mobile web art
 * [Web Media, Moore College of Art S15](https://github.com/lee2sman/PDA203WebMedia) - intro to html, p5 and p5.js to generate web-based art projects
 * [Code as Medium, RISD S15](http://risd-creative-programming.github.io/s15-codeasmedium/examples.html) (Evelyn Eastmond) - many interactive codepen examples!
+* [Creative Coding for the Web, Culture Hub S15](https://github.com/futuremarc/p5-creative-coding-course) - syllabus and notes
 
 ###Tools
 * [WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts
