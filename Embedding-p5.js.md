@@ -5,7 +5,7 @@ You can always just host the HTML and JS files of your p5.js project online and 
 The simplest solution is to use iframes. An iframe is basically a window into a nested page within a page, sandboxed from the rest of your page. For classes, I have students host their work and turn in a link to running sketches. Then I can embed their sketches or examples I create in iframes on a wordpress blog or class site.
 
 For example, here is a sketch running:<br>
-http://lauren-mccarthy.com/test/p5.js/
+http://p5js.org/test/embed.html
 
 And here it is embedded in wordpress using the code below:<br>
 http://lauren-mccarthy.com/inmotion/2014/08/test-post-1/
