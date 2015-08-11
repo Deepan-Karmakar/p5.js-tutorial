@@ -22,3 +22,4 @@ Note that examples included may be using older versions of p5.js and might not b
 
 ###Books
 * [Introduction to Programming with JavaScript, P5, and Processing ](http://www.amazon.com/Introduction-Programming-JavaScript-Processing-Cooks-ebook/dp/B010R0VMQS), Robert Cook - [interactive examples (jsfiddle)](http://jsfiddle.net/user/bobcook/fiddles/)
+* [Getting Started with p5.js](http://www.amazon.com/Make-Interactive-Graphics-JavaScript-Processing/dp/1457186772), Lauren McCarthy, Ben Fry, Casey Reas
