@@ -19,3 +19,6 @@ Note that examples included may be using older versions of p5.js and might not b
 
 ###Tutorials
 * [Embedding p5.js](https://github.com/processing/p5.js/wiki/Embedding-p5.js) - different ways of including sketches on existing sites or blogs.
+
+###Books
+* [Introduction to Programming with JavaScript, P5, and Processing ](http://www.amazon.com/Introduction-Programming-JavaScript-Processing-Cooks-ebook/dp/B010R0VMQS), Robert Cook - [interactive examples (jsfiddle)](http://jsfiddle.net/user/bobcook/fiddles/)
