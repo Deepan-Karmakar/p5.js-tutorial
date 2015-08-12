@@ -1,10 +1,34 @@
-Some functionality (loading external files, for example) works as expected when the files are placed online via FTP. However, if you try to view them locally, you see some kind of "cross-origin" errors in console. The solution to this is to view them using what's called a local web server. This tutorial includes instructions for setting this up on Mac OSX, Windows, and Linux.
+Some functionality (loading external files, for example) works as expected when the files are placed online via FTP or SSH. However, if you try to view them locally, you see some kind of "cross-origin" errors in console. The solution to this is to view them using what's called a local web server. This tutorial includes instructions for setting this up on Mac OSX, Windows, and Linux.
 
 ##Python SimpleHTTPServer
 
 If you need a quick web server running and you don't want to mess with setting up apache or something similar, then Python can help. Python comes with a simple builtin HTTP server. With the help of this little HTTP server you can turn any directory in your system into your web server directory. The only thing you need to have installed is Python.
 
 [Python SimpleHTTPServer tutorial](https://github.com/lmccart/itp-creative-js/wiki/SimpleHTTPServer)
+
+Unfortunately the python simple server is very slow. Loading a local page will often stall and it can't stream video and has trouble with even medium size files like an 8meg mp3 for example
+
+##Node http-server
+
+An alternative is node.js. Just 3 simple steps
+
+1.  [Download and Install node.js](http://nodejs.org/download)
+2.  Open a terminal or command prompt 
+3.  On OSX/Linux type
+
+        sudo npm install -g http-server
+
+    On Windows type (you might need to open the command prompt as admin)
+
+        npm install -g http-server
+ 
+Done! 
+
+From then on just cd to the folder that has the files you want to serve and type 
+
+    http-server
+
+Then point your browser at `http://localhost:8080/`
 
 ##Apache Server
 
