@@ -223,7 +223,7 @@ function draw() {
   fill(180, 200, 40);
   strokeWeight(6);
   stroke(180, 100, 240);
-  for (var i=0; i<width; i+=15) {
+  for (var i = 0; i < width; i += 15) {
     line(i, 0, i, height);
   }
 }
