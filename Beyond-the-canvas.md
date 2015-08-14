@@ -83,19 +83,19 @@ Note that the examples above refer to createCanvas(), but they work the same for
 In addition to ```createCanvas(w, h)```, there are a number of other methods like `createDiv()`, `createP()`, `createA()`, etc (see the [reference](http://p5js.org/reference/#/libraries/p5.dom) for full listing). In the example below, a div with text is created, in addition to the graphics canvas, and the position is set for each.
 
 ```javascript
-var text;
-var canvas;
+var canvas, text;
 
 function setup() {
-  text = createDiv("This is an HTML string!");
   canvas = createCanvas(600, 400);
-  text.position(50, 50);
   canvas.position(300, 50);
+
+  text = createDiv('This is an HTML string!');
+  text.position(50, 50);
 }
 
 function draw() {
-  // These commands are applied to whichever element was most recently created.
   background(220, 180, 200);
+
   ellipse(width/2, height/2, 100, 100);
   ellipse(width/4, height/2, 50, 50);
 }
