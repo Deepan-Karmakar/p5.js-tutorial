@@ -159,6 +159,9 @@ function setup() {
   button.mousePressed(toggleVid); // attach button listener
 }
 
+function mousePressed() {
+}
+
 // plays or pauses the video depending on current state
 function toggleVid() {
   if (playing) {
