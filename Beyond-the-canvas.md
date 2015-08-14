@@ -10,7 +10,7 @@ First, you will need to include the p5.dom.js file in your HTML. If you are usin
 
 ## Storing pointers and calling methods
 
-When you call `createCanvas(w, h)` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. A full listing of methods is [here](http://p5js.org/reference/#/p5.Element). Not all of these methods listed will work or make sense for every element, so you have to use your judgment a bit. For example, calling `value()` on a slider returns or sets it's value, but calling it on canvas would have no effect.
+When you call `createCanvas(w, h)` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer or reference. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. A full listing of methods is [here](http://p5js.org/reference/#/p5.Element). Not all of these methods listed will work or make sense for every element, so you have to use your judgment a bit. For example, calling `value()` on a slider returns or sets it's value, but calling it on canvas would have no effect.
 
 ```javascript
 var canvas;
