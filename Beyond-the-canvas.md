@@ -108,7 +108,7 @@ In the previous example we are just placing a text string into the element, but 
 var text = createDiv("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
 ```
 
-Each of these methods create a p5.Element, which is a wrapper around an HTML element, giving simplified access to many of it's main properties. However, if you want to access the underlying HTML element, you can use the `.elt` property. There is a reference for all properties of the element [here](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement).
+Each of these methods create a p5.Element, which is a wrapper around an HTML element, giving simplified access to many of its main properties. However, if you want to access the underlying HTML element, you can use the `.elt` property. There is a reference for all properties of the element [here](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement).
 
 ## Creating HTML images
 
