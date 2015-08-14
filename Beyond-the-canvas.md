@@ -272,7 +272,7 @@ function draw() {
   fill(180, 200, 40);
   strokeWeight(6);
   stroke(180, 100, 240);
-  for (var i=0; i<width; i+=15) {
+  for (var i = 0; i < width; i += 15) {
     line(i, 0, i, height);
   }
 }
@@ -354,7 +354,7 @@ function keyPressed() {
   // If none are found, it returns an empty array [].
   var donkeys = getElements('donkey');
   // We can then iterate through the array and hide all the elements.
-  for (var i=0; i<donkeys.length; i++) {
+  for (var i = 0; i < donkeys.length; i++) {
     donkeys[i].hide();
   }
 }
