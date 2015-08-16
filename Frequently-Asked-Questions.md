@@ -26,3 +26,14 @@ By default, all p5.js functions are in the global namespace (i.e. bound to the w
 ### How can I specify the HTML node where I want my canvas?
 
 Use the `.parent()` function, [see more info here](https://github.com/processing/p5.js/wiki/p5.js-overview#createcanvas).
+
+### Is setup() and draw() required? When are they called?
+
+To load p5 onto the page, either `setup()` or `draw()` is required (but not both), *or* you may use [instance mode](https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace) to have more control over when and how your sketch gets loaded. 
+
+In global mode (non-instance mode), the order of page loading is as follows:
+1. window `onload` method fires.
+2. `preload()` is called (if included in the sketch), p5 waits for all loading functions within it to complete.
+3. `setup()` is called (if included in the sketch). Note that p5 will not wait to go onto draw if there are loading methods in `setup()`.
+4. `draw()` is called (if included in the sketch). It continues to be called based on variables set by `noLoop()/loop()` and `frameRate()`.
+
