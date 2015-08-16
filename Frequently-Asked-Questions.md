@@ -1,4 +1,4 @@
-##Goals
+#Goals
 
 ###How is this different than Processing.js?
 
@@ -17,7 +17,7 @@ We are also putting a lot of energy into making the documentation clear, for dev
 
 This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is [here](https://github.com/processing/p5.js/wiki/Research-Documentation).
 
-## Programming questions
+# Programming questions
 
 ### Do all the variables have to be in the global namespace? Can I run multiple sketches on one page?
 
