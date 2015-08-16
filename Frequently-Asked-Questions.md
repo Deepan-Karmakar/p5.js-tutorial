@@ -1,3 +1,5 @@
+##Goals
+
 ###How is this different than Processing.js?
 
 The main goal of Processing.js is to execute Processing files in HTML5, but not necessarily to write native HTML5. It supports a mixed syntax of Processing and JavaScript, where the JavaScript is not really meant to be consumed by the end-user. Processing.js is a port of Processing to JS, using regex to convert Java into JS. It is a good tool for those that want to run simple sketches on the web, however, it is quite opaque. It can be difficult for someone to understand how it works, how to fix things when it doesn't work, or how to modify or extend the library. As Processing.js says on their website, "it's not magic, but almost."
@@ -10,6 +12,13 @@ Most importantly, this project is in active development, with enthusiastic suppo
 
 We are also putting a lot of energy into making the documentation clear, for developers as well as users. We'd like this to be a project that anyone feels welcome and empowered to be a part of, whether that's contributing documentation, writing code, teaching with it, or using it to create.
 
+
+### How did this project originate?
+
+This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is [here](https://github.com/processing/p5.js/wiki/Research-Documentation).
+
+## Programming questions
+
 ### Do all the variables have to be in the global namespace? Can I run multiple sketches on one page?
 
 By default, all p5.js functions are in the global namespace (i.e. bound to the window object), meaning you can call them simply `ellipse()`, `fill()`, etc. However, this might be inconvenient if you are mixing with other JS libraries or writing long programs of your own. To solve this problem, there is something we call "instance mode", where all p5 functions are bound up in a single variable instead of polluting your global namespace. [See more info here.](https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace)
@@ -17,7 +26,3 @@ By default, all p5.js functions are in the global namespace (i.e. bound to the w
 ### How can I specify the HTML node where I want my canvas?
 
 Use the `.parent()` function, [see more info here](https://github.com/processing/p5.js/wiki/p5.js-overview#createcanvas).
-
-### How did this project originate?
-
-This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is [here](https://github.com/processing/p5.js/wiki/Research-Documentation).
