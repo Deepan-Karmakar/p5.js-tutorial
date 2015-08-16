@@ -33,8 +33,10 @@ To load p5 onto the page, either `setup()` or `draw()` is required (but not both
 
 In global mode (non-instance mode), the order of page loading is as follows:
 
-1. window `onload` method fires.
+1. window `onload` event fires.
 2. `preload()` is called (if included in the sketch), p5 waits for all loading functions within it to complete.
 3. `setup()` is called (if included in the sketch). Note that p5 will not wait to go onto draw if there are loading methods in `setup()`.
 4. `draw()` is called (if included in the sketch). It continues to be called based on variables set by `noLoop()/loop()` and `frameRate()`.
+
+In instance mode, the order is the same but the user decides when to call `new p5(...)` rather than it happening automatically with the window `onload` event.
 
