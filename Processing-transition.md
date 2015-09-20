@@ -18,6 +18,7 @@ The p5.js language looks very similar to the Processing language with a few chan
 + `push/popMatrix()`, and `push/popStyle()` have been replaced with `push()` and `pop()`, the equivalent of calling both matrix and style methods together.
 + By default, everything is in the global namespace, and you can create your sketches like you do with Processing. However, there is something we call "instance mode" for creating a p5 sketch that plays nice with the rest of the code running on your page. See this [instance mode example](http://p5js.org/learn/examples/Instance_Mode_Instantiation.php) and this [global vs instance mode tutorial](https://github.com/lmccart/itp-creative-js/wiki/Spring-2014:-Week-5#global-and-instance-mode).
 + In global mode, p5 variable and function names are not available outside `setup()`, `draw()`, `mousePressed()`, etc. (Except in the case where they are placed inside functions that are called by one of these methods.) What this means is that when declaring variables before `setup()`, you will need to assign them values inside `setup()` if you wish to use p5 functions. For example:
+
   ```javascript
   var n;
   function setup() {
@@ -25,6 +26,7 @@ The p5.js language looks very similar to the Processing language with a few chan
     n = random(100);
   }
   ```
+
 + Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no 3D, PShape or PFont equivalent. See the [reference](http://p5js.org/reference/) for up to date documentation of what functions work.
  
 ###Some things about JavaScript
