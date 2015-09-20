@@ -23,6 +23,28 @@ This project developed out of a Fellowship with the Processing Foundation explor
 
 By default, all p5.js functions are in the global namespace (i.e. bound to the window object), meaning you can call them simply `ellipse()`, `fill()`, etc. However, this might be inconvenient if you are mixing with other JS libraries or writing long programs of your own. To solve this problem, there is something we call "instance mode", where all p5 functions are bound up in a single variable instead of polluting your global namespace. [See more info here.](https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace)
 
+### Why can't I assign variables using p5 functions and variables before `setup()`?
+
+In global mode, p5 variable and function names are not available outside `setup()`, `draw()`, `mousePressed()`, etc. (Except in the case where they are placed inside functions that are called by one of these methods.) What this means is that when declaring variables before `setup()`, you will need to assign them values inside `setup()` if you wish to use p5 functions. For example:
+
+```javascript
+var n;
+function setup() {
+  createCanvas(100, 100);
+  n = random(100);
+}
+```
+
+The explanation for this is a little complicated, but it has to do with the way the library is setup in order to support both global and instance mode. To understand what's happening, let's first look at the order things happen when a page with p5 is loaded (in global mode).
+
+1. Scripts in <head> are loaded.
+2. <body> of HTML page loads (when this is complete, the onload event fires, which then triggers step 3).
+3. p5 is started, all functions are added to the global namespace.
+
+So the issue is that the scripts are loaded and evaluated before p5 is started, when it's not yet aware of the p5 variables. If we try to call them here, they will cause an error. However, when we use p5 function calls inside setup() and draw() this is ok, because the browser doesn't look inside functions when the scripts are first loaded. This is because the setup() and draw() functions are not called in the user code, they are only defined, so the stuff inside of them isn't run or evaluated yet.
+
+It's not until p5 is started up that the setup() function is actually run (p5 calls it for you), and at this point, the p5 functions exist in the global namespace.
+
 ### How can I specify the HTML node where I want my canvas?
 
 Use the `.parent()` function, [see more info here](https://github.com/processing/p5.js/wiki/p5.js-overview#createcanvas).
