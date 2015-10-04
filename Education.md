@@ -24,16 +24,16 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Embedding p5.js](https://github.com/processing/p5.js/wiki/Embedding-p5.js) - different ways of including sketches on existing sites or blogs.
 
 
-## Videos
+### Videos
 - [Daniel Shiffman Learning p5.js Vimeo channel](https://vimeo.com/channels/learningp5js/) - no ads
 - [Daniel Shiffman Learning p5.js YouTube playlist](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) - has ads
 - [Kadenze course](https://www.kadenze.com/courses/introduction-to-programming-for-the-visual-arts-with-p5-js/info) -- coming soon!
 
-## Books 
+### Books 
 * [Introduction to Programming with JavaScript, P5, and Processing ](http://www.amazon.com/Introduction-Programming-JavaScript-Processing-Cooks-ebook/dp/B010R0VMQS), Robert Cook - [interactive examples (jsfiddle)](http://jsfiddle.net/user/bobcook/fiddles/)
 * [Getting Started with p5.js](http://amzn.to/1PmztVt), Lauren McCarthy, Casey Reas, Ben Fry
 
-## p5.js Resources
+### p5.js Resources
 * [p5.js reference](http://p5js.org/reference)
 * [p5.js forum](http://forum.processing.org/two/)
 * [p5.js tutorials](http://p5js.org/tutorials/)
@@ -42,7 +42,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Getting Started with p5.js](http://www.amazon.com/Make-Interactive-Graphics-JavaScript-Processing/dp/1457186772) - O'Reilly book
 * [Intro to Visual Programming with p5.js](https://www.kadenze.com/courses/introduction-to-programming-for-the-visual-arts-with-p5-js) - online video tutorials (free with signup)
 
-## JS Resources
+### JS Resources
 * [Codecademy: JavaScript](http://www.codecademy.com/tracks/javascript)
 * [How to learn JavaScript properly](http://javascriptissexy.com/how-to-learn-javascript-properly/)
 * [JavaScript the right way](http://www.jstherightway.org/)
@@ -55,21 +55,21 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Beginning JavaScript](http://www.amazon.com/Beginning-JavaScript-Paul-Wilton/dp/0470525932), Paul Wilton and Jeremy McPeak
 * [JavaScript book](http://www.javascriptbook.com/)
 
-## HTML+CSS Resources
+### HTML+CSS Resources
 * [HTML & CSS book](http://www.htmlandcssbook.com/)
 * [Codecademy HTML glossary](https://www.codecademy.com/glossary/html#attributes)
 * [Mozilla Intro to HTML](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction)
 * [Codecademy CSS glossary](https://www.codecademy.com/glossary/css)
 * [Mozilla Getting Started with CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started)
 
-## General
+### General Programming
 * [lynda.com](http://www.nyu.edu/lynda) - lots of great tutorials here. Log in with your normal nyu net-id/password for full access.
 * [Codecademy](http://www.codecademy.com/)
 * [Flat Iron School](http://prework.flatironschool.com/web-development/)
 * [Programming Terms and Environments Summary](https://itp.nyu.edu/physicalcomputing/lessons/programming/programming-terms-and-programming-environments/)
 * [A Brief Introduction to Debugging](http://vimeo.com/channels/debugging) Video Series
 
-## Tools
+### Tools
 * [Github student developer pack](https://education.github.com/pack) - includes Digital Ocean $100 credit and more!
 * [Basic unix commands](http://www.webmonkey.com/2010/02/learn_enough_unix_for_your_resume/#Basic_Commands) - We'll be using the command line regularly in this class. Nothing too fancy; just the basics. Get familiar, at the very least, with the commands `ls`, `cd`, and `mkdir`. 
 * Checking code: [JSLint](http://www.jslint.com/) / [JSHint](http://www.jshint.com)
@@ -77,6 +77,6 @@ Note that examples included may be using older versions of p5.js and might not b
 * Mobile debugging [jsconsole.com](http://jsconsole.com)
 * Sharing code snippets (useful for asking questions on the email list): [gist.github.com](http://gist.github.com)
 
-## Debugging
+### Debugging
 * [A Brief Intro to Debugging](http://vimeo.com/channels/debugging) Video Series
 * [p5.js debugging tutorial]()
