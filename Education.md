@@ -63,7 +63,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Mozilla Getting Started with CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started)
 
 ### General Programming
-* [lynda.com](http://www.nyu.edu/lynda) - lots of great tutorials here. Log in with your normal nyu net-id/password for full access.
+* lynda.com
 * [Codecademy](http://www.codecademy.com/)
 * [Flat Iron School](http://prework.flatironschool.com/web-development/)
 * [Programming Terms and Environments Summary](https://itp.nyu.edu/physicalcomputing/lessons/programming/programming-terms-and-programming-environments/)
@@ -71,11 +71,11 @@ Note that examples included may be using older versions of p5.js and might not b
 
 ### Tools
 * [Github student developer pack](https://education.github.com/pack) - includes Digital Ocean $100 credit and more!
-* [Basic unix commands](http://www.webmonkey.com/2010/02/learn_enough_unix_for_your_resume/#Basic_Commands) - We'll be using the command line regularly in this class. Nothing too fancy; just the basics. Get familiar, at the very least, with the commands `ls`, `cd`, and `mkdir`. 
+* [Basic unix commands](http://www.webmonkey.com/2010/02/learn_enough_unix_for_your_resume/#Basic_Commands)
 * Checking code: [JSLint](http://www.jslint.com/) / [JSHint](http://www.jshint.com)
 * Browser debugging: Chrome Developer Tools ([tutorial](https://developer.chrome.com/extensions/tut_debugging)) / Firebug ([tutorial](http://www.developerfusion.com/article/139949/debugging-javascript-with-firebug/))
 * Mobile debugging [jsconsole.com](http://jsconsole.com)
-* Sharing code snippets (useful for asking questions on the email list): [gist.github.com](http://gist.github.com)
+* Sharing code snippets (useful for asking questions via email): [gist.github.com](http://gist.github.com)
 
 ### Debugging
 * [A Brief Intro to Debugging](http://vimeo.com/channels/debugging) Video Series
