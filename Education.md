@@ -10,7 +10,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Creative JavaScript, NYU ITP F14](http://github.com/lmccart/itp-creative-js) - examples and notes
 * [Intro to Creative Programming, RISD D+M F13](http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/index.html) - many examples
 * [Introduction to Interactive Computing, TCNJ F14](http://coursescript.com/calendar.php?course=5) - examples and notes
-* [Programming from A to Z](https://github.com/shiffman/Programming-from-A-to-Z-F14) - procedural analysis and generation of text-based data using JavaScript and p5.js
+* [Programming from A to Z](https://github.com/shiffman/Programming-from-A-to-Z-F15) - procedural analysis and generation of text-based data using JavaScript and p5.js
 * [Mobile Art Workshop](https://github.com/whichlight/mobile-art-intro) - intro to p5, websockets, interactivity, and sound for mobile web art
 * [Web Media, Moore College of Art S15](https://github.com/lee2sman/PDA203WebMedia) - intro to html, p5 and p5.js to generate web-based art projects
 * [Code as Medium, RISD S15](http://risd-creative-programming.github.io/s15-codeasmedium/examples.html) (Evelyn Eastmond) - many interactive codepen examples!
