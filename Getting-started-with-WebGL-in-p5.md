@@ -7,7 +7,7 @@ In p5.js, there are two render modes: P2D (default renderer) and WEBGL.  Both re
 
 ```javascript
 function setup() {
-  createCanvas(200,200, WEBGL);
+  createCanvas(200,200, 'webgl');
 }
 ```
 
