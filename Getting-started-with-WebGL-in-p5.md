@@ -1,9 +1,9 @@
 The following tutorial was inspired by the introduction to P3D in Processing 2.0+, which can be found here:
 https://processing.org/tutorials/p3d/
 
-# Introducing WebGl in p5.js
+# Introducing WebGL in p5.js
 
-In p5.js, there are two render modes: P2D (default renderer) and WEBGL.  Both render modes utilize the html canvas element, however by enabling the WEBGL "context" on the canvas, we can now draw in both 2D and 3D.  To enable webgl, simply specify as the third parameter in the createCanvas() function.
+In p5.js, there are two render modes: P2D (default renderer) and WEBGL.  Both render modes utilize the html canvas element, however by enabling the WEBGL "context" on the canvas, we can now draw in both 2D and 3D.  To enable WEBGL, simply specify as the third parameter in the createCanvas() function.
 
 ```
 function setup() {
@@ -13,7 +13,7 @@ function setup() {
 
 # 3D coordinate system
 
-If you've been coding in p5.js for a while you probably know the Cartesian coordinate 0,0 (x,y) is located in the top left corner of our drawing canvas.  In webgl mode, we introduce a third dimension:  Z.  So how do we handle the z-coordinate?  I'm glad you asked!  The z-dimension is the axis that points away from your screen.  A helpful mnemonic device for remembering which way the axes point in p5.js (webgl), is the "left-handed" rule.  Point your left index finger to the right, and your middle finger downward, and your thumb will automatically point toward you.  The direction your fingers are pointing are exactly mapped to the axes.  
+If you've been coding in p5.js for a while you probably know the Cartesian coordinate 0,0 (x,y) is located in the top left corner of our drawing canvas.  In WEBGL mode, we introduce a third dimension:  Z.  So how do we handle the z-coordinate?  I'm glad you asked!  The z-dimension is the axis that points away from your screen.  A helpful mnemonic device for remembering which way the axes point in p5.js (WEBGL), is the "left-handed" rule.  Point your left index finger to the right, and your middle finger downward, and your thumb will automatically point toward you.  The direction your fingers are pointing are exactly mapped to the axes.  
 
 Let’s look at a quick example:
 ```
@@ -47,7 +47,7 @@ box();
 translate(100,100,-100);
 box();
 ```
-This code draws a box, then translates our model matrix 100 units to the right, 100 units down, and 100 units away from the viewer, and finally draws another box at the new translated origin.  There are two important things to note here.  First, translate() always applies to draw functions called afterward.  Second, you may have noticed we use the generic term, “units,” instead of “pixels”.  The reason for this is because the actual distance of translation largely depends on our virtual camera view.  Model Matrix + View Matrix (i.e. camera) creates the perceived translation distance.  In the next section we’ll discuss the virtual camera in greater detail but before we do that, let’s talk about rotation.  Another type of model matrix transformation in 3D is rotate().  There are 4 different rotation functions in webgl mode:
+This code draws a box, then translates our model matrix 100 units to the right, 100 units down, and 100 units away from the viewer, and finally draws another box at the new translated origin.  There are two important things to note here.  First, translate() always applies to draw functions called afterward.  Second, you may have noticed we use the generic term, “units,” instead of “pixels”.  The reason for this is because the actual distance of translation largely depends on our virtual camera view.  Model Matrix + View Matrix (i.e. camera) creates the perceived translation distance.  In the next section we’ll discuss the virtual camera in greater detail but before we do that, let’s talk about rotation.  Another type of model matrix transformation in 3D is rotate().  There are 4 different rotation functions in WEBGL mode:
 
 ```
 rotate(angle, [x,y,z]);
@@ -72,7 +72,7 @@ perspective(fovy, aspect, near, far)
 ortho(left, right, bottom, top, near, far)
 ```
 
-The default camera view in webgl mode is perspective with a 60 degree field of view.  This is created when you initialize webgl mode in createCanvas().  To override the default camera options, simply call perspective() or ortho().  In a perspective view, objects closer to the viewer in the z-plane appear larger than those farther away.  In orthographic view (ortho()), objects of the same dimensions appear to be the same size even if they are farther away on the z-plane.  For example:
+The default camera view in WEBGL mode is perspective with a 60 degree field of view.  This is created when you initialize WEBGL mode in createCanvas().  To override the default camera options, simply call perspective() or ortho().  In a perspective view, objects closer to the viewer in the z-plane appear larger than those farther away.  In orthographic view (ortho()), objects of the same dimensions appear to be the same size even if they are farther away on the z-plane.  For example:
 
 ```
 function setup(){
@@ -115,8 +115,8 @@ cone(40,100);//draws a cone with radius: 40, height: 100, and a default detail: 
 
 One important difference between drawing primitives in 3d and drawing primitives in 2d is that 3d primitives take size parameters, but not position.  To reposition 3D primitives, simply call translate(x,y,z); as per the Translation section above.
 
-# Custom shapes & 2D drawing in webgl
-In the introduction, we mentioned that webgl mode supports both 2D and 3D drawing.  While webgl is optimized for 3D, you don’t necessarily have to always draw in 3D.  For 2D drawing, there are the point(), line(), triangle() and quad() functions.  For example,
+# Custom shapes & 2D drawing in WEBGL
+In the introduction, we mentioned that WEBGL mode supports both 2D and 3D drawing.  While WEBGL is optimized for 3D, you don’t necessarily have to always draw in 3D.  For 2D drawing, there are the point(), line(), triangle() and quad() functions.  For example,
 
 ```
   for(var i = 0; i < 500; i+=100){
@@ -148,7 +148,7 @@ In the introduction, we mentioned that webgl mode supports both 2D and 3D drawin
 ```
 If we look more closely at the quad() function, you’ll notice there are 12 parameters- 4 groups of 3 (x,y,z).  Even though we are drawing a 2-dimensional shape, we still need to use the z-coordinate for each vertex.
 
-Another way of drawing custom shapes in webgl mode is to use beginShape() and endShape().  This works exactly the same in 2d mode as it does in webgl, except in webgl, vertices receive x, y, and z as location coordinates.
+Another way of drawing custom shapes in WEBGL mode is to use beginShape() and endShape().  This works exactly the same in 2d mode as it does in WEBGL, except in WEBGL, vertices receive x, y, and z as location coordinates.
 
 ```
 beginShape();
@@ -159,7 +159,7 @@ endShape();
 ```
 
 # Textures
-At the time of this writing, p5.js supports both video and image textures in webgl mode.  A texture is like a “skin” that wraps around a 3D geometry.  For example, if you want a static image to “texture” a box, you would write something like this:
+At the time of this writing, p5.js supports both video and image textures in WEBGL mode.  A texture is like a “skin” that wraps around a 3D geometry.  For example, if you want a static image to “texture” a box, you would write something like this:
 
 ```
 var img;
@@ -167,7 +167,7 @@ function preload(){
   img = loadImage(“path/to/img.jpg”);
 }
 function setup(){
-  createCanvas(500,500,’webgl’);
+  createCanvas(500,500,WEBGL);
 }
 function draw(){
   background(255);
@@ -178,7 +178,7 @@ function draw(){
 Loading images for texturing inside the preload() method is generally a best practice, but it is especially helpful when working with video since video files are generally larger than static images and can take therefore extra time to load.
 
 # Lights and Materials
-The last big inclusion in webgl mode is lights.  Lighting is a simple but powerful way to provide depth and realism to p5.js sketches.  At the time of this writing there are 3 types of light functions in p5.js:
+The last big inclusion in WEBGL mode is lights.  Lighting is a simple but powerful way to provide depth and realism to p5.js sketches.  At the time of this writing there are 3 types of light functions in p5.js:
 ```
 ambientLight();
 directionalLight();
@@ -231,9 +231,9 @@ sphere(50, 64);
 See the following wiki page: https://github.com/processing/p5.js/wiki/Processing-transition
 
 # The Future: Custom shaders, obj loaders, Shadow maps, etc.
-Webgl in p5.js is still in its nascent stages.  In this section we’d like to give you a sampling of some features we’d like, but have not yet implemented in p5.js.
+WebGL in p5.js is still in its nascent stages.  In this section we’d like to give you a sampling of some features we’d like, but have not yet implemented in p5.js.
 
-- Custom shaders: If you’re familiar with webgl or OpenGL, you probably are used to writing small graphics programs called shaders.  In the future, you’ll be able to write your own custom shaders and load them as you would the default materials and lights.
+- Custom shaders: If you’re familiar with WebGL or OpenGL, you probably are used to writing small graphics programs called shaders.  In the future, you’ll be able to write your own custom shaders and load them as you would the default materials and lights.
 
 - Obj loaders and exporters.  We’d like to take advantage of the many 3D modeling applications out there, and having a way of loading and exporting .obj files will allow p5.js to seamlessly integrate into existing 3D workflows.
 
@@ -241,4 +241,4 @@ Webgl in p5.js is still in its nascent stages.  In this section we’d like to g
 Performative 2D sketches as textures on 3D objects.  Users should be able to pass their 2D sketches into texture functions.
 
 - Full featured camera.  Multiple cameras, greater orbit control, featuring quaternion rotation. etc.
-Have a feature you’d really like to implement in webgl, and it’s not listed here?  Start a discussion on [Github](https://github.com/processing/p5.js/issues)!
+Have a feature you’d really like to implement in WebGL, and it’s not listed here?  Start a discussion on [Github](https://github.com/processing/p5.js/issues)!
