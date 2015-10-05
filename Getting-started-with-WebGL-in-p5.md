@@ -221,7 +221,7 @@ ambientMaterial()
 specularMaterial()
 ```
 
-normalMaterial() does not take any parameters, it automatically maps a geometry’s normal vectors to RGB colors.  For more information on geometry normals, we find (this WIkipedia entry)[https://en.wikipedia.org/wiki/Normal_(geometry)] to be pretty helpful.
+normalMaterial() does not take any parameters, it automatically maps a geometry’s normal vectors to RGB colors.  For more information on geometry normals, we find [this Wikipedia entry](https://en.wikipedia.org/wiki/Normal_(geometry)) to be pretty helpful.
 
 basicMaterial() is a material that fills the following geometry with a color, but is not affected by any of the light functions().  It’s similar to fill() in p5’s 2d mode.
 
@@ -249,7 +249,9 @@ WebGL in p5.js is still in its nascent stages.  In this section we’d like to g
 - Obj loaders and exporters.  We’d like to take advantage of the many 3D modeling applications out there, and having a way of loading and exporting .obj files will allow p5.js to seamlessly integrate into existing 3D workflows.
 
 - Shadow maps.  Peanut butter goes together with Jelly, and so too does light and shadow.
-Performative 2D sketches as textures on 3D objects.  Users should be able to pass their 2D sketches into texture functions.
+
+- Performative 2D sketches as textures on 3D objects.  Users should be able to pass their 2D sketches into texture functions.
 
 - Full featured camera.  Multiple cameras, greater orbit control, featuring quaternion rotation. etc.
+
 Have a feature you’d really like to implement in WebGL, and it’s not listed here?  Start a discussion on [Github](https://github.com/processing/p5.js/issues)!
