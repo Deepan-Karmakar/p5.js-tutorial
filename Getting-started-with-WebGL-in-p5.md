@@ -16,6 +16,7 @@ function setup() {
 If you've been coding in p5.js for a while you probably know the Cartesian coordinate 0,0 (x,y) is located in the top left corner of our drawing canvas.  In WEBGL mode, we introduce a third dimension:  Z.  So how do we handle the z-coordinate?  I'm glad you asked!  The z-dimension is the axis that points away from your screen.  A helpful mnemonic device for remembering which way the axes point in p5.js (WEBGL), is the "left-handed" rule.  Point your left index finger to the right, and your middle finger downward, and your thumb will automatically point toward you.  The direction your fingers are pointing are exactly mapped to the axes.  
 
 Let’s look at a quick example:
+
 ```javascript
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
@@ -64,7 +65,7 @@ rotateX(radians(45));
 All rotation functions take a numerical parameter in radians.  
 
 # Camera and view
-In webgl mode, there are currently 3 camera functions.  
+In WEBGL mode, there are currently 3 camera functions.  
 
 ```javascript
 camera(x,y,z)
@@ -94,12 +95,14 @@ At the time of this writing, only one camera is supported per canvas.  However, 
 
 There are 6 different 3D geometry primitives in p5.js.  
 
+```javascript
 box()
 plane()
 sphere()
 cone()
 cylinder()
 torus() 
+```
 
 Each of these primitives take size parameters.  For example:
 
@@ -120,7 +123,7 @@ One important difference between drawing primitives in 3d and drawing primitives
 In the introduction, we mentioned that WEBGL mode supports both 2D and 3D drawing.  While WEBGL is optimized for 3D, you don’t necessarily have to always draw in 3D.  For 2D drawing, there are the point(), line(), triangle() and quad() functions.  For example,
 
 ```javascript
-  for(var i = 0; i < 500; i+=100){
+for(var i = 0; i < 500; i+=100){
   push();
   fill(i * 0.1, 100, 100);
 
@@ -144,9 +147,9 @@ In the introduction, we mentioned that WEBGL mode supports both 2D and 3D drawin
     100, 100, i
     );
   pop();
-  }
+}
+```
 
-```javascript
 If we look more closely at the quad() function, you’ll notice there are 12 parameters- 4 groups of 3 (x,y,z).  Even though we are drawing a 2-dimensional shape, we still need to use the z-coordinate for each vertex.
 
 Another way of drawing custom shapes in WEBGL mode is to use beginShape() and endShape().  This works exactly the same in 2d mode as it does in WEBGL, except in WEBGL, vertices receive x, y, and z as location coordinates.
@@ -188,12 +191,14 @@ pointLight();
 ```
 
 ```javascript
-ambientLight(255,0,0);//even red light across our objects
+ambientLight(255,0,0); //even red light across our objects
 box(25);
 ```
 ambientLight() is the simplest of the three functions, and it provides even (omnidirectional) ambient lighting to objects drawn afterward.  It takes a p5.Color or r,g,b numerical values as parameters.
 
+```javascript
 directionalLight(r, g, b, x, y, z):
+```
 
 ```javascript
 var dirY = (mouseY / height - 0.5) *2;
@@ -208,10 +213,13 @@ pointLight():
 On the other hand, pointLight takes a color and a location as parameters.  The major difference between directionalLight and pointLight is pointLight shines from a specific point of origin, and therefore reflects differently when it is farther vs. nearer the object.
 
 In the real world, light reflects off objects differently, depending on their angle of reflection as well as the object's’ material.  At the time of this writing there are four types of materials in p5.js:
+
+```javascript
 normalMaterial()
 basicMaterial()
 ambientMaterial()
 specularMaterial()
+```
 
 normalMaterial() does not take any parameters, it automatically maps a geometry’s normal vectors to RGB colors.  For more information on geometry normals, we find (this WIkipedia entry)[https://en.wikipedia.org/wiki/Normal_(geometry)] to be pretty helpful.
 
