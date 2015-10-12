@@ -124,7 +124,7 @@ function setup() {
   canvas = createCanvas(400, 400);
 
   img.position(190, 50);
-  img.size(200, AUTO); // Use AUTO to have the height or width auto scale. 
+  img.size(200, 200);
   canvas.position(300, 50);
 }
 
