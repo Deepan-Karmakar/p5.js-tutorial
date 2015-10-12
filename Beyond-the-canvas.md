@@ -255,8 +255,8 @@ var img;
 var canvas;
 
 function setup() {
-  canvas = createGraphics(400, 400);
-  img = createHTMLImage("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+  canvas = createCanvas(400, 400);
+  img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
 
   img.position(190, 50);
   img.size(200, AUTO);
