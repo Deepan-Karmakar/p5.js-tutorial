@@ -325,7 +325,7 @@ Assigning an element a class or id may be useful in styling the element with a C
 
 You can use `.class()` to assign the element to a named class. It is up to you what name you choose for the class. Multiple elements in a document can have the same class value. You can use `.id()` to assign an id to the element. It is up to you what name you choose for the id. The id name must be unique in the document, meaning no other element on the page should have the same id.
 
-There are a couple of methods for finding elements already on the page.  `getElement(id)` returns the element on the page with given id or null if none is found, while `getElements(className)` returns an array of all elements with given className, or an empty array if none are found.
+There are a couple of methods for finding elements already on the page.  `select(#id)` returns the element on the page with given id or null if none is found, while `selectAll(.className)` returns an array of all elements with given className, or an empty array if none are found.
 
 ```javascript
 var myDiv0;
@@ -350,9 +350,9 @@ function setup() {
 
 // On key press, hide all elements with class donkey.
 function keyPressed() {
-  // getElements() returns an array of elements with class donkey. 
+  // selectAll() returns an array of elements with class donkey. 
   // If none are found, it returns an empty array [].
-  var donkeys = getElements('donkey');
+  var donkeys = selectAll('.donkey');
   // We can then iterate through the array and hide all the elements.
   for (var i = 0; i < donkeys.length; i++) {
     donkeys[i].hide();
