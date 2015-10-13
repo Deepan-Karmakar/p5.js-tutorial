@@ -16,6 +16,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Code as Medium, RISD S15](http://risd-creative-programming.github.io/s15-codeasmedium/examples.html) (Evelyn Eastmond) - many interactive codepen examples!
 * [Creative Coding for the Web, Culture Hub S15](https://github.com/futuremarc/p5-creative-coding-course) - syllabus and notes
 * [Intro to Media Computing @ the School of Creative Media, Hong Kong](http://rednoise.org/imc)
+* [Arduino + p5.js examples](https://github.com/tigoe/GraphingSketches)
 
 ###Tools
 * [WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts
