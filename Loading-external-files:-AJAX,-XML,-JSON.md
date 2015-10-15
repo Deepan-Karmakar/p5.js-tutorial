@@ -211,7 +211,9 @@ function drawData(data) {
 
 In addition to local files, loadJSON can also load external URLs. Unfortunately, there are quite a few security restrictions on making AJAX requests across domains. If you are interested in investigating those and how to overcome them, checkout this: http://www.html5rocks.com/en/tutorials/cors/. Fortunately, since we are using libraries such as p5.js we don't have to worry so much.
 
-[openweathermap.org](http://openweathermap.org/) has a pretty easy to use API for weather data in cities around the world.
+[openweathermap.org](http://openweathermap.org/) has a pretty easy to use API for weather data in cities around the world. Note that you will need to sign up [here](openweathermap.org/appid) for an API key and add it where it says "YOUR_API_KEY".
+
+It's a good idea to try just putting the url string directly into your browser address bar first to make sure it returns data. If you see JSON data appear there, then try adding it into your p5.js sketch.
 
 ```javascript
 var bubbles = [];
@@ -219,7 +221,8 @@ var bubbles = [];
 function setup() {
   createCanvas(600, 400);
   noStroke();
-  loadJSON('http://api.openweathermap.org/data/2.5/weather?q=NewYork,USA', drawWeather); 
+  var url = 'http://api.openweathermap.org/data/2.5/weather?APPID=YOUR_API_KEY&q=NewYork,USA'
+  loadJSON(url, drawWeather); 
 }
 
 function drawWeather(weather) {
@@ -294,7 +297,7 @@ $(document).ready(function(){
 ```javascript
 $(document).ready(function(){
   $.ajax({
-    url: "http://api.openweathermap.org/data/2.5/weather?id=5128581&units=imperial",
+    url: "http://api.openweathermap.org/data/2.5/weather?APPID=YOUR_API_KEY&id=5128581&units=imperial",
     dataType: 'json',
     success: function(data) {
       alert("Temperature is: " + data.main.temp );
