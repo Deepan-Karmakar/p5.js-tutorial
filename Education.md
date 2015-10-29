@@ -33,6 +33,7 @@ Note that examples included may be using older versions of p5.js and might not b
 ### Books 
 * [Introduction to Programming with JavaScript, P5, and Processing ](http://www.amazon.com/Introduction-Programming-JavaScript-Processing-Cooks-ebook/dp/B010R0VMQS), Robert Cook - [interactive examples (jsfiddle)](http://jsfiddle.net/user/bobcook/fiddles/)
 * [Getting Started with p5.js](http://amzn.to/1PmztVt), Lauren McCarthy, Casey Reas, Ben Fry
+* [p5.js Programming Guide (in Japanese) p5.jsプログラミングガイド] (http://www.cutt.co.jp/book/978-4-87783-381-7.html), Kouichi Matsuda, Tetsuo Yutani, Ayana Shiino
 
 ### p5.js Resources
 * [p5.js reference](http://p5js.org/reference)
