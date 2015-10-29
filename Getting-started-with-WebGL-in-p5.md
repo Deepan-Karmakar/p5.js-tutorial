@@ -226,7 +226,7 @@ normalMaterial() does not take any parameters, it automatically maps a geometry�
 basicMaterial() is a material that fills the following geometry with a color, but is not affected by any of the light functions().  It’s similar to fill() in p5’s 2d mode.
 
 ambientMaterial() is like basicMaterial(), however the total color is affected by light functions that precede it.  
-specularMateriail() is the most “realistic” of the four materials.   Specular material is a technical way of describing a material that reflects light in a single direction.  This effect is often perceived in the real world as being glassy, water-like, or perhaps in the above example, a billiards ball.
+specularMaterial() is the most “realistic” of the four materials.   Specular material is a technical way of describing a material that reflects light in a single direction.  This effect is often perceived in the real world as being glassy, water-like, or perhaps in the above example, a billiards ball.
 For example:
 
 ```javascript
