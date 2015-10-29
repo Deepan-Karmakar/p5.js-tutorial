@@ -7,7 +7,7 @@ In p5.js, there are two render modes: P2D (default renderer) and WEBGL.  Both re
 
 ```javascript
 function setup() {
-  createCanvas(200,200, 'webgl');
+  createCanvas(200,200, WEBGL);
 }
 ```
 
@@ -77,7 +77,7 @@ The default camera view in WEBGL mode is perspective with a 60 degree field of v
 
 ```javascript
 function setup(){
-  createCanvas(500,500,’webgl’);
+  createCanvas(500,500,WEBGL);
   ortho(-width, width, height, -height/2, 0.1, 100);
 }
 function draw(){
