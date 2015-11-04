@@ -7,12 +7,13 @@ Two libraries are included with the p5.js download, [p5.dom.js](http://p5js.org/
 To include a library in your sketch, link it into your HTML file, after you have linked in p5.js. An example HTML file might look like this:
 ```html
 <head>
-  <script type="text/javascript" src="p5.js"></script>
-  <script type="text/javascript" src="p5.sound.js"></script>
-  <script type="text/javascript" src="sketch.js"></script>
+  <script src=p5.js></script>
+  <script src=p5.sound.js></script>
+  <script src=sketch.js></script>
 </head>
 
 <body>
+
 </body>
 ```
 #Creating a new library
@@ -24,9 +25,9 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
 ####You can extend p5 core functionality by adding methods to p5.prototype.
 For example, the following code in p5.dom.js extends p5 to add a `createImg()` method that adds an HTML image element to the DOM. 
 
-  ```javascript
+  ```js
   p5.prototype.createImg = function(src) {
-    var elt = document.createElement('img');
+    const elt = document.createElement('img');
     elt.src = src;
     return addElement(elt);
   };
@@ -38,7 +39,7 @@ Functions not intended to be called by users. In the example above `addElement()
 
 ####You can extend p5.js classes as well, by adding methods to their prototypes.
 In the example below, `p5.Element.prototype` is extended with the `html()` method, that sets the inner html of the element.
-  ```javascript
+  ```js
   p5.Element.prototype.html = function(html) {
     this.elt.innerHTML = html;
   };
@@ -48,43 +49,44 @@ In the example below, `p5.Element.prototype` is extended with the `html()` metho
 
 Typically, with some asynchronous functions (like loading a sound, image, or other external file), there are both synchronous and asynchronous options offered. For example, `loadStrings(path, [callback])` accepts an optional second callback argument - a function that is called after the loadStrings function completes. However, a user may also call loadStrings in `preload()` without a callback, and the p5.js will wait until everything in `preload()` completes before moving on to `setup()`. If you would like to register a method of your own call `registerPreloadMethod()` with the name of the method to register, and the name of the object the method belongs to (defaults to p5). The example below shows a line in the Sound library that registers `loadSound()`.
 
-  ```javascript
+  ```js
   p5.prototype.registerPreloadMethod('loadSound', 'p5');
   ```
 
-####Example of async function for callback and preload().
-```javascript
-//example async function for use in preload() or with callback
-p5.prototype.getData = function(callback){
-  //create an object to hold some data. We will need to update this data below, not overwrite it. It is crucial to the preload() to keep the original pointer.
-  var ret = {};
+####Example of async function for _callback_ and **preload()**.
+```js
+// Example of async function for use in preload() or with callback.
+p5.prototype.getData = function(callback) {
 
-  //some async function you are working with
-  loadDataFromSpace(function(data){
+  // Create an object to hold some data. We will need to update this data below, not overwrite/reassign it.
+  // It is crucial for the preload() to keep the original pointer/reference.
+  const ret = {}; // declaring variables with const assures they won't be reassigned!
 
-    //loop through the properties in data
-    for( prop in data){
-      //set the ret properties to be the data properties ( update the empty ret object with the properties from data )
-      // you CANNOT overwrite ret with another object, it must be updated with the data.
+  // Some async function you are working with.
+  loadDataFromSpace(function(data) {
+
+    // Loop through the properties in data.
+    for(var prop in data) {
+      // Set the ret's properties to be the data's properties (update empty ret object with properties from data).
+      // You CANNOT overwrite/reassign ret with another object though. Rather it needs to be updated with the data.
       ret[prop] = data[prop];
     }
-    //check if the callback is a function
-    if (typeof callback == 'function'){
-      //do the callback
-      callback(data)
+    // Check whether callback is indeed a function
+    if (typeof callback == 'function') {
+      callback(data); // do the callback
     }
-  })
-  //return the object which has been filled with data above
+  });
+  // Return the object which has been filled with data above.
   return ret;
-}
+};
 ```
   
-####Use registerMethod() to register functions with p5 that should be called at various times.
+####Use **registerMethod()** to register functions with _**p5**_ that should be called at various times.
 
-  ```javascript
+  ```js
   p5.prototype.doRemoveStuff = function() { 
   	// library cleanup stuff
-  }
+  };
   p5.prototype.registerMethod('remove', p5.prototype.doRemoveStuff);
   ```
   
@@ -102,7 +104,7 @@ Your library may not extend p5 or p5 classes at all, but instead just offer extr
 ##Naming
 * **Don't overwrite p5 functions or properties.** When you are extending p5.prototype, be careful not to use the names of existing properties or functions. You can use [hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) to test names. For example, the following line placed at the top of your library file will print true because the `rect()` method exists:
 
-  ```javascript
+  ```js
   console.log(p5.prototype.hasOwnProperty('rect'));
   ```
 
