@@ -69,7 +69,7 @@ p5.prototype.getData = function(callback) {
 
     // Loop through the properties in data.
     for(var prop in data) {
-      // Set the ret's properties to be the data's properties.
+      // Set the ret's properties to be the data's properties (cloning).
       // That is, update empty ret object with properties from received data.
       // You CANNOT overwrite/reassign ret with another object though.
       // Rather its content needs to be updated with the data.
