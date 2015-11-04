@@ -43,6 +43,33 @@ In the example below, `p5.Element.prototype` is extended with the `html()` metho
     this.elt.innerHTML = html;
   };
   ```
+
+####Example of async function for callback and preload().
+```javascript
+//example async function for use in preload() or with callback
+p5.prototype.getData = function(callback){
+  //create an object to hold some data. We will need to update this data below, not overwrite it. It is crucial to the preload() to keep the original pointer.
+  var ret = {};
+
+  //some async fucntion you are working with
+  loadDataFromSpace(function(data){
+
+    //loop through the properties in data
+    for( prop in data){
+      //set the ret proporties to be the data properties ( update the empty ret object with the properties from data )
+      // you CANNOT overwrite ret with another object, it must be updated with the data.
+      ret[prop] = data[prop];
+    }
+    //check if the callback is a function
+    if (typeof callback == 'function'){
+      //do the callback
+      callback(data)
+    }
+  })
+  //return the object which has been filled with data above
+  return ret;
+}
+```
   
 ####Use registerPreloadMethod() to register names of methods with p5 that may be called in preload().
 
