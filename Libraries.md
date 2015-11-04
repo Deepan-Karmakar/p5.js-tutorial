@@ -96,7 +96,7 @@ p5.prototype.getData = function(callback) {
   
 Method names you can register include the following list. Note that you may need to define the function before you register it.
 
-  * **pre** — Called at the beginning `draw()`, it can affect drawing.
+  * **pre** — Called at the beginning of `draw()`, it can affect drawing.
   * **post** — Called at the end of `draw()`.
   * **remove** — Called when `remove()` is called.
   * more to come shortly, lining up roughly with this list https://github.com/processing/processing/wiki/Library-Basics#library-methods
