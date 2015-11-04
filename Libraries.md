@@ -61,7 +61,7 @@ p5.prototype.getData = function(callback) {
   // Create an object to hold some data.
   // We will need to update this data below, not overwrite/reassign it.
   // It is crucial for the preload() to keep the original pointer/reference.
-  // Tip: declaring variables with const assures they won't be reassigned by mistake!
+  // Tip: declaring variables with const assures they won't be reassigned!
   const ret = {};
 
   // Some async function you are working with.
