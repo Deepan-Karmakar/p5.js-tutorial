@@ -75,9 +75,9 @@ p5.prototype.getData = function(callback) {
       // Rather it needs to be updated with the data.
       ret[prop] = data[prop];
     }
-    // Check whether callback is indeed a function
+    // Check whether callback is indeed a function.
     if (typeof callback == 'function') {
-      callback(data); // do the callback
+      callback(data); // do the callback.
     }
   });
   // Return the object which has been filled with data above.
