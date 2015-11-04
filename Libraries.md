@@ -61,14 +61,14 @@ p5.prototype.getData = function(callback) {
   // Create an object which will clone data from async function and return it.
   // We will need to update that object below, not overwrite/reassign it.
   // It is crucial for the preload() to keep the original pointer/reference.
-  // Tip: declaring variables with const assures they won't be reassigned!
+  // Declaring variables with const assures they won't be reassigned by mistake.
   const ret = {};
 
   // Some async function you are working with.
   loadDataFromSpace(function(data) {
 
     // Loop through the properties in data.
-    for(var prop in data) {
+    for (var prop in data) {
       // Set the ret's properties to be the data's properties (cloning).
       // That is, update empty ret object with properties from received data.
       // You CANNOT overwrite/reassign ret with another object though.
