@@ -72,7 +72,7 @@ p5.prototype.getData = function(callback) {
       // Set the ret's properties to be the data's properties.
       // That is, update empty ret object with properties from received data.
       // You CANNOT overwrite/reassign ret with another object though.
-      // Rather it needs to be updated with the data.
+      // Rather its content needs to be updated with the data.
       ret[prop] = data[prop];
     }
     // Check whether callback is indeed a function.
