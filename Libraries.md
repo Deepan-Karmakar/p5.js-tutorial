@@ -96,7 +96,7 @@ p5.prototype.getData = function(callback) {
   
 Method names you can register include the following list. Note that you may need to define the function before you register it.
 
-  * **pre** — Called as the beginning `draw()`, it can affect drawing.
+  * **pre** — Called at the beginning `draw()`, it can affect drawing.
   * **post** — Called at the end of `draw()`.
   * **remove** — Called when `remove()` is called.
   * more to come shortly, lining up roughly with this list https://github.com/processing/processing/wiki/Library-Basics#library-methods
@@ -124,7 +124,7 @@ Your library may not extend p5 or p5 classes at all, but instead just offer extr
 ##Packaging
 * **Create a single JS file that contains your library.** This makes it easy for users to link it into their projects. You might also think about having options for both the normal JS file and a [minified](http://jscompress.com/) version for faster loading.
 
-* **Contributed libraries are hosted, documented, and maintained by their creators.** This could be on github, on a separate website, or somewhere else.
+* **Contributed libraries are hosted, documented, and maintained by their creators.** This could be on GitHub, on a separate website, or somewhere else.
 
 * **Documentation is key!** The documentation for your library should be in some place easy to find for users that download and use your library. The documentation for contributed libraries will not be included in the main p5.js reference, but you may want to follow a similar format. See these examples of a [library overview page](http://p5js.org/reference/#/libraries/p5.sound), [class overview page](http://p5js.org/reference/#/p5.Vector), and [method page](http://p5js.org/reference/#/p5/arc).
 
