@@ -80,7 +80,7 @@ p5.prototype.getData = function(callback) {
       callback(data); // do the callback.
     }
   });
-  // Return the object which has been filled with data above.
+  // Return the object which has been filled with the data above.
   return ret;
 };
 ```
