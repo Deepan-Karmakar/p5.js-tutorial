@@ -31,7 +31,7 @@ For example, the following code in p5.dom.js extends p5 to add a `createImg()` m
     //const elt = new Image; // much shorter alt. to the 1 above.
 
     elt.src = src;
-    return addElement(elt);
+    return addElement(elt, this);
   };
   ```
   When the DOM library is included in a project, `createImg()` can be called just like `createCanvas()` or `background()`.
