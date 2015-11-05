@@ -26,9 +26,9 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
 For example, the following code in p5.dom.js extends p5 to add a `createImg()` method that adds an HTML image element to the DOM. 
 
   ```js
-  p5.prototype.createImg = function(src) {
+  p5.prototype.createImg = function (src) {
     const elt = document.createElement('img');
-    //const elt = new Image; // alt. to the above.
+    //const elt = new Image; // much shorter alt. to the 1 above.
 
     elt.src = src;
     return addElement(elt);
@@ -42,8 +42,9 @@ Functions not intended to be called by users. In the example above `addElement()
 ####You can extend p5.js classes as well, by adding methods to their prototypes.
 In the example below, `p5.Element.prototype` is extended with the `html()` method, that sets the inner html of the element.
   ```js
-  p5.Element.prototype.html = function(html) {
+  p5.Element.prototype.html = function (html) {
     this.elt.innerHTML = html;
+    //this.elt.textContent = html; // much safer alt. to innerHTML.
   };
   ```
   
@@ -58,7 +59,7 @@ Typically, with some asynchronous functions (like loading a sound, image, or oth
 ####Example of async function for _callback_ and **preload()**.
 ```js
 // Example of async function for use in preload() or with callback.
-p5.prototype.getData = function(callback) {
+p5.prototype.getData = function (callback) {
 
   // Create an object which will clone data from async function and return it.
   // We will need to update that object below, not overwrite/reassign it.
@@ -67,7 +68,7 @@ p5.prototype.getData = function(callback) {
   const ret = {};
 
   // Some async function you are working with.
-  loadDataFromSpace(function(data) {
+  loadDataFromSpace(function (data) {
 
     // Loop through the properties in data.
     for (var prop in data) {
@@ -90,7 +91,7 @@ p5.prototype.getData = function(callback) {
 ####Use **registerMethod()** to register functions with _**p5**_ that should be called at various times.
 
   ```js
-  p5.prototype.doRemoveStuff = function() { 
+  p5.prototype.doRemoveStuff = function () { 
   	// library cleanup stuff
   };
   p5.prototype.registerMethod('remove', p5.prototype.doRemoveStuff);
