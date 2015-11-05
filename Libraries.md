@@ -8,7 +8,6 @@ To include a library in your sketch, link it into your HTML file, after you have
 ```html
 <head>
   <meta charset=utf-8>
-
   <script src=p5.js></script>
   <script src=p5.dom.js></script>
   <script src=sketch.js></script>
