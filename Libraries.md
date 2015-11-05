@@ -37,7 +37,7 @@ For example, the following code in p5.dom.js extends p5 to add a `createImg()` m
   When the DOM library is included in a project, `createImg()` can be called just like `createCanvas()` or `background()`.
 
 ####Use private functions for internal helpers.
-Functions not intended to be called by users. In the example above `addElement()` is function in p5.dom.js, it is not bound to `p5.prototype`.
+Functions not intended to be called by users. In the example above `addElement()` is an internal function in [p5.dom.js](https://GitHub.com/processing/p5.js/blob/master/lib/addons/p5.dom.js). It isn't publicly bound to `p5.prototype` though.
 
 ####You can extend p5.js classes as well, by adding methods to their prototypes.
 In the example below, `p5.Element.prototype` is extended with the `html()` method, that sets the inner html of the element.
@@ -102,7 +102,7 @@ Method names you can register include the following list. Note that you may need
   * **pre** — Called at the beginning of `draw()`. It can affect drawing.
   * **post** — Called at the end of `draw()`.
   * **remove** — Called when `remove()` is called.
-  * more to come shortly, lining up roughly with this list https://github.com/processing/processing/wiki/Library-Basics#library-methods
+  * more to come shortly, lining up roughly with this list https://GitHub.com/processing/processing/wiki/Library-Basics#library-methods
 
 
 ####You can also create your own classes.
