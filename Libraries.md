@@ -28,6 +28,8 @@ For example, the following code in p5.dom.js extends p5 to add a `createImg()` m
   ```js
   p5.prototype.createImg = function(src) {
     const elt = document.createElement('img');
+    // const elt = new Image; // alt. to the above.
+
     elt.src = src;
     return addElement(elt);
   };
