@@ -23,7 +23,7 @@ There are a lot of different ways to write and use JavaScript, so we leave this 
 ##Code
 
 ####You can extend p5 core functionality by adding methods to p5.prototype.
-For example, the following code in p5.dom.js extends p5 to add a `createImg()` method that adds an HTML image element to the DOM. 
+For example, the following code in p5.dom.js extends p5 to add a `createImg()` method that adds an [HTMLImageElement](https://developer.Mozilla.org/en-US/docs/Web/API/HTMLImageElement) to the DOM. 
 
   ```js
   p5.prototype.createImg = function (src) {
