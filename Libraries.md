@@ -7,13 +7,14 @@ Two libraries are included with the p5.js download, [p5.dom.js](http://p5js.org/
 To include a library in your sketch, link it into your HTML file, after you have linked in p5.js. An example HTML file might look like this:
 ```html
 <head>
+  <meta charset=utf-8>
+
   <script src=p5.js></script>
   <script src=p5.dom.js></script>
   <script src=sketch.js></script>
 </head>
 
 <body>
-
 </body>
 ```
 #Creating a new library
