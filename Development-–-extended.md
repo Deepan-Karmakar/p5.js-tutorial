@@ -52,6 +52,7 @@ Testing:
 - include test snippet.
 
 **Misc.**
+
 Large Objects - Sometimes large Javascript objects get unruly and the code needs to be split across multiple files.  For this scenario, the style convention should be: p5.[ObjectName].[descriptor].js.  Note, code should be grouped in each file thematically.
 
 For example, the p5.Renderer3D file is split across 3 js files: 
