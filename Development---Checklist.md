@@ -10,7 +10,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 
 * PDF Support [#373](https://github.com/processing/p5.js/issues/373)
 * Read local files [#370](https://github.com/processing/p5.js/issues/370)
-* Incorporate WebGL [#321](https://github.com/processing/p5.js/issues/321)
+* ~~Incorporate WebGL [#321](https://github.com/processing/p5.js/issues/321)~~
 * Implement preload() [#317](https://github.com/processing/p5.js/issues/317)
 * Implement PFont [#60](https://github.com/processing/p5.js/issues/60)
 * Implement File I/O [#40](https://github.com/processing/p5.js/issues/40)
