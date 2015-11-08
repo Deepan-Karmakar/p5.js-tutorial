@@ -6,6 +6,7 @@ Note that examples included may be using older versions of p5.js and might not b
 ###Class / workshop syllabi
 
 * [Intro to Computational Media, NYU ITP F15](https://github.com/ITPNYU/ICM-2015)
+* [Creative Coding, NYU IDM](http://creative-coding.decontextualize.com/)
 * [Generative Art with Processing, Bennington College F15](http://curriculum.bennington.edu/fall2015/2015/05/14/generative-art-with-processing/)
 * [Creative JavaScript, NYU ITP F14](http://github.com/lmccart/itp-creative-js) - examples and notes
 * [Intro to Creative Programming, RISD D+M F13](http://risd-creative-programming.github.io/fa13-introtocreativeprogramming/index.html) - many examples
