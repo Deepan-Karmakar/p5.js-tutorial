@@ -27,6 +27,7 @@ List of the very few things that get done when posting a new p5 release...
   ```
   git add lib/*
   git commit -m 'vx.x.x'
+  git push origin master
   git tag x.x.x
   git push origin x.x.x
   ```
