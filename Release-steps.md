@@ -24,12 +24,12 @@ List of the very few things that get done when posting a new p5 release...
 ### Post other versions
 1. Run `npm publish` from p5.js repo to publish to http://npmjs.com.
 2. Replace files in lib/ directory in [p5.js-release repo](https://github.com/lmccart/p5.js-release) (to support bower etc.
-```
-git add lib/*
-git commit -m 'vx.x.x'
-git tag x.x.x
-git push origin x.x.x
-```
+  ```
+  git add lib/*
+  git commit -m 'vx.x.x'
+  git tag x.x.x
+  git push origin x.x.x
+  ```
 
 3. Links on website should auto-update to the latest version in package.json, but you can also refresh this by going here: http://p5js.org/download/release.php.
 
