@@ -18,6 +18,7 @@ List of the very few things that get done when posting a new p5 release...
       * libraries/p5.dom.js
       * libraries/p5.sound.js
       * index.html 
+
 ![](http://i.imgur.com/nLMqqOT.png?1)
 
 ### Post other versions
