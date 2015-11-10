@@ -53,7 +53,9 @@ Need help finding an issue to fix? Check out this [list of bite size issues](htt
    grunt
    ```
 
-6. [Submit a pull request](https://help.github.com/articles/creating-a-pull-request).
+   If you're continuously changing files in the library, you may want to run `grunt watch:quick` to automatically rebuild the library for you whenever any of its source files change.
+
+6. Run `grunt` one last time to make sure all the tests pass, and [Submit a pull request](https://help.github.com/articles/creating-a-pull-request).
 
 ###Overview
 
