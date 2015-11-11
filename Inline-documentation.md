@@ -179,4 +179,4 @@ Run `grunt requirejs:yuidoc_theme` once first to generate all local files needed
 
 Run `grunt yui` to regenerate documentation without recompiling the code. You can view it locally in docs/reference (note that you need to be running a server for it to display correctly). If you notice the page not updating, try deleting the `reference/` folder and running the command again.
 
-Periodically, the reference folder is manually copied over to p5js.org.
+Periodically (ideally with each new release), the docs/reference folder needs to be manually copied over to p5js.org/reference, and submitted via PR.
