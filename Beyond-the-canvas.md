@@ -146,7 +146,7 @@ function draw() {
 
 There are also create methods for adding elements that deal with media—`createVideo()`, `createAudio()`, and `createCapture()`. These methods create a p5.MediaElement, which has some [additional methods](http://p5js.org/reference/#/p5.MediaElement) beyond those of a normal p5.Element. Again, while many features of HTML5 media are made accessible through the p5.dom API, there is [more native functionality](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement). Remember that you can use `.elt` to access the underlying element and access any of the native properties.
 
-The example below demonstrates toggling a video with a button, see it running [here](http://p5js.org/learn/examples/Dom_Video.php).
+The example below demonstrates toggling a video with a button, see it running [here](http://p5js.org/examples/examples/Dom_Video.php).
 
 ```javascript
 var playing = false;
@@ -493,7 +493,7 @@ function mousePressed() {
 ## What next?
 
 * There is a lot more you can do with this library than is covered here, so explore the methods and classes you find in the [reference](http://p5js.org/reference/#/libraries/p5.dom). 
-* See more examples in the DOM section on the [learn page](p5js.org/learn/#examples).
-* If you'd like to learn more about HTML and the DOM in general, see this [intro to HTML](https://github.com/processing/p5.js/wiki/Intro-to-HTML)
+* See more examples in the DOM section on the [examples page](http://p5js.org/examples/).
+* If you'd like to learn more about HTML and the DOM in general, see this [intro to HTML and CSS](https://github.com/processing/p5.js/wiki/Intro-to-HTML-and-CSS)
 * This library is a bit experimental and in development, so if you find bugs or have suggestions please [post an issue](https://github.com/processing/p5.js/issues). 
 * The [forum](http://forum.Processing.org/two/) is the best place for more general programming questions.
