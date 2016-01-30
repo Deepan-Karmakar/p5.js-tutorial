@@ -6,7 +6,7 @@ The p5.js language looks very similar to the Processing language with a few chan
 + `frameRate(num)` sets the frame rate, but the `frameRate` variable has been removed. To get the current frame rate, call `frameRate()` with no arguments.
 + JavaScript doesn't always load things synchronously, there are a couple options to deal with this:
      + All load methods take an optional callback argument. That is, a function that gets called after the file has been loaded. 
-     + Alternatively, you can place load calls in a `preload()` method that happens before `setup()`. If a preload method exists, setup waits until everything inside is loaded, see this [image example](http://p5js.org/learn/examples/Image_Alpha_Mask.php).
+     + Alternatively, you can place load calls in a `preload()` method that happens before `setup()`. If a preload method exists, setup waits until everything inside is loaded, see this [image example](http://p5js.org/examples/examples/Image_Alpha_Mask.php).
 + The variable `mousePressed` has been replaced with `mouseIsPressed`.
 + In addition to mouse events, there are touch events, the mapping is like this:
      + `mouseX` ~ `touchX`
@@ -32,8 +32,8 @@ The p5.js language looks very similar to the Processing language with a few chan
 ###Some things about JavaScript
 + Variables do not have a type. Use var instead of float, int, double, long, char, String, Array, etc. You do not need to specify return types or parameter types for functions.
 + A var can be anything -- any of the types mentioned, but also functions.
-+ Arrays are constructed very simply (no need for Processing ArrayList anymore) and have many built-in features, see this [array example](http://p5js.org/learn/examples/Arrays_Array.php) and more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-+ JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/learn/examples/Objects_Objects.php) and more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
++ Arrays are constructed very simply (no need for Processing ArrayList anymore) and have many built-in features, see this [array example](http://p5js.org/examples/examples/Arrays_Array.php) and more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
++ JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/examples/examples/Objects_Objects.php) and more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
 
 ###Conversion examples
 
