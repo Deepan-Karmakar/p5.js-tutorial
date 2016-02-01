@@ -79,7 +79,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * p5.TableRow
 
 #### Data - Output
-* save()
+* ~~save()~~
 
 #### DOM
 * p5.Element
@@ -153,9 +153,9 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~updatePixels()~~
 
 #### Input - Files
-* loadJSON()
+* ~~loadJSON()~~
 * ~~loadStrings()~~
-* loadTable()
+* ~~loadTable()~~
 * loadXML()
 
 #### Input - Keyboard
@@ -261,7 +261,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~tan()~~
 * ~~degrees()~~
 * ~~radians()~~
-* angleMode()
+* ~~angleMode()~~
 
 #### Math - Random
 * ~~randomSeed()~~
@@ -269,7 +269,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~randomGaussian()~~
 
 #### Output - Text Area
-* print()
+* ~~print()~~
 
 #### Rendering
 * ~~createCanvas()~~
