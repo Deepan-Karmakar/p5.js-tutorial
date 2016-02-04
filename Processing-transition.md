@@ -55,11 +55,11 @@ void draw() {
 ```javascript
 function setup() {
   // setup stuff
-};
+}
 
 function draw() {
   // draw stuff
-};
+}
 ```
 
 ####Converting a Processing sketch to p5.js
