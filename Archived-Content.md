@@ -193,7 +193,7 @@ See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#r
 
 ## JS desktop app platforms / libs
 + desktop JS development [http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript](http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript)
-+ [appjs](http://appjs.org/) - HTML5 / CSS3, nodejs as backbone
++ [appjs](http://appjs.com/) - HTML5 / CSS3, nodejs as backbone
 + [Awesomium](http://awesomium.com/
 + [QT Webkit](http://qt.digia.com/Product/Library/Qt-WebKit/)
 + [Berkelium](http://berkelium.org/)
