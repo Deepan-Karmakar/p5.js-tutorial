@@ -119,7 +119,7 @@ Your library may not extend p5 or p5 classes at all, but instead just offer extr
 
 * **Similarly, don't overwrite p5 class functions or properties.** If you are extending p5.Image, p5.Vector, p5.Element, etc, follow the same protocol as above.
 
-* p5.js has two modes, global mode and instance mode. In global mode, all p5 properties and methods are bound to the window object, allowing users to call methods like `background()` without having to prefix it with anything. However, this means you need to be careful not to overwrite native JavaScript functionality. You can test existing JS names by typing them into console or with a quick google search.
+* **p5.js has two modes, global mode and instance mode.** In global mode, all p5 properties and methods are bound to the window object, allowing users to call methods like `background()` without having to prefix it with anything. However, this means you need to be careful not to overwrite native JavaScript functionality. You can test existing JS names by typing them into console or with a quick google search.
 
 * **Classes are typically capitalized, and methods and properties begin with lowercase.** Classes in p5 are prefixed with p5. We would like to keep this namespace for p5 core classes only, so when you create your own, **do not include the p5. prefix for class names**. You are welcome to create your own prefix, or just give them non-prefixed names.
 
