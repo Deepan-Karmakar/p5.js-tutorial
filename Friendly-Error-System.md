@@ -21,7 +21,7 @@ Let's use this space to game plan the work around friendly errors.
 
 ## Fellowship Workplan 
 
-In order to immerse ourselves in the problem space we will conduct a research phase of work. We will time black about 4 weeks to the phase and then re-evaluate if this is reasonable. In this phase we will:
+In order to immerse ourselves in the problem space we will conduct a research phase of work. We will time black about 4 weeks to the phase and then re-evaluate if this is reasonable. The goal of this research is to create a list of common errors. In this phase we will:
 
 * Audit existing materials
   * on P5 repo
