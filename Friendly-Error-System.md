@@ -21,3 +21,14 @@ Let's use this space to game plan the work around friendly errors.
 
 ## Fellowship Workplan 
 
+In order to immerse ourselves in the problem space we will conduct a research phase of work. In this phase we will:
+
+* Audit existing materials
+  * on P5 repo
+  * forums
+  * ICM 2015 homework
+* Plan and run a user test 
+* Interview and/or send questionnaire to educators
+* Write documentation with a contributor - first approach
+
+
