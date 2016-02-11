@@ -18,3 +18,6 @@ Let's use this space to game plan the work around friendly errors.
 * [#1247 - Add more friendly error help for global APIs used at top-level code](https://github.com/processing/p5.js/issues/1247)
 * [Using custom YUIDoc tags to specify required browser features for p5 functionality](https://github.com/processing/p5.js/pull/1144#issuecomment-160419254)
 * [#583](https://github.com/processing/p5.js/issues/583) involves using a TypeScript Definition File, which could assist with the friendly error system.
+
+## Fellowship Workplan 
+
