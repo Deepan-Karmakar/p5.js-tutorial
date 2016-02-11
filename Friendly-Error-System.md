@@ -11,3 +11,10 @@ Let's use this space to game plan the work around friendly errors.
 * [Processing Forum p5.js programming questions](https://forum.processing.org/two/categories/p5-js-programming-questions) - Users frequently post about their difficulties learning/using p5.js here.
 * [ICM 2015 homework documentation wiki](https://github.com/ITPNYU/ICM-2015/wiki#homework-documentation) - Each teacher had their own page where users could post their questions each class. In particular, [Homework-Dano-Wednesday](https://github.com/ITPNYU/ICM-2015/wiki/Homework-Dano-Wednesday) has lots of great beginner questions.
 * [Issue #903 - `PI` is not defined before `setup()`](https://github.com/processing/p5.js/issues/903) - This kind of issue is currently being addressed with [#1130](https://github.com/processing/p5.js/pull/1130).
+
+## Ideas
+
+* [Anonymous usage reporting](https://github.com/processing/p5.js/pull/1130#issuecomment-159911009) - I think the fancy word for this may be "telemetry" but I'm not sure.
+* [#1247 - Add more friendly error help for global APIs used at top-level code](https://github.com/processing/p5.js/issues/1247)
+* [Using custom YUIDoc tags to specify required browser features for p5 functionality](https://github.com/processing/p5.js/pull/1144#issuecomment-160419254)
+* [#583](https://github.com/processing/p5.js/issues/583) involves using a TypeScript Definition File, which could assist with the friendly error system.
