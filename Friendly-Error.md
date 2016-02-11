@@ -1,1 +1,0 @@
-Let's use this space to game plan the work around friendly errors. 
