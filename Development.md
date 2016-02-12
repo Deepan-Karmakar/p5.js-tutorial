@@ -105,3 +105,7 @@ Sometimes it is useful to run tests in browser especially when trying to debug t
 * https://github.com/processing/p5.js-sound - contains the source code for the p5.sound.js library, maintained by Jason Sigal.
 * https://github.com/processing/p5.js-editor - contains the source code for the p5 editor, maintained by Sam Lavigne.
 * https://github.com/scottgarner/p5.js-video - contains the code for Hello p5.js!, maintained by Scott Garner.
+
+###Alternative Setup - Docker
+
+An alternative to setting up node, grunt, php, apache, and the p5.js & p5.js-website codebases is to use [toolness/p5.js-docker](https://github.com/toolness/p5.js-docker). While this does require the installation of a tool called Docker, it potentially makes viewing and editing the p5 website with the latest documentation and libraries a lot easier.
