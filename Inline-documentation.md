@@ -181,4 +181,4 @@ Running `grunt yui:dev` will generate docs for local testing that link to the lo
 
 Running `grunt yui` will generate docs ready for the website that link to the version of the p5.js library on the website already with relative links.
 
-Periodically (ideally with each new release), the docs/reference folder needs to be manually copied over to p5js.org/reference, and submitted via PR.
+Periodically (ideally with each new release), the docs/reference folder needs to be manually copied over to p5js.org/reference, and submitted via PR. If you'd like to try out a setup that does this for you automatically, making viewing the p5 website with the latest docs and libraries a lot easier, see [toolness/p5.js-docker](https://github.com/toolness/p5.js-docker).
