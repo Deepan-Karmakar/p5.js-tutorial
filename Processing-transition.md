@@ -98,8 +98,8 @@ function draw() {                         // **change** void draw() to function 
  * Adapted by Evelyn Eastmond
  */
 
-var x = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];  // **change** float[] x = new float[20] to array of 20 0's
-var y = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];  // **change** float[] y = new float[20] to array of 20 0's
+var x = new Array(20);  // **change** float[] x = new float[20] to new Array(20)
+var y = new Array(20);  // **change** float[] y = new float[20] to new Array(20)
 var segLength = 18;                                 // **change** float to var
 
 function setup() {                          // **change** void setup() to function setup()
