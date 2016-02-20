@@ -93,18 +93,18 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * mouseMoved()
 * mouseOver()
 * mouseOut()
-* addClass()
+* ~~addClass()~~
 * removeClass()
-* child()
-* html()
-* position()
-* style()
-* attribute()
+* ~~child()~~
+* ~~html()~~
+* ~~position()~~
+* ~~style()~~
+* ~~attribute()~~
 * value()
 * show()
 * hide()
 * size()
-* remove()
+* ~~remove()~~
 
 #### Environment
 * ~~frameCount~~
