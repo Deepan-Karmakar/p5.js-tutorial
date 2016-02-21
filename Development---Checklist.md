@@ -124,16 +124,16 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 #### Image
 * ~~createImage()~~
 * p5.Image
-    * loadPixels()
-    * updatePixels()
-    * get()
+    * ~~loadPixels()~~
+    * ~~updatePixels()~~
+    * ~~get()~~
     * ~~set()~~
-    * resize()
-    * copy()
-    * mask()
-    * filter()
+    * ~~resize()~~
+    * ~~copy()~~
+    * ~~mask()~~
+    * ~~filter()~~
     * blend()
-    * save()
+    * ~~save()~~
 
 #### Image - Loading & Displaying
 * ~~loadImage()~~
