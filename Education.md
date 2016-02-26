@@ -30,6 +30,7 @@ Note that examples included may be using older versions of p5.js and might not b
 - [Daniel Shiffman Learning p5.js Vimeo channel](https://vimeo.com/channels/learningp5js/) - no ads
 - [Daniel Shiffman Learning p5.js YouTube playlist](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) - has ads
 - [Kadenze course](https://www.kadenze.com/courses/introduction-to-programming-for-the-visual-arts-with-p5-js/info) -- coming soon!
+- [Envato Tuts+ Course: How to Program Interactive Art With p5.js](https://code.tutsplus.com/courses/how-to-program-interactive-art-with-p5js)
 
 ### Books 
 * [Introduction to Programming with JavaScript, P5, and Processing ](http://www.amazon.com/Introduction-Programming-JavaScript-Processing-Cooks-ebook/dp/B010R0VMQS), Robert Cook - [interactive examples (jsfiddle)](http://jsfiddle.net/user/bobcook/fiddles/)
