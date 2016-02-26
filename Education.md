@@ -30,7 +30,7 @@ Note that examples included may be using older versions of p5.js and might not b
 - [Daniel Shiffman Learning p5.js Vimeo channel](https://vimeo.com/channels/learningp5js/) - no ads
 - [Daniel Shiffman Learning p5.js YouTube playlist](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA) - has ads
 - [Kadenze course](https://www.kadenze.com/courses/introduction-to-programming-for-the-visual-arts-with-p5-js/info) -- coming soon!
-- [Envato Tuts+ Course: How to Program Interactive Art With p5.js](https://code.tutsplus.com/courses/how-to-program-interactive-art-with-p5js) -- register to watch free
+- [Envato Tuts+ Course: How to Program Interactive Art With p5.js](https://code.tutsplus.com/courses/how-to-program-interactive-art-with-p5js) - register to watch free
 
 ### Books 
 * [Introduction to Programming with JavaScript, P5, and Processing ](http://www.amazon.com/Introduction-Programming-JavaScript-Processing-Cooks-ebook/dp/B010R0VMQS), Robert Cook - [interactive examples (jsfiddle)](http://jsfiddle.net/user/bobcook/fiddles/)
@@ -65,7 +65,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Mozilla Intro to HTML](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction)
 * [Codecademy CSS glossary](https://www.codecademy.com/glossary/css)
 * [Mozilla Getting Started with CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started)
-* [How to Become a Web Developer: Envato Tuts+](https://code.tutsplus.com/courses/how-to-become-a-web-developer) -- register to watch free
+* [How to Become a Web Developer: Envato Tuts+](https://code.tutsplus.com/courses/how-to-become-a-web-developer) - register to watch free
 
 ### General Programming
 * lynda.com
