@@ -65,6 +65,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Mozilla Intro to HTML](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction)
 * [Codecademy CSS glossary](https://www.codecademy.com/glossary/css)
 * [Mozilla Getting Started with CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started)
+* [How to Become a Web Developer: Envato Tuts+](https://code.tutsplus.com/courses/how-to-become-a-web-developer)
 
 ### General Programming
 * lynda.com
