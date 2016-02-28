@@ -87,12 +87,12 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * id()
 * class()
 * ~~mousePressed()~~
-* mouseWheel()
-* mouseReleased()
-* mouseClicked()
-* mouseMoved()
-* mouseOver()
-* mouseOut()
+* ~~mouseWheel()~~
+* ~~mouseReleased()~~
+* ~~mouseClicked()~~
+* ~~mouseMoved()~~
+* ~~mouseOver()~~
+* ~~mouseOut()~~
 * ~~addClass()~~
 * removeClass()
 * ~~child()~~
@@ -100,10 +100,10 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~position()~~
 * ~~style()~~
 * ~~attribute()~~
-* value()
-* show()
-* hide()
-* size()
+* ~~value()~~
+* ~~show()~~
+* ~~hide()~~
+* ~~size()~~
 * ~~remove()~~
 
 #### Environment
