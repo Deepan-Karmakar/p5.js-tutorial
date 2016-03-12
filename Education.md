@@ -77,7 +77,7 @@ Note that examples included may be using older versions of p5.js and might not b
 ### Tools
 * [Github student developer pack](https://education.github.com/pack) - includes Digital Ocean $100 credit and more!
 * [Basic unix commands](http://www.webmonkey.com/2010/02/learn_enough_unix_for_your_resume/#Basic_Commands)
-* Checking code: [JSLint](http://www.jslint.com/) / [JSHint](http://www.jshint.com)
+* Checking code: [JSLint](http://www.jslint.com/) / [JSHint](http://www.jshint.com) / [ESLint](http://eslint.org/) / [StandardJS](http://standardjs.com/)
 * Browser debugging: Chrome Developer Tools ([tutorial](https://developer.chrome.com/extensions/tut_debugging)) / Firebug ([tutorial](http://www.developerfusion.com/article/139949/debugging-javascript-with-firebug/))
 * Mobile debugging [jsconsole.com](http://jsconsole.com)
 * Sharing code snippets (useful for asking questions via email): [gist.github.com](http://gist.github.com)
