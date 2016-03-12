@@ -84,4 +84,4 @@ Note that examples included may be using older versions of p5.js and might not b
 
 ### Debugging
 * [A Brief Intro to Debugging](http://vimeo.com/channels/debugging) Video Series
-* [p5.js debugging tutorial]()
+* [p5.js debugging tutorial](http://p5js.org/tutorials/debugging/)
