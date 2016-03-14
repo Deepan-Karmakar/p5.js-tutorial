@@ -102,6 +102,7 @@ Method names you can register include the following list. Note that you may need
   * **pre** — Called at the beginning of `draw()`. It can affect drawing.
   * **post** — Called at the end of `draw()`.
   * **remove** — Called when `remove()` is called.
+  * **init** — Called when the sketch is first initialized, just before the sketch initialization function (the one that was passed into the `p5` constructor) is executed. This is also called before any global mode setup, so your library can add anything to the sketch and it will automatically be copied to `window` if global mode is active.
 
 More to come shortly, lining up roughly with this list:
 https://GitHub.com/processing/processing/wiki/Library-Basics#library-methods
