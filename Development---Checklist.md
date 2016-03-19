@@ -17,7 +17,15 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * Implement PShape [#37](https://github.com/processing/p5.js/issues/37)
 * Implement Curves [#25](https://github.com/processing/p5.js/issues/25)
 
+### Webgl
+
+* Implement bezierVertex() and curveVertex() methods
+* Implement text()
+* line drawing with variable strokeWeight
+* implement wireframe primitives
+
 *** 
+
 
 ### Reference Sketches
 
