@@ -22,7 +22,7 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * Implement bezierVertex() and curveVertex() methods
 * Implement text() [#1177](https://github.com/processing/p5.js/issues/1177)
 * line drawing with variable strokeWeight
-* implement wireframe primitives
+* implement wireframe primitives (noFill() / stroke()) [#1093](https://github.com/processing/p5.js/issues/1093)
 
 *** 
 
