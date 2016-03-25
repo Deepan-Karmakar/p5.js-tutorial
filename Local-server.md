@@ -46,7 +46,7 @@ sudo apachectl start
 ```
 sudo chown root:<your username> -R /Library/WebServer/Documents
 
-sudo chmod 755 -R /Library/WebServer/Documents
+sudo chmod -R 755 /Library/WebServer/Documents
 ```
 3. Place your project somewhere inside /Library/WebServer/Documents/.
 4. View it at http://localhost.
