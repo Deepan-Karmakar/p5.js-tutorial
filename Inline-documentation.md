@@ -74,6 +74,30 @@ The `@return` is identical to `@params`, but without the name. It should be the 
 @return {type} Description of the data returned.
 ```
 
+###Additional signatures
+
+If a method has multiple possible parameter options, you can specify each individually. For example, see the examples for [background](http://p5js.org/reference/#p5/background) under "syntax". To do this, choose one version to list as the first signature using the guidelines above. At the end of the documentation block, you can add additional signatures, each in it's own block, following this form:
+
+```
+/**
+ * @method background
+ * @param {String} colorstring color string, possible formats include: integer
+ *                         rgb() or rgba(), percentage rgb() or rgba(),
+ *                         3-digit hex, 6-digit hex
+ * @param {Number} [a]
+ */
+
+/**
+ * @method background
+ * @param {Number} gray   specifies a value between white and black
+ * @param {Number} [a]
+ */
+```
+
+Notes:
+* If a parameter has been defined previously, like `a` in this case, you do not need to fill in the definition again. 
+* It is not necessary to create a separate signature if the only difference between two signatures is the additional of an optional parameter.
+
 ###Specify other tags
 
 Use `@final` if a property or variable is a constant:
