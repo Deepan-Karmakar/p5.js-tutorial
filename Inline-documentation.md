@@ -76,7 +76,7 @@ The `@return` is identical to `@params`, but without the name. It should be the 
 
 ###Additional signatures
 
-If a method has multiple possible parameter options, you can specify each individually. For example, see the examples for [background](http://p5js.org/reference/#p5/background) under "syntax". To do this, choose one version to list as the first signature using the guidelines above. At the end of the documentation block, you can add additional signatures, each in it's own block, following this form:
+If a method has multiple possible parameter options, you can specify each individually. For example, see the examples for [background](http://p5js.org/reference/#p5/background) under "syntax". To do this, choose one version to list as the first signature using the guidelines above. At the end of the documentation block, you can add additional signatures, each in it's own block, following the example below.
 
 ```
 /**
@@ -97,6 +97,7 @@ If a method has multiple possible parameter options, you can specify each indivi
 Notes:
 * If a parameter has been defined previously, like `a` in this case, you do not need to fill in the definition again. 
 * It is not necessary to create a separate signature if the only difference between two signatures is the additional of an optional parameter.
+* You can see two examples of this inline in the source code for [background](https://github.com/processing/p5.js/blob/f38f91308fdacc2f1982e0430b620778fff30a5a/src/color/setting.js#L106) and [color](https://github.com/processing/p5.js/blob/f38f91308fdacc2f1982e0430b620778fff30a5a/src/color/creating_reading.js#L241).
 
 ###Specify other tags
 
