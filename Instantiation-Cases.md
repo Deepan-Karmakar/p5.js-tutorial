@@ -7,13 +7,6 @@ setup(): runs once, second
 draw(): loops, indefinitely
 createCanvas(w, h): creates a canvas element at the 0,0 with input size
 
-// CASE 0
-// No setup() and draw().
-// createCanvas() gets called automatically behind the scenes and creates a default
-// canvas at 0,0 with a default size and background color.
-fill(255, 0, 0);
-ellipse(10, 10, 50, 50);
-
 // CASE 1
 // Only setup().
 // setup() runs once and createCanvas() gets called automatically with defaults.
