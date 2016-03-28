@@ -242,7 +242,7 @@ function drawWeather(weather) {
 
 ###loadXML
 
-loadXML loads an XML file and returns an XML object. It takes two arguments, the path to the file, and the callback function. It's a little messier to work with XML objects, but you can learn about how to do that [here](http://www.w3schools.com/dom/dom_nodes_get.asp).
+loadXML loads an XML file and returns an XML object. It takes two arguments, the path to the file, and the callback function. It's a little messier to work with XML objects, but you can learn about how to do that [here](http://www.w3schools.com/xml/dom_intro.asp).
 
 ###preload
 
