@@ -70,7 +70,7 @@ Alternatively, you may want to position your canvas in the midst of other inform
 <script>
 function setup() {
   var canvas = createCanvas(100, 100);
-  canvas.parent(document.getElementById('holder'));
+  canvas.parent('holder');
   background('pink');
 }
 </script>
