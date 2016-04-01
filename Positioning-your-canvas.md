@@ -1,3 +1,11 @@
+<!--
+  Hello editor!
+
+  For more background on this tutorial, or to leave comments on it, see:
+
+  https://github.com/processing/p5.js/issues/1333
+-->
+
 By default, your p5 sketch's canvas is added to the end of the web page it's in, and no styling is applied to it.
 
 However, it's possible to position and style it any way you want with a bit of [HTML and CSS](Intro-to-HTML-and-CSS).
