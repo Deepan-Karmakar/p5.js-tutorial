@@ -65,7 +65,11 @@ html, body {
 body {
   margin: 0;
   display: flex;
+
+  /* This centers our sketch horizontally. */
   justify-content: center;
+
+  /* This centers our sketch vertically. */
   align-items: center;
 }
 ```
@@ -97,9 +101,8 @@ Alternatively, you may want to position your canvas in the midst of other inform
 // sketch.js
 
 function setup() {
-  // createCanvas() returns a p5.Element representing the canvas.
   var canvas = createCanvas(100, 100);
-
+ 
   // Move the canvas so it's inside our <div id="sketch-holder">.
   canvas.parent('sketch-holder');
 
