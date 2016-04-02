@@ -16,7 +16,7 @@ Let's start with a simple sketch:
 <html>
   <head>
     <title>My Sketch</title>
-    <script src="libraries/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js"></script>
     <script src="sketch.js"></script>
   </head>
   <body>
@@ -47,7 +47,7 @@ We can add a stylesheet that uses [flexible box layout](https://css-tricks.com/s
     <!-- Link to our stylesheet! -->
     <link rel="stylesheet" href="style.css">
 
-    <script src="libraries/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js"></script>
     <script src="sketch.js"></script>
   </head>
   <body>
@@ -128,7 +128,7 @@ Alternatively, you may want to position your canvas in the midst of other inform
 <html>
   <head>
     <title>My Sketch</title>
-    <script src="libraries/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js"></script>
     <script src="sketch.js"></script>
   </head>
   <body>
