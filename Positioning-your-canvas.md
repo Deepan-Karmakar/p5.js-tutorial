@@ -35,7 +35,7 @@ function setup() {
 
 This will display a 100x100 pink square at the top-left of your browser window.
 
-## Centering the sketch on the page
+## Centering the sketch on the page with CSS
 
 We can add a stylesheet that uses [flexible box layout](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) to vertically and horizontally center our sketch on the page:
 
@@ -75,6 +75,48 @@ body {
 ```
 
 Note that at the time of this writing, flexible box layout (or "flexbox", as it's often called) is a relatively new feature in CSS. As such, the above CSS will work on the latest browsers, but older browsers may not position it accurately. To fully support older browsers, you may want to use [vendor prefixing](http://shouldiprefix.com/#flexbox) in your CSS.
+
+## Centering the sketch on the page with JS
+
+One advantage of the CSS approach is that it doesn't require modifying your sketch at all. However, it also uses CSS, which may be unfamiliar to you, and the fact that supporting older browsers requires vendor prefixing makes the solution a bit less elegant.
+
+With the web, though, there's almost always more than one way to get something done, and that's the case here as well. We can actually reposition our canvas using pure JS and a bit of math:
+
+```js
+function setup() {
+  var cnv = createCanvas(100, 100);
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+  background(255, 0, 200);
+}
+```
+
+However, you might notice that, unlike the CSS-based solution, resizing your browser window (or changing the orientation of your mobile device) doesn't re-center your sketch. We can solve this by reusing the canvas-centering logic in a [`windowResized()`](http://p5js.org/reference/#/p5/windowResized) function:
+
+```js
+// sketch.js
+
+var cnv;
+
+function centerCanvas() {
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+}
+
+function setup() {
+  cnv = createCanvas(100, 100);
+  centerCanvas();
+  background(255, 0, 200);
+}
+
+function windowResized() {
+  centerCanvas();
+}
+```
+
+As you can see, there's trade-offs here: what was once a very simple sketch is now a bit more complex. So feel free to try both the CSS and JS solutions and use whichever you're most comfortable with.
 
 ## Relocating the canvas
 
