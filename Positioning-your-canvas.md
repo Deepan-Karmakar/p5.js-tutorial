@@ -78,9 +78,9 @@ Note that at the time of this writing, flexible box layout (or "flexbox", as it'
 
 ## Centering the sketch on the page with JS
 
-One advantage of the CSS approach is that it doesn't require modifying your sketch at all. However, it also uses CSS, which may be unfamiliar to you, and the fact that supporting older browsers requires vendor prefixing makes the solution a bit less elegant.
+One advantage of the CSS approach is that it doesn't require modifying your sketch at all. However, the fact that supporting older browsers requires vendor prefixing makes the solution a bit less elegant. It's also not straightforward to tweak: positioning your canvas 12 pixels from the bottom-right of the page, for example, would require learning more about CSS, which can be daunting for newcomers.
 
-With the web, though, there's almost always more than one way to get something done, and that's the case here as well. We can actually reposition our canvas using pure JS and a bit of math:
+With the web, though, there's almost always more than one way to get something done, and that's the case here as well. We can actually reposition our canvas using pure JavaScript and a bit of math:
 
 ```js
 function setup() {
