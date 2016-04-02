@@ -83,6 +83,8 @@ One advantage of the CSS approach is that it doesn't require modifying your sket
 With the web, though, there's almost always more than one way to get something done, and that's the case here as well. We can actually reposition our canvas using pure JavaScript and a bit of math:
 
 ```js
+// sketch.js
+
 function setup() {
   var cnv = createCanvas(100, 100);
   var x = (windowWidth - width) / 2;
