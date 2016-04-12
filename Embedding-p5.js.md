@@ -4,12 +4,6 @@ You can always just host the HTML and JS files of your p5.js project online and 
 
 The simplest solution is to use iframes. An iframe is basically a window into a nested page within a page, sandboxed from the rest of your page. For classes, I have students host their work and turn in a link to running sketches. Then I can embed their sketches or examples I create in iframes on a wordpress blog or class site.
 
-For example, here is a sketch running:<br>
-http://p5js.org/test/embed.html
-
-And here it is embedded in wordpress using the code below:<br>
-http://lauren-mccarthy.com/inmotion/2014/08/test-post-1/
-
 Embed code for the iframe:
 ```html
 <iframe src="http://p5js.org/test/embed.html" width="600px" height="400px"></iframe>
@@ -22,81 +16,12 @@ and styling for the iframe (this could directly into a wordpress post or in a st
 
 Only trick here is that you need to manually set the size of the iframe, so it works best if things are a standard size.
 
-##Using p5.js WordPress plugin
-
-[WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts. See the readme included with the plugin for instructions.
-
-
 ##Using render.js
 
-You can also use this [render.js](https://github.com/processing/p5.js-website/blob/master/js/render.js) script, see this [wordpress post example](http://lauren-mccarthy.com/inmotion/2014/08/test-post-2/). This is used for the editable examples in the p5.js reference, see this [reference example](http://p5js.org/reference/#p5/colorMode). 
+@toolness has created an awesome p5.js widget that can be used to embed code snippets and examples on a page. It is a work in progress. You can see documentation of how to use it here:
+https://toolness.github.io/p5.js-widget/
 
-In the head of your page you will need to link in a few files in addition to render.js (all files can be found [here](https://github.com/processing/p5.js-website/tree/master/js)). _If you are using a system like wordpress, you will need to put these links directly into the `<head>` code, not in the body of your post._
-
-```html
-<!-- p5.js library -->
-<script type="text/javascript" src="path/to/p5.min.js"></script>
-<!-- optional addons for sound/dom examples -->
-<script type="text/javascript" src="path/to/p5.sound.js"></script>
-<script type="text/javascript" src="path/to/p5.dom.js"></script>
-<!-- scripts for rendering -->
-<script type="text/javascript" src="path/to/jquery.min.js"></script>
-<script type="text/javascript" src="path/to/render.js"></script>
-```
-
-In the body of your page or post you can embed a live sketch like this:
-```html
-<div class="example">
-<pre>
-<code class="language-javascript">
-function setup() {
-  createCanvas(600, 400);
-}
- 
-function draw() {
-  background(0);
-}
-</code>
-</pre>
-</div>
-
-<script>renderCode()</script>
-```
-
-The key parts are the layout of the HTML (div.example > pre > code), and the renderCode() call at the end. 
-
-Note that this script also will support sketches with no setup or draw, though the p5.js library on it's own will not. This hack is just for the purposes of showing simple snippets, like in the reference.
-```html
-<div class="example">
-<pre>
-<code class="language-javascript">
-background(100);
-</code>
-</pre>
-</div>
-
-<script>renderCode()</script>
-```
-
-####Customizing
-
-If you include [prism](http://prismjs.com/) you can add code highlighting, too. You will need to link to both [prism.js](https://github.com/processing/p5.js-website/blob/master/js/vendor/prism.js) and [prism.css](https://github.com/processing/p5.js-website/blob/master/css/prism.css) in the header of your page. The CSS file can be modified to highlight and color as you wish.
-
-```html
-<!-- code highlighting -->
-<script type="text/javascript" src="path/to/prism.js"></script> 
-<link rel="stylesheet" href="path/to/prism.css" type="text/css"/>
-```
-
-If you want to hide the code and just show the sketch, you could add a line like this:
-```html
-<style> .example{ display: none; } </style>
-```
-
-If you want to show the code but hide just the buttons to edit the code displayed, you could add a line like this:
-```html
-<style> .edit_space{ display: none; } </style>
-```
+![](http://i.imgur.com/4ecSjpM.png)
 
 ##Other options
 
