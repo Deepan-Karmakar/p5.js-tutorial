@@ -16,7 +16,7 @@ and styling for the iframe (this could directly into a wordpress post or in a st
 
 Only trick here is that you need to manually set the size of the iframe, so it works best if things are a standard size.
 
-##Using render.js
+##Using p5.js-widget
 
 @toolness has created an awesome p5.js widget that can be used to embed code snippets and examples on a page. It is a work in progress. You can see documentation of how to use it here:
 https://toolness.github.io/p5.js-widget/
