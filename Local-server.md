@@ -2,15 +2,22 @@ Some functionality (loading external files, for example) works as expected when 
 
 ##Python SimpleHTTPServer
 
-If you need a quick web server running and you don't want to mess with setting up apache or something similar, then Python can help. Python comes with a simple builtin HTTP server. With the help of this little HTTP server you can turn any directory in your system into your web server directory. The only thing you need to have installed is Python.
+If you need a quick web server running and you don't want to mess with setting up apache or something similar, then Python can help. Python comes with a simple builtin HTTP server. With the help of this little HTTP server you can turn any directory in your system into your web server directory. The only thing you need to have installed is [Python](https://www.python.org/downloads/) (Python is already installed if you are using Mac OS X).
 
 [Python SimpleHTTPServer tutorial](https://github.com/lmccart/itp-creative-js/wiki/SimpleHTTPServer)
 
-Unfortunately the python simple server is very slow. Loading a local page will often stall and it can't stream video and has trouble with even medium size files like an 8meg mp3 for example
+Type in Terminal:
+```
+python -m SimpleHTTPServer
+```
+
+Then visit `http://localhost:8000` on your browser.
+
+Unfortunately the python simple server is very slow. Loading a local page will often stall and it can't stream video and has trouble with even medium size files like an 8MB mp3 for example. However, it should suffice for loading in most text files, fonts and most images.
 
 ##Node http-server
 
-An alternative is node.js. Just 3 simple steps
+An alternative is node.js http-server. It is much faster than python simple server while requiring a little bit of setup. Just 3 simple steps:
 
 1.  [Download and Install node.js](http://nodejs.org/download)
 2.  Open a terminal or command prompt 
@@ -22,9 +29,9 @@ An alternative is node.js. Just 3 simple steps
 
         npm install -g http-server
  
-Done! 
+Done!
 
-From then on just cd to the folder that has the files you want to serve and type 
+From then on just `cd` to the folder that has the files you want to serve and type 
 
     http-server
 
@@ -36,21 +43,36 @@ Python SimpleHTTPServer is great to get started, but at some point you might wan
 
 ###Mac OS X
 
-Snow Leopard has a built in web server, all you have to do is enable it and place the files in the right place.
+Mac OS X since 10.5 Leopard ships with Apache web server installed, all you have to do is enable it and place the files in the right place.
 
-1. Turn on the web server. In Snow Leopard, go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box. In Lion, Mountain Lion, or Maverick, open Terminal and type:
+####Mac OS X 10.7 and above
+
+1. Open Terminal and type:
 ```
 sudo apachectl start
 ```
-2. Enable permissions, type:
+2. Verify it is working by going to `http://localhost` on your browser. You should see "It works!" on the browser.
+3. Enable permissions for the files on the server by typing the following two commands into Terminal:
 ```
 sudo chown root:<your username> -R /Library/WebServer/Documents
 
 sudo chmod -R 755 /Library/WebServer/Documents
 ```
-3. Place your project somewhere inside /Library/WebServer/Documents/.
-4. View it at http://localhost.
+4. Place your project somewhere inside /Library/WebServer/Documents/.
+5. View it at http://localhost/(the project folder in /Library/WebServer/Documents).
+```
+http://localhost/my-p5-sketch
+```
 
+####Mac OS X 10.5 and 10.6
+
+1. Turn on the web server. Go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
+2. Verify it is working by going to `http://localhost/~<your username>` on your browser. You should see a default webpage with a title of "Your Website".
+3. Place your project somewhere inside `<your username folder>/Sites`.
+4. View it at http://localhost/~(your username)/(the project folder in `<your username folder>/Sites`).
+```
+http://localhost/~macusername/my-p5-sketch
+```
 
 ###Windows
 
