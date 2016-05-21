@@ -28,7 +28,7 @@ You will see callbacks used in p5.js and jQuery to tell the program what to do a
 
 
 ##JSON
-[JSON](http://json.org/) (JavaScript Object Notation) is a standard way to provide machine readable data to and from web services. Despite the fact that JavaScript is part of it's title, it is generally useful in all programming languages.
+[JSON](http://json.org/) (JavaScript Object Notation) is a standard way to provide machine readable data to and from web services. Despite the fact that JavaScript is part of its title, it's generally useful in all programming languages.
 
 A JSON object is an unordered set of name/value pairs. An object begins with `{` (left brace) and ends with `}` (right brace). Each name is followed by `:` (colon) and the name/value pairs are separated by `,` (commas). The name is always a string, the value can be a string, number, boolean, array, or a nested object.
    
