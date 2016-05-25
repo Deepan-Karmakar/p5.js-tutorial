@@ -94,18 +94,19 @@ At the time of this writing, only one camera is supported per canvas.  However, 
 
 # 3D Primitives Shapes
 
-There are 6 different 3D geometry primitives in p5.js.  
+There are 7 different 3D geometry primitives in p5.js.  
 
 ```javascript
 box()
 plane()
 sphere()
+ellipsoid()
 cone()
 cylinder()
 torus() 
 ```
 
-Each of these primitives take size parameters.  For example:
+Each of these primitives take only size parameters, not position.  For example:
 
 ```javascript
 box(10,20,30); //draws a box of width: 10, height: 20, and depth: 30
