@@ -196,7 +196,7 @@ var pg;
     background(0);
     pg.background(255);
     pg.text('hello world!');
-    //pass image as texture
+    //pass graphics as texture
     texture(pg);
     plane(200);
  }
