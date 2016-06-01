@@ -165,7 +165,7 @@ endShape();
 ```
 
 # Textures
-At the time of this writing, p5.js supports both video and image textures in WEBGL mode.  A texture is like a “skin” that wraps around a 3D geometry.  For example, if you want a static image to “texture” a box, you would write something like this:
+At the time of this writing, p5.js supports video, image, and offscreen 2d renderers as textures in WEBGL mode.  A texture is like a “skin” that wraps around a 3D geometry.  For example, if you want a static image to “texture” a box, you would write something like this:
 
 ```javascript
 var img;
@@ -182,6 +182,25 @@ function draw(){
 }
 ```
 Loading images for texturing inside the preload() method is generally a best practice, but it is especially helpful when working with video since video files are generally larger than static images and can take therefore extra time to load.
+
+#Text
+To work with text in webgl mode, you'll need to render your text to an offscreen renderer first, and then use it as a texture like this:
+
+```javascript
+var pg;
+  function setup(){
+    createCanvas(100, 100, WEBGL);
+    pg = createGraphics(256,256);
+  }
+  function draw(){
+    background(0);
+    pg.background(255);
+    pg.text('hello world!');
+    //pass image as texture
+    texture(pg);
+    plane(200);
+ }
+```
 
 # Lights and Materials
 The last big inclusion in WEBGL mode is lights.  Lighting is a simple but powerful way to provide depth and realism to p5.js sketches.  At the time of this writing there are 3 types of light functions in p5.js:
