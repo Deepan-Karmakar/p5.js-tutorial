@@ -13,7 +13,7 @@ function setup() {
 
 # 3D coordinate system
 
-If you've been coding in p5.js for a while you probably know the Cartesian coordinate 0,0 (x,y) is located in the top left corner of our drawing canvas.  In WEBGL mode, we introduce a third dimension:  Z.  So how do we handle the z-coordinate?  I'm glad you asked!  The z-dimension is the axis that points away from your screen.  A helpful mnemonic device for remembering which way the axes point in p5.js (WEBGL), is the "left-handed" rule.  Point your left index finger to the right, and your middle finger downward, and your thumb will automatically point toward you.  The direction your fingers are pointing are exactly mapped to the axes.  
+If you've been coding in p5.js for a while you probably know the Cartesian coordinate 0,0 (x,y) is located in the top left corner of our drawing canvas.  In WEBGL mode we introduce a third dimension:  Z.  So how do we handle the z-coordinate?  I'm glad you asked!  The z-dimension is the axis that points away from your screen.  A helpful mnemonic device for remembering which way the axes point in p5.js (WEBGL), is the "left-handed" rule.  Point your left index finger to the right, and your middle finger downward, and your thumb will automatically point toward you.  The direction your fingers are pointing are exactly mapped to the axes. The 0,0,0 (x,y,z) point is located in the middle of the canvas.
 
 Let’s look at a quick example:
 
