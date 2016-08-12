@@ -202,8 +202,8 @@ See the [development page](https://github.com/processing/p5.js/wiki/Development)
 * ~~year()~~
 
 #### Input - Touch
-* touchX
-* touchY
+* ~~touchX~~
+* ~~touchY~~
 * ptouchX
 * ptouchY
 * touches[]
