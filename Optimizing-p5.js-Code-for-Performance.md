@@ -110,6 +110,8 @@ See the [CPU profiler documentation](https://developers.google.com/web/tools/chr
 
 ## p5 Performance Tips
 
+This tutorial was written using a [build](https://github.com/mikewesthad/p5-performance-tips/blob/master/code/p5) of the p5.js master branch on 7/21/16. This might mean that some of the features or optimizations that are mentioned haven't rolled out in a release on the p5.js website yet. If you want to create your own custom build from the master branch, you can follow the instructions [here](https://github.com/processing/p5.js/wiki/Development#setup).
+
 ### Disable the Friendly Error System
 
 When you use the non-minified p5.js file (as opposed to p5.min.js), there is a friendly error system that will warn you when you try to override a p5 method, e.g. if you try to do `random = 5` or `max = 3`. This error checking system can significantly slow down your code (up to ~10x in some cases). See the [friendly error performance test](https://github.com/mikewesthad/p5-performance-tips/blob/master/code/friendly-error-system/).
