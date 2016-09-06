@@ -106,6 +106,10 @@ function setup() {                          // **change** void setup() to functi
   createCanvas(640, 360);                   // **change** size() to createCanvas()
   strokeWeight(9);                          // strokeWeight() is the same
   stroke(255, 100);                         // stroke() is the same
+  for(var i=0; i<x.length; i++) {         // initialize the array
+    x[i]=0;
+    y[i]=0;
+  }
 }
 
 function draw() {                           // **change** void draw() to function draw()
