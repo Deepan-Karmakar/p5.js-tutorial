@@ -25,7 +25,7 @@ By default, all p5.js functions are in the global namespace (i.e. bound to the w
 
 ### Why can't I assign variables using p5 functions and variables before `setup()`?
 
-In global mode, p5 variable and function names are not available outside `setup()`, `draw()`, `mousePressed()`, etc. (Except in the case where they are placed inside functions that are called by one of these methods.) What this means is that when declaring variables before `setup()`, you will need to assign them values inside `setup()` if you wish to use p5 functions. For example:
+Well, technically, you can by using on-demand global mode. But that's a less common use of p5, so we'll explain that later and talk about the more common case first. In regular global mode, p5 variable and function names are not available outside `setup()`, `draw()`, `mousePressed()`, etc. (Except in the case where they are placed inside functions that are called by one of these methods.) What this means is that when declaring variables before `setup()`, you will need to assign them values inside `setup()` if you wish to use p5 functions. For example:
 
 ```javascript
 var n;
@@ -44,6 +44,21 @@ The explanation for this is a little complicated, but it has to do with the way 
 So the issue is that the scripts are loaded and evaluated before p5 is started, when it's not yet aware of the p5 variables. If we try to call them here, they will cause an error. However, when we use p5 function calls inside setup() and draw() this is ok, because the browser doesn't look inside functions when the scripts are first loaded. This is because the setup() and draw() functions are not called in the user code, they are only defined, so the stuff inside of them isn't run or evaluated yet.
 
 It's not until p5 is started up that the setup() function is actually run (p5 calls it for you), and at this point, the p5 functions exist in the global namespace.
+
+We mentioned on-demand global mode earlier. This mode is most useful when you're building a program that uses other libraries and you want to control how p5 is loaded on the page with the others. You can read more about it [here](https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace). But another interesting use of on-demand global mode is the ability to call p5 explicitly and then use p5 functions outside of `setup()`. Here's an example:
+```javascript
+new p5();
+
+var boop = random(100);
+
+function setup() {
+    createCanvas(100, 100);
+}
+
+function draw() {
+    background(255, 0, boop);
+}
+``` 
 
 ### How can I specify the HTML node where I want my canvas?
 
