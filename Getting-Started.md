@@ -1,1 +1,0 @@
-The content of this tutorial has been moved to [p5js.org/get-started/](http://p5js.org/get-started/).
