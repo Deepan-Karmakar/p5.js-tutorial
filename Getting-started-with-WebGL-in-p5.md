@@ -187,7 +187,7 @@ Loading images for texturing inside the preload() method is generally a best pra
 To work with text in webgl mode, you'll need to render your text to an offscreen renderer first, and then use it as a texture like this:
 
 ```javascript
-var pg;
+  var pg;
   function setup(){
     createCanvas(100, 100, WEBGL);
     pg = createGraphics(256,256);
@@ -198,7 +198,7 @@ var pg;
     pg.text('hello world!', 50, 50);
     //pass graphics as texture
     texture(pg);
-    plane(200);
+    plane(100);
  }
 ```
 
