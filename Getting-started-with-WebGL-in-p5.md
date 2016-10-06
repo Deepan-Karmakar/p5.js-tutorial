@@ -195,7 +195,7 @@ var pg;
   function draw(){
     background(0);
     pg.background(255);
-    pg.text('hello world!');
+    pg.text('hello world!', 50, 50);
     //pass graphics as texture
     texture(pg);
     plane(200);
