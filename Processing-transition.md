@@ -32,8 +32,8 @@ The p5.js language looks very similar to the Processing language with a few chan
 ###Some things about JavaScript
 + Variables do not have a type. Use var instead of float, int, double, long, char, String, Array, etc. You do not need to specify return types or parameter types for functions.
 + A var can be anything -- any of the types mentioned, but also functions.
-+ Arrays are constructed very simply (no need for Processing ArrayList anymore) and have many built-in features, see this [array example](http://p5js.org/examples/examples/Arrays_Array.php) and more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-+ JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/examples/examples/Objects_Objects.php) and more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
++ Arrays are constructed very simply (no need for Processing ArrayList anymore) and have many built-in features, see this [array example](http://p5js.org/examples/arrays-array.html) and more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
++ JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/examples/objects-objects.html) and more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
 
 ###Conversion examples
 
