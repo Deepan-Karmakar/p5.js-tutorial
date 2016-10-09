@@ -6,7 +6,7 @@ The p5.js language looks very similar to the Processing language with a few chan
 + `frameRate(num)` sets the frame rate, but the `frameRate` variable has been removed. To get the current frame rate, call `frameRate()` with no arguments.
 + JavaScript doesn't always load things synchronously, there are a couple options to deal with this:
      + All load methods take an optional callback argument. That is, a function that gets called after the file has been loaded. 
-     + Alternatively, you can place load calls in a `preload()` method that happens before `setup()`. If a preload method exists, setup waits until everything inside is loaded, see this [image example](http://p5js.org/examples/examples/Image_Alpha_Mask.php).
+     + Alternatively, you can place load calls in a `preload()` method that happens before `setup()`. If a preload method exists, setup waits until everything inside is loaded, see this [image example](http://p5js.org/examples/image-alpha-mask.html).
 + The variable `mousePressed` has been replaced with `mouseIsPressed`.
 + In addition to mouse events, there are touch events, the mapping is like this:
      + `mouseX` ~ `touchX`
