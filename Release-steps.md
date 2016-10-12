@@ -13,7 +13,7 @@ List of the very few things that get done when posting a new p5 release...
     * p5.dom.js
     * p5.sound.js
     * p5.sound.min.js
-    * p5.zip all above files + empty-example containing:
+    * p5.zip (`zip -r p5-zip.zip p5-zip -x '*/.DS_Store'`) all above files + empty-example containing:
       * libraries/p5.js
       * libraries/p5.dom.js
       * libraries/p5.sound.js
