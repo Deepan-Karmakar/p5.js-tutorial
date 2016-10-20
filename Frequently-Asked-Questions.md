@@ -37,8 +37,8 @@ function setup() {
 
 The explanation for this is a little complicated, but it has to do with the way the library is setup in order to support both global and instance mode. To understand what's happening, let's first look at the order things happen when a page with p5 is loaded (in global mode).
 
-1. Scripts in <head> are loaded.
-2. <body> of HTML page loads (when this is complete, the onload event fires, which then triggers step 3).
+1. Scripts in `<head>` are loaded.
+2. `<body>` of HTML page loads (when this is complete, the onload event fires, which then triggers step 3).
 3. p5 is started, all functions are added to the global namespace.
 
 So the issue is that the scripts are loaded and evaluated before p5 is started, when it's not yet aware of the p5 variables. If we try to call them here, they will cause an error. However, when we use p5 function calls inside setup() and draw() this is ok, because the browser doesn't look inside functions when the scripts are first loaded. This is because the setup() and draw() functions are not called in the user code, they are only defined, so the stuff inside of them isn't run or evaluated yet.
