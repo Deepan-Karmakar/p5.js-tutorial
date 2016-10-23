@@ -20,7 +20,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Arduino + p5.js examples](https://github.com/tigoe/GraphingSketches)
 
 ###Tools
-* [WordPress p5.js embedder](https://wordpress.org/plugins/p5-embedder/) - plugin to embed p5.js sketches into WordPress pages and posts
+* [WordPress p5.js embedder](https://github.com/lmccart/p5.js-wp-embedder) - plugin to embed p5.js sketches into WordPress pages and posts (**Discontinued, use at own risk**)
 
 ###Tutorials
 * [Embedding p5.js](https://github.com/processing/p5.js/wiki/Embedding-p5.js) - different ways of including sketches on existing sites or blogs.
