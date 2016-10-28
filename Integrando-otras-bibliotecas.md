@@ -89,8 +89,8 @@ function draw() {
 function mousePressed() {
   // Revisar si el ratón está presionado en la parte superior de la imagen
   if (mouseX > 20 && mouseX < 170 && mouseY > 20 && mouseY < 170) {
-    mySound.play(); // Start playing the sound
-    mySound.loop(); // Loop the sound once it's playing
+    mySound.play(); // Empieza a reproducir el sonido
+    mySound.loop(); // Reproduce en bucle
   }
 }
 
