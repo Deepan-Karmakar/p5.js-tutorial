@@ -23,19 +23,19 @@ Aquí va una lista de algunas bibliotecas interesantes para que revises:
 Nota importante: navegadores web, versiones de JS, etc, sí importarán. No mencionaremos detalles específicos, pero ten en cuenta que puede ser un problema. La mayoría de las bibliotecas indican en su documentación los requerimientos mínimos de tu navegador o hardware que necesitarán.
 
 ### Cómo leer documentación
-One last criteria for choosing a library is documentation. Documentation makes or breaks a good code library.  Library code is often dense and difficult to read. Good documentation is any accompanying text/images, tutorials, examples and descriptions of how to use the library. Before deciding to use a library, do a quick sanity check that the webpage has seemingly good documentation to go along with it, because that will be your compass as you try to use the new library.
+Un último criterio para escoger una biblioteca es su documentación. La documentación hace o deshace el buen código de una biblioteca. El código de la biblioteca es usualmente denso y difícil de leer. La buena documentación es cualquier texto/imagen que lo acompañe, tutoriales, ejemplos y descripciones de cómo usar la biblioteca. Antes de decidir si usar o no una biblioteca, haz un chequeo de sanidad de que la página web tenga buena documentación, porque esto será tu guía cuando uses la biblioteca.
 
 ### Cómo descargar e incluir una biblioteca JS
-1. When you finally find a library, go to the project’s download page and look for a download to a .js file that contains all the library code, this file is usually not very big and not meant for editing.  It’s just meant to be included in your web project as extra capabilities.  Think of it like adding reinforcements to your structure.
+1. Cuando finalmente encuentres una biblioteca, visita la página del proyecto y descarga el archivo .js que contiene todo el código de la biblioteca. Este archivo usualmente no es muy grande y no está diseñado para ser editado. Solo está destinado a ser incluido en tu proyecto web como capacidades extra. Piénsalo como añadir refuerzos a tu estructura.
 
-2. Download the .js file and put it in the same folder as your .html file.
+2. Descarga el archivo .js y ubícalo en la misma carpeta que tu archivo .html.
 
-3. Add a ```<script>``` tag to the ```<head>``` section of the HTML to link to the library. That’s it!
+3. Añade una etiqueta ```<script>``` al encabezado ```<head>```  de tu código HTML para enlazar la biblioteca. ¡Eso es todo!
 
 
 ### Ejemplo: usar Buzz
 
-Buzz is a web audio library, download it at http://buzz.jaysalvat.com/. Browse the documentation at http://buzz.jaysalvat.com/documentation/buzz/. (See example [Integrating-other-libraries/0](https://github.com/processing/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/0).)
+Buzz es una biblioteca de audio web, descárgala en http://buzz.jaysalvat.com/. Revisa la documentación en http://buzz.jaysalvat.com/documentation/buzz/. (Ver ejemplo [Integrating-other-libraries/0](https://github.com/processing/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/0).)
 
 In this first example, we play a sound within ```setup()```.
 ```javascript
