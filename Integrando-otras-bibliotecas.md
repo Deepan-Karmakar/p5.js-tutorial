@@ -1,16 +1,17 @@
-### What is a library?
-A library is an extension of capabilities to a programming language that do some tedious work for you. For example, in the English language there are letters and words, and the words are sometimes grouped together in articles, books and novels that contain core concepts and ideas that can be re-used. Libraries of code work the same way, a library is a collection of code that already does some higher level things for you so you don’t have to reinvent the wheel. There might be libraries that make it easy to draw to the screen, libraries that parse large amounts of data, libraries that display 3D, etc...
+### ¿Qué es una biblioteca?
 
-p5.js is a library itself! But there are other libraries we can integrate to help us extend our capabilities in JavaScript.
+Una biblioteca es una extensión de las capacidades de un lenguaje de programación, que hace el trabajo tedioso por ti. Por ejemplo, en español existen letras y palabras, y las palabras son a veces agrupadas en artículos, libros y novelas que contienen conceptos fundamentales e ideas que pueden ser reutilizadas. Las bibliotecas de código funcionan de la misma manera, una biblioteca es una colección de código que ya existe y que hace cosas a alto nivel por ti para que tú no tengas que reinventar la rueda. Pueden existir bibliotecas que te hacen más fácil dibujar en la pantalla, bibliotecas que pueden procesar grandes cantidades de datos, bibliotecas que tienen capacidad 3D, etc...
 
-### How to find and choose a JS library
-Google searches are the best way to find JS libraries
-+ “[capability you need]” + “JS”
-+ “[capability you need]” + “JS” + “library”
+¡p5.js es una biblioteca! No obstante, existen otras bibliotecas que podemos integrar para ayudar a extender nuestras capacidades en JavaScript.
+
+### Cómo encontrar y escoger una biblioteca JS
+Búsquedas en Google son la mejor manera de encontrar bibliotecas JS
++ “[utilidadd que necesitas]” + “JS”
++ “[utilidadd que necesitas]” + “JS” + “library”
 + “3D” + “JS”
 + “leapmotion” + “JS”
 
-Here are some interesting libraries to check out:
+Aquí va una lista de algunas bibliotecas interesantes para que revises:
 + [list of creative coding libraries](http://www.wholepixel.com/libs)
 + [Buzz](http://buzz.jaysalvat.com/) - web audio
 + [two.js](http://jonobr1.github.io/two.js) - two dimensional drawing
@@ -19,9 +20,9 @@ Here are some interesting libraries to check out:
 + [boxbox](http://incompl.github.io/boxbox) - physics engine
 + [hammerjs](http://eightmedia.github.io/hammer.js/) - multi touch support
 
-Important note: web browsers, JS versions, etc, will matter. We will not go into specifics here, but know that this will be an issue. Most libraries will state in their documentation minimum requirements your browser or hardware must meet.
+Nota importante: navegadores web, versiones de JS, etc, sí importarán. No mencionaremos detalles específicos, pero ten en cuenta que puede ser un problema. La mayoría de las bibliotecas indican en su documentación los requerimientos mínimos de tu navegador o hardware que necesitarán.
 
-### How to read documentation
+### Cómo leer documentación
 One last criteria for choosing a library is documentation. Documentation makes or breaks a good code library.  Library code is often dense and difficult to read. Good documentation is any accompanying text/images, tutorials, examples and descriptions of how to use the library. Before deciding to use a library, do a quick sanity check that the webpage has seemingly good documentation to go along with it, because that will be your compass as you try to use the new library.
 
 ### How to download and include a JS library
