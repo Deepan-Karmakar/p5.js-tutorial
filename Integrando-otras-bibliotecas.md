@@ -25,7 +25,7 @@ Nota importante: navegadores web, versiones de JS, etc, sí importarán. No menc
 ### Cómo leer documentación
 One last criteria for choosing a library is documentation. Documentation makes or breaks a good code library.  Library code is often dense and difficult to read. Good documentation is any accompanying text/images, tutorials, examples and descriptions of how to use the library. Before deciding to use a library, do a quick sanity check that the webpage has seemingly good documentation to go along with it, because that will be your compass as you try to use the new library.
 
-### How to download and include a JS library
+### Cómo descargar e incluir una biblioteca JS
 1. When you finally find a library, go to the project’s download page and look for a download to a .js file that contains all the library code, this file is usually not very big and not meant for editing.  It’s just meant to be included in your web project as extra capabilities.  Think of it like adding reinforcements to your structure.
 
 2. Download the .js file and put it in the same folder as your .html file.
@@ -33,7 +33,7 @@ One last criteria for choosing a library is documentation. Documentation makes o
 3. Add a ```<script>``` tag to the ```<head>``` section of the HTML to link to the library. That’s it!
 
 
-### Example: using Buzz
+### Ejemplo: usar Buzz
 
 Buzz is a web audio library, download it at http://buzz.jaysalvat.com/. Browse the documentation at http://buzz.jaysalvat.com/documentation/buzz/. (See example [Integrating-other-libraries/0](https://github.com/processing/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/0).)
 
@@ -46,7 +46,7 @@ function setup() {
 }
 ```
 
-In the next example, you see we can also draw an image into canvas in the same sketch. The audio playing does not conflict with the drawing, but works side by side. The audio file is loaded in setup, then triggered to play on mousePressed. (See example [Integrating-other-libraries/1](https://github.com/processing/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/1).)
+En el siguiente ejemplo, puedes ver que también podemos dibujar una imagen en el lienzo en el mismo bosquejo. La reproducción de audio no tiene conflictos con el dibujo, sino que funcionan lado a lado. El archivo de audio es cargado en setup(), y luego su reproducción es gatillada en mousePressed(). (Ver ejemplo [Integrating-other-libraries/1](https://github.com/processing/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/1).)
 
 ```javascript
 var mySound = new buzz.sound('rhodes_loop.wav');
@@ -58,21 +58,21 @@ function setup() {
 }
 
 function draw() {
-  // Draw graphics as normal
+  // Dibujar gráficas normalmente
   background(255, 200, 200);
   image(myImage, 20, 20, 150, 150);
 }
 
 function mousePressed() {
-  // Using the third-party library to call play() on the buzz object
+  // Usar la biblioteca externa para llamar a play() en el objeto buzz
   mySound.play();
 }
 ```
 
-Finally, let's integrate the canvas and audio. Only when you click directly on the image does the audio start; it is stopped on keyPressed. (See example [Integrating-other-libraries/2](https://github.com/processing/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/2).)
+Para terminar, integremos lienzo y audio. El audio empieza a sonar solamente cuando haces click directamente en la imagen, y para cuando es presionada una tecla (keyPressed). (Ver ejemplo [Integrating-other-libraries/2](https://github.com/processing/p5.js/tree/master/examples/tutorials/Integrating-other-libraries/2).)
  
 ```javascript
-// Initializing a variable using the third-party library buzz object
+// Inicializar una variable usando la biblioteca externa buzz
 var mySound = new buzz.sound('rhodes_loop.wav');
 var myImage;
 
@@ -87,7 +87,7 @@ function draw() {
 };
 
 function mousePressed() {
-  // Check to see if mouse press is on top of image
+  // Revisar si el ratón está presionado en la parte superior de la imagen
   if (mouseX > 20 && mouseX < 170 && mouseY > 20 && mouseY < 170) {
     mySound.play(); // Start playing the sound
     mySound.loop(); // Loop the sound once it's playing
@@ -95,6 +95,6 @@ function mousePressed() {
 }
 
 function keyPressed() {
-  mySound.stop(); // Stop the sound
+  mySound.stop(); // Hacer que sonido se detenga
 }
 ```
