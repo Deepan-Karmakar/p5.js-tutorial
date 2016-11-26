@@ -17,7 +17,7 @@ Need help finding an issue to fix? Check out this [list of bite size issues](htt
     - See the [guide for p5.js inline docs](https://github.com/processing/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference (coming soon).
     - See the [testing section](https://github.com/processing/p5.js/wiki/Development#wiki-testing) for how to add unit tests.
 
-* **Add examples to the examples page** -- Add to the examples on the [p5js.org learning page](http://p5js.org/learn/#examples). See this [guide](https://github.com/processing/p5.js-website/wiki/Adding-examples) for details.
+* **Add examples to the examples page** -- Add to the examples on the [p5js.org examples page](http://p5js.org/examples/). See this [guide](https://github.com/processing/p5.js-website/wiki/Adding-examples) for details.
 
 * **Add inline examples to the ref**
   * [List of examples needed](https://github.com/processing/p5.js/wiki/Development---Checklist)
