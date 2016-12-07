@@ -27,7 +27,7 @@ The p5.js language looks very similar to the Processing language with a few chan
   }
   ```
 
-+ Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no 3D, PShape or PFont equivalent. See the [reference](http://p5js.org/reference/) for up to date documentation of what functions work.
++ Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no 3D, PShape or PFont equivalent. The camera model in p5js is yet very baisc, with only eye position and no "look at" or axis direction. See the [reference](http://p5js.org/reference/) for up to date documentation of what functions work.
  
 ###Some things about JavaScript
 + Variables do not have a type. Use var instead of float, int, double, long, char, String, Array, etc. You do not need to specify return types or parameter types for functions.
