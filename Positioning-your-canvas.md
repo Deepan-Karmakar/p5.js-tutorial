@@ -96,6 +96,8 @@ With the web, though, there's almost always more than one way to get something d
 </html>
 ```
 
+Then the p5.js code looks like this:
+
 ```js
 // sketch.js
 
