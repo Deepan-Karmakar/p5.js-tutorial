@@ -16,7 +16,7 @@ Let's start with a simple sketch:
 <html>
   <head>
     <title>My Sketch</title>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
     <script src="sketch.js"></script>
   </head>
   <body>
@@ -47,7 +47,7 @@ We can add a stylesheet that uses [flexible box layout](https://css-tricks.com/s
     <!-- Link to our stylesheet! -->
     <link rel="stylesheet" href="style.css">
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
     <script src="sketch.js"></script>
   </head>
   <body>
@@ -80,7 +80,21 @@ Note that at the time of this writing, flexible box layout (or "flexbox", as it'
 
 One advantage of the CSS approach is that it doesn't require modifying your sketch at all. However, the fact that supporting older browsers requires vendor prefixing makes the solution a bit less elegant. It's also not straightforward to tweak: positioning your canvas 12 pixels from the bottom-right of the page, for example, would require learning more about CSS, which can be daunting for newcomers.
 
-With the web, though, there's almost always more than one way to get something done, and that's the case here as well. We can actually reposition our canvas using pure JavaScript and a bit of math:
+With the web, though, there's almost always more than one way to get something done, and that's the case here as well. We can actually reposition our canvas using pure JavaScript and a bit of math. For this we'll need the p5.dom library. You will need to add a link to it in the head of your HTML file.
+
+```html
+```html
+<html>
+  <head>
+    <title>My Sketch</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
+```
 
 ```js
 // sketch.js
@@ -128,7 +142,7 @@ Alternatively, you may want to position your canvas in the midst of other inform
 <html>
   <head>
     <title>My Sketch</title>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.js"></script>
     <script src="sketch.js"></script>
   </head>
   <body>
