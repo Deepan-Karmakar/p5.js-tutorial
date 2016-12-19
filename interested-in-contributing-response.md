@@ -1,6 +1,6 @@
 Hi,
 
-Great that you want to get involved! All discussion happens on the github repository over issue threads, feel free to comment on any that you have thoughts about. 
+Great that you want to get involved! All discussion happens on the [github repository](https://github.com/processing/p5.js) over issue threads, feel free to comment on any that you have thoughts about. 
 
 This document gives an overview of the development process:
 github.com/processing/p5.js/wiki/Development
