@@ -68,6 +68,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [How to Become a Web Developer: Envato Tuts+](https://code.tutsplus.com/courses/how-to-become-a-web-developer) - register to watch free
 
 ### General Programming
+* [Udacity](https://www.udacity.com/course/object-oriented-javascript--ud015)
 * lynda.com
 * [Codecademy](http://www.codecademy.com/)
 * [Flat Iron School](http://prework.flatironschool.com/web-development/)
