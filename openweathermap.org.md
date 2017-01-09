@@ -1,0 +1,1 @@
+Test openweathermap API
