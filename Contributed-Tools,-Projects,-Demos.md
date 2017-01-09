@@ -34,6 +34,13 @@ Created by Nick Fox-Gieg.
 #### [p5.js sandbox w/ edit/save/browse](https://github.com/genekogan/p5js-sandbox) - [demo](https://p5js-sandbox.herokuapp.com/)
 Created by Gene Kogan
 
+#### [p5.js language snippets for atom.io](https://atom.io/packages/p5js-snippets)
+features: auto complete, short description of each p5.js function, link to the p5.js reference,tab breakpoints at each p5.js function's arguments, friendly p5 logo to help you see what is a p5 function.
+Created by Ben Moren
+
+#### [p5.js syntax theme for atom.io](https://atom.io/themes/p5js-syntax)
+Created by Ben Moren
+
 ##Examples
 
 ####[Nature of Code x p5.js](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js)
