@@ -146,7 +146,7 @@ function draw() {
 
 There are also create methods for adding elements that deal with media—`createVideo()`, `createAudio()`, and `createCapture()`. These methods create a p5.MediaElement, which has some [additional methods](http://p5js.org/reference/#/p5.MediaElement) beyond those of a normal p5.Element. Again, while many features of HTML5 media are made accessible through the p5.dom API, there is [more native functionality](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement). Remember that you can use `.elt` to access the underlying element and access any of the native properties.
 
-The example below demonstrates toggling a video with a button, see it running [here](http://p5js.org/examples/examples/Dom_Video.php).
+The example below demonstrates toggling a video with a button, see it running [here](http://p5js.org/examples/dom-video.html).
 
 ```javascript
 var playing = false;
