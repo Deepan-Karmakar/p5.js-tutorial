@@ -39,7 +39,3 @@ List of the very few things that get done when posting a new p5 release...
 1. Run `grunt yui`.
 2. Move `docs/reference` to `p5.js-website/reference`.
 3. Push changes to github to auto-update site.
-
-### Update the editor
-Follow the steps [here](https://github.com/processing/p5.js-editor/blob/master/release-howto.md).
-
