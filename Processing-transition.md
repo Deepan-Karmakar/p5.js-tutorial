@@ -189,7 +189,7 @@ void draw() {                                    // **change** function draw() v
   }
 }
 
-void dragSegment(int i, float xin, float yin) {  // **change** function drawSegment() to void drawSegment(). add type delcarations.
+void dragSegment(int i, float xin, float yin) {  // **change** function drawSegment() to void drawSegment(). add type declarations.
   float dx = xin - x[i];                         // **change** var to float
   float dy = yin - y[i];                         // **change** var to float
   float angle = atan2(dy, dx);                   // **change** var to float
@@ -198,7 +198,7 @@ void dragSegment(int i, float xin, float yin) {  // **change** function drawSegm
   segment(x[i], y[i], angle);
 }
 
-void segment(float x, float y, float a) {        // **change** function segment() to void segment(). add type delcarations.
+void segment(float x, float y, float a) {        // **change** function segment() to void segment(). add type declarations.
   pushMatrix();
   translate(x, y);
   rotate(a);
