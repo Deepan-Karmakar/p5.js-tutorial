@@ -4,9 +4,9 @@ El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas discrepa
 
 + Como puedes pensar en tu bosquejo como más que solo el lienzo para dibujar, `size()` (tamaño) ha sido reemplazado por `createCanvas()` (crear lienzo), para sugerir la posibilidad de crear otros elementos.
 + `frameRate(num)` define la tasa de cuadros, pero la variable `frameRate`ha sido removida. Para obtener la actual tasa de cuadros, llama a la función `frameRate()` sin argumentos.
-+ JavaScript doesn't always load things synchronously, there are a couple options to deal with this:
-     + All load methods take an optional callback argument. That is, a function that gets called after the file has been loaded. 
-     + Alternatively, you can place load calls in a `preload()` method that happens before `setup()`. If a preload method exists, setup waits until everything inside is loaded, see this [image example](http://p5js.org/examples/image-alpha-mask.html).
++ JavaScript no siempre carga todo de forma síncrona, existen algunas opciones para lidiar con esto:
+     + Todos los métodos de carga (load) poseen un argumento opcional de callback (llamada). Esto es, una función que es llamada luego de que el archivo ha sido cargado. 
+     + De forma alternativa, puedes ubicar todas las llamadas de carga (load) en un método `preload()` (precarga) que ocurre antes de `setup()` (configuración). Si existe un método preload, setup espera hasta que todo esté cargado, ver este [ejemplo de imagen](http://p5js.org/examples/image-alpha-mask.html).
 + The variable `mousePressed` has been replaced with `mouseIsPressed`.
 + In addition to mouse events, there are touch events, the mapping is like this:
      + `mouseX` ~ `touchX`
