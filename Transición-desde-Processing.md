@@ -138,26 +138,26 @@ function segment(x, y, a) {                 // **cambio** void segment() a funct
 }
 ```
 
-####Converting a p5.js sketch to Processing
+####Convertir un bosquejo de p5.js a Processing
 
-Here are two examples of sketches that have been converted from p5.js to Processing. The changes made are shown in the comments, all the other lines remained the same.
+Aquí se presentan dos ejemplos de bosquejos que han sido convertidos de  p5.js a Processing. Los cambios hechos son señalados en los comentarios, todas las otras líneas quedan igual.
 
 ```java
 /**
- * This example can be found in the Processing examples package
- * that comes with the Processing PDE.
+ * Este ejemplo puede ser encontrado en la sección de ejemplos de Processing
+ * que está incluida en el ambiente de desarrollo de Processing.
  * Processing > Examples > Basics > Form > Bezier
  */
 
-void setup() {                         // **change** function setup() to void setup()
-  size(640, 360);                      // **change** createCanvas() to size()
+void setup() {                         // **cambio** function setup() a void setup()
+  size(640, 360);                      // **cambio** createCanvas() a size()
   stroke(255);
   noFill();
 }
 
-void draw() {                          // **change** function draw() to void draw()
+void draw() {                          // **cambio** function draw() a void draw()
   background(0);
-  for (int i = 0; i < 200; i += 20) {  // **change** var i to int i
+  for (int i = 0; i < 200; i += 20) {  // **cambio** var i a int i
     bezier(mouseX-(i/2.0), 40+i, 410, 20, 440, 300, 240-(i/16.0), 300+(i/8.0));
   }
 }
@@ -165,40 +165,40 @@ void draw() {                          // **change** function draw() to void dra
 
 ```java
 /**
- * This example can be found in the Processing examples package
- * that comes with the Processing PDE.
+ * Este ejemplo puede ser encontrado en la sección de ejemplos de Processing
+ * que está incluida en el ambiente de desarrollo de Processing.
  * Processing > Examples > Topics > Interaction > Follow3
- * Based on code from Keith Peters. 
+ * Basado en código de Keith Peters. 
  */
 
-float[] x = new float[20];                       // **change** array of 0's to be float[] x = new float[20]
-float[] y = new float[20];                       // **change** array of 0's to be float[] x = new float[20]
-float segLength = 18;                            // **change** var to float
+float[] x = new float[20];                       // **cambio** arreglo de 0s a float[] x = new float[20]
+float[] y = new float[20];                       // **cambio** arreglo de 0s a float[] x = new float[20]
+float segLength = 18;                            // **cambio** var a float
 
-void setup() {                                   // **change** function setup() to void setup() 
-  size(640, 360);                                // **change** createCanvas() to size()
+void setup() {                                   // **cambio** function setup() a void setup() 
+  size(640, 360);                                // **cambio** createCanvas() a size()
   strokeWeight(9);
   stroke(255, 100);
 }
 
-void draw() {                                    // **change** function draw() void draw()
+void draw() {                                    // **cambio** function draw() a void draw()
   background(0);
   dragSegment(0, mouseX, mouseY);
-  for(int i=0; i<x.length-1; i++) {              // **change** int i to var i
+  for(int i=0; i<x.length-1; i++) {              // **cambio** int i a var i
     dragSegment(i+1, x[i], y[i]);
   }
 }
 
-void dragSegment(int i, float xin, float yin) {  // **change** function drawSegment() to void drawSegment(). add type delcarations.
-  float dx = xin - x[i];                         // **change** var to float
-  float dy = yin - y[i];                         // **change** var to float
-  float angle = atan2(dy, dx);                   // **change** var to float
+void dragSegment(int i, float xin, float yin) {  // **cambio** function drawSegment() a void drawSegment(). agregar declaraciones de tipo de dato.
+  float dx = xin - x[i];                         // **cambio** var a float
+  float dy = yin - y[i];                         // **cambio** var a float
+  float angle = atan2(dy, dx);                   // **cambio** var a float
   x[i] = xin - cos(angle) * segLength;
   y[i] = yin - sin(angle) * segLength;
   segment(x[i], y[i], angle);
 }
 
-void segment(float x, float y, float a) {        // **change** function segment() to void segment(). add type delcarations.
+void segment(float x, float y, float a) {        // **cambio** function segment() a void segment(). agregar declaraciones de tipo de dato.
   pushMatrix();
   translate(x, y);
   rotate(a);
