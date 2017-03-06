@@ -121,7 +121,7 @@ var myp5 = new p5( function( sketch ) {
 });
 ```
 
-If you find this syntax confusing, congratulations you are a human being.  Yes, less typing is involved, but for clarity, you'll see all of the week 5 examples written the slightly more long-form way.
+If you find this syntax confusing, congratulations you are a human being.  Yes, less typing is involved, but for clarity, you'll see all of the examples written the slightly more long-form way.
 
 One final note: when creating a p5 instance, you can specify a second argument (HTML element id) which acts the parent for all elements created by the sketch.  For example, let's say you have:
 
