@@ -14,10 +14,10 @@ El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas discrepa
      + `mousePressed()` ~ `touchStarted()`
      + `mouseDragged()` ~ `touchMoved()`
      + `mouseReleased()` ~ `touchEnded()`
-     + Existe un arreglo `touches[]` (toques) que contiene una serie de objectos con propiedades x e y correspondientes a las posiciones de cada dedo.
+     + Existe un arreglo `touches[]` (toques) que contiene una serie de objetos con propiedades x e y correspondientes a las posiciones de cada dedo.
 + `push/popMatrix()`, y `push/popStyle()` han sido reemplazados con `push()` y `pop()`, el equivalente de llamar tanto a los métodos de matriz (matrix) y estilo (style) de forma conjunta.
-+ Por defecto, todo está en el espacio de nombres global, y puedes crear tus bosquejos como lo haces en Processing. Sin embargo, existe algo que llamamos modo instancia (instance mode) para crear un bosquejo p5 que se comporta bien con el resto del código corriendo en tu página. Revisa este  [ejemplo del modo instancia](http://p5js.org/es/examples/instance-mode-instantiation.html) y este [tutorial de modo global vs instancia](https://github.com/lmccart/itp-creative-js/wiki/Spring-2014:-Week-5#global-and-instance-mode).
-+ In global mode, p5 variable and function names are not available outside `setup()`, `draw()`, `mousePressed()`, etc. (Except in the case where they are placed inside functions that are called by one of these methods.) What this means is that when declaring variables before `setup()`, you will need to assign them values inside `setup()` if you wish to use p5 functions. For example:
++ Por defecto, todo está en el espacio de nombres global, y puedes crear tus bosquejos como lo haces en Processing. Sin embargo, existe algo que llamamos modo instancia (instance mode) para crear un bosquejo p5 que se comporta bien con el resto del código corriendo en tu página. Revisa este  [ejemplo del modo instancia](http://p5js.org/es/examples/instance-mode-instantiation.html) y este [tutorial de modo global vs instancia](https://github.com/processing/p5.js/wiki/Modos-Global-e-Instance).
++ En el modo global, la variable p5 y los nombres de funciones no están disponibles fuera de `setup()`, `draw()`, `mousePressed()`, etc. (Excepto en el caso donde están ubicadas dentro de funciones que son llamadas por uno de estos métodos.) Esto significa que que cuando se declaran variables antes de `setup()`, necesitarás asignarles valores dentro de `setup()` si quieres usar estas funciones de p5. Por ejemplo:
 
   ```javascript
   var n;
@@ -27,13 +27,13 @@ El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas discrepa
   }
   ```
 
-+ Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no PShape equivalent. The camera model in p5js is yet very basic, with only eye position and no "look at" or axis direction. See the [reference](http://p5js.org/reference/) for up to date documentation of what functions work.
++ No todas las características de Processing están implementadas en p5.js, ¡pero estamos trabajando en eso! En este momento no existe un equivalente de PShape. El modelo de cámara en p5js sigue siendo muy básico, con solo una posición del ojo y sin un eje de dirección de "hacia donde mirar". Revisa la [referencia](http://p5js.org/es-reference/) para buscar documentación al día sobre las funciones.
  
-###Some things about JavaScript
-+ Variables do not have a type. Use var instead of float, int, double, long, char, String, Array, etc. You do not need to specify return types or parameter types for functions.
-+ A var can be anything -- any of the types mentioned, but also functions.
-+ Arrays are constructed very simply (no need for Processing ArrayList anymore) and have many built-in features, see this [array example](http://p5js.org/examples/arrays-array.html) and more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-+ JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/examples/objects-objects.html) and more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
+###Notas sobre JavaScript
++ Las variables no tienen un tipo. Usa var en vez de float, int, double, long, char, String, Array, etc. No necesitas especificar valores de retorno o tipos de parámetros de las funciones.
++ Una var puede ser cualquier cosa -- cualquiera de los tipos mencionados, pero también funciones.
++ Los arreglos son construidos de forma muy simple (no se necesita ArrayList de Processing) e incluyen muchas características, revisa este [ejemplo de arreglo](http://p5js.org/es/examples/arrays-array.html) y más sobre arreglos de JavaScript [aquí](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
++ JavaScript usa algo llamado prototype (prototipo) para construir algo similar a los objetos a partir de clases de Java. Revisa este [ejemplo de objetos](http://p5js.org/es/examples/objects-objects.html) y más sobre objetos JavaScript [aquí](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Trabajando_con_objectos).
 
 ###Conversion examples
 
