@@ -207,46 +207,46 @@ void segment(float x, float y, float a) {        // **cambio** function segment(
 }
 ```
 
-####About variables
+####Sobre las variables
 
-In p5.js, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using the symbol "var". In Processing, you must specify the variable type. 
+En p5.js, todas las variables (sean números, strings, arreglos, funciones, objetos, ¡lo que sea!) son declaradsa usando el símbollo "var". En Processing, tienes que especificar el tipo de datos de la variable.
 
-For example, instead of:
+Por ejemplo, en vez de:
 
 ```javascript
 boolean button = false;
 ```
 
-you'd write
+escribirías
 ```javascript
 var button = false;
 ```
 
-or 
+o 
 
-instead of:
+en vez de:
 
 ```javascript
 float x = 100.3;
 ```
 
-you'd write
+escribirías
 ```javascript
 var x = 100.3;
 ```
 
-Here is a summary of the supported Processing data types (table borrowed from [Getting Started with Processing](http://shop.oreilly.com/product/0636920000570.do)).
+Aquí hay un resument de los tipos de datos soportados en Processing (esta tabla fue tomada de [Getting Started with Processing](http://shop.oreilly.com/product/0636920000570.do)).
 
-Name | Description | Range of values
+Nombre | Descripción | Rango de valores
 --- | --- | ---
-int | Integers (whole numbers) | -2,147,483,648 to 2,147,483,647
-float | Floating-point values | -3.40282347E+38 to 3.40282347E+38
-boolean | Logical value | true or false
-char | Single character | A-z, 0-9, and symbols
-String | Sequence of characters | Any letter, word, sentence, and so on
-PImage | PNG, JPG, or GIF image | N/A
-PFont | VLW font; use the Create Font tool to make | N/A
-PShape | SVG file | N/A
+int | Números enteros (sin decimales) | -2,147,483,648 a 2,147,483,647
+float | Números de punto flotante | -3.40282347E+38 a 3.40282347E+38
+boolean | Valor lógico | true o false (verdadero o falso)
+char | Caracter único | A-z, 0-9, y símbolos
+String | Secuencia de caracteres | Cualquier letra, palabra, frase, entre otros
+PImage | Imagen PNG, JPG, o GIF | N/A
+PFont | Tipografía VLW; usa la herramienta Create Font | N/A
+PShape | Archivo SVG | N/A
 
 
 
