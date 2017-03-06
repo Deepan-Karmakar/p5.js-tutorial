@@ -15,9 +15,9 @@ function draw() {
 }
 ```
 
-While this is convenient (and friendlier) it's important to note that this can lead to problems and confusion down the road when mixing other JS libraries or trying to embed multiple p5 sketches on the same page.  A safer, more advanced methodology is to create a p5 sketch as an object "instance".  This "namespaces" your sketch under a particular variable. In other words, we'll have an object (called say `myp5`) that stores a reference to a p5 sketch.  Anything related to that sketch can therefore be called with dot syntax, i.e. `myp5.background(0);`.   This is referred to as p5 "instance mode".
+Aunque esto es conveniente (y amigable) es importante notar que esto puede llevar a problemas y confusiones al momento de agregar otras bibliotecas de JavaScript o al tratar de incluir múltiples bosquejos de p5 en la misma página.  Una metodología más segura y avanzada es crear un bosquejo p5 como un objeto "instance" (instancia). Esto hace que tu bosquejo "viva" bajo una variable en particular. En otras palabras, tendremos un objeto (llamado por ejemplo "myp5") que almacena una referencia a un bosquejo p5.  Todo lo relacionado a ese bosquejo entonces tendrá que ser llamado con la sintaxis punto, i.e. `myp5.background(0);`. Esto recibe el nombre de modo "instance".
 
-The syntax for instance mode looks like the following (the sketch below is identical to the above example):
+La sintaxis para el modo instance es la siguiente (el bosquejo a continuación es idéntico al ejemplo anterior):
 
 ```
 var s = function( sketch ) {
@@ -39,15 +39,15 @@ var s = function( sketch ) {
 var myp5 = new p5(s);
 ```
 
-The above might seem a bit confusing, but let's break it down into smaller elements.
+Esto puede ser un poco confuso, así que analícemoslo por partes.
 
 ```
 var myp5 = new p5(s);
 ```
 
-This should make sense to us.  We're making a new object called `myp5` (that's our made up variable name).  We call it via constructor `new p5()`.  The code for `function p5()` can be [found in the p5.js source](https://github.com/lmccart/p5.js/blob/master/src/core/core.js#L28).  But we're not just making a "blank" sketch, we're passing in an argument called `s` that will serve as the basis for the code of that sketch. 
+Esta parte nos debiera hacer sentido. Estamos creando un nuevo objeto llamado `myp5` (el nombre inventado de nuestra variable).  La llamamos meidante el constructor `new p5()`.  El código para `function p5()` puede ser encontrado en el [código fuente de p5.js](https://github.com/lmccart/p5.js/blob/master/src/core/core.js#L28). Pero no estamos solo creando un bosquejo "en blanco", estamos pasando un arugmento llamado `s` que servirá como la base para el código de ese bosquejo. 
 
-And what is `s`?
+¿Y qué es `s`?
 
 ```
 var s = function( sketch ) {
@@ -55,7 +55,7 @@ var s = function( sketch ) {
 };
 ```
 
-`s` the seed that will spawn our p5 sketch.  It is a function that takes one argument, a `sketch` object and attaches properties to that `sketch`.   The properties are things we will need for a p5 sketch, functions like `setup()` and `draw()`.
+`s` es la semilla de nuestro bosquejo p5. Es una función que toma un argumento, un objeto `sketch` y le añade propiedades a ese `sketch`. Las propiedades son cosas que serán necesarias para el bosquejo p5, funciones como `setup()` y `draw()`.
 
 ```
 var s = function( sketch ) {
@@ -64,44 +64,43 @@ var s = function( sketch ) {
 };
 ```
 
-Those functions have their own context, yet have access to anything declared around them as well.
+Esas funciones tienen su propio contexto, aunque además tienen acceso a cualquier cosa declarada alrededor de ellas.
 
 ```
 var s = function( sketch ) {
   var x = 100; 
   var y = 100;
 
-  sketch.draw = function() {   // draw() is an inner function, a "closure"
-    sketch.rect(x,y,50,50);    // draw() uses variables (x,y) declared in the parent function s
+  sketch.draw = function() {   // draw() es una función interna, una "closure"
+    sketch.rect(x,y,50,50);    // draw() usa variables (x,y) declaradas en la función s padre (parent)
   };
 };
 ```
 
-This is what is known as a [closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures), one of the more powerful features of functional programming languages like JavaScript. 
+Esto se conoce como [closure](https://developer.mozilla.org/es/docs/Web/JavaScript/Closures), una de las características más poderosas de los lenguajes de programación funcional como JavaScript. 
 
-You can think of the purpose of s as initializing everything we need for a p5 sketch. Once it's all ready to go, it's passed to the `new p5()` constructor and our variable `myp5` takes over keeping track of everything that was originally attached to the `sketch` argument.  Since `myp5` is p5 object instance (and therefore inherits everything we need from the p5 prototype), all of the stuff we wrote into sketch will work. 
+Puedes pensar en el propósito de s como inicializar todo lo que necesitamos para un bosquejo p5. Un vez que está todo listo, es pasada al constructor `new p5()` y nuestra variable `myp5` se encarga de llevar el registro de todo lo que está acompañando originalmente al argumento `sketch`.  Como `myp5` un objeto instancia de p5 (y por lo tanto hereda todo lo que necesitamos del prototipo p5), todo lo que escribimos en sketch funcionará. 
 
 
-## Anonymous Instance
+## Instancia anónima
 
-As we've seen with JavaScript, anytime we pass a function into another function is an opportunity to declare that function anonymously.  Here is how we wrote it above.
-
+Como hemos visto en JavaScript, cada vez que pasamos una función a otra función es una oportunidad para declarar esa función de forma anónima. Aquí está la forma en que escribimos lo anterior.
 ```
 var s = function( sketch ) {
-   // empty
+   // vacío
 };
 var myp5 = new p5(s);
 ```
 
-And now without a separate variable holding onto `s` for us.
+Y ahora sin una variable separada `s`.
 
 ```
 var myp5 = new p5( function( sketch ) {
-  // empty
+  // vacío
 });
 ```
 
-Now with everything filled in, it looks like:
+Ahora rellenada con todos los detalles, se ve así:
 
 ```
 var myp5 = new p5( function( sketch ) {
