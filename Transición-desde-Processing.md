@@ -35,11 +35,11 @@ El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas discrepa
 + Los arreglos son construidos de forma muy simple (no se necesita ArrayList de Processing) e incluyen muchas características, revisa este [ejemplo de arreglo](http://p5js.org/es/examples/arrays-array.html) y más sobre arreglos de JavaScript [aquí](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
 + JavaScript usa algo llamado prototype (prototipo) para construir algo similar a los objetos a partir de clases de Java. Revisa este [ejemplo de objetos](http://p5js.org/es/examples/objects-objects.html) y más sobre objetos JavaScript [aquí](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Trabajando_con_objectos).
 
-###Conversion examples
+###Ejemplos de conversión
 
-####Basic sketch
+####Bosquejo básico
 
-This is the basic setup for a Processing and p5.js sketch. Note that p5.js will also require an empty HTML file that links to the p5.js library and your sketch file in the header (see [getting started](http://p5js.org/get-started/)).
+Esta es la configuración básica de un bosquejo en Processing y uno en p5.js. Observa que p5.js también requiere un archivo HTML en blanco que enlaza la biblioteca p5.js y tu archivo de bosquejo (sketch) en el encabezado(header (ver [getting started](http://p5js.org/es/get-started/)).
 
 ```java
 void setup() {
