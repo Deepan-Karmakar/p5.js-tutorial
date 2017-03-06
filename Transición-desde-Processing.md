@@ -39,32 +39,32 @@ El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas discrepa
 
 ####Bosquejo básico
 
-Esta es la configuración básica de un bosquejo en Processing y uno en p5.js. Observa que p5.js también requiere un archivo HTML en blanco que enlaza la biblioteca p5.js y tu archivo de bosquejo (sketch) en el encabezado(header (ver [getting started](http://p5js.org/es/get-started/)).
+Esta es la configuración básica de un bosquejo en Processing y uno en p5.js. Observa que p5.js también requiere un archivo HTML en blanco que enlaza la biblioteca p5.js y tu archivo de bosquejo (sketch) en el encabezado(header (ver [Empezar](http://p5js.org/es/get-started/)).
 
 ```java
 void setup() {
-  // setup stuff
+  // contenidos de setup()
 }
 
 void draw() {
-  // draw stuff
+  // contenidos de draw()
 }
 ```
 
 
 ```javascript
 function setup() {
-  // setup stuff
+  // contenidos de setup()
 }
 
 function draw() {
-  // draw stuff
+  // contenidos de draw()
 }
 ```
 
-####Converting a Processing sketch to p5.js
+####Converit un bosquejo de Processing a p5.js
 
-Here are two examples of sketches that have been converted from Processing to p5.js. The changes made are shown in the comments, all the other lines remained the same.
+Aquí se presentan dos ejemplos de bosquejos que han sido convertidos de Processing a p5.js. Los cambios hechos son señalados en los comentarios, todas las otras líneas quedan igual.
 
 ```javascript
 /**
