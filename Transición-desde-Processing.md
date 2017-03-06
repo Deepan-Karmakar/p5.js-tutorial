@@ -6,17 +6,17 @@ El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas discrepa
 + `frameRate(num)` define la tasa de cuadros, pero la variable `frameRate`ha sido removida. Para obtener la actual tasa de cuadros, llama a la función `frameRate()` sin argumentos.
 + JavaScript no siempre carga todo de forma síncrona, existen algunas opciones para lidiar con esto:
      + Todos los métodos de carga (load) poseen un argumento opcional de callback (llamada). Esto es, una función que es llamada luego de que el archivo ha sido cargado. 
-     + De forma alternativa, puedes ubicar todas las llamadas de carga (load) en un método `preload()` (precarga) que ocurre antes de `setup()` (configuración). Si existe un método preload, setup espera hasta que todo esté cargado, ver este [ejemplo de imagen](http://p5js.org/examples/image-alpha-mask.html).
-+ The variable `mousePressed` has been replaced with `mouseIsPressed`.
-+ In addition to mouse events, there are touch events, the mapping is like this:
+     + De forma alternativa, puedes ubicar todas las llamadas de carga (load) en un método `preload()` (precarga) que ocurre antes de `setup()` (configuración). Si existe un método preload, setup espera hasta que todo esté cargado, ver este [ejemplo con imagen](http://p5js.org/es/examples/image-alpha-mask.html).
++ La variable `mousePressed` ha sido reemplazada por `mouseIsPressed`.
++ Además de los eventos de ratón (mouse), existen eventos de toque (touch), cuya correspondencia es la siguiente:
      + `mouseX` ~ `touchX`
      + `mouseY` ~ `touchY`
      + `mousePressed()` ~ `touchStarted()`
      + `mouseDragged()` ~ `touchMoved()`
      + `mouseReleased()` ~ `touchEnded()`
-     + There is a `touches[]` array that contains a series of objects with x and y properties corresponding to the position of each finger.
-+ `push/popMatrix()`, and `push/popStyle()` have been replaced with `push()` and `pop()`, the equivalent of calling both matrix and style methods together.
-+ By default, everything is in the global namespace, and you can create your sketches like you do with Processing. However, there is something we call "instance mode" for creating a p5 sketch that plays nice with the rest of the code running on your page. See this [instance mode example](http://p5js.org/examples/instance-mode-instantiation.html) and this [global vs instance mode tutorial](https://github.com/lmccart/itp-creative-js/wiki/Spring-2014:-Week-5#global-and-instance-mode).
+     + Existe un arreglo `touches[]` (toques) que contiene una serie de objectos con propiedades x e y correspondientes a las posiciones de cada dedo.
++ `push/popMatrix()`, y `push/popStyle()` han sido reemplazados con `push()` y `pop()`, el equivalente de llamar tanto a los métodos de matriz (matrix) y estilo (style) de forma conjunta.
++ Por defecto, todo está en el espacio de nombres global, y puedes crear tus bosquejos como lo haces en Processing. Sin embargo, there is something we call "instance mode" for creating a p5 sketch that plays nice with the rest of the code running on your page. See this [instance mode example](http://p5js.org/examples/instance-mode-instantiation.html) and this [global vs instance mode tutorial](https://github.com/lmccart/itp-creative-js/wiki/Spring-2014:-Week-5#global-and-instance-mode).
 + In global mode, p5 variable and function names are not available outside `setup()`, `draw()`, `mousePressed()`, etc. (Except in the case where they are placed inside functions that are called by one of these methods.) What this means is that when declaring variables before `setup()`, you will need to assign them values inside `setup()` if you wish to use p5 functions. For example:
 
   ```javascript
