@@ -6,8 +6,8 @@ Una biblioteca es una extensión de las capacidades de un lenguaje de programaci
 
 ### Cómo encontrar y escoger una biblioteca JS
 Búsquedas en Google son la mejor manera de encontrar bibliotecas JS
-+ “[utilidadd que necesitas]” + “JS”
-+ “[utilidadd que necesitas]” + “JS” + “library”
++ “[utilidad que necesitas]” + “JS”
++ “[utilidad que necesitas]” + “JS” + “library”
 + “3D” + “JS”
 + “leapmotion” + “JS”
 
