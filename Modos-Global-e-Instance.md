@@ -120,31 +120,31 @@ var myp5 = new p5( function( sketch ) {
 });
 ```
 
-If you find this syntax confusing, congratulations you are a human being.  Yes, less typing is involved, but for clarity, you'll see all of the week 5 examples written the slightly more long-form way.
+Si crees que esta sintaxis es confusa, felicitaciones, eres un se humano. Sí, involucra escribir menos, pero por claridad, verás todos los ejemplos escritos de la forma más larga.
 
-One final note: when creating a p5 instance, you can specify a second argument (HTML element id) which acts the parent for all elements created by the sketch.  For example, let's say you have:
+Una nota final: cuando creas una instancia de p5, puedes especificar un segundo argumento (id de elemento HTML) que actúa como padre (parent) de todos los elementos creados por el bosquejo. Por ejemplo, digamos que tienes:
 
 ```
 <body>
   <div id = "p5sketch">
   </div>
 
-  <p>Some other HTML</p>
+  <p>HTML adicional</p>
 </body>
 ```
 
-You can now say:
+Ahora puedes decir:
 
 ```
 var myp5 = new p5(s,'p5sketch');
 ```
 
-And all elements will be created inside that div.
+Y así todos los elementos serán creados dentro esa div.
 
 
-## Other JS libraries
+## Otras bibliotecas de JavaScript
 
-* [The p5.js repo includes tutorial re: integrating other JS libraries](https://github.com/lmccart/p5.js/wiki/Integrating-other-libraries)
+* [Tutorial para integración con otras bilbiotecas](https://github.com/processing/p5.js/wiki/Integrando-otras-bibliotecas)
 
 
 ## HTML5 Video
