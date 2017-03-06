@@ -92,49 +92,49 @@ function draw() {                         // **cambio** void draw() a function d
 ```javascript
 
 /**
- * This example can be found in the Processing examples package
- * that comes with the Processing PDE.
+ * Este ejemplo puede ser encontrado en la sección de ejemplos de Processing
+ * que está incluida en el ambiente de desarrollo de Processing.
  * Processing > Examples > Topics > Interaction > Follow3
- * Adapted by Evelyn Eastmond
+ * Adaptado por Evelyn Eastmond
  */
 
-var x = new Array(20);  // **change** float[] x = new float[20] to new Array(20)
-var y = new Array(20);  // **change** float[] y = new float[20] to new Array(20)
-var segLength = 18;                                 // **change** float to var
+var x = new Array(20);  // **cambio** float[] x = new float[20] a new Array(20)
+var y = new Array(20);  // **cambio** float[] y = new float[20] a new Array(20)
+var segLength = 18;                                 // **cambio** float to var
 
-function setup() {                          // **change** void setup() to function setup()
-  createCanvas(640, 360);                   // **change** size() to createCanvas()
-  strokeWeight(9);                          // strokeWeight() is the same
-  stroke(255, 100);                         // stroke() is the same
-  for(var i=0; i<x.length; i++) {         // initialize the array
+function setup() {                          // **cambio** void setup() a function setup()
+  createCanvas(640, 360);                   // **cambio** size() a createCanvas()
+  strokeWeight(9);                          // strokeWeight() queda igual
+  stroke(255, 100);                         // stroke() queda igual
+  for(var i=0; i<x.length; i++) {         // inicializa el arreglo
     x[i]=0;
     y[i]=0;
   }
 }
 
-function draw() {                           // **change** void draw() to function draw()
+function draw() {                           // **cambio** void draw() a function draw()
   background(0);                            // background() is the same
   drawSegment(0, mouseX, mouseY);           // functions calls, mouseX and mouseY are the same
-  for(var i=0; i<x.length-1; i++) {         // **change** int i to var i
+  for(var i=0; i<x.length-1; i++) {         // **cambio** int i a var i
     drawSegment(i+1, x[i], y[i]);           // function calls are the same
   }
 }
 
-function drawSegment(i, xin, yin) {         // **change** void drawSegment() to function drawSegment(), remove type declarations
-  var dx = xin - x[i];                      // **change** float to var
-  var dy = yin - y[i];                      // **change** float to var
-  var angle = atan2(dy, dx);                // **change** float to var, atan2() is the same
-  x[i] = xin - cos(angle) * segLength;      // cos() is the same
-  y[i] = yin - sin(angle) * segLength;      // sin() is the same
-  segment(x[i], y[i], angle);               // function calls are the same
+function drawSegment(i, xin, yin) {         // **cambio** void drawSegment() a function drawSegment(), quita las declaraciones de tipo de dato
+  var dx = xin - x[i];                      // **cambio** float a var
+  var dy = yin - y[i];                      // **cambio** float a var
+  var angle = atan2(dy, dx);                // **cambio** float a var, atan2() queda igual
+  x[i] = xin - cos(angle) * segLength;      // cos() queda igual
+  y[i] = yin - sin(angle) * segLength;      // sin() queda igual
+  segment(x[i], y[i], angle);               // las llamadas a funciones quedan igual
 }
 
-function segment(x, y, a) {                 // **change** void segment() to function segment(), remove type declarations
-  push();                            		// pushMatrix() becomes push()
-  translate(x, y);                          // translate() is the same
-  rotate(a);                                // rotate() is the same
-  line(0, 0, segLength, 0);                 // line() is the same
-  pop();                              		// popMatrix() becomes pop()
+function segment(x, y, a) {                 // **cambio** void segment() a function segment(), quita las declaraciones de tipo de dato
+  push();                            		// pushMatrix() a push()
+  translate(x, y);                          // translate() queda igual
+  rotate(a);                                // rotate() queda igual
+  line(0, 0, segLength, 0);                 // line() queda igual
+  pop();                              		// popMatrix() a pop()
 }
 ```
 
