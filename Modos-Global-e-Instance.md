@@ -1,4 +1,4 @@
-Until now, we've been declaring everything in the "global" context (note the global context is actually the [window object](https://developer.mozilla.org/en-US/docs/Web/API/Window)).  In p5 lingo, we refer to this as "global mode".
+Hasta ahora, hemos declarado todo en el contexto "global" (observa que el contexto global es realmente el [objeto window](https://developer.mozilla.org/es/docs/Web/API/Window)).  En jerga p5, nos referimos a esto como "modo global".
 
 ```
 var x = 100;
