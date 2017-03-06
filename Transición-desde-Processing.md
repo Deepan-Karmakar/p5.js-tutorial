@@ -1,6 +1,6 @@
 ###Resumen de diferencias
 
-El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas discrepancias:
+El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas diferencias:
 
 + Como puedes pensar en tu bosquejo como más que solo el lienzo para dibujar, `size()` (tamaño) ha sido reemplazado por `createCanvas()` (crear lienzo), para sugerir la posibilidad de crear otros elementos.
 + `frameRate(num)` define la tasa de cuadros, pero la variable `frameRate`ha sido removida. Para obtener la actual tasa de cuadros, llama a la función `frameRate()` sin argumentos.
@@ -62,28 +62,28 @@ function draw() {
 }
 ```
 
-####Converit un bosquejo de Processing a p5.js
+####Convertir un bosquejo de Processing a p5.js
 
 Aquí se presentan dos ejemplos de bosquejos que han sido convertidos de Processing a p5.js. Los cambios hechos son señalados en los comentarios, todas las otras líneas quedan igual.
 
 ```javascript
 /**
- * This example can be found in the Processing examples package
- * that comes with the Processing PDE.
+ * Este ejemplo puede ser encontrado en la sección de ejemplos de Processing
+ * que está incluida en el ambiente de desarrollo de Processing.
  * Processing > Examples > Basics > Form > Bezier
- * Adapted by Evelyn Eastmond
+ * Adaptado por Evelyn Eastmond
  */
 
-function setup() {           // **change** void setup() to function setup()
-  createCanvas(640, 360);    // **change** size() to createCanvas()
-  stroke(255);               // stroke() is the same
-  noFill();                  // noFill() is the same
+function setup() {           // **cambio** void setup() a function setup()
+  createCanvas(640, 360);    // **cambio** size() a createCanvas()
+  stroke(255);               // stroke() queda igual
+  noFill();                  // noFill() queda igual
 }
 
-function draw() {                         // **change** void draw() to function draw()
-  background(0);                          // background() is the same
-  for (var i = 0; i < 200; i += 20) {     // **change** int i to var i
-    bezier(mouseX-(i/2.0), 40+i, 410, 20, 440, 300, 240-(i/16.0), 300+(i/8.0)); // bezier() is the same
+function draw() {                         // **cambio** void draw() a function draw()
+  background(0);                          // background() queda igual
+  for (var i = 0; i < 200; i += 20) {     // **cambio** int i a var i
+    bezier(mouseX-(i/2.0), 40+i, 410, 20, 440, 300, 240-(i/16.0), 300+(i/8.0)); // bezier() queda igual
   }
 }
 
