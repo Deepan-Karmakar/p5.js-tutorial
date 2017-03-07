@@ -42,6 +42,11 @@ From then on just `cd` to the folder that has the files you want to serve and ty
 
 Then point your browser at `http://localhost:8080/`
 
+##Processing Simple HTTPServer
+Simple HTTPServer library for processing. Allows communication in both ways.
+[Library page](https://transfluxus.github.io/SimpleHTTPServer/)
+
+
 ##Apache Server
 
 Python SimpleHTTPServer is great to get started, but at some point you might want to set up an Apache server. The Apache server supports a greater range of HTTP functionality and scales well for bigger projects. See below for OS specific setup.
