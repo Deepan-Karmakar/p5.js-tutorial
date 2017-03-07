@@ -44,6 +44,18 @@ Then point your browser at `http://localhost:8080/`
 
 ##Processing Simple HTTPServer
 Simple HTTPServer library for processing. Allows communication in both ways.
+```
+import http.*;
+
+SimpleHTTPServer server;
+
+void setup() {
+  // Create a server listening on port 8000
+  // serving index.html,which is in the data folder
+  server = new SimpleHTTPServer(this); 
+}
+```
+
 [Library page](https://transfluxus.github.io/SimpleHTTPServer/)
 
 
