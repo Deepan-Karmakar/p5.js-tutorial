@@ -1,6 +1,6 @@
 Some functionality (loading external files, for example) works as expected when the files are placed online via FTP or SSH. However, if you try to view them locally, you see some kind of "cross-origin" errors in console. The solution to this is to view them using what's called a local web server. This tutorial includes instructions for setting up several types of local web servers on each of Mac OSX, Windows, and Linux.
 
-##Python SimpleHTTPServer (1st option)
+## Python SimpleHTTPServer (1st option)
 
 If you need a quick web server running and you don't want to mess with setting up apache or something similar, then Python can help. Python comes with a simple builtin HTTP server. With the help of this little HTTP server you can turn any directory in your system into your web server directory. The only thing you need to have installed is [Python](https://www.python.org/downloads/) (Python is already installed if you are using Mac OS X).
 
@@ -20,7 +20,7 @@ Then visit `http://localhost:8000` on your browser.
 
 Unfortunately the python simple server is very slow. Loading a local page will often stall and it can't stream video and has trouble with even medium size files like an 8MB mp3 for example. However, it should suffice for loading in most text files, fonts and most images.
 
-##Node http-server (2nd option) 
+## Node http-server (2nd option) 
 
 An alternative is node.js http-server. It is much faster than python simple server while requiring a little bit of setup. Just 3 simple steps:
 
@@ -42,7 +42,7 @@ From then on just `cd` to the folder that has the files you want to serve and ty
 
 Then point your browser at `http://localhost:8080/`
 
-##Processing Simple HTTPServer (3rd option) 
+## Processing Simple HTTPServer (3rd option) 
 Simple HTTPServer library for processing. Allows communication in both ways.
 ```
 import http.*;
@@ -59,7 +59,7 @@ void setup() {
 [Library page of Processing simple HTTP server](https://transfluxus.github.io/SimpleHTTPServer/)
 
 
-##Apache Server (4th option) 
+## Apache Server (4th option) 
 
 Python SimpleHTTPServer is great to get started, but at some point you might want to set up an Apache server. The Apache server supports a greater range of HTTP functionality and scales well for bigger projects. See below for OS specific setup.
 
