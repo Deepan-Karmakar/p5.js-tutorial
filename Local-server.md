@@ -63,11 +63,11 @@ void setup() {
 
 Python SimpleHTTPServer is great to get started, but at some point you might want to set up an Apache server. The Apache server supports a greater range of HTTP functionality and scales well for bigger projects. See below for OS specific setup.
 
-###Mac OS X
+### Mac OS X
 
 Mac OS X since 10.5 Leopard ships with Apache web server installed, all you have to do is enable it and place the files in the right place.
 
-####Mac OS X 10.7 and above
+#### Mac OS X 10.7 and above
 
 1. Open Terminal and type:
 ```
@@ -86,7 +86,7 @@ sudo chmod -R 755 /Library/WebServer/Documents
 http://localhost/my-p5-sketch
 ```
 
-####Mac OS X 10.5 and 10.6
+#### Mac OS X 10.5 and 10.6
 
 1. Turn on the web server. Go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
 2. Verify it is working by going to `http://localhost/~<your username>` on your browser. You should see a default webpage with a title of "Your Website".
@@ -96,7 +96,7 @@ http://localhost/my-p5-sketch
 http://localhost/~macusername/my-p5-sketch
 ```
 
-###Windows
+### Windows
 
 1. Download WampServer from [http://www.wampserver.com/en/](http://www.wampserver.com/en/).
 2. Install WampServer and follow instructions.
@@ -105,7 +105,7 @@ http://localhost/~macusername/my-p5-sketch
 5. Open your internet browser and go to the URL : http://localhost/yourfile.html.
 
 
-###Linux
+### Linux
 
 1. Install apache2 via apt-get.
 2. Place your project somewhere inside /var/www/.
