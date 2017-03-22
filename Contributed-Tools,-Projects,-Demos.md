@@ -2,15 +2,15 @@
 
 For syllabi or teaching specific materials and tools, please see the [education page](https://github.com/processing/p5.js/wiki/Education).
 
-##Demos
+## Demos
 * [Video intro tutorial: p5.js](http://www.creativebloq.com/web-design/new-tool-ideas-code-41514620), Scott Garner
 * [differential equations with p5.js](http://students.learningtech.org/~pfarrell/p5_grid_zoom2.html), Peter Farrell
 * [Box2D Physics Tutorial](http://professorcook.org/CHAPphysics.pdf), Robert Cook
 
 
-##Tools
+## Tools
 
-####[p5.js sketch creator](http://blog.kennethfrederick.de/2014/06/sketch-creator.html)
+#### [p5.js sketch creator](http://blog.kennethfrederick.de/2014/06/sketch-creator.html)
 Simple app for the creation of p5.js sketches. Similar to [openframeworks-project generator](https://github.com/ofZach/project-creator) and [cinder-tinderbox](https://github.com/cinder/TinderBox-Mac), this app will create a directory with all dependencies (html, css, js, etc.) required for a p5.js project. Created by [Ken Frederick](http://kennethfrederick.de/). 
 * [overview](http://blog.kennethfrederick.de/2014/06/sketch-creator.html)
 * [github](https://github.com/frederickk/Sketch-Creator)
@@ -41,13 +41,13 @@ Created by Ben Moren
 #### [p5.js syntax theme for atom.io](https://atom.io/themes/p5js-syntax)
 Created by Ben Moren
 
-##Examples
+## Examples
 
-####[Nature of Code x p5.js](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js)
+#### [Nature of Code x p5.js](https://github.com/shiffman/The-Nature-of-Code-Examples-p5.js)
 Examples from Dan Shiffman's [Nature of Code](http://natureofcode.com) ported to p5.js.
 
 
-####[Monash University Creative Coding Sketches on p5](https://github.com/juansrx/Monash-University-Creative-Coding-Examples-p5.js)
+#### [Monash University Creative Coding Sketches on p5](https://github.com/juansrx/Monash-University-Creative-Coding-Examples-p5.js)
 Sketches from the Creative Coding Course found at [FutureLearn](https://www.futurelearn.com/courses/creative-coding) given by Jon McCormack from Monash University separated by weeks. See the link at the title for the
 github repository where all the examples can be found:
   1. Week 1:
