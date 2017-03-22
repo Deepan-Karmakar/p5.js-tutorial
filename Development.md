@@ -1,4 +1,4 @@
-###Getting started
+### Getting started
 
 Interested in contributing? Awesome! First, figure out what you'd like to do (a good place to start is the [issues list](https://github.com/processing/p5.js/issues) and [development checklist](https://github.com/processing/p5.js/wiki/Development---Checklist)):
 
@@ -25,7 +25,7 @@ Need help finding an issue to fix? Check out this [list of bite size issues](htt
 
 * **Contribute in some other way** -- Write to [hello@p5js.org](mailto:hello@p5js.org) and let us know what you're thinking! It is our intention that there should be many ways to contribute to p5.js, from writing code, to creating examples, tutorials and documentation, to thinking about workshops and education, to working on branding and design, and anything else you can dream up. Get in touch and we can talk about ways you might participate.
 
-###Setup
+### Setup
 
 1. Download and install [npm](https://npmjs.org/). The easiest way to do this is to just install [node](http://nodejs.org/).
 2. Install [Grunt](http://gruntjs.com/getting-started). 
@@ -57,7 +57,7 @@ Need help finding an issue to fix? Check out this [list of bite size issues](htt
 
 6. Run `grunt` one last time to make sure all the tests pass, and [submit a pull request](https://help.github.com/articles/creating-a-pull-request).
 
-###Overview
+### Overview
 
 This [looking inside p5.js video](http://www.luisapereira.net/teaching/looking-inside-p5/) describes the tools and files used in p5.js workflow.
 
@@ -69,7 +69,7 @@ This [looking inside p5.js video](http://www.luisapereira.net/teaching/looking-i
 
 `examples/` Contains code examples including a port of all of Dan Shiffman's [Learning Processing](learningprocessing.com), as well as an empty-empty example that demonstrates setting up a sketch, and examples related to specific [tutorials](https://github.com/processing/p5.js/wiki/Tutorials).
 
-###Testing
+### Testing
 
 With all new functions implemented, please include unit tests and inline documentation. A good example for how to format and write inline documentation can be seen in [PImage](https://github.com/processing/p5.js/blob/master/src/image/image.js). Examples of unit tests can be found in the [test/unit](https://github.com/processing/p5.js/tree/master/test/unit) directory. Directions for adding your own tests and including them are below.
 
@@ -100,7 +100,7 @@ Sometimes it is useful to run tests in browser especially when trying to debug t
 3. Commit and push changes
 4. Submit a PR against the `p5.js/master` branch
 
-###Repositories
+### Repositories
 
 * https://github.com/processing/p5.js - this repo contains the source code for the p5.js library, and the p5.dom.js addon library. The reference is also generated from this code, as the documentation and examples are located in the source code itself, maintained by Lauren McCarthy.
 * https://github.com/processing/p5.js-website - contains the code for http://p5js.org website, maintained by Lauren McCarthy. 
@@ -108,6 +108,6 @@ Sometimes it is useful to run tests in browser especially when trying to debug t
 * https://github.com/processing/p5.js-editor - contains the source code for the p5 editor, maintained by Sam Lavigne.
 * https://github.com/scottgarner/p5.js-video - contains the code for Hello p5.js!, maintained by Scott Garner.
 
-###Alternative Setup - Docker
+### Alternative Setup - Docker
 
 An alternative to setting up node, grunt, php, apache, and the p5.js & p5.js-website codebases is to use [toolness/p5.js-docker](https://github.com/toolness/p5.js-docker). While this does require the installation of a tool called Docker, it potentially makes viewing and editing the p5 website with the latest documentation and libraries a lot easier.
