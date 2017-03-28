@@ -4,7 +4,7 @@ See below for the basics, more specifics about yuidoc style [here](http://yui.gi
 
 __[List of examples needed](https://github.com/processing/p5.js/wiki/Development---Checklist)__
 
-###Specify element type and description
+### Specify element type and description
 
 There are 4 kinds of elements: `@class`, `@method`, `@property`, `@event`.
 You must specify one of these for the element to appear in the docs, with the name of the element after it. The description should appear on top and should not be formatted with spaces, tabs, etc.
@@ -52,7 +52,7 @@ You must specify one of these for the element to appear in the docs, with the na
    };
 ```
 
-###Specify parameters
+### Specify parameters
 
 For methods, any `@params` should be specified. They should not be formatted with spaces, tabs, etc, and should follow the standard:
 
@@ -66,7 +66,7 @@ If the parameter is optional, add square brackets around the name:
 @param {type} [name] Description here.
 ```
 
-###Specify return type
+### Specify return type
 
 The `@return` is identical to `@params`, but without the name. It should be the last element in `@method`. The JS types are: String, Number, Boolean, Object, Array, Null, and Undefined. If there is no return type, do not include `@return`. 
 
@@ -74,7 +74,7 @@ The `@return` is identical to `@params`, but without the name. It should be the 
 @return {type} Description of the data returned.
 ```
 
-###Additional signatures
+### Additional signatures
 
 If a method has multiple possible parameter options, you can specify each individually. For example, see the examples for [background](http://p5js.org/reference/#p5/background) under "syntax". To do this, choose one version to list as the first signature using the guidelines above. At the end of the documentation block, you can add additional signatures, each in it's own block, following the example below.
 
@@ -99,7 +99,7 @@ Notes:
 * It is not necessary to create a separate signature if the only difference between two signatures is the additional of an optional parameter.
 * You can see two examples of this inline in the source code for [background](https://github.com/processing/p5.js/blob/f38f91308fdacc2f1982e0430b620778fff30a5a/src/color/setting.js#L106) and [color](https://github.com/processing/p5.js/blob/f38f91308fdacc2f1982e0430b620778fff30a5a/src/color/creating_reading.js#L241).
 
-###Specify other tags
+### Specify other tags
 
 Use `@final` if a property or variable is a constant:
 
@@ -125,7 +125,7 @@ Use `@private` if a property or variable is a private variable (default is `@pub
      p5.prototype._start = function () {
 ```
 
-###Specify module for files
+### Specify module for files
 
 The top of each *file* should contain a `@module` tag at the top of the file. Modules should correspond to JavaScript files (or require.js modules). They can work as groups in the lists of items. see here: http://p5js.org/api/#methods (the modules are COLOR, IMAGE, PVECTOR, etc.). 
 
@@ -139,7 +139,7 @@ define(function (require) {
 ```
 
 
-###Constructors
+### Constructors
 
 Constructors are defined with `@class`. Each constructor should have the tag `@class` followed by the name of the class, as well as the tag `@constructor`, and any `@param` tags required.
 
@@ -156,7 +156,7 @@ Constructors are defined with `@class`. Each constructor should have the tag `@c
    }
 ```
 
-###Adding example code
+### Adding example code
 
 Optionally, you can add examples with `@example`. Example code can be placed between `<code></code>` tags with comments included. Unless otherwise specified with a `setup()` function, each `<code>` block is automatically run on a canvas of 100x100 pixels with a gray background. Please see examples in other src files to make sure it is formatted correctly.
 
@@ -198,7 +198,7 @@ On some code editors copy-pasting examples in the inline documentation may be aw
 [p5examplesFormatter](http://molleindustria.org/p5examplesFormatter/)
 | [download as zip](http://molleindustria.org/p5examplesFormatter/p5examplesFormatter.zip)
 
-###Generating documentation
+### Generating documentation
 
 Run `grunt requirejs:yuidoc_theme` once first to generate all local files needed. Run it again anytime you make changes to the core JS files behind the yuidoc reference page. These are changes in files located in the yuidoc-p5-theme-src folder, NOT inline documentation changes to src, this regenerates the templates. Then run `grunt yui:dev` to regenerate the reference based on the updated theme from the source. This will create a copy of the reference you can view locally in docs/reference (note that you need to be running a server for it to display correctly). If you notice the page not updating, try deleting the `reference/` folder and running the command again.
 
