@@ -4,20 +4,20 @@ Research documentation
 This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is below.
 
 
-#Starting points#
+# Starting points
 
-##Possibilities##
+## Possibilities
 + what would be gained/lost by js, removing java altogether
 + processing-lite, js syntax
 + processing-js bridge to c++ compiles
 + installations without c++
 + processing as web dev
 
-##Approaches##
+## Approaches
 + a bunch of different scenarios - writing out what code for that would look like
 + speculative source code - examples or hack usable
 
-##Goals##
+## Goals
 + processing identity - running in browser, barrier to entry low
 + primary audience - hard-core programmers, 19yr old design students
 + system+api
