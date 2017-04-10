@@ -42,6 +42,12 @@ From then on just `cd` to the folder that has the files you want to serve and ty
 
 Then point your browser at `http://localhost:8080/`
 
+Note: When running the server, you may also need to include the cache flag, with a value of '-1'. This tells the browser not to cache files (like sketch.js).
+
+```bash
+http-server -c-1
+```
+
 ## Processing Simple HTTPServer (3rd option) 
 Simple HTTPServer library for processing. Allows communication in both ways.
 ```
