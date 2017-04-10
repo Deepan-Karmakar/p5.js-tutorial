@@ -24,7 +24,7 @@ Unfortunately the python simple server is very slow. Loading a local page will o
 
 An alternative is node.js http-server. It is much faster than python simple server while requiring a little bit of setup. Just 3 simple steps:
 
-1.  [Download and Install node.js](http://nodejs.org/download)
+1.  [Download and Install node.js](https://nodejs.org/en/download/)
 2.  Open a terminal or command prompt 
 3.  On OSX/Linux type
 
