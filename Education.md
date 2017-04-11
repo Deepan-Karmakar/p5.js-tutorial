@@ -3,7 +3,7 @@
 Note that examples included may be using older versions of p5.js and might not be up to date.
 
 
-###Class / workshop syllabi
+### Class / workshop syllabi
 
 * [Intro to Computational Media, NYU ITP F15](https://github.com/ITPNYU/ICM-2015)
 * [Creative Coding, NYU IDM](http://creative-coding.decontextualize.com/)
@@ -19,10 +19,10 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Intro to Media Computing @ the School of Creative Media, Hong Kong](http://rednoise.org/imc)
 * [Arduino + p5.js examples](https://github.com/tigoe/GraphingSketches)
 
-###Tools
+### Tools
 * [WordPress p5.js embedder](https://github.com/lmccart/p5.js-wp-embedder) - plugin to embed p5.js sketches into WordPress pages and posts (**Discontinued, use at own risk**)
 
-###Tutorials
+### Tutorials
 * [Embedding p5.js](https://github.com/processing/p5.js/wiki/Embedding-p5.js) - different ways of including sketches on existing sites or blogs.
 
 
