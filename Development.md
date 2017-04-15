@@ -111,3 +111,7 @@ Sometimes it is useful to run tests in browser especially when trying to debug t
 # Alternative Setup - Docker
 
 An alternative to setting up node, grunt, php, apache, and the p5.js & p5.js-website codebases is to use [toolness/p5.js-docker](https://github.com/toolness/p5.js-docker). While this does require the installation of a tool called Docker, it potentially makes viewing and editing the p5 website with the latest documentation and libraries a lot easier.
+
+# p5.js API JSON file
+
+[This file](https://p5js.org/reference/data.json) can be used for auto-complete. This [gist](https://gist.github.com/jonohayon/b059a029755f84f42b29f005323ec165) explains how to parse the file. Note that the data.json file is generated when the `grunt` command is run, it is found on the p5js.org website but is not included in the repo.
