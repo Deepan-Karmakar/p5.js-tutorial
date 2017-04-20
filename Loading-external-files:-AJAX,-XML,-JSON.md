@@ -1,7 +1,7 @@
-#Asynchronous JS
+# Asynchronous JS
 JS is "single threaded and synchronous", meaning everything runs in order that it's written in the file. __However__, JS also makes use of "asynchronous" functions to make the program flow faster. This means the program will begin to run the function, but continue on to the next line of code without waiting for the function to complete. Loading images, external files, and URLs are generally handled by async functions. 
 
-#AJAX
+# AJAX
 
 AJAX (Asynchronous JavaScript and XML) is a technique for communicating with a server and dynamically altering a page without leaving the page. It can be used to send as well as receive information in a variety of formats, including JSON, XML, HTML, and text files. It is made possible with the [XMLHttpRequest object](http://www.w3schools.com/XML/xml_http.asp), a built-in feature of your browser. 
 
@@ -11,7 +11,7 @@ This diagram illustrates the basic flow:
 
 AJAX is a bit difficult to get working in a cross platform manner (see an example [here](http://stackoverflow.com/questions/9713058/sending-post-data-with-a-xmlhttprequest)) but there are quite a few libraries out there that have done the hard work. Following are some examples with p5.js and jQuery, but first, a brief note about callbacks.
 
-##Callbacks
+## Callbacks
 A callback is a function that is passed to another function as a parameter, and called by that other function. A callback function is useful when working with asynchronous functions because it allows us to specify some code to execute after the first asynchronous task has completed.
 
 We've actually already used callbacks when we used setTimeout, setInterval, and addEventListener. For example, "doSomething" below is a callback function:
@@ -27,7 +27,7 @@ setTimeout(doSomething, 5000);
 You will see callbacks used in p5.js and jQuery to tell the program what to do after the external data is received.
 
 
-##JSON
+## JSON
 [JSON](http://json.org/) (JavaScript Object Notation) is a standard way to provide machine readable data to and from web services. Despite the fact that JavaScript is part of its title, it's generally useful in all programming languages.
 
 A JSON object is an unordered set of name/value pairs. An object begins with `{` (left brace) and ends with `}` (right brace). Each name is followed by `:` (colon) and the name/value pairs are separated by `,` (commas). The name is always a string, the value can be a string, number, boolean, array, or a nested object.
@@ -82,7 +82,7 @@ Now you can access it with the variable `mydata`:
 alert('I am at' + mydata.address.streetAddress);
 ```
 
-##XML
+## XML
 
 [XML](https://en.wikipedia.org/wiki/XML) (Extensible Markup Language) is another popular format for providing machine readable data to and from web services. XML is made up of tags, similar to HTML, but unlike HTML, there are no predefined tags (like h1, p, html, etc), instead you make up your own.
 
@@ -123,7 +123,7 @@ p5.js has a variety of methods for using AJAX to retrieve files from a server. T
 * [loadXML](http://p5js.org/reference/#/p5/loadXML) - loads .xml files
 * [loadTable](http://p5js.org/reference/#/p5/loadTable) - loads .csv files
 
-###loadStrings
+### loadStrings
 
 loadStrings loads a text file and returns an array of strings. It takes two arguments, the path to the file, and the callback function. When the server has returned the text data and it has been parsed, doText is run with the result automatically passed in as the variable "data".
 
@@ -161,7 +161,7 @@ function doText(data) {
 ```
 
 
-###loadJSON
+### loadJSON
 
 loadJSON loads a JSON file and returns a JavaScript object. It takes two arguments, the path to the file, and the callback function. When the server has returned the JSON data and it has been parsed, drawData is run with the result automatically passed in as the variable "data".
 
@@ -240,11 +240,11 @@ function drawWeather(weather) {
 }
 ```
 
-###loadXML
+### loadXML
 
 loadXML loads an XML file and returns an XML object. It takes two arguments, the path to the file, and the callback function. It's a little messier to work with XML objects, but you can learn about how to do that [here](http://www.w3schools.com/xml/dom_intro.asp).
 
-###preload
+### preload
 
 If you'd prefer not to deal with asynchronous callbacks, p5.js also has a function called "preload" that lets you load external files synchronously before setup is run. If a preload function is defined, setup will wait until any load calls within have finished. This allows you to access the file data in setup and draw without needing a callback. Nothing besides load calls should be inside preload (loadImage, loadJSON, loadStrings, loadXML, etc).
 
