@@ -1,6 +1,6 @@
 A p5.js library can be any JavaScript code that extends or adds to the p5.js core functionality. There are two categories of libraries. Core libraries (DOM and Sound) are part of the p5.js distribution, while contributed libraries are developed, owned, and maintained by members of the p5.js community.
 
-#Adding a library to your project
+# Adding a library to your project
 
 Two libraries are included with the p5.js download, [p5.dom.js](http://p5js.org/reference/#/libraries/p5.dom) and [p5.sound.js](http://p5js.org/reference/#/libraries/p5.sound). Other contributed libraries can be found on the [libraries page](http://p5js.org/libraries/). 
 
@@ -16,13 +16,13 @@ To include a library in your sketch, link it into your HTML file, after you have
 <body>
 </body>
 ```
-#Creating a new library
+# Creating a new library
 
 There are a lot of different ways to write and use JavaScript, so we leave this up to you. What follows are some notes about having your library work well with p5.js.
 
-##Code
+## Code
 
-####You can extend p5 core functionality by adding methods to p5.prototype.
+#### You can extend p5 core functionality by adding methods to p5.prototype.
 For example, the following code in p5.dom.js extends p5 to add a `createImg()` method that adds an [HTMLImageElement](https://developer.Mozilla.org/en-US/docs/Web/API/HTMLImageElement) to the DOM. 
 
   ```js
@@ -36,10 +36,10 @@ For example, the following code in p5.dom.js extends p5 to add a `createImg()` m
   ```
   When the DOM library is included in a project, `createImg()` can be called just like `createCanvas()` or `background()`.
 
-####Use private functions for internal helpers.
+#### Use private functions for internal helpers.
 Functions not intended to be called by users. In the example above `addElement()` is an internal function in [p5.dom.js](https://GitHub.com/processing/p5.js/blob/master/lib/addons/p5.dom.js). It isn't publicly bound to `p5.prototype` though.
 
-####You can extend p5.js classes as well, by adding methods to their prototypes.
+#### You can extend p5.js classes as well, by adding methods to their prototypes.
 In the example below, `p5.Element.prototype` is extended with the `html()` method, that sets the inner html of the element.
   ```js
   p5.Element.prototype.html = function (html) {
@@ -48,7 +48,7 @@ In the example below, `p5.Element.prototype` is extended with the `html()` metho
   };
   ```
   
-####Use registerPreloadMethod() to register names of methods with p5 that may be called in preload().
+#### Use registerPreloadMethod() to register names of methods with p5 that may be called in preload().
 
 Typically, with some asynchronous functions (like loading a sound, image, or other external file), there are both synchronous and asynchronous options offered. For example, `loadStrings(path, [callback])` accepts an optional second callback argument - a function that is called after the loadStrings function completes. However, a user may also call loadStrings in `preload()` without a callback, and the p5.js will wait until everything in `preload()` completes before moving on to `setup()`. If you would like to register a method of your own call `registerPreloadMethod()` with the name of the method to register, and pass the prototype object the method belongs to ~~(defaults to p5.prototype)~~. The example below shows a line in the "soundfile.js" (p5.sound library) that registers `loadSound()`.
 
@@ -56,7 +56,7 @@ Typically, with some asynchronous functions (like loading a sound, image, or oth
   p5.prototype.registerPreloadMethod('loadSound', p5.prototype);
   ```
 
-####Example of async function for _callback_ and **preload()**.
+#### Example of async function for _callback_ and **preload()**.
 ```js
 // Example of async function for use in preload() or with callback.
 p5.prototype.getData = function (callback) {
@@ -88,7 +88,7 @@ p5.prototype.getData = function (callback) {
 };
 ```
   
-####Use **registerMethod()** to register functions with _**p5**_ that should be called at various times.
+#### Use **registerMethod()** to register functions with _**p5**_ that should be called at various times.
 
   ```js
   p5.prototype.doRemoveStuff = function () { 
@@ -108,10 +108,10 @@ More to come shortly, lining up roughly with this list:
 https://GitHub.com/processing/processing/wiki/Library-Basics#library-methods
 
 
-####You can also create your own classes.
+#### You can also create your own classes.
 Your library may not extend p5 or p5 classes at all, but instead just offer extra classes that can be instantiated and used in conjunction with the library. Or it may do some mix of both.
 
-##Naming
+## Naming
 * **Don't overwrite p5 functions or properties.** When you are extending p5.prototype, be careful not to use the names of existing properties or functions. You can use [hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) to test names. For example, the following line placed at the top of your library file will print true because the `rect()` method exists:
 
   ```js
@@ -127,7 +127,7 @@ Your library may not extend p5 or p5 classes at all, but instead just offer extr
 * **p5.js library filenames are also prefixed with p5, but the next word is lowercase**, to distinguish them from classes. For example, p5.dom.js and p5.sound.js. You are encouraged to follow this format for naming your file.
 
 
-##Packaging
+## Packaging
 * **Create a single JS file that contains your library.** This makes it easy for users to link it into their projects. You might also think about having options for both the normal JS file and a [minified](http://jscompress.com/) version for faster loading.
 
 * **Contributed libraries are hosted, documented, and maintained by their creators.** This could be on GitHub, on a separate website, or somewhere else.
