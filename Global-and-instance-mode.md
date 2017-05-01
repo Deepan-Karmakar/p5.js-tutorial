@@ -164,7 +164,7 @@ You can set various properties of the video via attributes.
 <video loop="true" autoplay="true"><source src="fingers.mov"></video>
 ```
 
-We could of course type the HMTL directly into index.html, but we can also create it dynamically via p5.
+We could, of course, type the HTML directly into index.html, but we can also create it dynamically via p5.
 
 ```
 video = createHTML('<video id=\'vid\'><source src=\'fingers.mov\'></video>');
