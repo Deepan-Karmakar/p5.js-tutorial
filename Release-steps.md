@@ -49,5 +49,5 @@ List of the very few things that get done when posting a new p5 release...
 
 ### Updating docs
 1. Run `grunt yui`.
-2. Move `docs/reference` to `p5.js-website/reference`.
+2. Move `docs/reference` to `p5.js-website/dist/reference` and `p5.js-website/dist/es/reference`.
 3. Push changes to github to auto-update site.
