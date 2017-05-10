@@ -32,7 +32,7 @@ List of the very few things that get done when posting a new p5 release...
   </body>
 </html>
 ```
-![](http://imgur.com/a/YQA9k)
+![](http://i.imgur.com/VTtmGB7.png)
 
 ### Post other versions
 1. Run `npm publish` from p5.js repo to publish to http://npmjs.com.
