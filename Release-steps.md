@@ -17,7 +17,7 @@ List of the very few things that get done when posting a new p5 release...
     * p5.zip (`zip -r p5-zip.zip p5-zip -x '*/.DS_Store'`) all above files + empty-example containing:
       * sketch.js
       * index.html
-```html
+      ```html
 <!DOCTYPE html>
 <html>
   <head>
