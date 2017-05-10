@@ -84,7 +84,7 @@ If a method has multiple possible parameter options, you can specify each indivi
  * @param {String} colorstring color string, possible formats include: integer
  *                         rgb() or rgba(), percentage rgb() or rgba(),
  *                         3-digit hex, 6-digit hex
- * @param {Number} [a]
+ * @param {Number} [a] alpha value
  */
 
 /**
