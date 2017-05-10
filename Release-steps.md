@@ -15,10 +15,23 @@ List of the very few things that get done when posting a new p5 release...
     * p5.sound.js
     * p5.sound.min.js
     * p5.zip (`zip -r p5-zip.zip p5-zip -x '*/.DS_Store'`) all above files + empty-example containing:
-      * libraries/p5.js
-      * libraries/p5.dom.js
-      * libraries/p5.sound.js
-      * index.html 
+      * sketch.js
+      * index.html
+        ```html
+<html><!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/addons/p5.sound.min.js"></script>
+    <script src="sketch.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <style> body {padding: 0; margin: 0;} </style>
+  </head>
+  <body>
+  </body>
+</html>
+```
 
 ![](http://i.imgur.com/nLMqqOT.png?1)
 
