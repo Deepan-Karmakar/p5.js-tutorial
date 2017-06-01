@@ -19,7 +19,7 @@ Note that examples included may be using older versions of p5.js and might not b
 * [Intro to Media Computing @ the School of Creative Media, Hong Kong](http://rednoise.org/imc)
 * [Arduino + p5.js examples](https://github.com/tigoe/GraphingSketches)
 * [Physics Programming Lab with Processing](http://www.physics.ohio-state.edu/~orban/processing_2015/)
-
+* [Creative Coding with p5.js tutorial](http://bsk.education/SE8_p5js/)
 
 ### Tools
 * [WordPress p5.js embedder](https://github.com/lmccart/p5.js-wp-embedder) - plugin to embed p5.js sketches into WordPress pages and posts (**Discontinued, use at own risk**)
