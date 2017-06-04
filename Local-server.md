@@ -116,3 +116,20 @@ http://localhost/~macusername/my-p5-sketch
 1. Install apache2 via apt-get.
 2. Place your project somewhere inside /var/www/.
 3. View it at http://localhost.
+
+## Using PHP built-in web server (5th option)
+
+[PHP has (since version 5.4.0) a built-in web server](https://secure.php.net/manual/en/features.commandline.webserver.php) for testing purposes that can be used to test P5.js sketches. 
+
+To check if you have PHP installed you can open a terminal and issue the command:
+
+```
+php -version
+```
+
+If you have PHP CLI (Command Line Interpreter) installed you can start a local development server by usingd the command:
+
+```
+php -S localhost:8000
+```
+Then point your browser at `http://localhost:8000/`
