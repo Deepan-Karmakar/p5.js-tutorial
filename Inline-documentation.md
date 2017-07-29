@@ -74,6 +74,12 @@ The `@return` is identical to `@params`, but without the name. It should be the 
 @return {type} Description of the data returned.
 ```
 
+If the method returns the parent object, you can skip the @return and add this line instead:
+
+```
+@chainable
+```
+
 ### Additional signatures
 
 If a method has multiple possible parameter options, you can specify each individually. For example, see the examples for [background](http://p5js.org/reference/#p5/background) under "syntax". To do this, choose one version to list as the first signature using the guidelines above. At the end of the documentation block, you can add additional signatures, each in it's own block, following the example below.
