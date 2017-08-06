@@ -1,6 +1,7 @@
 List of the very few things that get done when posting a new p5 release...
 
 ### Posting a new release
+0. Run `grunt yui` to rebuilt documentation.
 1. Increment version number in package.json.
 2. Run `grunt` to build latest lib files with new tag and date.
 0. Increment version number in p5.dom.js if changes made.
