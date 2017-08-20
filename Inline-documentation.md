@@ -206,10 +206,6 @@ On some code editors copy-pasting examples in the inline documentation may be aw
 
 ### Generating documentation
 
-Run `grunt requirejs:yuidoc_theme` once first to generate all local files needed. Run it again anytime you make changes to the core JS files behind the yuidoc reference page. These are changes in files located in the yuidoc-p5-theme-src folder, NOT inline documentation changes to src, this regenerates the templates. Then run `grunt yui:dev` to regenerate the reference based on the updated theme from the source. This will create a copy of the reference you can view locally in docs/reference (note that you need to be running a server for it to display correctly). If you notice the page not updating, try deleting the `reference/` folder and running the command again.
-
-Running `grunt yui:dev` will generate docs for local testing that link to the local copy of the library available in the `lib/` folder. This is what you probably want to run in order to view the reference locally.
-
-Running `grunt yui` will generate docs ready for the website that link to the version of the p5.js library on the website already with relative links.
+Run `grunt requirejs:yuidoc_theme` once first to generate all local files needed. Run it again anytime you make changes to the core JS files behind the yuidoc reference page. These are changes in files located in the yuidoc-p5-theme-src folder, NOT inline documentation changes to src, this regenerates the templates. Then run `grunt yui` to regenerate the reference based on the updated theme from the source. This will create a copy of the reference you can view locally in docs/reference (note that you need to be running a server for it to display correctly). If you notice the page not updating, try deleting the `reference/` folder and running the command again.
 
 Periodically (ideally with each new release), the docs/reference folder needs to be manually copied over to p5js.org/reference, and submitted via PR. If you'd like to try out a setup that does this for you automatically, making viewing the p5 website with the latest docs and libraries a lot easier, see [toolness/p5.js-docker](https://github.com/toolness/p5.js-docker).
