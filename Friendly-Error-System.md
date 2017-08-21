@@ -10,7 +10,7 @@ Two main features are:
 #### `core/error_helpers/validateParameters()`:
 * This function runs parameter validation by matching the input parameters with information from `docs/reference/data.json`, which is created from the function's inline documentation. It checks that a function call contains the correct number and the correct type of parameters. 
 * This can be called through: `p5._validateParameters(FUNCT_NAME, ARGUMENTS)` 
-or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that requires parameter validation.
+or, `this._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that requires parameter validation.
 * Implemented to functions in `color/creating_reading`, `core/2d_primitives`, `core/curves`, and `utilities/string_functions`. 
 
 ## Additional Features
