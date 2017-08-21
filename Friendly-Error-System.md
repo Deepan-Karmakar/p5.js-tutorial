@@ -27,8 +27,8 @@ or, `this._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that r
 * FES may still result a false negative cases. For example, drawing a 3D line with 
 ```javascript 
 var x3 // undefined; 
-line(0, 0, 100, 100, x3, Math.PI);`
-
+line(0, 0, 100, 100, x3, Math.PI);
+```
  will escape FES, because there is an acceptable parameter pattern (`Number`, `Number`, `Number`, `Number`) in `line()`'s inline documentation.
 * Only detects an error in `loadXML` and `loadTable` when the file is requested as a url and not as a file path. I think this has to do with the reqwest library as documented here: https://github.com/ded/reqwest/issues/177
 
@@ -48,3 +48,4 @@ line(0, 0, 100, 100, x3, Math.PI);`
      window.console[func] = function(msg) {
       original[func].apply(original, arguments)
      };
+```
