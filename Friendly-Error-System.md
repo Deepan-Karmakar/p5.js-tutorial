@@ -34,7 +34,7 @@ or, `this._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that r
 * Having a Spanish translation available.
 * All the colors are checked for being color blind friendly. 
 * A more elaborate ascii welcome! 
-* Global Error catching. It would be very helpful to catch the errors the browser is throwing to the console, so we can match them up with friendly comments. So far we've tried window.onerror and the following with no success. 
+* Global Error catching. It would be very helpful to catch the errors the browser is throwing to the console, so we can match them up with friendly comments. So far we've tried `window.onerror` and the following with no success. 
 
      var original = window.console;
       
