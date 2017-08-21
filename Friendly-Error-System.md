@@ -1,6 +1,6 @@
 The goal of the friendly error system (FES) is to create accessible error messages to supplement the often cryptic console errors. They are color coded, written in natural language, linked to documentation, and assume a beginner level. The errors are triggered in multiple files through out p5.js, but most of the work and error writing happens in: `src/core/error_helpers.js`. 
 
-Two main features of the current version are:
+Two main features are:
 #### `friendlyFileLoadError(errorType, filePath)`: 
 * This function generates and displays friendly error messages related to file loading issues.
 * Currently version contains templates for generating error messages for `image`, `XML`, `table`, `text`, and `font` files.
@@ -10,7 +10,6 @@ Two main features of the current version are:
 * This function runs parameter validation by matching the input parameters with information from `docs/reference/data.json`, which is created from the function's inline documentation. 
 * This can be called through: `p5._validateParameters(FUNCT_NAME, ARGUMENTS)` 
 or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that requires parameter validation.
-* p5.js objects used for parameters will need to assign value for `name` parameter (name of the object) within the class declaration.
 * Implemented to functions in `color/creating_reading`, `core/2d_primitives`, `core/curves`, and `utilities/string_functions`. 
 
 ## Current Features
@@ -21,8 +20,9 @@ or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that 
 * Welcomes the developer to p5 and the friendly debugger. 
 * They work in the IDE and the web editor. 
 
-## Inline Documentation Guideline
-
+## Notes for developers
+* Inline documentation: 
+* When creating p5.js Objects: any p5.js objects that will be used for parameters will need to assign value for `name` parameter (name of the object) within the class declaration.
 
 ## Known Limitations
 * The friendly error system slows the program down, so there is an option to turn it off via setting `p5.disableFriendlyErrors = true;`. In addition, the friendly error system is omitted by default in the minified (p5.min.js) version.
