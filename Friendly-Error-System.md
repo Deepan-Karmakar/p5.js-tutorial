@@ -2,22 +2,19 @@ The goal of the friendly error system (FES) is to create accessible error messag
 
 Two main features are:
 #### `core/error_helpers/friendlyFileLoadError()`: 
-* This function generates and displays friendly error messages related to file loading issues.
+* This function generates and displays friendly error messages if a file fails to load correctly. 
 * This can be called through : `p5._friendlyFileLoadError(ERROR_TYPE, FILE_PATH)`.
 * Currently version contains templates for generating error messages for `image`, `XML`, `table`, `text`, and `font` files.
-* Implemented to `image/loading_displaying/loadImage()`, `io/files/loadFont()`, and `io/files/loadTable()
+* Implemented to `image/loading_displaying/loadImage()`, `io/files/loadFont()`, and `io/files/loadTable()`.
 
 #### `core/error_helpers/validateParameters()`:
-* This function runs parameter validation by matching the input parameters with information from `docs/reference/data.json`, which is created from the function's inline documentation. 
+* This function runs parameter validation by matching the input parameters with information from `docs/reference/data.json`, which is created from the function's inline documentation. It checks that a function call contains the correct number and the correct type of parameters. 
 * This can be called through: `p5._validateParameters(FUNCT_NAME, ARGUMENTS)` 
 or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that requires parameter validation.
 * Implemented to functions in `color/creating_reading`, `core/2d_primitives`, `core/curves`, and `utilities/string_functions`. 
 
 ## Current Features
-* Checks that a function call contains the correct number of parameters.  
-* Checks that a function call contains the correct type of parameters.  
 * ~~All the colors are checked for being color blind friendly.~~
-* Provides an error if a file fails to load correctly. 
 * Welcomes the developer to p5 and the friendly debugger. 
 * They work in the IDE and the web editor. 
 
@@ -27,14 +24,14 @@ or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that 
 
 ## Known Limitations
 * The friendly error system slows the program down, so there is an option to turn it off via setting `p5.disableFriendlyErrors = true;`. In addition, the friendly error system is omitted by default in the minified (p5.min.js) version.
-* 
 * Only detects an error in loadXML and loadTable when the file is requested as a url and not as a file path. I think this has to do with the reqwest library as documented here: https://github.com/ded/reqwest/issues/177
 
 ## In The Works
-* Having a spanish translation available. 
-* A more elaborate ascii welcome! 
+
 
 ## Thoughts for the Future
+* Having a spanish translation available. 
+* A more elaborate ascii welcome! 
 * Global Error catching. It would be very helpful to catch the errors the browser is throwing to the console, so we can match them up with friendly comments. So far we've tried window.onerror and the following with no success. 
 
      var original = window.console;
@@ -43,6 +40,4 @@ or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that 
      window.console[func] = function(msg) {
       original[func].apply(original, arguments)
      };
-
 * Checking that a number positive for nf() nfc() nfp() nfs()
-* Having the needed parameters only specified in the comments above the function. Rather than twice: once in the function and once above the function in the comments.  
