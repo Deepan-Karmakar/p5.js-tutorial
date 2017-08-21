@@ -24,10 +24,11 @@ or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that 
 
 ## Known Limitations
 * The friendly error system slows the program down, so there is an option to turn it off via setting `p5.disableFriendlyErrors = true;`. In addition, the friendly error system is omitted by default in the minified (`p5.min.js`) version.
+* FES may still result a false negative cases. For example, drawing a 3D line with `var x3 // undefined; line(0, 0, 100, 100, x3, Math.PI);` will escape FES, because there is an acceptable parameter pattern (`Number`, `Number`, `Number`, `Number`) in `line()`'s inline documentation.
 * Only detects an error in `loadXML` and `loadTable` when the file is requested as a url and not as a file path. I think this has to do with the reqwest library as documented here: https://github.com/ded/reqwest/issues/177
 
 ## In The Works
-
+* common err type - required object not initiated
 
 ## Thoughts for the Future
 * Having a Spanish translation available.
