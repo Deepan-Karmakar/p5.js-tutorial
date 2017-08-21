@@ -14,7 +14,6 @@ or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that 
 * Implemented to functions in `color/creating_reading`, `core/2d_primitives`, `core/curves`, and `utilities/string_functions`. 
 
 ## Current Features
-* ~~All the colors are checked for being color blind friendly.~~
 * Welcomes the developer to p5 and the friendly debugger. 
 * They work in the IDE and the web editor. 
 
@@ -30,7 +29,8 @@ or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that 
 
 
 ## Thoughts for the Future
-* Having a spanish translation available. 
+* Having a Spanish translation available.
+* All the colors are checked for being color blind friendly. 
 * A more elaborate ascii welcome! 
 * Global Error catching. It would be very helpful to catch the errors the browser is throwing to the console, so we can match them up with friendly comments. So far we've tried window.onerror and the following with no success. 
 
