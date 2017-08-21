@@ -13,7 +13,7 @@ Two main features are:
 or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that requires parameter validation.
 * Implemented to functions in `color/creating_reading`, `core/2d_primitives`, `core/curves`, and `utilities/string_functions`. 
 
-## Current Features
+## Additional Features
 * Welcomes the developer to p5 and the friendly debugger. 
 * They work in the IDE and the web editor. 
 
