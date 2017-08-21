@@ -19,7 +19,7 @@ or, `this._validateParameters(FUNCT_NAME,  arguments)` inside the function that 
 
 ## Notes for Developers
 * When creating p5.js Objects: any p5.js objects that will be used for parameters will need to assign value for `name` parameter (name of the object) within the class declaration.
-* Inline documentation: allowed parameter types are `Boolean`, `Number`, `String`, and name of the object (see the above bullet point). Use `Array` for any types of Array parameters. Explain what kind of the specific types of array parameter (e.g. `Number[]`, `String[]`) in the description section.
+* Inline documentation: allowed parameter types are `Boolean`, `Number`, `String`, and name of the object (see the above bullet point). Use `Array` for any types of Array parameters. If needed, explain what kind of the specific types of array parameter are allowed (e.g. `Number[]`, `String[]`) in the description section.
 * Currently supported class types: `p5.Color`, `p5.Element`, `p5.Graphics`, `p5.Renderer`, `p5.Renderer2D`, `p5.Image`, `p5.Table`, `p5.TableRow`, `p5.XML`, `p5.Vector`, `p5.Font`, `p5.Geometry`, `p5.Matrix`, `p5.RendererGL`.
 
 ## Known Limitations
