@@ -28,7 +28,7 @@ or, `this._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that r
 * Only detects an error in `loadXML` and `loadTable` when the file is requested as a url and not as a file path. I think this has to do with the reqwest library as documented here: https://github.com/ded/reqwest/issues/177
 
 ## In The Works
-* common err type - required object not initiated
+* Identify more common error types and generalize with FES (e.g. `bezierVertex()`, `quadraticVertex()` - required object not initiated;)
 
 ## Thoughts for the Future
 * Having a Spanish translation available.
