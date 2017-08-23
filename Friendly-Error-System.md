@@ -29,7 +29,7 @@ or, `this._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that r
 var x3 // undefined; 
 line(0, 0, 100, 100, x3, Math.PI);
 ```
- will escape FES, because there is an acceptable parameter pattern (`Number`, `Number`, `Number`, `Number`) in `line()`'s inline documentation for drawing in 2D setting.
+ will escape FES, because there is an acceptable parameter pattern (`Number`, `Number`, `Number`, `Number`) in `line()`'s inline documentation for drawing in 2D setting. This also means the current version of FES doesn't check for the environmental variables such as `_renderer.isP3D`.
 * Only detects an error in `loadXML` and `loadTable` when the file is requested as a url and not as a file path. I think this has to do with the reqwest library as documented here: https://github.com/ded/reqwest/issues/177
 
 ## In The Works
