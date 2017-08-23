@@ -24,7 +24,7 @@ or, `this._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that r
 
 ## Known Limitations
 * The friendly error system slows the program down, so there is an option to turn it off via setting `p5.disableFriendlyErrors = true;`. In addition, the friendly error system is omitted by default in the minified (`p5.min.js`) version.
-* FES may still result false negative cases. For example, drawing a 3D line with 
+* FES may still result false negative cases. These are usually caused by the mismatch between designs of the  functions (e.g. drawing functions those are originally designed to be used interchangeably in both 2D and 3D settings) with actual usage cases. For example, drawing a 3D line with 
 ```javascript 
 var x3 // undefined; 
 line(0, 0, 100, 100, x3, Math.PI);
