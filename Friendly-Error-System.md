@@ -25,6 +25,7 @@ By default, FES is enabled for p5.js, whereas completely disabled in p5.min.js. 
 * When creating p5.js Objects: any p5.js objects that will be used for parameters will need to assign value for `name` parameter (name of the object) within the class declaration.
 * Inline documentation: allowed parameter types are `Boolean`, `Number`, `String`, and name of the object (see the above bullet point). Use `Array` for any types of Array parameters. If needed, explain what kind of the specific types of array parameter are allowed (e.g. `Number[]`, `String[]`) in the description section.
 * Currently supported class types: `p5.Color`, `p5.Element`, `p5.Graphics`, `p5.Renderer`, `p5.Renderer2D`, `p5.Image`, `p5.Table`, `p5.TableRow`, `p5.XML`, `p5.Vector`, `p5.Font`, `p5.Geometry`, `p5.Matrix`, `p5.RendererGL`.
+* By default, FES is enabled for p5.js, whereas completely disabled in p5.min.js to prevent FES functions slowing down the process. It is possible to disable FES by setting `p5.disableFriendlyErrors = true;` even while using p5.js.
 
 ## Known Limitations
 * The friendly error system slows the program down, so there is an option to turn it off via setting `p5.disableFriendlyErrors = true;`. In addition, the friendly error system is omitted by default in the minified (`p5.min.js`) version.
