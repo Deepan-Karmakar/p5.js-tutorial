@@ -15,7 +15,7 @@ FES's two main features are:
 or, `p5.prototype._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that requires parameter validation. It is recommended to use static version, `p5._validateParameters` for general purposes. `p5.prototype._validateParameters(FUNCT_NAME, ARGUMENTS)` mainly remained for debugging and unit testing purposes.
 * Implemented to functions in `color/creating_reading`, `core/2d_primitives`, `core/curves`, and `utilities/string_functions`. 
 
-By default, FES is enabled for p5.js, whereas completely disabled in p5.min.js. It is possible to disable FES by setting `p5.disableFriendlyErrors = true;`
+By default, FES is enabled for p5.js, whereas completely disabled in p5.min.js. It is possible to disable FES by setting `p5.disableFriendlyErrors = true;`.
 
 ## Additional Features
 * The FES welcomes the developer to p5 and the friendly debugger. 
