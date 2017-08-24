@@ -1,6 +1,8 @@
-The goal of the friendly error system (FES) is to create accessible error messages to supplement the often cryptic console errors. Developing this additional debugging module was especially valuable because JavaScript doesn’t support type checking in similar fashion as other languages do, making errors in parameter entry harder to detect for new Javascript developers. FES generated messages are color coded, written in natural language, linked to documentation, and assume a beginner level. The errors are triggered in multiple files through out p5.js, but most of the work and error writing happens in: `src/core/error_helpers.js`.  
+The goal of the friendly error system (FES) is to create accessible error messages to supplement the often cryptic console errors. Developing this additional debugging module was especially valuable because JavaScript doesn’t support type checking in similar fashion as other languages do, making errors in parameter entry harder to detect for new Javascript developers. 
 
-Two main features are:
+FES generated messages are color coded, written in natural language, linked to documentation, and assume a beginner level. The errors are triggered in multiple files through out p5.js, but most of the work and error writing happens in: `src/core/error_helpers.js`.  
+
+FES's two main features are:
 #### `core/error_helpers/friendlyFileLoadError()`: 
 * This function generates and displays friendly error messages if a file fails to load correctly. 
 * This can be called through : `p5._friendlyFileLoadError(ERROR_TYPE, FILE_PATH)`.
