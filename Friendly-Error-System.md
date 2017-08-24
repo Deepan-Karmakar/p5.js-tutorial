@@ -14,8 +14,8 @@ or, `this._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that r
 * Implemented to functions in `color/creating_reading`, `core/2d_primitives`, `core/curves`, and `utilities/string_functions`. 
 
 ## Additional Features
-* Welcomes the developer to p5 and the friendly debugger. 
-* They work in the IDE and the web editor. 
+* The FES welcomes the developer to p5 and the friendly debugger. 
+* The FES works in the IDE and the web editor. 
 
 ## Notes for Developers
 * When creating p5.js Objects: any p5.js objects that will be used for parameters will need to assign value for `name` parameter (name of the object) within the class declaration.
