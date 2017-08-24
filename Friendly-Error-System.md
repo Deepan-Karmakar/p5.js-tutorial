@@ -1,4 +1,4 @@
-The goal of the friendly error system (FES) is to create accessible error messages to supplement the often cryptic console errors. They are color coded, written in natural language, linked to documentation, and assume a beginner level. The errors are triggered in multiple files through out p5.js, but most of the work and error writing happens in: `src/core/error_helpers.js`. 
+The goal of the friendly error system (FES) is to create accessible error messages to supplement the often cryptic console errors. Developing this additional debugging module was especially valuable because JavaScript doesn’t support type checking in similar fashion as other languages do, making errors in parameter entry harder to detect for new Javascript developers. FES generated messages are color coded, written in natural language, linked to documentation, and assume a beginner level. The errors are triggered in multiple files through out p5.js, but most of the work and error writing happens in: `src/core/error_helpers.js`.  
 
 Two main features are:
 #### `core/error_helpers/friendlyFileLoadError()`: 
@@ -10,8 +10,10 @@ Two main features are:
 #### `core/error_helpers/validateParameters()`:
 * This function runs parameter validation by matching the input parameters with information from `docs/reference/data.json`, which is created from the function's inline documentation. It checks that a function call contains the correct number and the correct type of parameters. 
 * This can be called through: `p5._validateParameters(FUNCT_NAME, ARGUMENTS)` 
-or, `this._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that requires parameter validation.
+or, `p5.prototype._validateParameters(FUNCT_NAME, ARGUMENTS)` inside the function that requires parameter validation. It is recommended to use static version, `p5._validateParameters` for general purposes. `p5.prototype._validateParameters(FUNCT_NAME, ARGUMENTS)` mainly remained for debugging and unit testing purposes.
 * Implemented to functions in `color/creating_reading`, `core/2d_primitives`, `core/curves`, and `utilities/string_functions`. 
+
+By default, FES is enabled for p5.js, whereas completely disabled in p5.min.js. It is possible to disable FES by setting `p5.disableFriendlyErrors = true;`
 
 ## Additional Features
 * The FES welcomes the developer to p5 and the friendly debugger. 
@@ -36,8 +38,10 @@ line(0, 0, 100, 100, x3, Math.PI);
 * Identify more common error types and generalize with FES (e.g. `bezierVertex()`, `quadraticVertex()` - required object not initiated; checking Number parameters positive for `nf()` `nfc()` `nfp()` `nfs()`)
 
 ## Thoughts for the Future
+* More unit testings.
+* More intuitive and narrowed down output messages.
 * Having a Spanish translation available.
-* All the colors are checked for being color blind friendly. 
+* All the colors are checked for being color blind friendly.
 * A more elaborate ascii welcome! 
 * Global Error catching. It would be very helpful to catch the errors the browser is throwing to the console, so we can match them up with friendly comments. So far we've tried `window.onerror` and the following with no success. 
 
