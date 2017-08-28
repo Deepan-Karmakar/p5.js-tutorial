@@ -1,6 +1,5 @@
 # Wrapping up GSoC 2017 with p5.js (by [@sakshamsaxena](https://github.com/sakshamsaxena))
 
-
 ## Summary
 
 There were 3 major tasks that were proposed to pursue this summer under Google Summer of Code 2017 with p5.js under The Processing Foundation. All these focussed on improving the infrastructure and operations of the library, independent of the library API itself. To better tackle and organise new Issues, an Issue Template was implemented, which saw immense utility for contributors and owners to address new Issues. A new Grunt Task using Browserify was created which takes in the desired components that one wants to utilise as arguments, and built the library consisting of those components only. Dedicated Grunt Tasks were written to automate the release process end-to-end with minimal user interaction. The outcome of these tasks was improved developer operations (via Issue Templates and Release Process Automation), and improved library accessibility (via the Modularisation Task).
@@ -36,3 +35,16 @@ math
 typography
 ```
 Core is included by default in all cases. The output bundle is found in `lib/modules` directory.
+
+### 3. Automating the Release Process
+
+A dedicated and detailed Grunt Task was written which handles the release process end to end. It covers Testing, Version Bump, Building Library and Docs, Creating a new Commit and Tag with the bumped package.json, Pushing these changes to GitHub (to this p5.js repo), Release the library files only on NPM, and Bower (by updating the release repo maintained by @lmccart), Updating the docs in the website repo with newly generated ones, Drafting a GitHub Release (on this repo) with the JS files and the Zip as mentioned. 
+
+The owner is required to provide the following beforehand initiating the process :
+
+* Exporting an environment variable (only for the first time) which would hold the [GitHub Access Token](https://github.com/settings/tokens) for publishing a GitHub Release. 
+```export GITHUB_TOKEN=<token goes here>```
+* Invoking the Grunt Task with the minor/major/patch/tag name as argument. Default is patch.
+```grunt release-p5:minor```
+
+Intermediate pulling or pushing is performed over HTTPS, so it might need user input for authentication (username/password).
