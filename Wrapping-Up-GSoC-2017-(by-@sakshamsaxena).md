@@ -48,3 +48,15 @@ The owner is required to provide the following beforehand initiating the process
 ```grunt release-p5:minor```
 
 Intermediate pulling or pushing is performed over HTTPS, so it might need user input for authentication (username/password).
+
+## Conclusion
+
+New features were implemented in p5.js which would receive user feedback once they're out in the next release. Modularisation (#2 Task) and Automation (#3 Task) are implemented as alpha, and hold immense scope of improvement in terms of functionality, performance, and code. I would love to remain a part of p5.js and would happily contribute and tend to issues related to, and beyond, my work.
+
+## Support
+
+Any questions pertaining to the above mentioned tasks may be addressed via Issues. Simply create a new Issue and either assign or tag me in the conversation with [@sakshamsaxena](https://github.com/sakshamsaxena). For shout-outs and shout-downs, tweet me [@TopGunDoggo](https://twitter.com/TopGunDoggo), or if you're old school like me, email me at [saksham_saxena@outlook.com](mailto:saksham_saxena@outlook.com). 
+
+## Acknowledgements
+
+Thanks to Lauren McCarthy, my mentor, and Adam, Kenneth, dhowe and other contributors of p5.js for showing immense support and encouraging environment which helped me exceed my own expectations! Thank you so much :smile: 
