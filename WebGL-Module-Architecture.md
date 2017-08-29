@@ -42,7 +42,7 @@ Shapes rendered in retain mode are stored as p5.Geometry objects in a cache in t
 The renderer maps strings to p5.Geometry objects based on the shape drawn and its parameters (for example, geometry for a box created with `box(70, 80, 90, 10, 20)` is mapped from `'box|70|80|90|10|20’`).
 
 * Stores vertices, normals, faces, and texture coordinates for the geometry primitives
-* Provides methods for computing the faces and normals for a set of vertices
+* Provides methods for computing the faces, normals, line vertices, and line normals for a set of vertices
 
 ## Geometry: Retain and Immediate Mode
 Retained geometry is used for 3D primitives, while immediate mode is used for shapes created with begin/endShape.
