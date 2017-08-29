@@ -19,8 +19,8 @@
 
 ## Usage
 `grunt release-p5:VALID_SEMVER`
-(for example: `grunt release-p5:0.5.14`)
-Note this may require you to enter username/password while pushing/pulling to repos.
+* For example: `grunt release-p5:0.5.14`
+* Note this may require you to enter username/password while pushing/pulling to repos
 
 
 # OLD-IGNORE
