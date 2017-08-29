@@ -88,4 +88,68 @@ Accounts for:
 #### Normal Shader
 The normal shader is set when `normalMaterial()` is in use. It uses the surface’s normal vector to determine a fragment color.
 
+### Shader Parameters
 
+#### Standard Model View & Camera Uniforms
+|Parameter                        |Line Shader|TexLight Shader|Color Shader|Normal Shader|
+|---------------------------------|-----------|---------------|------------|-------------|
+|`uniform mat4 uModelViewMatrix;` |x          |x              |x           |x            |
+|`uniform mat4 uProjectionMatrix;`|x          |x              |x           |x            |
+|`uniform vec4 uViewPort;`        |x          |               |            |             |
+
+
+#### Geometry Attributes and Uniforms
+|Parameter                        |Line Shader|TexLight Shader|Color Shader|Normal Shader|
+|---------------------------------|-----------|---------------|------------|-------------|
+|`attribute vec3 aPosition;`      |x          |x              |x           |x            |
+|`attribute vec3 aNormal;`        |           |x              |            |x            |
+|`attribute vec2 aTexCoord;`      |           |x              |            |x            |
+|`uniform mat3 uNormalMatrix;`    |           |x              |            |x            |
+|`attribute vec4 aDirection;`     |x          |               |            |             |
+|`uniform float uStrokeWeight;`   |x          |               |            |             |
+
+#### Material Colors
+|Parameter                        |Line Shader|TexLight Shader|Color Shader|Normal Shader|
+|---------------------------------|-----------|---------------|------------|-------------|
+|`uniform vec4 uMaterialColor;`   |x          |x              |            |             |
+|`attribute vec4 aVertexColor;`   |           |               |x           |             |
+
+#### Light Parameters
+
+|Parameter                             |Line Shader|TexLight Shader|Color Shader|Normal Shader|
+|--------------------------------------|-----------|---------------|------------|-------------|
+|`uniform int uAmbientLightCount;`     |           |x              |            |             |
+|`uniform int uAmbientLightCount;`     |           |x              |            |             |
+|`uniform int uDirectionalLightCount;` |           |x              |            |             |
+|`uniform int uPointLightCount;`       |           |x              |            |             |
+|`uniform vec3 uAmbientColor[8];`      |           |x              |            |             |
+|`uniform vec3 uLightingDirection[8];` |           |x              |            |             |
+|`uniform vec3 uDirectionalColor[8];`  |           |x              |            |             |
+|`uniform vec3 uPointLightLocation[8];`|           |x              |            |             |
+|`uniform vec3 uPointLightColor[8];`   |           |x              |            |             |
+|`uniform bool uSpecular;`             |           |x              |            |             |
+|`uniform bool uUseLighting;`          |           |x              |            |             |
+
+#### Texture Parameters
+
+|Parameter                             |Line Shader|TexLight Shader|Color Shader|Normal Shader|
+|--------------------------------------|-----------|---------------|------------|-------------|
+|`uniform sampler2D uSampler;`         |           |x              |            |             |
+|`uniform bool isTexture;`             |           |x              |            |             |
+
+#### General Parameters
+
+|Parameter                             |Line Shader|TexLight Shader|Color Shader|Normal Shader|
+|--------------------------------------|-----------|---------------|------------|-------------|
+|`uniform float uResolution;`          |           |               |x           |             |
+|`uniform float uPointSize;`           |           |               |x           |             |
+
+#### Varying Parameters
+
+|Parameter                             |Line Shader|TexLight Shader|Color Shader|Normal Shader|
+|--------------------------------------|-----------|---------------|------------|-------------|
+|`varying vec3 vVertexNormal;`         |           |x              |            |             |
+|`varying vec2 vVertTexCoord;`         |           |x              |            |             |
+|`varying vec3 vLightWeighting;`       |           |x              |            |             |
+|`varying highp vec2 vVertTexCoord;`   |           |               |            |x            |
+|`varying vec4 vColor;`                |           |               |x           |             |
