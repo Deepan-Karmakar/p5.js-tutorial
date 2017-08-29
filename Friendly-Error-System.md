@@ -79,12 +79,12 @@ line(0, 0, 100, 100, x3, Math.PI);
 * Identify more common error types and generalize with FES (e.g. `bezierVertex()`, `quadraticVertex()` - required object not initiated; checking Number parameters positive for `nf()` `nfc()` `nfp()` `nfs()`)
 
 ## Thoughts for the Future
-* color coded (not working in web editor?)
+* re-introduce color coding for the Web Editor.
 * More unit testings.
 * More intuitive and narrowed down output messages.
 * Having a Spanish translation available.
 * All the colors are checked for being color blind friendly.
-* A more elaborate ascii welcome! 
+* More elaborate ascii is always welcome! 
 * Global Error catching. It would be very helpful to catch the errors the browser is throwing to the console, so we can match them up with friendly comments. So far we've tried `window.onerror` and the following with no success. 
 
 ```javascript
