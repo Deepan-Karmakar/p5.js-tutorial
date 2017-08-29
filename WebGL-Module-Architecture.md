@@ -39,10 +39,13 @@ The p5.Texture object manages GL state for a texture based on a `p5.Image`, `p5.
 
 ### p5.Geometry
 Shapes rendered in retain mode are stored as p5.Geometry objects in a cache in the p5.Renderer object. 
-The renderer maps strings to p5.Geometry objects based on the shape drawn and its parameters (for example, geometry for a box created with `box(70, 80, 90, 10, 20)` is mapped from `'box|70|80|90|10|20’`).
+The renderer maps strings to p5.Geometry objects based on the shape drawn and its parameters (for example, geometry for a box created with `box(70, 80, 90, 10, 20)` is mapped from `'box|70|80|90|10|20’`). Calls to functions that have retained geometry create a p5.Geometry object on the first pass and store it in a geometry hash using the aforementioned string ID. Later calls look for that ID in the hash, and if it is found use that to reference the existing object rather than creating a new one.
 
-* Stores vertices, normals, faces, and texture coordinates for the geometry primitives
+* Stores vertices, normals, faces, line vertices, line normals, and texture coordinates for the geometry primitives
 * Provides methods for computing the faces, normals, line vertices, and line normals for a set of vertices
+
+## Immediate Mode
+All attributes for drawing with Immediate Mode are stored in an object in the renderer, used to draw to the GL drawing context, and then discarded.
 
 ## Geometry: Retain and Immediate Mode
 Retained geometry is used for 3D primitives, while immediate mode is used for shapes created with begin/endShape.
