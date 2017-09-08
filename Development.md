@@ -5,7 +5,7 @@ Interested in contributing? Awesome! First, figure out what you'd like to do (a 
 * **Fix a bug** :
 
     If it's not on the issues list, add it. If it's already on this issues list, assign it to yourself or comment on the issue indicating you're working on it. Go ahead and fix it and submit a PR (see below for instructions for getting set up for development). We are also in the process of adding unit tests and more inline documentation, so if the function you are fixing doesn't have these, please consider adding these as well. [Submit the change to the master branch (see below).](https://github.com/processing/p5.js/wiki/Development#master-branch-development) 
-Need help finding an issue to fix? Check out this [list of bite size issues](https://github.com/processing/p5.js/labels/level%3Abite%20size) suitable for new contributors (or peruse other [issue labels](https://github.com/processing/p5.js/wiki/Issue-Labels) for topics that catch your interest).
+Need help finding an issue to fix? Check out this [list of bite size issues](https://github.com/processing/p5.js/labels/level%3Abeginner) suitable for new contributors (or peruse other [issue labels](https://github.com/processing/p5.js/wiki/Issue-Labels) for topics that catch your interest).
 * **Implement a new feature** : 
 
     If you have an original idea about a feature, open an issue describing your idea preferably in the format provided there, and let us know you're interested! Initiate a discussion, wait for the green signal, and then assign it to yourself! _Note: new features will require tests and inline documentation._
