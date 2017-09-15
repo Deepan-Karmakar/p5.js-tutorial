@@ -184,7 +184,7 @@ void setup() {                                   // **change** function setup() 
 void draw() {                                    // **change** function draw() void draw()
   background(0);
   dragSegment(0, mouseX, mouseY);
-  for(int i=0; i<x.length-1; i++) {              // **change** int i to var i
+  for(int i=0; i<x.length-1; i++) {              // **change** var i to int i
     dragSegment(i+1, x[i], y[i]);
   }
 }
