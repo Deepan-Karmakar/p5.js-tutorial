@@ -10,7 +10,7 @@ First, you will need to include the p5.dom.js file in your HTML. If you are usin
 
 ## Storing pointers and calling methods
 
-When you call `createCanvas(w, h)` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer or reference. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. A full listing of methods is [here](http://p5js.org/reference/#/p5.Element). Not all of these methods listed will work or make sense for every element, so you have to use your judgment a bit. For example, calling `value()` on a slider returns or sets it's value, but calling it on canvas would have no effect.
+When you call `createCanvas(w, h)` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer or reference. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. A full listing of methods is [here](http://p5js.org/reference/#/p5.Element). Not all of these methods listed will work or make sense for every element, so you have to use your judgment a bit. For example, calling `value()` on a slider returns or sets its value, but calling it on canvas would have no effect.
 
 ```javascript
 var canvas;
@@ -195,7 +195,7 @@ See [this page](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HT
 
 ## Element specific listeners
 
-Every elements has it's own `mouseOver()`, `mouseOut()` methods that get called when you move the mouse over or off of the individual element. To program a specific action to happen when one of these events occurs, you pass in either a function or the name of a function as the argument to these methods. 
+Every element has its own `mouseOver()`, `mouseOut()` methods that get called when you move the mouse over or off of the individual element. To program a specific action to happen when one of these events occurs, you pass in either a function or the name of a function as the argument to these methods. 
 
 In the example below, we are attaching a behavior that hides the uniforn image when you mouse over the canvas, and shows it again when you mouse out (off of) the canvas.
 
@@ -454,7 +454,7 @@ Here are some more resources for looking up and learning about CSS:
 
 ## Removing things
 
-You can remove any element by calling it's `.remove()` method. This removes any event handlers connected to the element, and removes the element from the page.
+You can remove any element by calling its `.remove()` method. This removes any event handlers connected to the element, and removes the element from the page.
 
 ```javascript
 var myDiv = createDiv('this is some text');
