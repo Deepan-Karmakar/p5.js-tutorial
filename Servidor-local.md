@@ -42,94 +42,93 @@ De ahora en adelante basta con hacer `cd` al directorio que tiene los archivos q
 
 Luego dirige tu navegador a `http://localhost:8080/`
 
-Nota: If you are having problems where the browser does not reload your javascript files after changes are made, you may need to instantiate the server with a specific cache value. To do this, include the cache timeout flag, with a value of '-1'. This tells the browser not to cache files (like sketch.js).
+Nota: si estás teniendo problema con que el navegador no refresca tus archivos JavaScript después de que haces cambios, puede que necesites instanciar el servidor con un valor especifico de cache. Para hacer esto, incluye la etiqueta cache timeout, con un valor de '-1'. Esto le indica al navegador que no tenga un cache de archivos (como sketch.js).
 
 ```bash
 http-server -c-1
 ```
 
-## Processing Simple HTTPServer (3rd option) 
-Simple HTTPServer library for processing. Allows communication in both ways.
+## Processing Simple HTTPServer (Tercera opción) 
+Biblioteca Simple HTTPServer para Processing. Permite comunicación en ambas direcciones.
 ```
 import http.*;
 
 SimpleHTTPServer server;
 
 void setup() {
-  // Create a server listening on port 8000
-  // serving index.html,which is in the data folder
+  // Crea un servidor que escucha en el puerto 8000
+  // sirviendo index.html, que está en el directorio "data"
   server = new SimpleHTTPServer(this); 
 }
 ```
 
-[Library page of Processing simple HTTP server](https://transfluxus.github.io/SimpleHTTPServer/)
+[Página de la biblioteca de Processing simple HTTP server](https://transfluxus.github.io/SimpleHTTPServer/)
 
 
-## Apache Server (4th option) 
+## Apache Server (Cuarta opción) 
 
-Python SimpleHTTPServer is great to get started, but at some point you might want to set up an Apache server. The Apache server supports a greater range of HTTP functionality and scales well for bigger projects. See below for OS specific setup.
-
+Python SimpleHTTPServer es bueno para empezar, pero en algún punto vas a querer configurar un servidor Apache.Un servidor Apache soporta una gran rango de funciones HTTP y escala bien para proyectos más grandes. Revisa más abajo la configuración específica según tu sistema operativo.
 ### Mac OS X
 
-Mac OS X since 10.5 Leopard ships with Apache web server installed, all you have to do is enable it and place the files in the right place.
+Mac OS X desde 10.5 Leopard tiene instalado un servidor web Apache, lo único que necesitas hacer es habilitarlo y ubicar los archivos en el lugar correcto.
 
-#### Mac OS X 10.7 and above
+#### Mac OS X 10.7 y arriba
 
-1. Open Terminal and type:
+1. Abre Terminal y escribe:
 ```
 sudo apachectl start
 ```
-2. Verify it is working by going to `http://localhost` on your browser. You should see "It works!" on the browser.
-3. Enable permissions for the files on the server by typing the following two commands into Terminal:
+2. Verifica que esté funcionando visitando `http://localhost` en tu navegador. Deberías ver "It works!" en el navegador.
+3. Autoriza los permisos para los archivos en el servidor escribiendo los siguientes dos comandos en la Terminal:
 ```
-sudo chown root:<your username> -R /Library/WebServer/Documents
+sudo chown root:<tu nombreDeUsuario> -R /Library/WebServer/Documents
 
 sudo chmod -R 755 /Library/WebServer/Documents
 ```
-4. Place your project somewhere inside /Library/WebServer/Documents/.
-5. View it at http://localhost/(the project folder in /Library/WebServer/Documents).
+4. Ubica tu proyecto en algún lugar dentro de /Library/WebServer/Documents/.
+5. Visítalo en http://localhost/(el directorio del proyecto dentro de /Library/WebServer/Documents).
 ```
-http://localhost/my-p5-sketch
+http://localhost/mi-bosquejo-p5
 ```
 
-#### Mac OS X 10.5 and 10.6
+#### Mac OS X 10.5 y 10.6
 
-1. Turn on the web server. Go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
-2. Verify it is working by going to `http://localhost/~<your username>` on your browser. You should see a default webpage with a title of "Your Website".
-3. Place your project somewhere inside `<your username folder>/Sites`.
-4. View it at http://localhost/~(your username)/(the project folder in `<your username folder>/Sites`).
+1. Enciende el servidor web. Anda a Preferencias de Sistema > Compartir, y marca la casilla “Web Shar­ing”.
+2. Verifica que está funcionando, visitando `http://localhost/~<tu nombreDeUsuario>` en tu navegador. Deberías ver una página web por defecto con el título "Your Website".
+3. Ubica tu proyecto dentro `<tu NombreDeUsuario>/Sites`.
+4. Revísalo en http://localhost/~(tu nombreDeuUsuario)/(el directorio del proyecto dentro de `<tu nombreDeUsuario>/Sites`).
 ```
-http://localhost/~macusername/my-p5-sketch
+http://localhost/~macusername/mi-bosquejo-p5
 ```
 
 ### Windows
 
-1. Download WampServer from [http://www.wampserver.com/en/](http://www.wampserver.com/en/).
-2. Install WampServer and follow instructions.
-3. The “www” directory will be automatically created (usually c:\wamp\www).
-4. Create a subdirectory in “www” and put your HTML/JS files inside.
-5. Open your internet browser and go to the URL : http://localhost/yourfile.html.
+1. Descarga WampServer desde [http://www.wampserver.com/en/](http://www.wampserver.com/en/).
+2. Instala WampServer y sigue las instrucciones.
+3. El directorio “www” será creado automáticamente (usualmente c:\wamp\www).
+4. Crea un subdirectorio dentro de “www” y ubica tus archivos HTML/JS dentro.
+5. Abre tu navegador web y anda a la URL : http://localhost/tuarchivo.html.
 
 
 ### Linux
 
-1. Install apache2 via apt-get.
-2. Place your project somewhere inside /var/www/.
-3. View it at http://localhost.
+1. Instala apache2 con apt-get.
+2. Ubica tu proyecto en algún lugar dentro de /var/www/.
+3. Revísalo en http://localhost.
 
-## Using PHP built-in web server (5th option)
+## Usando el servidor web incluido en PHP  (Quinta opción)
 
-[PHP has (since version 5.4.0) a built-in web server](https://secure.php.net/manual/en/features.commandline.webserver.php) for testing purposes that can be used to test P5.js sketches. 
+[PHP tiene (desde la versión 5.4.0) un servidor web incluido](https://secure.php.net/manual/en/features.commandline.webserver.php) para hacer pruebas, puede ser usado por p5.js.
 
-To check if you have PHP installed you can open a terminal and issue the command:
+Para revisar si tienes PHP instalado puedes abrir tu terminal y ejecutar el comando:
 
 ```
 php -version
 ```
 
-If you have PHP CLI (Command Line Interpreter) installed you can start a local development server by usingd the command:
+Si tienes instalado PHP CLI (Command Line Interpreter) puedes empezar un servidor local de desarrollo usando el comando:
 
 ```
 php -S localhost:8000
 ```
-Then point your browser at `http://localhost:8000/`
+Luego apunta tu navegador a `http://localhost:8000/`
