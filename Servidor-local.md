@@ -1,26 +1,26 @@
-Some functionality (loading external files, for example) works as expected when the files are placed online via FTP or SSH. However, if you try to view them locally, you see some kind of "cross-origin" errors in console. The solution to this is to view them using what's called a local web server. This tutorial includes instructions for setting up several types of local web servers on each of Mac OSX, Windows, and Linux.
+Algunas funciones (como cargar archivos externos, por ejemplo) funcionan según lo esperado cuando los archivos son ubicados en línea a través de FTP o SSH. Sin embargo, si estás tratando de revisarlos localmente, verás algún error del tipo "cross-origin" (origen cruzado) en la consola. La solución a esto es usar lo que se conoce como un servidor web local. Este tutorial incluye instrucciones para configurar distintos tipos de servidores web locales en Mac OSX, Windows y Linux.
 
-## Python SimpleHTTPServer (1st option)
+## Python SimpleHTTPServer (Primera opción)
 
-If you need a quick web server running and you don't want to mess with setting up apache or something similar, then Python can help. Python comes with a simple builtin HTTP server. With the help of this little HTTP server you can turn any directory in your system into your web server directory. The only thing you need to have installed is [Python](https://www.python.org/downloads/) (Python is already installed if you are using Mac OS X).
+Si necesitas ejecutar rápidamente un servidor web y no quieres molestarte en configurar apache o algo similar, Python te puede ayudar. Python incluye un servidor HTTP simple. Con la ayuda de este pequeño servidor HTTP puedes transformar cualquier directorio en tu sistema en un directorio de un servidor web. Lo único que necesitas es tener instalado [Python](https://www.python.org/downloads/) (Python ya viene instalado en Mac OS X).
 
-[Python SimpleHTTPServer tutorial](https://github.com/lmccart/itp-creative-js/wiki/SimpleHTTPServer)
+[Tutorial de Python SimpleHTTPServer](https://github.com/lmccart/itp-creative-js/wiki/SimpleHTTPServer)
 
-Type in Terminal:
+Escribe en Terminal:
 ```
 python -m SimpleHTTPServer
 ```
 
-Or if you are using Python 3, type:
+O  escribe esto si estás usando Python 3:
 ```
 python -m http.server
 ```
 
-Then visit `http://localhost:8000` on your browser.
+A continuación visita `http://localhost:8000` en tu navegador.
 
-Unfortunately the python simple server is very slow. Loading a local page will often stall and it can't stream video and has trouble with even medium size files like an 8MB mp3 for example. However, it should suffice for loading in most text files, fonts and most images.
+Desafortunadamente el servidor simple de Python es muy lento. Cargar una página local a menudo no funcionará y no podrá transmitir video y tendrá problemas con archivos medianos como un mp3 de 8MB, por ejemplo. Sin embargo, será suficiente para cargar la mayoría de los textos, tipografías e imágenes.
 
-## Node http-server (2nd option) 
+## Node http-server (Segunda opción) 
 
 An alternative is node.js http-server. It is much faster than python simple server while requiring a little bit of setup. Just 3 simple steps:
 
