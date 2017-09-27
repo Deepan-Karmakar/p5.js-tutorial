@@ -22,27 +22,27 @@ Desafortunadamente el servidor simple de Python es muy lento. Cargar una página
 
 ## Node http-server (Segunda opción) 
 
-An alternative is node.js http-server. It is much faster than python simple server while requiring a little bit of setup. Just 3 simple steps:
+Una alternativa es http-server de node.js. Es mucho más rápido que el servidor simple de Python y requiere un poco de configuración. Solamente 3 simples pasos:
 
-1.  [Download and Install node.js](https://nodejs.org/en/download/)
-2.  Open a terminal or command prompt 
-3.  On OSX/Linux type
+1.  [Descarga e instala node.js](https://nodejs.org/en/download/)
+2.  Abre una sesión de terminal 
+3.  En OSX/Linux escribe
 
         sudo npm install -g http-server
 
-    On Windows type (you might need to open the command prompt as admin)
+    En Windows escribe (quizás necesites abrir la terminal como admin)
 
         npm install -g http-server
  
-Done!
+¡Listo!
 
-From then on just `cd` to the folder that has the files you want to serve and type 
+De ahora en adelante basta con hacer `cd` al directorio que tiene los archivos que quieres poner en tu servidor y luego escribir
 
     http-server
 
-Then point your browser at `http://localhost:8080/`
+Luego dirige tu navegador a `http://localhost:8080/`
 
-Note: If you are having problems where the browser does not reload your javascript files after changes are made, you may need to instantiate the server with a specific cache value. To do this, include the cache timeout flag, with a value of '-1'. This tells the browser not to cache files (like sketch.js).
+Nota: If you are having problems where the browser does not reload your javascript files after changes are made, you may need to instantiate the server with a specific cache value. To do this, include the cache timeout flag, with a value of '-1'. This tells the browser not to cache files (like sketch.js).
 
 ```bash
 http-server -c-1
