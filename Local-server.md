@@ -113,6 +113,14 @@ http://localhost/~macusername/my-p5-sketch
 
 ### Linux
 
+#### Using BrowserSync Live page reload (recommended)
+
+1. npm install -g browser-sync  
+2. browser-sync start --server -f .  
+[https://www.browsersync.io/#install](https://www.browsersync.io/#install)  
+
+#### Using Appache  
+
 1. Install apache2 via apt-get.
 2. Place your project somewhere inside /var/www/.
 3. View it at http://localhost.
