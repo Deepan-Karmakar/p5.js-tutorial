@@ -117,7 +117,8 @@ http://localhost/~macusername/my-p5-sketch
 
 1. npm install -g browser-sync  
 2. browser-sync start --server -f .  
-[https://www.browsersync.io/#install](https://www.browsersync.io/#install)  
+- [https://www.browsersync.io/#install](https://www.browsersync.io/#install)  
+- [https://github.com/CodingTrain/Rainbow-Topics/issues/646](https://github.com/CodingTrain/Rainbow-Topics/issues/646)  
 
 #### Using Appache  
 
