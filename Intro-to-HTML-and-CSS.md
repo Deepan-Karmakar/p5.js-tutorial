@@ -24,7 +24,7 @@ Elements can also contain other elements within them. The tag `<em>` indicates t
 When rendered (opened) in the browser, the line above will look like this:
 <p>This is a paragraph with <em>some italicized text</em> in it.</p>
 
-##An HTML page
+## An HTML page
 
 Elements contain other elements to create a hierarchal structure. This is how an html page is built. The chunk below represents a simple but complete html page.
 
@@ -51,7 +51,7 @@ The body section is where all the content that shows up on the page goes, like t
 
 The hierarchical, nested structure of HTML is sometimes referred to as the Document Object Model, or DOM. You can think of the page (DOM) as a tree with parents and children — think of a family tree. Being able to access elements of the tree comes into play when we want to manipulate the HTML with CSS or JavaScript.
 
-##Other common tags
+## Other common tags
 
 You can see all the possible tags in the [MDN element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element), or see below for some of the most common ones.
 
@@ -66,11 +66,11 @@ You can see all the possible tags in the [MDN element reference](https://develop
 * `<!-- ... -->` comments
 
 
-####Headings `<h1>`, `<h2>`
+#### Headings `<h1>`, `<h2>`
 
 `<h1>...</h1>` (also h2, h3, h4, etc..) are used for various headings, in decreasing size. If you think of your page like an outline, h1 could be used for the top level section headings, h2 for the secondary headings, etc. 
 
-####Line breaks `<br>`
+#### Line breaks `<br>`
 
 Your browser ignores line breaks in your html. So these two blocks would render the same:
 
@@ -101,7 +101,7 @@ with line<br>
 breaks.</p>
 
 
-####Links `<a>`
+#### Links `<a>`
 
 The a tag indicates a link. It also has some extra information between the a and the > character, letting you designate the destination of the link. This extra href field is known as an attribute.
 
@@ -126,7 +126,7 @@ The source can be relative to the html file you are working with (above), or it 
 <img src="https://raw.githubusercontent.com/lmccart/p5.js/master/examples/p5.Image/unicorn.jpg" />
 ```
 
-##Attributes
+## Attributes
 
 Attributes provide extra information necessary to a tag to work properly (such as the src attribute on the `<img>` tag or the href attribute on the `<a>` tag) or just provide some optional information. An attribute generally consists of an attribute name and an attribute value (usually surrounded by quotes), with an = sign between them.
 
