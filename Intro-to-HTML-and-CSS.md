@@ -150,11 +150,11 @@ An element can have more than one class, but not more than one id. When there is
 <div class="tomato bottom">This div has class tomato and class bottom.</div>
 ```
 
-#CSS
+# CSS
 
 Cascading Style Sheets, or CSS, is used to tell web browsers how to style and display HTML-structured text. While HTML defines the content, CSS supplies the presentation. Separating the content from the style makes the code easier to read and also allows us to more easily swap out one style for another.
 
-##Using inline styling
+## Using inline styling
 
 You can set style properties inline using the style attribute. Inside the quotes, you place one or more property:value pairs, separated by semicolons.
 ```html
@@ -164,7 +164,7 @@ You can set style properties inline using the style attribute. Inside the quotes
 You can find all css style attributes in this [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS). 
 
 
-##Using an external stylesheet
+## Using an external stylesheet
 
 Another alternative is to separate out the CSS into it's own file, getting us closer to the separate content and style goal mentioned above. In this case, you start by making a new file with file extension `.css`, and linking it into the `<head>` of your HTML file using the `<link>` tag.
 
@@ -172,7 +172,7 @@ Another alternative is to separate out the CSS into it's own file, getting us cl
 <link rel="stylesheet" type="text/css" href="style.css">
 ```
 
-###Defining CSS rules
+### Defining CSS rules
 
 When using inline css, style properties are set per element, but when you use an external stylesheet you define "rules" that get applied more generally to elements. The format for a rule is like this:
 
@@ -227,7 +227,7 @@ p {
 
 In the example above, everything within a paragraph tag is green and has 20px font. The text within the div with id "first-section" has monospace font. Any text with class "donkeys" has a pink background.
 
-###CSS rule hierarchy
+### CSS rule hierarchy
 
 The rules propagate inwards, so every element will have the styling of it's own properties and tags as well as those of any enclosing. In the example below, notice how the paragraph with class "donkeys" has all of the CSS properties for "p", ".donkeys", and "#first-section" applied. 
 
@@ -271,11 +271,11 @@ p {
 
 If there is a conflict of property values, the more immediate rule will be followed, overriding any enclosing parent rules. This is what is meant by the word "cascading" in Cascading Style Sheet (CSS).
 
-#Positioning and layout using HTML and CSS
+# Positioning and layout using HTML and CSS
 
 Coming soon...
 
-#Reference
+# Reference
   * [Mozilla HTML guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML)
   * [HTML tag cheatsheet](http://www.simplehtmlguide.com/cheatsheet.php)
   * [HTML tag reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
