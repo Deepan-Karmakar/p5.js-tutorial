@@ -112,7 +112,7 @@ The line above renders as:
 
 Click on <a href="http://p5js.org">this text</a>.
 
-####Images `<img>`
+#### Images `<img>`
 
 The img tag adds an image to the page. It also contains an attribute to specify the source of the image to display. The img element does not contain any text content or any other elements. Since it is an empty element, it doesn't need a closing tag. Instead, the forward slash from the closing tag is stuck just inside of the > character at the end of the opening tag.
 
@@ -132,7 +132,7 @@ Attributes provide extra information necessary to a tag to work properly (such a
 
 You can see all the attributes and the tags they are associated with in the [MDN attribute reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes).
 
-###class and id
+### class and id
 
 Two common attributes are "class" and "id", both of which are used to identify particular elements when adding [CSS rules](https://github.com/processing/p5.js/wiki/Intro-to-HTML-and-CSS#using-an-external-stylesheet) or manipulating the page using JS. 
 
