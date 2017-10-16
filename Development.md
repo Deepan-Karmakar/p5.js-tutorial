@@ -117,7 +117,8 @@ Sometimes it is useful to run tests in browser especially when trying to debug t
 * https://github.com/processing/p5.js - this repo contains the source code for the p5.js library, and the p5.dom.js addon library. The reference is also generated from this code, as the documentation and examples are located in the source code itself, maintained by Lauren McCarthy.
 * https://github.com/processing/p5.js-website - contains the code for http://p5js.org website, maintained by Lauren McCarthy. 
 * https://github.com/processing/p5.js-sound - contains the source code for the p5.sound.js library, maintained by Jason Sigal.
-* https://github.com/processing/p5.js-editor - contains the source code for the p5 editor, maintained by Sam Lavigne.
+* https://github.com/processing/p5.js-web-editor - contains the source code for the p5 web editor, maintained by Cassie Tarakajian.
+* https://github.com/processing/p5.js-editor - contains the source code for the p5 editor, which is now depricated.
 * https://github.com/scottgarner/p5.js-video - contains the code for Hello p5.js!, maintained by Scott Garner.
 
 # Alternative Setup - Docker
