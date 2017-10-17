@@ -1,6 +1,6 @@
 # Getting started
 
-Interested in contributing? Awesome! First, figure out what you'd like to do (a good place to start is the [issues list](https://github.com/processing/p5.js/issues) and [development checklist](https://github.com/processing/p5.js/wiki/Development---Checklist)):
+Interested in contributing? Awesome! First, figure out what you'd like to do (a good place to start is the [issues list](https://github.com/processing/p5.js/issues)).
 
 * **Fix a bug** :
 
