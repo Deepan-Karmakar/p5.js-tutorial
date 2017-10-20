@@ -1,14 +1,14 @@
 This tutorial provides a general overview to HTML and CSS, no p5.js involved. If you'd like to use the p5.dom library to do some of these things, check out the [beyond the canvas](https://github.com/processing/p5.js/wiki/Beyond-the-canvas) tutorial.
 
-#The Document Object Model (DOM)
+# The Document Object Model (DOM)
 
 The Document Object Model (DOM) is a programming interface for HTML documents. Meaning, it provides a way to use code (JavaScript, for example) to access and modify the structure, style, and content of an HTML page.
 
 In the DOM, all HTML elements are defined as objects. Each of these objects has a set of properties and methods. A property is a value that you can get or set (like changing the content of an HTML element). A method is an action you can do (like add or deleting an HTML element). A few of the most common methods and properties follow.
 
-##Accessing elements
+## Accessing elements
 
-###getElementById()
+### getElementById()
 
 The getElementById method returns the element on the page with the given id. In the example below, we place a paragraph on the HTML page and give it id "gargoyle". The JS code below searches the page for an element with id "gargoyle", stores it in the variable `elt`, and then prints in to console. `getElementById` is a method of `document`, which is the variable that represents the HTML page.
 
@@ -42,7 +42,7 @@ You could type this JS code directly into console and see the result. You could 
 </html>
 ```
 
-###getElementsByClassName(), getElementsByTagName()
+### getElementsByClassName(), getElementsByTagName()
 
 getElementsByClassName and getElementsByTagName work very similar to getElementById except both return an array of elements instead of just one element. getElementsByClassName returns an array of all elements with the given class, getElementsByTagName returns an array of all elements with given tag. With either method, if none are found, an empty array ([]) is returned.
 
@@ -62,9 +62,9 @@ getElementsByClassName and getElementsByTagName work very similar to getElementB
 </html>
 ```
 
-##Modifying elements
+## Modifying elements
 
-###Changing HTML content (.innerHTML)
+### Changing HTML content (.innerHTML)
 
 The innerHTML property is a pointer to the HTML content within a particular element, allowing you to easily access or change the content. The example below is similar to the previous one, but it prints the HTML within the element.
 
@@ -89,7 +89,7 @@ var elt = document.getElementById("gargoyle");
 elt.innerHTML = "Veggie burgers are<br>so tasty.";
 ```
 
-###Changing an attribute
+### Changing an attribute
 
 You can change an element's attribute using a similar form, but replacing "innerHTML" with your desired attribute tag. The example changes the src attribute of an image.
 
@@ -107,7 +107,7 @@ elt.style.background = "pink";
 elt.style.padding = "18px";
 ```
 
-#setTimeout, setInterval
+# setTimeout, setInterval
 
 Sometimes it's useful to be able to schedule a function call for some time in the future. To handle this there are two functions - setTimeout and setInterval. Both functions take two arguments, the function to be executed, and a delay amount (in milliseconds). setTimeout schedules a one-time function call, while setInterval schedules a recurring function call. Note that when you pass in the function to be called no quotes or parentheses are needed, you are passing the variable pointing to the function.
 
@@ -151,7 +151,7 @@ function changeText() {
 setInterval(changeText, 1000); // happens every 1000 milliseconds
 ```
 
-#Events
+# Events
 
 Many JS applications perform _actions_ as a response to _events_. An event is a signal from the browser that something has happened. There are several different types of events:
 
@@ -159,7 +159,7 @@ Many JS applications perform _actions_ as a response to _events_. An event is a 
 2. Window events. For example, a "resize" event happens when a browser window is resized.
 3. Other events, like "load", "readystatechange". They are used in AJAX and for other needs.
 
-##Registering an event handler
+## Registering an event handler
 
 In order to make your code respond to an event, you register an _event handler_, a function that is called when a particular event happens. To do this you can use the `addEventListener(event, fxn)` function. This function takes two arguments - the name of the event to listen for, and the name of the function that gets called when the event happens (no quotes around the name, you are passing the variable pointing to the function).
 
@@ -199,7 +199,7 @@ Here is a working example:
 
 In the example above, the `doSomething()` function will be called or "fired" every time a click event happens on that element. So every time you click on the paragraph with id "gargoyle", an alert will appear. 
 
-##Using this
+## Using this
 
 You could also modify the element when the click event happens. Within an event handler function, the variable "this" is automatically assigned to the element that received the event.
 
@@ -214,7 +214,7 @@ var elt = document.getElementById("gargoyle");
 elt.addEventListener("click", doSomething);
 ```
 
-##Input events
+## Input events
 
 There are a lot of different input events detected by the browser, you can see a full list on [Mozilla event reference](https://developer.mozilla.org/en-US/docs/Web/Events). Some useful ones include:
 
@@ -238,11 +238,11 @@ elt.addEventListener("mouseover", showHello);
 elt.addEventListener("mouseout", showGoodbye);
 ```
 
-##Window events
+## Window events
 
 All of the events so far have been element specific, that is, you attach them to a single element, and they are fired only when that element receives the event. There are also some events that happen on a global window level, two examples are `resize` and `load`. In this case, you say `window.` instead of `element.`.
 
-###resize
+### resize
 
 The resize event happens when the browser window is resized.
 
@@ -258,7 +258,7 @@ function doSomething() {
 window.addEventListener("resize", doSomething);
 ```
 
-###load
+### load
 
 The load event happens when the HTML page has fully loaded. It is a way to specify what to do when a document is done loading, it also signifies when it is safe to call elements on the DOM.
 
@@ -309,7 +309,7 @@ The JS code gets wrapped in a function called init (or whatever you like), and a
 
 Note that if you didn't add the function wrapper and event listener and just moved the code from the body to the head of the HTML file, it would run too soon, and it would print an error in console.
 
-##Reference
+## Reference
 
 __General__
 
