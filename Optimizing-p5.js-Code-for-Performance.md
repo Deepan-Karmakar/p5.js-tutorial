@@ -7,6 +7,7 @@
     1.  [Frames Per Second (FPS)](#frames-per-second-fps)
     2.  [Manual Profiling](#manual-profiling)
     3.  [Automated Profiling](#automated-profiling)
+    4.  [Benchmarking](https://github.com/processing/p5.js/wiki/Benchmarking-p5.js)
 3.  [p5 Performance Tips](#p5-performance-tips)
     1.  [Disable the Friendly Error System](#disable-the-friendly-error-system)
     2.  [Switch Platforms](#switch-platforms)
@@ -107,6 +108,10 @@ Given that the CPU profiler is simply going to show you a table that has functio
 -   Avoid using [anonymous functions](https://en.wikibooks.org/wiki/JavaScript/Anonymous_functions) in your code.
 
 See the [CPU profiler documentation](https://developers.google.com/web/tools/chrome-devtools/profile/rendering-tools/js-execution) for more details.
+
+### Benchmarking
+
+If you have a suspicion that a p5.js function has low performance or think that you would like to work on work on implementing some performance optimizations to p5.js, then you should definitely check out our [benchmarking system](https://github.com/processing/p5.js/wiki/Benchmarking-p5.js).
 
 ## p5 Performance Tips
 
