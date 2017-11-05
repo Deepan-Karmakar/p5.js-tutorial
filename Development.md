@@ -16,6 +16,9 @@ Need help finding an issue to fix? Check out this [list of bite size issues](htt
     - Unit tests:
         - See the [testing section](https://github.com/processing/p5.js/wiki/Development#wiki-testing) for how to do this.
         - This helps ensure that the code you write keeps working far into the future when further updates and changes are made.
+    - Benchmarks
+        - See [Benchmarking section](https://github.com/processing/p5.js/wiki/Benchmarking-p5.js)
+        - Helpful for finding and implementing performance optimizations
 
 * **Add unit tests or documentation for existing code** : 
 
