@@ -79,6 +79,23 @@ suite('Friendly Errors: OFF, Window random() vs Math.random()', function () {
   });
 });
 ```
+Then you would need to add your new benchmark to `grunt-karma.js`
+
+```JavaScript
+...
+'random-fe-off-dev': {
+    options: {
+      files: [
+        'lib/p5.js',
+        'bench/math/random-fe-off.bench.js'
+      ]
+    }
+  }
+...
+```
+Now you can run your new benchmark with:
+
+    grunt karma:random-fe-off-dev
 
 ## Comparing Prod to Dev
 karma-benchmark can load remote files.  So it's easy to include the p5.js prod build and compare it to the dev build.  This is important when you're working on improving performance to compare your changes to what is in production.   To do this simply make two targets in `grunt-karma.js` one for prod and one for dev.
