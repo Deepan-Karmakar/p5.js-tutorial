@@ -43,6 +43,43 @@ Done, without errors.
 2.  Write the benchmark here is documentation [karma-benchmark](https://github.com/JamieMason/karma-benchmark/blob/master/README.md)
 3.  Add the benchmark target to `grunt-karma.js`
 
+### Example benchmark [random-fe-off.bench.js]
+
+Here is an example benchmark that compares p5 random() to Math.random() with Friendly Error System disabled. It has two suites one for instanced mode and one using the global window random().
+
+```JavaScript
+p5.disableFriendlyErrors = true;
+
+var p5Inst = new p5();
+
+/**
+ *  Instance random() vs Math.random()
+ */
+suite('Friendly Errors: OFF, Instance random() vs Math.random()', function () {
+  benchmark('Instance random()', function () {
+    return p5Inst.random();
+  });
+
+  benchmark('Math.random()', function () {
+    return Math.random();
+  });
+});
+
+
+/**
+ *  Window random() vs Math.random()
+ */
+suite('Friendly Errors: OFF, Window random() vs Math.random()', function () {
+  benchmark('window random()', function () {
+    return random();
+  });
+
+  benchmark('Math.random()', function () {
+    return Math.random();
+  });
+});
+```
+
 ## Comparing Prod to Dev
 karma-benchmark can load remote files.  So it's easy to include the p5.js prod build and compare it to the dev build.  This is important when you're working on improving performance to compare your changes to what is in production.   To do this simply make two targets in `grunt-karma.js` one for prod and one for dev.
 
