@@ -402,7 +402,7 @@ Alternatively, you can also input all CSS properties as one, as a single string 
 text.style("font-family:monospace; background-color:#FF0000; color:#FFFFFF; font-size:18pt; padding:10px;");
 ```
 
-###Using a CSS stylesheet
+### Using a CSS stylesheet
 
 Another way to incorporate this into your sketch is by creating your own stylesheet. To do this, create a file called something like style.css. Add a link to this file in the head of your HTML file.
 
