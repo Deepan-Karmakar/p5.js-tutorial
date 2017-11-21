@@ -183,6 +183,29 @@ function draw(){
 ```
 Loading images for texturing inside the preload() method is generally a best practice, but it is especially helpful when working with video since video files are generally larger than static images and can take therefore extra time to load.
 
+To texture a beginShape() graphic you will need to pass in u,v coordinates. These coordinates map to the texture being applied. Below is an example:
+
+```javascript
+var img;
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  img = loadImage("path/to/img.jpg");
+}
+
+function draw() {
+  background(200);
+  texture(img)
+
+  // Assuming img has 100 pixels width and height
+  beginShape();
+  vertex(0, 0, 0, 0, 0);
+  vertex(100, 0, 0, 1, 0);
+  vertex(100, 100, 0, 1, 1);
+  vertex(0, 100, 0, 0, 1);
+  endShape(CLOSE);
+}
+
+
 #Text
 To work with text in webgl mode, you'll need to render your text to an offscreen renderer first, and then use it as a texture like this:
 
