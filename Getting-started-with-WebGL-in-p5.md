@@ -204,7 +204,7 @@ function draw() {
   vertex(0, 100, 0, 0, 1);
   endShape(CLOSE);
 }
-
+```
 
 #Text
 To work with text in webgl mode, you'll need to render your text to an offscreen renderer first, and then use it as a texture like this:
