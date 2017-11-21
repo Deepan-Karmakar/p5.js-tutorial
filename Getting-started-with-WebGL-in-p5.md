@@ -206,7 +206,7 @@ function draw() {
 }
 ```
 
-#Text
+# Text
 To work with text in webgl mode, you'll need to render your text to an offscreen renderer first, and then use it as a texture like this:
 
 ```javascript
