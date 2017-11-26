@@ -253,4 +253,4 @@ PShape | SVG file | N/A
 # What next?
 
 + Check out the [p5.js reference](http://p5js.org/reference/) for up to date documentation.
-+ Play with the examples and demos on the [tutorials page](http://p5js.org/tutorials).
++ Play with the examples and demos on the [tutorials page](https://p5js.org/learn).
