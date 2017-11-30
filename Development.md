@@ -9,8 +9,6 @@ Need help finding an issue to fix? Check out this [list of bite size issues](htt
 * **Implement a new feature** : 
 
     If you have an original idea about a feature, open an issue describing your idea preferably in the format provided there, and let us know you're interested! Initiate a discussion, wait for the green signal, and then assign it to yourself! _Note: new features will require tests and inline documentation._
-    - JS Style guide:
-        - We recommend looking at [idiomatic.js](https://github.com/rwaldron/idiomatic.js/) for a JS style guide
     - Inline documentation:
         - [Style guide for p5.js inline docs](https://github.com/processing/p5.js/wiki/Inline-documentation) -- by formatting your documentation correctly, it will automatically show up in the p5.js reference.
     - Unit tests:
@@ -83,6 +81,32 @@ This [looking inside p5.js video](http://www.luisapereira.net/teaching/looking-i
 `tests/` Contains unit testing files.
 
 `examples/` Contains code examples including a port of all of Dan Shiffman's [Learning Processing](learningprocessing.com), as well as an empty-empty example that demonstrates setting up a sketch, and examples related to specific [tutorials](https://github.com/processing/p5.js/wiki/Tutorials).
+
+# Code Style
+
+p5.js uses [Prettier](https://prettier.io/) to automatically enforce a consistent code style and [Eslint](https://eslint.org/) to find other problematic code patterns. The rules are checked both when tests are run and before you make a commit.
+
+## Editor integration
+
+It's a good idea to add an [Eslint plugin to your editor](https://eslint.org/docs/user-guide/integrations#editors) which will show problems as you write your code. Many of the Eslint plugins can also fix style problems while you edit your code. You can also use an integration for [Prettier](https://prettier.io/), but the Eslint plugins provide most of the same features and more.
+
+## Automatic style fixing
+
+`npm run lint:fix` will format your code so that it follows the code style rules. You can check for style errors / code problems without fixing them by running `npm run lint`.
+
+## My commit got rejected ?! 
+Whenever you make a commit, Eslint and Prettier will check that your code follows the style rules and reject commits that break the rules. The error often looks like this:
+```
+eslint found some errors. Please fix them and try committing again.
+
+✖ 3 problem (2 error, 1 warnings)
+  1 error, 1 warnings potentially fixable with the `--fix` option.
+```
+
+Errors or warnings that are ``fixable with the `--fix` option`` are fixed by running `npm run lint:fix`. 
+
+## My code needs a special format!
+In [some special cases](https://github.com/processing/p5.js/search?utf8=%E2%9C%93&q=prettier-ignore&type=) your code needs special formatting to look more clear. Prettier [offers an escape hatch](https://prettier.io/docs/en/ignore.html) to ignore a block of code from being formatted, via the `// prettier-ignore` comment. Use with caution!
 
 # Testing
 
