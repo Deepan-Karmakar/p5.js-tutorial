@@ -27,6 +27,8 @@ The p5.js language looks very similar to the Processing language with a few chan
   }
   ```
 
++ The function println() is not available in p5.js. Use print() or console.log().
+
 + Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no PShape equivalent. The camera model in p5js is yet very basic, with only eye position and no "look at" or axis direction. See the [reference](http://p5js.org/reference/) for up to date documentation of what functions work.
  
 # Some things about JavaScript
