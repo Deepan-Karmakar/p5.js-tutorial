@@ -1,4 +1,4 @@
-###Resumen de diferencias
+### Resumen de diferencias
 
 El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas diferencias:
 
@@ -29,15 +29,15 @@ El lenguaje p5.js es muy similar al lenguaje Processing, con unas pocas diferenc
 
 + No todas las características de Processing están implementadas en p5.js, ¡pero estamos trabajando en eso! En este momento no existe un equivalente de PShape. El modelo de cámara en p5js sigue siendo muy básico, con solo una posición del ojo y sin un eje de dirección de "hacia donde mirar". Revisa la [referencia](http://p5js.org/es-reference/) para buscar documentación al día sobre las funciones.
  
-###Notas sobre JavaScript
+### Notas sobre JavaScript
 + Las variables no tienen un tipo. Usa var en vez de float, int, double, long, char, String, Array, etc. No necesitas especificar valores de retorno o tipos de parámetros de las funciones.
 + Una var puede ser cualquier cosa -- cualquiera de los tipos mencionados, pero también funciones.
 + Los arreglos son construidos de forma muy simple (no se necesita ArrayList de Processing) e incluyen muchas características, revisa este [ejemplo de arreglo](http://p5js.org/es/examples/arrays-array.html) y más sobre arreglos de JavaScript [aquí](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
 + JavaScript usa algo llamado prototype (prototipo) para construir algo similar a los objetos a partir de clases de Java. Revisa este [ejemplo de objetos](http://p5js.org/es/examples/objects-objects.html) y más sobre objetos JavaScript [aquí](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Trabajando_con_objectos).
 
-###Ejemplos de conversión
+### Ejemplos de conversión
 
-####Bosquejo básico
+#### Bosquejo básico
 
 Esta es la configuración básica de un bosquejo en Processing y uno en p5.js. Observa que p5.js también requiere un archivo HTML en blanco que enlaza la biblioteca p5.js y tu archivo de bosquejo (sketch) en el encabezado(header (ver [Empezar](http://p5js.org/es/get-started/)).
 
@@ -62,7 +62,7 @@ function draw() {
 }
 ```
 
-####Convertir un bosquejo de Processing a p5.js
+#### Convertir un bosquejo de Processing a p5.js
 
 Aquí se presentan dos ejemplos de bosquejos que han sido convertidos de Processing a p5.js. Los cambios hechos son señalados en los comentarios, todas las otras líneas quedan igual.
 
@@ -138,7 +138,7 @@ function segment(x, y, a) {                 // **cambio** void segment() a funct
 }
 ```
 
-####Convertir un bosquejo de p5.js a Processing
+#### Convertir un bosquejo de p5.js a Processing
 
 Aquí se presentan dos ejemplos de bosquejos que han sido convertidos de  p5.js a Processing. Los cambios hechos son señalados en los comentarios, todas las otras líneas quedan igual.
 
@@ -207,7 +207,7 @@ void segment(float x, float y, float a) {        // **cambio** function segment(
 }
 ```
 
-####Sobre las variables
+#### Sobre las variables
 
 En p5.js, todas las variables (sean números, strings, arreglos, funciones, objetos, ¡lo que sea!) son declaradsa usando el símbollo "var". En Processing, tienes que especificar el tipo de datos de la variable.
 
@@ -250,7 +250,7 @@ PShape | Archivo SVG | N/A
 
 
 
-###What next?
+### What next?
 
 + Check out the [p5.js reference](http://p5js.org/reference/) for up to date documentation.
 + Play with the examples and demos on the [tutorials page](http://p5js.org/tutorials).
