@@ -1,7 +1,7 @@
 This wiki is focused specifically on *developing* p5.js, not developing *with* p5.js.  If you're interested in using the library, please see the [main site](http://p5js.org), or any of the following links:  
 
 * [Get started](http://p5js.org/get-started/) -- Create and run your first sketch!  
-* [API Reference](http://p5js.org/reference) -- The documentation for p5.js.  (If you find anything missing, please add it!  
+* [API Reference](http://p5js.org/reference) -- The documentation for p5.js.
 * [Learn](http://p5js.org/learn/) -- Tutorials introducing different p5.js topics.
 * [Learn](http://p5js.org/examples/) -- Short, prototypical examples exploring the basics of programming with p5.js.
 
