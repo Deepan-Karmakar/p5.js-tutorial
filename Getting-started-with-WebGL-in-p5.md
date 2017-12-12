@@ -260,17 +260,16 @@ In the real world, light reflects off objects differently, depending on their an
 
 ```javascript
 normalMaterial()
-basicMaterial()
 ambientMaterial()
 specularMaterial()
 ```
 
-normalMaterial() does not take any parameters, it automatically maps a geometry’s normal vectors to RGB colors.  For more information on geometry normals, we find [this Wikipedia entry](https://en.wikipedia.org/wiki/Normal_(geometry)) to be pretty helpful.
+`normalMaterial()` does not take any parameters, it automatically maps a geometry’s normal vectors to RGB colors.  For more information on geometry normals, we find [this Wikipedia entry](https://en.wikipedia.org/wiki/Normal_(geometry)) to be pretty helpful.
 
-basicMaterial() is a material that fills the following geometry with a color, but is not affected by any of the light functions().  It’s similar to fill() in p5’s 2d mode.
+(At one time, there was also a `basicMaterial()` which fills the following geometry with a color, but is not affected by any of the light functions(). However, due to it being the same as `fill()`, it was removed and the function `fill()` can be used the `WEBGL` to fill geometry with a single color.)
 
-ambientMaterial() is like basicMaterial(), however the total color is affected by light functions that precede it.  
-specularMaterial() is the most “realistic” of the four materials.   Specular material is a technical way of describing a material that reflects light in a single direction.  This effect is often perceived in the real world as being glassy, water-like, or perhaps in the above example, a billiards ball.
+`ambientMaterial()` is like `basicMaterial()`, however the total color is affected by light functions that precede it.  
+`specularMaterial()` is the most “realistic” of the four materials.   Specular material is a technical way of describing a material that reflects light in a single direction.  This effect is often perceived in the real world as being glassy, water-like, or perhaps in the above example, a billiards ball.
 For example:
 
 ```javascript
