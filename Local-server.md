@@ -1,4 +1,4 @@
-Some functionality (loading external files, for example) works as expected when the files are placed online via FTP or SSH. However, if you try to view them locally, you see some kind of "cross-origin" errors in console. The solution to this is to view them using what's called a local web server. This tutorial includes instructions for setting up several types of local web servers on each of Mac OSX, Windows, and Linux.
+Some functionality (loading external files, for example) works as expected when the files are placed online via FTP or SSH. However, if you try to view them locally, you see some kind of "cross-origin" errors in console. The solution to this is to view them using what's called a local web server. This tutorial includes instructions for setting up several types of local web servers on each of Mac OSX, Windows, and Linux. This tutorial assumes a basic understanding of the command line interface, for a quick introduction see the [command line introduction wiki](https://github.com/processing/p5.js/wiki/Terminal-and-the-Command-Line).
 
 ## Python SimpleHTTPServer (1st option)
 
@@ -22,18 +22,14 @@ Unfortunately the python simple server is very slow. Loading a local page will o
 
 ## Node http-server (2nd option) 
 
-An alternative is node.js http-server. It is much faster than python simple server while requiring a little bit of setup. Just 3 simple steps:
+An alternative is node.js `http-server`. It is much faster than python simple server while requiring a little bit of setup. Just 3 simple steps:
 
 1.  [Download and Install node.js](https://nodejs.org/en/download/)
-2.  Open a terminal or command prompt 
-3.  On OSX/Linux type
-
-        sudo npm install -g http-server
-
-    On Windows type (you might need to open the command prompt as admin)
+2.  Open a terminal or command prompt (on Windows you might need to open the command prompt as admin)
+3.  In the terminal type:
 
         npm install -g http-server
- 
+
 Done!
 
 From then on just `cd` to the folder that has the files you want to serve and type 
@@ -42,11 +38,30 @@ From then on just `cd` to the folder that has the files you want to serve and ty
 
 Then point your browser at `http://localhost:8080/`
 
-Note: If you are having problems where the browser does not reload your javascript files after changes are made, you may need to instantiate the server with a specific cache value. To do this, include the cache timeout flag, with a value of '-1'. This tells the browser not to cache files (like sketch.js).
+Note 1: If you are having problems where the browser does not reload your javascript files after changes are made, you may need to instantiate the server with a specific cache value. To do this, include the cache timeout flag, with a value of '-1'. This tells the browser not to cache files (like sketch.js).
 
 ```bash
 http-server -c-1
 ```
+
+
+Alternatively, you can setup a `browser-sync` server which has the added benefit of automatically reloading the webpage when any changes were saved in the source code.
+
+1. Follow instructions above to install node.js and open a Terminal/Command Prompt window
+1. Type 
+
+        npm install -g browser-sync
+
+3. `cd` into your project folder.
+2. Type
+
+        browser-sync start --server -f
+
+5. Your website should be available at `http://localhost:3000` and whenever you save a file in your project, the webpage will automatically reload.
+- [https://www.browsersync.io/#install](https://www.browsersync.io/#install)  
+- [https://github.com/CodingTrain/Rainbow-Topics/issues/646](https://github.com/CodingTrain/Rainbow-Topics/issues/646)
+
+Note 2: If you encountered an error that says `EACCES` when installing either `http-server` or `browser-sync` it means npm is not installed with the right permissions, follow the steps outlined at https://docs.npmjs.com/getting-started/fixing-npm-permissions to fix it.
 
 ## Processing Simple HTTPServer (3rd option) 
 Simple HTTPServer library for processing. Allows communication in both ways.
@@ -65,11 +80,36 @@ void setup() {
 [Library page of Processing simple HTTP server](https://transfluxus.github.io/SimpleHTTPServer/)
 
 
-## Apache Server (4th option) 
+## Using PHP built-in web server (4th option)
 
-Python SimpleHTTPServer is great to get started, but at some point you might want to set up an Apache server. The Apache server supports a greater range of HTTP functionality and scales well for bigger projects. See below for OS specific setup.
+[PHP has (since version 5.4.0) a built-in web server](https://secure.php.net/manual/en/features.commandline.webserver.php) for testing purposes that can be used to test P5.js sketches. 
+
+To check if you have PHP installed you can open a terminal and issue the command:
+
+```
+php -version
+```
+
+If you have PHP CLI (Command Line Interpreter) installed you can start a local development server by using the command:
+
+```
+php -S localhost:8000
+```
+Then point your browser at `http://localhost:8000/`
+
+
+## Apache Server (5th option) 
+
+Python SimpleHTTPServer and others above are great to get started and in most cases should cover all your needs, but at some point you might want to set up an Apache server. The Apache server supports a greater range of HTTP functionality and scales well for bigger projects. See below for OS specific setup.
 
 ### Mac OS X
+1. Download MAMP from [https://www.mamp.info/en/downloads/](https://www.mamp.info/en/downloads/).
+2. Install MAMP and follow instructions.
+3. The root folder of the server should be in `/Applications/MAMP/htdocs`.
+4. Place your project folder inside "htdocs".
+5. Open your internet browser and go to the URL : `http://localhost/<your_project_folder>/yourfile.html`.
+
+**Follow the instructions below if you prefer to setup an apache server natively on your Mac:**
 
 Mac OS X since 10.5 Leopard ships with Apache web server installed, all you have to do is enable it and place the files in the right place.
 
@@ -86,8 +126,8 @@ sudo chown root:<your username> -R /Library/WebServer/Documents
 
 sudo chmod -R 755 /Library/WebServer/Documents
 ```
-4. Place your project somewhere inside /Library/WebServer/Documents/.
-5. View it at http://localhost/(the project folder in /Library/WebServer/Documents).
+4. Place your project somewhere inside `/Library/WebServer/Documents/`.
+5. View it at `http://localhost/<the project folder in /Library/WebServer/Documents>`.
 ```
 http://localhost/my-p5-sketch
 ```
@@ -97,7 +137,8 @@ http://localhost/my-p5-sketch
 1. Turn on the web server. Go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
 2. Verify it is working by going to `http://localhost/~<your username>` on your browser. You should see a default webpage with a title of "Your Website".
 3. Place your project somewhere inside `<your username folder>/Sites`.
-4. View it at http://localhost/~(your username)/(the project folder in `<your username folder>/Sites`).
+4. Turn on the web server from MAMP's control panel.
+4. View it at `http://localhost/~<your username>/<the project folder name>`.
 ```
 http://localhost/~macusername/my-p5-sketch
 ```
@@ -106,39 +147,13 @@ http://localhost/~macusername/my-p5-sketch
 
 1. Download WampServer from [http://www.wampserver.com/en/](http://www.wampserver.com/en/).
 2. Install WampServer and follow instructions.
-3. The “www” directory will be automatically created (usually c:\wamp\www).
+3. The “www” directory will be automatically created (usually `c:\wamp\www`).
 4. Create a subdirectory in “www” and put your HTML/JS files inside.
-5. Open your internet browser and go to the URL : http://localhost/yourfile.html.
+5. Open your internet browser and go to the URL : `http://localhost/yourfile.html`.
 
 
-### Linux
-
-#### Using BrowserSync Live page reload (recommended)
-
-1. npm install -g browser-sync  
-2. browser-sync start --server -f .  
-- [https://www.browsersync.io/#install](https://www.browsersync.io/#install)  
-- [https://github.com/CodingTrain/Rainbow-Topics/issues/646](https://github.com/CodingTrain/Rainbow-Topics/issues/646)  
-
-#### Using Appache  
+### Linux  
 
 1. Install apache2 via apt-get.
-2. Place your project somewhere inside /var/www/.
-3. View it at http://localhost.
-
-## Using PHP built-in web server (5th option)
-
-[PHP has (since version 5.4.0) a built-in web server](https://secure.php.net/manual/en/features.commandline.webserver.php) for testing purposes that can be used to test P5.js sketches. 
-
-To check if you have PHP installed you can open a terminal and issue the command:
-
-```
-php -version
-```
-
-If you have PHP CLI (Command Line Interpreter) installed you can start a local development server by usingd the command:
-
-```
-php -S localhost:8000
-```
-Then point your browser at `http://localhost:8000/`
+2. Place your project somewhere inside `/var/www/`.
+3. View it at `http://localhost`.
