@@ -7,7 +7,7 @@ AJAX (Asynchronous JavaScript and XML) is a technique for communicating with a s
 
 This diagram illustrates the basic flow:
 
-![](http://www.w3schools.com/ajax/ajax.gif)
+![](http://www.w3schools.com/xml/ajax.gif)
 
 AJAX is a bit difficult to get working in a cross platform manner (see an example [here](http://stackoverflow.com/questions/9713058/sending-post-data-with-a-xmlhttprequest)) but there are quite a few libraries out there that have done the hard work. Following are some examples with p5.js and jQuery, but first, a brief note about callbacks.
 
