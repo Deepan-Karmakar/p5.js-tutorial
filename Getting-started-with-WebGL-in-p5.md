@@ -270,7 +270,7 @@ specularMaterial()
 
 `ambientMaterial()` is like `fill()`, however the total color is affected by light functions that precede it.  
 
-`specularMaterial()` is the most “realistic” of the four materials.   Specular material is a technical way of describing a material that reflects light in a single direction.  This effect is often perceived in the real world as being glassy, water-like, or perhaps in the above example, a billiards ball.
+`specularMaterial()` is the most “realistic” of the three materials.   Specular material is a technical way of describing a material that reflects light in a single direction.  This effect is often perceived in the real world as being glassy, water-like, or perhaps in the above example, a billiards ball.
 For example:
 
 ```javascript
