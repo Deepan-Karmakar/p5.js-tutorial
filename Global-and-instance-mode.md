@@ -1,6 +1,6 @@
 Until now, we've been declaring everything in the "global" context (note the global context is actually the [window object](https://developer.mozilla.org/en-US/docs/Web/API/Window)).  In p5 lingo, we refer to this as "global mode".
 
-```
+```javascript
 var x = 100;
 var y = 100;
 
@@ -19,7 +19,7 @@ While this is convenient (and friendlier) it's important to note that this can l
 
 The syntax for instance mode looks like the following (the sketch below is identical to the above example):
 
-```
+```javascript
 var s = function( sketch ) {
 
   var x = 100; 
@@ -49,7 +49,7 @@ This should make sense to us.  We're making a new object called `myp5` (that's o
 
 And what is `s`?
 
-```
+```javascript
 var s = function( sketch ) {
 
 };
@@ -57,7 +57,7 @@ var s = function( sketch ) {
 
 `s` the seed that will spawn our p5 sketch.  It is a function that takes one argument, a `sketch` object and attaches properties to that `sketch`.   The properties are things we will need for a p5 sketch, functions like `setup()` and `draw()`.
 
-```
+```javascript
 var s = function( sketch ) {
   sketch.setup = function() {
   };
@@ -66,7 +66,7 @@ var s = function( sketch ) {
 
 Those functions have their own context, yet have access to anything declared around them as well.
 
-```
+```javascript
 var s = function( sketch ) {
   var x = 100; 
   var y = 100;
@@ -86,7 +86,7 @@ You can think of the purpose of s as initializing everything we need for a p5 sk
 
 As we've seen with JavaScript, anytime we pass a function into another function is an opportunity to declare that function anonymously.  Here is how we wrote it above.
 
-```
+```javascript
 var s = function( sketch ) {
    // empty
 };
@@ -95,7 +95,7 @@ var myp5 = new p5(s);
 
 And now without a separate variable holding onto `s` for us.
 
-```
+```javascript
 var myp5 = new p5( function( sketch ) {
   // empty
 });
@@ -103,7 +103,7 @@ var myp5 = new p5( function( sketch ) {
 
 Now with everything filled in, it looks like:
 
-```
+```javascript
 var myp5 = new p5( function( sketch ) {
 
   var x = 100; 
@@ -125,7 +125,7 @@ If you find this syntax confusing, congratulations you are a human being.  Yes, 
 
 One final note: when creating a p5 instance, you can specify a second argument (HTML element id) which acts the parent for all elements created by the sketch.  For example, let's say you have:
 
-```
+```html
 <body>
   <div id = "p5sketch">
   </div>
@@ -136,7 +136,7 @@ One final note: when creating a p5 instance, you can specify a second argument (
 
 You can now say:
 
-```
+```javascript
 var myp5 = new p5(s,'p5sketch');
 ```
 
@@ -154,19 +154,19 @@ p5.js will likely include features for video playback and capture in the future,
 
 To embed a video on a web page, it's as easy as creating a video element.
 
-```
+```html
 <video><source src="file.mov"></video>
 ```
 
 You can set various properties of the video via attributes.
 
-```
+```html
 <video loop="true" autoplay="true"><source src="fingers.mov"></video>
 ```
 
 We could, of course, type the HTML directly into index.html, but we can also create it dynamically via p5.
 
-```
+```javascript
 video = createHTML('<video id=\'vid\'><source src=\'fingers.mov\'></video>');
 video = document.getElementById('vid');  // Grab the dom element itself
 video.play();                            // We can call methods on that element like play()
@@ -178,13 +178,13 @@ video.setAttribute('controls',true);
 
 If we want to draw on top of the video we could create a transparent canvas element.  However, in some projects it may be advantageous to copy the pixels of a video into a canvas rather than display the video element itself on the page.  This can be accomplished but first setting the video element's display style to none.
 
-```
+```javascript
 video.style.display = 'none';
 ```
 
 We can then draw the video to the canvas using `drawImage()`.  It should be noted that `drawImage()` is [part of the HTML5 Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D).  While used behind the scenes in p5, it's not something we've used directly ourselves.  It's most likely this wiki will become quickly out of date if/when p5 integrates video drawing, but for now we'll have to grab our canvas graphics context and manually draw the video.  The code looks like this:
 
-```
+```javascript
 // Video
 var video;
 
@@ -213,7 +213,7 @@ function draw() {
 
 Now that we have recorded video working, we can take a few extra steps and get live capture from a user.  First we make an empty video element.
 
-```
+```javascript
 // Make an invisible video DOM element
 video = createHTML('<video id=\'vid\'></video>');
 video = document.getElementById('vid');
@@ -223,7 +223,7 @@ video.style.display = 'none';
 
 Now instead of saying `<source src="file.mov">` we need to assign the video's source to a live capture stream.  To do this, we are going to use [navigator.getUserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Navigator.getUserMedia).  This navigator object is a property of window that provide additional browser functionality.   It is not consistently available across all browsers, however.  We can get a little bit of cross-browser support by checking to see if it is available and if not, trying a different, analogous method.
 
-```
+```javascript
 navigator.getUserMedia = navigator.getUserMedia || 
                          navigator.webkitGetUserMedia || 
                          navigator.mozGetUserMedia || 
@@ -236,7 +236,7 @@ The first argument is an object with a video and audio property.  This indicates
 
 The second argument is a function that is triggered when getUserMedia() has been successful (note a user has to approve access to capture device).  What we'll do here is take the argument to that function (a media stream) and assign it to our video element, i.e.
 
-```
+```javascript
 function(stream) {
   video.src = window.URL.createObjectURL(stream);
 }
@@ -244,7 +244,7 @@ function(stream) {
 
 The last argument is a function that is triggered if the user rejects our request to capture. 
 
-```
+```javascript
 function(e) {
   console.log('User said no!', e);
 } 
@@ -252,7 +252,7 @@ function(e) {
 
 Putting it all together, it looks like so:
 
-```
+```javascript
 // Make an invisible video DOM element
 video = createHTML('<video id=\'vid\'></video>');
 video = document.getElementById('vid');
