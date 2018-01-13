@@ -206,6 +206,6 @@ On some code editors copy-pasting examples in the inline documentation may be aw
 
 ### Generating documentation
 
-Run `grunt requirejs:yuidoc_theme` once first to generate all local files needed. Run it again anytime you make changes to the core JS files behind the yuidoc reference page. These are changes in files located in the yuidoc-p5-theme-src folder, NOT inline documentation changes to src, this regenerates the templates. Then run `grunt yui` to regenerate the reference based on the updated theme from the source. This will create a copy of the reference you can view locally in docs/reference (note that you need to be running a server for it to display correctly). If you notice the page not updating, try deleting the `reference/` folder and running the command again.
+Run `grunt yui:build` once first to generate all local files needed, as well as a copy of the reference from the source code. Run it again anytime you make changes to the core JS files behind the yuidoc reference page. These are changes in files located in the yuidoc-p5-theme-src folder, NOT inline documentation changes to src. If you only made changes to the source code, you can just run `grunt yui`, though `grunt yui:build` will also do the trick. 
 
-Periodically (ideally with each new release), the docs/reference folder needs to be manually copied over to p5js.org/reference, and submitted via PR. If you'd like to try out a setup that does this for you automatically, making viewing the p5 website with the latest docs and libraries a lot easier, see [toolness/p5.js-docker](https://github.com/toolness/p5.js-docker).
+The build reference can be found in docs/reference. To preview it locally, run `grunt yui:dev` and view it as http://localhost:9001/docs/reference/.
