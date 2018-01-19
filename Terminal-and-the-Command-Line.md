@@ -18,7 +18,7 @@ This is barely scratching the surface of [what you can do with unix commands](ht
 
 # A couple more terminal tips
 
-* On Macs, if you don't feel like typing a long path to a directory on your computer, you can get to it quickly by dragging a folder from the finder into terminal.  It'll magically transform into the path!
+* On Macs and Windows, if you don't feel like typing a long path to a directory on your computer, you can get to it quickly by dragging a folder from the finder or file explorer, into terminal.  It'll magically transform into the path!
 * You can also "auto-complete" directories and filenames using `TAB`.
 * You can repeat previous commands by using the up and down arrow keys.
 
