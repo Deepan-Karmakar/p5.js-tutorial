@@ -40,35 +40,29 @@ Need help finding an issue to fix? Check out this [list of bite size issues](htt
 # Setup
 
 1. Download and install [npm](https://npmjs.org/). The easiest way to do this is to just install [node](http://nodejs.org/).
-2. Install [Grunt](http://gruntjs.com/getting-started). 
-   
-   ```
-   npm install -g grunt-cli
-   ```
-
-3. [Fork and clone](https://help.github.com/articles/fork-a-repo) this library ([p5.js](https://github.com/processing/p5.js)). 
+2. [Fork and clone](https://help.github.com/articles/fork-a-repo) this library ([p5.js](https://github.com/processing/p5.js)). 
 
    ```
    git clone git@github.com:YOUR_USERNAME/p5.js.git
    ```
 
-4. Navigate into the project folder and install dependencies via npm.
+3. Navigate into the project folder and install dependencies via npm.
    
    ```
    cd p5.js
    npm install
    ```
 
-5. To create the complete library from source, run Grunt. 
+4. To create the complete library from source, run Grunt. 
 
    ```
-   grunt
+   npm run grunt
    ```
    **NEW** : To create the library with only certain components, use Grunt [as it is explained here.](https://github.com/processing/p5.js/wiki/How-to-build-a-combination-of-select-modules-of-p5)
 
-   If you're continuously changing files in the library, you may want to run `grunt watch:quick` to automatically rebuild the library for you whenever any of its source files change.
+   If you're continuously changing files in the library, you may want to run `npm run grunt watch:quick` to automatically rebuild the library for you whenever any of its source files change.
 
-6. Run `grunt` one last time to make sure all the tests pass, and [submit a pull request](https://help.github.com/articles/creating-a-pull-request).
+5. Run `npm run grunt` one last time to make sure all the tests pass, and [submit a pull request](https://help.github.com/articles/creating-a-pull-request).
 
 # Overview
 
@@ -124,20 +118,38 @@ To get started:
 
 2. Add test files corresponding to files in `src` (more info about Chai assert style TDD phrasing [here](http://chaijs.com/api/assert/)). 
 3. Link to the src and test files in `test.html`. 
-4. Run the tests with `grunt test`.
+4. Run the tests with `npm run grunt`.
+
+## Building and testing the Reference Docs & Examples
+
+This will build the p5.js library, generate the documentation files, run a web server, and open a browser to the main documentation page.
+
+    ````
+    npm run docs:dev
+    ````
 
 ## Running tests in the browser
 Sometimes it is useful to run tests in browser especially when trying to debug test failures.  To run the tests in the browser:
 
-1. Run the connect server. ```grunt connect -keepalive```
+1. Run the connect server. ```npm run grunt connect -keepalive```
 2. Open test/test.html in your favourite web browser.
 
 # Master branch development
 
 1. Fork p5.js
-2. Make local changes
-3. Commit and push changes
-4. Submit a PR against the `p5.js/master` branch
+2. Create a feature branch: `git checkout -b my_branch`
+3. Make local changes
+4. Commit and push changes. When you first attempt to push your feature branch, `git` will give you instructions on how to have your local branch track a similarly-named one on Github.
+5. Submit a PR against the `p5.js/master` branch
+6. checkout the master branch: `git checkout master`
+
+## Bringing your master branch up-to-date
+
+1. Make sure you have no uncommitted changes, or any additional commits in your master branch. The following commands will discard any changes you have made.
+2. `git checkout master`
+3. `git fetch`
+4. `git reset --hard upstream/master`
+5. `git push -f`
 
 # Repositories
 
@@ -154,4 +166,4 @@ An alternative to setting up node, grunt, php, apache, and the p5.js & p5.js-web
 
 # p5.js API JSON file
 
-[This file](https://p5js.org/reference/data.json) can be used for auto-complete. This [gist](https://gist.github.com/jonohayon/b059a029755f84f42b29f005323ec165) explains how to parse the file. Note that the data.json file is generated when the `grunt` command is run, it is found on the p5js.org website but is not included in the repo.
+[This file](https://p5js.org/reference/data.json) can be used for auto-complete. This [gist](https://gist.github.com/jonohayon/b059a029755f84f42b29f005323ec165) explains how to parse the file. Note that the data.json file is generated when the `npm run grunt` command is run, it is found on the p5js.org website but is not included in the repo.
