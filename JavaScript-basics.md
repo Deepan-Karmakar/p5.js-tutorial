@@ -632,4 +632,4 @@ A code statement generally ends with a semicolon.
 var x = 10;
 ```
 
-However, you may hear that semicolons are optional in JavaScript. This is sort of true. You can read more [here](http://www.codecademy.com/blog/78-your-guide-to-semicolons-in-javascript), but my general recommendation is to use semicolons to avoid confusion.
+However, you may hear that semicolons are optional in JavaScript. This is sort of true. You can read more [here](http://www.codecademy.com/blog/your-guide-to-semicolons-in-javascript), but my general recommendation is to use semicolons to avoid confusion.
