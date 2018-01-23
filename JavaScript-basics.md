@@ -38,7 +38,7 @@ One of the first things we probably want to learn is how to get debugging output
 ```javascript
 console.log("hello");
 console.log("variables x, y values", x, y; // Use default space separation of args
-console.log("variables x, y values" + x + " " + y); // Concatenate all message into a single string
+console.log("variables x, y values " + x + " " + y); // Concatenate all message into a single string
 ```
 In order to see the console on Chrome, select "View" > "Developer" > "JavaScript Console". Use it often! 
 
