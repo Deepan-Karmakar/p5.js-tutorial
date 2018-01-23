@@ -37,7 +37,7 @@ One of the first things we probably want to learn is how to get debugging output
 ```javascript
 console.log("hello");
 console.log("variables x, y values", x, y;
-console.log(variable x, y values", x + " " + y);
+console.log("variable x, y values", x + " " + y);
 ```
 In order to see the console on Chrome, select "View" > "Developer" > "JavaScript Console". Use it often! 
 
