@@ -11,8 +11,11 @@ JavaScript can be placed anywhere within an HTML document, although it is typica
 <html>              
   <head>              
     <script type="text/javascript">              
-      //JavaScript goes here
-
+      //JavaScript goes here. Simple example ... 
+      str = "This is my first message!";  // This should appear in the console of the browser.
+                                          // For Chrome on Mac, use Option+Command+J to open the Console.
+      console.log(str);
+      alert(str);  // This should create a popup message,
     </script>
   </head>              
 </html>              
