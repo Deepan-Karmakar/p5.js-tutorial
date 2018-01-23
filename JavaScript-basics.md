@@ -36,8 +36,10 @@ You can also write JavaScript in a file external to the HTML and point to that f
 One of the first things we probably want to learn is how to get debugging output. You can write to the console by using the built-in console.log method:
 ```javascript
 console.log("hello");
+console.log("variable x, y value", x), y;
+console.log(variable x, y value", x + " " + y);
 ```
-In order to see the console on Chrome, select "View" > "Developer" > "JavaScript Console". Use it often!
+In order to see the console on Chrome, select "View" > "Developer" > "JavaScript Console". Use it often! 
 
 # Variables
 
