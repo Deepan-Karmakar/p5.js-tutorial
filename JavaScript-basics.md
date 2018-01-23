@@ -24,7 +24,7 @@ JavaScript can be placed anywhere within an HTML document, although it is typica
 ```
 If you you put the above text in a file 'index.html', you can open it, eg. by just clicking on it in a "file browser" dialog window, in Windows/MacOS/Linux.
 	
-You can also write JavaScript in file external to the HTML and point to that file in a script tag.
+You can also write JavaScript in a file external to the HTML and point to that file in a script tag.
 
 ```html
 <script type="text/javascript" src="myscript.js"></script>
