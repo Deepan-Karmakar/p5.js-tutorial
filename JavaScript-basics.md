@@ -14,11 +14,11 @@ JavaScript can be placed anywhere within an HTML document, although it is typica
       //JavaScript goes here 
       str = "This is my first message";                                    
       console.log(str);  // This will show up in the browser's JavaScript console. For Chrome on Mac, use Option+Command+J to open the Console.
-      alert(str);  // This should create a popup message. Usually very irritating, but good here for learning.
+      alert(str);  // This should create a popup message.
     </script>
   </head>              
 <body> 
-  This is totally plain raw text, the browser will do something with it for sure.
+  This is totally plain raw text, the browser will show it in a default font/colour/size.
 </body>             
 </html>              
 ```
@@ -37,7 +37,7 @@ One of the first things we probably want to learn is how to get debugging output
 ```javascript
 console.log("hello");
 console.log("variables x, y values", x, y;
-console.log("variable x, y values", x + " " + y);
+console.log("variable x, y values", x + " " + y); // Concatenate x and y into a single string
 ```
 In order to see the console on Chrome, select "View" > "Developer" > "JavaScript Console". Use it often! 
 
