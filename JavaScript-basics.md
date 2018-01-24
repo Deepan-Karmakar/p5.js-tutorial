@@ -14,8 +14,7 @@ JavaScript can be placed anywhere within an HTML document, although it is typica
       //JavaScript goes here 
       str = "This is my first message";                                    
       console.log(str);  // This will show up in the browser's JavaScript console. 
-      // For Chrome on Mac, use Option+Command+J to open the Console.
-      alert(str);  // This will create a popup message, in all browsers.
+      alert(str);        // This will create a popup message in the browser.
     </script>
   </head>              
 <body> 
@@ -25,10 +24,12 @@ JavaScript can be placed anywhere within an HTML document, although it is typica
 ```
 If you you put the above text in a file 'index.html', you can open it, eg. by just clicking on it in a "file browser" dialog window, in Windows/MacOS/Linux.
 	
-You can also write JavaScript in a file external to the HTML and point to that file in a script tag.
+You can also write JavaScript in a file external to the HTML and point to that file in a script tag. There can be more than one script. They can also be fetched from the Web.
 
 ```html
-<script type="text/javascript" src="myscript.js"></script>
+<script type="text/javascript" src="myProcessingCode.js"></script>                    <!-- this is an HTML comment -->
+<script type="text/javascript" src="libraries/p5.js"></script>                        <!-- The p5 library -->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>    <!-- JQuery, a popular utility lib -->
 ```
 
 
@@ -37,10 +38,10 @@ You can also write JavaScript in a file external to the HTML and point to that f
 One of the first things we probably want to learn is how to get debugging output. You can write to the console by using the built-in console.log method:
 ```javascript
 console.log("hello");
-console.log("variables x, y values", x, y); // Use the default space separation of args
-console.log("variables x, y values " + x + " " + y); // Concatenate all message into a single string
+console.log("variables x, y values", x, y);          // Use the default space separation of args
+console.log("variables x, y values " + x + " " + y); // Concatenate the message into a single string
 ```
-In order to see the console on Chrome, select "View" > "Developer" > "JavaScript Console". Use it often! 
+In order to see the console on Chrome, select "View" > "Developer" > "JavaScript Console". Use it often! Note also that Processing has a "print()" function which does a similar job.
 
 # Variables
 
@@ -54,13 +55,19 @@ JavaScript is a "loosely typed" or "dynamic" language, meaning you don't have to
 
 ### Number
 
-A number with a decimal point. In other languages this is typically called a float. It can be written with or without the decimal point, the processor will interpret it as a floating point number.
+A number with a decimal point. In other languages this is typically called a float, short for "floating point number". It can be written with or without the decimal point, the processor will interpret it as a floating point number.
 
 ```javascript
 var x = 5;
 var y = 1.223;
 var z = -300;
 ```
+JavaScript stores all numbers as 64-bit floats. Sometimes this leads to very small inaccuracies. Try this in the JavaScript console: 0.362 * 100   You should get the answer 36.199999999999996. This is rarely a problem in practice, after all it's accurate to 1 part in 100 quintillion, usually pretty ok ! 
+
+Although JavaScript doesn't have a specific integer type, it uses special measures to keep integers 100% accurate. Integers up to a magic value of 9007199254740991 (and down to -9007199254740991) are stored and computed with completely accurately. (9007199254740991 is 2^53 -1, ie. 2 to the power 53, minus 1. This is because the integer is held in the 53-bit mantissa section of the 64-bit IEEE float word).
+
+This means that counting and looping code will always work correctly. A loop like "(for i = 0; i < 1000000; i++)" will stop exactly at the million'th iteration.
+
 
 ### String
 
