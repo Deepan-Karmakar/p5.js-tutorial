@@ -150,138 +150,101 @@ And all elements will be created inside that div.
 
 ## HTML5 Video
 
-p5.js will likely include features for video playback and capture in the future, but it is currently not a capability.  However given that HTML5 supports video and capture (via [WebRTC](http://www.webrtc.org/)) it is fairly easy for us to integrate these features into a p5 sketch.
+In p5.js we can create an HTML5 <video> element in the DOM for simple playback of audio/video using the `createVideo()` function.
+  
+  ```javascript
+  var vid;
+  function setup(){
+    vid = createVideo(['small.mp4', 'small.ogv', 'small.webm'], vidLoad);
+  }
+  // This function is called when the video loads
+  function vidLoad() {
+    vid.play();
+  }
+  ```
+  
+Shown by default, can be hidden with `.hide()` and drawn into canvas using `video()`.Appends to the container node if one is specified, otherwise appends to body. The first parameter can be either a single string path to a video file, or an array of string paths to different formats of the same video. This is useful for ensuring that your video can play across different browsers, as each supports different formats.
+Syntax :
 
-To embed a video on a web page, it's as easy as creating a video element.
+```javascript
+ // src :File path of the video
+ // [callback] : callback function()
+  createVideo(src,[callback])
+```
+
+This function requires you include the p5.dom library. Add the following into the head of your index.html file: 
 
 ```html
-<video><source src="file.mov"></video>
+<script language="javascript" type="text/javascript" src="path/to/p5.dom.js"></script>
 ```
 
-You can set various properties of the video via attributes.
+[More about HTML5 audio and video](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML5_audio_and_video). & [More about createVideo()](https://p5js.org/reference/#/p5/createVideo).
+
+If we want to draw on top of the video we could create a transparent canvas element. However, in some projects it may be advantageous to copy the pixels of a video into a canvas rather than display the video element itself on the page.This can be accomplished by loading the video in a object and then sending that object to `image()`function.
+
+```javascript
+  //Create a global variable
+  var vid ;  
+  function setup() {
+    createCanvas(800,800); // load the canvas
+    background(0);   
+    vid = createVideo('movie.mp4'); // load the video(here it's movie.mp4) and attach it to the global variable 
+    vid.play();  // play the video
+    vid.hide();  // hide the video
+  }
+  function draw() {
+    image(vid,0,0,200,200); // Draw the video in the canvas 
+  }
+```
+[More about p5.MediaElement](https://p5js.org/reference/#/p5.MediaElement).
+
+
+## Capture Live Video
+
+Create a new <video> element that contains the audio/video feed from a webcam using the `createCapture()` function. This can be drawn onto the canvas in a similar manner as we did above.
+  
+  ```javascript
+  //create a global variable
+  var capture;
+
+  //Get a stream of video from the user and store attach it to capture
+  function setup() {
+    createCanvas(200,200);
+    capture = createCapture(VIDEO)
+    capture.size(200,200)
+  }
+
+//Continously draw the pixels on th canvas using the data stored in capture
+  function draw() {
+    //Original video slides horizontally
+    capture.position(mouseX,0);
+
+    //pixels drawn on canvas using image function remains static and inverted(filter);
+    image(capture,0,0,200,200);
+    filter(INVERT);
+  }
+  ```
+
+More specific properties of the feed can be passing in a Constraints object. See the [W3C spec](w3c.github.io/mediacapture-main/getusermedia.html#media-track-constraints) for possible properties. Note that not all of these are supported by all browsers.
+
+Security note: A new browser security specification requires that getUserMedia, which is behind createCapture(), only works when you're running the code locally, or on HTTPS. Learn more [here](https://stackoverflow.com/questions/34197653/getusermedia-in-chrome-47-without-using-https) and [here](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
+
+This function requires you include the p5.dom library. Add the following into the head of your index.html file:
 
 ```html
-<video loop="true" autoplay="true"><source src="fingers.mov"></video>
+<script language="javascript" type="text/javascript" src="path/to/p5.dom.js"></script>
 ```
 
-We could, of course, type the HTML directly into index.html, but we can also create it dynamically via p5.
+Syntax
 
 ```javascript
-video = createHTML('<video id=\'vid\'><source src=\'fingers.mov\'></video>');
-video = document.getElementById('vid');  // Grab the dom element itself
-video.play();                            // We can call methods on that element like play()
-video.setAttribute('loop', true);        // We can also set attributes
-video.setAttribute('controls',true);
+  createCapture(type,callback)
 ```
 
-[More about HTML5 audio and video](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML5_audio_and_video).
+`type`    : String|Constant|Object:type of capture, either VIDEO or AUDIO if none specified, default both, or a Constraints object.
+`callback` :Function: function to be called once stream has loaded.
 
-If we want to draw on top of the video we could create a transparent canvas element.  However, in some projects it may be advantageous to copy the pixels of a video into a canvas rather than display the video element itself on the page.  This can be accomplished but first setting the video element's display style to none.
+`Returns` : Object|p5.Element: capture video p5.Element .
 
-```javascript
-video.style.display = 'none';
-```
-
-We can then draw the video to the canvas using `drawImage()`.  It should be noted that `drawImage()` is [part of the HTML5 Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D).  While used behind the scenes in p5, it's not something we've used directly ourselves.  It's most likely this wiki will become quickly out of date if/when p5 integrates video drawing, but for now we'll have to grab our canvas graphics context and manually draw the video.  The code looks like this:
-
-```javascript
-// Video
-var video;
-
-// Drawing context
-// Temporary as eventually p5 may support drawing video into canvas directly?
-var context;
-
-function setup() {
-  video = createHTML('<video id=\'vid\'><source src=\'fingers.mov\'></video>');
-  video = document.getElementById('vid');
-  video.play();
-
-  var canvas = createCanvas(640, 360);
-  // need to keep track of the context to draw the video
-  context = canvas.elt.getContext('2d');
-}
-
-function draw() {
-  background(51);
-  // Draw video into canvas
-  context.drawImage(video,0,0,width,height);
-};
-```
-
-## Capture with WebRTC
-
-Now that we have recorded video working, we can take a few extra steps and get live capture from a user.  First we make an empty video element.
-
-```javascript
-// Make an invisible video DOM element
-video = createHTML('<video id=\'vid\'></video>');
-video = document.getElementById('vid');
-video.setAttribute('autoplay',true);
-video.style.display = 'none';
-```
-
-Now instead of saying `<source src="file.mov">` we need to assign the video's source to a live capture stream.  To do this, we are going to use [navigator.getUserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Navigator.getUserMedia).  This navigator object is a property of window that provide additional browser functionality.   It is not consistently available across all browsers, however.  We can get a little bit of cross-browser support by checking to see if it is available and if not, trying a different, analogous method.
-
-```javascript
-navigator.getUserMedia = navigator.getUserMedia || 
-                         navigator.webkitGetUserMedia || 
-                         navigator.mozGetUserMedia || 
-                         navigator.msGetUserMedia;
-```
-
-`getUserMedia()` takes three arguments.  
-
-The first argument is an object with a video and audio property.  This indicates whether we want to capture from a camera, microphone, or both.  For example: `{ video: true, audio: false }` gives us video stream only.
-
-The second argument is a function that is triggered when getUserMedia() has been successful (note a user has to approve access to capture device).  What we'll do here is take the argument to that function (a media stream) and assign it to our video element, i.e.
-
-```javascript
-function(stream) {
-  video.src = window.URL.createObjectURL(stream);
-}
-```
-
-The last argument is a function that is triggered if the user rejects our request to capture. 
-
-```javascript
-function(e) {
-  console.log('User said no!', e);
-} 
-```
-
-Putting it all together, it looks like so:
-
-```javascript
-// Make an invisible video DOM element
-video = createHTML('<video id=\'vid\'></video>');
-video = document.getElementById('vid');
-video.setAttribute('autoplay',true);
-video.style.display = 'none';
-
-// For cross-browser support
-navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-
-// Get a stream of video from the user
-navigator.getUserMedia(
-  // First argument is an object that tells us if we want audio and/or video
-  { video: true, audio: false }, 
-  // Second argument is a function that assigns a 'stream' to the video's source
-  function(stream) {
-    video.src = window.URL.createObjectURL(stream);
-  }, 
-  // Third argument is the callback if the user rejected
-  rejected
-);  
-
-var rejected = function(e) {
-  // The user rejected capturing
-  // We could handle this however we want
-  console.log('User said no!', e);
-};
-```
-
-Notice how we are using an anonymous function for the second argument and a function stored in a variable for the third one.  This is arbitrary and is just meant to demonstrate both possibilities.
-
-
+[Further information here](https://p5js.org/reference/#/libraries/p5.dom).
 
