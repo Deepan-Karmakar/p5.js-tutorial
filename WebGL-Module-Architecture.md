@@ -156,3 +156,6 @@ The normal shader is set when `normalMaterial()` is in use. It uses the surfaceâ
 |`varying vec3 vLightWeighting;`       |           |x              |            |             |
 |`varying highp vec2 vVertTexCoord;`   |           |               |            |x            |
 |`varying vec4 vColor;`                |           |               |x           |             |
+
+
+## Next Steps
