@@ -163,73 +163,73 @@ In p5.js we can create an HTML5 <video> element in the DOM for simple playback o
   }
   ```
   
-Shown by default, can be hidden with `.hide()` and drawn into canvas using `video()`.Appends to the container node if one is specified, otherwise appends to body. The first parameter can be either a single string path to a video file, or an array of string paths to different formats of the same video. This is useful for ensuring that your video can play across different browsers, as each supports different formats.
+Shown by default, the video element can be hidden with `.hide()`. The video element is appended to the container node if one is specified, otherwise it is appended to `<body>`. The first parameter can be either a single string path to a video file, or an array of string paths to different formats of the same video. This is useful for ensuring that your video can play across different browsers, as each supports different formats.
 Syntax :
 
 ```javascript
- // src :File path of the video
- // [callback] : callback function()
-  createVideo(src,[callback])
+ // src: File path of the video
+ // callback (optional): callback function, called when video is loaded
+  createVideo(src, callback)
 ```
 
-This function requires you include the p5.dom library. Add the following into the head of your index.html file: 
+This function requires you include the p5.dom library. Add the following into the `<head>` of your index.html file: 
 
 ```html
 <script language="javascript" type="text/javascript" src="path/to/p5.dom.js"></script>
 ```
 
-[More about HTML5 audio and video](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML5_audio_and_video). & [More about createVideo()](https://p5js.org/reference/#/p5/createVideo).
+[More about HTML5 audio and video](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML5_audio_and_video) & [More about createVideo()](https://p5js.org/reference/#/p5/createVideo).
 
-If we want to draw on top of the video we could create a transparent canvas element. However, in some projects it may be advantageous to copy the pixels of a video into a canvas rather than display the video element itself on the page.This can be accomplished by loading the video in a object and then sending that object to `image()`function.
+If we want to draw on top of the video we could create a transparent canvas element. However, in some projects it may be advantageous to copy the pixels of a video into a canvas rather than display the video element itself on the page. This can be accomplished by loading the video into an object and sending that object to the `image()` function.
 
 ```javascript
-  //Create a global variable
-  var vid ;  
+  // Create a global variable
+  var vid;  
   function setup() {
     createCanvas(800,800); // load the canvas
     background(0);   
-    vid = createVideo('movie.mp4'); // load the video(here it's movie.mp4) and attach it to the global variable 
+    vid = createVideo('movie.mp4'); // load the video (movie.mp4) and attach it to the global variable 
     vid.play();  // play the video
     vid.hide();  // hide the video
   }
   function draw() {
-    image(vid,0,0,200,200); // Draw the video in the canvas 
+    image(vid, 0, 0, 200, 200); // Draw the video in the canvas 
   }
 ```
-[More about p5.MediaElement](https://p5js.org/reference/#/p5.MediaElement).
+[More about p5.MediaElement](https://p5js.org/reference/#/p5.MediaElement)
 
 
 ## Capture Live Video
 
-Create a new <video> element that contains the audio/video feed from a webcam using the `createCapture()` function. This can be drawn onto the canvas in a similar manner as we did above.
+You can create a new `<video>` element that contains the audio/video feed from a webcam using the `createCapture()` function. This can be drawn onto the canvas in a similar manner as we did above.
   
-  ```javascript
-  //create a global variable
-  var capture;
+```javascript
+//create a global variable
+var capture;
 
-  //Get a stream of video from the user and store attach it to capture
-  function setup() {
-    createCanvas(200,200);
-    capture = createCapture(VIDEO)
-    capture.size(200,200)
-  }
+//Get a stream of video from the user and store attach it to capture
+function setup() {
+  createCanvas(200,200);
+  capture = createCapture(VIDEO)
+  capture.size(200,200)
+}
 
 //Continously draw the pixels on th canvas using the data stored in capture
-  function draw() {
-    //Original video slides horizontally
-    capture.position(mouseX,0);
+function draw() {
+  //Original video slides horizontally
+  capture.position(mouseX,0);
 
-    //pixels drawn on canvas using image function remains static and inverted(filter);
-    image(capture,0,0,200,200);
-    filter(INVERT);
-  }
-  ```
+  //pixels drawn on canvas using image function remains static and inverted(filter);
+  image(capture,0,0,200,200);
+  filter(INVERT);
+}
+```
 
-More specific properties of the feed can be passing in a Constraints object. See the [W3C spec](w3c.github.io/mediacapture-main/getusermedia.html#media-track-constraints) for possible properties. Note that not all of these are supported by all browsers.
+More specific properties of the feed can be passed in a `Constraints` object. See the [W3C spec](w3c.github.io/mediacapture-main/getusermedia.html#media-track-constraints) for possible properties. Note that not all of these are supported by all browsers.
 
-Security note: A new browser security specification requires that getUserMedia, which is behind createCapture(), only works when you're running the code locally, or on HTTPS. Learn more [here](https://stackoverflow.com/questions/34197653/getusermedia-in-chrome-47-without-using-https) and [here](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
+Security note: A new browser security specification requires that `getUserMedia`, which is behind `createCapture()`, only works when you're running the code locally, or on HTTPS. Learn more [here](https://stackoverflow.com/questions/34197653/getusermedia-in-chrome-47-without-using-https) and [here](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
 
-This function requires you include the p5.dom library. Add the following into the head of your index.html file:
+This function requires you include the p5.dom library. Add the following into the `<head>` of your index.html file:
 
 ```html
 <script language="javascript" type="text/javascript" src="path/to/p5.dom.js"></script>
@@ -238,12 +238,12 @@ This function requires you include the p5.dom library. Add the following into th
 Syntax
 
 ```javascript
-  createCapture(type,callback)
+createCapture(type, callback)
 ```
 
 `type`    : String|Constant|Object:type of capture, either VIDEO or AUDIO if none specified, default both, or a Constraints object.
 
-`callback` :Function: function to be called once stream has loaded.
+`callback`: Function: (optional) function to be called once stream has loaded.
 
 `Returns` : Object|p5.Element: capture video p5.Element .
 
