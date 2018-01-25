@@ -281,17 +281,3 @@ sphere(50, 64);
   
 
 
-
-# Processing transition
-See the following wiki page: https://github.com/processing/p5.js/wiki/Processing-transition
-
-# The Future: Custom shaders, Shadow maps, full-featured virtual camera, etc.
-WebGL in p5.js is still in its nascent stages.  In this section we’d like to give you a sampling of some features we’d like, but have not yet implemented in p5.js.
-
-- Custom shaders: If you’re familiar with WebGL or OpenGL, you probably are used to writing small graphics programs called shaders.  In the future, you’ll be able to write your own custom shaders and load them as you would the default materials and lights.
-
-- Shadow maps.  Peanut butter goes together with Jelly, and so too does light and shadow.
-
-- Full featured camera.  Multiple cameras, greater orbit control, featuring quaternion rotation. etc.
-
-Have a feature you’d really like to implement in WebGL, and it’s not listed here?  Start a discussion on [Github](https://github.com/processing/p5.js/issues)!
