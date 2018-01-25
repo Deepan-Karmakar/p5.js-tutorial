@@ -242,6 +242,7 @@ Syntax
 ```
 
 `type`    : String|Constant|Object:type of capture, either VIDEO or AUDIO if none specified, default both, or a Constraints object.
+
 `callback` :Function: function to be called once stream has loaded.
 
 `Returns` : Object|p5.Element: capture video p5.Element .
