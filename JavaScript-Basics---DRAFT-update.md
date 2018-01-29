@@ -26,7 +26,7 @@ JavaScript can be placed anywhere within an HTML document, although it is typica
 </body>             
 </html>              
 ```
-If you you put the above text in a file 'index.html', you can open it, eg. by just clicking on it in a "file browser" dialog window, in Windows/MacOS/Linux.
+If you you put the above text in a file 'index.html', you can open it, eg. by just clicking on it in a "file browser" dialog window, in Windows/MacOS/Linux. 
 	
 You can also write JavaScript in a file external to the HTML and point to that file in a script tag. There can be more than one script. They can also be fetched from the Web.
 
@@ -35,7 +35,7 @@ You can also write JavaScript in a file external to the HTML and point to that f
 <script type="text/javascript" src="libraries/p5.js"></script>                        <!-- The p5 library -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>    <!-- JQuery, a popular utility lib -->
 ```
-
+Note, the 'type="text/javascript" is not needed in the latest browsers, JavaScript is the default script type.
 
 # Console
 
@@ -43,9 +43,11 @@ One of the first things we probably want to learn is how to get debugging output
 ```javascript
 console.log("hello");
 console.log("variables x, y values", x, y);          // Use the default space separation of args
-console.log("variables x, y values " + x + " " + y); // Concatenate the message into a single string
+console.log("variables x, y values " + x + " " + y); // Concatenate message into a single string, more flexible
 ```
-In order to see the console on Chrome, select "View" > "Developer" > "JavaScript Console". Use it often! Note also that Processing has a "print()" function which does a similar job.
+In order to see the console on Chrome, select menu sequence "View" > "Developer" > "JavaScript Console". Use it often! On other browsers, just search for info on "how to open the JavaScript console on \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
+
+**Updated down to here**
 
 # Variables
 
