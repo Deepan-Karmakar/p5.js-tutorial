@@ -1,15 +1,18 @@
-This is a draft of an update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb latest, hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E.
+This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb latest, hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E.
 
 **Previous version being updated from top down. Progress marked by "Updated down to here"**
 
-JavaScript is a scripting language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with elements on a webpage and responding to actions initiated by the user.
+JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is widely described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
 
-Although the JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
+Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is documented as being based on the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
+
+JavaScript has had an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide a web-page scripting ability, but unexpectedly took off as part of the late 90's explosion of the Web. Since then it has matured into a full-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top 3 or even at the top in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be well spent! 
+ 
 
 
 # `<script>` tag
 
-JavaScript can be placed anywhere within an HTML document, although it is typically included in the "head" section of the HTML, and is specified by the use of `<script>` tags:
+JavaScript can be placed anywhere within an HTML document, although it is typically included in the `<head>` section of the HTML, and is specified by the use of `<script>` tags:
 
 ```html
 <html>              
@@ -18,7 +21,7 @@ JavaScript can be placed anywhere within an HTML document, although it is typica
       //JavaScript goes here 
       str = "This is my first message";                                    
       console.log(str);  // This will show up in the browser's JavaScript console. 
-      alert(str);        // This will create a popup message in the browser.
+      alert(str);        // This will show a popup message in the browser. Use sparingly!
     </script>
   </head>              
 <body> 
@@ -26,7 +29,7 @@ JavaScript can be placed anywhere within an HTML document, although it is typica
 </body>             
 </html>              
 ```
-If you you put the above text in a file 'index.html', you can open it, eg. by just clicking on it in a "file browser" dialog window, in Windows/MacOS/Linux. 
+If you put the above text in a file 'index.html', you can open it, eg. by just clicking on it in a "file browser" dialog window, in Windows/MacOS/Linux. 
 	
 You can also write JavaScript in a file external to the HTML and point to that file in a script tag. There can be more than one script. They can also be fetched from the Web.
 
@@ -35,7 +38,7 @@ You can also write JavaScript in a file external to the HTML and point to that f
 <script type="text/javascript" src="libraries/p5.js"></script>                        <!-- The p5 library -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>    <!-- JQuery, a popular utility lib -->
 ```
-Note, the 'type="text/javascript" is not needed in the latest browsers, JavaScript is the default script type.
+Note, the 'type="text/javascript"' is not needed in the latest browsers, JavaScript is now the default script type.
 
 # Console
 
@@ -47,17 +50,46 @@ console.log("variables x, y values " + x + " " + y); // Concatenate message into
 ```
 In order to see the console on Chrome, select menu sequence "View" > "Developer" > "JavaScript Console". Use it often! On other browsers, just search for info on "how to open the JavaScript console on \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
 
-**Updated down to here**
-
 # Variables
 
-A variable stores a value in memory so that it can be used later in a program. The variable can be used many times within a single program, and the value is easily changed while the program is running.
+A variable stores a value in memory so that it can be used later in a program. The variable can be used many times within a single program, and the value is easily changed while the program is running. (**Very elementary here! needs rewrite**). 
 
-The primary reason we use variables is to avoid repeating ourselves in the code. If you are typing the same number more than once, consider making it into a variable to make your code more general and easier to update.
+A quick swing through setting up variables:
+
+```javascript
+var x = 5;
+var y = x + 7;                   // y is now 10
+
+var a = "some text"; 
+var b = a + " is here";          // b is now "some text is here". Note the + has a different function for strings
+
+var stuff = [1, 22, 333];        // stuff is a three element array, with the values shown
+var s = data[2];                 // s is 333. Note indexing from zero, not one.
+
+var record = { givenName:"Albert", familyName:"Einstein", age:33 };  // Create an "object" with three key:value pairs
+var data = record.givenName;     // data has string value "Albert"
+
+var deleteFile = false;          // var has a Boolean value "false".
+var keepFile = !deleteFile       // keepFile has Boolean value "true". (! means negate). Useful for binary options.
+
+var string1 = "";                // One (good) way to initialise a string to an empty value.
+var string2 = null;              // Another way. Be careful, null has tricky properties, see later.
+var string3;                     // Both this ...
+var string4 = undefined;         // ... and this give the var the "undefined" value. Also very tricky, see later.
+
+```
+Variables should always be given an initial value. Otherwise, like string3 above, they have an undefined value until later in the program, which can lead to unexpected errors.
+
+The primary reason we use variables is to avoid repeating ourselves in the code. If you are typing the same number more than once, consider making it into a variable to make your code more general and easier to update. (**Also too elementary**).
+
+Variables (and other items in JS, like functions) can be named with lower and uppercase letters, numbers, underscore, or dollar signs. Avoid dollar signs. For multi-component names, there are two favourite styles: my_data and myData. The second is more common. Underscores at the beginning or end of a name can denote something special, eg. a variable which is similar to a system-provided term. Eg. you desperately want to name some variable "var" but var is a reserved word in JS, so you can use "var_". Unless you know pretty well what you're doing, this is not recommended. 
+
 
 ## Data Types
 
 JavaScript is a "loosely typed" or "dynamic" language, meaning you don't have to declare the types of variables ahead of time. The type will get determined automatically while the program is being processed. Other languages such as Java are strictly typed and each variable must declare the type of the data it will contain. Even though you don't have to declare types, JavaScript does have different data types.
+
+
 
 ### Number
 
@@ -70,9 +102,11 @@ var z = -300;
 ```
 JavaScript stores all numbers as 64-bit floats. Sometimes this leads to very small inaccuracies. Try this in the JavaScript console: 0.362 * 100   You should get the answer 36.199999999999996. This is rarely a problem in practice, after all it's accurate to 1 part in 100 quintillion, usually pretty ok ! 
 
-Although JavaScript doesn't have a specific integer type, it uses special measures to keep integers 100% accurate. Integers up to a magic value of 9007199254740991 (and down to -9007199254740991) are stored and computed with completely accurately. (9007199254740991 is 2^53 -1, ie. 2 to the power 53, minus 1. This is because the integer is held in the 53-bit mantissa section of the 64-bit IEEE float word).
+Although JavaScript doesn't have a specific integer type, it uses special measures to keep integers 100% accurate. Integers up to a magic value of 9007199254740991 (and down to -9007199254740991) are stored and computed with completely accurately. (9007199254740991 is 2^53 -1, ie. 2 to the power 53, minus 1. This is because the integer is held precisely, in the 53-bit mantissa section of the 64-bit IEEE float word).
 
-This means that counting and looping code will always work correctly. A loop like "(for i = 0; i < 1000000; i++)" will stop exactly at the million'th iteration.
+This means that counting and looping code will always work correctly. A loop like "(for i = 0; i < 1000000; i++)" will stop exactly at the million'th iteration. It won't blow up with 999999.9999999999996 or 1000000.00000000003 issues.
+
+**Updated down to here**
 
 
 ### String
