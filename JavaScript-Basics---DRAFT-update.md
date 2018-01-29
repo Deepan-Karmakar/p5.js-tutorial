@@ -1,8 +1,6 @@
 This is a draft of an update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb latest, hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E.
 
-=======================================================================================
-Previous version being updated from top down. Progress marked by "Updated down to here"
-=======================================================================================
+**Previous version being updated from top down. Progress marked by "Updated down to here"**
 
 JavaScript is a scripting language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with elements on a webpage and responding to actions initiated by the user.
 
