@@ -1,0 +1,1 @@
+This is a draft of an update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb latest. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E.
