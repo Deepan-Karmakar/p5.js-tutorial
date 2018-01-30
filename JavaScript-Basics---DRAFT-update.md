@@ -1,3 +1,5 @@
+
+
 _This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb, hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
 
 _**Previous version being updated from top down. Progress marked by "Updated down to here". Areas needing more work flagged as "Needs more work" or similar - in bold anyway.**_
@@ -238,8 +240,6 @@ if (!String.prototype.trim) {                                       // we don't 
 There are many more String functions but the above would be 98% of what you need in p5.js.
 
 
-
-
 ### Data type: Boolean
 
 A "true" or "false" value. Boolean variables are often used for conditional testing and keeping track of state. Things that need to be on or off, done or not done.
@@ -254,6 +254,8 @@ var drawDebugInfo = false;
 An object can be thought of as a collection of properties. These properties can be values of any type, including other objects, which enables building complex data structures. Arrays are a special type of object, more on this later.
 * Read more [about arrays](https://github.com/processing/p5.js/wiki/JavaScript-basics#arrays)
 * Read more [about objects](https://github.com/processing/p5.js/wiki/JavaScript-basics#objects)
+
+**Need to expand Array and Object here**
 
 ### Null and undefined
 
@@ -494,67 +496,62 @@ while(true) {
   // do more stuff
 }
 ```
+**To do: foreach and variations**
 
-**Updated down to here**
 
 
 # Functions
 
-A function is a block of reusable code. It is useful because you can reuse it, executing it many times. Functions also help structure and organize your code.
-
-To create a function, you write the word `function` followed by the function name, a set of parentheses, and a set of curly braces. Within the curly braces is the code that will be executed when the function is run.
-
-```javascript
-function doSomething() {
-  // stuff happens here
-}
-doSomething(); // call the function
-```
+A function is a block of reusable code. You can reuse it, executing it many times. Functions also help structure and organize your code: self-contained processes and computations can be neatly isolated in a function.
 
 ```javascript
 function sayHello() {
   console.log("hello");
 }
-sayHello(); // call the function
+
+sayHello(); // Call the function. Prints "hello"
 ```
 
 ```javascript
-// with p5.js
+// A p5.js example. 
+// Note, p5.js supplies "random()" as an interlude to Math.random(), with more flexible value range.
+
 function changeBackground() {
-  background(random(255), random(255), random(255));
+  background(random(255), random(255), random(255));  
 }
 ```
 
 ### Function parameters
 
-A function can also accept values as input, known as arguments or parameters. In this case, the parameters (names representing the values) are listed inside the parentheses of the function, separated by commas. Note that these parameters are not the names of actual variables in your program, but are variables limited to the scope of the function. When a function is run, the values passed in are temporarily assigned to the parameter defined in the function, until the function completes its execution.
+A function can also accept values as input, known as arguments or parameters. Note that within the function code, these parameters are not the names of actual variables in your program, but are "place holder" variables limited to the scope of the function. When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution.
 
 ```javascript
 function sayHello(person) {
-  console.log("hello "+person);
+  console.log("Hello " + person);
 }
-sayHello("jenny");
+sayHello("Jenny");  // prints "Hello Jenny"
 ```
 
 ```javascript
 function addNumbers(a, b) {
   var c = a + b;
-  console.log(c);
+  console.log(c);  
 }
-addNumbers(3, -10);
+addNumbers(3, -10)  // prints -7
 ```
 
 ```javascript
-// with p5.js
+// Using p5.js
 function drawEllipse(x, y) {
   ellipse(x, y, 50, 50);
+  return;     // You can explicitly make it clear where the function returns, if you like
 }
-drawEllipse(mouseX, mouseY);
+drawEllipse(mouseX, mouseY);  // a nice circle, centre x,y radius 50 
 ```
 
 ### Returning a value
 
-The functions above take some action or change the state of the program, but they don't return any value. If you want your function return a value, include a line starting with `return` followed by the value to return as the last line in your function.
+The functions above take some action or change the state of the program, but they don't return any value. If you want your function to return a value, use 'return'. This is typically at the end of the function, but can be anywhere in the function. 
 
 ```javascript
 function addNumbers(a, b) {
@@ -562,66 +559,97 @@ function addNumbers(a, b) {
   return c;
 }
 var result = addNumbers(3, -10);
-console.log(result); // -7
+console.log(result);   // prints -7
 ```
 
 ```javascript
 var name = "jenny";
 function makeSuper(person) {
-  return "super "+person;
+  return "Super " + person;
 }
 var name = makeSuper(name);
-console.log(name); // "super jenny"
+console.log(name);    // "Super Jenny"
 ```
 
 ```javascript
 // p5.js has some built-in functions like this
 var x = random(100);
-console.log(x);
+console.log(x);   // could print 23 or 77 or ...
 
-// you can write your own using p5.js functions, too
+// You can write your own enhanced function, using p5.js functions
 function addJitter(x) {
-  var y = x + random(-1, 1); // uses p5.js random fxn within
+  var y = x + random(-1, 1); // use p5.js random func. Two args allowed, min and max.
   return y;
 }
 var result = addJitter(10);
-console.log(result); // 10.3 or 9.8 or...
+console.log(result); // 10.3 or 9.8 or ...
 ```
+```javascript
+function severalReturns(number) {
+  if (number < 0 ) {
+    return(number - 1);   // Note this terminates the function. An easy coding style, and not too bad if used clearly.
+                          // Some people will be expecting the return at the end of the function. It's a matter of style.
+  if (number > 0 ) {
+    return(number + 2);
 
+  if (number === 0) {
+    return(0)            // no change
+}
+
+severalReturns(5);   // returns 7
+severalReturns(-8);  // returns -9
+```
 
 # Variable scope
 
-Variables that you declare inside a function are local to that function. Variables declared outside of any function are known as "global variables" and can be accessed from anywhere in the program.
+Variables that you declare inside a function, and also the function arguments, are local to that function, and can't be accessed outside the function. This provides vital "encapsulation" and protection of the functions data. Otherwise a statement `x = y + 1` in one function could trample on a statement `x = z + 3` in another function, or at top level.
 
-If I have a function called blah and inside blah I declare a variable called "counter", I can not refer to counter outside of the function. In the case that I want to use the value of counter outside of the function, I either have to declare it outside of the function or return it's value.
+Variables declared outside of any function are known as "global variables" and can be accessed from anywhere in the program, inside or outside functions. These are convenient, and essential at times to pass around global information, but can create hazards. Try not to declare simple names as globals, like min, max, sum, total, error, count. These can clash with other declarations in functions, or at top level in other code modules concatenated with this one, and unfortunately, due to JavaScripts permissive nature, this can create silent errors. One protocol is to declare all globals as "g_total", or an Object member "g.total" to make things clear. Slightly ugly but could save your bacon one day.
+
+Another option is to put all your code in one top level function, say main(). Then nothing "escapes" from main(), so that stops clashes with other concatenated code modules. Like p5.js say ! **Check the instanced mode doco**
+
+Example of global and local scopes:
 
 ```javascript
 var xGlobal = "global";
 	
 function globalLocalTest() {
   var xLocal = "local";
-  console.log("inside function global: " + xGlobal);
-  console.log("inside function local: " + xLocal);		
+  console.log("inside function global: " + xGlobal);  // prints "global"
+  console.log("inside function local: " + xLocal);    // prints "local"		
 }
 	
-globalLocalTest();
+globalLocalTest();                                    // prints the two values as above
 	
-console.log("outside function global: " + xGlobal);
-console.log("outside function local: " + xLocal);
+console.log("outside function global: " + xGlobal);   // prints "outside function global: global"
+console.log("outside function local: " + xLocal);     // prints "ReferenceError: xLocal is not defined"
 ```
 
-### Warning
+### Precedence of global and local variables
 
-Be careful about reinitializing an existing global variable. You will not see any error, but it could end up confusing things.
+If you use the same name as a global variable, and also as a local function variable, the function variable overrides within the function. This is ok in many situations, despite what we said above. For example simple count variables like i, j, k.
 
 ```javascript
-var a = 10;
-function doStuff() {
-  var a = "cats"; // ok, but don't!
-  console.log(a);
+var g_data = [ 1, 22, 333 ]    // global array
+var i,j,k;                     // global simple control vars. A common style from older languages. Not even initialized! Never mind.
+var offset = 3;                // global var
+
+for (i = 0; i < g_data.length; i++) {   // a loop at top (global) level
+  g_data[i] += 2;          // Adjust g_data values somehow
 }
-console.log(a);
+
+function adjustData() {
+  var i;                   // This is a different i from the global i, but that's ok, we don't care what we did with i above
+                           // For absolutely temporary vars like i, j, k, tmp, str, you can ignore scope if you like
+  for (i = 0; i < g_data.length; i++) {   
+    g_data[i] += offset;   // Ok, offset is still the global var
+  } 
+}
+
+adjustData();
+console.log(g_data[2]);   // prints 338 (333 + 2 + 3)
 ```
+###To do: let, const
 
 # Arrays
 
