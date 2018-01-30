@@ -1,12 +1,12 @@
-_This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb latest, hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
+_This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb, hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
 
 _**Previous version being updated from top down. Progress marked by "Updated down to here". Areas needing more work flagged as "Needs more work" or similar - in bold anyway.**_
 
-JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is widely described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
+JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
 
-Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is documented as being based on the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
+Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is allegedly based on the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
 
-JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web-page scripting ability at Netscape, but unexpectedly took off as part of the late 90's explosion of the Web. Since then it has matured into a full-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top 3, and often at the top, in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
+JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web scripting ability at Netscape, but unexpectedly took off as part of the late 90's explosion of the Web. Since then it has matured into a fully-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top 3, and often at the top, in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
  
 
 
@@ -48,7 +48,7 @@ console.log("hello");
 console.log("variables x, y values", x, y);          // Use the default space separation of args
 console.log("variables x, y values " + x + " " + y); // Concatenate message into a single string, more flexible
 ```
-In order to see the console on Chrome, select menu sequence "View" > "Developer" > "JavaScript Console". Use it often! On other browsers, just search for info on "how to open the JavaScript console on \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
+In order to see the console on Chrome, select menu sequence View > Developer > JavaScript Console. Use it often! On other browsers, just search for info on "how to open the JavaScript console on \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
 
 # Variables
 
@@ -78,10 +78,10 @@ var string3;                     // Both this ...
 var string4 = undefined;         // ... and this give the var the "undefined" value. Also very tricky, see later.
 
 ```
-Variables should always be given an initial value. Otherwise, like string3 above, they have an "undefined" value until later in the program, which can lead to weird errors.
+Variables should always be given an initial value. Otherwise, like string3 above, they have an "undefined" value until later in the program, which can lead to hard-to-debug errors.
 
 
-Variables (and other items in JS, like functions) can be named with lower and uppercase letters, numbers, underscore, or dollar signs. Avoid dollar signs. For multi-component names, there are two favourite styles: my_data and myData. The second is more common. Underscores at the beginning or end of a name can denote something special, eg. often a variable which is similar to a system-provided term. Eg. you desperately want to name some variable "var" but var is a reserved word in JS, so you can use "var_". Eg. `var var_ = 123;` Unless you know very well what you're doing, this is not recommended. 
+Variables (and other names in JS, like functions) can be named with lower and uppercase letters, numbers, underscore, or dollar signs. Avoid dollar signs. For multi-component names, there are two favourite styles: my_data and myData. The second is more common. Underscores at the beginning or end of a name can denote something special, often a variable which is similar to a system-provided term. Eg. you desperately want to name some variable "var" but var is a reserved word in JS, so you can use "var_". `var var_ = 123;` Unless you know very well what you're doing, this is not recommended. 
 
 
 ## Data Types
@@ -98,10 +98,10 @@ A number, optionally with a decimal point. In other languages this is typically 
 var x = 5;
 var y = 1.223;
 var z = -300;
-var big = 1.23e82;   // This is a big number, the estimated atoms in the universe, but quite ok to code with (I guess).
+var big = 1.23e82;   // This is a big number, the estimated atoms in the universe, but quite ok to code with, why not?
 var small = 1.6e-35  // The Planck Length, the smallest physical size (in metres) that has any meaning in classical physics.
 ```
-JavaScript stores all numbers as 64-bit floats. This is very accurate but of course has limits. Sometimes it can lead to very small inaccuracies. Try this in the JavaScript console: `0.362 * 100`  You should get the answer 36.199999999999996. This is rarely a problem in practice, after all it's accurate to 1 part in 100 quintillion, usually pretty ok ! 
+JavaScript stores all numbers as 64-bit floats. This is very accurate but still has limits. Sometimes it can lead to very small inaccuracies. Try this in the JavaScript console: `0.362 * 100`  You should get the answer 36.199999999999996. This is rarely a problem in practice, after all it's accurate to 1 part in 100 quintillion, usually pretty ok ! 
 
 Although JavaScript doesn't have a specific integer type, it uses special measures to keep integers 100% accurate where possible. Integers up to a magic value of 9007199254740991 (and down to -9007199254740991) are stored and computed with complete accuracy. (9007199254740991 is 2^53 -1, ie. 2 to the power 53, minus 1. This is because the integer is held precisely, in the 53-bit mantissa section of the 64-bit IEEE float word).
 
@@ -110,19 +110,20 @@ This means that counting and looping code will always work correctly. A loop lik
 
 ### Data type: String
 
-A series of characters. These can be defined with either single or double quotes. To include a quote character, use the other type of quote around the string.
+A series of characters. These can be defined with either single or double quotes. To include a quote character, use the other type of quote around the string. Or use a backslash to escape the quote.
 
 ```javascript
 var x = 'hello';
 var y = "maybe tomorrow";
 var fancy = "we need some 'single quotes' in here";
+var fancy2 = "strings can have \' and \" quotes inside"; 
 ```
 
-There are a large number of useful built-in JavaScript properties and methods that let you manipulate strings. You can see them all [here](http://www.w3schools.com/js/js_string_methods.asp), and also [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/). These two sites, the www3schools site, and the Mozilla Development Network, are good references. A few of the most useful String methods follow:
+There are a large number of useful built-in JavaScript properties and methods that let you manipulate strings. You can see them all [here](http://www.w3schools.com/js/js_string_methods.asp), and also [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/). These two sites, the www3schools site, and the Mozilla Development Network (MDN), are good references. A few of the most useful String methods follow:
 
 **length**
 
-Gives the length of the string. Note, this is a direct property of the string, always maintained by JS, not a callable method. So no function call () syntax needed, just string.length. This is a common mistake when working with the length of a string. If you are having weird errors around a use of some mystring.length code, make sure you are not typing mystring.length().
+Gives the length of the string. Note, this is a direct "property" of the string, always maintained by JS, not a callable method. So no function call() syntax is needed, just string.length. This is a common mistake when working with strings. If you are having weird errors around a use of some mystring.length code, make sure you are not typing mystring.length().
 
 
 ```javascript
@@ -132,19 +133,17 @@ console.log(str.length); // 21
 
 **indexOf(str)**
 
-Returns the index of (the position of) the first occurrence of a specified text in a string. Returns -1 if the search string is not found. This is a callable () method, JS can't know what you would like to check the index of. 
+Returns the index of (the position of) the first occurrence of a specified text in a string. Returns -1 if the search string is not found. All these methods return an indicator if the method fails, see the documentation. This is a callable () method, JS can't precompute anything about this request. 
 
 ```javascript
 var str = "I like to eat apples.";
-var pos = str.indexOf("eat");
-console.log(pos); // 10
-pos = str.indexOf("pears");
-console.log(pos); // -1 
+var pos = str.indexOf("eat");   // pos is 10
+pos = str.indexOf("pears");     // pos is -1
 ```
 
 **lastIndexOf(str)**
 
-Returns the index of the last occurrence of a specified text in a string. Returns -1 if the search string is not found. Sometimes the interesting position is the last occurrence of something in a string.
+Returns the index of the last occurrence of a specified text in a string. Sometimes the interesting info is the last occurrence of something in a string.
 
 ```javascript
 var str = "long.complicated.filename.txt";
@@ -156,7 +155,7 @@ This method just returns whether the string contains a smaller string, true or f
 
 ```javascript
 var str = "reallycrazylongstring";
-var maybe = str.includes("zyl");  // returns true
+var maybe = str.includes("zylo");  // returns true
 ```
 
 
@@ -171,7 +170,7 @@ var newStr = str.substring(2, 6);  // "like"
 
 **substr(start, length)**
 
-Another variation. It takes 2 parameters: the starting index, and the length required.
+Another variation. It takes 2 parameters: the starting index, and the length required. Murphy's Law of Programming says you'll always use one when you meant the other.
 
 ```javascript
 var str = "Bananas are yellow";
@@ -204,7 +203,7 @@ console.log(result[3]);        // prints "like"
 ```
 **join(separator)**
 
-We are jumping ahead to an array method here. The logical opposite of a "split" operation is a "join". These twin operations are available in most languages. In JS arrays have a join() method for this.
+We are jumping ahead to an array method here. The logical opposite of a "split" operation is a "join". These twin operations are available in most languages. In JS arrays have a join() method.
 
 ```javascript
 var str = "cool.image.jpg";
@@ -215,38 +214,39 @@ var newstr = result.join("...");  // newstr is a string "cool...image...jpg"
 
 **trim()**
 
-This method trims whitespace from both ends of a string. Whitespace includes space and tab characters, and also some uncommon characters like FormFeed and VerticalTab. (Uncommon these days, but common enough in the 50's, 60's, 70's when giant line-printers spewed out reams of 132 character wide line-printer pages. Oh I remember it well. Ok not the 50's or 60's).
+This method trims whitespace from both ends of a string. Whitespace includes space and tab characters, also CR and NL/LF, and also some uncommon characters like FormFeed and VerticalTab. (Uncommon these days, but common enough in the 50's, 60's, 70's when giant line-printers spewed out reams of 132 character wide line-printer pages. Oh I remember it well. Ok not the 50's or 60's).
 
 ```javascript
 var str = " string with spaces around          ";
-var result = str.trim();   // result is "string with spaces around" (well, not any more)
+var result = str.trim();   // result is "string with spaces around" (not any more)
 ```
 
 **trimLeft(), trimRight()**
 
-These are more specific versions which trim whitespace only from the left or right of a string. Surprisingly these are not 100% standard, although very common extensions in JavaScript. For maxiumum robustness and portability of code, you could code these yourself as private utility functions, very easy. Or you could just check they work in your preferred browser and not worry. Here's a suggested code from MDN for replacing trim(), you can modify it to create a trimLeft or trimRight. This uses a regexp call, a "regular expression", a miniature language in itself, and very powerful.
+These are more specific versions which trim whitespace only from the left or right of a string. These are not 100% standard, although very common extensions in JavaScript. For maxiumum robustness and portability of code, you could code these yourself as private utility functions, very easy. Or you could just check they work in your preferred browser and not worry. Here's a suggested code from MDN for replacing trim(), you can modify it to create a trimLeft or trimRight. This uses a regexp call, a "regular expression", a miniature language in itself, and very powerful.
 
-```javascriot
+```javascript
 if (!String.prototype.trim) {                                       // we don't have trim(), rats
   String.prototype.trim = function () {                             // add a local version
     return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');  // trim all crazy whitespace off both ends
+    //  this.replace(/^[\s\uFEFF\xA0]+/g, '');  for trimLeft
+    //  this.replace(/[\s\uFEFF\xA0]+$/g, '');  for trimRight
   };
 }
 ```
 
 There are many more String functions but the above would be 98% of what you need in p5.js.
 
-**Updated down to here**
 
 
 
-### Boolean
+### Data type: Boolean
 
-A "true" or "false" value. Boolean variables are often used for conditional testing and keeping track of state.
+A "true" or "false" value. Boolean variables are often used for conditional testing and keeping track of state. Things that need to be on or off, done or not done.
 
 ```javascript
-var n = false;
-var m = true;
+var drawBackground = true;
+var drawDebugInfo = false;
 ```
 
 ### Object
@@ -257,29 +257,38 @@ An object can be thought of as a collection of properties. These properties can 
 
 ### Null and undefined
 
-The value of a variable with no value is undefined. Variables can be emptied by setting the value to null.
+The value of a variable which has not been given any value is `undefined`. This is a specific single type which you can also assign manually. Variables can be emptied by setting the value to `null`. This is another specific single value. Often it's better to avoid these, JS does some unexpected things with them.
 
 ```javascript
-var cars;              // value is undefined
-var person = null;     // value is null
+var cars;               // value is 'undefined'
+var trucks = undefined; // Same
+var person = null;      // value is `null`
+var count = 0;          // Often safer
+var message = "";       // Ditto
+var newArray = [];      // Safe
+var newObject = {};     // Safe
 ```
+Creating new "empty" things in JS is surprisingly clunky. It's slightly hard to know what you have done with a statement like `var myArray = []`. Go to the JS console and type it, then just type "myArray". JS will compute the expression, which is a single array, with no useful effect, ie. no assignment to anything, but that's fine, and display a breakdown of what it is, ie. an array with no elements, length 0. You can hit the disclosure triangle for more detail if there is one. Try again with `myArray = [1,2,3]`. You'll get the picture quickly. Also try `var myObj = {}` and `myObj = {"alpha":1, "beta":2}`.
 
 ## Assignment
 
-Once variables are declared, you are free to assign values to them and subsequently use them in operations.
+Once variables are declared, you can assign values to them and use them in operations.
 
 ```javascript
 var x = 5;
-x = 5 + 5;
-x = "cat";
-var y = 5.5;
-y = x;
+x = x * 5;        // x now 25
+x = "cat";        // You can change the type of a variable anytime, here number to string
+var y = x + "s hate dogs";  // y is "cats hate dogs". Note + is the only math operator that has been hijacked for string use.
+var z = x - "t";  // Result is NaN (Not a Number), not "ca". It totally blew up! Brilliant.
 ```
 
 # Operators
 
+We will zoom through the operators here. We assume some teensy maths background in the reader.
+
 ### Assignment
 * `=`
+* `a = b = c = 123;`       // Multiple assignment is allowed but unwise. [Details.](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
 
 ### Mathematical
 * `+` addition
@@ -290,24 +299,57 @@ y = x;
 * `++` add one shorthand
 * `--` subtract one shorthand
 
-### Relational
+These operators have shortcut styles, occasionally useful.
+* `a = 1` 
+* `a += 5`  Same as a = a + 5. a now 6
+* `a -= 4`  a now 2
+* `a *= 7`  a now 14
+* `a /= 2`  a now 7
+* `a %= 2`  a now 1
+* `b = a++` b is 1, a is 2, ie. the ++ was done after the assignment
+* `b = ++a` b is 3, the ++ was done before the assignment. Similarly --. Use these sparingly, "out by one" oversights happen easily.
+
+### Relational, ie. comparisons
 * `>=` greater than or equal to
 * `<=` less than or equal to
-* `==` equality 
-* `!=` inequality 
-* `===` equality with type checking 
-* `!==` inequality with type checking 
+* `==` equal to 
+* `!=` not equal to 
+* `===` equality with strict type checking, safer
+* `!==` inequality with strict type checking, safer
 
-### Logical
-* `||` logical OR
-* `&&` logical AND
-* `!` logical NOT
+### Logical, ie. Boolean logic combos  
+* `||` logical OR  `           // if ( feelingTired || reallySleepy ) { lieDown(); }`
+* `&&` logical AND `           // if ( haveWallet && (money > 10) ) { buyBeer(); }`
+* `!` logical NOT  `           // showDebugInfo = ! inProductionMode;`
+**Need to force spaces above**
+
+### Precedence of operators
+
+The operators have a precedence which sort of matches what we learned in school. `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication will get done first. To force the order you want, use brackets.  
+`xx = (1 + 2) * 3` will produce 9.  
+`gravity = G * (mass1 * mass2) / (distance * distance);`  
+`intensity = light / (Math.sqrt( radius * radius));` 
+
+### Maths functions
+
+The maths functions are sequestered inside the Maths package, to avoid polluting the top level namespace with everyday terms like min, max, and just following good modern practice. Unless you're a Rocket Scientist you don't need maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. Never mind. Examples:
+
+`circumference = 2 * Math.PI * radius;                       // a constant, no () call`  
+`distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2 ));`  
+`absoluteValue = Math.abs(value);`  
+`maxiumum = Math.max(a,b,c, ...);                            // any number of args, Math.min similar`  
+`roundUp = Math.ceiling(77.77);                              // result is 78`   
+`height = base * Math.sin(angle);                            // and similarly cos, tan, asin, sinh, etc`  
+`expo = Math.pow(2, 10);                                     // 1024`  
+`bigInt = Math.pow(2, 53);                                   // 9007199254740992 of course. Have you been paying attention ?`  
+`rand = Math.random();                                       // result between 0 and 1`
+
 
 # Conditionals
 
 Conditionals allow your program to execute a block of code based on the result of an expression that utilizes relational or logical (boolean) operators.
 
-**if**
+### if
 
 ```javascript
 var x = 1;
@@ -316,7 +358,7 @@ if (x > 0) {
 }
 ```
 
-**if, else**
+### if, else
 
 ```javascript
 var x = 1;
@@ -327,7 +369,7 @@ if (x > 0) {
 }
 ```
 
-**if, else if, else**
+### if, else if, else
 
 ```javascript
 var x = 1;
@@ -336,11 +378,11 @@ if (x > 5) {
 } else if (x < -5) {
   // execute some other code
 } else {
-  // execute some other other code
+  // execute some other other code. The "else if" chain can go on as long as you like.
 }
 ```
 
-**multiple conditions**
+### Multiple conditions
 ```javascript
 var x = 1;
 if (x > -5 && x < 5) {
@@ -351,33 +393,59 @@ if (x > -5 && x < 5) {
 ```javascript
 var x = "puddings";
 if (x.length === 8 || x.indexOf("ding") === -1) {
-  // execute some code!
+  // execute some code! Note the above is using exact or "strict" comparisons.
 }
 ```
+Warning: comparisons between variables or expressions that you think will return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. The "===" operator set use exact comparison - the only thing that is equal to "true" is another "true". It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
 
 # Loops
 
-### While
+### While {}
 
-Just as with our conditional (if / else) statements a while loop employs boolean test that must evaluate to true in order for the instructions enclosed in the curly brackets to be executed. The difference is that the instructions continue to be executed until the test condition becomes false.
+Just as with our conditional (if / else) statements a while loop employs a boolean test that must evaluate to true in order for the instructions in the curly brackets to be executed. The difference is that the instructions continue to be executed until the test condition becomes false. If the test condition is false at the start, the loop body will not execute at all.
 
 ```javascript
 var x = 0;
-while (x < 10) {
-  console.log(x);
-  x++;
+while (x < 10) {    
+  console.log(x);     // Should print about 10 times. Or 9, or 11 ? A good exercise to check.
+  x++;   
 }
 ```
+### Do while {}
 
-### For
-
-Since this is a common use of a loop (creating a variable, checking it's value and incrementing by a certain amount) there exists an even quicker way to do the above, all in one step. You can read this as, create variable x and set it to 0, while x is less than 10, do the following. Increment x by 1 at the end.
+This is similar to the while loop, but the test is done at the bottom, after each iteration of the loop. One consequence is that the loop always executes at least once. But really the point is that it's clearer to test some conditions at the bottom.
 
 ```javascript
-for (var x = 0; x < 10; x++) {
-  console.log(x);
+var x = 0;
+do  {      
+  console.log(x);    // How many times does it print now ?
+  x++;   
+} while (x < 10)
+```
+
+### For {}
+
+Since this is a very common use of a loop, ie. running through a simple sequence of values, there is a simpler way to do the above. You can read this as: create variable x and set it to 0, while x is less than 10 do the stuff in the loop body, then increment x by 1 at the end.
+
+```javascript
+for (var x = 0; x < 10; x++) {  
+  console.log(x);     // This is a very common idiom. The loop will run 10 times, for sure.
 }
 ```
+### Breaking out of loops
+
+The `break` statement will terminate a loop. One common idiom is to have an endless loop, and break out when you have done what you need. Occasionally this is clearer to code than other options.
+
+```javascript
+while(true) {
+  // do stuff
+  if ( value === 100 ) { break; }  // need that semicolon
+  // do more stuff
+}
+```
+
+**Updated down to here**
+
 
 # Functions
 
