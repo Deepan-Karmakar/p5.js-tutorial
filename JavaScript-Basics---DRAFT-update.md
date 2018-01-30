@@ -229,8 +229,8 @@ These are more specific versions which trim whitespace only from the left or rig
 if (!String.prototype.trim) {                                       // we don't have trim(), rats
   String.prototype.trim = function () {                             // add a local version
     return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');  // trim all crazy whitespace off both ends
-    //  this.replace(/^[\s\uFEFF\xA0]+/g, '');  for trimLeft
-    //  this.replace(/[\s\uFEFF\xA0]+$/g, '');  for trimRight
+    //  this.replace(/^[\s\uFEFF\xA0]+/g, '');                      // for trimLeft
+    //  this.replace(/[\s\uFEFF\xA0]+$/g, '');                      // for trimRight
   };
 }
 ```
@@ -263,6 +263,7 @@ The value of a variable which has not been given any value is `undefined`. This 
 var cars;               // value is 'undefined'
 var trucks = undefined; // Same
 var person = null;      // value is `null`
+
 var count = 0;          // Often safer
 var message = "";       // Ditto
 var newArray = [];      // Safe
@@ -295,6 +296,7 @@ We will zoom through the operators here. We assume some teensy maths background 
 * `-` subtraction
 * `*` multiplication
 * `/` division
+* `**` exponentiation: 3**3 gives 27. New in EcmaScript 6.
 * `%` modulo
 * `++` add one shorthand
 * `--` subtract one shorthand
@@ -317,33 +319,58 @@ These operators have shortcut styles, occasionally useful.
 * `===` equality with strict type checking, safer
 * `!==` inequality with strict type checking, safer
 
-### Logical, ie. Boolean logic combos  
-* `||` logical OR  `           // if ( feelingTired || reallySleepy ) { lieDown(); }`
-* `&&` logical AND `           // if ( haveWallet && (money > 10) ) { buyBeer(); }`
-* `!` logical NOT  `           // showDebugInfo = ! inProductionMode;`
-**Need to force spaces above**
+### Logical, ie. Boolean logic combos
+```javascript 
+* ||  logical OR              // if ( feelingTired || reallySleepy ) { lieDown(); }
+* &&  logical AND             // if ( haveWallet && (money > 10) ) { buyBeer(); }
+* !   logical NOT             // showDebugInfo = ! inProductionMode;
+```
 
 ### Precedence of operators
 
-The operators have a precedence which sort of matches what we learned in school. `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication will get done first. To force the order you want, use brackets.  
-`xx = (1 + 2) * 3` will produce 9.  
-`gravity = G * (mass1 * mass2) / (distance * distance);`  
-`intensity = light / (Math.sqrt( radius * radius));` 
-
+The operators have a precedence which vaguely matches what we learned in school.  When operators have equal precedence, they proceed left to right. `xx = 24 / 6 * 5` will produce 20. But `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication will get done first. To force the order you want, use brackets, which have the highest precedence. 
+```javascript
+xx = (1 + 2) * 3           // will produce 9.  
+gravity = G * (mass1 * mass2) / (distance * distance);  
+intensity = light / (Math.sqrt( radius * radius) + fudgeFactor); 
+```
+Other operators have progressively lower precedence. Full table [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence). This allows you to write most expressions in a natural and  concise way. 
+```javascript
+if( radius > 5.0 && radius < 10.0) { drawCircle(); }               // works fine, but ...
+if( (radius > 5.0) && (radius < 10.0) { drawCircle(); }            // clearer and safer. 
+```
+The lowest operator is a strange thing called the 'comma' operator. You can pack several statements into one. The most common use is in a slightly more fancy 'for loop'.
+```javascript
+for (var i = 0, j = 9; i < 9; i++, j--) {  // i runs up 0 to 9, j runs down 9 to 0
+  console.log( a[i][i] );                  // Print the conventional diagonal elements of a 9x9 array
+  console.log( a[i][j] );                  // Print the other diagonal, top-right to bottom-left, of the array
+}
+```
+Some traps exist. No precedence order can be what you want all the time. An example from p5.js:
+```javascript
+var images = [];
+for (var i = 0; i < 10 ; i++) {
+  images[i] = createImage(width, height);
+  images[i].loadPixels();    // Ok? Noooo. The member access ".loadPixels()" has higher precedence than the array index, so gets called
+                             // on the entire Array object and fails. Moreover we get a silent error, very hard to chase.
+  (images[i]).loadPixels();  // Better. Force the array indexing first, call loadPixels() on the individual array element. 
+}
+```
 ### Maths functions
 
-The maths functions are sequestered inside the Maths package, to avoid polluting the top level namespace with everyday terms like min, max, and just following good modern practice. Unless you're a Rocket Scientist you don't need maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. Never mind. Examples:
-
-`circumference = 2 * Math.PI * radius;                       // a constant, no () call`  
-`distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2 ));`  
-`absoluteValue = Math.abs(value);`  
-`maxiumum = Math.max(a,b,c, ...);                            // any number of args, Math.min similar`  
-`roundUp = Math.ceiling(77.77);                              // result is 78`   
-`height = base * Math.sin(angle);                            // and similarly cos, tan, asin, sinh, etc`  
-`expo = Math.pow(2, 10);                                     // 1024`  
-`bigInt = Math.pow(2, 53);                                   // 9007199254740992 of course. Have you been paying attention ?`  
-`rand = Math.random();                                       // result between 0 and 1`
-
+The maths functions are sequestered inside the Maths package, to avoid polluting the top level namespace with everyday terms like min, max etc. and just following good modern practice. Unless you're a Rocket Scientist you don't need maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. A few examples:
+```javascript
+circumference = 2 * Math.PI * radius;                       // a constant 'property' of Math, no () call needed 
+distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2 ));  // Standard 2D distance calc; you know this
+absoluteValue = Math.abs(value);                            
+maxiumum = Math.max(a,b,c, ...);                            // any number of args, Math.min similar  
+roundUp = Math.ceiling(69.69);                              // result is 70   
+height = base * Math.sin(angle);                            // and similarly cos, tan, asin, sinh, etc  
+expo = Math.pow(2, 10);                                     // 1024  
+bigInt = Math.pow(2, 53);                                   // 9007199254740992 of course. Have you been paying attention ?  
+rand = Math.random();                                       // result between 0.0 and 1.0
+```
+The full [Montezuma](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) !
 
 # Conditionals
 
@@ -398,6 +425,30 @@ if (x.length === 8 || x.indexOf("ding") === -1) {
 ```
 Warning: comparisons between variables or expressions that you think will return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. The "===" operator set use exact comparison - the only thing that is equal to "true" is another "true". It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
 
+### Switch {} statement
+
+Rather than a long if/else chain, we can select a simple option with a switch statement.
+```javascript
+switch ( userInput ) {
+
+  case 'q':
+    quitProg = true;    // set a flag to quit the prog a little later
+    break;
+
+  case 'r':
+    resetProg = true;   // a flag to reset things
+    frames = 0;         // reset another thing right here
+    break;
+
+  case 'd':
+    showDebug = true;   // a flag to show debug info each frame
+    break;
+}
+```
+This is neat and clear. If you omit the 'break' the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
+
+Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Brian Ritchie et al were writing C at Bell Labs. With memory so tiny, and CPU speeds so slow, you could construct a machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. 
+
 # Loops
 
 ### While {}
@@ -413,7 +464,7 @@ while (x < 10) {
 ```
 ### Do while {}
 
-This is similar to the while loop, but the test is done at the bottom, after each iteration of the loop. One consequence is that the loop always executes at least once. But really the point is that it's clearer to test some conditions at the bottom.
+This is similar to the while loop, but the test is done at the bottom, after each iteration of the loop. One consequence is that the loop always executes at least once. But really the point is that it's just clearer to test some conditions at the bottom.
 
 ```javascript
 var x = 0;
@@ -430,7 +481,7 @@ Since this is a very common use of a loop, ie. running through a simple sequence
 ```javascript
 for (var x = 0; x < 10; x++) {  
   console.log(x);     // This is a very common idiom. The loop will run 10 times, for sure.
-}
+}                     // Remember: x = 0; x < loopCount   gives exactly loopCount passes.
 ```
 ### Breaking out of loops
 
