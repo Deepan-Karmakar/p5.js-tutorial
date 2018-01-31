@@ -565,7 +565,7 @@ drawEllipse(mouseX, mouseY);  // a nice circle, centre x,y radius 50
 
 ### Returning a value
 
-The functions above take some action or change the state of the program, but they don't return any value. If you want your function to return a value, use 'return'. This is typically at the end of the function, but can be anywhere in the function. 
+The functions above take some action or change the state of the program (typically draw something ! in p5.js), but they don't return any value. If you want your function to return a value, use 'return'. This is typically at the end of the function, but can be anywhere in the function. 
 
 ```javascript
 function addNumbers(a, b) {
@@ -633,6 +633,8 @@ Another option is to put all your code in one top level function, say main(). Th
   }
   main();                           // Call our whole code as a single function call: main()
 
+  // To do: should really make this a full p5.js prog with a setup() and draw() that draws something.
+
 </head>
 <body>Not have much of a body, this is a JavaScript example, not HTML</body>
 </html>
@@ -677,8 +679,106 @@ function adjustData() {
 
 adjustData();
 console.log(g_data[2]);   // prints 338 (333 + 2 + 3)
+```  
+
+### New scope declaration: let
+
+The issue of the scope of identifiers in programming languages is an important one. You can have languages where everything is in a single global scope, as in simple ancient BASIC I believe. Programming is easy, but the possibility of accidental errors is higher.
+
+You can have modern languages where scope is very restricted. Errors are reduced, but coding needs more thought at times. Nothing wrong with that.
+
+JavaScript has recently introduced the `let` keyword to augment and largely replace the `var` keyword. 
+
+The scope of a variable declared with `var` is the whole of the function it is in. Even it is declared towards the bottom of a function, or is a trivial loop variable. There is an awful expression called "hoisting", where any `var` declaration is treated as if it was "hoisted" to the top of the enclosing function:
+```javascript
+function hoistingExample() {
+  var cat = "cat";
+  // i and j below are treated as if they were declared here, but not initialised, eg. just var i,j; 
+
+  if (whatever) {
+     // miles of code here, pages and pages
+     var k = i + j;   // Error, undefined. i and j exist due to hoisting, you can reference them, but they have no value yet. 
+                      // A recipe for problems.
+  }
+
+  for (var i = 0; i < 3 ; i++) {
+     var j = i * 3;   // Now i and j have valid values, all is ok.
+  }
+}
 ```
-###To do: let, const
+
+However a variable declared with `let i = 0` has only "block scope". In the following examples, it exists only in the loops or blocks shown. This is much safer. For variables you want to exist inside the whole function, put them at the top.
+```javascript
+function drawStuff(param) {
+
+  let j = param * 5;                     // This "j" exists in the whole function, unless overridden in a smaller block.
+
+  for(let j = 0; j < 99; j++) {          // Draw some ellipses. Note this "j" is only scoped inside this loop. Does not
+    drawCircle(j*20, j*20, j*5, j*10);   // affect, and is not affected by, other "j" vars in the function. Good. 
+  }
+
+  if (param > 5 ) {
+     let j = param * 7;                 // This "j" is similarly unique to the if block. No interaction with other j's.
+     drawCircle(j*3, j*3, 10, 20);   
+  }
+
+  if (j > 100) {
+     drawCircle(j*9, j*9, j, j);        // Finally we use the "function scope" j we set up at the top.
+  }
+}
+```
+The [\[MDN monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+A [\[Rather dense blog about let and var\]](https://dmitripavlutin.com/variables-lifecycle-and-why-let-is-not-hoisted/)
+
+The bottom line: always use `let` in new code. Place `let` declarations at the top of each function, for things which will or may be used throughout the function. Use `let` inside loops and blocks to restrict temporary variables to that region only.
+
+There are some other benefits to let. `let str = "abc"` at top level does not create a global "str" which can clash with other js modules, like p5.js. From the MDN monty above ...
+```javascript
+var x = 'global';
+let y = 'global';
+console.log(this.x); // "global". "this" at top level is the explicit global entity, your whole universe of all code and libs in use.
+console.log(this.y); // undefined. This solves a key problem when using a library like p5.js
+```  
+Another `let` quirk: you can't redeclare a name in the same scope. This is a good thing, redeclaring the same name in the same scope is sloppy, although it's fine with `var`, and indeed we kind of accept it with those temp `var` variables i ,j ,k we have talked about.
+```javascript
+let foobar = 1;
+let toto = foobar + 3;
+let foobar = 2;  // SyntaxError: Identifier 'foobar' has already been declared
+```
+For the same reasons, declarations toughen up in `switch` blocks:
+```javascript
+switch(x) {
+  case 0:
+    let foo = x;
+    doStuff(foo);
+    break;
+    
+  case 1:
+    let foo = x * 2; // SyntaxError for redeclaration. Just don't include the let.
+    doStuff(foo);
+    break;
+}
+```
+If you want, you can solve the above by leveraging the new block-scope rules. Below the "foo" are each unique to their single case {} block. The switch/case is getting messier though ! If/else style might be just as easy.
+```javascript
+switch(x) {
+  case 0: {
+      let foo = x;
+      doStuff(foo);
+      break;
+    }
+  case 1: {
+      let foo = x * 2;
+      doStuff(foo);
+      break;
+   }
+}
+```
+There are other tiny subtleties with changing from `var` to `let` but I think the average p5.js beginner will have reached their limit by now ! I know I have. Remaining quirks are really for the designers of big systems, like the whole p5.js library.
+
+**Check this thoroughly. This scope stuff is crazy enough, without giving out duff information**
+
+**To do: the new Const keyword**
 
 # Arrays
 
