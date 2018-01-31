@@ -272,9 +272,9 @@ var message = "";       // Ditto
 var newArray = [];      // Safe
 var newObject = {};     // Safe
 ```
-Creating new "empty" things in JS is surprisingly clunky. It's slightly hard to know what you have done with a statement like `var myArray = []`. Go to the JS console and type it, then just type "myArray". JS will compute the expression, which is a single array, with no useful effect, ie. no assignment to anything, but that's ok, and display a breakdown of what it is, ie. an array with no elements, length 0. You can hit the disclosure triangle for more detail if there is one. Try again with `myArray = [1,2,3]`. You'll get the picture quickly. Also try `var myObj = {}` and `myObj = {"alpha":1, "beta":2}`.
+Creating new "empty" things in JavaScript is surprisingly clunky. It's slightly hard to know what you have done with a statement like `var myArray = []`. Go to the JS console and type it, then just type "myArray". JS will compute the expression, which is a single array, with no useful effect, ie. no assignment to anything, but that's ok, and display a breakdown of what it is, an array with no elements, length 0. You can hit the disclosure triangle for more detail if there is one. Try again with `myArray = [1,2,3]`. You'll get the picture quickly. Also try `var myObj = {}` and `myObj = {"alpha":1, "beta":2}`.
 
-Note: the `typeof()` call is a great debugger and learning tool. Try it the JS console. `typeof(1); typeof("a"); x = 12.34; typeof(x); x = x + "hello"; typeof(x); a = 1.23; b = a + '4'; typeof(b); typeof(undefined); var z; typeof(z); typeof(null)`
+Note: the `typeof()` call is a great debugger and learning tool. Try it in the JS console. `typeof(1); typeof("a"); x = 12.34; typeof(x); x = x + "hello"; typeof(x); a = 1.23; b = a + '4'; typeof(b); typeof(undefined); var z; typeof(z); typeof(null)`
 
 ## Assignment
 
@@ -351,7 +351,7 @@ for (var i = 0, j = 9; i < 9; i++, j--) {  // i runs 0 up to 9, j runs 9 down to
   console.log( a[i][j] );                  // Print the other diagonal, top-right to bottom-left, of the array
 }
 ```
-Some traps exist. No precedence order can be what you wanted all the time. An example from p5.js:
+Some traps exist. No precedence order can be what you want all the time. An example from p5.js:
 ```javascript
 var images = [];
 for (var i = 0; i < 10 ; i++) {
@@ -365,15 +365,15 @@ for (var i = 0; i < 10 ; i++) {
 
 The maths functions are sequestered inside the Maths package, to avoid polluting the top level namespace with everyday terms like min, max etc. and just following good modern practice. Unless you're a Rocket Scientist you don't need complex maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. A few examples:
 ```javascript
-circumference = 2 * Math.PI * radius;                       // a constant 'property' of Math, no () call needed 
+circumference = 2 * Math.PI * radius;           // a constant 'property' of Math, no () call needed 
 distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2 ));  // Standard 2D distance calc; you know this
 absoluteValue = Math.abs(value);                            
-maxiumum = Math.max(a,b,c, ...);                            // any number of args, Math.min similar  
-roundUp = Math.ceiling(69.69);                              // result is 70   
-height = base * Math.sin(angle);                            // and similarly cos, tan, asin, sinh, etc  
-expo = Math.pow(2, 10);                                     // 1024  
-bigInt = Math.pow(2, 53);                                   // 9007199254740992 of course. Have you been paying attention ?  
-rand = Math.random();                                       // result between 0.0 and 1.0
+maxiumum = Math.max(a,b,c, ...);                // any number of args, Math.min similar  
+roundUp = Math.ceiling(69.69);                  // result is 70   
+height = base * Math.sin(angle);                // and similarly cos, tan, asin, sinh, etc  
+expo = Math.pow(2, 10);                         // 1024  
+bigInt = Math.pow(2, 53);                       // 9007199254740992 of course. Have you been paying attention ?  
+rand = Math.random();                           // result between 0.0 and 1.0
 ```
 The [full Montezuma](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) ! &nbsp;&nbsp;
 [???](https://en.oxforddictionaries.com/definition/full_monty)
@@ -455,7 +455,7 @@ switch ( userInput ) {
 ```
 This is neat and clear. If you omit the 'break' the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
 
-Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Brian Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words the norm, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your bank's millions of customers which take 10 minutes to load your account, all is well).
+Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Brian Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words the norm, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your bank's millions of customers which take 5 minutes to load your account, all is well).
 
 # Loops
 
@@ -620,7 +620,7 @@ Variables that you declare inside a function, and also the function arguments, a
 
 Variables declared outside of any function are known as "global variables" and can be accessed from anywhere in the program, inside or outside functions. These are convenient, and essential at times to pass around global information, but can create hazards. Try not to declare simple names as globals, like min, max, sum, total, error, count. These can clash with other declarations in functions, or at top level in other code modules concatenated with this one, and unfortunately, due to JavaScripts permissive nature, this can create silent errors. One protocol is to declare all globals as "g_total", or an Object member "g.total" to make things clear. Slightly ugly but could save your bacon one day.
 
-Another option is to put all your code in one top level function, say main(). Then nothing "escapes" from main(), so that stops clashes with other concatenated code modules. Like p5.js say !! **Check the instanced mode doco**
+Another option is to put all your code in one top level function, say main(). Then nothing "escapes" from main(), so that stops clashes with other concatenated code modules. Like p5.js say !! **(Check the p5.js "instanced mode" doco)**
 ```javascript
 <html>
 <head>
@@ -631,10 +631,10 @@ Another option is to put all your code in one top level function, say main(). Th
     var str = "a carefree string";  // cannot clash with global "str" in p5.js. Yes, there is one.
     console.log(str);
   }
-  main();                           // Call our whole code as function call main()
+  main();                           // Call our whole code as a single function call: main()
 
 </head>
-<body>I do not have much of a body, this is a JavaScript example, not HTML</body>
+<body>Not have much of a body, this is a JavaScript example, not HTML</body>
 </html>
 ```
 Here's another example of global and local scopes:
@@ -656,7 +656,7 @@ console.log("outside function local: " + xLocal);     // prints "ReferenceError:
 
 ### Precedence of global and local variables
 
-If you use the same name as a global variable, and also as a local function variable, the function variable overrides within the function. This is ok in many situations, despite what we said above. For example simple count variables like i, j, k.
+If you use the same name as a global variable, and also as a local function variable, the function variable overrides within the function. This is ok in many situations, despite what we said above. For example simple count variables like i, j, k that you are sure have a short life.
 
 ```javascript
 var g_data = [ 1, 22, 333 ]    // global array
@@ -668,8 +668,8 @@ for (i = 0; i < g_data.length; i++) {   // a loop at top (global) level
 }
 
 function adjustData() {
-  var i;                   // This is a different i from the global i, but that's ok, we don't care what we did with i above
-                           // For absolutely temporary vars like i, j, k, tmp, str, you can ignore scope if you like
+  var i;                   // This is a different i from the global i, but that's ok, we don't care about the global i
+                           // For absolutely temporary vars like i, j, k, tmp, str, you can ignore scope if you like.
   for (i = 0; i < g_data.length; i++) {   
     g_data[i] += offset;   // Ok: offset is still the global var. Could be better as g_offset
   } 
