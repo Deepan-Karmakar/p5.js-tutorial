@@ -2,11 +2,11 @@
 
 _This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb, hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
 
-_**Previous version being updated from top down. Progress marked by "Updated down to here". Areas needing more work flagged as "Needs more work" or similar - in bold anyway.**_
+_**Previous version being updated from top down. Progress marked by "Updated down to here". Areas needing more work flagged as "Needs more work" in bold. Can you flag something in red ? That would be ideal.**_
 
 JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
 
-Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is allegedly based on the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
+Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is supposedly based on the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
 
 JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web scripting ability at Netscape, but unexpectedly took off as part of the late 90's explosion of the Web. Since then it has matured into a fully-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top 3, and often at the top, in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
  
@@ -14,7 +14,7 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
 
 # `<script>` tag
 
-JavaScript can be placed anywhere within an HTML document, although it is typically included in the `<head>` section of the HTML, and is specified by the use of `<script>` tags:
+JavaScript in a web page can be placed anywhere within the HTML document, although it is typically included in the `<head>` section of the HTML. It is specified by the use of `<script>` tags:
 
 ```html
 <html>              
@@ -23,11 +23,11 @@ JavaScript can be placed anywhere within an HTML document, although it is typica
       //JavaScript goes here 
       str = "This is my first message";                                    
       console.log(str);  // This will show up in the browser's JavaScript console. 
-      alert(str);        // This will show a popup message in the browser. Use sparingly!
+      alert(str);        // This will show a popup message in the browser. Irritating, use sparingly !
     </script>
   </head>              
 <body> 
-  This is totally plain raw text, the browser will show it in a default font/colour/size.
+  This is totally plain raw text, the browser will show it in some default font/colour/size, maybe Times/black/12.
 </body>             
 </html>              
 ```
@@ -48,7 +48,7 @@ One of the first things we probably want to learn is how to get debugging output
 ```javascript
 console.log("hello");
 console.log("variables x, y values", x, y);          // Use the default space separation of args
-console.log("variables x, y values " + x + " " + y); // Concatenate message into a single string, more flexible
+console.log("variables x, y values " + x + ":" + y); // Concatenate message into a single string, more flexible
 ```
 In order to see the console on Chrome, select menu sequence View > Developer > JavaScript Console. Use it often! On other browsers, just search for info on "how to open the JavaScript console on \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
 
@@ -80,21 +80,22 @@ var string3;                     // Both this ...
 var string4 = undefined;         // ... and this give the var the "undefined" value. Also very tricky, see later.
 
 ```
-Variables should always be given an initial value. Otherwise, like string3 above, they have an "undefined" value until later in the program, which can lead to hard-to-debug errors.
+Variables should nearly always be given an initial value. Otherwise, like string3 above, they have an "undefined" value until later in the program, which can lead to hard-to-debug errors.
 
+### Variable names
 
-Variables (and other names in JS, like functions) can be named with lower and uppercase letters, numbers, underscore, or dollar signs. Avoid dollar signs. For multi-component names, there are two favourite styles: my_data and myData. The second is more common. Underscores at the beginning or end of a name can denote something special, often a variable which is similar to a system-provided term. Eg. you desperately want to name some variable "var" but var is a reserved word in JS, so you can use "var_". `var var_ = 123;` Unless you know very well what you're doing, this is not recommended. 
+Variables (and other names in JS, like functions) can be named with lower and uppercase letters, numbers, underscore, or dollar signs. Avoid dollar signs. For multi-component names, there are two favourite styles: my_data and myData. The second is more common. Underscores at the beginning or end of a name can denote something special, often a variable which is similar to a system-provided term. Eg. for some reason you desperately want to name some variable "var" but var is a reserved word in JS, so you can use "var_" or "\_var\_": `var var_ = 123;` Unless you know very well what you're doing, this is not recommended. 
 
 
 ## Data Types
 
-JavaScript is a "loosely typed" or "dynamic" language, meaning you don't have to declare the types of variables ahead of time. The type will get determined automatically while the program is being processed. Other languages such as Java, C, C++ are strictly typed and each variable must declare the type of the data it will contain. Even though you don't have to declare types, JavaScript does have different data types.
+JavaScript is a "loosely typed" or "dynamic" language, meaning you don't have to declare the types of variables ahead of time. The type will get determined automatically while the program is being processed. Other languages such as Java, C, C++ are strictly typed, mainly for catching errors at compile time, and each variable must declare the type of the data it will contain. Even though you don't have to declare types, JavaScript does have different data types.
 
 
 
 ### Data type: Number
 
-A number, optionally with a decimal point. In other languages this is typically called a float, short for "floating point number". It can be written with or without the decimal point.
+A number, optionally with a decimal point, or exponent. In other languages this is typically called a float, short for "floating point number". It can be written with or without the decimal point.
 
 ```javascript
 var x = 5;
@@ -225,7 +226,7 @@ var result = str.trim();   // result is "string with spaces around" (not any mor
 
 **trimLeft(), trimRight()**
 
-These are more specific versions which trim whitespace only from the left or right of a string. These are not 100% standard, although very common extensions in JavaScript. For maxiumum robustness and portability of code, you could code these yourself as private utility functions, very easy. Or you could just check they work in your preferred browser and not worry. Here's a suggested code from MDN for replacing trim(), you can modify it to create a trimLeft or trimRight. This uses a regexp call, a "regular expression", a miniature language in itself, and very powerful.
+These are more specific versions which trim whitespace only from the left or right of a string. These are not 100% standard, although very common extensions in JavaScript. For maxiumum robustness and portability of code, you could code these yourself as private utility functions, very easy. Or you could just check they work in your preferred browser and not worry. Here's a suggested code from MDN for replacing trim(), you can modify it to create a trimLeft or trimRight. This uses a regexp call, a "regular expression", a miniature language in itself, and very powerful. IMHO the Perl documentation on regexp is the best I have seen: [Perl regexp doco](https://perldoc.perl.org/perlre.html). But there can be tiny differences, if you have issues check the: [JavaScript regexp doco](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
 ```javascript
 if (!String.prototype.trim) {                                       // we don't have trim(), rats
@@ -257,21 +258,23 @@ An object can be thought of as a collection of properties. These properties can 
 
 **Need to expand Array and Object here**
 
-### Null and undefined
+### Data type: Null and Undefined
 
-The value of a variable which has not been given any value is `undefined`. This is a specific single type which you can also assign manually. Variables can be emptied by setting the value to `null`. This is another specific single value. Often it's better to avoid these, JS does some unexpected things with them.
+The value of a variable which has not been given any value is `undefined`. This is a specific single type with a single value, which you can also assign manually. Variables can be emptied by setting the value to `null`. This is another specific single type and value. Often it's better to avoid these, JS does some unexpected things with them.
 
 ```javascript
-var cars;               // value is 'undefined'
-var trucks = undefined; // Same
-var person = null;      // value is `null`
+var cars;               // Value is 'undefined'. Not a string, a built-in value.
+var trucks = undefined; // Same effect
+var person = null;      // Value is 'null'. Not a string, a built-in value.
 
 var count = 0;          // Often safer
 var message = "";       // Ditto
 var newArray = [];      // Safe
 var newObject = {};     // Safe
 ```
-Creating new "empty" things in JS is surprisingly clunky. It's slightly hard to know what you have done with a statement like `var myArray = []`. Go to the JS console and type it, then just type "myArray". JS will compute the expression, which is a single array, with no useful effect, ie. no assignment to anything, but that's fine, and display a breakdown of what it is, ie. an array with no elements, length 0. You can hit the disclosure triangle for more detail if there is one. Try again with `myArray = [1,2,3]`. You'll get the picture quickly. Also try `var myObj = {}` and `myObj = {"alpha":1, "beta":2}`.
+Creating new "empty" things in JS is surprisingly clunky. It's slightly hard to know what you have done with a statement like `var myArray = []`. Go to the JS console and type it, then just type "myArray". JS will compute the expression, which is a single array, with no useful effect, ie. no assignment to anything, but that's ok, and display a breakdown of what it is, ie. an array with no elements, length 0. You can hit the disclosure triangle for more detail if there is one. Try again with `myArray = [1,2,3]`. You'll get the picture quickly. Also try `var myObj = {}` and `myObj = {"alpha":1, "beta":2}`.
+
+Note: the `typeof()` call is a great debugger and learning tool. Try it the JS console. `typeof(1); typeof("a"); x = 12.34; typeof(x); x = x + "hello"; typeof(x); a = 1.23; b = a + '4'; typeof(b); typeof(undefined); var z; typeof(z); typeof(null)`
 
 ## Assignment
 
@@ -280,25 +283,25 @@ Once variables are declared, you can assign values to them and use them in opera
 ```javascript
 var x = 5;
 x = x * 5;        // x now 25
-x = "cat";        // You can change the type of a variable anytime, here number to string
+x = "cat";        // You can change the type of a variable any time, here number to string
 var y = x + "s hate dogs";  // y is "cats hate dogs". Note + is the only math operator that has been hijacked for string use.
-var z = x - "t";  // Result is NaN (Not a Number), not "ca". It totally blew up! Brilliant.
+var z = x - "t";  // Result is NaN (Not a Number), not "ca". It totally blew up! Brilliant. Thanks Brendan.
 ```
 
 # Operators
 
-We will zoom through the operators here. We assume some teensy maths background in the reader.
+We will zoom through the operators here. We assume some vary basic maths background in the reader.
 
 ### Assignment
 * `=`
-* `a = b = c = 123;`       // Multiple assignment is allowed but unwise. [Details.](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
+* `a = b = c = 123;`       // Multiple assignment is allowed, but unwise. [Details](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
 
 ### Mathematical
 * `+` addition
 * `-` subtraction
 * `*` multiplication
 * `/` division
-* `**` exponentiation: 3**3 gives 27. New in EcmaScript 6.
+* `**` exponentiation: 3**4 gives 81. New in EcmaScript 6. Before required Math.power(x,y). See later in tut.
 * `%` modulo
 * `++` add one shorthand
 * `--` subtract one shorthand
@@ -314,7 +317,7 @@ These operators have shortcut styles, occasionally useful.
 * `b = ++a` b is 3, the ++ was done before the assignment. Similarly --. Use these sparingly, "out by one" oversights happen easily.
 
 ### Relational, ie. comparisons
-* `>=` greater than or equal to
+* `>=` greater than or equal to   // works with strings also, but many subtleties. Is 'aAa' < 'BbBb' ?
 * `<=` less than or equal to
 * `==` equal to 
 * `!=` not equal to 
@@ -330,37 +333,37 @@ These operators have shortcut styles, occasionally useful.
 
 ### Precedence of operators
 
-The operators have a precedence which vaguely matches what we learned in school.  When operators have equal precedence, they proceed left to right. `xx = 24 / 6 * 5` will produce 20. But `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication will get done first. To force the order you want, use brackets, which have the highest precedence. 
+The operators have a precedence which sometimes matches what we learned in school.  When operators have equal precedence, they proceed left to right. `xx = 24 / 6 * 5` will produce 20. But `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication will get done first. To force the order you want, use brackets, which have the highest precedence. 
 ```javascript
 xx = (1 + 2) * 3           // will produce 9.  
 gravity = G * (mass1 * mass2) / (distance * distance);  
-intensity = light / (Math.sqrt( radius * radius) + fudgeFactor); 
+intensity = light / (Math.sqrt( (radius * radius) + fudgeFactor); 
 ```
-Other operators have progressively lower precedence. Full table [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence). This allows you to write most expressions in a natural and  concise way. 
+Other operators have progressively lower precedence. [Full table here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence). This allows you to write most expressions in a natural and  concise way. 
 ```javascript
 if( radius > 5.0 && radius < 10.0) { drawCircle(); }               // works fine, but ...
 if( (radius > 5.0) && (radius < 10.0) { drawCircle(); }            // clearer and safer. 
 ```
-The lowest operator is a strange thing called the 'comma' operator. You can pack several statements into one. The most common use is in a slightly more fancy 'for loop'.
+The lowest operator is a strange thing called the 'comma' operator. You can pack several statements into one. (x = y, a = b). The most common use is in a slightly more fancy 'for loop'.
 ```javascript
-for (var i = 0, j = 9; i < 9; i++, j--) {  // i runs up 0 to 9, j runs down 9 to 0
+for (var i = 0, j = 9; i < 9; i++, j--) {  // i runs 0 up to 9, j runs 9 down to 0
   console.log( a[i][i] );                  // Print the conventional diagonal elements of a 9x9 array
   console.log( a[i][j] );                  // Print the other diagonal, top-right to bottom-left, of the array
 }
 ```
-Some traps exist. No precedence order can be what you want all the time. An example from p5.js:
+Some traps exist. No precedence order can be what you wanted all the time. An example from p5.js:
 ```javascript
 var images = [];
 for (var i = 0; i < 10 ; i++) {
-  images[i] = createImage(width, height);
-  images[i].loadPixels();    // Ok? Noooo. The member access ".loadPixels()" has higher precedence than the array index, so gets called
-                             // on the entire Array object and fails. Moreover we get a silent error, very hard to chase.
+  images[i] = createImage(width, height);   // Create an array of new images.
+  images[i].loadPixels();    // Ok? Noooo. The member access ".loadPixels" has higher precedence than the array index, so gets called
+                             // on the entire Array 'object' and fails. Moreover we get a silent error, very hard to chase.
   (images[i]).loadPixels();  // Better. Force the array indexing first, call loadPixels() on the individual array element. 
 }
 ```
 ### Maths functions
 
-The maths functions are sequestered inside the Maths package, to avoid polluting the top level namespace with everyday terms like min, max etc. and just following good modern practice. Unless you're a Rocket Scientist you don't need maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. A few examples:
+The maths functions are sequestered inside the Maths package, to avoid polluting the top level namespace with everyday terms like min, max etc. and just following good modern practice. Unless you're a Rocket Scientist you don't need complex maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. A few examples:
 ```javascript
 circumference = 2 * Math.PI * radius;                       // a constant 'property' of Math, no () call needed 
 distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2 ));  // Standard 2D distance calc; you know this
@@ -372,11 +375,11 @@ expo = Math.pow(2, 10);                                     // 1024
 bigInt = Math.pow(2, 53);                                   // 9007199254740992 of course. Have you been paying attention ?  
 rand = Math.random();                                       // result between 0.0 and 1.0
 ```
-The full [Montezuma](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) !
-
+The [full Montezuma](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) ! &nbsp;&nbsp;
+[???](https://en.oxforddictionaries.com/definition/full_monty)
 # Conditionals
 
-Conditionals allow your program to execute a block of code based on the result of an expression that utilizes relational or logical (boolean) operators.
+Conditionals allow your program to execute a block of code based on the result of an expression that utilizes relational or logical (boolean) operators, or just boolean values.
 
 ### if
 
@@ -390,18 +393,16 @@ if (x > 0) {
 ### if, else
 
 ```javascript
-var x = 1;
-if (x > 0) {
-  // execute some code
+if (runAnalysis) {
+  // run some analysis, if the boolean var 'runAnalyis' was true
 } else {
-  // execute some other code
+  // run some other code
 }
 ```
 
 ### if, else if, else
 
 ```javascript
-var x = 1;
 if (x > 5) {
   // execute some code
 } else if (x < -5) {
@@ -414,22 +415,27 @@ if (x > 5) {
 ### Multiple conditions
 ```javascript
 var x = 1;
-if (x > -5 && x < 5) {
-  // execute some code!
+if (x >= -5 && x <= 5) {
+  // execute some code if x was in range -5 to +5
 }
 ```
 
 ```javascript
 var x = "puddings";
 if (x.length === 8 || x.indexOf("ding") === -1) {
-  // execute some code! Note the above is using exact or "strict" comparisons.
+  // execute some code. Note the above is using exact or "strict" comparisons, safer.
 }
 ```
-Warning: comparisons between variables or expressions that you think will return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. The "===" operator set use exact comparison - the only thing that is equal to "true" is another "true". It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
+
+### Comparison issues
+
+Warning: comparisons between variables or expressions that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some sense in that, but it's not great design). 
+
+The "===" operator set use exact comparison - the only thing that is equal to "true" is another "true". It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
 
 ### Switch {} statement
 
-Rather than a long if/else chain, we can select a simple option with a switch statement.
+Rather than a long if/else chain, we can select amongst simple options with a switch statement.
 ```javascript
 switch ( userInput ) {
 
@@ -449,7 +455,7 @@ switch ( userInput ) {
 ```
 This is neat and clear. If you omit the 'break' the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
 
-Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Brian Ritchie et al were writing C at Bell Labs. With memory so tiny, and CPU speeds so slow, you could construct a machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. 
+Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Brian Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words the norm, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your bank's millions of customers which take 10 minutes to load your account, all is well).
 
 # Loops
 
@@ -482,8 +488,10 @@ Since this is a very common use of a loop, ie. running through a simple sequence
 
 ```javascript
 for (var x = 0; x < 10; x++) {  
-  console.log(x);     // This is a very common idiom. The loop will run 10 times, for sure.
-}                     // Remember: x = 0; x < loopCount   gives exactly loopCount passes.
+  console.log(x);     // This is a very common idiom. The loop will run exactly 10 times, for sure.
+                      // Remember: x = 0; x < loopCount  :  gives exactly loopCount passes.
+                      //           x = 1; x <= loopCount :  same, less common. Programmers like 0 basing.
+} 
 ```
 ### Breaking out of loops
 
@@ -502,7 +510,13 @@ while(true) {
 
 # Functions
 
-A function is a block of reusable code. You can reuse it, executing it many times. Functions also help structure and organize your code: self-contained processes and computations can be neatly isolated in a function.
+A function is a unit of reusable code, which can be "called" many times, possibly with different input values. They are a critical part of any language. Functions also help structure and organize your code: self-contained processes and computations can be neatly isolated in a function.
+
+Other languages can use terms like "subroutine" or "procedure" to describe a function. Fortran IV used to provide SUBROUTINE which returned no value, and FUNCTION which did return a value. In modern languages a "function" can return or not return a value just as you wish, and you can use or ignore the return value afterwards. 
+
+A neatly self-contained function can be replaced with a better version at a future time: a standard example would be a "sorting" function. With low numbers of test data items, a simple "bubble sort" might be fine. This runs in O(N2), which is academic speak for "Order N squared", meaning the time to sort a list of N items is approximately proportional to N squared. This goes up rapidly enough, but it's not going to be a problem until N reaches high numbers, maybe thousands to millions.
+
+When you need to sort billions of things, you might need to replace your sort() function with a more sophisticated multi-phase tree/bucket/heap/shell sort, which can be O(n Log n) or better. Just change your sort function !  [\[full monty\]](https://en.wikipedia.org/wiki/Sorting_algorithm) [\[JavaScript monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
 ```javascript
 function sayHello() {
@@ -521,9 +535,9 @@ function changeBackground() {
 }
 ```
 
-### Function parameters
+### Function arguments, or parameters
 
-A function can also accept values as input, known as arguments or parameters. Note that within the function code, these parameters are not the names of actual variables in your program, but are "place holder" variables limited to the scope of the function. When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution.
+A function can accept values as input, known as arguments or parameters. Note that within the function code, these parameters are not the names of actual variables in your enclosing program, but are "place holder" variables limited to the scope of the function. When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution and returns to the caller. After return, normally all data values inside the function just "evaporate".
 
 ```javascript
 function sayHello(person) {
@@ -544,7 +558,7 @@ addNumbers(3, -10)  // prints -7
 // Using p5.js
 function drawEllipse(x, y) {
   ellipse(x, y, 50, 50);
-  return;     // You can explicitly make it clear where the function returns, if you like
+  return;     // You can explicitly make it clear where the function returns, if you like, even if it returns no data
 }
 drawEllipse(mouseX, mouseY);  // a nice circle, centre x,y radius 50 
 ```
@@ -563,7 +577,7 @@ console.log(result);   // prints -7
 ```
 
 ```javascript
-var name = "jenny";
+var name = "Jenny";
 function makeSuper(person) {
   return "Super " + person;
 }
@@ -578,7 +592,7 @@ console.log(x);   // could print 23 or 77 or ...
 
 // You can write your own enhanced function, using p5.js functions
 function addJitter(x) {
-  var y = x + random(-1, 1); // use p5.js random func. Two args allowed, min and max.
+  var y = x + random(-1, 1); // use p5.js random() func. Two args allowed, min and max.
   return y;
 }
 var result = addJitter(10);
@@ -602,13 +616,28 @@ severalReturns(-8);  // returns -9
 
 # Variable scope
 
-Variables that you declare inside a function, and also the function arguments, are local to that function, and can't be accessed outside the function. This provides vital "encapsulation" and protection of the functions data. Otherwise a statement `x = y + 1` in one function could trample on a statement `x = z + 3` in another function, or at top level.
+Variables that you declare inside a function, and also the function arguments, are local to that function, and can't be accessed outside the function. This provides vital "encapsulation" and protection of the functions data. Otherwise a statement `x = y + 1` in one function could trample badly on a statement `y = x + 2` in another function, or at top level.
 
 Variables declared outside of any function are known as "global variables" and can be accessed from anywhere in the program, inside or outside functions. These are convenient, and essential at times to pass around global information, but can create hazards. Try not to declare simple names as globals, like min, max, sum, total, error, count. These can clash with other declarations in functions, or at top level in other code modules concatenated with this one, and unfortunately, due to JavaScripts permissive nature, this can create silent errors. One protocol is to declare all globals as "g_total", or an Object member "g.total" to make things clear. Slightly ugly but could save your bacon one day.
 
-Another option is to put all your code in one top level function, say main(). Then nothing "escapes" from main(), so that stops clashes with other concatenated code modules. Like p5.js say ! **Check the instanced mode doco**
+Another option is to put all your code in one top level function, say main(). Then nothing "escapes" from main(), so that stops clashes with other concatenated code modules. Like p5.js say !! **Check the instanced mode doco**
+```javascript
+<html>
+<head>
+<script> src="libraries/p5.js"></script>  <!-- load p5.js --->
+<script>
 
-Example of global and local scopes:
+  function main() {
+    var str = "a carefree string";  // cannot clash with global "str" in p5.js. Yes, there is one.
+    console.log(str);
+  }
+  main();                           // Call our whole code as function call main()
+
+</head>
+<body>I do not have much of a body, this is a JavaScript example, not HTML</body>
+</html>
+```
+Here's another example of global and local scopes:
 
 ```javascript
 var xGlobal = "global";
@@ -642,7 +671,7 @@ function adjustData() {
   var i;                   // This is a different i from the global i, but that's ok, we don't care what we did with i above
                            // For absolutely temporary vars like i, j, k, tmp, str, you can ignore scope if you like
   for (i = 0; i < g_data.length; i++) {   
-    g_data[i] += offset;   // Ok, offset is still the global var
+    g_data[i] += offset;   // Ok: offset is still the global var. Could be better as g_offset
   } 
 }
 
