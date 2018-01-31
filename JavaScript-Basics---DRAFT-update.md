@@ -757,12 +757,12 @@ switch(x) {
     break;
     
   case 1:
-    let foo = x * 2; // SyntaxError for redeclaration. Already declared in switch{} block. Just don't include the let.
+    let foo = x * 2; // SyntaxError for redeclaration. Already declared in switch{} block. Just drop the "let".
     doStuff(foo);
     break;
 }
 ```
-If you want, you can solve the above by actually leveraging the same block-scope rules. Below the "foo" are each unique to their single case{} block. The simple switch/case is getting messier though ! If/else style might be just as easy.
+If you want, you can fix the above by leveraging the same block-scope rules that caught you out. Below the "foo" are each unique to their single case{} block. The simple switch/case is getting messier though ! If/else style might be just as easy. Just my $0.02
 ```javascript
 switch(x) {
   case 0: {
