@@ -1,14 +1,16 @@
 
 
-_This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb, hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
+_This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb (2018!), hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
 
-_**Previous version being updated from top down. Progress marked by "Updated down to here". Areas needing more work flagged as "Needs more work" in bold. Can you flag something in red ? That would be ideal.**_
+_**Previous version being updated from top down. Progress marked by "Updated down to here" in bold. Areas needing more work flagged as "To do / Todo" in bold. Can you flag something in colour in Markdown? That would be useful.**_
+
+---
 
 JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
 
-Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is supposedly based on the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
+Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is supposedly influenced by the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
 
-JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web scripting ability at Netscape, but unexpectedly took off as part of the late 90's explosion of the Web. Since then it has matured into a fully-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top 3, and often at the top, in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
+JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web scripting ability at Netscape, but then took off as part of the late 90's explosion of the Web. Since then it has matured into a fully-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top few, and often at the very top, in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
  
 
 
@@ -104,7 +106,7 @@ var z = -300;
 var big = 1.23e82;   // This is a big number, the estimated atoms in the universe, but quite ok to code with, why not?
 var small = 1.6e-35  // The Planck Length, the smallest physical size (in metres) that has any meaning in classical physics.
 ```
-JavaScript stores all numbers as 64-bit floats. This is very accurate but still has limits. Sometimes it can lead to very small inaccuracies. Try this in the JavaScript console: `0.362 * 100`  You should get the answer 36.199999999999996. This is rarely a problem in practice, after all it's accurate to 1 part in 100 quintillion, usually pretty ok ! 
+JavaScript stores all numbers as 64-bit floats. This is very accurate but still has limits. Sometimes it can lead to very small inaccuracies. Try this in the JavaScript console: `0.1 + 0.2` You should get `0.30000000000000004` Try `0.362 * 100`  You should get 36.199999999999996. This is rarely a problem in practice, after all it's accurate to 1 part in 100 quintillion, usually pretty ok ! Better than my old Engineers slide rule, accurate to 3 sig figs, that I designed those nuclear power stations with (ok not true).
 
 Although JavaScript doesn't have a specific integer type, it uses special measures to keep integers 100% accurate where possible. Integers up to a magic value of 9007199254740991 (and down to -9007199254740991) are stored and computed with complete accuracy. (9007199254740991 is 2^53 -1, ie. 2 to the power 53, minus 1. This is because the integer is held precisely, in the 53-bit mantissa section of the 64-bit IEEE float word).
 
@@ -146,12 +148,13 @@ pos = str.indexOf("pears");     // pos is -1
 
 **lastIndexOf(str)**
 
-Returns the index of the last occurrence of a specified text in a string. Sometimes the interesting info is the last occurrence of something in a string.
+Sometimes the interesting info is the last occurrence of something in a string.
 
 ```javascript
 var str = "long.complicated.filename.txt";
-var suffixPos = str.lastIndexOf(".");  // 25
+var suffixPosition = str.lastIndexOf(".");  // 25
 ```
+
 **includes(str)**
 
 This method just returns whether the string contains a smaller string, true or false.
@@ -160,7 +163,6 @@ This method just returns whether the string contains a smaller string, true or f
 var str = "reallycrazylongstring";
 var maybe = str.includes("zylo");  // returns true
 ```
-
 
 **substring(start, end)**
 
@@ -173,7 +175,7 @@ var newStr = str.substring(2, 6);  // "like"
 
 **substr(start, length)**
 
-Another variation. It takes 2 parameters: the starting index, and the length required. Murphy's Law of Programming says you'll always use one when you meant the other.
+Another variation of substring. It takes 2 parameters: the starting index, and the length required. Murphy's Law of Programming says you'll always use one when you meant the other.
 
 ```javascript
 var str = "Bananas are yellow";
@@ -223,10 +225,13 @@ This method trims whitespace from both ends of a string. Whitespace includes spa
 var str = " string with spaces around          ";
 var result = str.trim();   // result is "string with spaces around" (not any more)
 ```
+In the console, try `abc = " abc \n";` .. `abc;` .. `trim(abc);`
 
 **trimLeft(), trimRight()**
 
-These are more specific versions which trim whitespace only from the left or right of a string. These are not 100% standard, although very common extensions in JavaScript. For maxiumum robustness and portability of code, you could code these yourself as private utility functions, very easy. Or you could just check they work in your preferred browser and not worry. Here's a suggested code from MDN for replacing trim(), you can modify it to create a trimLeft or trimRight. This uses a regexp call, a "regular expression", a miniature language in itself, and very powerful. IMHO the Perl documentation on regexp is the best I have seen: [Perl regexp doco](https://perldoc.perl.org/perlre.html). But there can be tiny differences, if you have issues check the: [JavaScript regexp doco](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
+These are more specific versions which trim whitespace only from the left or right of a string. Surprisingly they are not 100% standard, although very common extensions in JavaScript. For maxiumum robustness and portability of code, you could code these yourself as private utility functions, very easy. Or you could just check they work in your preferred browser and not worry. 
+
+Here's a suggested code from MDN for replacing trim(), you can modify it to create a trimLeft or trimRight. This uses a regexp call, a "regular expression", a miniature language in itself, and very powerful. IMHO the Perl documentation on regexp is the best I have seen: [Perl regexp doco](https://perldoc.perl.org/perlre.html). But there can be tiny differences, if you have issues check the: [JavaScript regexp doco](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
 ```javascript
 if (!String.prototype.trim) {                                       // we don't have trim(), rats
@@ -301,7 +306,7 @@ We will zoom through the operators here. We assume some vary basic maths backgro
 * `-` subtraction
 * `*` multiplication
 * `/` division
-* `**` exponentiation: 3**4 gives 81. New in EcmaScript 6. Before required Math.power(x,y). See later in tut.
+* `**` exponentiation: 3**4 gives 81. New in EcmaScript 6. Before we required Math.power(x,y). See later in tut.
 * `%` modulo
 * `++` add one shorthand
 * `--` subtract one shorthand
@@ -333,7 +338,7 @@ These operators have shortcut styles, occasionally useful.
 
 ### Precedence of operators
 
-The operators have a precedence which sometimes matches what we learned in school.  When operators have equal precedence, they proceed left to right. `xx = 24 / 6 * 5` will produce 20. But `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication will get done first. To force the order you want, use brackets, which have the highest precedence. 
+The operators have a precedence which sometimes matches what we learned in school.  When operators have equal precedence, they proceed left to right. `xx = 24 / 6 * 5` will produce 20. But `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication will get done first. To force the order you want, use brackets. 
 ```javascript
 xx = (1 + 2) * 3           // will produce 9.  
 gravity = G * (mass1 * mass2) / (distance * distance);  
@@ -373,9 +378,9 @@ roundUp = Math.ceiling(69.69);                  // result is 70
 height = base * Math.sin(angle);                // and similarly cos, tan, asin, sinh, etc  
 expo = Math.pow(2, 10);                         // 1024  
 bigInt = Math.pow(2, 53);                       // 9007199254740992 of course. Have you been paying attention ?  
-rand = Math.random();                           // result between 0.0 and 1.0
+rand = Math.random();                           // result between 0.0 and 1.0 (actually 0.9999999999...)
 ```
-The [full Montezuma](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) ! &nbsp;&nbsp;
+The [full Montezuma](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)  &nbsp;&nbsp;
 [???](https://en.oxforddictionaries.com/definition/full_monty)
 # Conditionals
 
@@ -455,7 +460,7 @@ switch ( userInput ) {
 ```
 This is neat and clear. If you omit the 'break' the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
 
-Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Brian Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words the norm, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your bank's millions of customers which take 5 minutes to load your account, all is well).
+Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Brian Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words the norm, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your bank's millions of customers which take 5 minutes to load your account, all is well for efficiency workers).
 
 # Loops
 
@@ -472,7 +477,7 @@ while (x < 10) {
 ```
 ### Do while {}
 
-This is similar to the while loop, but the test is done at the bottom, after each iteration of the loop. One consequence is that the loop always executes at least once. But really the point is that it's just clearer to test some conditions at the bottom.
+This is similar to the while loop, but the test is done at the bottom, after each iteration of the loop. One consequence is that the loop always executes at least once. But really the point is that it's just clearer to test some conditions at the bottom. The code can reflect your thinking.
 
 ```javascript
 var x = 0;
@@ -484,7 +489,7 @@ do  {
 
 ### For {}
 
-Since this is a very common use of a loop, ie. running through a simple sequence of values, there is a simpler way to do the above. You can read this as: create variable x and set it to 0, while x is less than 10 do the stuff in the loop body, then increment x by 1 at the end.
+Since this is a very common use of a loop, ie. running through a simple sequence of values, there is a simpler way to do it: the for{} loop. You can read this as: a) create variable x and set it to 0;  b) if x is less than 10 do the stuff in the loop body; c) increment x by 1 at the end and go back to b).
 
 ```javascript
 for (var x = 0; x < 10; x++) {  
@@ -495,12 +500,12 @@ for (var x = 0; x < 10; x++) {
 ```
 ### Breaking out of loops
 
-The `break` statement will terminate a loop. One common idiom is to have an endless loop, and break out when you have done what you need. Occasionally this is clearer to code than other options.
+The `break` statement will terminate a loop. One common idiom is to have an endless loop, and break out when you have done what you need. Sometimes this is clearer to code than other options.
 
 ```javascript
 while(true) {
   // do stuff
-  if ( value === 100 ) { break; }  // need that semicolon
+  if ( value === 100 ) { break; }  // Need that semicolon
   // do more stuff
 }
 ```
@@ -510,13 +515,17 @@ while(true) {
 
 # Functions
 
-A function is a unit of reusable code, which can be "called" many times, possibly with different input values. They are a critical part of any language. Functions also help structure and organize your code: self-contained processes and computations can be neatly isolated in a function.
+A function is a unit of reusable code, which can be "called" many times, possibly with different input values. They are a critical part of any language. Functions help structure and organize your code: self-contained processes and computations can be neatly isolated in a function. 
 
-Other languages can use terms like "subroutine" or "procedure" to describe a function. Fortran IV used to provide SUBROUTINE which returned no value, and FUNCTION which did return a value. In modern languages a "function" can return or not return a value just as you wish, and you can use or ignore the return value afterwards. 
+Functions are kind of named after mathematical functions: `f(x) = x * x`. In JavaScript this would become `function square(x) { return (x * x); }`
 
-A neatly self-contained function can be replaced with a better version at a future time: a standard example would be a "sorting" function. With low numbers of test data items, a simple "bubble sort" might be fine. This runs in O(N2), which is academic speak for "Order N squared", meaning the time to sort a list of N items is approximately proportional to N squared. This goes up rapidly enough, but it's not going to be a problem until N reaches high numbers, maybe thousands to millions.
+Other languages can use terms like "subroutine" or "procedure" to describe a function. Fortran IV used to provide SUBROUTINE which returned no value, and FUNCTION which did return a value. In modern languages a "function" can return or not return a value just as you wish, and you can also use or ignore the return value afterwards as you wish. 
+
+A neatly self-contained function can be replaced with a better version at a future time: a standard example would be a "sorting" function. With low numbers of test data items that need to be sorted into order in some sort() function, a simple "bubble sort" might be fine. This runs in O(N2), which is academic speak for "Order N squared", meaning the time to sort a list of N items is approximately proportional to N squared. This goes up quite rapidly, but it's not going to be a problem until N reaches high numbers, maybe thousands to millions.
 
 When you need to sort billions of things, you might need to replace your sort() function with a more sophisticated multi-phase tree/bucket/heap/shell sort, which can be O(n Log n) or better. Just change your sort function !  [\[full monty\]](https://en.wikipedia.org/wiki/Sorting_algorithm) [\[JavaScript monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+Here's a list of simple function examples:
 
 ```javascript
 function sayHello() {
@@ -537,13 +546,16 @@ function changeBackground() {
 
 ### Function arguments, or parameters
 
-A function can accept values as input, known as arguments or parameters. Note that within the function code, these parameters are not the names of actual variables in your enclosing program, but are "place holder" variables limited to the scope of the function. When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution and returns to the caller. After return, normally all data values inside the function just "evaporate".
+A function can accept values as input, known as arguments or parameters. Note that within the function code, the parameters are not the names of actual variables in your enclosing program, but are "place holder" variables limited to the scope of the function. To split hairs, the "parameter" is the name of the formal parameter, "person" in the first example below, it's a static term in the code source text. The "argument" is the value that gets passed in, a dynamic run-time thing, "name" in the code below, if talking about it from the callers perspective, or maybe again "person" if talking from the functions perspective.
+
+When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution and returns to the caller. After return, normally all data inside the function just "evaporates", its job is done.
 
 ```javascript
 function sayHello(person) {
   console.log("Hello " + person);
 }
-sayHello("Jenny");  // prints "Hello Jenny"
+name = "Jenny";
+sayHello(name);  // prints "Hello Jenny"
 ```
 
 ```javascript
@@ -562,10 +574,11 @@ function drawEllipse(x, y) {
 }
 drawEllipse(mouseX, mouseY);  // a nice circle, centre x,y radius 50 
 ```
+Try this in the console: `function ff() { console.log("zippo"); }` then `typeof(ff)` then `ff` then `ff()`
 
 ### Returning a value
 
-The functions above take some action or change the state of the program (typically draw something, in p5.js), but they don't return any value. If you want your function to return a value, use 'return'. This is often at the end of the function, but can be anywhere else in the function. 
+The functions above take some action or change the state of the program (typically draw something, in p5.js), but they don't return any value. If you want your function to return a value, use `return someValue`. This is often at the end of the function, but can also be anywhere else in the function. 
 
 ```javascript
 function addNumbers(a, b) {
@@ -658,19 +671,19 @@ console.log("outside function local: " + xLocal);     // prints "ReferenceError:
 
 ### Precedence of global and local variables
 
-If you use the same name as a global variable, and also as a local function variable, the function variable overrides within the function. This is ok in many situations, despite what we said above. For example simple count variables like i, j, k that you are sure have a short life.
+If you use the same name as a global variable, and also as a local function variable, the function variable overrides within the function. This is ok in many situations, despite what we said above. For example simple count variables like i, j, k that you are sure have a short life. (Famous last words ?).
 
 ```javascript
 var g_data = [ 1, 22, 333 ]    // global array
 var i,j,k;                     // global simple control vars. A common style from older languages. Not even initialized! Never mind.
-var offset = 3;                // global var
+var offset = 3;                // global var, but who would know?
 
 for (i = 0; i < g_data.length; i++) {   // a loop at top (global) level
   g_data[i] += 2;          // Adjust g_data values somehow
 }
 
 function adjustData() {
-  var i;                   // This is a different i from the global i, but that's ok, we don't care about the global i
+  var i;                   // This is a different i from the global i, but we have decided to ignore that.
                            // For absolutely temporary vars like i, j, k, tmp, str, you can ignore scope if you like.
   for (i = 0; i < g_data.length; i++) {   
     g_data[i] += offset;   // Ok: offset is still the global var. Could be better as g_offset
@@ -681,7 +694,8 @@ adjustData();
 console.log(g_data[2]);   // prints 338 (333 + 2 + 3)
 ```  
 
-### New scope declaration: let
+
+# New scope declaration: let
 
 The issue of the scope of identifiers in programming languages is an important one, as you can see from the hammering it's getting here. 
 
@@ -689,18 +703,21 @@ You can have languages where everything is in a single global scope, as in simpl
 
 You can have modern languages where scope is very restricted. Errors are reduced, but coding needs more thought at times. Nothing wrong with that.
 
-JavaScripts original `var` style was very unusual and much disliked by some. JavaScript has recently introduced the `let` keyword to augment and largely replace the `var` keyword. 
+JavaScripts original `var` style was very unusual and much disliked by some. JavaScript has recently (EcmaScript 2015) introduced the `let` keyword to augment and largely replace the `var` keyword. 
 
 The scope of a variable declared with `var` is the whole of the function it is in. Even it is declared towards the bottom of a function, or is a trivial loop variable. There is an awful expression called "hoisting", where any `var` declaration is treated as if it was "hoisted" to the top of the enclosing function:
+
 ```javascript
 function hoistingExample() {
   var cat = "cat";
-  // i and j below are treated as if they were declared here, but not initialised, eg. just var i,j; 
+  // i and j below are treated as if they were declared here, but not initialised, eg. just var i, j; So use of them is
+  // allowed, but will almost always produce an error as they are undefined. Possibly a silent error, woo hoo.
 
   if (whatever) {
      // miles of code here, pages and pages, you forget what you wrote last week.
-     if (rareEvent) { var k = i + j; }  // Error, undefined. i and j exist due to hoisting, you can reference them, 
-                                        // but they have no value yet. A recipe for problems.
+     if (rareEventNotWellTested) { 
+        var k = i + j;   // Error, undefined. i and j exist due to hoisting, you can reference them,
+   }                     //  but they have no value yet. A recipe for problems.
   }
 
   for (var i = 0; i < 3 ; i++) {
@@ -713,10 +730,10 @@ However a variable declared with `let i = 0` has only "block scope". In the foll
 ```javascript
 function drawStuff(param) {
 
-  let j = param * 5;                     // This "j" exists in the whole function, unless overridden in a smaller block.
+  let j = 5;                     // This "j" exists in the whole function, unless overridden in a smaller block.
 
-  for(let j = 0; j < 99; j++) {          // Draw some ellipses. Note this "j" is only scoped inside this loop. Does not
-    drawCircle(j*20, j*20, j*5, j*10);   // affect, and is not affected by, other "j" vars in the function. Good. 
+  for(let j = 0; j < 99; j++) {          // Draw some ellipses. Note this temporay "j" is only scoped inside this loop. Does
+    drawCircle(j*20, j*20, j*5, j*10);   // not affect, and is not affected by, other "j" vars in the function. Good. 
   }
 
   if (param > 5 ) {
@@ -731,24 +748,30 @@ function drawStuff(param) {
 ```
 The [\[MDN monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)  
 
-[\[A rather dense blog about let and var\]](https://dmitripavlutin.com/variables-lifecycle-and-why-let-is-not-hoisted/)
+[\[A rather flambouyant blog about let and var\]](https://dmitripavlutin.com/variables-lifecycle-and-why-let-is-not-hoisted/) People get very excited about all this.
 
 The bottom line: always use `let` in new code. Place `let` declarations at the top of each function, for things which will or may be used throughout the function. Use `let` inside loops and blocks to restrict temporary variables to that region only.
 
-There are some other benefits to let. `let str = "abc"` at top level does not create a global "str" which can clash with other js modules, like p5.js. From the MDN monty above ...
+### Other points about "let"
+
+There are some other changes/benefits to let. `let str = "abc"` at top level does not create a global "str" which can clash with other js modules, like p5.js. From the MDN monty above ...
 ```javascript
 var x = 'global';
 let y = 'global';
 console.log(this.x); // "global". "this" at top level is the explicit global entity, your whole universe of all code and libs in use.
 console.log(this.y); // undefined. This solves a key problem when using a library like p5.js
 ```  
-Another `let` quirk: you can't redeclare a name in the same scope. This is a good thing, redeclaring the same name in the same scope is sloppy, although it's fine with `var`, and indeed we kind of accept it with those temp `var` variables i ,j ,k we have talked about before. JavaScript is quite a sloppy language.
+   
+
+Another `let` quirk: you can't redeclare a name in the same scope. This is a good thing, redeclaring the same name in the same scope is sloppy, although it's fine with `var`, and indeed we kind of accept it with those temp `var` variables i, j, k we have talked about before. JavaScript is quite a sloppy language. I didn't want to say that earlier.
+
 ```javascript
 let foobar = 1;
 let toto = foobar + 3;
 let foobar = 2;  // SyntaxError: Identifier 'foobar' has already been declared
 ```
-For the same reasons, declarations toughen up in `switch` blocks:
+For the same reasons, declarations toughen up in `switch{}` blocks:
+
 ```javascript
 switch(x) {
   case 0:
@@ -757,12 +780,14 @@ switch(x) {
     break;
     
   case 1:
-    let foo = x * 2; // SyntaxError for redeclaration. Already declared in switch{} block. Just drop the "let".
+    let foo = x * 2; // SyntaxError: redeclaration. Already declared in switch{} block. Just drop the "let".
     doStuff(foo);
     break;
 }
 ```
-If you want, you can fix the above by leveraging the same block-scope rules that caught you out. Below the "foo" are each unique to their single case{} block. The simple switch/case is getting messier though ! If/else style might be just as easy. Just my $0.02
+
+If you want, you can fix the above by leveraging the same block-scope rules that caught you out in the first place. Below the "foo" are each unique to their single `case{}` block. The simple switch/case is getting messier though. An if/else style might be just as easy. Just my $0.02
+
 ```javascript
 switch(x) {
   case 0: {
@@ -777,11 +802,29 @@ switch(x) {
    }
 }
 ```
-There are other tiny subtleties with changing from `var` to `let` but I think the average p5.js beginner will have reached their limit by now ! I know I have. Remaining quirks are really for the designers of big systems, like the whole p5.js library.
+
+There are other tiny subtleties with changing from `var` to `let` but I think the average p5.js beginner will have reached their limit by now ! I know I have. Remaining quirks are really for the designers of big systems, like the whole p5.js library. They take many precautions and encapsulate well, so that you can code simply and safely.
 
 **Check this thoroughly. This scope stuff is crazy enough, without giving out duff information**
 
-**To do: the new Const keyword**
+### The const keyword
+
+Many languages have a "constant" facility, so you can safely set up constants in your program. EcmaScript 2015 introduced the `const` keyword. This has the same rules as `let` but you cannot change the value once it has been defined.
+
+```javascript
+const pi = 3.141592653589793;     // You feel you want some precision. In fact that's the value of Math.PI
+
+function area(radius) {
+  return (pi * radius * radius);
+}
+
+// Include some other persons code here ...
+
+function circumference(radius) {
+   let pi = 3.142;                // Rough old code here. Probably an Engineer, used to slide rules ...
+   return( 2.0 * pi * radius );   // Fortunately, disallowed ! You can't change the const pi
+}
+```
 
 # Arrays
 
