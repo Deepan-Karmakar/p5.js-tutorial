@@ -763,7 +763,7 @@ console.log(this.y); // undefined. This solves a key problem when using a librar
 ```  
    
 
-Another `let` quirk: you can't redeclare a name in the same scope. This is a good thing, redeclaring the same name in the same scope is sloppy, although it's fine with `var`, and indeed we kind of accept it with those temp `var` variables i, j, k we have talked about before. JavaScript is quite a sloppy language. I didn't want to say that earlier.
+Another `let` quirk: you can't redeclare a name in the same scope. This is a good thing, redeclaring the same name in the same scope is sloppy, although it's fine with `var`, and indeed we kind of accepted it with those temp `var` variables i, j, k we talked about before. JavaScript is quite a sloppy language. I didn't want to say that earlier.
 
 ```javascript
 let foobar = 1;
@@ -822,7 +822,7 @@ function area(radius) {
 
 function circumference(radius) {
    let pi = 3.142;                // Rough old code here. Probably an Engineer, used to slide rules ...
-   return( 2.0 * pi * radius );   // Fortunately, disallowed ! You can't change the const pi
+   return( 2.0 * pi * radius );   // Fortunately, denied ! You can't change the const pi
 }
 ```
 
