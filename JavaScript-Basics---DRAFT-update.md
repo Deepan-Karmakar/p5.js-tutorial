@@ -13,9 +13,14 @@ Although JavaScript has "Java" in it's name, it isn't related other than by the 
 JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web scripting ability at Netscape, but then took off as part of the late 90's explosion of the Web. Since then it has matured into a fully-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top few, and often at the very top, in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
  
 ### Contents:
+
 [Script setup in HTML](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#Script setup in HTML)
 [Use of console](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#Console)
 [Objects](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#objects)
+
+[Use of console](#Console)
+
+[Objects](#Objects)
 
 
 # Script setup in HTML
