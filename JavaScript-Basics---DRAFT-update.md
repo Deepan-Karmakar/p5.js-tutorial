@@ -18,6 +18,26 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
 [Use of console](#console)  
 [Objects](#objects)  
 [Variables](#variables)  
+&nbsp;&nbsp;&nbsp;[Variable naming](#variable-names)   
+[Datatypes](#data-types)   
+&nbsp;&nbsp;&nbsp;[Number](#data-type-number)  
+&nbsp;&nbsp;&nbsp;[String](#data-type-string)  
+&nbsp;&nbsp;&nbsp;[Boolean](#data-type-boolean)  
+&nbsp;&nbsp;&nbsp;[Null and Undefined](#data-type-null-and-undefined)   
+&nbsp;&nbsp;&nbsp;[Arrays](#data-type-array)  
+&nbsp;&nbsp;&nbsp;[Objects](#data-type-object)  
+[Assignments](#assignment)  
+[Operators](#operators)  
+&nbsp;&nbsp;&nbsp;[Precedence of Operators](#precedence-of-operators)  
+&nbsp;&nbsp;&nbsp;[Math functions](#maths-functions)  
+[Conditionals](#conditionals)  
+&nbsp;&nbsp;&nbsp;[If else](#if)  
+&nbsp;&nbsp;&nbsp;[Comparison issues, loose and strict](#comparison-issues)  
+&nbsp;&nbsp;&nbsp;[Switch](#switch--statement)    
+  
+   
+     
+
 
 
 # Script setup in HTML
@@ -95,7 +115,7 @@ Variables should nearly always be given an initial value. Otherwise, like string
 Variables (and other names in JS, like functions) can be named with lower and uppercase letters, numbers, underscore, or dollar signs. Avoid dollar signs. For multi-component names, there are two favourite styles: my_data and myData. The second is more common. Underscores at the beginning or end of a name can denote something special, often a variable which is similar to a system-provided term. Eg. for some reason you desperately want to name some variable "var" but var is a reserved word in JS, so you can use "var_" or "\_var\_": `var var_ = 123;` Unless you know very well what you're doing, this is not recommended. 
 
 
-## Data Types
+# Data Types
 
 JavaScript is a "loosely typed" or "dynamic" language, meaning you don't have to declare the types of variables ahead of time. The type will get determined automatically while the program is being processed. Other languages such as Java, C, C++ are strictly typed, mainly for catching errors at compile time, and each variable must declare the type of the data it will contain. Even though you don't have to declare types, JavaScript does have different data types.
 
@@ -420,7 +440,7 @@ for(var i = 0; i < 100; i++) { arr2[i] = 0; }  // Same effect as arr1 above (but
 var arr3 = new Array(100); arr3.fill(0);       // Populate all elements with 0. Probably the clearest approach.
 ```
 
-### Object
+### Data type: Object
 
 An object can be thought of as a collection of properties. These properties can be values of any type, including other objects, which enables building complex data structures. Arrays are a special type of object, more on this later.
 
@@ -545,6 +565,7 @@ rand = Math.random();                           // result between 0.0 and 1.0 (a
 ```
 The [full Montezuma](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)  &nbsp;&nbsp;
 [???](https://en.oxforddictionaries.com/definition/full_monty)
+
 # Conditionals
 
 Conditionals allow your program to execute a block of code based on the result of an expression that utilizes relational or logical (boolean) operators, or just boolean values.
