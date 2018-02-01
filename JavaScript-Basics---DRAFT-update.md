@@ -1223,3 +1223,23 @@ var x = 10;
 ```
 
 However, you may hear that semicolons are optional in JavaScript. This is sort of true. You can read more [here](http://news.codecademy.com/your-guide-to-semicolons-in-javascript), but my general recommendation is to use semicolons to avoid confusion.
+
+###Todo:
+
+* Doco: Get the internal links working, make a Table Of Contents at the top
+* Objects: Complete the Objects section
+* Objects: Mention foreach() on objects, and the other forxxxx styles for arrays.
+* Objects: Mention class statement ?? prob not, seems a hack.
+* Funcs: Mention closures.
+* Funcs: Mention args are optional in all funcs. Describe default args: function(arg1, arg2 = 0);
+* Style: Mention line wrapping, single line code if(x) {y = z;}, line continuation with \
+* Style: Advise to end all statements with ; as Lauren does above
+* Style: Mention strict mode
+* Style: Mention JSHint, JSLint
+* Style: Mention AStyle for formatting
+* Performance: Mention profiling, refer to other tut on that.
+* Tools: Mention jsc as tool on Mac.
+* Hints: Refer to www3schools "mistakes" section
+* Mention map/reduce ?? don't think so
+
+
