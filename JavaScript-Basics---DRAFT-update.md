@@ -12,9 +12,13 @@ Although JavaScript has "Java" in it's name, it isn't related other than by the 
 
 JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web scripting ability at Netscape, but then took off as part of the late 90's explosion of the Web. Since then it has matured into a fully-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top few, and often at the very top, in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
  
+### Contents:
+[Script setup in HTML](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#Script setup in HTML)
+[Use of console](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#Console)
+[Objects](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#objects)
 
 
-# `<script>` tag
+# Script setup in HTML
 
 JavaScript in a web page can be placed anywhere within the HTML document, although it is typically included in the `<head>` section of the HTML. It is specified by the use of `<script>` tags:
 
@@ -944,9 +948,9 @@ function drawStuff(param) {
 ```
 The [\[MDN monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)  
 
-[\[A rather flambouyant blog about let and var\]](https://dmitripavlutin.com/variables-lifecycle-and-why-let-is-not-hoisted/) People get very excited about all this.
+[\[A rather flamboyant blog about let and var\]](https://dmitripavlutin.com/variables-lifecycle-and-why-let-is-not-hoisted/) People get very excited about all this.
 
-The bottom line: always use `let` in new code. Place `let` declarations at the top of each function, for things which will or may be used throughout the function. Use `let` inside loops and blocks to restrict temporary variables to that region only.
+The bottom line: always use `let` in new code, forget `var`. Place `let` declarations at the top of each function, for things which will or may be used throughout the function. Use `let` inside loops and blocks to restrict temporary variables to that region only.
 
 ### Other points about "let"
 
@@ -982,7 +986,7 @@ switch(x) {
 }
 ```
 
-If you want, you can fix the above by leveraging the same block-scope rules that caught you out in the first place. Below the "foo" are each unique to their single `case{}` block. The simple switch/case is getting messier though. An if/else style might be just as easy. Just my $0.02
+If you want, you can fix the above by leveraging the same block-scope rules that caught you out in the first place. Below the "foo" are each unique to their single `case{}` block. The simple switch/case is getting messy though. An if/else style might be just as easy. Just my $0.02
 
 ```javascript
 switch(x) {
