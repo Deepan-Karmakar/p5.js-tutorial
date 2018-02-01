@@ -166,11 +166,11 @@ var maybe = str.includes("zylo");  // returns true
 
 **substring(start, end)**
 
-Extracts a part of a string and returns the extracted part in a new string. The method takes 2 parameters: the starting index, and the ending index.
+Extracts a part of a string and returns the extracted part in a new string. The method takes 2 parameters: the starting index, and the ending index+1. So the substring returned is from str(start) to str(end-1) inclusive. Bit tricky.
 
 ```javascript
 var str = "I like to eat apples.";
-var newStr = str.substring(2, 6);  // "like"
+var newStr = str.substring(2, 6);  // "like", ie. characters 2,3,4,5
 ```
 
 **substr(start, length)**
@@ -255,13 +255,170 @@ var drawBackground = true;
 var drawDebugInfo = false;
 ```
 
+### Data type: Array
+
+Arrays are used to store multiple objects or values in one variable, and access them via a numeric index. To create an array, use square brackets, and place any number of items separated by commas in between.
+
+```javascript
+var arr = [];                                     // empty array
+var fruits = ["apple", "dragonfruit", "banana", "starfruit"];
+var ages = [10, 21, 89, 3, 68];
+var misc = ["pumpkin", 10.4, "dog", false, -1];   // arrays can have items of different datatypes
+var more_misc = ["dustpan", "k", fruits, misc];   // arrays can contain other arrays. Works fine, but be careful ! 
+console.log(more_misc[2][2]);                     // prints banana
+console.log(more_misc[3][1]);                     // prints 10.4
+```
+
+You can place or access items in the array by numeric index; the first item in an array has index 0.
+
+```javascript
+var arr = [];
+arr[0] = "moss";
+arr[1] = "sludge";
+arr[2] = "mold";
+console.log(arr); // ["moss", "sludge", "mold"]
+console.log(arr[1]); // "sludge"
+```
+
+You can use a for loop to iterate over an array.
+
+```javascript
+var arr = ["mushrooms", "cheerios", "sparkling water"];
+for (var i = 0; i < 3; i++) {
+  arr[i] = "I love " + arr[i];
+}
+console.log(arr); // ["I love mushrooms", "I love cheerios", "I love sparking water"]
+```
+
+Arrays can contain arrays, as noted above, so you can construct a 2 (or higher) dimensional array, even though JavaScript doesn't have an explicit multi-dimensional array type.
+
+```javascript
+// A 2x2 matrix.
+var matrix = [
+    [ 1, 2 ],    // row 0
+    [ 3, 4 ],    // row 1. You can have that dummy comma there, but better to omit.
+];
+console.log(matrix[0][1]);   // Shows 2. Ie matrix(row 0, col 1) in mathematical thinking.
+
+// A 4x4 identity matrix, familiar to 3D graphics programmers ...
+var identity_4x4 = [
+     [1, 0, 0, 0],
+     [0, 1, 0, 0],
+     [0, 0, 1, 0],
+     [0, 0, 0, 0]
+]
+```
+
+Does JavaScript have a native matrix math ability ? No. But there are many math libraries available for JavaScript, just Google around.
+
+Arrays can have empty (undefined) elements. If you add a new element beyond the current length of the array, the array is just extended. The array.length always returns the whole length of the array, including any undefined elements.
+
+```javascript
+arr = [1, 2, 3];
+arr[5] = 999;
+console.log(arr.length)     // prints 6
+for ( var i = 0; i < arr.length; i++ ) {
+   console.log(arr[i]);     // prints 1 2 3 undefined undefined 999
+}
+```
+
+Like strings, arrays have some built-in convenience properties and methods. You can see them all in the [MDN array reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods). A few of the common ones follow.
+
+**array.length**
+
+Gives the length (number of items) of the array. This can be useful for iterating over arrays. Note, as for String.length, this is a plain property, not a method call.
+
+```javascript
+var arr = [3, 5, 19];
+for (var i = 0; i < arr.length; i++) {
+  arr[i] *= 2;
+}
+console.log(arr.length); // 3
+console.log(arr); // [6, 10, 38]
+```
+
+
+**array.push(), array.pop()**
+
+Adds (pushes) a new element to the end of the array, increasing the length of the array by 1. Pop does the opposite.
+
+```javascript
+var arr = [30, 10, 0];
+arr.push(true);
+console.log(arr.length); // 4
+console.log(arr); // [30, 10, 0, true]
+
+var last = arr.pop();        // last is true, arr is back to what it was
+```
+
+**array.shift(), array.unshift()**
+
+These remove or add an element from the beginning of the array.
+
+```javascript
+var arr = ["cats", "eat", "birds"];
+arr.unshift("some");
+console.log(arr.length); // 4
+console.log(arr); // ["some", "cats", "eat", "birds"]
+
+var first = arr.shift();        // last is "some", arr is back to what it was
+```
+
+**array.indexOf(elt, [start])**
+
+Returns the index of given element, or returns -1 if it's not found. Arrays can't have negative indices, so -1 is an ok failure indicator. If given two args, the second is the start index for the search. If the start index is negative, we start "start" places back from the end (but we still search forward). 
+
+```javascript
+var arr = [2, 5, 9, 33];        //      arr.length is 4, last index 3
+var index = arr.indexOf(2);     //  0  (2 is first, ie. zero'th, element)
+index = array.indexOf(7);       // -1  (there's no 7 in the array)
+index = array.indexOf(5, -2);   //  2  (5 is there, even when starting search at index 3-2 = 1) 
+index = array.indexOf(5, -1);   // -1  (5 is not there, when starting search at index 3-1 = 2) 
+```
+
+**array.reverse()**
+
+Reverses the order of the elements, in situ.
+
+```javascript
+var arr = [111, 222, 333, 444];
+arr.reverse();                   // arr is now [444, 333, 222, 111]
+```
+
+**array.slice(start, end)**
+
+Extract a "slice" of an array, from index "start", to index "end" - 1. Like String.substring(), the end is one past the last element extracted.
+
+```javascript
+var arr = [111, 222, 333, 444];
+var arr2 = arr.slice(1, 3);    // arr2 is [222, 333]   ( not [222, 333, 444] )
+```
+
+**array.splice(start, end)**
+
+Delete or insert one or more elements from/into an array. I'm going to let you just read that one, it has a lot of functionality [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+There are many more methods: fill(), sort(), keys(), values() ... Look them up when you need them [MDN array methods]
+(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) 
+
+**Creating empty arrays**
+
+Some final words on creating empty new arrays that will be populated later.
+
+```javascript
+var arr1 = new Array(100);                     // Creates an array 100 long, and fills all elements with undefined. 
+                         
+var arr2 = []; 
+for(var i = 0; i < 100; i++) { arr2[i] = 0; }  // Same effect as arr1 above (but 0 much better than undefined).
+
+var arr3 = new Array(100); arr3.fill(0);       // Populate all elements with 0. Probably the clearest approach.
+```
+
 ### Object
 
 An object can be thought of as a collection of properties. These properties can be values of any type, including other objects, which enables building complex data structures. Arrays are a special type of object, more on this later.
-* Read more [about arrays](https://github.com/processing/p5.js/wiki/JavaScript-basics#arrays)
-* Read more [about objects](https://github.com/processing/p5.js/wiki/JavaScript-basics#objects)
 
-**Need to expand Array and Object here**
+* Read more [about objects](https://github.com/processing/p5.js/wiki/JavaScript-basics#objects)
 
 ### Data type: Null and Undefined
 
@@ -458,9 +615,9 @@ switch ( userInput ) {
     break;
 }
 ```
-This is neat and clear. If you omit the 'break' the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
+This is neat and clear. Although, if you omit the 'break' the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
 
-Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Brian Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words the norm, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your bank's millions of customers which take 5 minutes to load your account, all is well for efficiency workers).
+Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Kernighan and Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words the norm, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your bank's millions of customers which take 5 minutes to load your account, all is well for efficiency workers).
 
 # Loops
 
@@ -730,7 +887,7 @@ However a variable declared with `let i = 0` has only "block scope". In the foll
 ```javascript
 function drawStuff(param) {
 
-  let j = 5;                     // This "j" exists in the whole function, unless overridden in a smaller block.
+  let j = 5;                             // This "j" exists in the whole function, unless overridden in a smaller block.
 
   for(let j = 0; j < 99; j++) {          // Draw some ellipses. Note this temporay "j" is only scoped inside this loop. Does
     drawCircle(j*20, j*20, j*5, j*10);   // not affect, and is not affected by, other "j" vars in the function. Good. 
@@ -824,78 +981,6 @@ function circumference(radius) {
    let pi = 3.142;                // Rough old code here. Probably an Engineer, used to slide rules ...
    return( 2.0 * pi * radius );   // Fortunately, denied ! You can't change the const pi
 }
-```
-
-# Arrays
-
-Arrays are used to store multiple objects or values in one variable. To create an array, use square brackets, and place any number of items separated by commas in between.
-
-```javascript
-var arr = []; // empty array
-var fruits = ["apple", "dragonfruit", "banana", "starfruit"];
-var ages = [10, 21, 89, 3, 68];
-var misc = ["pumpkin", 10.4, "dog", false, -1]; // arrays can have items of different datatypes
-var more_misc = ["dustpan", "k", fruits, misc]; // arrays can contain other arrays
-```
-
-You can place or access items in the array by index, the first item in an array has index 0.
-
-```javascript
-var arr = [];
-arr[0] = "moss";
-arr[1] = "sludge";
-arr[2] = "mold";
-console.log(arr); // ["moss", "sludge", "mold"]
-console.log(arr[1]); // "sludge"
-```
-
-You can use a for loop to iterate over an array.
-
-```javascript
-var arr = ["mushrooms", "cheerios", "sparkling water"];
-for (var i=0; i<3; i++) {
-  arr[i] = "I love "+arr[i];
-}
-console.log(arr); // ["I love mushrooms", "I love cheerios", "I love sparking water"]
-```
-
-Like strings, arrays have some built-in convenience properties and methods. You can see them all in the [MDN array reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods), a few of the common ones follow.
-
-**length**
-
-Gives the length (number of items) of the array. This can be useful for iterating over arrays.
-
-```javascript
-var arr = [3, 5, 19];
-for (var i=0; i<arr.length; i++) {
-  arr[i] *= 2;
-}
-console.log(arr.length); // 3
-console.log(arr); // [6, 10, 38]
-```
-
-**push()**
-
-Adds (pushes) a new element to the end of the array, increasing the length of the array by 1.
-
-```javascript
-var arr = [30, 10, 0];
-arr.push(true);
-console.log(arr.length); // 4
-console.log(arr); // [30, 10, 0, true]
-```
-
-**indexOf(elt)**
-
-Returns the index of given element, or returns -1 if it's not found.
-
-```javascript
-var array = [2, 5, 9];
-var index = array.indexOf(2); // 0
-index = array.indexOf(7); // -1
-index = array.indexOf(9, 2); // 2
-index = array.indexOf(2, -1); // -1
-index = array.indexOf(2, -3); // 0
 ```
 
 # Objects
