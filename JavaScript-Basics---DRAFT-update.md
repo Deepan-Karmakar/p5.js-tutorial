@@ -1224,7 +1224,7 @@ var x = 10;
 
 However, you may hear that semicolons are optional in JavaScript. This is sort of true. You can read more [here](http://news.codecademy.com/your-guide-to-semicolons-in-javascript), but my general recommendation is to use semicolons to avoid confusion.
 
-###Todo:
+# Todo:
 
 * Doco: Get the internal links working, make a Table Of Contents at the top
 * Objects: Complete the Objects section
