@@ -11,13 +11,15 @@ JavaScript is a language that is typically used on web pages where it runs clien
 Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is supposedly influenced by the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
 
 JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web scripting ability at Netscape, but then took off as part of the late 90's explosion of the Web. Since then it has matured into a fully-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top few, and often at the very top, in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
- 
-### Contents:
 
-Not a comprehensive TOC, just some shortcuts to the main sections. 
+***
+
+## Contents:
+
+Not a comprehensive TOC, just shortcuts to some sections. 
 
 [Script setup in HTML](#script-setup-in-html)  
-[Use of console](#console)  
+[Use of console](#javascript-console)  
 [Objects](#objects)  
 [Variables](#variables)  
 &nbsp;&nbsp;&nbsp;[Variable naming](#variable-names)   
@@ -34,8 +36,8 @@ Not a comprehensive TOC, just some shortcuts to the main sections.
 &nbsp;&nbsp;&nbsp;[Math functions](#maths-functions)  
 [Conditionals](#conditionals)  
 &nbsp;&nbsp;&nbsp;[If else](#if)  
-&nbsp;&nbsp;&nbsp;[Comparison issues, loose and strict](#comparison-issues)  
-&nbsp;&nbsp;&nbsp;[Switch](#switch--statement)  
+&nbsp;&nbsp;&nbsp;[Comparison issues, loose vs strict](#comparison-issues)  
+&nbsp;&nbsp;&nbsp;[Switch](#switch-statement)  
 [Loops](#loops)      
 &nbsp;&nbsp;&nbsp;[While](#while-)  
 &nbsp;&nbsp;&nbsp;[Do while](#do-while-)  
@@ -50,8 +52,12 @@ Not a comprehensive TOC, just some shortcuts to the main sections.
 &nbsp;&nbsp;&nbsp;[The "let" declaration](#new-scope-declaration-let)  
 &nbsp;&nbsp;&nbsp;[Other points about let](#other-points-about-let)    
 &nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)  
+[Objects](#objects)   (updates focussed here at present, 02feb18)   
+[Code formatting, style, good practices](#code-formatting-style-good-practices)
 
-# Script setup in HTML
+***
+
+## Script setup in HTML
 
 JavaScript in a web page can be placed anywhere within the HTML document, although it is typically included in the `<head>` section of the HTML. It is specified by the use of `<script>` tags:
 
@@ -66,7 +72,7 @@ JavaScript in a web page can be placed anywhere within the HTML document, althou
     </script>
   </head>              
 <body> 
-  This is totally plain raw text, the browser will show it in some default font/colour/size, maybe Times/black/12.
+  This is totally plain raw text, the browser will show it in some default font/size/colour, maybe Times/12/black.
 </body>             
 </html>              
 ```
@@ -79,19 +85,57 @@ You can also write JavaScript in a file external to the HTML and point to that f
 <script type="text/javascript" src="libraries/p5.js"></script>                        <!-- Our p5 library ! -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>    <!-- JQuery, a popular utility lib -->
 ```
+
 Note, the 'type="text/javascript"' is not needed in the latest browsers, JavaScript is now the default script type.
 
-# Console
+JavaScript can be scattered all through a web page, enclosed in <script> and </script>. Example: here we intercept a mouse click on a button, copy some data around, and change the background colour:
 
-One of the first things we probably want to learn is how to get debugging output. You can write to the console by using the built-in console.log method:
+```html
+<html>
+<body>
+
+Field1: <input type="text" id="field1" value="Hello World!"><br>
+Field2: <input type="text" id="field2"><br><br>
+
+<button onclick="myFunction()">Click me</button>  <!-- the onclick action is JavaScript too -->
+
+<p>A function is triggered when the button is clicked. The function copies the text from Field1 into Field2, and also changes the background colour</p>
+
+<script>
+function myFunction() {
+    document.getElementById("field2").value = document.getElementById("field1").value;
+    document.getElementsByTagName("BODY")[0].style.backgroundColor = "yellow";
+}
+</script>
+
+</body>
+</html>
+```
+
+Try the above in an index.html. However this tutorial is not about use of JavaScript to control HTML elements, see multitudes of web tutorials for all that.
+
+## JavaScript Console
+
+One of the first things we need to learn is how to get debugging output. You can write to the browser JavaScript console by using the built-in console.log method:
+
 ```javascript
 console.log("hello");
 console.log("variables x, y values", x, y);          // Use the default space separation of args
 console.log("variables x, y values " + x + ":" + y); // Concatenate message into a single string, more flexible
 ```
-In order to see the console on Chrome, select menu sequence View > Developer > JavaScript Console. Use it often! On other browsers, just search for info on "how to open the JavaScript console on \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
 
-# Variables
+In order to see the console on Chrome, select menu sequence View / Developer / JavaScript Console. Use it often! On other browsers, just search for info on "how to open the JavaScript console on \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
+
+Another useful thing is to find a command-line JavaScript interpreter, to check basic things and follow along with this tutorial. 
+
+On Mac, there is a JavaScript interpreter at /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc 
+
+You can invoke that directly from a Terminal screen (Finder / Go / Utilities / Terminal). 
+
+To simplify typing, try "alias myjsc=/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc". Once in jsc, it operates much like the JavaScript console in a browser. Use Ctrl-C (quit) or more elegantly Ctrl-D (end of input) to exit the interpreter.
+
+
+## Variables
 
 A variable holds a value in memory. It can be used in calculations, composing some kind of message, updating the appearance of a web-page component, controlling the appearance of a Processing visual entity (very relevant here!), countless things. Variables are a fundamental part of programming languages, like words are part of spoken languages.
 
@@ -126,7 +170,7 @@ Variables should nearly always be given an initial value. Otherwise, like string
 Variables (and other names in JS, like functions) can be named with lower and uppercase letters, numbers, underscore, or dollar signs. Avoid dollar signs. For multi-component names, there are two favourite styles: my_data and myData. The second is more common. Underscores at the beginning or end of a name can denote something special, often a variable which is similar to a system-provided term. Eg. for some reason you desperately want to name some variable "var" but var is a reserved word in JS, so you can use "var_" or "\_var\_": `var var_ = 123;` Unless you know very well what you're doing, this is not recommended. 
 
 
-# Data Types
+## Data Types
 
 JavaScript is a "loosely typed" or "dynamic" language, meaning you don't have to declare the types of variables ahead of time. The type will get determined automatically while the program is being processed. Other languages such as Java, C, C++ are strictly typed, mainly for catching errors at compile time, and each variable must declare the type of the data it will contain. Even though you don't have to declare types, JavaScript does have different data types.
 
@@ -374,7 +418,6 @@ console.log(arr.length); // 3
 console.log(arr); // [6, 10, 38]
 ```
 
-
 **array.push(), array.pop()**
 
 Adds (pushes) a new element to the end of the array, increasing the length of the array by 1. Pop does the opposite.
@@ -487,15 +530,17 @@ var y = x + "s hate dogs";  // y is "cats hate dogs". Note + is the only math op
 var z = x - "t";  // Result is NaN (Not a Number), not "ca". It totally blew up! Brilliant. Thanks Brendan.
 ```
 
-# Operators
+## Operators
 
-We will zoom through the operators here. We assume some vary basic maths background in the reader.
+We will zoom through the operators here. We assume some very basic maths background in the reader.
 
 ### Assignment
+
 * `=`
 * `a = b = c = 123;`       // Multiple assignment is allowed, but unwise. [Details](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
 
 ### Mathematical
+
 * `+` addition
 * `-` subtraction
 * `*` multiplication
@@ -516,6 +561,7 @@ These operators have shortcut styles, occasionally useful.
 * `b = ++a` b is 3, the ++ was done before the assignment. Similarly --. Use these sparingly, "out by one" oversights happen easily.
 
 ### Relational, ie. comparisons
+
 * `>=` greater than or equal to   // works with strings also, but many subtleties. Is 'aAa' < 'BbBb' ?
 * `<=` less than or equal to
 * `==` equal to 
@@ -523,7 +569,8 @@ These operators have shortcut styles, occasionally useful.
 * `===` equality with strict type checking, safer
 * `!==` inequality with strict type checking, safer
 
-### Logical, ie. Boolean logic combos
+### Logical, ie. Boolean logic tests
+
 ```javascript 
 * ||  logical OR              // if ( feelingTired || reallySleepy ) { lieDown(); }
 * &&  logical AND             // if ( haveWallet && (money > 10) ) { buyBeer(); }
@@ -560,6 +607,7 @@ for (var i = 0; i < 10 ; i++) {
   (images[i]).loadPixels();  // Better. Force the array indexing first, call loadPixels() on the individual array element. 
 }
 ```
+
 ### Maths functions
 
 The maths functions are sequestered inside the Maths package, to avoid polluting the top level namespace with everyday terms like min, max etc. and just following good modern practice. Unless you're a Rocket Scientist you don't need complex maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. A few examples:
@@ -577,7 +625,7 @@ rand = Math.random();                           // result between 0.0 and 1.0 (a
 The [full Montezuma](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)  &nbsp;&nbsp;
 [???](https://en.oxforddictionaries.com/definition/full_monty)
 
-# Conditionals
+## Conditionals
 
 Conditionals allow your program to execute a block of code based on the result of an expression that utilizes relational or logical (boolean) operators, or just boolean values.
 
@@ -613,6 +661,7 @@ if (x > 5) {
 ```
 
 ### Multiple conditions
+
 ```javascript
 var x = 1;
 if (x >= -5 && x <= 5) {
@@ -629,11 +678,11 @@ if (x.length === 8 || x.indexOf("ding") === -1) {
 
 ### Comparison issues
 
-Warning: comparisons between variables or expressions that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some sense in that, but it's not great design). 
+Warning: comparisons between variables or expressions that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). 
 
-The "===" operator set use exact comparison - the only thing that is equal to "true" is another "true". It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
+The "===" and "!==" operator set use exact comparison - things must be the same type and the same value to be equal. The only thing that is equal to "false" is another "false", not 0 or "" or null or [] or [[]] or [0]. It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
 
-### Switch {} statement
+### Switch{} statement
 
 Rather than a long if/else chain, we can select amongst simple options with a switch statement.
 ```javascript
@@ -657,7 +706,7 @@ This is neat and clear. Although, if you omit the 'break' the code will "fall th
 
 Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Kernighan and Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words the norm, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your bank's millions of customers which take 5 minutes to load your account, all is well for efficiency workers).
 
-# Loops
+## Loops
 
 ### While {}
 
@@ -704,11 +753,11 @@ while(true) {
   // do more stuff
 }
 ```
+
 **To do: foreach and variations**
 
 
-
-# Functions
+## Functions
 
 A function is a unit of reusable code, which can be "called" many times, possibly with different input values. They are a critical part of any language. Functions help structure and organize your code: self-contained processes and computations can be neatly isolated in a function. 
 
@@ -822,7 +871,9 @@ severalReturns(5);   // returns 7
 severalReturns(-8);  // returns -9
 ```
 ### Recursion
+
 JavaScript copes fine with recursive algorithms. The function calls and their local data just stack up on the "stack" and then unwind in the usual way. Here's the classic factorial(n) function:
+
 ```javascript
 function factorial(n) {   
   if ( n === 1 ) {
@@ -836,14 +887,14 @@ fact(1)    //  1
 fact(5)    //  120
 fact(69)   //  1.711224524281413e+98   This was as high as my HP-45 Engineers calculator could go, with a 2 digit exponent 
 ```
-
-Let's try a two-legged recursion: the famous Ackermann function [Ackermann's function](https://en.wikipedia.org/wiki/Ackermann_function) This recurses down the two arguments, and will stack vast chains of recursive calls on the stack. It looks simple enough, but grows ferociously. Ackermann(4,2) is an integer of 19,729 decimal digits.
+  
+Let's try a two-legged recursion: the famous Ackermann function [Ackermann's function](https://en.wikipedia.org/wiki/Ackermann_function) This recurses down the two arguments, and will stack vast chains of recursive calls on the stack. It looks simple enough, but grows ferociously, in both computational data storage, and the final answer.
 
 ```javascript
 function ackermann(m,n) {
-   if ( m === 0 )           { return n + 1; }
-   if ( m > 0 && n === 0 )  { return ackermann( m - 1, 1); }
-   if ( m > 0 && n > 0 )    { return ackermann( m - 1, ackermann(m, n - 1) ); }
+   if ( m === 0 )           { return n+1; }
+   if ( m > 0 && n === 0 )  { return ackermann( m-1, 1); }
+   if ( m > 0 && n > 0 )    { return ackermann( m-1, ackermann(m, n-1) ); }
 }
 
 ackermann(0,0)   //  1    Ok so far.
@@ -861,13 +912,14 @@ ackermann(4,2)   // Exception: RangeError: Maximum call stack size exceeded. The
 
 By raising the stack space to the maximum in the JavaScript configuration, we might just get Ackermann(4,1) to complete. Let's not bother.
 
-# Variable scope
+## Variable scope
 
 Variables that you declare inside a function, and also the function arguments, are local to that function, and can't be accessed outside the function. This provides vital "encapsulation" and protection of the functions data. Otherwise a statement `x = y + 1` in one function could trample badly on a statement `y = x + 2` in another function, or at top level.
 
 Variables declared outside of any function are known as "global variables" and can be accessed from anywhere in the program, inside or outside functions. These are convenient, and essential at times to pass around global information, but can create hazards. Try not to declare simple names as globals, like min, max, sum, total, error, count. These can clash with other declarations in functions, or at top level in other code modules concatenated with this one, and unfortunately, due to JavaScripts permissive nature, this can create silent errors. One protocol is to declare all globals as "g_total", or an Object member "g.total" to make things clear. Slightly ugly but could save your bacon one day.
 
 Another option is to put all your code in one top level function, say main(). Then nothing "escapes" from main(), so that stops clashes with other concatenated code modules. Like p5.js say !! **(Check the p5.js "instanced mode" doco)**
+
 ```javascript
 <html>
 <head>
@@ -883,9 +935,10 @@ Another option is to put all your code in one top level function, say main(). Th
   // To do: should really make this a full p5.js prog with a setup() and draw() that draws something.
 
 </head>
-<body>Not have much of a body, this is a JavaScript example, not HTML</body>
+<body>Not much of a body, this is a JavaScript example, not HTML</body>
 </html>
 ```
+
 Here's another example of global and local scopes:
 
 ```javascript
@@ -933,13 +986,13 @@ console.log(g_data[2]);   // prints 338 (333 + 2 + 3)
 
 The issue of the scope of identifiers in programming languages is an important one, as you can see from the hammering it's getting here. 
 
-You can have languages where everything is in a single global scope, as in simple ancient BASIC I believe. Programming is easy, but the possibility of accidental errors is higher.
+You can have languages where everything is in a single global scope, as in simple ancient BASIC. Programming is easy, but the possibility of accidental errors is higher.
 
 You can have modern languages where scope is very restricted. Errors are reduced, but coding needs more thought at times. Nothing wrong with that.
 
 JavaScripts original `var` style was very unusual and much disliked by some. JavaScript has recently (EcmaScript 2015) introduced the `let` keyword to augment and largely replace the `var` keyword. 
 
-The scope of a variable declared with `var` is the whole of the function it is in. Even it is declared towards the bottom of a function, or is a trivial loop variable. There is an awful expression called "hoisting", where any `var` declaration is treated as if it was "hoisted" to the top of the enclosing function:
+Some more explanation of `var`: The scope of a variable declared with `var` is the whole of the function it is in. Even it is declared towards the bottom of a function, or is a trivial loop variable. There is an awful expression called "hoisting", where any `var` declaration is treated as if it was "hoisted" to the top of the enclosing function:
 
 ```javascript
 function hoistingExample() {
@@ -961,6 +1014,7 @@ function hoistingExample() {
 ```
 
 However a variable declared with `let i = 0` has only "block scope". In the following examples, it exists only in the loops or blocks shown. This is much safer. For variables you want to exist inside the whole function, put them at the top.
+
 ```javascript
 function drawStuff(param) {
 
@@ -980,6 +1034,7 @@ function drawStuff(param) {
   }
 }
 ```
+
 The [\[MDN monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)  
 
 [\[A rather flamboyant blog about let and var\]](https://dmitripavlutin.com/variables-lifecycle-and-why-let-is-not-hoisted/) People get very excited about all this.
@@ -989,11 +1044,13 @@ The bottom line: always use `let` in new code, forget `var`. Place `let` declara
 ### Other points about "let"
 
 There are some other changes/benefits to let. `let str = "abc"` at top level does not create a global "str" which can clash with other js modules, like p5.js. From the MDN monty above ...
+
 ```javascript
 var x = 'global';
 let y = 'global';
-console.log(this.x); // "global". "this" at top level is the explicit global entity, your whole universe of all code and libs in use.
+console.log(this.x); // "global"
 console.log(this.y); // undefined. This solves a key problem when using a library like p5.js
+// Note, "this" at top level is the explicit global entity, your whole universe of data and code and libs in use.
 ```  
    
 
@@ -1004,6 +1061,7 @@ let foobar = 1;
 let toto = foobar + 3;
 let foobar = 2;  // SyntaxError: Identifier 'foobar' has already been declared
 ```
+
 For the same reasons, declarations toughen up in `switch{}` blocks:
 
 ```javascript
@@ -1060,7 +1118,9 @@ function circumference(radius) {
 }
 ```
 
-# Objects
+## Objects
+
+(This is going to have a big rework. Need to split in two: 1) simple objects `let stuff = { "name" : "greg", "age":5 }` and 2) simulating classes with Objects, adding methods to Objects, the whole enchilada).
 
 JavaScript doesn't have a "class" statement like Java or C++, instead it just uses functions as classes. Defining a class is as easy as defining a function.
 
@@ -1210,7 +1270,7 @@ cat0.greet(); // "Hello, I'm Joanie"
 cat1.greet(); // "Hello, I'm Jay"
 ```
 
-# Code formatting
+## Code formatting, style, good practices
 
 ### Comments
 
@@ -1249,24 +1309,33 @@ A code statement generally ends with a semicolon.
 var x = 10;
 ```
 
-However, you may hear that semicolons are optional in JavaScript. This is sort of true. You can read more [here](http://news.codecademy.com/your-guide-to-semicolons-in-javascript), but my general recommendation is to use semicolons to avoid confusion.
+However, you may hear that semicolons are optional in JavaScript. This is sort of true. You can read more [here](http://news.codecademy.com/your-guide-to-semicolons-in-javascript), but a strong recommendation is to use always use semicolons. There are rare gotchas which will cause you problems if you leave them off.
 
-# Todo:
+## Todo:
 
 * Doco: Keep updating the simple Table Of Contents at the top as we add sections.
 * Objects: Complete the Objects section
 * Objects: Mention foreach() on objects, and the other forxxxx styles for arrays.
-* Objects: Mention class statement ?? prob not, seems a hack.
+* Objects: Mention class statement ?? maybe not, seems a hack.
 * Funcs: Mention closures.
 * Funcs: Mention args are optional in all funcs. Describe default args: function(arg1, arg2 = 0);
 * Style: Mention line wrapping, single line code if(x) {y = z;}, line continuation with \
-* Style: Advise to end all statements with ; as Lauren does above
 * Style: Mention strict mode
 * Style: Mention JSHint, JSLint
 * Style: Mention AStyle for formatting
 * Performance: Mention profiling, refer to other tut on that.
 * Tools: Mention jsc as tool on Mac.
-* Hints: Refer to www3schools "mistakes" section
+* Hints: Refer to www3schools "mistakes" section, other "good practices" info.
 * Mention map/reduce ?? don't think so
 
+***
 
+Testing header types:
+
+**Contents:**  (just bold text)
+
+### Contents: (h3)
+
+## Contents: (h2)
+
+# Contents: (h1)
