@@ -14,17 +14,13 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
  
 ### Contents:
 
-**Can't get internal links to work just now**
-
-[Script setup in HTML](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#Script setup in HTML)
-[Use of console](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#Console)
-[Objects](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#objects)
-
-[Script setup in HTML](#script-setup-in-HTML)
+[Script setup in HTML](#script-setup-in-html)
 
 [Use of console](#console)
 
 [Objects](#objects)
+
+[Variables](#variables)
 
 
 # Script setup in HTML
