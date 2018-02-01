@@ -14,13 +14,10 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
  
 ### Contents:
 
-[Script setup in HTML](#script-setup-in-html)
-
-[Use of console](#console)
-
-[Objects](#objects)
-
-[Variables](#variables)
+[Script setup in HTML](#script-setup-in-html)  
+[Use of console](#console)  
+[Objects](#objects)  
+[Variables](#variables)  
 
 
 # Script setup in HTML
@@ -1224,7 +1221,7 @@ However, you may hear that semicolons are optional in JavaScript. This is sort o
 
 # Todo:
 
-* Doco: Get the internal links working, make a Table Of Contents at the top
+* Doco: Complete the primitive Table Of Contents at the top
 * Objects: Complete the Objects section
 * Objects: Mention foreach() on objects, and the other forxxxx styles for arrays.
 * Objects: Mention class statement ?? prob not, seems a hack.
