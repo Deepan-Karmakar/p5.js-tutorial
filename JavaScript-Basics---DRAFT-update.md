@@ -276,8 +276,8 @@ var arr = [];
 arr[0] = "moss";
 arr[1] = "sludge";
 arr[2] = "mold";
-console.log(arr); // ["moss", "sludge", "mold"]
-console.log(arr[1]); // "sludge"
+console.log(arr);      // ["moss", "sludge", "mold"]
+console.log(arr[1]);   // "sludge"
 ```
 
 You can use a for loop to iterate over an array.
@@ -296,7 +296,7 @@ Arrays can contain arrays, as noted above, so you can construct a 2 (or higher) 
 // A 2x2 matrix.
 var matrix = [
     [ 1, 2 ],    // row 0
-    [ 3, 4 ],    // row 1. You can have that dummy comma there, but better to omit.
+    [ 3, 4 ],    // row 1. You can leave that dummy comma there, but better to omit; confuses some old JS engines.
 ];
 console.log(matrix[0][1]);   // Shows 2. Ie matrix(row 0, col 1) in mathematical thinking.
 
@@ -305,11 +305,11 @@ var identity_4x4 = [
      [1, 0, 0, 0],
      [0, 1, 0, 0],
      [0, 0, 1, 0],
-     [0, 0, 0, 0]
+     [0, 0, 0, 1]
 ]
 ```
 
-Does JavaScript have a native matrix math ability ? No. But there are many math libraries available for JavaScript, just Google around.
+Does JavaScript have a native matrix math ability ? No. But there are many matrix libraries available for JavaScript, just Google around. Also p5.js has a matrix facility for graphics transforms, eg. applyMatrix(), but that looks like only 2D graphics transforms at present.
 
 Arrays can have empty (undefined) elements. If you add a new element beyond the current length of the array, the array is just extended. The array.length always returns the whole length of the array, including any undefined elements.
 
@@ -783,6 +783,45 @@ function severalReturns(number) {
 severalReturns(5);   // returns 7
 severalReturns(-8);  // returns -9
 ```
+### Recursion
+JavaScript copes fine with recursive algorithms. The function calls and their local data just stack up on the "stack" and then unwind in the usual way:
+```javascript
+function fact(n) {   
+  if ( n === 1 ) {
+    return 1;
+  } else {
+    return n * fact(n-1);   // it's not a proper language tutorial without a recursive factorial function !
+  }
+}
+
+fact(1)    //  1
+fact(5)    //  120
+fact(69)   //  1.711224524281413e+98   This was as high as my HP-45 Engineers calculator could go, with a 2 digit exponent 
+```
+
+Let's try a two-legged recursion: the famous Ackermann function [Ackermann's function](https://en.wikipedia.org/wiki/Ackermann_function) This recurses down the two arguments, and will stack chains of recursive calls on the stack. It looks simple enough, but grows ferociously. Ackermann(4,2) is an integer of 19,729 decimal digits.
+
+```javascript
+function ackermann(m,n) {
+   if ( m === 0 )           { return n + 1; }
+   if ( m > 0 && n === 0 )  { return ackermann( m - 1, 1); }
+   if ( m > 0 && n > 0 )    { return ackermann( m - 1, ackermann(m, n - 1) ); }
+}
+
+ackermann(0,0)   //  1.   Ok so far.
+ackermann(0,1)   //  2 
+ackermann(0,100) //  101  This leg of the recursion is simple !
+ackermann(1,1)   //  3
+ackermann(2,1)   //  5
+ackermann(2,2)   //  7    a doddle !
+ackermann(3,2)   // 29    growing a little, what could go wrong ?
+ackermann(4,1)   // Exception: RangeError: Maximum call stack size exceeded. Well, the answer is supposed to be 65533, but 
+                 // we ran out of stack space to store all the recursion.
+ackermann(4,2)   // Exception: RangeError: Maximum call stack size exceeded. The answer here has 19,729 digits, ie. 
+                 // approx 10^19729. We couldn't represent the answer in 64 bits, never mind store all the recursion.
+```
+
+By raising the stack space to the maximum in the JavaScript configuration, we might just get Ackermann(4,1) to complete. Let's not bother.
 
 # Variable scope
 
