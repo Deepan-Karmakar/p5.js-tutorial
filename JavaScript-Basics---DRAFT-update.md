@@ -20,9 +20,9 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
 [Use of console](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#Console)
 [Objects](https://github.com/processing/p5.js/wiki/JavaScript-basics---DRAFT-update#objects)
 
-[Use of console](#Console)
+[Use of console](#console)
 
-[Objects](#Objects)
+[Objects](#objects)
 
 
 # Script setup in HTML
