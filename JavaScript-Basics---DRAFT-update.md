@@ -14,6 +14,8 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
  
 ### Contents:
 
+Not a comprehensive TOC, just some shortcuts to the main sections. 
+
 [Script setup in HTML](#script-setup-in-html)  
 [Use of console](#console)  
 [Objects](#objects)  
@@ -33,12 +35,21 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
 [Conditionals](#conditionals)  
 &nbsp;&nbsp;&nbsp;[If else](#if)  
 &nbsp;&nbsp;&nbsp;[Comparison issues, loose and strict](#comparison-issues)  
-&nbsp;&nbsp;&nbsp;[Switch](#switch--statement)    
-  
-   
-     
-
-
+&nbsp;&nbsp;&nbsp;[Switch](#switch--statement)  
+[Loops](#loops)      
+&nbsp;&nbsp;&nbsp;[While](#while-)  
+&nbsp;&nbsp;&nbsp;[Do while](#do-while-)  
+&nbsp;&nbsp;&nbsp;[For](#for-)  
+&nbsp;&nbsp;&nbsp;[Break out of loop](#breaking-out-of-loops)  
+[Functions](#functions)    
+&nbsp;&nbsp;&nbsp;[Function arguments](#function-arguments-or-parameters)   
+&nbsp;&nbsp;&nbsp;[Returning a value](#returning-a-value)   
+&nbsp;&nbsp;&nbsp;[Recursion](#recursion)  
+[Variable scope](#variable-scope)   
+&nbsp;&nbsp;&nbsp;[Precedence of global vs local variables](#precedence-of-global-and-local-variables)       
+&nbsp;&nbsp;&nbsp;[The "let" declaration](#new-scope-declaration-let)  
+&nbsp;&nbsp;&nbsp;[Other points about let](#other-points-about-let)    
+&nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)  
 
 # Script setup in HTML
 
@@ -811,13 +822,13 @@ severalReturns(5);   // returns 7
 severalReturns(-8);  // returns -9
 ```
 ### Recursion
-JavaScript copes fine with recursive algorithms. The function calls and their local data just stack up on the "stack" and then unwind in the usual way:
+JavaScript copes fine with recursive algorithms. The function calls and their local data just stack up on the "stack" and then unwind in the usual way. Here's the classic factorial(n) function:
 ```javascript
-function fact(n) {   
+function factorial(n) {   
   if ( n === 1 ) {
     return 1;
   } else {
-    return n * fact(n-1);   // it's not a proper language tutorial without a recursive factorial function !
+    return n * factorial(n-1);   // it's not a proper language tutorial without a recursive factorial function !
   }
 }
 
@@ -826,7 +837,7 @@ fact(5)    //  120
 fact(69)   //  1.711224524281413e+98   This was as high as my HP-45 Engineers calculator could go, with a 2 digit exponent 
 ```
 
-Let's try a two-legged recursion: the famous Ackermann function [Ackermann's function](https://en.wikipedia.org/wiki/Ackermann_function) This recurses down the two arguments, and will stack chains of recursive calls on the stack. It looks simple enough, but grows ferociously. Ackermann(4,2) is an integer of 19,729 decimal digits.
+Let's try a two-legged recursion: the famous Ackermann function [Ackermann's function](https://en.wikipedia.org/wiki/Ackermann_function) This recurses down the two arguments, and will stack vast chains of recursive calls on the stack. It looks simple enough, but grows ferociously. Ackermann(4,2) is an integer of 19,729 decimal digits.
 
 ```javascript
 function ackermann(m,n) {
@@ -835,17 +846,17 @@ function ackermann(m,n) {
    if ( m > 0 && n > 0 )    { return ackermann( m - 1, ackermann(m, n - 1) ); }
 }
 
-ackermann(0,0)   //  1.   Ok so far.
+ackermann(0,0)   //  1    Ok so far.
 ackermann(0,1)   //  2 
 ackermann(0,100) //  101  This leg of the recursion is simple !
 ackermann(1,1)   //  3
 ackermann(2,1)   //  5
 ackermann(2,2)   //  7    a doddle !
 ackermann(3,2)   // 29    growing a little, what could go wrong ?
-ackermann(4,1)   // Exception: RangeError: Maximum call stack size exceeded. Well, the answer is supposed to be 65533, but 
-                 // we ran out of stack space to store all the recursion.
+ackermann(4,1)   // Exception: RangeError: Maximum call stack size exceeded. Well, the answer is supposed to be only 65533, 
+                 // but we ran out of stack space to store all the recursion levels.
 ackermann(4,2)   // Exception: RangeError: Maximum call stack size exceeded. The answer here has 19,729 digits, ie. 
-                 // approx 10^19729. We couldn't represent the answer in 64 bits, never mind store all the recursion.
+                 // approx 10^19729. We couldn't remotely represent the answer in 64 bits, never mind store all the recursion.
 ```
 
 By raising the stack space to the maximum in the JavaScript configuration, we might just get Ackermann(4,1) to complete. Let's not bother.
@@ -918,7 +929,7 @@ console.log(g_data[2]);   // prints 338 (333 + 2 + 3)
 ```  
 
 
-# New scope declaration: let
+### New scope declaration: let
 
 The issue of the scope of identifiers in programming languages is an important one, as you can see from the hammering it's getting here. 
 
@@ -1030,7 +1041,7 @@ There are other tiny subtleties with changing from `var` to `let` but I think th
 
 **Check this thoroughly. This scope stuff is crazy enough, without giving out duff information**
 
-### The const keyword
+### The const declaration
 
 Many languages have a "constant" facility, so you can safely set up constants in your program. EcmaScript 2015 introduced the `const` keyword. This has the same rules as `let` but you cannot change the value once it has been defined.
 
@@ -1242,7 +1253,7 @@ However, you may hear that semicolons are optional in JavaScript. This is sort o
 
 # Todo:
 
-* Doco: Complete the primitive Table Of Contents at the top
+* Doco: Keep updating the simple Table Of Contents at the top as we add sections.
 * Objects: Complete the Objects section
 * Objects: Mention foreach() on objects, and the other forxxxx styles for arrays.
 * Objects: Mention class statement ?? prob not, seems a hack.
