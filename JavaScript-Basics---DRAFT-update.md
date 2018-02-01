@@ -143,7 +143,7 @@ A quick swing through setting up variables:
 
 ```javascript
 var x = 5;
-var y = x + 7;                   // y is now 10
+var y = x + 7;                   // y is now 12
 
 var a = "some text"; 
 var b = a + " is here";          // b is now "some text is here". Note the + has a different function for strings
@@ -186,6 +186,9 @@ var y = 1.223;
 var z = -300;
 var big = 1.23e82;   // This is a big number, the estimated atoms in the universe, but quite ok to code with, why not?
 var small = 1.6e-35  // The Planck Length, the smallest physical size (in metres) that has any meaning in classical physics.
+var biggest = 1.7976931348623157e+308  // Biggest number JavaScript can hold. I know you wanted to know.
+var smallest = 5e-324                  // Why not symmetrical with biggest ? Small numbers can be "denormalised", we sacrifice
+                                       // digits to get more exponent. You didn't need to know this probs. 
 ```
 JavaScript stores all numbers as 64-bit floats. This is very accurate but still has limits. Sometimes it can lead to very small inaccuracies. Try this in the JavaScript console: `0.1 + 0.2` You should get `0.30000000000000004` Try `0.362 * 100`  You should get 36.199999999999996. This is rarely a problem in practice, after all it's accurate to 1 part in 100 quintillion, usually pretty ok ! Better than my old Engineers slide rule, accurate to 3 sig figs, that I designed those nuclear power stations with (ok not true).
 
@@ -537,7 +540,7 @@ We will zoom through the operators here. We assume some very basic maths backgro
 ### Assignment
 
 * `=`
-* `a = b = c = 123;`       // Multiple assignment is allowed, but unwise. [Details](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
+* `a = b = c = 123;`&nbsp;&nbsp;&nbsp;&nbsp;// Multiple assignment is allowed, but unwise. [Details](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
 
 ### Mathematical
 
@@ -545,7 +548,7 @@ We will zoom through the operators here. We assume some very basic maths backgro
 * `-` subtraction
 * `*` multiplication
 * `/` division
-* `**` exponentiation: 3**4 gives 81. New in EcmaScript 6. Before we required Math.power(x,y). See later in tut.
+* `**` exponentiation:&nbsp;&nbsp;&nbsp;&nbsp;// 3**4 gives 81. New in EcmaScript 6. Before we required Math.power(x,y). See later in tut.
 * `%` modulo
 * `++` add one shorthand
 * `--` subtract one shorthand
@@ -759,7 +762,7 @@ while(true) {
 
 ## Functions
 
-A function is a unit of reusable code, which can be "called" many times, possibly with different input values. They are a critical part of any language. Functions help structure and organize your code: self-contained processes and computations can be neatly isolated in a function. 
+A function is a unit of reusable code, which can be invoked or "called" many times, possibly with different input values. They are a critical part of any language. Functions help structure and organize your code: self-contained processes and computations can be neatly isolated in a function. 
 
 Functions are kind of named after mathematical functions: `f(x) = x * x`. In JavaScript this would become `function square(x) { return (x * x); }`
 
@@ -819,6 +822,38 @@ function drawEllipse(x, y) {
 drawEllipse(mouseX, mouseY);  // a nice circle, centre x,y radius 50 
 ```
 Try this in the console: `function ff() { console.log("zippo"); }` then `typeof(ff)` then `ff` then `ff()`
+
+
+### Variable arguments
+
+In JavaScript, all function arguments are in fact optional. This presents both opportunities and hazards. 
+
+Additional trailing arguments can be given to functions with great ease - p5.js uses this extensively, eg. [rect() call.](https://p5js.org/reference/#/p5/rect) However it can be difficult to know how many arguments are actually used, without good documentation, or access to the source code of the function.
+
+Any arguments not supplied, but which the function attempts to use, have the value `undefined`.
+
+```javascript
+function show(a, b, c) {
+   console.log(a, b, c);
+}
+
+show(1, 2, 3);  // prints  1 2 3
+show(4, 5);     // prints  4 5 undefined
+show();         // prints  undefined undefined undefined
+```
+
+To ensure all arguments have some useful default value, and protect against `undefined` causing havoc, you can specify default argument values in the function declaration.
+
+```javascript
+function show2(a = 1, b = 33, c = "cat") {
+   console.log(a, b, c);
+}
+
+show(1, 2, 3);  // prints  1 2 3
+show(4, 5);     // prints  4 5 cat
+show();         // prints  1 33 cat
+```
+
 
 ### Returning a value
 
@@ -1324,7 +1359,6 @@ However, you may hear that semicolons are optional in JavaScript. This is sort o
 * Style: Mention JSHint, JSLint
 * Style: Mention AStyle for formatting
 * Performance: Mention profiling, refer to other tut on that.
-* Tools: Mention jsc as tool on Mac.
 * Hints: Refer to www3schools "mistakes" section, other "good practices" info.
 * Mention map/reduce ?? don't think so
 
