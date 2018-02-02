@@ -1,8 +1,8 @@
 
 
-_This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb (2018!), hopefully earlier. Mainly just to add some extra detail that I have found useful when coding in p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
+_This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb (err, 2018!), hopefully earlier. To flesh out some more generic JavaScript detail, and add more examples relevant to p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
 
-_**Previous version being updated from top down. Progress marked by "Updated down to here" in bold. Areas needing more work flagged as "To do / Todo" in bold. Can you flag something in colour in Markdown? That would be useful.**_
+_**Previous version being updated more or less from top down. Areas needing more work flagged as "To do / Todo" in bold. Can you flag something in colour in Markdown? That would be useful.**_
 
 ---
 
@@ -42,14 +42,14 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[While](#while-)  
 &nbsp;&nbsp;&nbsp;[Do while](#do-while-)  
 &nbsp;&nbsp;&nbsp;[For](#for-)  
-&nbsp;&nbsp;&nbsp;[Break out of loop](#breaking-out-of-loops)  
-&nbsp;&nbsp;&nbsp;[For in, for of, forEach](#for-in,-for-of,-forEach)  
+&nbsp;&nbsp;&nbsp;[Break out of loop](#breaking-out-of-loops)   
+&nbsp;&nbsp;&nbsp;[For in, for of, forEach](#for-in,-for-of,-forEach)&nbsp;&nbsp;&nbsp;(can't get this link to work)   
 [Functions](#functions)    
 &nbsp;&nbsp;&nbsp;[Function arguments](#function-arguments-or-parameters)   
 &nbsp;&nbsp;&nbsp;[Arguments are optional](#arguments-are-optional)   
-&nbsp;&nbsp;&nbsp;[Default arguments](#default-arguments)   
-&nbsp;&nbsp;&nbsp;[Returning a value](#returning-a-value)   
+&nbsp;&nbsp;&nbsp;[Default arguments](#default-arguments)     
 &nbsp;&nbsp;&nbsp;[Recursion](#recursion)  
+&nbsp;&nbsp;&nbsp;[Closures](#closures)      
 [Variable scope](#variable-scope)   
 &nbsp;&nbsp;&nbsp;[Precedence of global vs local variables](#precedence-of-global-and-local-variables)       
 &nbsp;&nbsp;&nbsp;[The "let" declaration](#new-scope-declaration-let)  
@@ -777,10 +777,10 @@ for (n of arr) {
 }
 
 for (n in obj) {
-  console.log("value", n);   //  prints "value 2, value 4, value 1st, value 3rd". Note random order.
+  console.log("value", n);      //  prints "value 2, value 4, value 1st, value 3rd". Note random order.
 }
 
-// forEach has a lot of functionality. Basic example:
+// forEach has a lot of functionality. Also see array.some(), array.every() etc. Basic example:
 
 function funky(value) {
     console.log(value);
@@ -788,11 +788,13 @@ function funky(value) {
 arr.forEach(funky);         // prints 44 33 22 11
 ```
 
-The above loop types have some things to watch out for. One is that there can be unsuspected extra properties on arrays and objects, that your for-in/on/each loop will hand you. You may have to take precautions that you only iterate over the conventional "iterable" elements, ie. in the case of an array the elements arr[0] to arr[last].
+The above loop types have some things to watch out for. One is that there can be unsuspected extra properties on arrays and objects, that your for-in/on/each loop will hand you. You may have to take precautions that you only iterate over the conventional "iterable" elements, ie. in the case of an array the elements arr[0] to arr[last]. That's if you just want to do conventional processing on array/object data.
 
-You will probably not need these loop types in p5.js. 
+However on other occasions you may want to see everything that's there, to do fancy stuff with object-oriented dynamic design. Then you can let the loops show you the works. All this is beyond the scope of this tut (and my knowledge :=)
 
-[A readable blog on forEach](https://thejsguy.com/2016/07/30/javascript-for-loop-vs-array-foreach.html) (He's grabbed a great URL there, "thejsguy.com").
+You will probably not need these loop types in p5.js. (These are not the loops you're looking for ...)
+
+[A readable blog on forEach](https://thejsguy.com/2016/07/30/javascript-for-loop-vs-array-foreach.html) (He's grabbed a great URL there, "thejsguy.com", damn).
 
 
 ## Functions
@@ -989,6 +991,41 @@ ackermann(4,2)   // Exception: RangeError: Maximum call stack size exceeded. The
 
 By raising the stack space to the maximum in the JavaScript configuration, we might just get Ackermann(4,1) to complete. Let's not bother.
 
+### Closures
+
+Just for fun let's briefly mention closures. These are an advanced topic which you will probably not need in your p5.js app code. 
+
+Closures are a software design technique where some data and code are cleverly "encapsulated" and protected in a function. Rather than waffle on further, let's look at an example.
+
+```javascript
+var update = (function () {            // Note, unnamed function here. No name between "function" and ().
+    var importantCounter = 0;          // This holds important data, that you want to tightly manage access to. 
+    return function () {               // Another unnamed function.
+       if ( checkAuthorisation() ) {
+          return importantCounter += 1;
+       }   
+})();
+
+update();  // returns 1
+update();  // returns 2
+update();  // returns 3
+```
+
+What's happening here ? "update" is defined as a function. Remember JavaScript has "first class" functions, or another way to say it, functions are "first class citizens", like other data types. So a variable can hold a function, which can be passed around and called. "update" also has an internal data item, importantCounter. 
+
+Normally importantCounter would evaporate every time update() is called. But here the function becomes preserved as part of the definition of update(), and so does importantCounter. 
+
+"update" becomes a callable function, which has access to importantCounter. But this is the only way to get at the counter, there's no shortcut. You have to call update() and pass some checks. 
+
+At the time of the declaration and definition of update, at line "var update = ...", an internal function is called once and sets importantCounter to 0, and then it returns another function, which when called in future will make a check and then increment the counter.
+
+After that, easy peasy. Each call of update() calls the check() code and then updates the counter.  
+
+More sophisticated use of closures can make convenient but safe and reliable code. They are used a lot in Node.js and JQuery, two common JS utility libaries, and no doubt many others. I see mention of closures in libraries/p5.js !
+
+[\[Wikipedia on closures\]](https://en.wikipedia.org/wiki/Closure_(computer_programming))
+
+
 ## Variable scope
 
 Variables that you declare inside a function, and also the function arguments, are local to that function, and can't be accessed outside the function. This provides vital "encapsulation" and protection of the functions data. Otherwise a statement `x = y + 1` in one function could trample badly on a statement `y = x + 2` in another function, or at top level.
@@ -1065,7 +1102,7 @@ The issue of the scope of identifiers in programming languages is an important o
 
 You can have languages where everything is in a single global scope, as in simple ancient BASIC. Programming is easy, but the possibility of accidental errors is higher.
 
-You can have modern languages where scope is very restricted. Errors are reduced, but coding needs more thought at times. Nothing wrong with that.
+You can have modern languages where scope is very restricted. Errors are reduced, but coding needs more care at times. Nothing wrong with that.
 
 JavaScripts original `var` style was very unusual and much disliked by some. JavaScript has recently (EcmaScript 2015) introduced the `let` keyword to augment and largely replace the `var` keyword. 
 
@@ -1172,7 +1209,7 @@ switch(x) {
 }
 ```
 
-There are other tiny subtleties with changing from `var` to `let` but I think the average p5.js beginner will have reached their limit by now ! I know I have. Remaining quirks are really for the designers of big systems, like the whole p5.js library. They take many precautions and encapsulate well, so that you can code simply and safely.
+There are other tiny subtleties with changing from `var` to `let` but I think the average p5.js beginner will have reached their limit by now ! I know I have. Remaining quirks are really for the designers of big systems, like the whole p5.js library. They take many precautions and scope and encapsulate well, so that you can code simply and safely.
 
 **Check this thoroughly. This scope stuff is crazy enough, without giving out duff information**
 
