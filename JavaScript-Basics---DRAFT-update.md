@@ -43,6 +43,7 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Do while](#do-while-)  
 &nbsp;&nbsp;&nbsp;[For](#for-)  
 &nbsp;&nbsp;&nbsp;[Break out of loop](#breaking-out-of-loops)  
+&nbsp;&nbsp;&nbsp;[For in, for of, forEach](#for-in,-for-of,-forEach)  
 [Functions](#functions)    
 &nbsp;&nbsp;&nbsp;[Function arguments](#function-arguments-or-parameters)   
 &nbsp;&nbsp;&nbsp;[Arguments are optional](#arguments-are-optional)   
@@ -683,9 +684,9 @@ if (x.length === 8 || x.indexOf("ding") === -1) {
 
 ### Comparison issues
 
-Warning: comparisons between variables or expressions that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). 
+Warning: some comparisons between variables that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). There's a quaint terminology called "truthy" and "falsy". Values like 0 or "0" or "" or [] or [[]] or [0] are falsy. Values like 1, "1" and [1] are truthy.  
 
-The "===" and "!==" operator set use exact comparison - things must be the same type and the same value to be equal. The only thing that is equal to "false" is another "false", not 0 or "" or null or [] or [[]] or [0]. It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
+The "===" and "!==" operator set were introduced at JavaScript 1.3 to use exact comparison - things must be the same type and the same value to be equal. The only thing that is equal to Boolean `true` is another Boolean `true`, not 1 or "1" or [1]. It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
 
 ### Switch{} statement
 
@@ -759,7 +760,39 @@ while(true) {
 }
 ```
 
-**To do: foreach and variations**
+### For in, for of, forEach
+
+There are further loop types that iterate conveniently over the elements of an array or object. I will show them without much explanation, they have some gotchas.
+
+```javascript
+var arr = [44, 33, 22, 11];
+var obj = { "1st":1, 2:2, "3rd":3, 4:4 };
+
+for (n in arr) {
+  console.log("index is", n);   //  prints "index is 0, index is 1, index is 2, index 3"
+}
+
+for (n of arr) {
+  console.log("value is", n);   //  prints "value is 44, value is 33, value is 22, value is 11"
+}
+
+for (n in obj) {
+  console.log("value", n);   //  prints "value 2, value 4, value 1st, value 3rd". Note random order.
+}
+
+// forEach has a lot of functionality. Basic example:
+
+function funky(value) {
+    console.log(value);
+}
+arr.forEach(funky);         // prints 44 33 22 11
+```
+
+The above loop types have some things to watch out for. One is that there can be unsuspected extra properties on arrays and objects, that your for-in/on/each loop will hand you. You may have to take precautions that you only iterate over the conventional "iterable" elements, ie. in the case of an array the elements arr[0] to arr[last].
+
+You will probably not need these loop types in p5.js. 
+
+[A readable blog on forEach](https://thejsguy.com/2016/07/30/javascript-for-loop-vs-array-foreach.html) (He's grabbed a great URL there, "thejsguy.com").
 
 
 ## Functions
@@ -841,9 +874,9 @@ function show(a, b, c) {
 
 show(1, 2, 3);  // prints  1 2 3
 show(4, 5);     // prints  4 5 undefined
-show();         // prints  undefined undefined undefined   (not great design IMO)
+show();         // prints  undefined undefined undefined
 
-setReactorControls(min);   // Err, is there a max ? don't know.
+setReactorControls(min);   // Err, is there a max ?
 ```
 
 ### Default arguments
@@ -1359,10 +1392,8 @@ However, you may hear that semicolons are optional in JavaScript. This is sort o
 
 * Doco: Keep updating the simple Table Of Contents at the top as we add sections.
 * Objects: Complete the Objects section
-* Objects: Mention foreach() on objects, and the other forxxxx styles for arrays.
 * Objects: Mention class statement ?? maybe not, seems a hack.
 * Funcs: Mention closures.
-* Funcs: Mention args are optional in all funcs. Describe default args: function(arg1, arg2 = 0);
 * Style: Mention line wrapping, single line code if(x) {y = z;}, line continuation with \
 * Style: Mention strict mode
 * Style: Mention JSHint, JSLint
