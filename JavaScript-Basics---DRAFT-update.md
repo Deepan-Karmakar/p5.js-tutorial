@@ -45,6 +45,8 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Break out of loop](#breaking-out-of-loops)  
 [Functions](#functions)    
 &nbsp;&nbsp;&nbsp;[Function arguments](#function-arguments-or-parameters)   
+&nbsp;&nbsp;&nbsp;[Arguments are optional](#arguments-are-optional)   
+&nbsp;&nbsp;&nbsp;[Default arguments](#default-arguments)   
 &nbsp;&nbsp;&nbsp;[Returning a value](#returning-a-value)   
 &nbsp;&nbsp;&nbsp;[Recursion](#recursion)  
 [Variable scope](#variable-scope)   
@@ -824,9 +826,9 @@ drawEllipse(mouseX, mouseY);  // a nice circle, centre x,y radius 50
 Try this in the console: `function ff() { console.log("zippo"); }` then `typeof(ff)` then `ff` then `ff()`
 
 
-### Variable arguments
+### Arguments are optional
 
-In JavaScript, all function arguments are in fact optional. This presents both opportunities and hazards. 
+In JavaScript, all function arguments are in fact optional. This presents both convenience and some risk. 
 
 Additional trailing arguments can be given to functions with great ease - p5.js uses this extensively, eg. [rect() call.](https://p5js.org/reference/#/p5/rect) However it can be difficult to know how many arguments are actually used, without good documentation, or access to the source code of the function.
 
@@ -839,19 +841,23 @@ function show(a, b, c) {
 
 show(1, 2, 3);  // prints  1 2 3
 show(4, 5);     // prints  4 5 undefined
-show();         // prints  undefined undefined undefined
+show();         // prints  undefined undefined undefined   (not great design IMO)
+
+setReactorControls(min);   // Err, is there a max ? don't know.
 ```
+
+### Default arguments
 
 To ensure all arguments have some useful default value, and protect against `undefined` causing havoc, you can specify default argument values in the function declaration.
 
 ```javascript
-function show2(a = 1, b = 33, c = "cat") {
+function show2(a = 2, b = 33, c = "cat") {
    console.log(a, b, c);
 }
 
 show(1, 2, 3);  // prints  1 2 3
 show(4, 5);     // prints  4 5 cat
-show();         // prints  1 33 cat
+show();         // prints  2 33 cat
 ```
 
 
@@ -894,12 +900,15 @@ console.log(result); // 10.3 or 9.8 or ...
 function severalReturns(number) {
   if (number < 0 ) {
     return(number - 1);   // Note this terminates the function. An easy coding style, and not too bad if used clearly.
-                          // Some people will be expecting the return at the end of the function. It's a matter of style.
+  }                       // Some people will be expecting the return at the end of the function. It's a matter of style.
+
   if (number > 0 ) {
     return(number + 2);
+  }
 
   if (number === 0) {
-    return(0)            // no change
+    return(0);            // no change
+  }
 }
 
 severalReturns(5);   // returns 7
