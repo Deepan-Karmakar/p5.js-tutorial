@@ -6,9 +6,9 @@ _**Previous version being updated more or less from top down. Areas needing more
 
 Looks like you should be able to use \<span style="color:red"\>some red text\</span\> but GitHub is stripping it out.
 
-Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.
+Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.   - nope
 
-<span style=color:green> green text goes here</span>
+<span style=color:green> green text goes here</span>   - nope
 
 ---
 
@@ -26,7 +26,6 @@ Not a comprehensive TOC, just shortcuts to some sections.
 
 [Script setup in HTML](#script-setup-in-html)  
 [Use of console](#javascript-console)  
-[Objects](#objects)  
 [Variables](#variables)  
 &nbsp;&nbsp;&nbsp;[Variable naming](#variable-names)   
 [Datatypes](#data-types)   
@@ -36,6 +35,7 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Null and Undefined](#data-type-null-and-undefined)   
 &nbsp;&nbsp;&nbsp;[Arrays](#data-type-array)  
 &nbsp;&nbsp;&nbsp;[Objects](#data-type-object)  
+&nbsp;&nbsp;&nbsp;[Simple objects](#basic-objects)  
 [Assignments](#assignment)  
 [Operators](#operators)  
 &nbsp;&nbsp;&nbsp;[Precedence of Operators](#precedence-of-operators)  
@@ -49,7 +49,7 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Do while](#do-while-)  
 &nbsp;&nbsp;&nbsp;[For](#for-)  
 &nbsp;&nbsp;&nbsp;[Break out of loop](#breaking-out-of-loops)   
-&nbsp;&nbsp;&nbsp;[For in, for of, forEach](#for-in,-for-of,-forEach)&nbsp;&nbsp;&nbsp;(can't get this link to work)   
+&nbsp;&nbsp;&nbsp;[For in, for of, forEach](#for-in-for-of-forEach)&nbsp;&nbsp;&nbsp;(can't get this link to work)   
 [Functions](#functions)    
 &nbsp;&nbsp;&nbsp;[Function arguments](#function-arguments-or-parameters)   
 &nbsp;&nbsp;&nbsp;[Arguments are optional](#arguments-are-optional)   
@@ -61,7 +61,7 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[The "let" declaration](#new-scope-declaration-let)  
 &nbsp;&nbsp;&nbsp;[Other points about let](#other-points-about-let)    
 &nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)  
-[Objects](#objects)   (updates focussed here at present, 02feb18)   
+[Objects](#objects)     
 [Code formatting, style, good practices](#code-formatting-style-good-practices)
 
 ***
@@ -508,9 +508,43 @@ var arr3 = new Array(100); arr3.fill(0);       // Populate all elements with 0. 
 
 ### Data type: Object
 
-An object can be thought of as a collection of properties. These properties can be values of any type, including other objects, which enables building complex data structures. Arrays are a special type of object, more on this later.
+An object can be thought of as a collection of properties. These properties can be values of any type, including numbers, text strings, other objects, and functions, which can enable building complex and dynamic data structures. Arrays and objects are very similar; in fact arrays are a type of object, which only have numeric indexes, and have a defined order (array[0] to array[lastone], and allow gaps in the indices (ie. undefined parts of the array), and a few other subtleties.
 
-* Read more [about objects](https://github.com/processing/p5.js/wiki/JavaScript-basics#objects)
+Here we will cover just the basics of objects, with static members. Further down we will add function calls, ie. "methods" to objects, which allows us to create dynamic objects which provide the functionality called "classes" in other languages.
+ 
+### Basic objects
+
+At a basic level, JavaScript objects are a data type like an Array, where a numeric or string "key" can be used to access the data. In other languages they are sometimes called associative arrays, or hash tables. 
+
+```javascript
+var obj = { 1:1, "twos":22, 333:"threes", "name":"Fred Nurk" };   // all the combos of number & string
+console.log(obj);                         // 1: 11  33: "threes"  twos: 22  name: "Fred Nurk"
+console.log(obj.twos, obj.name);          // 22  "Fred Nurk"
+console.log(obj[1], obj[333]);            // 1  "threes"       (have to use [] notation for numeric keys)
+console.log(obj["twos"], obj["name"]);    // 22  "Fred Nurk"   (string keys can use the [] notation as well)
+```
+
+Objects with string keys ( obj.name  or  obj["name"] ) are a convenient way to store arbitrary data. Note here we have array elements, which are objects.
+```javascript
+var staff = [];
+staff[0] = { "first":"Sue", "last":"Smith", "age":55, "title":"Dean", "faculty":"Arts", "salary":234567 };
+staff[1] = { "first":"Jim", "last":"Jones", "age":44, "title":"Prof", "faculty":"Arts", "salary":123456 };
+...
+...
+```
+Objects can contain other objects.
+
+```javascript
+obj = { 1:11, 2:{2:22}, 3:33};            // Simple object literal
+
+obj2 = {2:22};
+obj = { 1:11, obj2, 3:33 };               // Build it in stages
+
+obj = {};                                 // Build it in different stages
+obj[1] = 11;
+obj[2] = {2:22};
+obj[3] = 33;        
+```
 
 ### Data type: Null and Undefined
 
@@ -766,7 +800,7 @@ while(true) {
 }
 ```
 
-### For in, for of, forEach
+### For in; for of; forEach
 
 There are further loop types that iterate conveniently over the elements of an array or object. I will show them without much explanation, they have some gotchas.
 
@@ -1240,7 +1274,16 @@ function circumference(radius) {
 
 ## Objects
 
-(This is going to have a big rework. Need to split in two: 1) simple objects `let stuff = { "name" : "greg", "age":5 }` and 2) simulating classes with Objects, adding methods to Objects, the whole enchilada).
+This is going to have a rework. Need to split in two: 
+
+1) simple objects `let stuff = { "name" : "greg", "age":5 }`  Put that higher up after arrays 
+
+2) simulating classes with Objects, adding methods to Objects, the whole enchilada). Leave that here.
+
+
+You can add functions as members of an Object. 
+
+
 
 JavaScript doesn't have a "class" statement like Java or C++, instead it just uses functions as classes. Defining a class is as easy as defining a function.
 
@@ -1436,7 +1479,6 @@ However, you may hear that semicolons are optional in JavaScript. This is sort o
 * Doco: Keep updating the simple Table Of Contents at the top as we add sections.
 * Objects: Complete the Objects section
 * Objects: Mention class statement ?? maybe not, seems a hack.
-* Funcs: Mention closures.
 * Style: Mention line wrapping, single line code if(x) {y = z;}, line continuation with \
 * Style: Mention strict mode
 * Style: Mention JSHint, JSLint
