@@ -62,8 +62,11 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Other points about let](#other-points-about-let)    
 &nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)  
 [Objects](#objects)     
-[Code formatting, style, good practices](#code-formatting-style-good-practices)
-
+[Code formatting, style, good practices](#code-formatting-style-good-practices)  
+&nbsp;&nbsp;&nbsp;[Comments](#comments)  
+&nbsp;&nbsp;&nbsp;[Indentation](#indentation)  
+&nbsp;&nbsp;&nbsp;[Padding](#padding)  
+&nbsp;&nbsp;&nbsp;[Semicolons](#semicolons)  
 ***
 
 ## Script setup in HTML
@@ -1460,53 +1463,121 @@ cat1.greet(); // "Hello, I'm Jay"
 
 ### Comments
 
-It is a good idea to add comments to your code so you can remember what you're doing and debug when things go wrong. Commenting can also be useful for quickly removing or adding back in chunks of code (safer than deleting the chunk). Comments in JavaScript are similar to comments in Java or C.
+Comments in code document what's going on. They should be reasonably succinct though, there's no point explaining every line of the code. The commenting below is too trivial, and just distracting. 
+
+```javascript
+while ( true ) {         
+  b = a + 1;              // add 1 to a, store in b
+  if (b > 100) {          // if b greater than 100, quit the loop
+    break;
+  }
+}
+```
+
+As a rule of thumb, have a line or two of comment for every 10-30 line paragraph of code. That's -very- subjective.
+
+Comments in JavaScript are similar to comments in Java or C, C++.  `//` comments are often referred to as C++ comments, and `/*  */` comments as C comments. However C, C++, Java and others all now allow both styles.
+
+Commenting is useful for quickly removing or adding back in chunks of code (safer than deleting the chunk). 
 
 ```javascript         
-  // single line comment   
-```
-```javascript     
+  // single line comment
+  a = b;  // comment after a statement   
+   
   /* 
     multiple
     line
     comment
   */
+
+ /*
+  * Some prefer this style
+  * Easier to see the commented-out section
+  * Blah blah blah
+  */
+
+aa == bb  /* + cc */  + dd;  // You can comment out just a snippet. A bit unclear though.
+
+if (false) {        // This style is also ok for de-activating a piece of code. Some people use if(0). falsy enough :=)
+  a = b + 1;      
+  c = d;
+  createImage(500, 500);
+}
+```
+
+Avoid inter-mixing and nesting comment styles.
+
+```javascript
+// /* a = 1 */  +2;            // what does this mean ? does the */ terminate the // ?
+   /* /*  b = 1;  */ */        // who knows.
+ 
 ```
 
 ### Indentation
 
-Whenever you introduce curly braces, you should indent everything inside. You can use two spaces or four, but be consistent. This will help you make sense of your code later.
+There are many popular styles of indenting. (The good thing about standards is, there are so many to choose from!) (That's my favourite Dad Tech Joke).
+
+Generally whenever you introduce curly braces, you should indent everything inside. Anything from two to eight spaces is common, but typically 2 to 4. This will help you make sense of your code later. Don't use tabs, they are archaic and will just cause endless problems down the track. If you're accustomed to hitting the Tab key, make your editor turn it into n spaces.
+
+A great tool is an automatic formatter. I use [AStyle](http://astyle.sourceforge.net/). Properly indented code will line up well, help you understand your code flow, and alert you when you have forgotten to close a loop with a brace } or whatever. You can configure the formatter for different indent and spacing and padding styles. (Did I mention the great thing about standards ...) 
+
+Academic note: Python uses _nothing but_ spaces to indent and block code. Correct indentation is crucial.
+```javascript
+if pwd == 'secret':                         // Some Python
+    print('Logging on ...')
+else:
+    print('Incorrect password.')
+    print('Try again')
+```
+
+### Padding
+
+The amount of space padding around terms can improve clarity of code. But too much can be too much. 
 
 ```javascript
-function doStuff(x) {
-  if (x > 0) {
-    console.log("x is greater than 0");
-  } else {
-    console.log("x is not greater than 0");
-  }
-}
+distance = Math.sqrt(((x1-x2)*(x1-x2))+((y1-y2)*(y1-y2)));                                 // A little dense
+distance = Math.sqrt( ((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2)) );                 // Better
+distance = Math.sqrt( ( ( x1 - x2 ) * ( x1 - x2 ) ) + ( ( y1 - y2 ) * ( y1 - y2 ) ) );     // Mmmm .. too sparse ?
+```
+
+The formatter can apply padding rules to function calls, expressions, if{} blocks, loops, array indices, etc. There are maybe 8 or 10 areas you can adjust. But there are pre-packaged choices that give you a standard set. Here's mine, I just use the pre-packaged Java style with a couple of mods.
+
+```javascript
+cat ~/.astylrec
+--style=java
+--indent=spaces=2
+--pad-oper
+--verbose
 ```
 
 ### Semicolons
 
-A code statement generally ends with a semicolon.
+A code statement almost always ends with a semicolon.
 
 ```javascript
 var x = 10;
+if (a > 1) { callFunc(); }   // Must have semicolon here. Some other languages don't enforce that, the } is enough.
+if (a > 99) {
+  callFunc2();
+}                            // No semicolon needed after the }
 ```
 
-However, you may hear that semicolons are optional in JavaScript. This is sort of true. You can read more [here](http://news.codecademy.com/your-guide-to-semicolons-in-javascript), but a strong recommendation is to use always use semicolons. There are rare gotchas which will cause you problems if you leave them off.
+Semicolons are partly optional in JavaScript. You can read more here [semicolon blog](http://news.codecademy.com/your-guide-to-semicolons-in-javascript), but a strong recommendation is to use always use semicolons. There are rare gotchas which will cause you problems if you leave them off.
+
+There's a nice academic point that comes up here, and in all languages with a statement terminator. Is the semicolon a terminator ? `(a = 1; b = 2;)` or a separator ? `(a = 1; b = 2)`. Aha. Well.
 
 ## Todo:
 
 * Doco: Keep updating the simple Table Of Contents at the top as we add sections.
 * Objects: Complete the Objects section
 * Objects: Mention class statement ?? maybe not, seems a hack.
+* General: mention ES2015 or ES6 is current widespread version
 * Style: Mention line wrapping, single line code if(x) {y = z;}, line continuation with \
 * Style: Mention strict mode
 * Style: Mention JSHint, JSLint
 * Style: Mention AStyle for formatting
 * Performance: Mention profiling, refer to other tut on that.
+* Performance: reference Ousterhout's paper: https://www.tcl.tk/doc/scripting.html 
 * Hints: Refer to www3schools "mistakes" section, other "good practices" info.
 * Mention map/reduce ?? don't think so
 
