@@ -2,7 +2,13 @@
 
 _This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb (err, 2018!), hopefully earlier. To flesh out some more generic JavaScript detail, and add more examples relevant to p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
 
-_**Previous version being updated more or less from top down. Areas needing more work flagged as "To do / Todo" in bold. Can you flag something in colour in Markdown? That would be useful.**_
+_**Previous version being updated more or less from top down. Areas needing more work flagged as "Todo". Can you flag something in colour in Markdown? That would be useful.**_
+
+Looks like you should be able to use \<span style="color:red"\>some red text\</span\> but GitHub is stripping it out.
+
+Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.
+
+<span style=color:green> green text goes here</span>
 
 ---
 
@@ -1046,7 +1052,7 @@ Another option is to put all your code in one top level function, say main(). Th
   }
   main();                           // Call our whole code as a single function call: main()
 
-  // To do: should really make this a full p5.js prog with a setup() and draw() that draws something.
+  // Todo: should really make this a full p5.js prog with a setup() and draw() that draws something.
 
 </head>
 <body>Not much of a body, this is a JavaScript example, not HTML</body>
