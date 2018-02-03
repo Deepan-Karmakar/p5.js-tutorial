@@ -508,7 +508,7 @@ var arr3 = new Array(100); arr3.fill(0);       // Populate all elements with 0. 
 
 ### Data type: Object
 
-An object can be thought of as a collection of properties. These properties can be values of any type, including numbers, text strings, other objects, and functions, which can enable building complex and dynamic data structures. Arrays and objects are very similar; in fact arrays are a type of object, which only have numeric indexes, and have a defined order (array[0] to array[lastone], and allow gaps in the indices (ie. undefined parts of the array), and a few other subtleties.
+An object can be thought of as a collection of properties. These properties can be values of any type, including numbers, text strings, arays, other objects, and functions, which can enable the building of complex and dynamic data structures. Arrays and objects are very similar; in fact arrays are a type of object, which only have numeric indexes, and have a defined order (array[0] to array[lastone], and allow gaps in the indices (ie. undefined parts of the array), and a few other subtleties.
 
 Here we will cover just the basics of objects, with static members. Further down we will add function calls, ie. "methods" to objects, which allows us to create dynamic objects which provide the functionality called "classes" in other languages.
  
@@ -517,11 +517,11 @@ Here we will cover just the basics of objects, with static members. Further down
 At a basic level, JavaScript objects are a data type like an Array, where a numeric or string "key" can be used to access the data. In other languages they are sometimes called associative arrays, or hash tables. 
 
 ```javascript
-var obj = { 1:1, "twos":22, 333:"threes", "name":"Fred Nurk" };   // all the combos of number & string
+var obj = { 1:1, "twos":22, 333:"threes", "name":"Fred Nurk" };    // all the combos of number & string
 console.log(obj);                         // 1: 11  33: "threes"  twos: 22  name: "Fred Nurk"
 console.log(obj.twos, obj.name);          // 22  "Fred Nurk"
-console.log(obj[1], obj[333]);            // 1  "threes"       (have to use [] notation for numeric keys)
-console.log(obj["twos"], obj["name"]);    // 22  "Fred Nurk"   (string keys can use the [] notation as well)
+console.log(obj[1], obj[333]);            // 1  "threes"         (have to use [] notation for numeric keys)
+console.log(obj["twos"], obj["name"]);    // 22  "Fred Nurk"     (string keys can use the [] notation as well)
 ```
 
 Objects with string keys ( obj.name  or  obj["name"] ) are a convenient way to store arbitrary data. Note here we have array elements, which are objects.
@@ -529,8 +529,7 @@ Objects with string keys ( obj.name  or  obj["name"] ) are a convenient way to s
 var staff = [];
 staff[0] = { "first":"Sue", "last":"Smith", "age":55, "title":"Dean", "faculty":"Arts", "salary":234567 };
 staff[1] = { "first":"Jim", "last":"Jones", "age":44, "title":"Prof", "faculty":"Arts", "salary":123456 };
-...
-...
+staff[0].age  // returns 55
 ```
 Objects can contain other objects.
 
@@ -545,6 +544,30 @@ obj[1] = 11;
 obj[2] = {2:22};
 obj[3] = 33;        
 ```
+
+If we use an iterative access method to access all the members of an object, the order the records will be returned in is unpredictable.
+
+```javascript
+stuff = { 0:"a", 1:"b", 2:"c", 3:"d" };
+for (var x in stuff) {
+   console.log(x);          // Could be 0 2 1 3
+   console.log(stuff[x]);   // and a c b d
+}
+```
+
+Objects can use the array-like [] access notation, ie. object[key], so it can be hard to know if something you see in some code is an object or an array. Thing[accessor] ? What's that ? Could be array or object. typeof(anObject) and typeof(anArray) both return "object", reflecting the fact that they are closely related. The function Array.isArray() can distinguish them:
+
+```javascript
+var arr = [1, 2, 3];
+var obj = {1:1, 2:2, 3:3};
+typeof(arr);           // returns "object"
+typeof(obj);           // returns "object"
+Array.isArray(arr);    // returns true
+Array.isArray(obj);    // returns false
+```
+
+We will come back to more details on Objects later. Particularly the ability to embed function calls (methods) in an Object, and hence make a kind of class, where the Object has data and methods to insert, access, process, etc its data.
+
 
 ### Data type: Null and Undefined
 
