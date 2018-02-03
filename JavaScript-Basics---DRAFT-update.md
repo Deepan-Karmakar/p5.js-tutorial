@@ -1467,16 +1467,14 @@ Comments in code document what's going on. They should be reasonably succinct th
 
 ```javascript
 while ( true ) {         
-  b = a + 1;              // add 1 to a, store in b
-  if (b > 100) {          // if b greater than 100, quit the loop
-    break;
-  }
+  b = a + 1;                   // add 1 to a, store in b
+  if (b > 100) { break;}       // if b greater than 100, quit the loop
 }
 ```
 
 As a rule of thumb, have a line or two of comment for every 10-30 line paragraph of code. That's -very- subjective.
 
-Comments in JavaScript are similar to comments in Java or C, C++.  `//` comments are often referred to as C++ comments, and `/*  */` comments as C comments. However C, C++, Java and others all now allow both styles.
+Comments in JavaScript are similar to comments in Java or C, C++.  `//` comments are often referred to as C++ comments, and `/*  */` comments as C comments. However C, C++, Java, C#, Objective-C and others all now allow both styles.
 
 Commenting is useful for quickly removing or adding back in chunks of code (safer than deleting the chunk). 
 
