@@ -70,7 +70,8 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Semicolons](#semicolons)  
 &nbsp;&nbsp;&nbsp;[Strict mode](#strict-mode)  
 &nbsp;&nbsp;&nbsp;[Style checkers](#style-checkers)  
-&nbsp;&nbsp;&nbsp;[JavaScript versions](#javascript-versions)   
+&nbsp;&nbsp;&nbsp;[Style checkers](#style-checkers)  
+&nbsp;&nbsp;&nbsp;[Common mistakes](#common-mistakes)   
 &nbsp;&nbsp;&nbsp;[Performance, efficiency, profiling](#performance-efficiency-profiling)  
 [The Bottom Line](#the-bottom-line)    
 ***
@@ -169,7 +170,7 @@ var b = a + " is here";          // b is now "some text is here". Note the + has
 var stuff = [1, 22, 333];        // stuff is a three element array, with the values shown
 var s = data[2];                 // s is 333. Note indexing from zero, not one.
 
-var myRecord = { givenName:"Albert", familyName:"Einstein", age:33 };  // Create an "object" with three key:value pairs
+var myRecord = { givenName: "Albert", familyName: "Einstein", age: 33 };  // Create an "object" with three key:value pairs
 var name = myRecord.givenName;   // name has string value "Albert"
 
 var delete_file = false;         // var has a Boolean value "false".
@@ -526,7 +527,7 @@ Here we will cover just the basics of objects, with static members. Further down
 At a basic level, JavaScript objects are a data type like an Array, where a numeric or string "key" can be used to access the data. In other languages they are sometimes called associative arrays, or hash tables. 
 
 ```javascript
-var obj = { 1:1, "twos":22, 333:"threes", "name":"Fred Nurk" };    // all the combos of number & string
+var obj = { 1: 1, "twos": 22, 333: "threes", "name": "Fred Nurk" };    // all the combos of number & string
 console.log(obj);                         // 1: 11  33: "threes"  twos: 22  name: "Fred Nurk"
 console.log(obj.twos, obj.name);          // 22  "Fred Nurk"
 console.log(obj[1], obj[333]);            // 1  "threes"         (have to use [] notation for numeric keys)
@@ -536,28 +537,28 @@ console.log(obj["twos"], obj["name"]);    // 22  "Fred Nurk"     (string keys ca
 Objects with string keys ( obj.name  or  obj["name"] ) are a convenient way to store arbitrary data. Note here we have array elements, which are objects.
 ```javascript
 var staff = [];
-staff[0] = { "first":"Sue", "last":"Smith", "age":55, "title":"Dean", "faculty":"Arts", "salary":234567 };
-staff[1] = { "first":"Jim", "last":"Jones", "age":44, "title":"Prof", "faculty":"Arts", "salary":123456 };
+staff[0] = { "first": "Sue", "last": "Smith", "age": 55, "title": "Dean", "faculty": "Arts", "salary": 234567 };
+staff[1] = { "first": "Jim", "last": "Jones", "age": 44, "title": "Prof", "faculty": "Arts", "salary": 123456 };
 staff[0].age  // returns 55
 ```
 Objects can contain other objects.
 
 ```javascript
-obj = { 1:11, 2:{2:22}, 3:33};            // Simple nested object literal
+obj = { 1: 11, 2: {2: 22}, 3: 33};            // Simple nested object literal
 
-obj2 = {2:22};
-obj = { 1:11, obj2, 3:33 };               // Build it in stages
+obj2 = {2: 22};
+obj = { 1: 11, obj2, 3: 33 };               // Build it in stages
 
 obj = {};                                 // Build it in different stages
 obj[1] = 11;
-obj[2] = {2:22};
+obj[2] = {2: 22};
 obj[3] = 33;        
 ```
 
 If we use an iterative access method to access all the members of an object, the order the records will be returned in is unpredictable.
 
 ```javascript
-stuff = { 0:"a", 1:"b", 2:"c", 3:"d" };
+stuff = { 0: "a", 1: "b", 2: "c", 3: "d" };
 for (var x in stuff) {
    console.log(x);          // Could be 0 2 1 3
    console.log(stuff[x]);   // and a c b d
@@ -568,7 +569,7 @@ Objects can use the array-like [] access notation, ie. object[key], so it can be
 
 ```javascript
 var arr = [1, 2, 3];
-var obj = {1:1, 2:2, 3:3};
+var obj = {1: 1, 2: 2, 3: 3};
 typeof(arr);           // returns "object"
 typeof(obj);           // returns "object"
 Array.isArray(arr);    // returns true
@@ -844,7 +845,7 @@ There are further loop types that iterate conveniently over the elements of an a
 
 ```javascript
 var arr = [44, 33, 22, 11];
-var obj = { "1st":1, 2:2, "3rd":3, 4:4 };
+var obj = { "1st": 1, 2: 2, "3rd": 3, 4: 4 };
 
 for (n in arr) {
   console.log("index is", n);   //  prints "index is 0, index is 1, index is 2, index 3"
@@ -1314,7 +1315,7 @@ function circumference(radius) {
 
 This is going to have a rework. Need to split in two: 
 
-1) simple objects `let stuff = { "name" : "greg", "age":5 }`  Put that higher up after arrays 
+1) simple objects `let stuff = { "name": "greg", "age": 5 }`  Put that higher up after arrays 
 
 2) simulating classes with Objects, adding methods to Objects, the whole enchilada). Leave that here.
 
@@ -1587,8 +1588,8 @@ console.log(str2);   // A long documentation text which needs to be multiline, s
                      // more blah, the end.
 
 fred = 1 + 2 +
-  3 + 4;
-console.log(fred);  // 10
+  3 + 4;             // Very bad practice
+console.log(fred);   // 10
 ```
 ### Semicolons
 
@@ -1648,6 +1649,57 @@ There are quite a few style checkers for JavaScript. Two well-known ones are [JS
 
 Note the JSLint term comes from the old C style checker "lint", which picked up small imperfections in your code like lint on your clothes. 
 
+### Common mistakes
+
+We have already mentioned a few risks to watch out for. Here's another small selection of common mistakes.
+
+```javascript
+var x = 0;          
+if (x = 10) { // some code }      // Accidentally used = instead of == or ===. The comparison wrongly returns true, since 
+                                  // the result of (x = 10) is 10, which counts as a true value in loose comparison.
+
+var x = 10;                       // Be aware of loose comparisons
+var y = "10";
+if (x == y)  { // some code }     // This will match, code will run
+if (x === y) { // some code }     // This will not match, code will not run. 
+
+var x = 10;                       // Switch statements invisibly use exact === comparison
+switch(x) {
+    case 10: alert("Hello");      // We get an alert here.
+}                
+switch(x) {
+    case "10": alert("Hello");    // We don't get an alert. Good really, but not if you had assumed otherwise.
+}
+
+var x = 10 + 5;          // the result in x is 15.     Be aware of string + number concatenations, 
+var x = 10 + "5";        // the result in x is "105"    you shouldn't be doing this anyway.
+
+if (x == 19);
+  { // code block }       // This will always execute, since the semicolon has orphaned the block. Easy to do.
+
+function myFunction(aa) {  // Never break return statements
+    var
+      power = 10;     // This is poor practice, but works; power is set to 10
+    return            // Returns undefined, since JS completes the statement as early as possible, as "return;" 
+      aa * power;     // This is orphaned, and in fact never executes.
+}
+
+person = {firstName:"John", lastName:"Doe", age:46,}   // last comma is legal but bad practice. Old IE versions will fail
+points = [40, 100, 1, 5, 25, 10,];                     // ditto.
+
+if (myObj !== null && typeof myObj !== "undefined")    // Bad way to test if myObj exists. if myObj is undefined, the first 
+                                                       // test against null errors with "myObj is not defined"
+if (typeof myObj !== "undefined" && myObj !== null) {  // Better, typeof will safely check for undefined, then we test null.
+
+for (var i = 0; i < 10; i++) {  // Quick re-visit of 'var' issues ... 
+    // some code
+}
+var j = i;   // j = 10. For var variables, the i is still defined after the loop. This is not a hanging offence, but
+             // poor design. You should never rely on the end value of a loop. Always use let here, then i will not be valid. 
+   
+
+```
+
 ### JavaScript versions
 
 Just some background on JavaScript versions - you won't need this much for your p5.js apps.
@@ -1695,11 +1747,11 @@ This is very well treated in another tutorial here.
 
 ### The Bottom Line
 
-In this tutorial we've mentioned a number of times that JavaScript is sloppy, and had fun documenting many hazards ! But that's true of all interpreted languages. They leave allow loose (creative? imaginative? fun?) coding, and leave detailed checking of many things until run-time, unlike languages such as C++ and Java which use detailed compile-time checks.
+In this tutorial we've mentioned a number of times that JavaScript is sloppy, and had fun documenting many hazards ! But that's true of all interpreted languages. They leave allow loose (creative?) coding, and leave detailed checking of many things until run-time, unlike languages such as C++ and Java which use detailed compile-time checks.
 
 The pay-off is flexible design of course, but also much faster development, rapid turn-around when testing code, and a much more enjoyable experience. Compiling a large C++ program can take a loooong time, many minutes or much longer if it pulls in vast libraries, subclasses loads of things from that library, tries to use multiple inheritance to join two chains of library classes. It explodes a bit like Ackermann's function. (You have been paying attention, right ?). It's a long time to wait to just find you forgot some small thing. In the development phase of code you want rapid turn-around: edit, run, test in a few seconds.
 
-An interesting paper describing all this is John Ousterhout's paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the principle designer behind the scripting language Tcl and its companion gui builder Tk. The  paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower; reliability is not much different; performance may not be much different - your code may be limited by things you don't have control over: graphics rendering power, disk speed, network speed.
+An interesting paper describing all this is John Ousterhout's seminal paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the principle inspiration behind the scripting language Tcl and its companion gui builder Tk. The paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower, maybe 20x, than script approaches; reliability is not much different in the end; performance may not be much different - your code is usually limited by things you don't have control over: graphics rendering power, disk speed, network speed. There's plenty of cpu these days to drive the interpreted JavaScript engine.
 
 So despite it's looseness and oddities JavaScript is quick and fun and pretty reliable to work with. Get stuck in !
 
@@ -1710,8 +1762,6 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 * Examples: change to let after we have introduced it. Use some const too.
 * Objects: Complete the Objects section
 * Objects: Mention class statement ?? maybe not, seems a hack.
-* Performance: reference Ousterhout's paper: https://www.tcl.tk/doc/scripting.html 
-* Hints: Refer to www3schools "mistakes" section, other "good practices" info.
 * Mention map/reduce ?? don't think so
 * The => function mapping syntax ? Prob not.
 
