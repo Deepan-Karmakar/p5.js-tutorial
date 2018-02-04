@@ -1699,9 +1699,9 @@ In this tutorial we've mentioned a number of times that JavaScript is sloppy, an
 
 The pay-off is flexible design of course, but also much faster development, rapid turn-around when testing code, and a much more enjoyable experience. Compiling a large C++ program can take a loooong time, many minutes or much longer if it pulls in vast libraries, subclasses loads of things from that library, tries to use multiple inheritance to join two chains of library classes. It explodes a bit like Ackermann's function. (You have been paying attention, right ?). It's a long time to wait to just find you forgot some small thing. In the development phase of code you want rapid turn-around: edit, run, test in a few seconds.
 
-An interesting paper describing all this is John Ousterhout's paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the principle designer behind Tcl/Tk. The  paper is about Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower; reliability is not much different; performance may not be much different - modern code may be limited by things you don't have much control over: graphics rendering power, disk speed, network speed.
+An interesting paper describing all this is John Ousterhout's paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the principle designer behind Tcl/Tk. The  paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower; reliability is not much different; performance may not be much different - your code may be limited by things you don't have control over: graphics rendering power, disk speed, network speed.
 
-So despite it's looseness JavaScript is quick and fun and pretty reliable to work with, and the reasons for its growing success are fairly clear. Good luck !
+So despite it's looseness JavaScript is quick and fun and pretty reliable to work with. Get stuck in !
 
 
 
