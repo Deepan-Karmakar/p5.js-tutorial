@@ -133,15 +133,15 @@ Try the above in an index.html. However this tutorial is not about use of JavaSc
 
 ## JavaScript Console
 
-One of the first things we need to learn is how to get debugging output. You can write to the browser JavaScript console by using the built-in console.log method:
+One of the first things we need is to get some debugging output. You can write to the browser JavaScript console by using the built-in console.log method:
 
 ```javascript
 console.log("hello");
 console.log("variables x, y values", x, y);          // Use the default space separation of args
-console.log("variables x, y values " + x + ":" + y); // Concatenate message into a single string, more flexible
+console.log("variables x, y values " + x + "," + y); // Concatenate message into a single string, more flexible
 ```
 
-In order to see the console on Chrome, select menu sequence View / Developer / JavaScript Console. Use it often! On other browsers, just search for info on "how to open the JavaScript console on \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
+In order to see the console on Chrome, select menu sequence View / Developer / JavaScript Console. Use it often! On other browsers, just search for info on "how to open the JavaScript console in \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
 
 Another useful thing is to find a command-line JavaScript interpreter, to check basic things and follow along with this tutorial. 
 
@@ -623,7 +623,7 @@ We will zoom through the operators here. We assume some very basic maths backgro
 * `-` subtraction
 * `*` multiplication
 * `/` division
-* `**` exponentiation:&nbsp;&nbsp;&nbsp;&nbsp;// 3**4 gives 81. New in EcmaScript 6. Before we required Math.power(x,y). See later in tut.
+* `**` exponentiation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 3**4 gives 81. New in EcmaScript 6. Before we required Math.power(x,y). See later in tut.
 * `%` modulo
 * `++` add one shorthand
 * `--` subtract one shorthand
@@ -635,12 +635,12 @@ These operators have shortcut styles, occasionally useful.
 * `a *= 7`  a now 14
 * `a /= 2`  a now 7
 * `a %= 2`  a now 1
-* `b = a++` b is 1, a is 2, ie. the ++ was done after the assignment
-* `b = ++a` b is 3, the ++ was done before the assignment. Similarly --. Use these sparingly, "out by one" oversights happen easily.
+* `b = a++` b is 1, a is 2 - the ++ was done after the assignment
+* `b = ++a` b is 3, a is 3 - the ++ was done before the assignment. Similarly for -- &nbsp;Use these carefully, "out by one" oversights happen easily.
 
 ### Relational, ie. comparisons
 
-* `>=` greater than or equal to   // works with strings also, but many subtleties. Is 'aAa' < 'BbBb' ?
+* `>=` greater than or equal to &nbsp;&nbsp;&nbsp;&nbsp;// works with strings also, but many subtleties. Is 'aAa' < 'BbBb' ?
 * `<=` less than or equal to
 * `==` equal to 
 * `!=` not equal to 
@@ -657,13 +657,13 @@ These operators have shortcut styles, occasionally useful.
 
 ### Precedence of operators
 
-The operators have a precedence which sometimes matches what we learned in school.  When operators have equal precedence, they proceed left to right. `xx = 24 / 6 * 5` will produce 20. But `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication will get done first. To force the order you want, use brackets. 
+The operators have a precedence which sometimes matches what we learned in school.  When operators have equal precedence, they proceed left to right. `xx = 24 / 6 * 5` will produce 20. But `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication has higher precedence and will get done first. To force the order you want, use brackets. 
 ```javascript
 xx = (1 + 2) * 3           // will produce 9.  
 gravity = G * (mass1 * mass2) / (distance * distance);  
-intensity = light / (Math.sqrt( (radius * radius) + fudgeFactor); 
+intensity = light / (Math.sqrt( (radius * radius) + fudgeFactor ); 
 ```
-Other operators have progressively lower precedence. [Full table here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence). This allows you to write most expressions in a natural and  concise way. 
+Other operators have progressively lower precedence. [Full table here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence). This allows you to write most expressions in a natural way. 
 ```javascript
 if( radius > 5.0 && radius < 10.0) { drawCircle(); }               // works fine, but ...
 if( (radius > 5.0) && (radius < 10.0) { drawCircle(); }            // clearer and safer. 
@@ -680,7 +680,7 @@ Some traps exist. No precedence order can be what you want all the time. An exam
 var images = [];
 for (var i = 0; i < 10 ; i++) {
   images[i] = createImage(width, height);   // Create an array of new images.
-  images[i].loadPixels();    // Ok? Noooo. The member access ".loadPixels" has higher precedence than the array index, so gets called
+  images[i].loadPixels();    // Ok? Noooo. The member access ".loadPixels()" has higher precedence than the array index, so gets called
                              // on the entire Array 'object' and fails. Moreover we get a silent error, very hard to chase.
   (images[i]).loadPixels();  // Better. Force the array indexing first, call loadPixels() on the individual array element. 
 }
@@ -712,7 +712,8 @@ Conditionals allow your program to execute a block of code based on the result o
 ```javascript
 var x = 1;
 if (x > 0) {
-  // execute some code
+  var a = x + 1;
+  var b = a + 3;
 }
 ```
 
@@ -742,18 +743,19 @@ if (x > 5) {
 
 ```javascript
 var x = 1;
-if (x >= -5 && x <= 5) {
+if ( (x >= -5) && (x <= 5) ) {   // fully bracketed
   // execute some code if x was in range -5 to +5
 }
 ```
 
 ```javascript
 var x = "puddings";
-if (x.length === 8 || x.indexOf("ding") === -1) {
+if ( x.length === 8 || x.indexOf("ding") === -1 ) {   // just wing it
   // execute some code. Note the above is using exact or "strict" comparisons, safer.
 }
 ```
-
+Editorial note: in Pedantic World these names are used - () parentheses, [] brackets, {} braces, <> angle brackets. However it's common to just say () round brackets, [] square brackets, {} curly brackets, <> angle brackets. I think there is a fancy name for angle brackets, but it escapes me.
+ 
 ### Comparison issues
 
 Warning: some comparisons between variables that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). There's a quaint terminology called "truthy" and "falsy". Values like 0 or "0" or "" or [] or [[]] or [0] are falsy. Values like 1, "1" and [1] are truthy.  
@@ -793,7 +795,7 @@ Having said all that, switch{} is a little archaic and rigid. It seemed a devili
 
 ### While {}
 
-Just as with our conditional (if / else) statements a while loop employs a boolean test that must evaluate to true in order for the instructions in the curly brackets to be executed. The difference is that the instructions continue to be executed until the test condition becomes false. If the test condition is false at the start, the loop body will not execute at all.
+Just as with our conditional (if / else) statements, a while loop employs a boolean test that must evaluate to true in order for the instructions in the curly brackets to be executed. The instructions continue to be executed until the test condition becomes false. If the test condition is false at the start, the loop body will not execute at all.
 
 ```javascript
 var x = 0;
@@ -816,7 +818,7 @@ do  {
 
 ### For {}
 
-Since this is a very common use of a loop, ie. running through a simple sequence of values, there is a simpler way to do it: the for{} loop. You can read this as: a) create variable x and set it to 0;  b) if x is less than 10 do the stuff in the loop body; c) increment x by 1 at the end and go back to b).
+Since this is a very common use of a loop, ie. running through a simple sequence of values, there is a simpler way to do it: the for{} loop. You can read the example below as: a) create variable x and set it to 0;  b) if x is less than 10 do the stuff in the loop body; c) increment x by 1 at the end and go back to b).
 
 ```javascript
 for (var x = 0; x < 10; x++) {  
@@ -832,12 +834,12 @@ The `break` statement will terminate a loop. One common idiom is to have an endl
 ```javascript
 while(true) {
   // do stuff
-  if ( value === 100 ) { break; }  // Need that semicolon
+  if ( value === 100 ) { break; }  // Don't forget that semicolon
   // do more stuff
 }
 ```
 
-### For in; for of; forEach
+### For in, for of, forEach
 
 There are further loop types that iterate conveniently over the elements of an array or object. I will show them without much explanation, they have some gotchas.
 
@@ -876,9 +878,9 @@ You will probably not need these loop types in p5.js. (These are not the loops y
 
 ## Functions
 
-A function is a unit of reusable code, which can be invoked or "called" many times, possibly with different input values. They are a critical part of any language. Functions help structure and organize your code: self-contained processes and computations can be neatly isolated in a function. 
+A function is a unit of reusable code, which can be invoked or "called" many times, possibly with different input values. They are a key part of any language. Functions help structure and organize your code: self-contained processes and computations can be neatly isolated in a function. 
 
-Functions are kind of named after mathematical functions: `f(x) = x * x`. In JavaScript this would become `function square(x) { return (x * x); }`
+Functions are kind of named after mathematical functions: f(x) = x * x. In JavaScript this would become `function square(x) { return (x * x); }`
 
 Other languages can use terms like "subroutine" or "procedure" to describe a function. Fortran IV used to provide SUBROUTINE which returned no value, and FUNCTION which did return a value. In modern languages a "function" can return or not return a value just as you wish, and you can also use or ignore the return value afterwards as you wish. 
 
@@ -901,7 +903,7 @@ sayHello(); // Call the function. Prints "hello"
 // Note, p5.js supplies "random()" as an interlude to Math.random(), with more flexible value range.
 
 function changeBackground() {
-  background(random(255), random(255), random(255));  
+  background(random(255), random(255), random(255));  // choose a number from 0 to 255 for red, green, blue
 }
 ```
 
@@ -909,7 +911,7 @@ function changeBackground() {
 
 A function can accept values as input, known as arguments or parameters. Note that within the function code, the parameters are not the names of actual variables in your enclosing program, but are "place holder" variables limited to the scope of the function. To split hairs, the "parameter" is the name of the formal parameter, "person" in the first example below, it's a static term in the code source text. The "argument" is the value that gets passed in, a dynamic run-time thing, "name" in the code below, if talking about it from the callers perspective, or maybe again "person" if talking from the functions perspective.
 
-When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution and returns to the caller. After return, normally all data inside the function just "evaporates", its job is done.
+When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution and returns to the caller. After return, normally all data inside the function just "evaporates", its job is done. (Technically, the "stack frame" with all the function's data is popped off the stack).
 
 ```javascript
 function sayHello(person) {
@@ -1181,7 +1183,7 @@ You can have languages where everything is in a single global scope, as in simpl
 
 You can have modern languages where scope is very restricted. Errors are reduced, but coding needs more care at times. Nothing wrong with that.
 
-JavaScripts original `var` style was very unusual and much disliked by some. JavaScript has recently (EcmaScript 2015) introduced the `let` keyword to augment and largely replace the `var` keyword. 
+JavaScripts original `var` style was very unusual and much disliked by some. JavaScript has recently (ECMAScript 2015, aka ES6) introduced the `let` keyword to augment and largely replace the `var` keyword. 
 
 Some more explanation of `var`: The scope of a variable declared with `var` is the whole of the function it is in. Even it is declared towards the bottom of a function, or is a trivial loop variable. There is an awful expression called "hoisting", where any `var` declaration is treated as if it was "hoisted" to the top of the enclosing function:
 
@@ -1317,6 +1319,7 @@ This is going to have a rework. Need to split in two:
 
 2) simulating classes with Objects, adding methods to Objects, the whole enchilada). Leave that here.
 
+## Objects as dynamic "classes:
 
 You can add functions as members of an Object. 
 
@@ -1474,7 +1477,7 @@ cat1.greet(); // "Hello, I'm Jay"
 
 ### Comments
 
-Comments in code document what's going on. They should be reasonably succinct though, there's no point explaining every line of the code. The commenting below is too trivial, and just distracting. 
+Comments in code document what's going on. They should be reasonably succinct though, there's no point explaining every line. The commenting below is too trivial, and just distracting. 
 
 ```javascript
 while ( true ) {         
@@ -1483,11 +1486,11 @@ while ( true ) {
 }
 ```
 
-As a rule of thumb, have a line or two of comment for every 10-30 line paragraph of code. That's -very- subjective.
+As a rule of thumb, have a line or two of comment for every 10-30 line paragraph of code, explaining what the block is going to do. Put a few words of explanation to the right of any very important statement. That's -very- subjective.
 
 Comments in JavaScript are similar to comments in Java or C, C++.  `//` comments are often referred to as C++ comments, and `/*  */` comments as C comments. However C, C++, Java, C#, Objective-C and others all now allow both styles.
 
-Commenting is also useful for quickly removing or adding back in chunks of code (safer than deleting the chunk). 
+Commenting is also useful for quickly removing or adding back in chunks of code (better than deleting the chunk). 
 
 ```javascript         
   // single line comment
@@ -1495,18 +1498,18 @@ Commenting is also useful for quickly removing or adding back in chunks of code 
    
   /* 
     multiple
-    line
+    line C style
     comment
   */
 
  /*
   * Some prefer this style
   * Easier to see the commented-out section
-  * Blah blah blah
+  * The lone stars have no function, they're just text
   */
 
 
-// if (x > 5) {       // You can comment out a whole block
+// if (x > 5) {       // You can comment out a whole block C++ style
 //    a = 123;
 //    b = 456;
 //    c = 789;
@@ -1526,7 +1529,7 @@ Avoid inter-mixing and nesting comment styles.
 
 ```javascript
 // /* a = 1 */  +2;            // what does this mean ? does the */ terminate the // ?
-   /* /*  b = 1;  */ */        // who knows.
+   /* /*  b = 1;  */ */        // and this ? who knows. Don't go there.
  
 ```
 
@@ -1534,7 +1537,7 @@ Avoid inter-mixing and nesting comment styles.
 
 There are many popular styles of indenting. (The good thing about standards is, there are so many to choose from!) (That's my favourite Dad Tech Joke).
 
-Generally whenever you introduce curly braces, you should indent everything inside. Anything from two to eight spaces is common, but typically 2 to 4. This will help you make sense of your code later. Don't use tabs, they are archaic and will just cause endless problems down the track. If you're accustomed to hitting the Tab key, make your editor turn it into n spaces.
+Generally whenever you introduce curly braces, you should indent everything inside. Anything from two to eight spaces is common, but typically 2 to 4. Don't use tabs, they are archaic and will just cause endless problems down the track. If you're accustomed to hitting the Tab key, configure your editor to turn it into n spaces.
 
 A great tool is an automatic formatter. I use [AStyle](http://astyle.sourceforge.net/). Properly indented code will line up well, help you understand your code flow, and alert you when you have forgotten to close a loop with a brace } or whatever. You can configure the formatter for different indent and spacing and padding styles. (Did I mention the great thing about standards ...) 
 
@@ -1569,7 +1572,7 @@ cat ~/.astylrec
 
 ### Line continuation
 
-JavaScript allows some lines to continue with a backslash \ on the end. Not a very clear style in general. But can be useful maybe for some big block of text you need to get into the code.
+JavaScript allows some lines to continue with a backslash \ on the end. Not a very clear style in general. But can be useful for some big block of text you need to get into the code.
 
 Also plain statements can run over more than one line. Not usually very clear.
 
@@ -1585,8 +1588,8 @@ console.log(str2);   // A long documentation text which needs to be multiline, s
                      // use escaped newlines in it blah blah blah blah blah blah blah blah blah
                      // more blah, the end.
 
-fred = 1 + 2 +
-  3 + 4;             // Very bad practice
+fred = 1 + 2 +       // Very bad practice
+  3 + 4;             
 console.log(fred);   // 10
 ```
 ### Semicolons
@@ -1613,7 +1616,7 @@ Just place `"use strict";` at the top of your whole code, or in individual funct
 
 Strict mode makes certain kinds of risky practices illegal. The most important one is undeclared variables (or arrays, objects, etc).
 
-Prior to Strict mode, it was legal to just write `x = 123;` anywhere. JS assumed you meant `var x = 123` and just created x for you. I haven't even mentioned that in this tutorial because it's such bad practice. But this makes accidental typos very easy:
+Without Strict mode, it is legal to just write `x = 123;` anywhere. JS assumes you meant `var x = 123` and just creates x for you. I haven't even mentioned that in this tutorial because it's such bad practice. But this makes accidental typos very easy:
 
 ```javascript
 // Top of code
@@ -1649,7 +1652,7 @@ Note the JSLint term comes from the old C style checker "lint", which picked up 
 
 ### Common mistakes
 
-We have already mentioned a few risks to watch out for. Here's another small selection of common mistakes.
+We have already mentioned a few risks to watch out for. Here's another selection of common mistakes.
 
 ```javascript
 var x = 0;          
@@ -1669,11 +1672,11 @@ switch(x) {
     case "10": alert("Hello");    // We don't get an alert. Good really, but not if you had assumed otherwise.
 }
 
-var x = 10 + 5;          // the result in x is 15.     Be aware of string + number concatenations, 
-var x = 10 + "5";        // the result in x is "105"    you shouldn't be doing this anyway.
+var x = 10 + 5;                   // x is 15.     Be aware of string + number concatenations ... 
+var x = 10 + "5";                 // x is "105"   You shouldn't be doing this anyway.
 
 if (x == 19);
-  { // code block }       // This will always execute, since the semicolon has orphaned the block. Easy to do.
+  { // code block }        // This will always execute, since the semicolon has orphaned the block. Easy to do.
 
 function myFunction(aa) {  // Never break return statements
     var
@@ -1694,8 +1697,6 @@ for (var i = 0; i < 10; i++) {  // Quick re-visit of 'var' issues ...
 }
 var j = i;   // j = 10. For var variables, the i is still defined after the loop. This is not a hanging offence, but
              // poor design. You should never rely on the end value of a loop. Always use let here, then i will not be valid. 
-   
-
 ```
 
 ### JavaScript versions
@@ -1745,11 +1746,11 @@ This is very well treated in another tutorial here.
 
 ### The Bottom Line
 
-In this tutorial we've mentioned a number of times that JavaScript is sloppy, and had fun documenting many hazards ! But that's true of all interpreted languages. They leave allow loose (creative?) coding, and leave detailed checking of many things until run-time, unlike languages such as C++ and Java which use detailed compile-time checks.
+In this tutorial we've mentioned a number of times that JavaScript is sloppy, and had fun documenting many hazards ! But that's true of all interpreted languages. They allow loose (creative?) coding, and leave detailed checking of many things until run-time, unlike languages such as C++ and Java which use detailed compile-time checks.
 
-The pay-off is flexible design of course, but also much faster development, rapid turn-around when testing code, and a much more enjoyable experience. Compiling a large C++ program can take a loooong time, many minutes or much longer if it pulls in vast libraries, subclasses loads of things from that library, tries to use multiple inheritance to join two chains of library classes. It explodes a bit like Ackermann's function. (You have been paying attention, right ?). It's a long time to wait to just find you forgot some small thing. In the development phase of code you want rapid turn-around: edit, run, test in a few seconds.
+The pay-off is flexible design of course, but also much faster development, rapid turn-around when testing code, and a much more enjoyable experience. Compiling a large C++ program can take a loooong time, many minutes or much longer if it pulls in vast libraries, subclasses loads of things from the libraries, tries to use multiple inheritance to join two chains of library classes. It explodes a bit like Ackermann's function. (You have been paying attention, right ?). It's a long time to wait to just find you forgot some small thing. In the development phase of code you want rapid turn-around: edit, run, test in a few seconds.
 
-An interesting paper describing all this is John Ousterhout's seminal paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the principle inspiration behind the scripting language Tcl and its companion gui builder Tk. The paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower, maybe 20x, than script approaches; reliability is not much different in the end; performance may not be much different - your code is usually limited by things you don't have control over: graphics rendering power, disk speed, network speed. There's plenty of cpu these days to drive the interpreted JavaScript engine.
+An interesting paper describing all this is John Ousterhout's seminal paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the original driver behind the scripting language Tcl and its companion gui builder Tk. The paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower, maybe 20x, than script approaches; reliability is not much different in the end; performance may not be much different - your code is usually limited by things you don't have control over: graphics rendering power, disk speed, network speed - and there's plenty of cpu these days to drive the interpreted JavaScript engine.
 
 So despite it's looseness and oddities JavaScript is quick and fun and pretty reliable to work with. Get stuck in !
 
@@ -1757,9 +1758,9 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 
 ## Todo:
 
-* Examples: change to let after we have introduced it. Use some const too.
+* Examples: change to let after we have introduced it. Use more const too.
 * Objects: Complete the Objects section
-* Objects: Mention class statement ?? maybe not, seems a hack.
+* Objects: Mention class statement ?? just briefly, seems a hack.
 * Mention map/reduce ?? don't think so
 * The => function mapping syntax ? Prob not.
 
