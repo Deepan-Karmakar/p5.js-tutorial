@@ -69,7 +69,10 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Line continuation](#line-continuation)  
 &nbsp;&nbsp;&nbsp;[Semicolons](#semicolons)  
 &nbsp;&nbsp;&nbsp;[Strict mode](#strict-mode)  
-&nbsp;&nbsp;&nbsp;[JavaScript versions](#javascript-versions)    
+&nbsp;&nbsp;&nbsp;[Style checkers](#style-checkers)  
+&nbsp;&nbsp;&nbsp;[JavaScript versions](#javascript-versions)   
+&nbsp;&nbsp;&nbsp;[Performance, efficiency, profiling](#performance-efficiency-profiling)  
+[The Bottom Line](#the-bottom-line)    
 ***
 
 ## Script setup in HTML
@@ -1635,14 +1638,19 @@ This will also prevent unwanted global variables being created. If you have a ro
 
 You should always use Strict mode !
 
-The odd syntax `"use strict;"` is so the instruction is ignored by an old JavaScript engine which doesn't know what it is. A statement like `"use strict;"` is just an isolated string with no computational effect, like `"Cool bananas;"`. It's parsed, created, then thrown away by any engine that isn't looking for it. Some other languages warn about this: "Warning, statement has no effect". Isolated expressions are easy to create: `var x = y;+z;`. You meant `y+z;` but z was silently instantiated then discarded.
+The odd syntax `"use strict;"` is so the instruction is ignored by an old JavaScript engine which doesn't know what it is. A statement like `"use strict;"` is just an isolated string with no computational effect, like `"Cool bananas;"`. It's parsed, created, then thrown away by any engine that isn't looking for it. Some other languages warn about this: "Warning, statement has no effect". Isolated expressions are easy to create: `var x = y;+z;`. You meant `y+z;` but z got orphaned and had no effect.
 
 There are a number of other practices which are disallowed in Strict mode: [Strict mode](https://www.w3schools.com/js/js_strict.asp)
 
+### Style checkers
+
+There are quite a few style checkers for JavaScript. Two well-known ones are [JSLint](http://www.jslint.com/) and [JSHint](http://jshint.com/).  You can cut and paste code into their online versions and check quite a lot. You can also download and install locally JSHint. They are best at standalone JavaScript programs. Checking a large p5.js app may throw up lots of complaints like "don't know what function createImage() is". There are ways to tell JS[HL]int what external functions and terms you're using, so you're not flooded with these warnings. I haven't pursued that.
+
+Note the JSLint term comes from the old C style checker "lint", which picked up small imperfections in your code like lint on your clothes. 
 
 ### JavaScript versions
 
-Just some background on JavaScript versions - you won't need this for your early p5.js apps.
+Just some background on JavaScript versions - you won't need this much for your p5.js apps.
 
 JavaScript version naming is very messy. There are terms like JavaScript 1.7, ECMAScript 2015, ES 2015, ES6. These are all approximately the same ! 
 
@@ -1679,14 +1687,29 @@ References:
 [ECMAScript versions](https://en.wikipedia.org/wiki/ECMAScript#History)  
 [Feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)  
 
+### Performance, efficiency, profiling
+
+This is very well treated in another tutorial here.
+
+[Efficiency and profiling](https://github.com/processing/p5.js/wiki/Optimizing-p5.js-Code-for-Performance)
+
+### The Bottom Line
+
+In this tutorial we've mentioned a number of times that JavaScript is sloppy, and had fun documenting many hazards ! But that's true of all interpreted languages. They leave allow loose (creative? imaginative? fun?) coding, and leave detailed checking of many things until run-time, unlike languages such as C++ and Java which use detailed compile-time checks.
+
+The pay-off is flexible design of course, but also much faster development, rapid turn-around when testing code, and a much more enjoyable experience. Compiling a large C++ program can take a loooong time, many minutes or much longer if it pulls in vast libraries, subclasses loads of things from that library, tries to use multiple inheritance to join two chains of library classes. It explodes a bit like Ackermann's function. (You have been paying attention, right ?). It's a long time to wait to just find you forgot some small thing. In the development phase of code you want rapid turn-around: edit, run, test in a few seconds.
+
+An interesting paper describing all this is John Ousterhout's paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the principle designer behind Tcl/Tk. The  paper is about Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower; reliability is not much different; performance may not be much different - modern code may be limited by things you don't have much control over: graphics rendering power, disk speed, network speed.
+
+So despite it's looseness JavaScript is quick and fun and pretty reliable to work with, and the reasons for its growing success are fairly clear. Good luck !
+
+
+
 ## Todo:
 
-* Doco: Keep updating the simple Table Of Contents at the top as we add sections.
 * Examples: change to let after we have introduced it. Use some const too.
 * Objects: Complete the Objects section
 * Objects: Mention class statement ?? maybe not, seems a hack.
-* Style: Mention JSHint, JSLint
-* Performance: Mention profiling, refer to the other tut on that.
 * Performance: reference Ousterhout's paper: https://www.tcl.tk/doc/scripting.html 
 * Hints: Refer to www3schools "mistakes" section, other "good practices" info.
 * Mention map/reduce ?? don't think so
