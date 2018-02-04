@@ -54,12 +54,12 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Default arguments](#default-arguments)     
 &nbsp;&nbsp;&nbsp;[Recursion](#recursion)  
 &nbsp;&nbsp;&nbsp;[Closures](#closures)      
-[Variable scope](#variable-scope)   
+[Variable scope](#variable-scope)  
 &nbsp;&nbsp;&nbsp;[Precedence of global vs local variables](#precedence-of-global-and-local-variables)       
 &nbsp;&nbsp;&nbsp;[The "let" declaration](#new-scope-declaration-let)  
 &nbsp;&nbsp;&nbsp;[Other points about let](#other-points-about-let)    
-&nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)  
-[Objects](#objects)     
+&nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)      
+[Objects part 2: objects as classes](#objects-part-2-objects-as-classes)    
 [Code formatting, style, good practices, common mistakes](#code-formatting-style-good-practices-common-mistakes)  
 &nbsp;&nbsp;&nbsp;[Comments](#comments)  
 &nbsp;&nbsp;&nbsp;[Indentation](#indentation)  
@@ -104,7 +104,7 @@ You can also write JavaScript in a file external to the HTML and point to that f
 
 Note, the 'type="text/javascript"' is not needed in the latest browsers, JavaScript is now the default script type.
 
-JavaScript can be scattered all through a web page, enclosed in <script> and </script>, or in special tags like <button>. Example: here we intercept a mouse click on a button, copy some data around, and change the background colour:
+JavaScript can be scattered all through a web page, enclosed in <script> and </script>, or in special tags like \<button\>. Example: here we intercept a mouse click on a button, copy some data around, and change the background colour:
 
 ```html
 <html>
@@ -542,12 +542,12 @@ staff[0].age  // returns 55
 Objects can contain other objects.
 
 ```javascript
-obj = { 1: 11, 2: {2: 22}, 3: 33};            // Simple nested object literal
+obj = { 1: 11, 2: {2: 22}, 3: 33};           // Build with nested object literal
 
 obj2 = {2: 22};
-obj = { 1: 11, obj2, 3: 33 };               // Build it in stages
+obj = { 1: 11, obj2, 3: 33 };                // Build it in stages
 
-obj = {};                                 // Build it in different stages
+obj = {};                                    // Build it in different stages
 obj[1] = 11;
 obj[2] = {2: 22};
 obj[3] = 33;        
@@ -1311,167 +1311,119 @@ function circumference(radius) {
 }
 ```
 
-## Objects
+## Objects part 2: objects as classes
 
-This is going to have a rework. Need to split in two: 
+We introduced basic objects above, `let obj = { "name":"Vincent", "age":3 }`. Now we add methods to produce a full-featured dynamic object, which gives us the effective functionality of a "class".
 
-1) simple objects `let stuff = { "name": "greg", "age": 5 }`  Put that higher up after arrays 
+Let's proceed gradually here. First, we can create an empty object with `obj = {}` or `obj = new Object`. Both create the same thing, an empty object. Try it in the console. The `new` syntax is useful when we want to create a lot of objects: `obj = []; for (let i = 0; i < 99; i++) { obj[i] = new Object; }`. This creates an array of 100 empty Objects.
 
-2) simulating classes with Objects, adding methods to Objects, the whole enchilada). Leave that here.
-
-## Objects as dynamic "classes:
-
-You can add functions as members of an Object. 
-
-
-
-JavaScript doesn't have a "class" statement like Java or C++, instead it just uses functions as classes. Defining a class is as easy as defining a function.
+Next we want to add some properties to the objects. We could do this with:
 
 ```javascript
-function Cat() {
-
+for (let i = 0; i < 99; i++) {
+  cats[i] = new Object;
+  if ( i === 0 ) {
+    cats[i].name = "Margot";    // this is data for cats, by the way
+    cats[i].age = 8;            
+    cats[i].color = "black";    
+  }
+  if ( i === 1 ) {
+    cats[i].name = "Sam";
+    cats[i].age = 2;
+    cats[i].color = "white";
+  }
+  ...
 }
+console.log(cats[0]);   // {name: "Margot", age: 8, color: "black"}
+
 ```
 
-The code above creates a constructor function for a Cat object. It is a very simple object with no properties or methods.
-
-## Creating a new instance
-
-To create a new instance of an object using a constructor, you write "new" followed by the name of the class and a set of parentheses.
+However it's more convenient to use a function notation, and create a "constructor" for our objects. The term "constructor" is used in C++, Java etc for a function which creates a class object. Here the constructor is the function Cat(). 
 
 ```javascript
-var cat0 = new Cat();
+function Cat(Name, Age, Color) {
+   this.name  = Name;             // "this" refers to this instance, ie. the Cat we are creating
+   this.age   = Age;
+   this.color = Color;
+} 
+
+cats = [];  
+cats[0] = new Cat("Margot", 8, "black");   // the "new" forces a permanent object to be created,
+cats[1] = new Cat("Sam", 2, "white");      //  without it the function call would just return undefined and have no effect
+
+console.log(cats);   // Shows something like ..
+                     //  (2) [Cat, Cat]
+                     //    [
+                     //      0: Cat {"Margot", 8, "black"}
+                     //      1: Cat {"Sam", 2, "white"}
+                     //    ]
 ```
 
-If you were to log this object to the console you will notice that it prints an empty set of curly braces.
+The "this" notation is a common one in Object Oriented Programming, or OOP. It always refers to the overall "thing" we are inside, or working with. At top level in a JavaScript program, "this" refers to the whole program invocation. We mentioned it above when talking about accidental creation of global variables.
+
+You can access and modify the properties of objects directly by using `.propertyName`.
 
 ```javascript
-console.log(cat0); // Cat {}
-```
+console.log(cats[0].name);    // "Margot"
+cats[0].name = "Robbie";      // change name to "Robbie"
 
- That is really all this object is, and you could have created the same thing by writing:
-
-```javascript
-var cat0 = {};
-```
-
-However, creating the constructor function is useful when you want to make more than one instance of the object, especially if you have set properties or methods for the object.
-
-```javascript
-var cat0 = {};
-var cat1 = {};
-var cat2 = {};
-```
-
-## Adding properties
-
-Properties are variables within the object. They can be set in the constructor by including a line in the form `this.propertyName = propertyValue;`. Within an object constructor function, there is a special variable "this" that always refers to the new instance that is being created. So when the function includes `this.propertyName = propertyValue;` it is saying that all new instances will be automatically assigned the given properties and values upon instantiation.
-
-```javascript
-function Cat() {
-  this.name = "Margot";
-  this.age = 8;
-  this.color = "Black";
-}
-```
-
-If you create and log a Cat object now you will notice that the new instance now has properties, rather than just empty curly braces.
-
-```javascript
-var cat0 = new Cat();
-console.log(cat0); // Cat {name: "Margot", age: 8, color: "Black"}
-}
-```
-
-You can access and modify these properties directly by using `.propertyName`.
-
-```javascript
-console.log(cat0.name);  // "Margot"
-cat0.name = "Sam";       // change name to Sam
-console.log(cat0.name);  // "Sam"
-
-cat0.age++;              // increment age by 1
-console.log(cat0.age);   // 9
-
-console.log(cat0.color); // "Black"
+cats[0].age++;                // Margot/Robbie is getting older
+console.log(cats[0].age);     // 9
 ```
 
 ## Adding methods
 
-While properties are like variables within an object, methods are like functions within an object. They are set and accessed in much the same way.
+While properties are like variables within an object, methods are like functions within an object. They are set and accessed in much the same way. Let's extend our definition of the object type Cat.
 
 ```javascript
-function Cat() {
-  // set some properties
-  this.name = "Margot";
-  this.age = 8;
-  this.color = "Black";
+function Cat(Name, Age, Color) {
+   this.name  = Name;    
+   this.age   = Age;
+   this.color = Color;
 
-  // set some methods
-  this.greet = function() {
-    console.log("Hello, I'm "+this.name);
+  // Add some methods
+  this.greet = function() {                               // method greet()
+    console.log("Hello, I'm " + this.name);
   }
+
+  this.aboutMe = function() {                             // method aboutMe()
+    console.log("Hello, I'm " + this.color + " and aged " + this.age);
+  }
+  
 ```
 
-The constructor function above sets some properties of Cat, then it adds one method, "greet". This line looks kind of like a function definition, but is a slightly different format. With a normal function, you may be used to something like this:
+The constructor function above sets some properties of Cat, then it adds two methods, "greet" and "aboutMe". These are written as unnamed or anonymous functions, but really they are effectively named: they are preserved in Cat.greet and Cat.aboutme. It's useful to be completely comfortable with unnamed functions:
 
 ```javascript
-function doSomething() {
+function doSomething() {                     // First definition
   console.log("I'm doing something!");
 }
-```
 
-However, it's important to know that the above function could be rewritten like this:
-
-```javascript
-var doSomething = function() {
+var doSomething = function() {               // Second definition. This is identical to the first.
   console.log("I'm doing something!");
 };
 ```
 
 These two definitions are the same, just written differently. In both cases what is happening is that a function is defined and assigned to a variable name of your choosing. Remember in JS, a variable can be anything - a string, a number, a boolean, etc - but also a function. 
 
-In the first case, this variable name is stuck after the word function, in the second, the variable is explicitly stated first, then the function is assigned. They mean the same thing, so it's helpful to get used to seeing both forms.
+In the first case, this variable name is stuck after the word "function", in the second, the variable is explicitly stated first, then the function is assigned. They mean the same thing, so it's helpful to get used to seeing both forms.
 
 So turning back to the method declaration, it starts to look more familiar. It's very similar to the new function definition format we just saw, but `var functionName = ` is replaced with `this.functionName = `. This is because, just like the properties, we use `this.` to say that the method belongs to the object being created.
 
-```javascript
-this.greet = function() {
-  console.log("Hello, I'm "+this.name);
-}
-```
-
-Calling this method of an instance looks similar to accessing properties.
+Calling this method of an instance looks similar to accessing properties:
 
 ```javascript
-var cat0 = new Cat();
-cat0.greet(); // "Hello I'm Margot"
-
-cat0.name = "Sam";
-cat0.greet(); // "Hello I'm Sam";
+cats[0].greet();      // "Hello I'm Margot" (or Robbie)
+cats[0].aboutMe();    // "I'm black and aged 8" (or 9)
 ```
+An "instance" is an OOP term for an instance of an object or class. So cats[0] is an instance of Cat.
 
-## Using parameters
+### A p5.js example
 
-You can also pass parameters into the constructor function, the same way parameters are passed into any function. The arguments are listed within the parentheses for the constructor function, separated by commas.
+Let's develop a p5.js example which will use dynamic objects, and run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture tells a thousand words, and you can illustrate lots of stuff with coloured, moving things on the screen !
 
-```javascript 
-function Cat(name, age) {
-  this.name = name;
-  this.age = age;
-  this.color = "Black";
 
-  this.greet = function() {
-    console.log("Hello, I'm " + this.name);
-  }
-}
 
-var cat0 = new Cat("Joanie", 10);
-var cat1 = new Cat("Jay", 2);
-
-cat0.greet(); // "Hello, I'm Joanie"
-cat1.greet(); // "Hello, I'm Jay"
-```
 
 ## Code formatting, style, good practices, common mistakes
 
@@ -1518,9 +1470,8 @@ Commenting is also useful for quickly removing or adding back in chunks of code 
 aa == bb  /* + cc */  + dd;  // You can comment out just a snippet. A bit unclear though.
 
 if (false) {        // This style is also ok for de-activating a piece of code.
-  a = b + 1;        // Some people use if(0). This is falsy enough as a stand-alone flag.
-  a = b + 1;      
-  c = d;
+  a = b + 1;        // Some people use if(0). This is falsy enough as a stand-alone flag.      
+  c = d * 5;;
   createImage(500, 500);
 }
 ```
@@ -1530,7 +1481,6 @@ Avoid inter-mixing and nesting comment styles.
 ```javascript
 // /* a = 1 */  +2;            // what does this mean ? does the */ terminate the // ?
    /* /*  b = 1;  */ */        // and this ? who knows. Don't go there.
- 
 ```
 
 ### Indentation
@@ -1590,7 +1540,7 @@ console.log(str2);   // A long documentation text which needs to be multiline, s
 
 fred = 1 + 2 +       // Very bad practice
   3 + 4;             
-console.log(fred);   // 10
+console.log(fred);   // 10  .. this time
 ```
 ### Semicolons
 
@@ -1753,7 +1703,6 @@ The pay-off is flexible design of course, but also much faster development, rapi
 An interesting paper describing all this is John Ousterhout's seminal paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the original driver behind the scripting language Tcl and its companion gui builder Tk. The paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower, maybe 20x, than script approaches; reliability is not much different in the end; performance may not be much different - your code is usually limited by things you don't have control over: graphics rendering power, disk speed, network speed - and there's plenty of cpu these days to drive the interpreted JavaScript engine.
 
 So despite it's looseness and oddities JavaScript is quick and fun and pretty reliable to work with. Get stuck in !
-
 
 
 ## Todo:
