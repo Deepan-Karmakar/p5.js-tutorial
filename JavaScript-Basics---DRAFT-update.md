@@ -66,7 +66,9 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Comments](#comments)  
 &nbsp;&nbsp;&nbsp;[Indentation](#indentation)  
 &nbsp;&nbsp;&nbsp;[Padding](#padding)  
+&nbsp;&nbsp;&nbsp;[Line continuation](#line-continuation)  
 &nbsp;&nbsp;&nbsp;[Semicolons](#semicolons)  
+&nbsp;&nbsp;&nbsp;[JavaScript versions](#javascript-versions)    
 ***
 
 ## Script setup in HTML
@@ -1476,7 +1478,7 @@ As a rule of thumb, have a line or two of comment for every 10-30 line paragraph
 
 Comments in JavaScript are similar to comments in Java or C, C++.  `//` comments are often referred to as C++ comments, and `/*  */` comments as C comments. However C, C++, Java, C#, Objective-C and others all now allow both styles.
 
-Commenting is useful for quickly removing or adding back in chunks of code (safer than deleting the chunk). 
+Commenting is also useful for quickly removing or adding back in chunks of code (safer than deleting the chunk). 
 
 ```javascript         
   // single line comment
@@ -1494,9 +1496,17 @@ Commenting is useful for quickly removing or adding back in chunks of code (safe
   * Blah blah blah
   */
 
+
+// if (x > 5) {       // You can comment out a whole block
+//    a = 123;
+//    b = 456;
+//    c = 789;
+// }
+
 aa == bb  /* + cc */  + dd;  // You can comment out just a snippet. A bit unclear though.
 
-if (false) {        // This style is also ok for de-activating a piece of code. Some people use if(0). falsy enough :=)
+if (false) {        // This style is also ok for de-activating a piece of code.
+  a = b + 1;        // Some people use if(0). This is falsy enough as a stand-alone flag.
   a = b + 1;      
   c = d;
   createImage(500, 500);
@@ -1548,6 +1558,28 @@ cat ~/.astylrec
 --verbose
 ```
 
+### Line continuation
+
+JavaScript allows some lines to continue with a backslash \ on the end. Not a very clear style in general. But can be useful maybe for some big block of text you need to get into the code.
+
+Also plain statements can run over more than one line. Not usually very clear.
+
+```javascript
+var str = "A hugely long text string which you decide to split over \
+two lines like this";
+console.log(str);   // "A hugely long text string which you decide to split over two lines like this"
+
+var str2 = "A long documentation text which needs to be multiline, so we\n\
+use escaped newlines in it blah blah blah blah blah blah blah blah blah\n\
+more blah, the end.";
+console.log(str2);   // A long documentation text which needs to be multiline, so we 
+                     // use escaped newlines in it blah blah blah blah blah blah blah blah blah
+                     // more blah, the end.
+
+fred = 1 + 2 +
+  3 + 4;
+console.log(fred);  // 10
+```
 ### Semicolons
 
 A code statement almost always ends with a semicolon.
@@ -1564,16 +1596,52 @@ Semicolons are partly optional in JavaScript. You can read more here [semicolon 
 
 There's a nice academic point that comes up here, and in all languages with a statement terminator. Is the semicolon a terminator ? `(a = 1; b = 2;)` or a separator ? `(a = 1; b = 2)`. Aha. Well.
 
+### JavaScript versions
+
+Just some background on JavaScript versions - you won't need this for your early p5.js apps.
+
+JavaScript version naming is very messy. There are terms like JavaScript 1.7, ECMAScript 2015, ES 2015, ES6. These are all approximately the same ! 
+
+JavaScript has moved away from the "JavaScript 1.x" terminology. It's now versioned in terms of ECMAScript. But this has quirks too. The most widespread version, which you can rely on in all browsers, is ECMAScript 2015, or ES 2015, or ES6. This is because the 6th edition of ECMAScript was released in 2015.
+
+There is no easily accessible internal version number in JavaScript. One traditional hack to get a version was to put this in your index.html:
+
+```javascript
+  <script language="javascript">var js_version="1.0"</script>
+  <script language="javascript1.1">var js_version="1.1"</script>
+  <script language="javascript1.2">var js_version="1.2"</script>
+  <script language="javascript1.3">var js_version="1.3"</script>
+  <script language="javascript1.4">var js_version="1.4"</script>
+  <script language="javascript1.5">var js_version="1.5"</script>
+  <script language="javascript1.6">var js_version="1.6"</script>
+  <script language="javascript1.7">var js_version="1.7"</script>
+  <script language="javascript1.8">var js_version="1.8"</script>
+  <script language="javascript1.8.5">var js_version="1.8.5"</script>
+```
+
+So js_version shows up in your main code as perhaps "1.7". But as noted above these numbers have little meaning any more.
+
+In actuality, all the major browsers try to keep up with the latest ECMAScript spec, currently ES June 2017, aka ES8. Chrome, Firefox, Safari support 95%+ of the latest ES8 features, and also some of their own extensions. Edge is a little behind, and IE even further. 
+
+To test whether your JavaScript engine or browser has a new fancy feature, you have to check for it explicitly. One quick example - check if the "geolocation" feature is in the system. A note here: "navigator" persists in the Web world as an internal term for your browser, from the old Netscape Navigator. 
+
+```javascript
+if("geolocation" in navigator) { // use it }    // just check for the property we want, at the top-level
+```
+There's a library called Modernizr [Modernizr](https://modernizr.com/) which simplifies all these feature-existence checks. 
+
+References:  
+[JavaScript versions](https://en.wikipedia.org/wiki/JavaScript#Version_history)  
+[ECMAScript versions](https://en.wikipedia.org/wiki/ECMAScript#History)  
+[Feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)  
+
 ## Todo:
 
 * Doco: Keep updating the simple Table Of Contents at the top as we add sections.
 * Objects: Complete the Objects section
 * Objects: Mention class statement ?? maybe not, seems a hack.
-* General: mention ES2015 or ES6 is current widespread version
-* Style: Mention line wrapping, single line code if(x) {y = z;}, line continuation with \
 * Style: Mention strict mode
 * Style: Mention JSHint, JSLint
-* Style: Mention AStyle for formatting
 * Performance: Mention profiling, refer to other tut on that.
 * Performance: reference Ousterhout's paper: https://www.tcl.tk/doc/scripting.html 
 * Hints: Refer to www3schools "mistakes" section, other "good practices" info.
