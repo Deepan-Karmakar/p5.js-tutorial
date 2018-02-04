@@ -1,14 +1,12 @@
 
 
-_This is a draft update to the p5.js JavaScript Basics tut. I will probably finish it by mid-Feb (err, 2018!), hopefully earlier. To flesh out some more generic JavaScript detail, and add more examples relevant to p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
+_This is a draft update to the p5.js JavaScript Basics tut. I aim to finish it by mid-Feb (err, 2018!). To flesh out some more generic JavaScript detail, and add more examples relevant to p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
 
 _**Previous version being updated more or less from top down. Areas needing more work flagged as "Todo". Can you flag something in colour in Markdown? That would be useful.**_
 
 Looks like you should be able to use \<span style="color:red"\>some red text\</span\> but GitHub is stripping it out.
 
-Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.   - nope
-
-<span style=color:green> green text goes here</span>   - nope
+Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.   - nope - <span style=color:green> green text goes here</span>   - nope
 
 ---
 
@@ -49,7 +47,7 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Do while](#do-while-)  
 &nbsp;&nbsp;&nbsp;[For](#for-)  
 &nbsp;&nbsp;&nbsp;[Break out of loop](#breaking-out-of-loops)   
-&nbsp;&nbsp;&nbsp;[For in, for of, forEach](#for-in-for-of-forEach)&nbsp;&nbsp;&nbsp;(can't get this link to work)   
+&nbsp;&nbsp;&nbsp;[For in, for of, forEach](#for-in-for-of-foreach)&nbsp;&nbsp;&nbsp;     
 [Functions](#functions)    
 &nbsp;&nbsp;&nbsp;[Function arguments](#function-arguments-or-parameters)   
 &nbsp;&nbsp;&nbsp;[Arguments are optional](#arguments-are-optional)   
@@ -69,7 +67,6 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Line continuation](#line-continuation)  
 &nbsp;&nbsp;&nbsp;[Semicolons](#semicolons)  
 &nbsp;&nbsp;&nbsp;[Strict mode](#strict-mode)  
-&nbsp;&nbsp;&nbsp;[Style checkers](#style-checkers)  
 &nbsp;&nbsp;&nbsp;[Style checkers](#style-checkers)  
 &nbsp;&nbsp;&nbsp;[Common mistakes](#common-mistakes)   
 &nbsp;&nbsp;&nbsp;[Performance, efficiency, profiling](#performance-efficiency-profiling)  
@@ -107,7 +104,7 @@ You can also write JavaScript in a file external to the HTML and point to that f
 
 Note, the 'type="text/javascript"' is not needed in the latest browsers, JavaScript is now the default script type.
 
-JavaScript can be scattered all through a web page, enclosed in <script> and </script>. Example: here we intercept a mouse click on a button, copy some data around, and change the background colour:
+JavaScript can be scattered all through a web page, enclosed in <script> and </script>, or in special tags like <button>. Example: here we intercept a mouse click on a button, copy some data around, and change the background colour:
 
 ```html
 <html>
@@ -118,12 +115,13 @@ Field2: <input type="text" id="field2"><br><br>
 
 <button onclick="myFunction()">Click me</button>  <!-- the onclick action is JavaScript too -->
 
-<p>A function is triggered when the button is clicked. The function copies the text from Field1 into Field2, and also changes the background colour</p>
+<p>A function is triggered when the button is clicked. The function copies the text from Field1 into Field2, 
+ and also changes the background colour</p>
 
 <script>
 function myFunction() {
     document.getElementById("field2").value = document.getElementById("field1").value;
-    document.getElementsByTagName("BODY")[0].style.backgroundColor = "yellow";
+    document.getElementsByTagName("body")[0].style.backgroundColor = "yellow";
 }
 </script>
 
@@ -1609,9 +1607,9 @@ There's a nice academic point that comes up here, and in all languages with a st
 
 ### Strict mode
 
-JavaScript introduced a "strict" mode to tighten up coding practices and prevent some types of errors (in ECMAScript 5, JavaScript 1.8.5, in 2009). Other languages also have a strict mode, eg. Perl. They tend to get added later in the day.
+JavaScript introduced a "strict" mode to tighten up coding practices and prevent some types of errors (in ECMAScript 5, JavaScript 1.8.5, in 2009). Other languages also have a strict mode, eg. Perl. This tends to get added later in the day, when problems develop with the original design;
 
-Just place `"use strict;"` at the top of your whole code, or in individual functions if you want it to only apply there.
+Just place `"use strict";` at the top of your whole code, or in individual functions if you want it to only apply there.
 
 Strict mode makes certain kinds of risky practices illegal. The most important one is undeclared variables (or arrays, objects, etc).
 
@@ -1639,7 +1637,7 @@ This will also prevent unwanted global variables being created. If you have a ro
 
 You should always use Strict mode !
 
-The odd syntax `"use strict;"` is so the instruction is ignored by an old JavaScript engine which doesn't know what it is. A statement like `"use strict;"` is just an isolated string with no computational effect, like `"Cool bananas;"`. It's parsed, created, then thrown away by any engine that isn't looking for it. Some other languages warn about this: "Warning, statement has no effect". Isolated expressions are easy to create: `var x = y;+z;`. You meant `y+z;` but z got orphaned and had no effect.
+The odd syntax `"use strict";` is so the instruction is ignored by an old JavaScript engine which doesn't know what it is. A statement like `"use strict";` is just an isolated string with no computational effect, like `"Cool bananas;"`. It's parsed, created, then thrown away by any engine that isn't looking for it. Some other languages warn about this: "Warning, statement has no effect". Isolated expressions are easy to create: `var x = y;+z;`. You meant `y+z;` but z got orphaned and had no effect.
 
 There are a number of other practices which are disallowed in Strict mode: [Strict mode](https://www.w3schools.com/js/js_strict.asp)
 
