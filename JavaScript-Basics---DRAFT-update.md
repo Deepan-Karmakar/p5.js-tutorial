@@ -62,12 +62,13 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Other points about let](#other-points-about-let)    
 &nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)  
 [Objects](#objects)     
-[Code formatting, style, good practices](#code-formatting-style-good-practices)  
+[Code formatting, style, good practices, common mistakes](#code-formatting-style-good-practices-common-mistakes)  
 &nbsp;&nbsp;&nbsp;[Comments](#comments)  
 &nbsp;&nbsp;&nbsp;[Indentation](#indentation)  
 &nbsp;&nbsp;&nbsp;[Padding](#padding)  
 &nbsp;&nbsp;&nbsp;[Line continuation](#line-continuation)  
 &nbsp;&nbsp;&nbsp;[Semicolons](#semicolons)  
+&nbsp;&nbsp;&nbsp;[Strict mode](#strict-mode)  
 &nbsp;&nbsp;&nbsp;[JavaScript versions](#javascript-versions)    
 ***
 
@@ -539,7 +540,7 @@ staff[0].age  // returns 55
 Objects can contain other objects.
 
 ```javascript
-obj = { 1:11, 2:{2:22}, 3:33};            // Simple object literal
+obj = { 1:11, 2:{2:22}, 3:33};            // Simple nested object literal
 
 obj2 = {2:22};
 obj = { 1:11, obj2, 3:33 };               // Build it in stages
@@ -588,6 +589,7 @@ var message = "";       // Ditto
 var newArray = [];      // Safe
 var newObject = {};     // Safe
 ```
+
 Creating new "empty" things in JavaScript is surprisingly clunky. It's slightly hard to know what you have done with a statement like `var myArray = []`. Go to the JS console and type it, then just type "myArray". JS will compute the expression, which is a single array, with no useful effect, ie. no assignment to anything, but that's ok, and display a breakdown of what it is, an array with no elements, length 0. You can hit the disclosure triangle for more detail if there is one. Try again with `myArray = [1,2,3]`. You'll get the picture quickly. Also try `var myObj = {}` and `myObj = {"alpha":1, "beta":2}`.
 
 Note: the `typeof()` call is a great debugger and learning tool. Try it in the JS console. `typeof(1); typeof("a"); x = 12.34; typeof(x); x = x + "hello"; typeof(x); a = 1.23; b = a + '4'; typeof(b); typeof(undefined); var z; typeof(z); typeof(null)`
@@ -758,7 +760,7 @@ The "===" and "!==" operator set were introduced at JavaScript 1.3 to use exact 
 
 ### Switch{} statement
 
-Rather than a long if/else chain, we can select amongst simple options with a switch statement.
+Rather than a long if/else chain, we can select among simple options with a switch statement.
 ```javascript
 switch ( userInput ) {
 
@@ -774,11 +776,16 @@ switch ( userInput ) {
   case 'd':
     showDebug = true;   // a flag to show debug info each frame
     break;
+
+  default:
+    console.log("Unexpected user input", userInput);
 }
 ```
 This is neat and clear. Although, if you omit the 'break' the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
 
-Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Kernighan and Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words the norm, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your bank's millions of customers which take 5 minutes to load your account, all is well for efficiency workers).
+Always use the `default` catcher, even if you think it can never happen.
+
+Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Kernighan and Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your banks millions of customers which take 5 minutes to load your account, all is well for efficiency workers).
 
 ## Loops
 
@@ -845,7 +852,7 @@ for (n of arr) {
 }
 
 for (n in obj) {
-  console.log("value", n);      //  prints "value 2, value 4, value 1st, value 3rd". Note random order.
+  console.log("accessor", n);   //  prints "accessor 2, accessor 4, accessor 1st, accessor 3rd". Note random order.
 }
 
 // forEach has a lot of functionality. Also see array.some(), array.every() etc. Basic example:
@@ -946,7 +953,7 @@ show(1, 2, 3);  // prints  1 2 3
 show(4, 5);     // prints  4 5 undefined
 show();         // prints  undefined undefined undefined
 
-setReactorControls(min);   // Err, is there a max ?
+setReactorControls(min);   // Err, was there a max ?
 ```
 
 ### Default arguments
@@ -1461,7 +1468,7 @@ cat0.greet(); // "Hello, I'm Joanie"
 cat1.greet(); // "Hello, I'm Jay"
 ```
 
-## Code formatting, style, good practices
+## Code formatting, style, good practices, common mistakes
 
 ### Comments
 
@@ -1529,7 +1536,7 @@ Generally whenever you introduce curly braces, you should indent everything insi
 
 A great tool is an automatic formatter. I use [AStyle](http://astyle.sourceforge.net/). Properly indented code will line up well, help you understand your code flow, and alert you when you have forgotten to close a loop with a brace } or whatever. You can configure the formatter for different indent and spacing and padding styles. (Did I mention the great thing about standards ...) 
 
-Academic note: Python uses _nothing but_ spaces to indent and block code. Correct indentation is crucial.
+Academic note: Python uses _nothing but_ spaces to indent and block code. Correct indentation is key.
 ```javascript
 if pwd == 'secret':                         // Some Python
     print('Logging on ...')
@@ -1596,6 +1603,43 @@ Semicolons are partly optional in JavaScript. You can read more here [semicolon 
 
 There's a nice academic point that comes up here, and in all languages with a statement terminator. Is the semicolon a terminator ? `(a = 1; b = 2;)` or a separator ? `(a = 1; b = 2)`. Aha. Well.
 
+### Strict mode
+
+JavaScript introduced a "strict" mode to tighten up coding practices and prevent some types of errors (in ECMAScript 5, JavaScript 1.8.5, in 2009). Other languages also have a strict mode, eg. Perl. They tend to get added later in the day.
+
+Just place `"use strict;"` at the top of your whole code, or in individual functions if you want it to only apply there.
+
+Strict mode makes certain kinds of risky practices illegal. The most important one is undeclared variables (or arrays, objects, etc).
+
+Prior to Strict mode, it was legal to just write `x = 123;` anywhere. JS assumed you meant `var x = 123` and just created x for you. I haven't even mentioned that in this tutorial because it's such bad practice. But this makes accidental typos very easy:
+
+```javascript
+// Top of code
+let reactorSettings = [1, 2, 3, "fast"];
+
+// Much further down
+reactorsettings[3] = "stop";     // oops, forgot the capital S, JS silently creates a new array reactorsettings. We're doomed.
+```
+
+But with strict mode:
+
+```javascript
+// Top of code
+"use strict";
+let reactorSettings = [1, 2, 3, "fast"];   
+
+reactorsettings[3] = "stop";     // ReferenceError: reactorsettings is not defined
+```
+
+This will also prevent unwanted global variables being created. If you have a rogue undeclared `x = 123` in a function, it is created as a global variable. This can clash with data at top level, and in other functions, and in other libraries like p5.js. 
+
+You should always use Strict mode !
+
+The odd syntax `"use strict;"` is so the instruction is ignored by an old JavaScript engine which doesn't know what it is. A statement like `"use strict;"` is just an isolated string with no computational effect, like `"Cool bananas;"`. It's parsed, created, then thrown away by any engine that isn't looking for it. Some other languages warn about this: "Warning, statement has no effect". Isolated expressions are easy to create: `var x = y;+z;`. You meant `y+z;` but z was silently instantiated then discarded.
+
+There are a number of other practices which are disallowed in Strict mode: [Strict mode](https://www.w3schools.com/js/js_strict.asp)
+
+
 ### JavaScript versions
 
 Just some background on JavaScript versions - you won't need this for your early p5.js apps.
@@ -1638,14 +1682,15 @@ References:
 ## Todo:
 
 * Doco: Keep updating the simple Table Of Contents at the top as we add sections.
+* Examples: change to let after we have introduced it. Use some const too.
 * Objects: Complete the Objects section
 * Objects: Mention class statement ?? maybe not, seems a hack.
-* Style: Mention strict mode
 * Style: Mention JSHint, JSLint
-* Performance: Mention profiling, refer to other tut on that.
+* Performance: Mention profiling, refer to the other tut on that.
 * Performance: reference Ousterhout's paper: https://www.tcl.tk/doc/scripting.html 
 * Hints: Refer to www3schools "mistakes" section, other "good practices" info.
 * Mention map/reduce ?? don't think so
+* The => function mapping syntax ? Prob not.
 
 ***
 
