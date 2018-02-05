@@ -1313,19 +1313,20 @@ function circumference(radius) {
 
 ## Objects part 2: objects as classes
 
-We introduced basic objects above, `let obj = { "name":"Vincent", "age":3 }`. Now we add methods to produce a full-featured dynamic object, which gives us the effective functionality of a "class".
+We introduced basic objects above, such as `let obj = { "name":"Vincent", "age":3 }`. At that stage they were pretty much just a convenient way to have a type of "array" addressable with a text string key. Handy but not going to change the world. Now let's go ahead and add "methods", ie. functions, to produce a full-featured dynamic object. This gives us the effective functionality of a "class", as provided in languages such as C++ and Java.
 
-Let's proceed gradually here. First, we can create an empty object with `obj = {}` or `obj = new Object`. Both create the same thing, an empty object. Try it in the console. The `new` syntax is useful when we want to create a lot of objects: `obj = []; for (let i = 0; i < 99; i++) { obj[i] = new Object; }`. This creates an array of 100 empty Objects.
+Let's proceed gradually here, and build up the concept. First, we could create an empty object with `obj = {}` or `obj = new Object`. Both create the same thing, an empty object. Try it in the console. The `new` syntax is useful when we want to create a lot of objects: `obj = []; for (let i = 0; i < 99; i++) { obj[i] = new Object; }`. This creates an array of 100 empty Objects.
 
-Next we want to add some properties to the objects. We could do this with:
+Next we want to add some plain "data" properties to an object. We could do this like so:
 
 ```javascript
-for (let i = 0; i < 99; i++) {
+cats = [];                      // not essential, but good practice
+for (let i = 0; i < 99; i++) {  
   cats[i] = new Object;
   if ( i === 0 ) {
-    cats[i].name = "Margot";    // this is data for cats, by the way
-    cats[i].age = 8;            
-    cats[i].color = "black";    
+    cats[i].name = "Margot";    // this is data for cats, by the way, if that's not obvious
+    cats[i].age = 8;            // probably less than 15 ?        
+    cats[i].color = "black";    // not going to include yellow, green, blue
   }
   if ( i === 1 ) {
     cats[i].name = "Sam";
@@ -1338,7 +1339,7 @@ console.log(cats[0]);   // {name: "Margot", age: 8, color: "black"}
 
 ```
 
-However it's more convenient to use a function notation, and create a "constructor" for our objects. The term "constructor" is used in C++, Java etc for a function which creates a class object. Here the constructor is the function Cat(). 
+However it's more convenient to use a function notation, and create a "constructor" for our objects. The term "constructor" is used in C++, Java etc. for a function which creates a class object. Here the constructor is the function Cat(). 
 
 ```javascript
 function Cat(Name, Age, Color) {
@@ -1349,10 +1350,10 @@ function Cat(Name, Age, Color) {
 
 cats = [];  
 cats[0] = new Cat("Margot", 8, "black");   // the "new" forces a permanent object to be created,
-cats[1] = new Cat("Sam", 2, "white");      //  without it the function call would just return undefined and have no effect
+cats[1] = new Cat("Sam", 2, "white");      // without it the function call would just return undefined and have no effect
 
 console.log(cats);   // Shows something like ..
-                     //  (2) [Cat, Cat]
+                     //  (2) [Cat, Cat]            // this is console "icing", but useful. 
                      //    [
                      //      0: Cat {"Margot", 8, "black"}
                      //      1: Cat {"Sam", 2, "white"}
@@ -1361,11 +1362,11 @@ console.log(cats);   // Shows something like ..
 
 The "this" notation is a common one in Object Oriented Programming, or OOP. It always refers to the overall "thing" we are inside, or working with. At top level in a JavaScript program, "this" refers to the whole program invocation. We mentioned it above when talking about accidental creation of global variables.
 
-You can access and modify the properties of objects directly by using `.propertyName`.
+You can access and modify the plain properties of objects directly by using `.propertyName`.
 
 ```javascript
 console.log(cats[0].name);    // "Margot"
-cats[0].name = "Robbie";      // change name to "Robbie"
+cats[0].name = "Robbie";      // change name to "Robbie" 
 
 cats[0].age++;                // Margot/Robbie is getting older
 console.log(cats[0].age);     // 9
@@ -1382,6 +1383,7 @@ function Cat(Name, Age, Color) {
    this.color = Color;
 
   // Add some methods
+
   this.greet = function() {                               // method greet()
     console.log("Hello, I'm " + this.name);
   }
@@ -1392,7 +1394,9 @@ function Cat(Name, Age, Color) {
   
 ```
 
-The constructor function above sets some properties of Cat, then it adds two methods, "greet" and "aboutMe". These are written as unnamed or anonymous functions, but really they are effectively named: they are preserved in Cat.greet and Cat.aboutme. It's useful to be completely comfortable with unnamed functions:
+The constructor function above sets some properties of Cat, then it adds two methods, "greet()" and "aboutMe()". These are written as unnamed or anonymous functions, but really they are effectively named: they are preserved in Cat.greet and Cat.aboutme. 
+
+It's useful to be completely comfortable with unnamed functions:
 
 ```javascript
 function doSomething() {                     // First definition
@@ -1404,19 +1408,19 @@ var doSomething = function() {               // Second definition. This is ident
 };
 ```
 
-These two definitions are the same, just written differently. In both cases what is happening is that a function is defined and assigned to a variable name of your choosing. Remember in JS, a variable can be anything - a string, a number, a boolean, etc - but also a function. 
+These two definitions are the same, just written differently. In the second case, the function is saved in the variable "doSomething".  Remember in JS, a variable can be anything - a string, a number, a boolean - but also a function. 
 
 In the first case, this variable name is stuck after the word "function", in the second, the variable is explicitly stated first, then the function is assigned. They mean the same thing, so it's helpful to get used to seeing both forms.
 
-So turning back to the method declaration, it starts to look more familiar. It's very similar to the new function definition format we just saw, but `var functionName = ` is replaced with `this.functionName = `. This is because, just like the properties, we use `this.` to say that the method belongs to the object being created.
+So turning back to the method declaration in Cat, it starts to look more familiar. It's very similar to the new function definition format we just saw, but `var functionName = ` is replaced with `this.functionName = `. This is because, just like the properties, we use `this.` to say that the method belongs to the object being created.
 
-Calling this method of an instance looks similar to accessing properties:
+Calling this method on an instance looks similar to accessing properties, except we use the () notation to order a function call.
 
 ```javascript
 cats[0].greet();      // "Hello I'm Margot" (or Robbie)
 cats[0].aboutMe();    // "I'm black and aged 8" (or 9)
 ```
-An "instance" is an OOP term for an instance of an object or class. So cats[0] is an instance of Cat.
+An "instance" is an OOP term for an instance of an object or class. So cats[0] is an instance of Cat. It's a "thing", ie. an "Object", with internal data: name, age, color - and internal callable methods: greet(), aboutMe().
 
 ### A p5.js example
 
