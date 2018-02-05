@@ -2,7 +2,7 @@
 
 _This is a draft update to the p5.js JavaScript Basics tut. I aim to finish it by mid-Feb (err, 2018!). To flesh out some more generic JavaScript detail, and add more examples relevant to p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
 
-_**Previous version being updated more or less from top down. Areas needing more work flagged as "Todo". Can you flag something in colour in Markdown? That would be useful.**_
+_**Areas needing more work flagged as "Todo". Can you flag something in colour in Markdown? That would be useful.**_
 
 Looks like you should be able to use \<span style="color:red"\>some red text\</span\> but GitHub is stripping it out.
 
@@ -49,17 +49,19 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Break out of loop](#breaking-out-of-loops)   
 &nbsp;&nbsp;&nbsp;[For in, for of, forEach](#for-in-for-of-foreach)&nbsp;&nbsp;&nbsp;     
 [Functions](#functions)    
-&nbsp;&nbsp;&nbsp;[Function arguments](#function-arguments-or-parameters)   
 &nbsp;&nbsp;&nbsp;[Arguments are optional](#arguments-are-optional)   
 &nbsp;&nbsp;&nbsp;[Default arguments](#default-arguments)     
 &nbsp;&nbsp;&nbsp;[Recursion](#recursion)  
 &nbsp;&nbsp;&nbsp;[Closures](#closures)      
+&nbsp;&nbsp;&nbsp;[Arrow functions](#arrow-functions)     
 [Variable scope](#variable-scope)  
 &nbsp;&nbsp;&nbsp;[Precedence of global vs local variables](#precedence-of-global-and-local-variables)       
 &nbsp;&nbsp;&nbsp;[The "let" declaration](#new-scope-declaration-let)  
 &nbsp;&nbsp;&nbsp;[Other points about let](#other-points-about-let)    
 &nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)      
-[Objects part 2: objects as classes](#objects-part-2-objects-as-classes)    
+[Objects part 2: objects as classes](#objects-part-2-objects-as-classes)   
+[A p5.js example](#a-p5js-example)  
+[The new Class statement](#the-new-class-statement)     
 [Code formatting, style, good practices, common mistakes](#code-formatting-style-good-practices-common-mistakes)  
 &nbsp;&nbsp;&nbsp;[Comments](#comments)  
 &nbsp;&nbsp;&nbsp;[Indentation](#indentation)  
@@ -225,7 +227,7 @@ var fancy = "we need some 'single quotes' in here";
 var fancy2 = "strings can have \' and \" quotes inside"; 
 ```
 
-There are a large number of useful built-in JavaScript properties and methods that let you manipulate strings. You can see them all [here](http://www.w3schools.com/js/js_string_methods.asp), and also [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/). These two sites, the www3schools site, and the Mozilla Development Network (MDN), are good references. A few of the most useful String methods follow:
+There are a large number of useful built-in JavaScript properties and methods that let you manipulate strings. You can see them all here [w3schools](http://www.w3schools.com/js/js_string_methods.asp), and also here [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/). These two sites, the www3schools site, and the Mozilla Development Network (MDN), are good references. Another useful one is [Javascript.info](https://javascript.info/types#a-string/). A few of the most useful String methods follow:
 
 **length**
 
@@ -1104,6 +1106,36 @@ More sophisticated use of closures can make convenient but safe and reliable cod
 
 [\[Wikipedia on closures\]](https://en.wikipedia.org/wiki/Closure_(computer_programming))
 
+## Arrow functions
+
+You may see these in code. They're a convenient short-cut for very simple utility functions. The arrow notation `=>` is used in the definition.
+
+```javascript
+let x2 = (x) => x * x;               // x2 is a function which returns the square of x
+                                     // Read this as: x2 = a function which maps x to x*x
+a = 5;
+b = x2(5);                           // b is 25
+
+let func x2(x) {                     // The same thing defined with a standard function.
+   return x * x;
+}
+
+let sum = (a, b) => a + b;           // An arrow function with two args
+a = 1; b = 2; c = sum(a,b);          // c is 3
+```
+
+Arrow functions also allow some concise expression of larger but very "regular" operations. The examples below use some array features which we haven't covered. You can look them up if you're interested, eg. [array reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+
+```javascript
+let arr = [5, 6, 13, 0, 1, 18, 23];
+
+let sum = arr.reduce((a, b) => a + b);            // 66
+
+let even = arr.filter(v => v % 2 == 0);           // [6, 0, 18]
+
+let double = arr.map(v => v * 2);                 // [10, 12, 26, 0, 2, 36, 46]
+```
+
 
 ## Variable scope
 
@@ -1372,7 +1404,7 @@ cats[0].age++;                // Margot/Robbie is getting older
 console.log(cats[0].age);     // 9
 ```
 
-## Adding methods
+### Adding methods
 
 While properties are like variables within an object, methods are like functions within an object. They are set and accessed in much the same way. Let's extend our definition of the object type Cat.
 
@@ -1424,8 +1456,26 @@ An "instance" is an OOP term for an instance of an object or class. So cats[0] i
 
 ### A p5.js example
 
-Let's develop a p5.js example which will use dynamic objects, and run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture tells a thousand words, and you can illustrate lots of stuff with coloured, moving things on the screen !
+Let's develop a p5.js example which will use dynamic objects, and run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture tells a thousand words as they say.
 
+...  
+...  
+...  
+...  
+...  
+
+
+## The new Class statement
+
+ECMAScript 2015 (ES6) introduces the "class" statement. This is an attempt to give JavaScript something that looks close to the class design system of other languages like Java and C++.
+
+It's effectively "syntactic sugar" which allows you to declare classes, and members, methods, constructors etc. with a similar syntax to other languages. However it doesn't actually add any new underlying capability. What you end up with is the same as you could have set up without "class".
+
+I'm just going to include links here to some resources. You can can find many more by searching.
+
+[MDN reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)   
+[More info](https://javascript.info/class)  
+[More info](https://coryrylan.com/blog/javascript-es6-class-syntax)  
 
 
 
@@ -1714,10 +1764,10 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 ## Todo:
 
 * Examples: change to let after we have introduced it. Use more const too.
-* Objects: Complete the Objects section
-* Objects: Mention class statement ?? just briefly, seems a hack.
-* Mention map/reduce ?? don't think so
-* The => function mapping syntax ? Prob not.
+* Objects: Complete the Objects section with p5.js example
+* Mention map/reduce ?? don't think so, not much relevance to p5.js
+* Add delete() and mention UTF codes
+* Rest arguments
 
 ***
 
