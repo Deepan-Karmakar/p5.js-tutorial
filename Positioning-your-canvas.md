@@ -36,7 +36,7 @@ function setup() {
 This will display a 100x100 pink square at the top-left of your browser window.
 
 
-## Making the canvas fullscreen
+## Making the canvas fill the window
 
 The canvas can be made to automatically fill the window by using the built-in variables `windowWidth` and `windowHeight`:
 ```js
