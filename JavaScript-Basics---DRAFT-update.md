@@ -1610,15 +1610,16 @@ We have already mentioned a few risks to watch out for. Here's another selection
 
 ```javascript
 var x = 0;          
-if (x = 10) { // some code }      // Accidentally used = instead of == or ===. The comparison wrongly returns true, since 
-                                  // the result of (x = 10) is 10, which counts as a true value in loose comparison.
+if (x = 10) { // some code }      // Accidentally used = instead of == or ===. The comparison wrongly returns true,
+                                  // and the code block executes, since the result of (x = 10) is 10, which counts as a
+                                  // true value in loose comparison.
 
 var x = 10;                       // Be aware of loose comparisons
 var y = "10";
 if (x == y)  { // some code }     // This will match, code will run
 if (x === y) { // some code }     // This will not match, code will not run. 
 
-var x = 10;                       // Switch statements invisibly use exact === comparison
+var x = 10;                       // Switch statements invisibly use exact === comparison !
 switch(x) {
     case 10: alert("Hello");      // We get an alert here.
 }                
@@ -1649,8 +1650,9 @@ if (typeof myObj !== "undefined" && myObj !== null) {  // Better, typeof will sa
 for (var i = 0; i < 10; i++) {  // Quick re-visit of 'var' issues ... 
     // some code
 }
-var j = i;   // j = 10. For var variables, the i is still defined after the loop. This is not a hanging offence, but
-             // poor design. You should never rely on the end value of a loop. Always use let here, then i will not be valid. 
+var j = i;   // j = 10. For var variables, the i is still defined after the loop. This is risky design. You should
+             // never rely on the end value of a loop. Many things can cause it to be different. Always use let here, 
+             // then i will not be valid and you won't be able to make this mistake. 
 ```
 
 ### JavaScript versions
