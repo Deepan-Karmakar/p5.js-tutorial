@@ -35,6 +35,38 @@ function setup() {
 
 This will display a 100x100 pink square at the top-left of your browser window.
 
+
+## Making the canvas fullscreen
+
+The canvas can be made to automatically fill the window by using the built-in variables `windowWidth` and `windowHeight`:
+```js
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(255, 0, 200);
+}
+```
+
+If you want the canvas to automatically resize to fill the window whenever the window is resized, you can define the `windowResized` fumction in your sketch:
+```js
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(255, 0, 200);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+```
+
+You may notice that even though the canvas is exactly the same size as the window in this case, scrollbars may appear. This is default behavior of some browsers. To avoid this, you can set the style property `display:block` for the canvas element. Something like this:
+```js
+function setup() {
+  var cnv = createCanvas(windowWidth, windowHeight);
+  cnv.style('display', 'block');
+  background(255, 0, 200);
+}
+```
+
 ## Centering the sketch on the page with CSS
 
 We can add a stylesheet that uses [flexible box layout](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) to vertically and horizontally center our sketch on the page:
