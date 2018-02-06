@@ -1799,6 +1799,7 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 * Mention map/reduce ?? don't think so, not much relevance to p5.js
 * mention UTF codes
 * Rest arguments
+* Add clumsy string and numeric conversions to Number and String sections.
 
 ***
 
