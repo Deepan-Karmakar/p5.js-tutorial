@@ -1483,6 +1483,8 @@ Re memory usage, a good practice is never to create large volumes of data in the
 
 In a small to medium p5.js application you will never need to think about this !
 
+
+
 ### A p5.js example
 
 Let's develop a p5.js example which will use dynamic objects, and run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture tells a thousand words as they say.
@@ -1800,6 +1802,7 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 * mention UTF codes
 * Rest arguments
 * Add clumsy string and numeric conversions to Number and String sections.
+* add memory management link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management 
 
 ***
 
