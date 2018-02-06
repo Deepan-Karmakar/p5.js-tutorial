@@ -1458,13 +1458,17 @@ An "instance" is an OOP term for an instance of an object or class. So cats[0] i
 
 ### The Delete operator and Garbage Collection
 
-This is a good place to briefly mention the concept of memory management. Languages like C++ and Java have an ability to "delete" objects which have been created. This is aimed at cleaning up and removing large amounts of dynamic data which you have created, and you know are not needed anymore. It's important sometimes to do that, to prevent memory usage building up, and prevent creating slow "memory leaks". Memory leaks are a problem in long-running codes - after days or weeks even the most carefully coded application can gradually increase its memory usage, and eventually fail. These are very pernicious errors and hard to track down - it could be smallest thing which is building up, some inconsequential temporary data.
+This is a good place to briefly mention the subject of memory management. Languages which allow you to dynamically create things during execution - like arrays, objects, arrays of millions of objects - must provide a way for that memory to be released when necessary. Even a modern JavaScript interpreter only has maybe 500 Mbyte of memory for dynamic data by default. You can configure it up a bit, to maybe 2GByte or 4Gbyte. But if you have a program consuming memory because it allocates dynamic things and doesn't delete them, 4GBbyte might fill only a few seconds after 1/2 GByte.
 
-The alternative approach is very good "garbage collection". What on Earth is that? I hear you say. It's the automatic deletion and clean-up of things which can't be used anymore. If a variable, array, object, or anything else, has gone completely "out of scope" and can't be legally referenced any more, then JavaScript can delete it and free up its memory. 
+Languages like C++ and Java have an ability to "delete" or "free" objects which have been created. This is aimed at cleaning up and removing dynamic data which you have created, and you know is not needed anymore. It's important sometimes to do that, to prevent memory usage building up, and prevent creating slow "memory leaks". Memory leaks are a problem in long-running codes - after days or weeks even the most carefully coded application can gradually increase its memory usage, and eventually fail. These are very pernicious errors and hard to track down - it could be smallest thing which is building up, some inconsequential temporary data.
 
-JavaScript has an advanced Garbage Collector system which tracks use of data, and particularly references to data. If nothing references some data any more, it is cleaned up. 
+The alternative approach is very good automatic "garbage collection". What on Earth is that? It's the automatic deletion and clean-up of things which can't be used anymore. If a variable, array, object, or anything else, has gone completely "out of scope" and can't be legally referenced any more, then JavaScript can delete it and free up its memory. 
 
-The explicit Delete statement in JavaScript does not in fact free up memory. It only removes the definition of a property.
+There are other situations where things might appear to referencable, but the system can still delete them. The textbook example is a "cycle" of references, where say a refers to b, b to c, c back to a. `a = b+1, b = c+1, c = a+1`. (This is not a proper example, we need "pointer references", where a is say an Object which must fetch some of its data from b, etc). At a first level, it looks like every item has a reference to it, and can't be cleaned up. But stepping back to a second level, there might be no other reference to a, b or c anywhere. Hence the whole lot can be cleaned up.
+
+JavaScript has an advanced Garbage Collector system which tracks use of data, and references to data. If nothing references some data any more, it is cleaned up. 
+
+Having said all that, the explicit Delete statement in JavaScript does not in fact free up memory. It only removes the definition of a property.
 
 ```javascript
 let astronaut = {
@@ -1477,9 +1481,9 @@ delete astronaut.firstName;
 console.log(astronaut.firstName)      // shows "undefined"
 ```
 
-You might never need to use this. If you don't need "firstName" any more, just don't use it. It's ok to leave it sitting there as a property on "astronaut" which you never use. There would be many instances where you don't use some properties which are available on an object, eg. in some pre-packaged code you are using.
+You might never need to use this. If you don't need "firstName" any more, just don't use it. It's ok to leave it sitting there as a property on "astronaut" which you never use. There would be many instances where you don't use some properties which are available on an object, eg. in some pre-packaged code or library you are using.
 
-Re memory usage, a good practice is never to create large volumes of data in the global scope. These never go out of scope and can't be garbage collected. Create large volumes of data in some subsidiary function, and try to return from that function when you are done with it, or return periodically. The Garbage Collector will clean things up for you.
+Re memory usage, a good practice is never to create large volumes of data at top level, in the global scope. These never go out of scope and can't be garbage collected. Create large volumes of data in some subsidiary function, and try to return from that function when you are done with it, or return periodically. The Garbage Collector can then clean things up for you.
 
 In a small to medium p5.js application you will never need to think about this !
 
