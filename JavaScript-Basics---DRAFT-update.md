@@ -1423,10 +1423,12 @@ function Cat(Name, Age, Color) {
   this.aboutMe = function() {                             // method aboutMe()
     console.log("Hello, I'm " + this.color + " and aged " + this.age);
   }
-  
+
+cats[1].greet();          //  "Hello, I'm Sam"
+cats[1].aboutMe();        //  "Hello, I'm white and aged 2" 
 ```
 
-The constructor function above sets some properties of Cat, then it adds two methods, "greet()" and "aboutMe()". These are written as unnamed or anonymous functions, but really they are effectively named: they are preserved in Cat.greet and Cat.aboutme. 
+The constructor function above sets some properties of Cat, then it adds two methods, "greet()" and "aboutMe()". These are written as unnamed or anonymous functions, but really they do have an effective name: they are preserved in Cat.greet() and Cat.aboutme(). 
 
 It's useful to be completely comfortable with unnamed functions:
 
@@ -1453,6 +1455,33 @@ cats[0].greet();      // "Hello I'm Margot" (or Robbie)
 cats[0].aboutMe();    // "I'm black and aged 8" (or 9)
 ```
 An "instance" is an OOP term for an instance of an object or class. So cats[0] is an instance of Cat. It's a "thing", ie. an "Object", with internal data: name, age, color - and internal callable methods: greet(), aboutMe().
+
+### The Delete operator and Garbage Collection
+
+This is a good place to briefly mention the concept of memory management. Languages like C++ and Java have an ability to "delete" objects which have been created. This is aimed at cleaning up and removing large amounts of dynamic data which you have created, and you know are not needed anymore. It's important sometimes to do that, to prevent memory usage building up, and prevent creating slow "memory leaks". Memory leaks are a problem in long-running codes - after days or weeks even the most carefully coded application can gradually increase its memory usage, and eventually fail. These are very pernicious errors and hard to track down - it could be smallest thing which is building up, some inconsequential temporary data.
+
+The alternative approach is very good "garbage collection". What on Earth is that? I hear you say. It's the automatic deletion and clean-up of things which can't be used anymore. If a variable, array, object, or anything else, has gone completely "out of scope" and can't be legally referenced any more, then JavaScript can delete it and free up its memory. 
+
+JavaScript has an advanced Garbage Collector system which tracks use of data, and particularly references to data. If nothing references some data any more, it is cleaned up. 
+
+The explicit Delete statement in JavaScript does not in fact free up memory. It only removes the definition of a property.
+
+```javascript
+let astronaut = {
+  firstName = "Neil";
+  LastName = "Armstrong";
+}
+
+console.log(astronaut.firstName)      // shows "Neil"
+delete astronaut.firstName; 
+console.log(astronaut.firstName)      // shows "undefined"
+```
+
+You might never need to use this. If you don't need "firstName" any more, just don't use it. It's ok to leave it sitting there as a property on "astronaut" which you never use. There would be many instances where you don't use some properties which are available on an object, eg. in some pre-packaged code you are using.
+
+Re memory usage, a good practice is never to create large volumes of data in the global scope. These never go out of scope and can't be garbage collected. Create large volumes of data in some subsidiary function, and try to return from that function when you are done with it, or return periodically. The Garbage Collector will clean things up for you.
+
+In a small to medium p5.js application you will never need to think about this !
 
 ### A p5.js example
 
@@ -1679,6 +1708,8 @@ switch(x) {
 
 var x = 10 + 5;                   // x is 15.     Be aware of string + number concatenations ... 
 var x = 10 + "5";                 // x is "105"   You shouldn't be doing this anyway.
+var x = "11"; y = +x;             // Forces y to numeric 11, if you must do these things
+var x = 12;   y = "" + x;         // Forces y to string "12". Ugh. 
 
 if (x == 19);
   { // code block }        // This will always execute, since the semicolon has orphaned the block. Easy to do.
@@ -1766,7 +1797,7 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 * Examples: change to let after we have introduced it. Use more const too.
 * Objects: Complete the Objects section with p5.js example
 * Mention map/reduce ?? don't think so, not much relevance to p5.js
-* Add delete() and mention UTF codes
+* mention UTF codes
 * Rest arguments
 
 ***
