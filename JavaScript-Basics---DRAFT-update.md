@@ -51,6 +51,7 @@ Not a comprehensive TOC, just shortcuts to some sections.
 [Functions](#functions)    
 &nbsp;&nbsp;&nbsp;[Arguments are optional](#arguments-are-optional)   
 &nbsp;&nbsp;&nbsp;[Default arguments](#default-arguments)     
+&nbsp;&nbsp;&nbsp;[Rest arguments](#rest-arguments)     
 &nbsp;&nbsp;&nbsp;[Recursion](#recursion)  
 &nbsp;&nbsp;&nbsp;[Closures](#closures)      
 &nbsp;&nbsp;&nbsp;[Arrow functions](#arrow-functions)     
@@ -1842,7 +1843,6 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 * Objects: Complete the Objects section with p5.js example
 * Mention map/reduce ?? don't think so, not much relevance to p5.js
 * mention UTF codes
-* Rest arguments
 * Add clumsy string and numeric conversions to Number and String sections.
 * add memory management link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management 
 
