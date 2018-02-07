@@ -349,6 +349,27 @@ if (!String.prototype.trim) {                                       // we don't 
 
 There are many more String functions but the above would be 98% of what you need in p5.js.
 
+**Converting between number and string**
+
+There are some legit ways to convert between numbers and strings.
+
+```javascript
+var num = 123;
+var str = num.toString();
+console.log(str);                    // "123", a string
+
+var num2 = parseInt(str, 10)         // 10 is the radix. You can use 16 or 8 or 2 for hex, octal, binary
+console.log(num2);                   // 123, back to a number
+```
+
+There are also some somewhat clunky ways of forcing conversions between numbers and strings:
+
+```javascript
+var str = "123";  console.log(str);        // "123" ie. in quotes, a string
+var num = +str;   console.log(num);        //  123   a number
+var num2 = 456;
+var str2 = ""+num2; console.log(str2);     // "456"  a string
+```
 
 ### Data type: Boolean
 
@@ -516,6 +537,7 @@ for(var i = 0; i < 100; i++) { arr2[i] = 0; }  // Same effect as arr1 above (but
 
 var arr3 = new Array(100); arr3.fill(0);       // Populate all elements with 0. Probably the clearest approach.
 ```
+
 
 ### Data type: Object
 
@@ -1526,6 +1548,8 @@ Re memory usage, a good practice is never to create large volumes of data at top
 
 In a small to medium p5.js application you will never need to think about this !
 
+The "gory details":https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management 
+
 
 
 ### A p5.js example
@@ -1843,8 +1867,7 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 * Objects: Complete the Objects section with p5.js example
 * Mention map/reduce ?? don't think so, not much relevance to p5.js
 * mention UTF codes
-* Add clumsy string and numeric conversions to Number and String sections.
-* add memory management link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management 
+
 
 ***
 
