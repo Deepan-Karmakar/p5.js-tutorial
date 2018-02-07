@@ -976,6 +976,44 @@ show(4, 5);     // prints  4 5 cat
 show();         // prints  2 33 cat
 ```
 
+### Rest arguments
+
+Given that a JS function can be called with any number of arguments, from none to any number, it's handy to have a facility to easily deal with them.
+
+One facility is the `arguments` object. This puts all the arguments the function was called with into an object `arguments`. You can access them like this:
+
+```javascript
+function f1(a,b,c) { 
+  for (var i = 0; i < arguments.length; i++) { 
+    print(arguments[i]);     
+  }
+}
+
+f1(1, 22, 333);      // Prints 1, 22, 333
+```
+The arguments object has some limitations. It's not a regular array, but a type of object. It has a length which you can access, as above, but it can't be "popped", "shifted" etc, which are things you might like to do when parsing your function arguments.
+
+A neater method introduced in ES6 is the `...rest` syntax. This puts all the trailing arguments not specifically assigned to a named parameter, into a normal array.
+
+```javascript
+function f2(a, b, ...theRest) { 
+  console.log("a = ", a);
+  console.log("b = ", b);
+  for (var i = 0; i < theRest.length; i++) { 
+    print("trailing arg ", i, " = ", theRest.shift() );     
+  }
+}
+
+f2(1, 22, 333, 4444);      
+// Prints a = 1
+          b = 22
+          trailing arg 0 = 333
+          trailing arg 1 = 4444
+```
+
+ 
+
+
 
 ### Returning a value
 
