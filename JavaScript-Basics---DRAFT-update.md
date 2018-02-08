@@ -1703,11 +1703,11 @@ JavaScript allows some lines to continue with a backslash \ on the end. Not a ve
 Also plain statements can run over more than one line. Not usually very clear.
 
 ```javascript
-var str = "A hugely long text string which you decide to split over \
+let str = "A hugely long text string which you decide to split over \
 two lines like this";
 console.log(str);   // "A hugely long text string which you decide to split over two lines like this"
 
-var str2 = "A long documentation text which needs to be multiline, so we\n\
+let str2 = "A long documentation text which needs to be multiline, so we\n\
 use escaped newlines in it blah blah blah blah blah blah blah blah blah\n\
 more blah, the end.";
 console.log(str2);   // A long documentation text which needs to be multiline, so we 
@@ -1723,7 +1723,7 @@ console.log(fred);   // 10  .. this time
 A code statement almost always ends with a semicolon.
 
 ```javascript
-var x = 10;
+let x = 10;
 if (a > 1) { callFunc(); }   // Must have semicolon here. Some other languages don't enforce that, the } is enough.
 if (a > 99) {
   callFunc2();
@@ -1781,17 +1781,17 @@ Note the JSLint term comes from the old C style checker "lint", which picked up 
 We have already mentioned a few risks to watch out for. Here's another selection of common mistakes.
 
 ```javascript
-var x = 0;          
+let x = 0;          
 if (x = 10) { // some code }      // Accidentally used = instead of == or ===. The comparison wrongly returns true,
                                   // and the code block executes, since the result of (x = 10) is 10, which counts as a
                                   // true value in loose comparison.
 
-var x = 10;                       // Be aware of loose comparisons
-var y = "10";
+let x = 10;                       // Be aware of loose comparisons
+let y = "10";
 if (x == y)  { // some code }     // This will match, code will run
 if (x === y) { // some code }     // This will not match, code will not run. 
 
-var x = 10;                       // Switch statements invisibly use exact === comparison !
+let x = 10;                       // Switch statements invisibly use exact === comparison !
 switch(x) {
     case 10: alert("Hello");      // We get an alert here.
 }                
@@ -1799,16 +1799,16 @@ switch(x) {
     case "10": alert("Hello");    // We don't get an alert. Good really, but not if you had assumed otherwise.
 }
 
-var x = 10 + 5;                   // x is 15.     Be aware of string + number concatenations ... 
-var x = 10 + "5";                 // x is "105"   You shouldn't be doing this anyway.
-var x = "11"; y = +x;             // Forces y to numeric 11, if you must do these things
-var x = 12;   y = "" + x;         // Forces y to string "12". Ugh. 
+let x = 10 + 5;                   // x is 15.     Be aware of string + number concatenations ... 
+let x = 10 + "5";                 // x is "105"   You shouldn't be doing this anyway.
+let x = "11"; y = +x;             // Forces y to numeric 11, if you must do these things
+let x = 12;   y = "" + x;         // Forces y to string "12". Ugh. 
 
 if (x == 19);
   { // code block }        // This will always execute, since the semicolon has orphaned the block. Easy to do.
 
 function myFunction(aa) {  // Never break return statements
-    var
+    let
       power = 10;     // This is poor practice, but works; power is set to 10
     return            // Returns undefined, since JS completes the statement as early as possible, as "return;" 
       aa * power;     // This is orphaned, and in fact never executes.
@@ -1826,7 +1826,7 @@ for (var i = 0; i < 10; i++) {  // Quick re-visit of 'var' issues ...
 }
 var j = i;   // j = 10. For var variables, the i is still defined after the loop. This is risky design. You should
              // never rely on the end value of a loop. Many things can cause it to be different. Always use let here, 
-             // then i will not be valid and you won't be able to make this mistake. 
+             // ie. in the loop, then i will not be valid and you won't be able to make this mistake. 
 ```
 
 ### JavaScript versions
@@ -1887,7 +1887,6 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 
 ## Todo:
 
-* Examples: change to let after we have introduced it. Use more const too.
 * Objects: Complete the Objects section with p5.js example
 * Mention map/reduce ?? don't think so, not much relevance to p5.js
 
