@@ -391,6 +391,16 @@ console.log(message);         // Your card will be billed $123 and 45¢ which is
 // extended chars, just JavaScript programmable chars.
 ```
 
+One of the main traps with extended character sets is that the length of the visual string (say café, 4 characters) is not equal to the length of the encoded string, which will be longer than 4. This makes a lot of simple text layout coding quite a pain. There are facilities in JS to give you the "visual length" of a string:
+
+```javascript
+enc = new TextEncoder('utf-8');    // You can choose the UTF type. UTF-8 is the most common.
+enc.encode("cafe").length;         // 4
+enc.encode("café").length;         // 5
+```
+
+UTF-8 uses plain single-byte Ascii for the common English characters, "caf" here, and a 2-byte encoding for the next commonest Western set, which includes accented European characters. It uses 3 and 4 byte encodings for further characters. (I'm trying not to say "uncommon" characters here. Hindi हिन्दी written in the Devangari देवनागरी script is not at all uncommon to the 380 million Hindi speakers).
+ 
 Extended character sets are a huge subject. If you need to, look up Unicode, UTF-8 in Wikipedia, and Google for other info.
 [Unicode chars](https://unicode-table.com/en/#control-character)  
 [Example of cents](https://www.toptal.com/designers/htmlarrows/currency/cent-sign/)
