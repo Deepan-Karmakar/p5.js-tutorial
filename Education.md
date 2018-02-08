@@ -43,7 +43,6 @@ Note that examples included may be using older versions of p5.js and might not b
 ### p5.js Resources
 * [p5.js reference](http://p5js.org/reference)
 * [p5.js forum](http://forum.processing.org/two/)
-* [p5.js tutorials](http://p5js.org/tutorials/)
 * [p5.js on GitHub](https://github.com/lmccart/p5.js)
 * [p5.js CDN](http://cdnjs.com/libraries/p5.js)
 * [Getting Started with p5.js](http://www.amazon.com/Make-Interactive-Graphics-JavaScript-Processing/dp/1457186772) - O'Reilly book
