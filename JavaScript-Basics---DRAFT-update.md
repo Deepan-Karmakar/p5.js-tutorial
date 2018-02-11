@@ -969,13 +969,33 @@ A function can accept values as input, known as arguments or parameters. Note th
 
 When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution and returns to the caller. After return, normally all data inside the function just "evaporates", its job is done. (Technically, the "stack frame" with all the function's data is popped off the stack).
 
-In the case of simple variables
+In the case of simple variables supplied as function arguments, the value is "copied" to the parameter inside the function, and the caller's value for the variable can't be changed.
+
+In the case of arrays or objects supplied as function arguments, a pointer to the actual array or object is passed to the function, and the caller's value _can_ be changed.
+
+```javascript
+var var1 = 1;
+var array1 = [1, 22, 333];
+var object1 = { "a":1, "b":22, "c":333 };
+function example(v, a, o ) {
+   v = 123;
+   a[0] = 456;
+   o.b  = 789;
+}
+
+example(var1, array1, object1);
+console.log(var1);            // 1
+console.log(array1);          // [ 456  22  333 ]
+console.log(object1);         // { "a":1  "b":789  "c":333 }
+```
+
+Here are some examples of simple functions.
 
 ```javascript
 function sayHello(person) {
   console.log("Hello " + person);
 }
-name = "Jenny";
+var name = "Jenny";
 sayHello(name);  // prints "Hello Jenny"
 ```
 
@@ -995,6 +1015,7 @@ function drawEllipse(x, y) {
 }
 drawEllipse(mouseX, mouseY);  // a nice circle, centre x,y radius 50 
 ```
+
 Try this in the console: `function ff() { console.log("zippo"); }` then `typeof(ff)` then `ff` then `ff()`
 
 
@@ -1002,7 +1023,7 @@ Try this in the console: `function ff() { console.log("zippo"); }` then `typeof(
 
 In JavaScript, all function arguments are in fact optional. This presents both convenience and some risk. 
 
-Additional trailing arguments can be given to functions with great ease - p5.js uses this extensively, eg. [rect() call.](https://p5js.org/reference/#/p5/rect) However it can be difficult to know how many arguments are actually used, without good documentation, or access to the source code of the function.
+Additional trailing arguments can be given to functions with great ease - p5.js uses this extensively, eg. [rect() call.](https://p5js.org/reference/#/p5/rect) However it can be difficult to know how many arguments are actually available, without good documentation, or access to the source code of the function.
 
 Any arguments not supplied, but which the function attempts to use, have the value `undefined`.
 
@@ -1047,9 +1068,10 @@ function f1(a,b,c) {
 
 f1(1, 22, 333);      // Prints 1, 22, 333
 ```
+
 The arguments object has some limitations. It's not a regular array, but a type of object. It has a length which you can access, as above, but it can't be "popped", "shifted" etc, which are things you might like to do when parsing your function arguments.
 
-A neater method introduced in ES6 is the `...rest` syntax. This puts all the trailing arguments not specifically assigned to a named parameter, into a normal array.
+A neater method introduced in ES6 is the `...rest` syntax. This puts all the trailing arguments not specifically assigned to a named parameter, into a normal array. It's like the `varags` facility in C/C++.
 
 ```javascript
 function f2(a, b, ...theRest) { 
@@ -1066,10 +1088,6 @@ f2(1, 22, 333, 4444);
           trailing arg 0 = 333
           trailing arg 1 = 4444
 ```
-
- 
-
-
 
 ### Returning a value
 
@@ -1106,6 +1124,8 @@ function addJitter(x) {
 var result = addJitter(10);
 console.log(result); // 10.3 or 9.8 or ...
 ```
+
+
 ```javascript
 function severalReturns(number) {
   if (number < 0 ) {
@@ -1202,7 +1222,7 @@ More sophisticated use of closures can make convenient but safe and reliable cod
 
 ## Arrow functions
 
-You may see these in code. They're a convenient short-cut for very simple utility functions. The arrow notation `=>` is used in the definition.
+You may see these in code. They're a convenient short-cut for very simple utility functions. The arrow notation `=>` is used in the function definition.
 
 ```javascript
 let x2 = (x) => x * x;               // x2 is a function which returns the square of x
@@ -1252,6 +1272,7 @@ Another option is to put all your code in one top level function, say main(). Th
   main();                           // Call our whole code as a single function call: main()
 
   // Todo: should really make this a full p5.js prog with a setup() and draw() that draws something.
+  // Otherwise the clash with str is not important.
 
 </head>
 <body>Not much of a body, this is a JavaScript example, not HTML</body>
@@ -1284,7 +1305,7 @@ If you use the same name as a global variable, and also as a local function vari
 
 ```javascript
 var g_data = [ 1, 22, 333 ]    // global array
-var i,j,k;                     // global simple control vars. A common style from older languages. Not even initialized! Never mind.
+var i,j,k;                     // global simple control vars. A common style from older languages. Not even initialized! 
 var offset = 3;                // global var, but who would know?
 
 for (i = 0; i < g_data.length; i++) {   // a loop at top (global) level
@@ -1342,8 +1363,8 @@ function drawStuff(param) {
 
   let j = 5;                             // This "j" exists in the whole function, unless overridden in a smaller block.
 
-  for(let j = 0; j < 99; j++) {          // Draw some ellipses. Note this temporay "j" is only scoped inside this loop. Does
-    drawCircle(j*20, j*20, j*5, j*10);   // not affect, and is not affected by, other "j" vars in the function. Good. 
+  for(let j = 0; j < 99; j++) {          // Draw some ellipses. Note this temporary "j" is only scoped inside this loop. 
+    drawCircle(j*20, j*20, j*5, j*10);   // It does not affect, and is not affected by, other "j" vars in the function. Good. 
   }
 
   if (param > 5 ) {
@@ -1434,13 +1455,13 @@ function area(radius) {
 
 function circumference(radius) {
    let pi = 3.142;                // Rough old code here. Probably an Engineer, used to slide rules ...
-   return( 2.0 * pi * radius );   // Fortunately, denied ! You can't change the const pi
+   return( 2.0 * pi * radius );   // Fortunately, denied !! You can't change the const pi
 }
 ```
 
 ## Objects part 2: objects as classes
 
-We introduced basic objects above, such as `let obj = { "name":"Vincent", "age":3 }`. At that stage they were pretty much just a convenient way to have a type of "array" addressable with a text string key. Handy but not going to change the world. Now let's go ahead and add "methods", ie. functions, to produce a full-featured dynamic object. This gives us the effective functionality of a "class", as provided in languages such as C++ and Java.
+We introduced basic objects above, such as `let obj = { "name":"Vincent", "age":3 }`. At that stage they were pretty much just a convenient way to have a type of "array" addressable with a text string key. Handy but not going to change the world. Now let's go ahead and add "methods", ie. internal object functions, to produce a full-featured dynamic object. This gives us the effective functionality of a "class", as provided in languages such as C++ and Java.
 
 Let's proceed gradually here, and build up the concept. First, we could create an empty object with `obj = {}` or `obj = new Object`. Both create the same thing, an empty object. Try it in the console. The `new` syntax is useful when we want to create a lot of objects: `obj = []; for (let i = 0; i < 99; i++) { obj[i] = new Object; }`. This creates an array of 100 empty Objects.
 
@@ -1543,12 +1564,13 @@ In the first case, this variable name is stuck after the word "function", in the
 
 So turning back to the method declaration in Cat, it starts to look more familiar. It's very similar to the new function definition format we just saw, but `var functionName = ` is replaced with `this.functionName = `. This is because, just like the properties, we use `this.` to say that the method belongs to the object being created.
 
-Calling this method on an instance looks similar to accessing properties, except we use the () notation to order a function call.
+Calling these methods on an instance looks similar to accessing properties, except we use the () notation to order a function call.
 
 ```javascript
 cats[0].greet();      // "Hello I'm Margot" (or Robbie)
 cats[0].aboutMe();    // "I'm black and aged 8" (or 9)
 ```
+
 An "instance" is an OOP term for an instance of an object or class. So cats[0] is an instance of Cat. It's a "thing", ie. an "Object", with internal data: name, age, color - and internal callable methods: greet(), aboutMe().
 
 ### The Delete operator and Garbage Collection
@@ -1717,7 +1739,7 @@ ECMAScript 2015 (ES6) introduces the "class" statement. This is an attempt to gi
 
 It's effectively [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) which allows you to declare classes, and members, methods, constructors etc. with a similar syntax to other languages. However it doesn't actually add any new underlying capability. What you end up with is the same as you could have set up without "class".
 
-Authors who have transitioned to using it say it's handy. I'm just going to include links here to some resources. As always you can can find many more by searching.
+Authors who have transitioned to using it say it's concise and handy. I'm just going to include links here to some resources. As always you can can find many more by searching.
 
 [MDN reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)   
 [More info](https://javascript.info/class)  
@@ -1785,7 +1807,7 @@ Avoid inter-mixing and nesting comment styles.
 
 ### Indentation
 
-There are many popular styles of indenting. (The good thing about standards is, there are so many to choose from!) (That's my favourite Dad Tech Joke).
+There are many popular styles of indenting. (The good thing about standards is, there are so many to choose from!) (That's my favourite Dad tech joke).
 
 Generally whenever you introduce curly braces, you should indent everything inside. Anything from two to eight spaces is common, but typically 2 to 4. Don't use tabs, they are archaic and will just cause endless problems down the track. If you're accustomed to hitting the Tab key, configure your editor to turn it into n spaces.
 
@@ -1842,6 +1864,7 @@ fred = 1 + 2 +       // Very bad practice
   3 + 4;             
 console.log(fred);   // 10  .. this time
 ```
+
 ### Semicolons
 
 A code statement almost always ends with a semicolon.
@@ -1860,7 +1883,7 @@ There's a nice academic point that comes up here, and in all languages with a st
 
 ### Strict mode
 
-JavaScript introduced a "strict" mode to tighten up coding practices and prevent some types of errors (in ECMAScript 5, JavaScript 1.8.5, in 2009). Other languages also have a strict mode, eg. Perl. This tends to get added later in the day, when problems develop with the original design;
+JavaScript introduced a "strict" mode to tighten up coding practices and prevent some types of errors (in ECMAScript 5, JavaScript 1.8.5, in 2009). Other languages also have a strict mode, eg. Perl. This tends to get added later in the day, when problems develop with the original design.
 
 Just place `"use strict";` at the top of your whole code, or in individual functions if you want it to only apply there.
 
@@ -2011,8 +2034,6 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 
 ## Todo:
 
-* Objects: Complete the Objects section with p5.js example
-* Put var = or let = or const = in front of all examples.
 * Mention map/reduce ?? don't think so, not much relevance to p5.js
 
 
