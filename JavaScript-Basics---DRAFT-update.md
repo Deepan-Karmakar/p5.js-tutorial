@@ -43,6 +43,7 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Break out of loop](#breaking-out-of-loops)   
 &nbsp;&nbsp;&nbsp;[For in, for of, forEach](#for-in-for-of-foreach)&nbsp;&nbsp;&nbsp;     
 [Functions](#functions)    
+&nbsp;&nbsp;&nbsp;[Function arguments](#function-arguments-or-parameters)   
 &nbsp;&nbsp;&nbsp;[Arguments are optional](#arguments-are-optional)   
 &nbsp;&nbsp;&nbsp;[Default arguments](#default-arguments)     
 &nbsp;&nbsp;&nbsp;[Rest arguments](#rest-arguments)     
@@ -944,7 +945,7 @@ A neatly self-contained function can be replaced with a better version at a futu
 
 When you need to sort millions of things, you might need to replace your sort() function with a more sophisticated multi-phase tree/bucket/heap/shell sort, which can be O(n Log n) or better. Just change your sort function !  [\[full monty\]](https://en.wikipedia.org/wiki/Sorting_algorithm) [\[JavaScript monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
-Here's a list of simple function examples:
+Here are simple functions:
 
 ```javascript
 function sayHello() {
@@ -989,7 +990,7 @@ console.log(array1);          // [ 456  22  333 ]
 console.log(object1);         // { "a":1  "b":789  "c":333 }
 ```
 
-Here are some examples of simple functions.
+Here are some functions with arguments.
 
 ```javascript
 function sayHello(person) {
@@ -1463,12 +1464,12 @@ function circumference(radius) {
 
 We introduced basic objects above, such as `let obj = { "name":"Vincent", "age":3 }`. At that stage they were pretty much just a convenient way to have a type of "array" addressable with a text string key. Handy but not going to change the world. Now let's go ahead and add "methods", ie. internal object functions, to produce a full-featured dynamic object. This gives us the effective functionality of a "class", as provided in languages such as C++ and Java.
 
-Let's proceed gradually here, and build up the concept. First, we could create an empty object with `obj = {}` or `obj = new Object`. Both create the same thing, an empty object. Try it in the console. The `new` syntax is useful when we want to create a lot of objects: `obj = []; for (let i = 0; i < 99; i++) { obj[i] = new Object; }`. This creates an array of 100 empty Objects.
+Let's proceed gradually here, and build up the concept. First, we could create an empty object with `obj = {}` or `obj = new Object`. Both create the same thing, an empty object. Try it in the console. The `new` syntax is useful when we want to create a lot of objects: `obj = []; for (let i = 0; i < 100; i++) { obj[i] = new Object; }`. This creates an array of 100 empty Objects, obj[0] to obj[99].
 
 Next we want to add some plain "data" properties to an object. We could do this like so:
 
 ```javascript
-cats = [];                      // not essential, but good practice
+cats = [];                     
 for (let i = 0; i < 99; i++) {  
   cats[i] = new Object;
   if ( i === 0 ) {
@@ -1508,7 +1509,7 @@ console.log(cats);   // Shows something like ..
                      //    ]
 ```
 
-The "this" notation is a common one in Object Oriented Programming, or OOP. It always refers to the overall "thing" we are inside, or working with. At top level in a JavaScript program, "this" refers to the whole program invocation. We mentioned it above when talking about accidental creation of global variables.
+The "this" notation is a common one in Object Oriented Programming, or OOP. It always refers to the overall "thing" we are inside, or working with. At top level in a JavaScript program, "this" refers to the whole program invocation. We mentioned it above when talking about accidental creation of global variables. When JavaScript is used in a web environment, the global top level object is "window", referring to the screen/window/canvas hierarchy. When used as a standalone JavaScript interpreter, eg. the Mac "jsc" command-line tool we mentioned earlier, "window" is not there.
 
 You can access and modify the plain properties of objects directly by using `.propertyName`.
 
@@ -1562,6 +1563,8 @@ These two definitions are the same, just written differently. In the second case
 
 In the first case, this variable name is stuck after the word "function", in the second, the variable is explicitly stated first, then the function is assigned. They mean the same thing, so it's helpful to get used to seeing both forms.
 
+Both forms allow you to invoke the function with `doSomething()`.
+
 So turning back to the method declaration in Cat, it starts to look more familiar. It's very similar to the new function definition format we just saw, but `var functionName = ` is replaced with `this.functionName = `. This is because, just like the properties, we use `this.` to say that the method belongs to the object being created.
 
 Calling these methods on an instance looks similar to accessing properties, except we use the () notation to order a function call.
@@ -1611,12 +1614,10 @@ The [gory details]:(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memo
 ### A p5.js example
 
 Now that we have described an Object which has properties and methods, we're ready
-to develop a p5.js example using dynamic objects, which will run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture is worth a thousand words and all that. (This code is very similar to numerous examples elsewhere in Processing).
+to develop a p5.js example using dynamic objects, which will run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture is worth a thousand words and all that. (This code is similar to numerous examples elsewhere in Processing).
 
 ```javascript
-
 // This data at the is global to the app.
-// But it doesn't escape from the app, for example to clash with data in p5.js
 
 const numShapes = 30;
 const baseRadius = 5;
