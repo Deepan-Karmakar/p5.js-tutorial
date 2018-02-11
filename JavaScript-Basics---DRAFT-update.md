@@ -133,7 +133,7 @@ function myFunction() {
 </html>
 ```
 
-Try the above in an index.html. However this tutorial is not about use of JavaScript to control HTML elements, see multitudes of web tutorials for all that.
+Try the above in an index.html. However this tutorial is not about use of JavaScript to control HTML elements, see multitudes of other web tutorials for all that.
 
 ## JavaScript Console
 
