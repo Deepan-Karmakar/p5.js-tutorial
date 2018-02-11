@@ -1888,7 +1888,7 @@ This is very well treated in another tutorial here.
 
 In this tutorial we've mentioned a number of times that JavaScript is sloppy, and had fun documenting many hazards ! But that's true of all interpreted languages. They allow loose (creative?) coding, and leave detailed checking of many things until run-time, unlike languages such as C++ and Java which use detailed compile-time checks.
 
-The pay-off is flexible design of course, but also much faster development, rapid turn-around when testing code, and a much more enjoyable experience. Compiling a large C++ program can take a loooong time, many minutes or much longer if it pulls in vast libraries, subclasses loads of things from the libraries, tries to use multiple inheritance to join two chains of library classes. It explodes a bit like Ackermann's function. (You have been paying attention, right ?). It's a long time to wait to just find you forgot some small thing. In the development phase of code you want rapid turn-around: edit, run, test in a few seconds.
+The pay-off is flexible design of course, but also much faster development, rapid turn-around when testing code, and a much more enjoyable experience. For example, compiling a large C++ program can take a loooong time, many minutes or -much- longer if it pulls in vast libraries, subclasses loads of things from those libraries, tries to use multiple inheritance to join two chains of library classes. It explodes a bit like Ackermann's function, literally (you have been paying attention, right?). It's a long time to wait to just find you forgot some small thing. In the development phase of code you want rapid turn-around: edit, run, test in a few seconds.
 
 An interesting paper describing all this is John Ousterhout's seminal paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the original driver behind the scripting language Tcl and its companion gui builder Tk. The paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower, maybe 20x, than script approaches; reliability is not much different in the end; performance may not be much different - your code is usually limited by things you don't have control over: graphics rendering power, disk speed, network speed - and there's plenty of cpu these days to drive the interpreted JavaScript engine.
 
@@ -1898,6 +1898,7 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 ## Todo:
 
 * Objects: Complete the Objects section with p5.js example
+* Put var = or let = or const = in front of all examples.
 * Mention map/reduce ?? don't think so, not much relevance to p5.js
 
 
