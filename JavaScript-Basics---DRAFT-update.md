@@ -79,7 +79,7 @@ JavaScript in a web page can be placed anywhere within the HTML document, althou
   <head>              
     <script type="text/javascript">              
       //JavaScript goes here 
-      str = "This is my first message";                                    
+      var str = "This is my first message";                                    
       console.log(str);  // This will show up in the browser's JavaScript console. 
       alert(str);        // This will show a popup message in the browser. Irritating, use sparingly !
     </script>
@@ -369,7 +369,7 @@ var str2 = ""+num2; console.log(str2);     // "456"  a string
 
 In the English-speaking world we live in a privileged bubble where everything is in our familiar character set, ie. the good old English typewriter/printing character set. ASCII is the familiar encoding for these. But it still limited; only about half the punctuation set we routinely use is in there, for example the dollar sign $ is there, but not a proper cents sign &#xa2; or UK Pounds sign &#xa3;. 
 
-European languages have many accented characters, like the &#xe9; in caf&#xe9;. Then there is the Cyrillic alphabet, eg. Kremlin = Кремль. Then the character sets of Chinese, Japanese, Korean and many other languages. These can be the compact "phonetic" character sets, like Japanese Hiragana ひらがな with 46 characters, or the Chinese-derived Kanji 漢字 set of thousands of characters. There is the arabic عَرَبِيّ‎ character set which runs right to left.‎ My apologies to important languages I have not mentioned here. 
+European languages have many accented characters, like the &#xe9; in caf&#xe9;. Then there is the Cyrillic alphabet, eg. Kremlin = ÐÑÐµÐ¼Ð»Ñ. Then the character sets of Chinese, Japanese, Korean and many other languages. These can be the compact "phonetic" character sets, like Japanese Hiragana ã²ãããª with 46 characters, or the Chinese-derived Kanji æ¼¢å­ set of thousands of characters. There is the arabic Ø¹ÙØ±ÙØ¨ÙÙÙâ character set which runs right to left.â My apologies to important languages I have not mentioned here. 
 
 (How am I entering these characters in the Wiki text here? - mainly cut & paste from web pages).
 
@@ -379,20 +379,20 @@ JavaScript allows the use of all these characters, using the Unicode character s
 cent = "\u00a2";
 ukpound = "\u00a3"; 
 message = "Your card will be billed $123 and 45" + cent + " which is UK pounds " + ukpound + "78.99";
-console.log(message);         // Your card will be billed $123 and 45¢ which is UK pounds £78.99";  
-// This example has been done with some weird and wonderful cut/paste, don't use this as a guide to HTML 
+console.log(message);         // Your card will be billed $123 and 45Â¢ which is UK pounds Â£78.99";  
+// This example has been done with some cut/paste, don't use this as a guide to HTML 
 // extended chars, just JavaScript programmable chars.
 ```
 
-One of the main traps with extended character sets is that the length of the visual string (say café, 4 characters) is not equal to the length of the encoded string, which will be longer than 4. This makes a lot of simple text layout coding quite a pain. There are facilities in JS to give you the "visual length" of a string:
+One of the main traps with extended character sets is that the length of the visual string (say cafÃ©, 4 characters) is not equal to the length of the encoded string, which will be longer than 4. This makes a lot of simple text layout coding more difficult. There are facilities in JS to give you the "visual length" of a string:
 
 ```javascript
 enc = new TextEncoder('utf-8');    // You can choose the UTF type. UTF-8 is the most common.
 enc.encode("cafe").length;         // 4
-enc.encode("café").length;         // 5
+enc.encode("cafÃ©").length;         // 5
 ```
 
-UTF-8 uses plain single-byte Ascii for the common English characters, "caf" here, and a 2-byte encoding for the next commonest Western set, which includes accented European characters. It uses 3 and 4 byte encodings for further characters. (I'm trying not to say "uncommon" characters here. Hindi हिन्दी written in the Devangari देवनागरी script is not at all uncommon to the 380 million Hindi speakers).
+UTF-8 uses plain single-byte Ascii for the common English characters, "caf" here, and a 2-byte encoding for the next commonest Western set, which includes accented European characters. It uses 3 and 4 byte encodings for further characters. (I'm trying not to say "uncommon" characters here. Hindi à¤¹à¤¿à¤¨à¥à¤¦à¥ written in the Devangari à¤¦à¥à¤µà¤¨à¤¾à¤à¤°à¥ script is not at all uncommon to the 380 million Hindi speakers).
  
 Extended character sets are a huge subject. If you need to, look up Unicode, UTF-8 in Wikipedia, and Google for other info.
 [Unicode chars](https://unicode-table.com/en/#control-character)  
@@ -457,7 +457,7 @@ var identity_4x4 = [
      [1, 0, 0, 0],
      [0, 1, 0, 0],
      [0, 0, 1, 0],
-     [0, 0, 0, 1]
+     [0, 0, 0, 1]    // no last comma, better
 ]
 ```
 
@@ -466,7 +466,7 @@ Does JavaScript have a native matrix math ability ? No. But there are many matri
 Arrays can have empty (undefined) elements. If you add a new element beyond the current length of the array, the array is just extended. The array.length always returns the whole length of the array, including any undefined elements.
 
 ```javascript
-arr = [1, 2, 3];
+var arr = [1, 2, 3];
 arr[5] = 999;
 console.log(arr.length)     // prints 6
 for ( var i = 0; i < arr.length; i++ ) {
@@ -547,7 +547,7 @@ var arr2 = arr.slice(1, 3);    // arr2 is [222, 333]   ( not [222, 333, 444] )
 
 **array.splice(start, end)**
 
-Delete or insert one or more elements from/into an array. I'm going to let you just read that one, it has a lot of functionality [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+Delete or insert one or more elements from/into an array. I'm going to let you just read that one, it has a lot of functionality crammed into one call [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 
 There are many more methods: fill(), sort(), keys(), values() ... Look them up when you need them [MDN array methods]
 (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) 
@@ -594,12 +594,12 @@ staff[0].age  // returns 55
 Objects can contain other objects.
 
 ```javascript
-obj = { 1: 11, 2: {2: 22}, 3: 33};           // Build with nested object literal
+var obj = { 1: 11, 2: {2: 22}, 3: 33};           // Build with nested object literal
 
-obj2 = {2: 22};
-obj = { 1: 11, obj2, 3: 33 };                // Build it in stages
+var obj2 = {2: 22};
+var obj = { 1: 11, obj2, 3: 33 };                // Build it in stages
 
-obj = {};                                    // Build it in different stages
+var obj = {};                                    // Build it in different stages
 obj[1] = 11;
 obj[2] = {2: 22};
 obj[3] = 33;        
@@ -608,7 +608,7 @@ obj[3] = 33;
 If we use an iterative access method to access all the members of an object, the order the records will be returned in is unpredictable.
 
 ```javascript
-stuff = { 0: "a", 1: "b", 2: "c", 3: "d" };
+var stuff = { 0: "a", 1: "b", 2: "c", 3: "d" };
 for (var x in stuff) {
    console.log(x);          // Could be 0 2 1 3
    console.log(stuff[x]);   // and a c b d
@@ -631,15 +631,19 @@ We will come back to more details on Objects later. Particularly the ability to 
 
 ### Data type: Null and Undefined
 
-The value of a variable which has not been given any value is `undefined`. This is a specific single type with a single value, which you can also assign manually. Variables can be emptied by setting the value to `null`. This is another specific single type and value. Often it's better to avoid these, JS does some unexpected things with them.
+The value of a variable which has not been given any value is `undefined`. This is a specific single type with a single value, which you can also assign manually. 
+
+Variables can be "emptied" by setting the value to `null`. This is another specific single type and value. It means a specific value *has* been assigned, but it's deliberately null.
+
+Often it's better to avoid null and undefined, JS does some unexpected things with them.
 
 ```javascript
-var cars;               // Value is 'undefined'. Not a string, a built-in value.
-var trucks = undefined; // Same effect
+var car;                // Value is 'undefined'. Not a string, a built-in value.
+var truck = undefined;  // Same effect
 var person = null;      // Value is 'null'. Not a string, a built-in value.
 
-var count = 0;          // Often safer
-var message = "";       // Ditto
+var count = 0;          // Often safer for numerics
+var message = "";       // Ditto for strings
 var newArray = [];      // Safe
 var newObject = {};     // Safe
 ```
@@ -667,7 +671,7 @@ We will zoom through the operators here. We assume some very basic maths backgro
 ### Assignment
 
 * `=`
-* `a = b = c = 123;`&nbsp;&nbsp;&nbsp;&nbsp;// Multiple assignment is allowed, but unwise. [Details](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
+* `a = b = c = 123;`&nbsp;&nbsp;&nbsp;&nbsp;// Multiple assignment is allowed and looks neat, but is unwise. [Details](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
 
 ### Mathematical
 
@@ -688,11 +692,11 @@ These operators have shortcut styles, occasionally useful.
 * `a /= 2`  a now 7
 * `a %= 2`  a now 1
 * `b = a++` b is 1, a is 2 - the ++ was done after the assignment
-* `b = ++a` b is 3, a is 3 - the ++ was done before the assignment. Similarly for -- &nbsp;Use these carefully, "out by one" oversights happen easily.
+* `b = ++a` b is 3, a is 3 - the ++ was done before the assignment. Similarly for -- &nbsp; Use these carefully, "out by one" oversights happen easily.
 
 ### Relational, ie. comparisons
 
-* `>=` greater than or equal to &nbsp;&nbsp;&nbsp;&nbsp;// works with strings also, but many subtleties. Is 'aAa' < 'BbBb' ?
+* `>=` greater than or equal to &nbsp;&nbsp;&nbsp;&nbsp; // works with strings also, but many subtleties. Is 'aAa' < 'BbBb' ? Is ODonnel < O'Donald ?
 * `<=` less than or equal to
 * `==` equal to 
 * `!=` not equal to 
@@ -711,9 +715,9 @@ These operators have shortcut styles, occasionally useful.
 
 The operators have a precedence which sometimes matches what we learned in school.  When operators have equal precedence, they proceed left to right. `xx = 24 / 6 * 5` will produce 20. But `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication has higher precedence and will get done first. To force the order you want, use brackets. 
 ```javascript
-xx = (1 + 2) * 3           // will produce 9.  
-gravity = G * (mass1 * mass2) / (distance * distance);  
-intensity = light / (Math.sqrt( (radius * radius) + fudgeFactor ); 
+var xx = (1 + 2) * 3           // will produce 9.  
+var gravity = G * (mass1 * mass2) / (distance * distance);  
+var intensity = light / (Math.sqrt( (radius * radius) + fudgeFactor ); 
 ```
 Other operators have progressively lower precedence. [Full table here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence). This allows you to write most expressions in a natural way. 
 ```javascript
@@ -858,7 +862,7 @@ while (x < 10) {
 ```
 ### Do while {}
 
-This is similar to the while loop, but the test is done at the bottom, after each iteration of the loop. One consequence is that the loop always executes at least once. But really the point is that it's just clearer to test some conditions at the bottom. The code can reflect your thinking.
+This is similar to the while loop, but the test is done at the bottom, after each iteration of the loop. One oft-quoted consequence is that the loop always executes at least once. But really the point is that it's just clearer to test some conditions at the bottom. The code can reflect your thinking.
 
 ```javascript
 var x = 0;
@@ -921,24 +925,24 @@ arr.forEach(funky);         // prints 44 33 22 11
 
 The above loop types have some things to watch out for. One is that there can be unsuspected extra properties on arrays and objects, that your for-in/on/each loop will hand you. You may have to take precautions that you only iterate over the conventional "iterable" elements, ie. in the case of an array the elements arr[0] to arr[last]. That's if you just want to do conventional processing on array/object data.
 
-However on other occasions you may want to see everything that's there, to do fancy stuff with object-oriented dynamic design. Then you can let the loops show you the works. All this is beyond the scope of this tut (and my knowledge :=)
+However on other occasions you may want to see everything that's there, to do fancy stuff with object-oriented dynamic design. Then you can let the loops show you the works. All this is beyond the scope of this tut.
 
 You will probably not need these loop types in p5.js. (These are not the loops you're looking for ...)
 
-[A readable blog on forEach](https://thejsguy.com/2016/07/30/javascript-for-loop-vs-array-foreach.html) (He's grabbed a great URL there, "thejsguy.com", damn).
+[A readable blog on forEach](https://thejsguy.com/2016/07/30/javascript-for-loop-vs-array-foreach.html) (He's grabbed a great URL there, "thejsguy.com").
 
 
 ## Functions
 
 A function is a unit of reusable code, which can be invoked or "called" many times, possibly with different input values. They are a key part of any language. Functions help structure and organize your code: self-contained processes and computations can be neatly isolated in a function. 
 
-Functions are kind of named after mathematical functions: f(x) = x * x. In JavaScript this would become `function square(x) { return (x * x); }`
+Functions are named after mathematical functions: f(x) = x * x. In JavaScript this would become `function square(x) { return (x * x); }`
 
-Other languages can use terms like "subroutine" or "procedure" to describe a function. Fortran IV used to provide SUBROUTINE which returned no value, and FUNCTION which did return a value. In modern languages a "function" can return or not return a value just as you wish, and you can also use or ignore the return value afterwards as you wish. 
+Other languages can use terms like "subroutine" or "procedure" to describe a function. Fortran IV used to provide SUBROUTINE which returned no value, and FUNCTION which did return a value. In modern languages a "function" can return or not return a value just as you wish, and you can also use or ignore the return value afterwards. 
 
-A neatly self-contained function can be replaced with a better version at a future time: a standard example would be a "sorting" function. With low numbers of test data items that need to be sorted into order in some sort() function, a simple "bubble sort" might be fine. This runs in O(N2), which is academic speak for "Order N squared", meaning the time to sort a list of N items is approximately proportional to N squared. This goes up quite rapidly, but it's not going to be a problem until N reaches high numbers, maybe thousands to millions.
+A neatly self-contained function can be replaced with a better version at a future time: a standard example would be a "sorting" function. With low numbers of test data items that need to be sorted into order in some sort() function, a simple "bubble sort" might be fine. This runs in O(N2), which is academic speak for "Order N squared", meaning the time to sort a list of N items is approximately proportional to N squared. This goes up quite rapidly, but it's not going to be a problem until N reaches high numbers, maybe thousands or tens of thousands.
 
-When you need to sort billions of things, you might need to replace your sort() function with a more sophisticated multi-phase tree/bucket/heap/shell sort, which can be O(n Log n) or better. Just change your sort function !  [\[full monty\]](https://en.wikipedia.org/wiki/Sorting_algorithm) [\[JavaScript monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+When you need to sort millions of things, you might need to replace your sort() function with a more sophisticated multi-phase tree/bucket/heap/shell sort, which can be O(n Log n) or better. Just change your sort function !  [\[full monty\]](https://en.wikipedia.org/wiki/Sorting_algorithm) [\[JavaScript monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
 Here's a list of simple function examples:
 
@@ -964,6 +968,8 @@ function changeBackground() {
 A function can accept values as input, known as arguments or parameters. Note that within the function code, the parameters are not the names of actual variables in your enclosing program, but are "place holder" variables limited to the scope of the function. To split hairs, the "parameter" is the name of the formal parameter, "person" in the first example below, it's a static term in the code source text. The "argument" is the value that gets passed in, a dynamic run-time thing, "name" in the code below, if talking about it from the callers perspective, or maybe again "person" if talking from the functions perspective.
 
 When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution and returns to the caller. After return, normally all data inside the function just "evaporates", its job is done. (Technically, the "stack frame" with all the function's data is popped off the stack).
+
+In the case of simple variables
 
 ```javascript
 function sayHello(person) {
