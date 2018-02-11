@@ -1,6 +1,6 @@
 
 
-Update finished 11 Feb 18.
+Update finished 11 Feb 18. Reviews invited !
 
 
 JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
@@ -2036,15 +2036,3 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 
 * Mention map/reduce ?? don't think so, not much relevance to p5.js
 
-
-***
-
-Testing header types:
-
-**Contents:**  (just bold text)
-
-### Contents: (h3)
-
-## Contents: (h2)
-
-# Contents: (h1)
