@@ -1231,7 +1231,7 @@ Variables that you declare inside a function, and also the function arguments, a
 
 Variables declared outside of any function are known as "global variables" and can be accessed from anywhere in the program, inside or outside functions. These are convenient, and essential at times to pass around global information, but can create hazards. Try not to declare simple names as globals, like min, max, sum, total, error, count. These can clash with other declarations in functions, or at top level in other code modules concatenated with this one, and unfortunately, due to JavaScripts permissive nature, this can create silent errors. One protocol is to declare all globals as "g_total", or an Object member "g.total" to make things clear. Slightly ugly but could save your bacon one day.
 
-Another option is to put all your code in one top level function, say main(). Then nothing "escapes" from main(), so that stops clashes with other concatenated code modules. Like p5.js say !! **(Check the p5.js "instanced mode" doco)**
+Another option is to put all your code in one top level function, say main(). Then nothing "escapes" from main(), so that stops clashes with other concatenated code modules. Like p5.js say !
 
 ```javascript
 <html>
@@ -1251,6 +1251,9 @@ Another option is to put all your code in one top level function, say main(). Th
 <body>Not much of a body, this is a JavaScript example, not HTML</body>
 </html>
 ```
+
+p5.js has an "instanced" mode, which is another similar way to do this. See the tutorial [Global and Instanced Mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode)
+
 
 Here's another example of global and local scopes:
 
@@ -1409,8 +1412,6 @@ switch(x) {
 ```
 
 There are other tiny subtleties with changing from `var` to `let` but I think the average p5.js beginner will have reached their limit by now ! I know I have. Remaining quirks are really for the designers of big systems, like the whole p5.js library. They take many precautions and scope and encapsulate well, so that you can code simply and safely.
-
-**Check this thoroughly. This scope stuff is crazy enough, without giving out duff information**
 
 ### The const declaration
 
