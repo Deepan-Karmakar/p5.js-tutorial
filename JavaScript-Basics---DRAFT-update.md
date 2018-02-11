@@ -1,14 +1,7 @@
 
 
-_This is a draft update to the p5.js JavaScript Basics tut. I aim to finish it by mid-Feb (err, 2018!). To flesh out some more generic JavaScript detail, and add more examples relevant to p5.js. When done, I will signal that here and request review by Lauren and anyone else interested. Cheers, Greg E._
+Update finished 11 Feb 18.
 
-_**Areas needing more work flagged as "Todo". Can you flag something in colour in Markdown? That would be useful.**_
-
-Looks like you should be able to use \<span style="color:red"\>some red text\</span\> but GitHub is stripping it out.
-
-Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.   - nope - <span style=color:green> green text goes here</span>   - nope
-
----
 
 JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
 
@@ -62,7 +55,7 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Other points about let](#other-points-about-let)    
 &nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)      
 [Objects part 2: objects as classes](#objects-part-2-objects-as-classes)   
-[A p5.js example](#a-p5js-example)  
+&nbsp;&nbsp;&nbsp;[A p5.js example](#a-p5js-example)  
 [The new Class statement](#the-new-class-statement)     
 [Code formatting, style, good practices, common mistakes](#code-formatting-style-good-practices-common-mistakes)  
 &nbsp;&nbsp;&nbsp;[Comments](#comments)  
@@ -1142,8 +1135,8 @@ fact(1)    //  1
 fact(5)    //  120
 fact(69)   //  1.711224524281413e+98   This was as high as my HP-45 Engineers calculator could go, with a 2 digit exponent 
 ```
-  
-Let's try a two-legged recursion: the famous Ackermann function [Ackermann's function](https://en.wikipedia.org/wiki/Ackermann_function) This recurses down the two arguments, and will stack vast chains of recursive calls on the stack. It looks simple enough, but grows ferociously, in both computational data storage, and the final answer.
+<br>  
+Let's try a two-legged recursion: the famous Ackermann function. This recurses down the two arguments, and will stack vast chains of recursive calls on the stack. It looks simple enough, but grows ferociously, in both computational data storage, and the final answer.
 
 ```javascript
 function ackermann(m,n) {
@@ -1165,7 +1158,7 @@ ackermann(4,2)   // Exception: RangeError: Maximum call stack size exceeded. The
                  // approx 10^19729. We couldn't remotely represent the answer in 64 bits, never mind store all the recursion.
 ```
 
-By raising the stack space to the maximum in the JavaScript configuration, we might just get Ackermann(4,1) to complete. Let's not bother.
+By raising the stack space to the maximum in the JavaScript configuration, we might just get Ackermann(4,1) to complete. Let's not bother. [Ackermann's function](https://en.wikipedia.org/wiki/Ackermann_function) 
 
 ### Closures
 
@@ -1553,13 +1546,13 @@ An "instance" is an OOP term for an instance of an object or class. So cats[0] i
 
 ### The Delete operator and Garbage Collection
 
-This is a good place to briefly mention the subject of memory management. Languages which allow you to dynamically create things during execution - like arrays, objects, arrays of millions of objects - must provide a way for that memory to be released when necessary. Even a modern JavaScript interpreter only has maybe 500 Mbyte of memory for dynamic data by default. You can configure it up a bit, to maybe 2GByte or 4Gbyte. But if you have a program consuming memory because it allocates dynamic things and doesn't delete them, 4GBbyte might fill only a few seconds after 1/2 GByte.
+This is a good place to briefly mention the subject of memory management. Languages which allow you to dynamically create things during execution - like arrays, objects, arrays of millions of objects - must provide a way for that memory to be released when necessary. Even a modern JavaScript interpreter only has maybe 500 Mbyte of memory for dynamic data by default. You can configure it up a bit, to maybe 2GByte or 4Gbyte. But if you have a program consuming memory because it allocates dynamic things and doesn't delete them, 4GBbyte might fill very soon after 1/2 GByte.
 
 Languages like C++ and Java have an ability to "delete" or "free" objects which have been created. This is aimed at cleaning up and removing dynamic data which you have created, and you know is not needed anymore. It's important sometimes to do that, to prevent memory usage building up, and prevent creating slow "memory leaks". Memory leaks are a problem in long-running codes - after days or weeks even the most carefully coded application can gradually increase its memory usage, and eventually fail. These are very pernicious errors and hard to track down - it could be smallest thing which is building up, some inconsequential temporary data.
 
 The alternative approach is very good automatic "garbage collection". What on Earth is that? It's the automatic deletion and clean-up of things which can't be used anymore. If a variable, array, object, or anything else, has gone completely "out of scope" and can't be legally referenced any more, then JavaScript can delete it and free up its memory. 
 
-There are other situations where things might appear to be referenced, but the system can still delete them. The textbook example is a "cycle" of references, where say a refers to b, b to c, c back to a. `a = b+1, b = c+1, c = a+1`. (This is not a proper example, we need stronger references, where a is say an Object which must fetch some of its data from b, etc). At a first level, it looks like every item has a reference to it, and can't be cleaned up. But stepping back to a bigger view, there might be no other reference to a, b or c anywhere. Hence the whole lot can be cleaned up.
+There are other situations where things might appear to be referenced, but the system can still delete them. The textbook example is a "cycle" of references, where say a refers to b, b to c, c back to a. `a = b+1, b = c+1, c = a+1`. (This is not a proper example, we need stronger references, where a is say an Object which must fetch some of its data from b, etc). At a first level, it looks like every item has a reference to it, and can't be cleaned up. But stepping back to a wider view, there might be no other reference to a, b or c anywhere. Hence the whole lot can be cleaned up.
 
 JavaScript has an advanced Garbage Collector system which tracks use of data, and references to data. If nothing references some data any more, it is cleaned up. 
 
@@ -1578,32 +1571,146 @@ console.log(astronaut.firstName)      // shows "undefined"
 
 You might never need to use this. If you don't need "firstName" any more, just don't use it. It's ok to leave it sitting there as a property on "astronaut" which you never use. There would be many instances where you don't use some properties which are available on an object, eg. in some pre-packaged code or library you are using.
 
-Re memory usage, a good practice is never to create large volumes of data at top level, in the global scope. These never go out of scope and can't be garbage collected. Create large volumes of data in some subsidiary function, and try to return from that function when you are done with it, or return periodically. The Garbage Collector can then clean things up for you.
+Re memory usage, one good practice is never to create large volumes of data at top level, in the global scope. These never go out of scope and can't be garbage collected. Create large volumes of data in some subsidiary function, and try to return from that function when you are done with it, or return periodically. The Garbage Collector can then clean things up for you.
 
 In a small to medium p5.js application you will never need to think about this !
 
-The "gory details":https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management 
+The [gory details]:(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management) 
 
 
 
 ### A p5.js example
 
-Let's develop a p5.js example which will use dynamic objects, and run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture tells a thousand words as they say.
+Now that we have described an Object which has properties and methods, we're ready
+to develop a p5.js example using dynamic objects, which will run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture is worth a thousand words and all that. (This code is very similar to numerous examples elsewhere in Processing).
 
-...  
-...  
-...  
-...  
-...  
+```javascript
 
+// This data at the is global to the app.
+// But it doesn't escape from the app, for example to clash with data in p5.js
+
+const numShapes = 30;
+const baseRadius = 5;
+let shapes = [];        // Declare array to hold shape objects
+
+function setup() {      // Runs once at beginning of app
+
+  createCanvas(800, 600);
+  
+  // Use HSB colors in our app, so we can get easy changes of just color (hue).
+  colorMode(HSB, 100);   // H,S,B will be in range 0 - 100
+
+  // Create each object
+
+  for (let i = 0; i < numShapes; i++) {
+    let x = random(1, width - 2);       // Centre our circle randomly somewhere in the window
+    let y = random(1, height - 2);
+    shapes[i] = new Shape( x, y );
+  }
+}
+
+function draw() {
+
+  background(0, 0, 5, 10);      // Dark grey with a small alpha value, this achieves a blurring effect.
+  noStroke();                   // No outline of shapes
+
+  // Update some controls for our shapes.
+
+  let cycle = 200;  // Change the shapes appearance over a cycle of n frames
+
+  let percent = (frameCount % cycle) / cycle;     // 0.0 to 0.999
+  let percent2 = percent;                         
+  if (percent > 0.5 ) { percent2 = 1 - percent }  // 0.0 to 0.5, then back down
+
+  radius = baseRadius + 30 * (percent2);          // Grow and shrink the radius
+
+  // Update and display each shape in the array
+
+  for (let i = 0; i < shapes.length; i++) {
+    shapes[i].setRadius(radius);   
+    shapes[i].followMouse(0.008);   // rate to follow mouse at
+    shapes[i].setColor(percent);    // change hue as well
+    shapes[i].display();            // draw it
+  }
+}
+
+function Shape(xpos, ypos) {
+
+  // Set initial values for properties, as supplied in the constructor, ie the New() call
+
+  this.xpos = xpos;
+  this.ypos = ypos;
+  this.hue = 0;                     // value not important, just good practice to init to something
+
+// Some methods to operate on an instance of Shape
+
+// Method to set the radius
+
+  this.setRadius = function() {
+    this.radius = radius;
+  }
+
+// Method to move the shape's position towards the cursor position.
+// Don't move if closer than a certain distance.
+
+  this.followMouse = function(fraction) {
+
+    let xdiff = mouseX - this.xpos;
+    let ydiff = mouseY - this.ypos;
+
+    let dist = Math.sqrt(xdiff * xdiff + ydiff * ydiff);
+
+    if ( dist > 100 ) {
+      this.xpos += xdiff * fraction;
+      this.ypos += ydiff * fraction;
+    }
+  }
+
+// Method to reposition the shapes randomly. This is only because our simple
+// follow-the-cursor code eventually clumps all the shapes together :=(
+
+  this.resetPos = function () {
+    this.xpos = random(1, width - 2);
+    this.ypos = random(1, height - 2);
+  }
+
+// Method to set color of the shape. Use the HSB system, and vary hue from 0.0 to 1.0
+
+  this.setColor = function(hue) { 
+    this.hue = 100 * hue;
+  }
+
+// Method to draw the shape to the screen. This is it! draw those pixels.
+
+  this.display = function() {
+    fill(this.hue, 100, 100);
+    ellipse(this.xpos, this.ypos, this.radius, this.radius );  // a solid circle
+  }
+}
+
+// Separate callback function for user keystrokes.
+// Allow any key to reset the app.
+
+function keyTyped() {
+
+  for (let i = 0; i < numShapes; i++) {
+    shapes[i].resetPos();
+  }
+}
+```
+
+Here's the code working ... [Open Processing](https://www.openprocessing.org/sketch/507368)
+
+I think I'm going to say nothing more, just let that picture / 1000 words thing happen. Look through the code, with the OpenProcessing page also running. You can experiment with changing the OpenProcessing version by hitting the </> tag at the top. 
+ 
 
 ## The new Class statement
 
-ECMAScript 2015 (ES6) introduces the "class" statement. This is an attempt to give JavaScript something that looks close to the class design system of other languages like Java and C++.
+ECMAScript 2015 (ES6) introduces the "class" statement. This is an attempt to give JavaScript something that looks close to the class system of languages like Java and C++.
 
-It's effectively "syntactic sugar" which allows you to declare classes, and members, methods, constructors etc. with a similar syntax to other languages. However it doesn't actually add any new underlying capability. What you end up with is the same as you could have set up without "class".
+It's effectively [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) which allows you to declare classes, and members, methods, constructors etc. with a similar syntax to other languages. However it doesn't actually add any new underlying capability. What you end up with is the same as you could have set up without "class".
 
-I'm just going to include links here to some resources. You can can find many more by searching.
+Authors who have transitioned to using it say it's handy. I'm just going to include links here to some resources. As always you can can find many more by searching.
 
 [MDN reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)   
 [More info](https://javascript.info/class)  
