@@ -206,6 +206,31 @@ On some code editors copy-pasting examples in the inline documentation may be aw
 
 Finally, if you add an example, please add [alt-text](https://moz.com/learn/seo/alt-text) so visually impaired users can understand what the example is showing on the screen. This can be added with the tag `@alt` at the end of all of the examples for a given function (not an individual `@alt` tag under each), add a line break to separate the descriptions for multiple examples.
 ```
+@example
+<div>
+<code>
+var xoff = 0.0;
+function draw() {
+  background(204);
+  xoff = xoff + 0.01;
+  var n = noise(xoff) * width;
+  line(n, 0, n, height);
+}
+</code>
+</div>
+<div>
+<code>var noiseScale=0.02;
+function draw() {
+  background(0);
+  for (var x=0; x < width; x++) {
+    var noiseVal = noise((mouseX+x)*noiseScale, mouseY*noiseScale);
+    stroke(noiseVal*255);
+    line(x, mouseY+noiseVal*80, x, height);
+  }
+}
+</code>
+</div>
+
 @alt
 vertical line moves left to right with updating noise values.
 horizontal wave pattern effected by mouse x-position & updating noise values.
