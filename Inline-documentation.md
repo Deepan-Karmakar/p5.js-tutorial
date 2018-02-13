@@ -204,6 +204,15 @@ On some code editors copy-pasting examples in the inline documentation may be aw
 [p5examplesFormatter](http://molleindustria.org/p5examplesFormatter/)
 | [download as zip](http://molleindustria.org/p5examplesFormatter/p5examplesFormatter.zip)
 
+Finally, if you add an example, please add [alt-text](https://moz.com/learn/seo/alt-text) so visually impaired users can understand what the example is showing on the screen. This can be added with the tag `@alt` at the end of all of the examples for a given function (not an individual `@alt` tag under each), add a line break to separate the descriptions for multiple examples.
+```
+@alt
+vertical line moves left to right with updating noise values.
+horizontal wave pattern effected by mouse x-position & updating noise values.
+```
+
+
+
 ### Generating documentation
 
 Run `grunt yui:build` once first to generate all local files needed, as well as a copy of the reference from the source code. Run it again anytime you make changes to the core JS files behind the yuidoc reference page. These are changes in files located in the yuidoc-p5-theme-src folder, NOT inline documentation changes to src. If you only made changes to the source code, you can just run `grunt yui`, though `grunt yui:build` will also do the trick. 
