@@ -204,8 +204,7 @@ On some code editors copy-pasting examples in the inline documentation may be aw
 [p5examplesFormatter](http://molleindustria.org/p5examplesFormatter/)
 | [download as zip](http://molleindustria.org/p5examplesFormatter/p5examplesFormatter.zip)
 
-**Adding alt-text**
-
+#### Adding alt-text
 Finally, if you add an example, please add [alt-text](https://moz.com/learn/seo/alt-text) so visually impaired users can understand what the example is showing on the screen. This can be added with the tag `@alt` at the end of all of the examples for a given function (not an individual `@alt` tag under each), add a line break to separate the descriptions for multiple examples.
 ```
 @example
