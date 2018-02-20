@@ -1812,11 +1812,13 @@ There are many popular styles of indenting. (The good thing about standards is, 
 
 Generally whenever you introduce curly braces, you should indent everything inside. Anything from two to eight spaces is common, but typically 2 to 4. Don't use tabs, they are archaic and will just cause endless problems down the track. If you're accustomed to hitting the Tab key, configure your editor to turn it into n spaces.
 
-A great tool is an automatic formatter. I use [AStyle](http://astyle.sourceforge.net/). Properly indented code will line up well, help you understand your code flow, and alert you when you have forgotten to close a loop with a brace } or whatever. You can configure the formatter for different indent and spacing and padding styles. (Did I mention the great thing about standards ...) 
+A great tool is an automatic formatter. I use [AStyle](http://astyle.sourceforge.net/) from the Mac command line. Properly indented code will line up well, help you understand your code flow, and alert you when you have forgotten to close a loop with a brace } or whatever. You can configure the formatter for different indent and spacing and padding styles. (Did I mention the great thing about standards ...) 
+
+p5.js developers use [prettier](https://prettier.io/) and [ESlint](https://eslint.org/).  I haven't used these as yet.
 
 Academic note: Python uses _nothing but_ spaces to indent and block code. Correct indentation is key.
 ```javascript
-if pwd == 'secret':                         // Some Python
+if pwd == 'secret':                         // A Python if/else block
     print('Logging on ...')
 else:
     print('Incorrect password.')
