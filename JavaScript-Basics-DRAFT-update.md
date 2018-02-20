@@ -370,7 +370,7 @@ var str2 = ""+num2; console.log(str2);     // "456"  a string
 
 In the English-speaking world we live in a privileged bubble where everything is in our familiar character set, ie. the good old English typewriter/printing character set. ASCII is the familiar encoding for these. But it still limited; only about half the punctuation set we routinely use is in there, for example the dollar sign $ is there, but not a proper cents sign &#xa2; or UK Pounds sign &#xa3;. 
 
-European languages have many accented characters, like the &#xe9; in caf&#xe9;. Then there is the Cyrillic alphabet, eg. Kremlin = ÐÑÐµÐ¼Ð»Ñ. Then the character sets of Chinese, Japanese, Korean and many other languages. These can be the compact "phonetic" character sets, like Japanese Hiragana ã²ãããª with 46 characters, or the Chinese-derived Kanji æ¼¢å­ set of thousands of characters. There is the arabic Ø¹ÙØ±ÙØ¨ÙÙÙâ character set which runs right to left.â My apologies to important languages I have not mentioned here. 
+European languages have many accented characters, like the &#xe9; in caf&#xe9;. Then there is the Cyrillic alphabet, eg. Kremlin = Кремль. Then the character sets of Chinese, Japanese, Korean and many other languages. These can be the compact "phonetic" character sets, like Japanese Hiragana ひらがな with 46 characters, or the Chinese-derived Kanji 漢字 set of thousands of characters. There is the arabic العَرَبِيَّة‎ character set which runs right to left. My apologies to important languages I have not mentioned here. 
 
 (How am I entering these characters in the Wiki text here? - mainly cut & paste from web pages).
 
@@ -380,22 +380,21 @@ JavaScript allows the use of all these characters, using the Unicode character s
 cent = "\u00a2";
 ukpound = "\u00a3"; 
 message = "Your card will be billed $123 and 45" + cent + " which is UK pounds " + ukpound + "78.99";
-console.log(message);         // Your card will be billed $123 and 45Â¢ which is UK pounds Â£78.99";  
-// This example has been done with some cut/paste, don't use this as a guide to HTML 
-// extended chars, just JavaScript programmable chars.
+console.log(message);         // Your card will be billed $123 and 45¢ which is UK pounds £78.99";  
 ```
 
-One of the main traps with extended character sets is that the length of the visual string (say cafÃ©, 4 characters) is not equal to the length of the encoded string, which will be longer than 4. This makes a lot of simple text layout coding more difficult. There are facilities in JS to give you the "visual length" of a string:
+One of the main traps with extended character sets is that the length of the visual string (say caf&#xe9, 4 visual characters) is not equal to the length of the encoded string, which will be longer than 4. This makes some text layout coding more difficult. There are facilities in JS to give you the "encoded length" of a string:
 
 ```javascript
 enc = new TextEncoder('utf-8');    // You can choose the UTF type. UTF-8 is the most common.
 enc.encode("cafe").length;         // 4
-enc.encode("cafÃ©").length;         // 5
+enc.encode("café").length;         // 5
 ```
 
-UTF-8 uses plain single-byte Ascii for the common English characters, "caf" here, and a 2-byte encoding for the next commonest Western set, which includes accented European characters. It uses 3 and 4 byte encodings for further characters. (I'm trying not to say "uncommon" characters here. Hindi à¤¹à¤¿à¤¨à¥à¤¦à¥ written in the Devangari à¤¦à¥à¤µà¤¨à¤¾à¤à¤°à¥ script is not at all uncommon to the 380 million Hindi speakers).
+UTF-8 uses plain single-byte Ascii for the common English characters, "caf" here, and a 2-byte encoding for the next commonest Western set, which includes accented European characters. It uses 3 and 4 byte encodings for further characters. (I'm trying not to say "uncommon" characters here. Hindi हिन्दी written in the usual Devangari मानक हिन्दी script is not at all uncommon to the 380 million Hindi speakers).
  
-Extended character sets are a huge subject. If you need to, look up Unicode, UTF-8 in Wikipedia, and Google for other info.
+Extended character sets are a big subject. If you need to, look up Unicode, UTF-8 in Wikipedia, and Google for other info.
+
 [Unicode chars](https://unicode-table.com/en/#control-character)  
 [Example of cents](https://www.toptal.com/designers/htmlarrows/currency/cent-sign/)
 
