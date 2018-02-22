@@ -1813,7 +1813,7 @@ Generally whenever you introduce curly braces, you should indent everything insi
 
 A great tool is an automatic formatter. I use [AStyle](http://astyle.sourceforge.net/) from the Mac command line. Properly indented code will line up well, help you understand your code flow, and alert you when you have forgotten to close a loop with a brace } or whatever. You can configure the formatter for different indent and spacing and padding styles. (Did I mention the great thing about standards ...) 
 
-p5.js developers use [prettier](https://prettier.io/) and [ESlint](https://eslint.org/).  I haven't used these yet.
+p5.js developers use [prettier](https://prettier.io/) and [ESlint](https://eslint.org/).  A good guide to installing Prettier on Mac is here: [Installing Prettier](http://blog.teamtreehouse.com/install-node-js-npm-mac). Prettier has only a few style options and is aimed at maintaining a uniform style of code in large collaborative projects, like p5.js on GitHub.  
 
 Academic note: Python uses _nothing but_ spaces to indent and block code. Correct indentation is key.
 ```javascript
