@@ -2036,4 +2036,5 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 
 ## Todo:
 
+Add some info about installing node, in the JavaScript console section at the top ? to get a simple console separate from the browser ?
 
