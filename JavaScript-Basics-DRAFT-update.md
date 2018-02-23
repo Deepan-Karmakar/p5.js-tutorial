@@ -1651,7 +1651,7 @@ function draw() {
   let percent2 = percent;                         
   if (percent > 0.5 ) { percent2 = 1 - percent }  // 0.0 to 0.5, then back down
 
-  radius = baseRadius + 30 * (percent2);          // Grow and shrink the radius
+  let radius = baseRadius + 30 * (percent2);          // Grow and shrink the radius
 
   // Update and display each shape in the array
 
@@ -1675,8 +1675,8 @@ function Shape(xpos, ypos) {
 
 // Method to set the radius
 
-  this.setRadius = function() {
-    this.radius = radius;
+  this.setRadius = function(rad) {
+    this.radius = rad;
   }
 
 // Method to move the shape's position towards the cursor position.
