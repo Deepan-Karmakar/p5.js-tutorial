@@ -43,7 +43,7 @@ Need help finding an issue to fix? Check out this [list of bite size issues](htt
 2. [Fork and clone](https://help.github.com/articles/fork-a-repo) this library ([p5.js](https://github.com/processing/p5.js)). 
 
    ```
-   git clone git@github.com:YOUR_USERNAME/p5.js.git
+   git clone https://github.com/YOUR_USERNAME/p5.js.git
    ```
 
 3. Navigate into the project folder and install dependencies via npm.
