@@ -1811,7 +1811,9 @@ There are many popular styles of indenting. (The good thing about standards is, 
 
 Generally whenever you introduce curly braces, you should indent everything inside. Anything from two to eight spaces is common, but typically 2 to 4. Don't use tabs, they are archaic and will just cause endless problems down the track. If you're accustomed to hitting the Tab key, configure your editor to turn it into n spaces.
 
-A great tool is an automatic formatter. I use [AStyle](http://astyle.sourceforge.net/) from the Mac command line. Properly indented code will line up well, help you understand your code flow, and alert you when you have forgotten to close a loop with a brace } or whatever. You can configure the formatter for different indent and spacing and padding styles. (Did I mention the great thing about standards ...) 
+A great tool is an automatic formatter. I use [AStyle](http://astyle.sourceforge.net/) from the Mac command line. Properly indented code will line up well, help you understand your code flow, and alert you when you have forgotten to close a loop with a brace } or whatever. You can configure the formatter for different indent and spacing and padding styles. (Did I mention the great thing about standards ...)
+
+Temporary note: AStyle doesn't actually claim to be a JavaScript formatter, it relies on its Java/C++ abilities. One gremlin: it turns exact comparisons `===` and `!==` into `== =` and `!= =`. Easily fixed with sed: `cat file.js | sed 's/== =/===/g' | sed 's/!= =/!==/g'`. It might have other failings on esoteric JS syntax, I am investigating that.
 
 p5.js developers use [prettier](https://prettier.io/) and [ESlint](https://eslint.org/).  A good guide to installing Prettier on Mac is here: [Installing Prettier](http://blog.teamtreehouse.com/install-node-js-npm-mac). Prettier has only a few style options and is aimed at maintaining a uniform style of code in large collaborative projects, like p5.js on GitHub.  
 
@@ -1834,7 +1836,7 @@ distance = Math.sqrt( ((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2)) );      
 distance = Math.sqrt( ( ( x1 - x2 ) * ( x1 - x2 ) ) + ( ( y1 - y2 ) * ( y1 - y2 ) ) );     // Mmmm .. too sparse ?
 ```
 
-The formatter can apply padding rules to function calls, expressions, if{} blocks, loops, array indices, etc. There are maybe 8 or 10 areas you can adjust. But there are pre-packaged choices that give you a standard set. Here's mine, I just use the pre-packaged Java style with a couple of mods.
+The formatter can apply padding rules to function calls, expressions, if{} blocks, loops, array indices, etc. There are maybe 8 or 10 areas you can adjust. But there are pre-packaged choices that give you a standard set. Here's my AStyle set, I just use the pre-packaged Java style with a couple of mods.
 
 ```javascript
 cat ~/.astylrec
@@ -1915,7 +1917,7 @@ This will also prevent unwanted global variables being created. If you have a ro
 
 You should always use Strict mode !
 
-The odd syntax `"use strict";` is so the instruction is ignored by an old JavaScript engine which doesn't know what it is. A statement like `"use strict";` is just an isolated string with no computational effect, like `"Cool bananas;"`. It's parsed, created, then thrown away by any engine that isn't looking for it. Some other languages warn about this: "Warning, statement has no effect". Isolated expressions are easy to create: `var x = y;+z;`. You meant `y+z;` but z got orphaned and had no effect.
+The odd syntax `"use strict";` is so the instruction is ignored by an old JavaScript engine which doesn't know what it is. A statement like `"use strict";` is just an isolated string with no computational effect, like `"cool bananas;"`. It's parsed, created, then thrown away by any engine that isn't looking for it. Some other languages warn about this: "Warning, statement has no effect". Isolated expressions are easy to create: `var x = y;+z;`. You meant `y+z;` but z got orphaned and had no effect.
 
 There are a number of other practices which are disallowed in Strict mode: [Strict mode](https://www.w3schools.com/js/js_strict.asp)
 
@@ -1923,7 +1925,11 @@ There are a number of other practices which are disallowed in Strict mode: [Stri
 
 There are quite a few style checkers for JavaScript. Two well-known ones are [JSLint](http://www.jslint.com/) and [JSHint](http://jshint.com/).  You can cut and paste code into their online versions and check quite a lot. You can also download and install locally JSHint. They are best at standalone JavaScript programs. Checking a large p5.js app may throw up lots of complaints like "don't know what function createImage() is". There are ways to tell JS[HL]int what external functions and terms you're using, so you're not flooded with these warnings. I haven't pursued that.
 
-Note the JSLint term comes from the old C style checker "lint", which picked up small imperfections in your code like lint on your clothes. 
+Note the JSLint term comes from the old C style checker "lint", which picked up small imperfections in your code like lint on your clothes.
+
+Another good checker is ESlint. This is used by p5.js developers. You can customise the style rules in a config file such as ~/eslintrc.
+
+A comparison of style checkers: [lint comparison](https://www.sitepoint.com/comparison-javascript-linting-tools/) 
 
 ### Common mistakes
 
@@ -2034,7 +2040,7 @@ An interesting paper describing all this is John Ousterhout's seminal paper from
 So despite it's looseness and oddities JavaScript is quick and fun and pretty reliable to work with. Get stuck in !
 
 
-## Todo:
+### Todo:
 
 Add some info about installing node, in the JavaScript console section at the top ? to get a simple console separate from the browser ?
 
