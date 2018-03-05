@@ -1,7 +1,5 @@
 
-Update finished 11 Feb 18. Reviews invited !
-
-
+[Extensively updated Jan/Feb 2018. Review and improvement invited !]
 
 JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
 
