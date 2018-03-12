@@ -32,7 +32,8 @@ Not a comprehensive TOC, just shortcuts to some sections.
 &nbsp;&nbsp;&nbsp;[Math functions](#maths-functions)  
 [Conditionals](#conditionals)  
 &nbsp;&nbsp;&nbsp;[If else](#if)  
-&nbsp;&nbsp;&nbsp;[Comparison issues, loose vs strict](#comparison-issues)  
+&nbsp;&nbsp;&nbsp;[Ternary conditional](#the-ternary-conditional-operator)   
+&nbsp;&nbsp;&nbsp;[Comparison issues, loose vs strict](#comparison-issues)    
 &nbsp;&nbsp;&nbsp;[Switch](#switch-statement)  
 [Loops](#loops)      
 &nbsp;&nbsp;&nbsp;[While](#while-)  
@@ -787,9 +788,9 @@ if (runAnalysis) {
 if (x > 5) {
   // execute some code
 } else if (x < -5) {
-  // execute some other code
+  // execute some other code. The "else if" chain can go on as long as you like.
 } else {
-  // execute some other other code. The "else if" chain can go on as long as you like.
+  // execute some other other code. 
 }
 ```
 
@@ -809,7 +810,39 @@ if ( x.length === 8 || x.indexOf("ding") === -1 ) {   // just wing it
 }
 ```
 Editorial note: in Pedantic World these names are used - () parentheses, [] brackets, {} braces, <> angle brackets. However it's common to just say () round brackets, [] square brackets, {} curly brackets, <> angle brackets. I think there is a fancy name for angle brackets, but it escapes me.
- 
+
+### The Ternary Conditional operator
+
+JavaScript allows a form of the famous ternary (three-way) operator. `condition ? expr1 : expr2`
+
+```
+rich = dollars > 1e6 ? true : false;       // example 1
+rich = (dollars > 1e6) ? true : false;     // clearer
+
+rich = (dollars > 1e6) ? true              // even clearer, but few code formatters will preserve this well
+                       : false;
+    
+```
+This allows some compact statements in certain cases. It can chain on into multiple instances, but that can get very unclear.
+
+```
+rich = dollars > 1e7 ? "yes" : dollars > 1e6 ? "maybe" : "no";   // unclear
+
+rich = (dollars > 1e7) ? "yes"                                   // a bit better
+     : (dollars > 1e6) ? "maybe" 
+     : "no";
+
+if (dollars > 1e7) {                                             // you might prefer this
+    rich = "yes"
+} else if (dollars > 1e6 ) {
+    rich = "maybe"
+} else {
+    rich = "no"
+}
+```
+
+The consensus seems to be that the ternary `?:` operator is ok for simple one-level tests, like example 1 above, but avoid nesting it deeper.
+
 ### Comparison issues
 
 Warning: some comparisons between variables that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). There's a quaint terminology called "truthy" and "falsy". Values like 0 or "0" or "" or [] or [[]] or [0] are falsy. Values like 1, "1" and [1] are truthy.  
