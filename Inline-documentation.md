@@ -198,6 +198,18 @@ If you do not want the example to render with canvas (ie you just want the code 
 </div>
 ```
 
+
+If you do not want the example to be run as part of the build tests (for example, if the example requires user interaction, or uses functionality not supported by the PhantomJS test framework), include the class "notest" in the div:
+```
+@example
+<div class='norender notest'><code>
+function setup() {
+  var c = createCanvas(100, 100);
+  saveCanvas(c, 'myCanvas', 'jpg');
+}
+</div>
+```
+
 If you need to link to external asset files, put them in [/docs/yuidoc-p5-theme/assets](https://github.com/processing/p5.js/tree/master/docs/yuidoc-p5-theme/assets) and then link to them with "assets/filename.ext" in the code. See the [tint example](http://p5js.org/reference/#/p5/tint).
 
 On some code editors copy-pasting examples in the inline documentation may be awkward and require a lot of adjustments (tabs, asterisks, spaces). You can use this simple tool to beautify the code (and re-indent it to 2 spaces) and make it ready for a copy-paste: 
