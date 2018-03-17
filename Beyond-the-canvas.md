@@ -83,14 +83,14 @@ Note that the examples above refer to createCanvas(), but they work the same for
 In addition to ```createCanvas(w, h)```, there are a number of other methods like `createDiv()`, `createP()`, `createA()`, etc (see the [reference](http://p5js.org/reference/#/libraries/p5.dom) for full listing). In the example below, a div with text is created, in addition to the graphics canvas, and the position is set for each.
 
 ```javascript
-var canvas, text;
+var canvas, txt;
 
 function setup() {
   canvas = createCanvas(600, 400);
   canvas.position(300, 50);
 
-  text = createDiv('This is an HTML string!');
-  text.position(50, 50);
+  txt = createDiv('This is an HTML string!');
+  txt.position(50, 50);
 }
 
 function draw() {
@@ -105,7 +105,7 @@ function draw() {
 In the previous example we are just placing a text string into the element, but the element can really contain any HTML. Try replacing this line and notice how some of the text becomes clickable.
 
 ```javascript
-var text = createDiv("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
+var txt = createDiv("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
 ```
 
 Each of these methods create a p5.Element, which is a wrapper around an HTML element, giving simplified access to many of its main properties. However, if you want to access the underlying HTML element, you can use the `.elt` property. There is a reference for all properties of the element [here](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement).
