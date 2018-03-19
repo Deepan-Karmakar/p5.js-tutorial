@@ -148,6 +148,3 @@ new p5(function (p) {
   };
 }, node);
 ```
-
-Still have to think about whether to use 'new' or capitalize the constructor.
-Tip from @gnarf: `function p5(opts) { if (!(this instanceof p5)) { return new p5(opts); } }`
