@@ -141,9 +141,3 @@ var myp5 = new p5(s,'p5sketch');
 ```
 
 And all elements will be created inside that div.
-
-
-## Other JS libraries
-
-* [The p5.js repo includes tutorial re: integrating other JS libraries](https://github.com/lmccart/p5.js/wiki/Integrating-other-libraries)
-
