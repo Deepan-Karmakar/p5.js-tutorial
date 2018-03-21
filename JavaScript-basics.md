@@ -390,7 +390,7 @@ enc.encode("cafe").length;         // 4
 enc.encode("café").length;         // 5
 ```
 
-UTF-8 uses plain single-byte Ascii for the common English characters, "caf" here, and a 2-byte encoding for the next commonest Western set, which includes accented European characters. It uses 3 and 4 byte encodings for further characters. (I'm trying not to say "uncommon" characters here. Hindi हिन्दी written in the usual Devangari मानक हिन्दी script is not at all uncommon to the 380 million Hindi speakers).
+UTF-8 uses plain single-byte Ascii for the common English characters, "caf" here, and a 2-byte encoding for the next commonest Western set, which includes accented European characters. It uses 3 and 4 byte encodings for further characters. 
  
 Extended character sets are a big subject. If you need to, look up Unicode, UTF-8 in Wikipedia, and Google for other info.
 
@@ -875,8 +875,6 @@ switch ( userInput ) {
 This is neat and clear. Although, if you omit the 'break' the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
 
 Always use the `default` catcher, even if you think it can never happen.
-
-Having said all that, switch{} is a little archaic and rigid. It seemed a devilishly clever idea back in 1969-72 when Kernighan and Ritchie et al were writing C at Bell Labs on a PDP-11. With memory so tiny and CPU speeds so slow and 16-bit words, the compiler could construct an efficient machine code "jump table" where the 'switch' value, often just a byte ('q', 'r' above, or small numbers like 1,2,3,5,8,10) indexed into a table of offsets, and then jumped direct to the 'case' code. Such desperate efficiency is no longer needed. (But don't worry, we have replaced it with databases of your banks millions of customers which take 5 minutes to load your account, all is well for efficiency workers).
 
 ## Loops
 
