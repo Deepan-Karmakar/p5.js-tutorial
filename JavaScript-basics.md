@@ -20,6 +20,7 @@ Not a comprehensive TOC, just shortcuts to some sections.
 [Datatypes](#data-types)   
 &nbsp;&nbsp;&nbsp;[Number](#data-type-number)  
 &nbsp;&nbsp;&nbsp;[String](#data-type-string)  
+&nbsp;&nbsp;&nbsp;[Converting between number and string](#converting-between-number-and-string)  
 &nbsp;&nbsp;&nbsp;[Extended character sets: Unicode, UTF](#extended-character-sets-unicode-utf)  
 &nbsp;&nbsp;&nbsp;[Boolean](#data-type-boolean)  
 &nbsp;&nbsp;&nbsp;[Null and Undefined](#data-type-null-and-undefined)   
