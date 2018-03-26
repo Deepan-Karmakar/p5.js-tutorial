@@ -345,7 +345,7 @@ There are many more String functions but the above would be 98% of what you need
 
 **Converting between number and string**
 
-There are some legit ways to convert between numbers and strings.
+There are some legit ways to convert between numbers and strings. 
 
 ```javascript
 var num = 123;
@@ -354,6 +354,7 @@ console.log(str);                    // "123", a string
 
 var num2 = parseInt(str, 10)         // 10 is the radix. You can use 16 or 8 or 2 for hex, octal, binary
 console.log(num2);                   // 123, back to a number
+var num3 = parseFloat("12.34");      // becomes the number 12.34
 ```
 
 There are also some somewhat clunky ways of forcing conversions between numbers and strings:
@@ -364,7 +365,15 @@ var num = +str;   console.log(num);        //  123   a number
 var num2 = 456;
 var str2 = ""+num2; console.log(str2);     // "456"  a string
 ```
+Often you won't need these, JavaScript sorts out what to do mostly. But not always ...
 
+```javascript
+var x = "12.34";
+var y = 5.67;
+var z1 = x - y;           // 6.67
+var z2 = x + y;           // "12.345.67"   Hmmm, surprise !
+var z3 = Math.sqrt(z2)    // NaN ! More surprise !
+```
 ### Extended character sets: Unicode, UTF
 
 In the English-speaking world we live in a privileged bubble where everything is in our familiar character set, ie. the good old English typewriter/printing character set. ASCII is the familiar encoding for these. But it still limited; only about half the punctuation set we routinely use is in there, for example the dollar sign $ is there, but not a proper cents sign &#xa2; or UK Pounds sign &#xa3;. 
@@ -743,7 +752,11 @@ for (var i = 0; i < 10 ; i++) {
 
 ### Maths functions
 
-The maths functions are sequestered inside the Maths package, to avoid polluting the top level namespace with everyday terms like min, max etc. and just following good modern practice. Unless you're a Rocket Scientist you don't need complex maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. A few examples:
+The maths functions are sequestered inside the Math package, to avoid polluting the top level namespace with everyday terms like min, max etc. and just following good modern practice. Unless you're a Rocket Scientist you don't need complex maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. 
+
+In fact p5.js brings most math functions back out as top level names, eg. `x = sqrt(y)`. See [p5 reference](https://p5js.org/reference/) and follow the Math link. I'm not sure of the rationale for that, easy coding for beginners I guess. 
+
+A few examples:
 ```javascript
 circumference = 2 * Math.PI * radius;           // a constant 'property' of Math, no () call needed 
 distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2 ));  // Standard 2D distance calc; you know this
