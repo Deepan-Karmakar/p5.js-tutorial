@@ -2081,3 +2081,9 @@ The pay-off is flexible design of course, but also much faster development, rapi
 An interesting paper describing all this is John Ousterhout's seminal paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the original driver behind the scripting language Tcl and its companion gui builder Tk. The paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower, maybe 20x, than script approaches; reliability is not much different in the end; performance may not be much different - your code is usually limited by things you don't have control over: graphics rendering power, disk speed, network speed - and there's plenty of cpu these days to drive the interpreted JavaScript engine.
 
 So despite it's looseness and oddities JavaScript is quick and fun and pretty reliable to work with. Get stuck in !
+
+
+***
+
+###To do:
+- describe `break label`, `continue`, `continue label` ? Maybe only continue, the label options are very messy programming and not be encouraged for beginners. 
