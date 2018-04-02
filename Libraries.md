@@ -1,21 +1,5 @@
-A p5.js library can be any JavaScript code that extends or adds to the p5.js core functionality. There are two categories of libraries. Core libraries (DOM and Sound) are part of the p5.js distribution, while contributed libraries are developed, owned, and maintained by members of the p5.js community.
+A p5.js addon can be any JavaScript code that extends or adds to the p5.js core functionality. There are two categories of addons. Core addons (DOM and Sound) are part of the p5.js distribution, while contributed addons are developed, owned, and maintained by members of the p5.js community.
 
-# Adding a library to your project
-
-Two libraries are included with the p5.js download, [p5.dom.js](http://p5js.org/reference/#/libraries/p5.dom) and [p5.sound.js](http://p5js.org/reference/#/libraries/p5.sound). Other contributed libraries can be found on the [libraries page](http://p5js.org/libraries/). 
-
-To include a library in your sketch, link it into your HTML file, after you have linked in p5.js. An example HTML file might look like this:
-```html
-<head>
-  <meta charset=utf-8>
-  <script src=p5.js></script>
-  <script src=p5.dom.js></script>
-  <script src=sketch.js></script>
-</head>
-
-<body>
-</body>
-```
 # Creating a new library
 
 There are a lot of different ways to write and use JavaScript, so we leave this up to you. What follows are some notes about having your library work well with p5.js.
