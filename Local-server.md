@@ -63,24 +63,7 @@ Alternatively, you can setup a `browser-sync` server which has the added benefit
 
 Note 2: If you encountered an error that says `EACCES` when installing either `http-server` or `browser-sync` it means npm is not installed with the right permissions, follow the steps outlined at https://docs.npmjs.com/getting-started/fixing-npm-permissions to fix it.
 
-## Processing Simple HTTPServer (3rd option) 
-Simple HTTPServer library for processing. Allows communication in both ways.
-```
-import http.*;
-
-SimpleHTTPServer server;
-
-void setup() {
-  // Create a server listening on port 8000
-  // serving index.html,which is in the data folder
-  server = new SimpleHTTPServer(this); 
-}
-```
-
-[Library page of Processing simple HTTP server](https://transfluxus.github.io/SimpleHTTPServer/)
-
-
-## Using PHP built-in web server (4th option)
+## Using PHP built-in web server (3rd option)
 
 [PHP has (since version 5.4.0) a built-in web server](https://secure.php.net/manual/en/features.commandline.webserver.php) for testing purposes that can be used to test P5.js sketches. 
 
@@ -97,63 +80,3 @@ php -S localhost:8000
 ```
 Then point your browser at `http://localhost:8000/`
 
-
-## Apache Server (5th option) 
-
-Python SimpleHTTPServer and others above are great to get started and in most cases should cover all your needs, but at some point you might want to set up an Apache server. The Apache server supports a greater range of HTTP functionality and scales well for bigger projects. See below for OS specific setup.
-
-### Mac OS X
-1. Download MAMP from [https://www.mamp.info/en/downloads/](https://www.mamp.info/en/downloads/).
-2. Install MAMP and follow instructions.
-3. The root folder of the server should be in `/Applications/MAMP/htdocs`.
-4. Place your project folder inside "htdocs".
-5. Open your internet browser and go to the URL : `http://localhost/<your_project_folder>/yourfile.html`.
-
-**Follow the instructions below if you prefer to setup an apache server natively on your Mac:**
-
-Mac OS X since 10.5 Leopard ships with Apache web server installed, all you have to do is enable it and place the files in the right place.
-
-#### Mac OS X 10.7 and above
-
-1. Open Terminal and type:
-```
-sudo apachectl start
-```
-2. Verify it is working by going to `http://localhost` on your browser. You should see "It works!" on the browser.
-3. Enable permissions for the files on the server by typing the following two commands into Terminal:
-```
-sudo chown root:<your username> -R /Library/WebServer/Documents
-
-sudo chmod -R 755 /Library/WebServer/Documents
-```
-4. Place your project somewhere inside `/Library/WebServer/Documents/`.
-5. View it at `http://localhost/<the project folder in /Library/WebServer/Documents>`.
-```
-http://localhost/my-p5-sketch
-```
-
-#### Mac OS X 10.5 and 10.6
-
-1. Turn on the web server. Go into Sys­tem Pref­er­ences > Shar­ing, and check the “Web Shar­ing” box.
-2. Verify it is working by going to `http://localhost/~<your username>` on your browser. You should see a default webpage with a title of "Your Website".
-3. Place your project somewhere inside `<your username folder>/Sites`.
-4. Turn on the web server from MAMP's control panel.
-4. View it at `http://localhost/~<your username>/<the project folder name>`.
-```
-http://localhost/~macusername/my-p5-sketch
-```
-
-### Windows
-
-1. Download WampServer from [http://www.wampserver.com/en/](http://www.wampserver.com/en/).
-2. Install WampServer and follow instructions.
-3. The “www” directory will be automatically created (usually `c:\wamp\www`).
-4. Create a subdirectory in “www” and put your HTML/JS files inside.
-5. Open your internet browser and go to the URL : `http://localhost/yourfile.html`.
-
-
-### Linux  
-
-1. Install apache2 via apt-get.
-2. Place your project somewhere inside `/var/www/`.
-3. View it at `http://localhost`.
