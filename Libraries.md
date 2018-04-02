@@ -1,4 +1,4 @@
-A p5.js addon can be any JavaScript code that extends or adds to the p5.js core functionality. There are two categories of addons. Core addons (DOM and Sound) are part of the p5.js distribution, while contributed addons are developed, owned, and maintained by members of the p5.js community.
+A p5.js library can be any JavaScript code that extends or adds to the p5.js core functionality. There are two categories of library. Core libraries (DOM and Sound) are part of the p5.js distribution, while contributed libraries are developed, owned, and maintained by members of the p5.js community.
 
 # Creating a new library
 
