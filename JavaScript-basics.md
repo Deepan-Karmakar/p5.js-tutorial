@@ -342,9 +342,33 @@ if (!String.prototype.trim) {                                       // we don't 
 }
 ```
 
-There are many more String functions but the above would be 98% of what you need in p5.js.
+**repeat() - generate a repeated string**
 
-**Converting between number and string**
+It's a common need when programming to create a string of the same characters, of a particular length. JavaScript introduced the repeat() method rather late at ES6. Before that you had to painfully concatenate characters in a loop.
+
+```javascript
+var dot = '.';  
+var dots = dot.repeat(8);     // dots is "........"
+var pad = 'x'.repeat(3);      // pad is "xxx"
+var deco = 'OX'.repeat(10);   // deco is "OXOXOXOXOXOXOXOXOXOX"
+```
+
+An example of its use is to pad a string to a given length, say to make numbers line up in a column of data.
+
+```javascript
+function padleft(data, width) {
+  let w = data.length;                      // length (width) of input string
+  if (w < width ) {
+    return " ".repeat(width - w) + data;    // pad data with some spaces on left
+  } else {
+    return data;                            // no need to pad
+  }           
+}
+```
+
+There are many more String functions but the above would be 99% of what you need in p5.js.
+
+### Converting between number and string
 
 There are some legit ways to convert between numbers and strings. 
 
