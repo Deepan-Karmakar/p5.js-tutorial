@@ -18,7 +18,7 @@ A Grunt Task uses sub tasks to draft and cut a release end-to-end :
     * Building Library and Docs : This is run as `grunt build && grunt yui`
     * Committing and Tagging 
     * Pushing 
-    * Release on NPM : __Only__ the files meintioned in `files` in `package.json` are published.
+    * Release on NPM : __Only__ the files mentioned in `files` in `package.json` are published.
 * Push the newly built library to [p5.js-release](https://github.com/lmccart/p5.js-release) repo for Bower
 * Push the newly built reference to [p5.js-website](https://github.com/processing/p5.js-website)
 * Create a Zip file `p5.zip` of `lib` folder (now includes the empty example), which would be used in the GitHub Release
