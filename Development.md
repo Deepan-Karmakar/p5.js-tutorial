@@ -30,7 +30,7 @@ Need help finding an issue to fix? Check out this [list of bite size issues](htt
 
 * **Add inline examples to the ref** :
 
-  * [List of examples needed](https://github.com/processing/p5.js/wiki/Development---Checklist)
+  * [List of examples needed](https://github.com/processing/p5.js/issues/1954)
   * [Guide for p5.js inline docs](https://github.com/processing/p5.js/wiki/Inline-documentation) 
 
 * **Contribute in some other way** :
