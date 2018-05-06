@@ -4,10 +4,10 @@ A complete list of tutorials can be found on the p5.js [learn page](http://p5js.
 
 #### Here are some resources for further p5.js learning:
 
-* [Get started](http://p5js.org/get-started/) -- Create and run your first sketch!  
-* [API Reference](http://p5js.org/reference) -- The documentation for p5.js
-* [Learn](http://p5js.org/learn/) -- Tutorials introducing different p5.js topics
-* [Examples](http://p5js.org/examples/) -- Short, prototypical examples exploring the basics of programming with p5.js
+* [Get started](http://p5js.org/get-started/): Create and run your first sketch!  
+* [API Reference](http://p5js.org/reference): The documentation for p5.js
+* [Learn](http://p5js.org/learn/): Tutorials introducing different p5.js topics
+* [Examples](http://p5js.org/examples/): Short, prototypical examples exploring the basics of programming with p5.js
 
 ### If you are interested in developing p5.js, please see the [developer_docs](https://github.com/processing/p5.js/tree/master/developer_docs) folder in the repository.
 The [README](https://github.com/processing/p5.js/blob/master/developer_docs/README.md) in this folder contains an overview of how to contribute, build the library, test the code, and update the documentation. 
