@@ -1,4 +1,4 @@
-## This wiki is for p5.js tutorial content only.
+### This wiki is for p5.js tutorial content only.
 
 A complete list of tutorials can be found on the p5.js [learn page](http://p5js.org/learn/). There is one page ([archived content](https://github.com/processing/p5.js/wiki/Archived-Content)) that contains some of the older material that used to be in this wiki, in case you are missing it.
 
@@ -9,7 +9,7 @@ A complete list of tutorials can be found on the p5.js [learn page](http://p5js.
 * [Learn](http://p5js.org/learn/) -- Tutorials introducing different p5.js topics
 * [Examples](http://p5js.org/examples/) -- Short, prototypical examples exploring the basics of programming with p5.js
 
-## If you are interested in developing p5.js, please see the [developer_docs](https://github.com/processing/p5.js/tree/master/developer_docs) folder in the repository.
+### If you are interested in developing p5.js, please see the [developer_docs](https://github.com/processing/p5.js/tree/master/developer_docs) folder in the repository.
 The [README](https://github.com/processing/p5.js/blob/master/developer_docs/README.md) in this folder contains an overview of how to contribute, build the library, test the code, and update the documentation. 
 
 ** Here are some further resources for p5.js development: **
