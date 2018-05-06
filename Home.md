@@ -14,7 +14,7 @@ The [README](https://github.com/processing/p5.js/blob/master/developer_docs/READ
 
 #### Here are some further resources for p5.js development: **
 
-* [p5.js Contribute page](http://p5js.org/community/) -- Learn different ways to contribute to p5.js
-* [Community Statment and Code of Conduct](https://github.com/processing/p5.js/blob/master/CODE_OF_CONDUCT.md) -- A guide on what we value and how to best interact within the community
-* [p5.js Overview](https://github.com/processing/p5.js/wiki/p5.js-overview) -- An overview of the main features and functionality of p5.js
-* [Development Guide](https://github.com/processing/p5.js/tree/master/developer_docs) -- How to contribute to p5.js software development
+* [p5.js Contribute page](http://p5js.org/community/): Learn about different ways to contribute to p5.js
+* [Community Statment and Code of Conduct](https://github.com/processing/p5.js/blob/master/CODE_OF_CONDUCT.md): A guide on what we value and how to best interact within the community
+* [p5.js Overview](https://github.com/processing/p5.js/wiki/p5.js-overview): An overview of the main features and functionality of p5.js
+* [Development Guide](https://github.com/processing/p5.js/tree/master/developer_docs): How to contribute to p5.js software development
