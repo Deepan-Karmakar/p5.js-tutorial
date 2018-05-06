@@ -1,32 +1,27 @@
-Research documentation
-------------------------------------------------------------------------------------
+# Research documentation
 
 This project developed out of a Fellowship with the Processing Foundation exploring the future of Processing with JavaScript. Documentation of research in process and references is below.
 
+## Starting points
 
-# Starting points
-
-## Possibilities
+### Possibilities
 + what would be gained/lost by js, removing java altogether
 + processing-lite, js syntax
 + processing-js bridge to c++ compiles
 + installations without c++
 + processing as web dev
 
-## Approaches
+### Approaches
 + a bunch of different scenarios - writing out what code for that would look like
 + speculative source code - examples or hack usable
 
-## Goals
+### Goals
 + processing identity - running in browser, barrier to entry low
 + primary audience - hard-core programmers, 19yr old design students
 + system+api
 + as a library, focus what processing does and doesn’t do
 
-
-
-
-##Questions##
+### Questions
 
 + What is unique about javascript?
 + What are main ways it diverges/differs from java/processing?
@@ -40,9 +35,7 @@ This project developed out of a Fellowship with the Processing Foundation explor
 + Network connectivity, manipulating dom, interfacing with other elts outside canvas, user interface built-on elts that processing doesn't have, multiple drawing surfaces, interfaces with other libraries / also spec for other - maybe IDE adds in auto (like import library feature).
 + question - limited to canvas?
 
-
-
-##Considerations##
+### Considerations
 
 + Prototypal inheritance vs emulating classical inheritance.
 	+  tool to make it more clear
@@ -59,17 +52,16 @@ This project developed out of a Fellowship with the Processing Foundation explor
 + http://www.jslint.com/
 
 
-##Core classes##
+### Core classes
 PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing surfaces), and PVector.
 
 
-##What js things could be improved?##
+### What js things could be improved?
 + libraries - documentready annoying, processing-js handles loading order for you (modernizer.js, queue.js), waits to execute
 + (controlled loading and execution built-in)
 + canvas/error handling
 
-
-##Other notes##
+### Other notes
 + Library spec?
 + dynamic typing - better typeof method, switch statement
 + strict typeof
@@ -79,7 +71,7 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 + easy way to define your own events, bind listeners
 
 
-##Current Processing JavaScript mode##
+### Current Processing JavaScript mode
 + [processing.org/learning/javascript/](http://processing.org/learning/javascript/)
 + [github.com/jeresig/processing-js](https://github.com/jeresig/processing-js)
 + Processing.js is really two things: a Processing-to-JavaScript translator; and an implementation of the Processing API (e.g., functions like line(), stroke(), etc.) written in JavaScript instead of Java.
@@ -88,9 +80,7 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 + Possible to write native JS code inside sketch, but not intended use.
 + Simulates synchronous I/O using Directives (preloading assets).
 
----
-
-##Notes / considerations##
+### Notes / considerations
 + web developer tools
 + processing-js as entry point to web development
 + more transparent, more standard web structure
@@ -102,14 +92,11 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 + not too cluttered
 + all the benefits, but executes like it's in the browser
 
-##References##
-
-
-###Tools
+### Tools
 + [JSHint](http://www.jshint.com/) -  tool to detect errors and potential problems in JavaScript code and to enforce chosen coding conventions, flexible, easily adjusted to enforce particular coding guidelines and environment
 + [JSLint](http://www.jslint.com/)
 
-###Editors
+### Editors
 + [Comparison of JavaScript-based source code editors](http://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_source_code_editors)
 + [atom.io](https://atom.io/) - open source, hackable editor created by github
 + [CodeCosmos](http://bob.ippoli.to/archives/2013/07/18/codecosmos-tech/)
@@ -141,21 +128,18 @@ PImage, PFont, PShape and PShader, PGraphics (needed to create offscreen drawing
 + [OpenProcessing](http://www.openprocessing.org/sketch/create) - has a page to create, run, stop a simple sketch from scratch
 + [HasCanvas](http://hascanvas.com/) - tool for creating and sharing Processing sketches
 
----
-
-## IDEs / learning
+### IDEs / learning
 
 See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#references](https://github.com/lmccart/js-processing/wiki/IDE-thoughts#references)
 
-## JS creative coding libraries
+### JS creative coding libraries
 
 + [Plask](http://www.plask.org) - JS based creative coding env, Uses: V8, Skia, NodeJS, Cocoa & OpenGL, FreeImage, Syphon
 + [Plask on github](https://github.com/deanm/plask)
 + [two.js](http://jonobr1.github.io/two.js/) - two-dimensional drawing api geared towards modern web browsers. It is renderer agnostic enabling the same api to draw in multiple contexts: svg, canvas, and webgl. Aims to make the creation and animation of flat shapes easier and more concise, does not support text or image. Built in scene graph, animation loop, svg interpreter.
 + [paper.js](http://paperjs.org/) - vector graphics scripting framework that runs on top of the HTML5 Canvas. It offers a clean Scene Graph / DOM and a lot of powerful functionality to create and work with vector graphics and bezier curves, largely compatible with Scriptographer
 
-
-## Processing / JavaScript + other languages
+### Processing / JavaScript + other languages
 + [Ruby-Processing](https://github.com/jashkenas/ruby-processing) - Ruby syntax but utilizes the ease of Processing for drawing
     + Uses regular Ruby for generating sketches, exporting applications and applets; and uses Java via JRuby for running Processing.
     + Supports live coding, includes a control panel.
@@ -175,13 +159,11 @@ See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#r
 + [coffeescript mode for processing](https://github.com/fjenett/coffeescript-mode-processing) 
 + [scala + processing](http://spde.technically.us/Spde.html)
 
-
-## Other native code on web
+### Other native code on web
 + [Chrome Native Client](https://developers.google.com/native-client)
 + [Flash c++ compiler](http://gaming.adobe.com/technologies/flascc/)
 
-
-## JavaScript engines / performance
+### JavaScript engines / performance
 + Explains differences in JS engines quite nicely
 [http://stackoverflow.com/questions/2137320/javascript-engines-advantages](http://stackoverflow.com/questions/2137320/javascript-engines-advantages)
 + Performance
@@ -189,35 +171,27 @@ See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#r
 + C++ binding 
 [http://stackoverflow.com/questions/93692/which-javascript-engine-would-you-embed-in-your-application](http://stackoverflow.com/questions/93692/which-javascript-engine-would-you-embed-in-your-application)
 
-
-
-## JS desktop app platforms / libs
+### JS desktop app platforms / libs
 + desktop JS development [http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript](http://stackoverflow.com/questions/109399/can-you-do-desktop-development-using-javascript)
 + [appjs](http://appjs.com/) - HTML5 / CSS3, nodejs as backbone
 + [Awesomium](http://awesomium.com/
 + [QT Webkit](http://qt.digia.com/Product/Library/Qt-WebKit/)
 + [Berkelium](http://berkelium.org/)
 
----
+## References and Research
 
-#References and Research
-
-## JS and physical computing 
+### JS and physical computing 
 + [coder for rPi](http://googlecreativelab.github.io/coder/)
 + [espruino](http://www.kickstarter.com/projects/48651611/espruino-javascript-for-things)
 
 
-## Other references (for extensions)
+### Other references (for extensions)
 + [jQuery API](http://api.jquery.com/)
 + [HTML5 overview](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 
----
+## Starting points
 
-#Starting points#
-
-
-
-## Goal
+### Goal
 
 Basic concept description / goals
 
@@ -237,9 +211,7 @@ Idea of Processing syntax-wise was to take some of the nastiness out of writing 
 
 Current work on the Processing JS port is focused on being able to be code compatible and having things run right out of the box (which is great!), but comes at the cost of keeping some of Java's quirks, while potentially hiding the nicer parts of JS. (Strictly speaking, you can still do JS inside of that mode, but it's not necessarily the intent or the current setup.) 
 
-
-
-## References
+### References
 
 + [Khan Academy Computer Science](https://www.khanacademy.org/cs)
 + [Studio Sketchpad](http://sketchpad.cc)
@@ -249,9 +221,7 @@ Current work on the Processing JS port is focused on being able to be code compa
 + [Ruby-Processing](https://github.com/jashkenas/ruby-processing) - Ruby syntax but utilizes the ease of Processing for drawing
 + [Ruby-Processing in practice](https://github.com/jashkenas/learning-processing-with-ruby)
 
-
-
-## Processing core values
+### Processing core values
 
 + Programming in a visual arts context
 + Made for teaching programming
@@ -267,7 +237,7 @@ Current work on the Processing JS port is focused on being able to be code compa
 + Developed through workshops, forums, etc.
         
         
-ITP WORKNG GROUP
+# ITP WORKNG GROUP
 ------------------------------------------------------------------------------------
 
 ####[DEVELOPER DOC](https://github.com/processing/p5.js/wiki/Development)
@@ -412,3 +382,65 @@ Note that examples included may be using older versions of p5.js and might not b
 * [A Brief Intro to Debugging](http://vimeo.com/channels/debugging) Video Series
 * [p5.js debugging tutorial](http://p5js.org/tutorials/debugging/)
 
+# p5.js Development Extended [DRAFT MATERIAL]
+[THIS IS A ROUGH DRAFT]
+
+This extended guide doesn't assume familiarity with concepts like unit testing, inline documentation, Javascript deployment workflows or specific tools like grunt or mocha. If you are comfortable with these and are looking for a quick start guide, please see [this page](https://github.com/processing/p5.js/wiki/Development).
+
+The development of P5 is collaborative: we encourage you to participate and help us shape it. Here are some ways to contribute:
+
+- **Add documentation to the code.** P5's main documentation is generated automatically based on structured comments written in the code describing classes, functions and their parameters. Browsing the files in the `src` folder and adding documentation where it's missing is a great way to get familiarized with p5. See syntax details [below].
+- **Create unit tests.** P5 is tested using a unit testing framework. This means that for each feature there should be a test that asserts whether it does what it's supposed to do. Each time we generate a distribution of p5, all unit tests are run. This allows us to make changes more confidently: if all tests pass, we know we didn't break anything; if some tests fail, we know exactly what did. You can take a look at the existing tests in the `tests` folder. Adding tests to functions that don't have them is also a great way to get started. See how to do this in the [testing section].
+- **Fix a bug.** Explain how Issues list is used in this project. 
+- **Add a feature.**
+
+Setting up: 
+- start from beginning: fork repo and add upstream remote (and link to tutorial).
+- explain why distribution needed: p5 runs in browser. browser gets library from server. can’t start running until all files have been transferred —> distribution. p5.js: all files combined into one. p5-min.js: one file w/o unnecessary spaces and line breaks. not readable, but faster download. 
+- explain why grunt: javascript is interpreted, not compiled. but because p5 fairly big project still need a series of steps to generate distribution and also do some quality control: syntax checking (and good practices? check what lint does), running tests. repetitive task, so automated. task runner: grunt. to install grunt: package manager.
+
+- specific setup instructions will be the same, but adding details like ‘Open Terminal’. 
+
+Writing code:
+- **Code Style.** "All code in any code-base should look like a single person typed it, no matter how many people contributed."
+We recommend looking at [idiomatic.js](https://github.com/rwaldron/idiomatic.js/) for a JS style guide. Here is some sample code for quick reference: ///I'd want to be able to take a quick look: have to do a lot of scrolling before getting this on the idiomatic page. Should see what else to include though 
+```
+var i = 0,
+      length = 100;
+
+    for ( ; i < length; i++ ) {
+      // statements
+    }
+
+    if ( true ) {
+      // statements
+    } else {
+      // statements
+    }
+
+```
+ 
+- **Inline Documentation.** Please add inline documentation to your code. This will allow us to generate a complete HTML documentation website automatically. We use [JSDoc](http://usejsdoc.org/); here is some example syntax: 
+```
+/**
+   * Create a new empty PImage object.
+   * @param  {Integer} width
+   * @param  {Integer} height
+   * @return {PImage}
+   */
+function Book(title, author) {
+}
+```
+
+Testing:
+- explain what the tools are before going over specific steps.
+- include test snippet.
+
+**Misc.**
+
+Large Objects - Sometimes large Javascript objects get unruly and the code needs to be split across multiple files.  For this scenario, the style convention should be: p5.[ObjectName].[descriptor].js.  Note, code should be grouped in each file thematically.
+
+For example, the p5.Renderer3D file is split across 3 js files: 
+- p5.Renderer3D.js
+- p5.Renderer3D.Retained.js
+- p5.Renderer3D.Immediate.js
