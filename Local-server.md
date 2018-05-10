@@ -55,7 +55,7 @@ Alternatively, you can setup a `browser-sync` server which has the added benefit
 3. `cd` into your project folder.
 2. Type
 
-        browser-sync start --server -f
+        browser-sync start --server -f -w
 
 5. Your website should be available at `http://localhost:3000` and whenever you save a file in your project, the webpage will automatically reload.
 - [https://www.browsersync.io/#install](https://www.browsersync.io/#install)  
