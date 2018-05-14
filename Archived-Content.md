@@ -157,7 +157,7 @@ See References on IDE page [github.com/lmccart/js-processing/wiki/IDE-thoughts#r
 + [python mode for processing](https://github.com/martinleopold/PythonMode)
 + [another processing in python lib](https://github.com/jdf/processing.py)
 + [coffeescript mode for processing](https://github.com/fjenett/coffeescript-mode-processing) 
-+ [scala + processing](http://spde.technically.us/Spde.html)
++ [scala + processing](http://technically.us/spde.html)
 
 ### Other native code on web
 + [Chrome Native Client](https://developers.google.com/native-client)
@@ -511,7 +511,7 @@ Note that examples included may be using older versions of p5.js and might not b
 
 ## General Programming
 * [Udacity - Object Oriented Javascript](https://www.udacity.com/course/object-oriented-javascript--ud015)
-* lynda.com
+* [Lynda](https://www.lynda.com/)
 * [Codecademy](http://www.codecademy.com/)
 * [Flat Iron School](http://prework.flatironschool.com/web-development/)
 * [Programming Terms and Environments Summary](https://itp.nyu.edu/physicalcomputing/lessons/programming/programming-terms-and-programming-environments/)
