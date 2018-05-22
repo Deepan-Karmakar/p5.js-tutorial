@@ -4,11 +4,11 @@ Please add your own!
 ## Tutorials
 * http://thecodingtrain.com/
 
-### Data viz
+#### Data viz
 * http://vda-lab.github.io/2015/10/hands-on-data-visualization-using-p5
 * https://github.com/workergnome/dataviz-workshop
 
-### d3.js + p5.js
+#### d3.js + p5.js
 * http://sciutoalex.github.io/p5-D3-cookbook/
 * http://sepans.github.io/p5d3/ 
 
