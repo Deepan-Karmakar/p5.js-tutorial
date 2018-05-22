@@ -4,6 +4,14 @@ Please add your own!
 ## Tutorials
 * http://thecodingtrain.com/
 
+### Data viz
+* http://vda-lab.github.io/2015/10/hands-on-data-visualization-using-p5
+* https://github.com/workergnome/dataviz-workshop
+
+### d3.js + p5.js
+* http://sciutoalex.github.io/p5-D3-cookbook/
+* http://sepans.github.io/p5d3/ 
+
 ## Curricula
 * http://nycdoe-cs4all.github.io/
 * https://www.kadenze.com/courses/introduction-to-programming-for-the-visual-arts-with-p5-js/info
