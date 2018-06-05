@@ -123,11 +123,14 @@ var myp5 = new p5( function( sketch ) {
 
 If you find this syntax confusing, congratulations you are a human being.  Yes, less typing is involved, but for clarity, you'll see all of the examples written the slightly more long-form way.
 
-One final note: when creating a p5 instance, you can specify a second argument (HTML element id) which acts the parent for all elements created by the sketch.  For example, let's say you have:
+## Specifying Parent HTML Element
+
+When creating a p5 instance, you can specify a second argument which acts the parent for all elements created by the sketch.  For example, let's say you have:
 
 ```html
 <body>
   <div id = "p5sketch">
+    <!-- p5 instance will be created here -->
   </div>
 
   <p>Some other HTML</p>
@@ -137,7 +140,17 @@ One final note: when creating a p5 instance, you can specify a second argument (
 You can now say:
 
 ```javascript
-var myp5 = new p5(s,'p5sketch');
+var myp5 = new p5(s, document.getElementById('p5sketch'));
 ```
 
 And all elements will be created inside that div.
+
+Here [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) is just a function that takes an id and returns the element with that id.
+
+Writing all that every time would be tedious, so the second argument can also be just an id:
+
+```javascript
+var myp5 = new p5(s, 'p5sketch');
+```
+
+Virtually always the second, short form is good enough. The long form could be necessary if you wanted to use a loop to create more than one p5 instance.
