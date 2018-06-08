@@ -164,7 +164,7 @@ var a = "some text";
 var b = a + " is here";          // b is now "some text is here". Note the + has a different function for strings
 
 var stuff = [1, 22, 333];        // stuff is a three element array, with the values shown
-var s = data[2];                 // s is 333. Note indexing from zero, not one.
+var s = stuff[2];                // s is 333. Note indexing from zero, not one.
 
 var myRecord = { givenName: "Albert", familyName: "Einstein", age: 33 };  // Create an "object" with three key:value pairs
 var name = myRecord.givenName;   // name has string value "Albert"
