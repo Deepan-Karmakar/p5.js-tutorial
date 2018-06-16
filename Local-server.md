@@ -1,6 +1,6 @@
 Some functionality (loading external files, for example) works as expected when the files are placed online via FTP or SSH. However, if you try to view them locally, you see some kind of "cross-origin" errors in console. The solution to this is to view them using what's called a local web server. This tutorial includes instructions for setting up several types of local web servers on each of Mac OSX, Windows, and Linux. This tutorial assumes a basic understanding of the command line interface, for a quick introduction see the [command line introduction wiki](https://github.com/processing/p5.js/wiki/Terminal-and-the-Command-Line).
 
-For the beginners coming from the [Get Started](https://p5js.org/get-started/) page, if you opted for [Sublim Text Editor](https://www.sublimetext.com/), a very simple way to set up a Local Server, without having to  know the Command Line interface, is to use the [Browser Sync](https://packagecontrol.io/packages/Browser%20Sync) plugin for Sublime Text 3.
+For the beginners coming from the [Get Started](https://p5js.org/get-started/) page, if you opted for [Sublime Text Editor](https://www.sublimetext.com/), a very simple way to set up a Local Server, without having to  know the Command Line interface, is to use the [Browser Sync](https://packagecontrol.io/packages/Browser%20Sync) plugin for Sublime Text 3.
 
 
 ## Python SimpleHTTPServer (1st option)
