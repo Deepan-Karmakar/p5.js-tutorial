@@ -46,7 +46,7 @@ function setup() {
 }
 ```
 
-If you want the canvas to automatically resize to fill the window whenever the window is resized, you can define the `windowResized` fumction in your sketch:
+If you want the canvas to automatically resize to fill the window whenever the window is resized, you can define the `windowResized` function in your sketch:
 ```js
 function setup() {
   createCanvas(windowWidth, windowHeight);
