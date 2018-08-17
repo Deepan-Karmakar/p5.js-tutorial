@@ -154,3 +154,8 @@ var myp5 = new p5(s, 'p5sketch');
 ```
 
 Virtually always the second, short form is good enough. The long form could be necessary if you wanted to use a loop to create more than one p5 instance.
+
+## When is global mode assumed?
+
+When the document is loaded, p5 checks if at least one of `window.setup` and `window.draw` is defined as a function.  
+If they are, `new p5();` will be called, which launches p5 in global mode.
