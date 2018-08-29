@@ -206,9 +206,22 @@ function draw() {
 }
 ```
 
-# Text
-To work with text in webgl mode, you'll need to render your text to an offscreen renderer first, and then use it as a texture like this:
 
+# Text
+To work with text in webgl mode, you have two options: use the 2d p5.js API to render to an offscreen image, or use the native webgl `text()` method. There are advantages & disadvantages to both which are discussed below:
+
+## Offscreen Renderer
+You can draw your text to an offscreen renderer first, and then use it as a texture.
+
+Advantages:
+- You can use the same fonts available to the 2d p5.js API, including the browser's built-in fonts (eg, 'mono', 'sans', etc...).
+- You can use `stroke()` to draw an outline around the glyphs.
+- The performance may be better, especially if you are able to render your text only once in `setup()` and reuse that texture in your `draw()` function.
+
+Disadvantages:
+- The fidelity of the text may not be as high as with the `text()` method due to pixellation when zooming or inaccuracies in anti-aliasing when tilting the text image.
+
+Here is an example of using an offscreen renderer to draw text:
 ```javascript
   var pg;
   function setup(){
@@ -223,6 +236,32 @@ To work with text in webgl mode, you'll need to render your text to an offscreen
     texture(pg);
     plane(100);
  }
+```
+
+## webgl `text()`
+The webgl version of the `text()` method works very similarly to the 2d version. However there are a few differences:
+
+Disadvantages:
+- You can only use use opentype/truetype fonts loaded in your [`preload()`](https://p5js.org/reference/#/p5/preload) function using the [`loadFont()`](https://p5js.org/reference/#/p5/loadFont) method. You must either place those font files in a location accessible from your sketch, or use a [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)-compatible webl URL.
+- [`stroke()`](https://p5js.org/reference/#/p5/) is not currently supported.
+
+Advantages:
+- The fidelity of the rendered text should be better, especially when zooming & tilting.
+- The performance may be better, especially if the text changes regularly and you are unable to cache the offscreen image used in the previous method.
+
+Here is an example of loading an opentype font and using it to draw text with the webgl `text()` method:
+```javascript
+var myFont;
+function preload() {
+  myFont = loadFont('assets/AvenirNextLTPro-Demi.otf');
+}
+
+function setup() {
+  fill('#ED225D');
+  textFont(myFont);
+  textSize(36);
+  text('p5*js', 10, 50);
+}
 ```
 
 # Lights and Materials
