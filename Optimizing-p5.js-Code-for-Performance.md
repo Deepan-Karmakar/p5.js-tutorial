@@ -117,14 +117,14 @@ If you have a suspicion that a p5.js function has low performance or think that 
 
 This tutorial was written using a [build](https://github.com/processing/p5.js-website/blob/master/dist/assets/learn/performance/code/p5) of the p5.js master branch on 7/21/16. This might mean that some of the features or optimizations that are mentioned haven't rolled out in a release on the p5.js website yet. If you want to create your own custom build from the master branch, you can follow the instructions [here](https://github.com/processing/p5.js/wiki/Development#setup).
 
-### Disable the Friendly Error System
+### Disable the Friendly Error System (FES)
 
-When you use the non-minified p5.js file (as opposed to p5.min.js), there is a friendly error system that will warn you when you try to override a p5 method, e.g. if you try to do `random = 5` or `max = 3`. This error checking system can significantly slow down your code (up to ~10x in some cases). See the [friendly error performance test](https://github.com/processing/p5.js-website/blob/master/dist/assets/learn/performance/code/friendly-error-system/).
+When you use the non-minified p5.js file (as opposed to p5.min.js), there is a friendly error system that will warn you at times, for example, if you input unexpected arguments into a function. This error checking system can significantly slow down your code (up to ~10x in some cases). See the [friendly error performance test](https://github.com/processing/p5.js-website/blob/master/dist/assets/learn/performance/code/friendly-error-system/).
 
-If you are running p5.js version 0.5.3 or greater, you can disable this with one line of code at the top of your sketch:
+You can disable this with one line of code at the top of your sketch:
 
 ```javascript
-p5.disableFriendlyErrors = true;
+p5.disableFriendlyErrors = true; // disables FES
 
 function setup() {
   // Do setup stuff
@@ -135,7 +135,8 @@ function draw() {
 }
 ```
 
-If you are running p5.js v0.5.2 or lower, you can disable it in one of two ways: switch over to using `p5.min.js` or use p5 in [instance mode](https://github.com/processing/p5.js/wiki/p5.js-overview#instantiation--namespace).
+Note that this will disable the parts of the FES that cause performance slowdown (like argument checking). Friendly errors that have no performance cost (like giving an descriptive error if a file load fails, or warning you if you try to override p5.js functions in the global space), will remain in place. You can learn more about the Friendly Error system [here](https://github.com/processing/p5.js/blob/master/developer_docs/friendly_error_system.md).
+
 
 ### Switch Platforms
 
