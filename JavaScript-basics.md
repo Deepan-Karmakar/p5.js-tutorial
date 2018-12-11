@@ -1,6 +1,4 @@
 
-[Extensively updated Jan/Feb 2018. Review and improvement invited !]
-
 JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
 
 Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is supposedly influenced by the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
@@ -341,6 +339,18 @@ if (!String.prototype.trim) {                                       // we don't 
   };
 }
 ```
+**replace() - replace characters in a string**
+
+As you can see above, there is a "replace" method for strings. You can replace just one character or sequence, or all of a particular character or sequence in a string. The syntax is based on regular expressions.
+
+```javascript
+var str = "a_file_name";  
+var str2 = str.replace(/_/, "-");      // str2 is "a-file_name"  .. note only one underscore replaced
+var str2 = str.replace(/-/g, "-");     // str2 is "a-file-name"  .. all replaced
+var filename = "picture.JPEG";         // annoying suffix
+var filename2 = filename.replace(/JPEG/, "jpg");   // better perhaps
+
+```
 
 **repeat() - generate a repeated string**
 
@@ -395,7 +405,7 @@ Often you won't need these, JavaScript sorts out what to do mostly. But not alwa
 ```javascript
 var x = "12.34";
 var y = 5.67;
-var z1 = x - y;           // 6.67
+var z1 = x - y;           // 6.67, correct numeric answer
 var z2 = x + y;           // "12.345.67"   Hmmm, surprise !
 var z3 = Math.sqrt(z2)    // NaN ! More surprise !
 ```
