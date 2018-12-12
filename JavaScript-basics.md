@@ -722,7 +722,7 @@ We will zoom through the operators here. We assume some very basic maths backgro
 * `-` subtraction
 * `*` multiplication
 * `/` division
-* `**` exponentiation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 3**4 gives 81. New in EcmaScript 6. Before we required Math.power(x,y). See later in tut.
+* `**` exponentiation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 3**4 gives 81. New in EcmaScript 6. Before we required Math.pow(x,y). See later in tut.
 * `%` modulo
 * `++` add one shorthand
 * `--` subtract one shorthand
