@@ -713,8 +713,18 @@ We will zoom through the operators here. We assume some very basic maths backgro
 
 ### Assignment
 
-* `=`
-* `a = b = c = 123;`&nbsp;&nbsp;&nbsp;&nbsp;// Multiple assignment is allowed and looks neat, but is unwise. [Details](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
+* `a = 123;`
+* `a = b = c = 123;`&nbsp;&nbsp;&nbsp;&nbsp;// Multiple assignment is allowed and looks neat, but is risky. [Details](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
+
+Also, it can have very unexpected effects with more complex variables. `array1 = array2 = [1,2,3]` can actually end up with array1 and array2 referring to the same data:
+
+```javascript
+let array1 = [], array2 = [];           // Couple of empty arrays.
+array1 = array2 = [1,2,3];              // (*) Both initialised to [1,2,3] - ok fine.
+array1[0] = 4;                          // Modify one element of array1
+console.log(array1[0], array2[0]);      // prints 4 4 !! Holy cow. array1 and array2 are pointing to the same data !
+```
+Because array names are a "reference" to a memory location, the statement (*) above has made two arrays reference the same anonymous (unnamed) array constant. In other languages this might be fine. Another good reason to avoid multiple assignments of anything in JavaScript. (The same comments apply to Objects).
 
 ### Mathematical
 
