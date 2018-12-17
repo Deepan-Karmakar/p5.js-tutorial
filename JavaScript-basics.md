@@ -2129,7 +2129,7 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 
 ***
 
-###To do:
+### To do:
 - describe `break label`, `continue`, `continue label` ? Maybe only `continue`, the label options are somewhat messy programming and not a great thing to recommend to beginners.
 
 - Dec 2018: a project (X) has started in p5.js to update the code examples, and tutorials, and reference pages from ES5 to ES6. (This is independent of updating to ES6 inside p5.js source code). This is primarily expected to involve changing 'var' to 'let' or 'const'. So, we could introduce 'let' earlier in this tut, or indeed at the very beginning, and use 'const' more for appropriate vars. 
