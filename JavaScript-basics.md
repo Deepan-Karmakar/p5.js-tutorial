@@ -2130,10 +2130,14 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 ***
 
 ###To do:
-- describe `break label`, `continue`, `continue label` ? Maybe only continue, the label options are very messy programming and not be encouraged for beginners.
+- describe `break label`, `continue`, `continue label` ? Maybe only `continue`, the label options are somewhat messy programming and not a great thing to recommend to beginners.
 
-- Dec 2018: a project (X) has started in p5.js to update the code examples from ES5 to ES6. This is primarily going to involve changing 'var' to 'let' or 'const'. We could introduce 'let' earlier in this tut, or indeed at the very beginning, and use 'const' more for appropriate vars. 
+- Dec 2018: a project (X) has started in p5.js to update the code examples, and tutorials, and reference pages from ES5 to ES6. (This is independent of updating to ES6 inside p5.js source code). This is primarily expected to involve changing 'var' to 'let' or 'const'. So, we could introduce 'let' earlier in this tut, or indeed at the very beginning, and use 'const' more for appropriate vars. 
 
 - Also some use may be made of ES6 classes in X. We could explain 'class' more fully above, and use it in the main live example, and maybe elsewhere.
 
-I suggest waiting for a while to see what turns out useful in X.
+- Also there seems to be a view that Arrow Functions are a useful thing in ES6. We could introduce Arrow Functions earlier, and use them in some live examples.
+
+- Other ES6 features may not be of much interest for the general Processing/p5.js community.
+
+I suggest waiting for a while to see what parts of ES6 ends up being highlighted in Project X.
