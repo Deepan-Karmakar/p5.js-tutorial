@@ -709,7 +709,7 @@ var z = x - "t";  // Result is NaN (Not a Number), not "ca". It totally blew up!
 
 ## Operators
 
-We will zoom through the operators here. We assume some very basic maths background in the reader.
+We will zoom through the operators here. We assume some basic maths background in the reader.
 
 ### Assignment
 
@@ -875,7 +875,7 @@ JavaScript allows a form of the famous ternary (three-way) operator. `condition 
 
 ```
 rich = dollars > 1e6 ? true : false;       // example 1
-rich = (dollars > 1e6) ? true : false;     // clearer
+rich = (dollars > 1e6) ? true : false;     // a bit clearer
 
 rich = (dollars > 1e6) ? true              // even clearer, but few code formatters will preserve this well
                        : false;
@@ -903,9 +903,9 @@ The consensus seems to be that the ternary `?:` operator is ok for simple one-le
 
 ### Comparison issues
 
-Warning: some comparisons between variables that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use loose comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). There's a quaint terminology called "truthy" and "falsy". Values like 0 or "0" or "" or [] or [[]] or [0] are falsy. Values like 1, "1" and [1] are truthy.  
+Warning: some comparisons between variables that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use an usual 'loose' comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). There's a quaint terminology called "truthy" and "falsy". Values like 0 or "0" or "" or [] or [[]] or [0] are falsy. Values like 1, "1" and [1] are truthy.  
 
-The "===" and "!==" operator set were introduced at JavaScript 1.3 to use exact comparison - things must be the same type and the same value to be equal. The only thing that is equal to Boolean `true` is another Boolean `true`, not 1 or "1" or [1]. It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
+The "===" and "!==" operator set were introduced at JavaScript 1.3 to provide exact comparison - things must be the same type and the same value to be equal. The only thing that is equal to Boolean `true` is another Boolean `true`, not 1 or "1" or [1]. It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
 
 ### Switch{} statement
 
@@ -990,15 +990,15 @@ There are further loop types that iterate conveniently over the elements of an a
 var arr = [44, 33, 22, 11];
 var obj = { "1st": 1, 2: 2, "3rd": 3, 4: 4 };
 
-for (n in arr) {
+for (let n in arr) {            //  let n keeps the scope of n restricted to this loop block. See more later in tut.
   console.log("index is", n);   //  prints "index is 0, index is 1, index is 2, index 3"
 }
 
-for (n of arr) {
+for (let n of arr) {
   console.log("value is", n);   //  prints "value is 44, value is 33, value is 22, value is 11"
 }
 
-for (n in obj) {
+for (let n in obj) {
   console.log("accessor", n);   //  prints "accessor 2, accessor 4, accessor 1st, accessor 3rd". Note random order.
 }
 
