@@ -2132,7 +2132,9 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 ### To do:
 Describe `break label`, `continue`, `continue label` ? Maybe only `continue`, the label options are somewhat messy programming and not a great thing to recommend to beginners.
 
-We need to mention, indeed encourage, the suite of utility functions in p5.js, see the Data section in [p5.js reference page](https://p5js.org/reference/). Too much time spent above on raw JavaScript approaches. The p5.js utility funcs, ported from the originals in Java Processing [Java Processing reference page](https://processing.org/reference/) are designed to be easier for the coding beginner and/or artist.
+We need to mention the suite of utility functions in p5.js, see the Data section in [p5.js reference page](https://p5js.org/reference/). Too much time spent above on raw JavaScript approaches. The p5.js utility funcs, ported from the originals in Java Processing [Java Processing reference page](https://processing.org/reference/) are designed to be easier for the coding beginner and/or artist.
+
+This tutorial has become quite large, and may have moved away from the goal of being an easily-digested intro to the absolute basics of JavaScript, ie. just enough to write a simple p5.js app. Perhaps it could be split into two.
 
 - Dec 2018: a project (X) has started in p5.js to update the code examples, and tutorials, and reference pages from ES5 to ES6. (This is independent of updating to ES6 inside p5.js source code). This is primarily expected to involve changing 'var' to 'let' or 'const'. So, we could introduce 'let' earlier in this tut, or indeed at the very beginning, and use 'const' more for appropriate vars. 
 
