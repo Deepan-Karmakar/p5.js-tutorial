@@ -62,7 +62,7 @@ You may notice that even though the canvas is exactly the same size as the windo
 ```js
 function setup() {
   var cnv = createCanvas(windowWidth, windowHeight);
-  cnv.style('display', 'block');
+  cnv.style.display = 'block';
   background(255, 0, 200);
 }
 ```
