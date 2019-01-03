@@ -13,13 +13,13 @@ First, you will need to include the p5.dom.js file in your HTML. If you are usin
 When you call `createCanvas(w, h)` you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer or reference. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. A full listing of methods is [here](http://p5js.org/reference/#/p5.Element). Not all of these methods listed will work or make sense for every element, so you have to use your judgment a bit. For example, calling `value()` on a slider returns or sets its value, but calling it on canvas would have no effect.
 
 ```javascript
-let canvas;
+
 
 function setup() {
   // We are still calling createCanvas like in the past, but now 
   // we are storing the result as a variable. This way we can 
   // call methods of the element, to set the position for instance.
-  canvas = createCanvas(600, 400);
+  let canvas = createCanvas(600, 400);
 
   // Here we call methods of each element to set the position 
   // and id, try changing these values.
@@ -83,13 +83,13 @@ Note that the examples above refer to createCanvas(), but they work the same for
 In addition to ```createCanvas(w, h)```, there are a number of other methods like `createDiv()`, `createP()`, `createA()`, etc (see the [reference](http://p5js.org/reference/#/libraries/p5.dom) for full listing). In the example below, a div with text is created, in addition to the graphics canvas, and the position is set for each.
 
 ```javascript
-let canvas, txt;
+
 
 function setup() {
-  canvas = createCanvas(600, 400);
+  let canvas = createCanvas(600, 400);
   canvas.position(300, 50);
 
-  txt = createDiv('This is an HTML string!');
+  let txt = createDiv('This is an HTML string!');
   txt.position(50, 50);
 }
 
@@ -115,13 +115,12 @@ Each of these methods create a p5.Element, which is a wrapper around an HTML ele
 If want to create an image specifically you can use createImg(src). An HTML image differs from one drawn in the canvas using `image()`. You don't need to use `loadImage()`, and you don't need to draw it every frame; once you create it, the image exists on the page until you remove it. Also note that this image is a single element in itself, and if you drag your mouse over it you will notice that it's highlightable. This means that you can attach handlers for mouse events directly to this element, but more on that later. In the example below we create an image and a canvas, setting the position and size for each. 
 
 ```javascript
-let img;
-let canvas;
+
 
 function setup() {
 
-  img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
-  canvas = createCanvas(400, 400);
+  let img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+  let canvas = createCanvas(400, 400);
 
   img.position(190, 50);
   img.size(200, 200);
@@ -181,12 +180,11 @@ Not all browsers will support these media capabilities, you can lookup which are
 The [p5.dom API](http://p5js.org/reference/#/libraries/p5.dom) supports a subset of all the HTML elements possible. If you'd like to add an element that does not have a specific create method, you can use the general `createElement()` method. The first argument to createElement is the tag name, and the second, optional argument is the content to be placed within the element. In the example before, an H1 heading element is created.
 
 ```
-let h1;
-let canvas;
+
 
 function setup() {
-  h1 = createElement('h1', 'this is some heading text');
-  canvas = createCanvas(400, 400);
+  let h1 = createElement('h1', 'this is some heading text');
+  let canvas = createCanvas(400, 400);
 }
 ```
 
@@ -201,10 +199,9 @@ In the example below, we are attaching a behavior that hides the uniforn image w
 
 ```javascript
 let img;
-let canvas;
 
 function setup() {
-  canvas = createCanvas(400, 400);
+  let canvas = createCanvas(400, 400);
   img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
 
   img.position(190, 50);
@@ -252,10 +249,9 @@ Elements also have `mousePressed()` methods that let you connect functions to th
 
 ```javascript
 let img;
-let canvas;
 
 function setup() {
-  canvas = createCanvas(400, 400);
+  let canvas = createCanvas(400, 400);
   img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
 
   img.position(190, 50);
@@ -328,15 +324,12 @@ You can use `.class()` to assign the element to a named class. It is up to you w
 There are a couple of methods for finding elements already on the page.  `select(#id)` returns the element on the page with given id or null if none is found, while `selectAll(.className)` returns an array of all elements with given className, or an empty array if none are found.
 
 ```javascript
-let myDiv0;
-let myDiv1;
-let myDiv2;
 
 function setup() {
 
-  myDiv0 = createDiv('this is div 0');
-  myDiv1 = createDiv('this is div 1');
-  myDiv2 = createDiv('this is div 2');
+  let myDiv0 = createDiv('this is div 0');
+  let myDiv1 = createDiv('this is div 1');
+  let myDiv2 = createDiv('this is div 2');
 
   // Here we call methods of each element to set the position and class.
   // Let's give the first two canvases class donkey, and the third class yogurt.
@@ -371,12 +364,10 @@ Unlike a canvas, which you draw into to affect the way it looks, other HTML elem
 In p5.js, you can use a `style()` method on any element to set CSS properties. See the [MDN CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) for a full listing of properties you can set.
 
 ```javascript
-let text;
-let canvas;
 
 function setup() {
-  text = createP("This is an HTML string with style!");
-  canvas = createCanvas(600, 400);
+  let text = createP("This is an HTML string with style!");
+  let canvas = createCanvas(600, 400);
 
   text.position(50, 50);
   text.style("font-family", "monospace");
@@ -413,12 +404,10 @@ Another way to incorporate this into your sketch is by creating your own stylesh
 In the CSS file, you add what are called "rules", or lines that determine how various elements are presented. You can define these rules based on the HTML tag (p, div, span, etc), an element class (prefaced with "."), or an element id (prefaced with "#"). The below example renders the same as the previous example, but uses a CSS stylesheet instead of the `.style()` method. Note that in this case, no quotes are placed around either the property names or the values.
 
 ```javascript
-let text;
-let canvas;
 
 function setup() {
-  text = createP("This is an HTML string with style!");
-  canvas = createCanvas(600, 400);
+  let text = createP("This is an HTML string with style!");
+  let canvas = createCanvas(600, 400);
   text.position(50, 50);
   text.class("lemon"); // assign a class to be used by the CSS sheet
   canvas.position(150, 150);
