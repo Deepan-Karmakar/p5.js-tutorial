@@ -12,6 +12,9 @@ Please add your own!
 * http://sciutoalex.github.io/p5-D3-cookbook/
 * http://sepans.github.io/p5d3/ 
 
+#### Generative Art
+* http://ga-course.surge.sh/
+
 ## Curricula
 * http://nycdoe-cs4all.github.io/
 * https://www.kadenze.com/courses/introduction-to-programming-for-the-visual-arts-with-p5-js/info
