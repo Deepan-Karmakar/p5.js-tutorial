@@ -2103,7 +2103,7 @@ To test whether your JavaScript engine or browser has a new fancy feature, you h
 ```javascript
 if("geolocation" in navigator) { // use it }    // just check for the property we want, at the top-level
 ```
-There's a library called Modernizr [Modernizr](https://modernizr.com/) which simplifies all these feature-existence checks. 
+There's a library called Modernizr [Modernizr](https://modernizr.com/) which simplifies all these feature-existence checks. Also the site [CanIuse](https://caniuse.com/) is useful. 
 
 References:  
 [JavaScript versions](https://en.wikipedia.org/wiki/JavaScript#Version_history)  
