@@ -19,9 +19,9 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
 &nbsp;&nbsp;&nbsp;[Converting between number and string](#converting-between-number-and-string)  
 &nbsp;&nbsp;&nbsp;[Extended character sets: Unicode, UTF](#extended-character-sets-unicode-utf)  
 &nbsp;&nbsp;&nbsp;[Boolean](#data-type-boolean)  
-&nbsp;&nbsp;&nbsp;[Null and Undefined](#data-type-null-and-undefined)   
 &nbsp;&nbsp;&nbsp;[Arrays](#data-type-array)  
 &nbsp;&nbsp;&nbsp;[Objects](#data-type-object)  
+&nbsp;&nbsp;&nbsp;[Null and Undefined](#data-type-null-and-undefined)   
 &nbsp;&nbsp;&nbsp;[Simple objects](#basic-objects)  
 [Assignments](#assignment)  
 [Operators](#operators)  
@@ -623,92 +623,106 @@ arr.reverse();                   // arr is now [444, 333, 222, 111]
 Extract a "slice" of an array, from index "start", to index "end" - 1. Like String.substring(), the end is one past the last element extracted.
 
 ```javascript
-var arr = [111, 222, 333, 444];
-var arr2 = arr.slice(1, 3);    // arr2 is [222, 333]   ( not [222, 333, 444] )
+let arr = [111, 222, 333, 444];
+let arr2 = arr.slice(1, 3);    // arr2 is [222, 333]   ( not [222, 333, 444] )
 ```
 
 **array.splice(start, end)**
 
-Delete or insert one or more elements from/into an array. I'm going to let you just read that one, it has a lot of functionality crammed into one call [MDN splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+Delete (or insert) one (or more) elements from (into) an array. I'm going to let you just read that one, it has a lot of functionality crammed into one call, it should probably be split up a bit.  [splice reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 
-There are many more methods: fill(), sort(), keys(), values() ... Look them up when you need them [MDN array methods]
-(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) 
+**array.fill(value)**
+
+A handy shortcut to filling an array with a set value. See the next paragraph for an example. 
+
+There are many more methods: sort(), keys(), values() .. Look them up when you need them. [array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) 
 
 **Creating empty arrays**
 
-Some final words on creating empty new arrays that will be populated later.
+Some final words on creating empty new arrays that will be populated later. This is a common task.
 
 ```javascript
-var arr1 = new Array(100);                     // Creates an array 100 long, and fills all elements with undefined. 
+let arr1 = new Array(100);                     // Creates an array 100 long, all elements are undefined. 
                          
-var arr2 = []; 
-for(var i = 0; i < 100; i++) { arr2[i] = 0; }  // Same effect as arr1 above (but 0 much better than undefined).
+let arr2 = []; 
+for(let i = 0; i < 100; i++) { arr2[i] = 0; }  // Same effect as arr1, but 0 is much better than undefined.
 
-var arr3 = new Array(100); arr3.fill(0);       // Populate all elements with 0. Probably the clearest approach.
+let arr3 = new Array(100);
+arr3.fill(0);                                  // Populate all elements with 0. Probably the clearest approach.
 ```
 
 
 ### Data type: Object
 
-An object can be thought of as a collection of properties. These properties can be values of any type, including numbers, text strings, arays, other objects, and functions, which can enable the building of complex and dynamic data structures. Arrays and objects are very similar; in fact arrays are a type of object, which only have numeric indexes, and have a defined order (array[0] to array[lastone], and allow gaps in the indices (ie. undefined parts of the array), and a few other subtleties.
+An Object can be thought of as a collection of properties. These properties can be values of any type, including numbers, text strings, arays, other objects, and functions, which can enable the building of complex and dynamic data structures. Arrays and objects are very similar; in fact arrays are a type of object, which only have numeric indexes, and have a defined order (array[0] to array[lastone], and allow gaps in the indices (ie. undefined parts of the array), and a few other subtleties.
 
-Here we will cover just the basics of objects, with static members. Further down we will add function calls, ie. "methods" to objects, which allows us to create dynamic objects which provide the functionality called "classes" in other languages.
+Here we will cover just the basics of objects, with simple static members. Further down we will add function calls, ie. "methods" to objects, which allows us to create dynamic objects which provide the functionality called "classes" in other languages.
  
 ### Basic objects
 
-At a basic level, JavaScript objects are a data type like an Array, where a numeric or string "key" can be used to access the data. In other languages they are sometimes called associative arrays, or hash tables. 
+At a basic level, JavaScript objects are a data type like an Array, where a numeric or string "key" can be used to access the data. In other languages they are sometimes called associative arrays, or hash tables. Here is a common case - a table of textual data, accessed by a text key:
 
 ```javascript
-var obj = { 1: 1, "twos": 22, 333: "threes", "name": "Fred Nurk" };    // all the combos of number & string
+let movieStar = { "givenName": "Errol", "familyName": "Flynn", "status": "deceased" };
+console.log(movieStar.givenName);         // prints Errol
+console.log(movieStar["status"]);         // prints deceased. You can use the dot or the [ ] notation.
+```
+
+An object can have all sorts of keys, and data values. Here's a deliberately complicated one:
+
+```javascript
+let obj = { 1: 1,  "twos": 22,  333: "threes",  "name": "Fred Nurk" };    // all the combos of number & string
 console.log(obj);                         // 1: 11  33: "threes"  twos: 22  name: "Fred Nurk"
 console.log(obj.twos, obj.name);          // 22  "Fred Nurk"
 console.log(obj[1], obj[333]);            // 1  "threes"         (have to use [] notation for numeric keys)
 console.log(obj["twos"], obj["name"]);    // 22  "Fred Nurk"     (string keys can use the [] notation as well)
 ```
 
-Objects with string keys ( obj.name  or  obj["name"] ) are a convenient way to store arbitrary data. Note here we have array elements, which are objects.
+Objects with string keys ( obj.name  or  obj["name"] ) are a convenient way to store arbitrary data. Note here we have an array, of objects.
 ```javascript
 var staff = [];
 staff[0] = { "first": "Sue", "last": "Smith", "age": 55, "title": "Dean", "faculty": "Arts", "salary": 234567 };
 staff[1] = { "first": "Jim", "last": "Jones", "age": 44, "title": "Prof", "faculty": "Arts", "salary": 123456 };
 staff[0].age  // returns 55
 ```
-Objects can contain other objects.
+Objects can contain other objects. You can build them in different ways according to your needs.
 
 ```javascript
-var obj = { 1: 11, 2: {2: 22}, 3: 33};           // Build with nested object literal
+let obj = { 1: 11,  2: {2: 22},  3: 33};         // Build in one go with a nested object literal
 
-var obj2 = {2: 22};
-var obj = { 1: 11, obj2, 3: 33 };                // Build it in stages
+let obj2 = {2: 22};
+let obj = { 1: 11,  obj2,  3: 33 };              // Build same object in stages
 
-var obj = {};                                    // Build it in different stages
-obj[1] = 11;
-obj[2] = {2: 22};
+let obj = {};                                    // Build it in smaller stages
+obj[1] = 11;                                     // Note the [1] is key 1, not array index 1 ..
+obj[2] = {2: 22};                                //  .. so there doesn't need to be a key 0
 obj[3] = 33;        
 ```
 
-If we use an iterative access method to access all the members of an object, the order the records will be returned in is unpredictable.
+If we use an iterative access method to access all the members of an object, the order the records will be returned in is unpredictable. There's no set "order" for the members of an object.
 
 ```javascript
-var stuff = { 0: "a", 1: "b", 2: "c", 3: "d" };
-for (var x in stuff) {
-   console.log(x);          // Could be 0 2 1 3
-   console.log(stuff[x]);   // and a c b d
+let stuff = { 0: "a", 1: "b", 2: "c", 3: "d" };   // You'd think this order would be remembered, eh ?
+
+for (let x in stuff) {                            // A convenient type of loop over the keys, described later
+   console.log(x);                                // Could be 0 2 1 3, or 3 0 2 1  or anything
+   console.log(stuff[x]);                         //    =>    a c b d     d a c b
 }
 ```
 
-Objects can use the array-like [] access notation, ie. object[key], so it can be hard to know if something you see in some code is an object or an array. Thing[accessor] ? What's that ? Could be array or object. typeof(anObject) and typeof(anArray) both return "object", reflecting the fact that they are closely related. The function Array.isArray() can distinguish them:
+As seen above, objects can use the array-like [ ] access notation, ie. object[key], so it can be hard to know if something you see in some code is an object or an array. `Thing[accessor]` ? what's that ? could be an array or an object. The typeof operator might help .. but `typeof anObject` and `typeof anArray` both return "object" (reflecting the fact that they are indeed closely related). However the function isArray() can distinguish them:
 
 ```javascript
-var arr = [1, 2, 3];
-var obj = {1: 1, 2: 2, 3: 3};
-typeof(arr);           // returns "object"
-typeof(obj);           // returns "object"
-Array.isArray(arr);    // returns true
+let obj = {1: 1, 2: 2, 3: 3};
+let arr = [1, 2, 3];
+typeof obj;            // returns "object"
+typeof arr;            // returns "object", rats
 Array.isArray(obj);    // returns false
+Array.isArray(arr);    // returns true, great
 ```
+Note `typeof` is an operator and doesn't need the function call ( ) syntax. However if you prefer to use the ( ) it works fine - the brackets just become a useless precedence/grouping indicator, get thrown away, and the expression reduces to `typeof xxx` anyway. 
 
-We will come back to more details on Objects later. Particularly the ability to embed function calls (methods) in an Object, and hence make a kind of class, where the Object has data and methods to insert, access, process, etc its data.
+We will come back to more details on Objects later. Particularly the ability to include functions (methods) in an Object, and hence make a kind of class, where the Object has data and methods to insert, access, process, etc. its data.
 
 
 ### Data type: Null and Undefined
@@ -721,18 +735,18 @@ Often it's better to avoid null and undefined, JS does some unexpected things wi
 
 ```javascript
 var car;                // Value is 'undefined'. Not a string, a built-in value.
-var truck = undefined;  // Same effect
+var truck = undefined;  // Same effect. At least the reader can see you thought about it.
 var person = null;      // Value is 'null'. Not a string, a built-in value.
 
-var count = 0;          // Often safer for numerics
-var message = "";       // Ditto for strings
+var count = 0;          // This is safer for numerics
+var message = "";       // Safer for strings
 var newArray = [];      // Safe
 var newObject = {};     // Safe
 ```
 
 Creating new "empty" things in JavaScript is surprisingly clunky. It's slightly hard to know what you have done with a statement like `var myArray = []`. Go to the JS console and type it, then just type "myArray". JS will compute the expression, which is a single array, with no useful effect, ie. no assignment to anything, but that's ok, and display a breakdown of what it is, an array with no elements, length 0. You can hit the disclosure triangle for more detail if there is one. Try again with `myArray = [1,2,3]`. You'll get the picture quickly. Also try `var myObj = {}` and `myObj = {"alpha":1, "beta":2}`.
 
-Note: the `typeof()` call is a great debugger and learning tool. Try it in the JS console. `typeof(1); typeof("a"); x = 12.34; typeof(x); x = x + "hello"; typeof(x); a = 1.23; b = a + '4'; typeof(b); typeof(undefined); var z; typeof(z); typeof(null)`
+Note: the `typeof` operator is a great debugger and learning tool. Try it in the JS console. `typeof 1; typeof "a" ; x = 12.34; typeof x; x = x + "hello"; typeof x; a = 1.23; b = a + '4'; typeof b; typeof undefined; var z; typeof z; typeof null`
 
 ## Assignment
 
