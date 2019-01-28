@@ -731,7 +731,7 @@ The value of a variable which has not been given any value is `undefined`. This 
 
 Variables can be "emptied" by setting the value to `null`. This is another specific single type and value. It means a specific value *has* been assigned, but it's deliberately null.
 
-Often it's better to avoid null and undefined, JS does some unexpected things with them.
+Often it's better to avoid null and undefined, JS does some unexpected things with them. If an 'undefined' variable is accidentally used in a calculation, it throws an error. 
 
 ```javascript
 var car;                // Value is 'undefined'. Not a string, a built-in value.
@@ -769,15 +769,15 @@ We will zoom through the operators here. We assume some basic maths background i
 * `a = 123;`
 * `a = b = c = 123;`&nbsp;&nbsp;&nbsp;&nbsp;// Multiple assignment is allowed and looks neat, but is risky. [Details](https://www.undefinednull.com/2014/02/03/multiple-left-hand-assignment-in-javascript-is-really-bad-think-once-before-you-do-it/)
 
-Also, it can have very unexpected effects with more complex variables. `array1 = array2 = [1,2,3]` can actually end up with array1 and array2 referring to the same data:
+Also, it can have very unexpected effects with more complex variables. `array1 = array2 = [1,2,3]` can actually end up with array1 and array2 referring to the same physical data:
 
 ```javascript
 let array1 = [], array2 = [];           // Couple of empty arrays.
-array1 = array2 = [1,2,3];              // (*) Both initialised to [1,2,3] - ok fine.
+array1 = array2 = [1,2,3];              // (*) Both initialised to [1,2,3] - ok, fine so far.
 array1[0] = 4;                          // Modify one element of array1
 console.log(array1[0], array2[0]);      // prints 4 4 !! Holy cow. array1 and array2 are pointing to the same data !
 ```
-Because array names are a "reference" to a memory location, the statement (*) above has made two arrays reference the same anonymous (unnamed) array constant. In other languages this might be fine. Another good reason to avoid multiple assignments of anything in JavaScript. (The same comments apply to Objects).
+Because array names are a "reference" to a memory location, the statement (*) above has made two arrays reference the same data. In other languages this might be fine. Another good reason to avoid multiple assignments of anything in JavaScript. (The same comments apply to Objects).
 
 ### Mathematical
 
@@ -821,26 +821,26 @@ These operators have shortcut styles, occasionally useful.
 
 The operators have a precedence which sometimes matches what we learned in school.  When operators have equal precedence, they proceed left to right. `xx = 24 / 6 * 5` will produce 20. But `xx = 1 + 2 * 3` will produce 7, not 9, because the multiplication has higher precedence and will get done first. To force the order you want, use brackets. 
 ```javascript
-var xx = (1 + 2) * 3           // will produce 9.  
-var gravity = G * (mass1 * mass2) / (distance * distance);  
-var intensity = light / (Math.sqrt( (radius * radius) + fudgeFactor ); 
+let xx = (1 + 2) * 3           // will produce 9.  
+let gravity = G * (mass1 * mass2) / (distance * distance);  
+let intensity = light / (Math.sqrt( (radius * radius) + fudgeFactor ); 
 ```
 Other operators have progressively lower precedence. [Full table here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence). This allows you to write most expressions in a natural way. 
 ```javascript
 if( radius > 5.0 && radius < 10.0) { drawCircle(); }               // works fine, but ...
 if( (radius > 5.0) && (radius < 10.0) { drawCircle(); }            // clearer and safer. 
 ```
-The lowest operator is a strange thing called the 'comma' operator. You can pack several statements into one. (x = y, a = b). The most common use is in a slightly more fancy 'for loop'.
+The lowest operator is a strange thing called the "comma" operator. You can pack several statements into one. (x = y, a = b). The most common use is in a slightly more fancy "for loop".
 ```javascript
-for (var i = 0, j = 9; i < 9; i++, j--) {  // i runs 0 up to 9, j runs 9 down to 0
+for (let i = 0, j = 9; i < 9; i++, j--) {  // i runs 0 up to 9, j runs 9 down to 0
   console.log( a[i][i] );                  // Print the conventional diagonal elements of a 9x9 array
   console.log( a[i][j] );                  // Print the other diagonal, top-right to bottom-left, of the array
 }
 ```
 Some traps exist. No precedence order can be what you want all the time. An example from p5.js:
 ```javascript
-var images = [];
-for (var i = 0; i < 10 ; i++) {
+let images = [];
+for (let i = 0; i < 10 ; i++) {
   images[i] = createImage(width, height);   // Create an array of new images.
   images[i].loadPixels();    // Ok? Noooo. The member access ".loadPixels()" has higher precedence than the array index, so gets called
                              // on the entire Array 'object' and fails. Moreover we get a silent error, very hard to chase.
@@ -850,19 +850,19 @@ for (var i = 0; i < 10 ; i++) {
 
 ### Maths functions
 
-The maths functions are sequestered inside the Math package, to avoid polluting the top level namespace with everyday terms like min, max etc. and just following good modern practice. Unless you're a Rocket Scientist you don't need complex maths stuff as top level functions. Although, Processing has plenty of math in it once you start moving those elegant graphics around the screen, not to mention 3D WebGL stuff. 
+The maths functions are sequestered inside the Math package, to avoid polluting the top level namespace with everyday terms like min, max etc. and to just follow good modern practice.
 
-In fact p5.js brings most math functions back out as top level names, eg. `x = sqrt(y)`. See [p5 reference](https://p5js.org/reference/) and follow the Math link. I'm not sure of the rationale for that, easy coding for beginners I guess. 
+However p5.js brings most math functions back out as top level names, eg. `x = sqrt(y)`. See [p5 reference](https://p5js.org/reference/) and follow the Math link. I'm not sure of the rationale for that, easy coding for artists I guess. 
 
 A few examples:
 ```javascript
-circumference = 2 * Math.PI * radius;           // a constant 'property' of Math, no () call needed 
+circumference = 2 * Math.PI * radius;           // PI is a constant 'property' of Math, no () call needed 
 distance = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2 ));  // Standard 2D distance calc; you know this
 absoluteValue = Math.abs(value);                            
 maxiumum = Math.max(a,b,c, ...);                // any number of args, Math.min similar  
 roundUp = Math.ceiling(69.69);                  // result is 70   
 height = base * Math.sin(angle);                // and similarly cos, tan, asin, sinh, etc  
-expo = Math.pow(2, 10);                         // 1024  
+expo = Math.pow(2, 10);                         // 1024. Can also be coded as 2**10 with the new ** operator  
 bigInt = Math.pow(2, 53);                       // 9007199254740992 of course. Have you been paying attention ?  
 rand = Math.random();                           // result between 0.0 and 1.0 (actually 0.9999999999...)
 ```
@@ -871,15 +871,15 @@ The [full Montezuma](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ## Conditionals
 
-Conditionals allow your program to execute a block of code based on the result of an expression that utilizes relational or logical (boolean) operators, or just boolean values.
+Conditionals allow your program to execute a block of code, based on the result of an expression that utilizes relational or logical (boolean) operators, or just boolean values.
 
 ### if
 
 ```javascript
-var x = 1;
+let x = 1;
 if (x > 0) {
-  var a = x + 1;
-  var b = a + 3;
+  let a = x + 1;     // these will get executed
+  let b = a + 3;
 }
 ```
 
@@ -908,18 +908,19 @@ if (x > 5) {
 ### Multiple conditions
 
 ```javascript
-var x = 1;
-if ( (x >= -5) && (x <= 5) ) {   // fully bracketed
+let x = 1;
+if ( (x >= -5) && (x <= 5) ) {   // fully bracketed, clearer
   // execute some code if x was in range -5 to +5
 }
 ```
 
 ```javascript
-var x = "puddings";
-if ( x.length === 8 || x.indexOf("ding") === -1 ) {   // just wing it
+let x = "puddings";
+if ( x.length === 8 || x.indexOf("ding") !== -1 ) {   // a couple of silly tests
   // execute some code. Note the above is using exact or "strict" comparisons, safer.
 }
 ```
+
 Editorial note: in Pedantic World these names are used - () parentheses, [] brackets, {} braces, <> angle brackets. However it's common to just say () round brackets, [] square brackets, {} curly brackets, <> angle brackets. I think there is a fancy name for angle brackets, but it escapes me.
 
 ### The Ternary Conditional operator
@@ -943,7 +944,7 @@ rich = (dollars > 1e7) ? "yes"                                   // a bit better
      : (dollars > 1e6) ? "maybe" 
      : "no";
 
-if (dollars > 1e7) {                                             // you might prefer this
+if (dollars > 1e7) {                                             // you might prefer a plain if/then/else style
     rich = "yes"
 } else if (dollars > 1e6 ) {
     rich = "maybe"
@@ -956,7 +957,7 @@ The consensus seems to be that the ternary `?:` operator is ok for simple one-le
 
 ### Comparison issues
 
-Warning: some comparisons between variables that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use an usual 'loose' comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). There's a quaint terminology called "truthy" and "falsy". Values like 0 or "0" or "" or [] or [[]] or [0] are falsy. Values like 1, "1" and [1] are truthy.  
+Warning: some comparisons between variables that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use an usual "loose" comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). There's a quaint terminology called "truthy" and "falsy". Values like 0 or "0" or "" or [] or [[]] or [0] are falsy. Values like 1, "1" and [1] are truthy.  
 
 The "===" and "!==" operator set were introduced at JavaScript 1.3 to provide exact comparison - things must be the same type and the same value to be equal. The only thing that is equal to Boolean `true` is another Boolean `true`, not 1 or "1" or [1]. It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
 
@@ -983,7 +984,7 @@ switch ( userInput ) {
     console.log("Unexpected user input", userInput);
 }
 ```
-This is neat and clear. Although, if you omit the 'break' the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
+This is neat and clear. If you omit the `break` the code will "fall through" to the next case. This is generally error-prone, a reader often doesn't notice it, and then you create hours of head scratching, most likely for yourself.
 
 Always use the `default` catcher, even if you think it can never happen.
 
@@ -994,9 +995,9 @@ Always use the `default` catcher, even if you think it can never happen.
 Just as with our conditional (if / else) statements, a while loop employs a boolean test that must evaluate to true in order for the instructions in the curly brackets to be executed. The instructions continue to be executed until the test condition becomes false. If the test condition is false at the start, the loop body will not execute at all.
 
 ```javascript
-var x = 0;
+let x = 0;
 while (x < 10) {    
-  console.log(x);     // Should print about 10 times. Or 9, or 11 ? A good exercise to check.
+  console.log(x);     // Should print 10 times. Or maybe 9, or 11 ? A good exercise to check.
   x++;   
 }
 ```
@@ -1005,11 +1006,11 @@ while (x < 10) {
 This is similar to the while loop, but the test is done at the bottom, after each iteration of the loop. One oft-quoted consequence is that the loop always executes at least once. But really the point is that it's just clearer to test some conditions at the bottom. The code can reflect your thinking.
 
 ```javascript
-var x = 0;
+let x = 0;
 do  {      
   console.log(x);    // How many times does it print now ?
   x++;   
-} while (x < 10)
+} while (x < 10)     // repeat while x is less than 10
 ```
 
 ### For {}
@@ -1017,7 +1018,7 @@ do  {
 Since this is a very common use of a loop, ie. running through a simple sequence of values, there is a simpler way to do it: the for{} loop. You can read the example below as: a) create variable x and set it to 0;  b) if x is less than 10 do the stuff in the loop body; c) increment x by 1 at the end and go back to b).
 
 ```javascript
-for (var x = 0; x < 10; x++) {  
+for (let x = 0; x < 10; x++) {  
   console.log(x);     // This is a very common idiom. The loop will run exactly 10 times, for sure.
                       // Remember: x = 0; x < loopCount  :  gives exactly loopCount passes.
                       //           x = 1; x <= loopCount :  same, less common. Programmers like 0 basing.
@@ -1040,8 +1041,8 @@ while(true) {
 There are further loop types that iterate conveniently over the elements of an array or object. I will show them without much explanation, they have some gotchas.
 
 ```javascript
-var arr = [44, 33, 22, 11];
-var obj = { "1st": 1, 2: 2, "3rd": 3, 4: 4 };
+let arr = [44, 33, 22, 11];
+let obj = { "1st": 1, 2: 2, "3rd": 3, 4: 4 };
 
 for (let n in arr) {            //  let n keeps the scope of n restricted to this loop block. See more later in tut.
   console.log("index is", n);   //  prints "index is 0, index is 1, index is 2, index 3"
@@ -1067,7 +1068,7 @@ The above loop types have some things to watch out for. One is that there can be
 
 However on other occasions you may want to see everything that's there, to do fancy stuff with object-oriented dynamic design. Then you can let the loops show you the works. All this is beyond the scope of this tut.
 
-You will probably not need these loop types in p5.js. (These are not the loops you're looking for ...)
+You may not need these loop types in p5.js. (These are not the loops you're looking for ...)
 
 [A readable blog on forEach](https://thejsguy.com/2016/07/30/javascript-for-loop-vs-array-foreach.html) (He's grabbed a great URL there, "thejsguy.com").
 
@@ -1078,7 +1079,7 @@ A function is a unit of reusable code, which can be invoked or "called" many tim
 
 Functions are named after mathematical functions: f(x) = x * x. In JavaScript this would become `function square(x) { return (x * x); }`
 
-Other languages can use terms like "subroutine" or "procedure" to describe a function. Fortran IV used to provide SUBROUTINE which returned no value, and FUNCTION which did return a value. In modern languages a "function" can return or not return a value just as you wish, and you can also use or ignore the return value afterwards. 
+Other languages can use terms like "subroutine" or "procedure" to describe a function. Fortran IV used to provide SUBROUTINE which returned no value, and FUNCTION which did return a value. In modern languages a "function" can return or not return a value just as you like, and you can also use or ignore the return value afterwards, as you like. 
 
 A neatly self-contained function can be replaced with a better version at a future time: a standard example would be a "sorting" function. With low numbers of test data items that need to be sorted into order in some sort() function, a simple "bubble sort" might be fine. This runs in O(N2), which is academic speak for "Order N squared", meaning the time to sort a list of N items is approximately proportional to N squared. This goes up quite rapidly, but it's not going to be a problem until N reaches high numbers, maybe thousands or tens of thousands.
 
@@ -1091,7 +1092,7 @@ function sayHello() {
   console.log("hello");
 }
 
-sayHello(); // Call the function. Prints "hello"
+sayHello();       // Call the function. Prints "hello"
 ```
 
 ```javascript
@@ -1099,6 +1100,7 @@ sayHello(); // Call the function. Prints "hello"
 // Note, p5.js supplies "random()" as an interlude to Math.random(), with more flexible value range.
 
 function changeBackground() {
+  // Render the screen background in a random color
   background(random(255), random(255), random(255));  // choose a number from 0 to 255 for red, green, blue
 }
 ```
@@ -1114,9 +1116,9 @@ In the case of simple variables supplied as function arguments, the value is "co
 In the case of arrays or objects supplied as function arguments, a pointer to the actual array or object is passed to the function, and the caller's value _can_ be changed.
 
 ```javascript
-var var1 = 1;
-var array1 = [1, 22, 333];
-var object1 = { "a":1, "b":22, "c":333 };
+let var1 = 1;
+let array1 = [1, 22, 333];
+let object1 = { "a":1, "b":22, "c":333 };
 function example(v, a, o ) {
    v = 123;
    a[0] = 456;
@@ -1124,9 +1126,9 @@ function example(v, a, o ) {
 }
 
 example(var1, array1, object1);
-console.log(var1);            // 1
-console.log(array1);          // [ 456  22  333 ]
-console.log(object1);         // { "a":1  "b":789  "c":333 }
+console.log(var1);            // 1                                  // the scalar didn't change
+console.log(array1);          // [ 456  22  333 ]                   // the array did change
+console.log(object1);         // { "a":1  "b":789  "c":333 }        // the object did change
 ```
 
 Here are some functions with arguments.
