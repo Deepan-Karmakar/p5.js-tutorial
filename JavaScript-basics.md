@@ -229,7 +229,23 @@ This means that counting and looping code will always work correctly. A loop lik
 
 **Special numeric values**
 
-The 64-bit word which represents a number has provision for some special values, to signify exception conditions. These include Infinity (both positive and negative) and "Not A Number", to signify an impossible numeric outcome. (Examples to follow...)
+The 64-bit word which represents a number has provision for some special values, to signify exception conditions. These include Infinity (both positive and negative) and "Not A Number", to signify an impossible numeric outcome.
+```
+let x = 0;
+console.log(1/x);    // Infinity
+console.log(-1/x);   // -Infinity
+console.log(-1);     // Nan, ie. Not A Number
+```
+The Infinities are soft errors and allow computation to continue under certain conditions, but the NaN means "show over".
+
+```
+let x = 5, y = 10;
+let z = (2*x - y);    // zero
+let q = 1/z;          // Infinity
+let r = 10/q;         // Zero, as mathematically expected
+let s = sqrt(x - y);  // NaN
+let t = s + 1;        // NaN. Any computation with Nan is another Nan. The show is over.
+```
 
 ### Data type: String
 
@@ -434,11 +450,11 @@ var z3 = Math.sqrt(z2)    // NaN ! Bigger surprise !
 ```
 ### Extended character sets: Unicode, UTF
 
-In the English-speaking world we live in a privileged bubble where everything is in our familiar character set, ie. the good old English typewriter/printing character set. ASCII is the familiar encoding for these. But it still limited; only about half the punctuation set we routinely use is in there, for example the dollar sign $ is there, but not a proper cents sign &#xa2; or UK Pounds sign &#xa3;. 
+In the English-speaking world we live in a privileged bubble where everything is in our familiar character set, ie. the good old English typewriter/printing character set. ASCII is the familiar encoding for these. But it is still limited; only about half the punctuation set we routinely use is in there, for example the dollar sign $ is there, but not a proper cents sign &#xa2; or UK Pounds sign &#xa3;. 
 
-European languages have many accented characters, like the &#xe9; in caf&#xe9;. Then there is the Cyrillic alphabet, eg. Kremlin = Кремль. Then the character sets of Chinese, Japanese, Korean and many other languages. These can be the compact "phonetic" character sets, like Japanese Hiragana ひらがな with 46 characters, or the Chinese-derived Kanji 漢字 set of thousands of characters. There is the arabic العَرَبِيَّة‎ character set which runs right to left. My apologies to important languages I have not mentioned here. 
+European languages have many accented characters, like the &#xe9; in caf&#xe9;. Then there is the Cyrillic alphabet, eg. Kremlin = Кремль. Then the character sets of Chinese, Japanese, Korean and many other languages. These can be the compact "phonetic" character sets, like Japanese Hiragana ひらがな with 46 characters, or the Chinese-derived Kanji 漢字 set of thousands of characters. There is the Arabic العَرَبِيَّة‎ character set which runs right to left. My apologies to important languages I have not mentioned here. 
 
-(How am I entering these characters in the Wiki text here? - mainly cut & paste from web pages).
+(How am I entering these characters in the Wiki text here? - mainly cut & paste from web pages, the easiest way).
 
 JavaScript allows the use of all these characters, using the Unicode character set. For example if you want to print a currency message:
 
@@ -449,7 +465,7 @@ message = "Your card will be billed $123 and 45" + cent + " which is UK pounds "
 console.log(message);         // Your card will be billed $123 and 45¢ which is UK pounds £78.99";  
 ```
 
-One of the main traps with extended character sets is that the length of the visual string (say caf&#xe9, 4 visual characters) is not equal to the length of the encoded string, which will be longer than 4. This makes some text layout coding more difficult. There are facilities in JS to give you the "encoded length" of a string:
+One of the main traps with extended character sets is that the length of the visual string (say café, 4 visual characters) is not equal to the length of the encoded string, which will be longer than 4. This makes some text layout coding more difficult. There are facilities in JS to give you the "encoded length" of a string:
 
 ```javascript
 enc = new TextEncoder('utf-8');    // You can choose the UTF type. UTF-8 is the most common.
@@ -466,31 +482,31 @@ Extended character sets are a big subject. If you need to, look up Unicode, UTF-
 
 ### Data type: Boolean
 
-A "true" or "false" value. Boolean variables are often used for conditional testing and keeping track of state. Things that need to be on or off, done or not done.
+A "true" or "false" value. Boolean variables are often used for conditional testing and keeping track of state. Things that need to be on or off, done or not done. (Boolean comes from the mathematician George Boole who invented much of the binary true/false logic used in computing. https://en.wikipedia.org/wiki/George_Boole).
 
 ```javascript
-var drawBackground = true;
-var drawDebugInfo = false;
+let drawBackground = true;
+let doneSetup = false;
 ```
 
 ### Data type: Array
 
-Arrays are used to store multiple objects or values in one variable, and access them via a numeric index. To create an array, use square brackets, and place any number of items separated by commas in between.
+Arrays are used to store multiple objects or values in one variable, and access them via a numeric index. To create an array, use square brackets, and place any number of items separated by commas inbetween.
 
 ```javascript
-var arr = [];                                     // empty array
-var fruits = ["apple", "dragonfruit", "banana", "starfruit"];
-var ages = [10, 21, 89, 3, 68];
-var misc = ["pumpkin", 10.4, "dog", false, -1];   // arrays can have items of different datatypes
-var more_misc = ["dustpan", "k", fruits, misc];   // arrays can contain other arrays. Works fine, but be careful ! 
+let arr = [];                                     // empty array
+let fruits = ["apple", "dragonfruit", "banana", "starfruit"];   // array of four strings
+let ages = [10, 21, 89, 3, 68];                   // array of numbers
+let misc = ["pumpkin", 10.4, "dog", false, -1];   // arrays can have items of different datatypes
+let more_misc = ["dustpan", "k", fruits, misc];   // arrays can contain other arrays. Works fine, but be careful ! 
 console.log(more_misc[2][2]);                     // prints banana
 console.log(more_misc[3][1]);                     // prints 10.4
 ```
 
-You can place or access items in the array by numeric index; the first item in an array has index 0.
+You can access items in the array by numeric index; the first item in an array has index 0.
 
 ```javascript
-var arr = [];
+let arr = [];          // create an empty array
 arr[0] = "moss";
 arr[1] = "sludge";
 arr[2] = "mold";
@@ -501,7 +517,7 @@ console.log(arr[1]);   // "sludge"
 You can use a for loop to iterate over an array.
 
 ```javascript
-var arr = ["mushrooms", "cheerios", "sparkling water"];
+let arr = ["mushrooms", "cheerios", "sparkling water"];
 for (var i = 0; i < 3; i++) {
   arr[i] = "I love " + arr[i];
 }
@@ -512,27 +528,27 @@ Arrays can contain arrays, as noted above, so you can construct a 2 (or higher) 
 
 ```javascript
 // A 2x2 matrix.
-var matrix = [
+let matrix = [
     [ 1, 2 ],    // row 0
-    [ 3, 4 ],    // row 1. You can leave that dummy comma there, but better to omit; confuses some old JS engines.
+    [ 3, 4 ]     // row 1.  Don't put a comma after the last item
 ];
-console.log(matrix[0][1]);   // Shows 2. Ie matrix(row 0, col 1) in mathematical thinking.
+console.log(matrix[0][1]);   // Shows 2. Ie. matrix(row 0, col 1) in mathematical thinking.
 
-// A 4x4 identity matrix, familiar to 3D graphics programmers ...
-var identity_4x4 = [
+// A 4x4 identity matrix, familiar to 3D graphics programmers ..
+let identity_4x4 = [
      [1, 0, 0, 0],
      [0, 1, 0, 0],
      [0, 0, 1, 0],
-     [0, 0, 0, 1]    // no last comma, better
+     [0, 0, 0, 1]   
 ]
 ```
 
-Does JavaScript have a native matrix math ability ? No. But there are many matrix libraries available for JavaScript, just Google around. Also p5.js has a matrix facility for graphics transforms, eg. applyMatrix(), but that looks like only 2D graphics transforms at present.
+Does JavaScript have a native matrix math ability ? No. But there are many matrix libraries available for JavaScript, just Google around. Also p5.js has a matrix facility for graphics transforms, eg. applyMatrix(), but that is only 2D graphics transforms at present.
 
 Arrays can have empty (undefined) elements. If you add a new element beyond the current length of the array, the array is just extended. The array.length always returns the whole length of the array, including any undefined elements.
 
 ```javascript
-var arr = [1, 2, 3];
+let arr = [1, 2, 3];
 arr[5] = 999;
 console.log(arr.length)     // prints 6
 for ( var i = 0; i < arr.length; i++ ) {
@@ -544,10 +560,10 @@ Like strings, arrays have some built-in convenience properties and methods. You 
 
 **array.length**
 
-Gives the length (number of items) of the array. This can be useful for iterating over arrays. Note, as for String.length, this is a plain property, not a method call.
+Gives the length (number of items) of the array. This can be useful for iterating over arrays. Note, as for String.length, this is a plain property, not a method call. Don't use `array.length()`.
 
 ```javascript
-var arr = [3, 5, 19];
+let arr = [3, 5, 19];
 for (var i = 0; i < arr.length; i++) {
   arr[i] *= 2;
 }
@@ -560,12 +576,12 @@ console.log(arr); // [6, 10, 38]
 Adds (pushes) a new element to the end of the array, increasing the length of the array by 1. Pop does the opposite.
 
 ```javascript
-var arr = [30, 10, 0];
+let arr = [30, 10, 0];
 arr.push(true);
 console.log(arr.length); // 4
 console.log(arr); // [30, 10, 0, true]
 
-var last = arr.pop();        // last is true, arr is back to what it was
+let last = arr.pop();        // last is true, arr is back to what it was
 ```
 
 **array.shift(), array.unshift()**
@@ -573,12 +589,12 @@ var last = arr.pop();        // last is true, arr is back to what it was
 These remove or add an element from the beginning of the array.
 
 ```javascript
-var arr = ["cats", "eat", "birds"];
+let arr = ["cats", "eat", "birds"];
 arr.unshift("some");
 console.log(arr.length); // 4
 console.log(arr); // ["some", "cats", "eat", "birds"]
 
-var first = arr.shift();        // last is "some", arr is back to what it was
+let first = arr.shift();        // last is "some", arr is back to what it was
 ```
 
 **array.indexOf(elt, [start])**
@@ -586,8 +602,8 @@ var first = arr.shift();        // last is "some", arr is back to what it was
 Returns the index of given element, or returns -1 if it's not found. Arrays can't have negative indices, so -1 is an ok failure indicator. If given two args, the second is the start index for the search. If the start index is negative, we start "start" places back from the end (but we still search forward). 
 
 ```javascript
-var arr = [2, 5, 9, 33];        //      arr.length is 4, last index 3
-var index = arr.indexOf(2);     //  0  (2 is first, ie. zero'th, element)
+let arr = [2, 5, 9, 33];        //      arr.length is 4, last index 3
+let index = arr.indexOf(2);     //  0  (2 is first, ie. zero'th, element)
 index = array.indexOf(7);       // -1  (there's no 7 in the array)
 index = array.indexOf(5, -2);   //  2  (5 is there, even when starting search at index 3-2 = 1) 
 index = array.indexOf(5, -1);   // -1  (5 is not there, when starting search at index 3-1 = 2) 
@@ -595,10 +611,10 @@ index = array.indexOf(5, -1);   // -1  (5 is not there, when starting search at 
 
 **array.reverse()**
 
-Reverses the order of the elements, in situ.
+Reverses the order of the elements, in situ. This is a little unusual, mostly an array method returns a new output, leaving the original array unchanged.
 
 ```javascript
-var arr = [111, 222, 333, 444];
+let arr = [111, 222, 333, 444];
 arr.reverse();                   // arr is now [444, 333, 222, 111]
 ```
 
