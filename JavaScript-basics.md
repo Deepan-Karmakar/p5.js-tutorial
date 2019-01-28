@@ -1,15 +1,13 @@
 
-JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions initiated by the user. It is described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
+JavaScript is a language that is typically used on web pages where it runs client-side (within the web browser). It is a general purpose language with a lot of built-in functionality for interacting with HTML elements on a webpage and responding to actions by the user, eg. keystrokes, mouse input, touch input. It is described as one of the "core three" technologies that drive the Web: HTML, CSS, and JavaScript.
 
 Although JavaScript has "Java" in it's name, it isn't related other than by the fact that it looks something like Java. It is supposedly influenced by the languages Self and Scheme, but with a Java or C++ appearance. JavaScript's official name is ECMAScript (ECMA is the European Computer Manufacturers Association, a standards body). It was initially created by Netscape Communications. ([Wikipedia: JavaScript](http://en.wikipedia.org/wiki/JavaScript))
 
-JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web scripting ability at Netscape, but then took off as part of the late 90's explosion of the Web. Since then it has matured into a fully-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is usually placed in the top few, and often at the very top, in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
+JavaScript has an interesting history. It was created in 1995 by Brendan Eich in 10 days ! to provide an urgently-needed web scripting ability at Netscape, but then took off as part of the late 90's explosion of the Web. Since then it has matured into a fully-functioned language, used in client-side Web code, server-side code, and many types of general code having nothing to do with the Web. It is often placed at the top in surveys of "languages most used", "languages most required in job ads" etc. Time spent learning JavaScript could be time well spent! 
 
 ***
 
 ## Contents:
-
-Not a comprehensive TOC, just shortcuts to some sections. 
 
 [Script setup in HTML](#script-setup-in-html)  
 [Use of console](#javascript-console)  
@@ -77,10 +75,10 @@ JavaScript in a web page can be placed anywhere within the HTML document, althou
 <html>              
   <head>              
     <script type="text/javascript">              
-      //JavaScript goes here 
+      //JavaScript code goes here 
       var str = "This is my first message";                                    
       console.log(str);  // This will show up in the browser's JavaScript console. 
-      alert(str);        // This will show a popup message in the browser. Irritating, use sparingly !
+      alert(str);        // This will show a popup message in the browser. Irritating, use sparingly.
     </script>
   </head>              
 <body> 
@@ -88,19 +86,19 @@ JavaScript in a web page can be placed anywhere within the HTML document, althou
 </body>             
 </html>              
 ```
-If you put the above text in a file 'index.html', you can open it, eg. by just clicking on it in a "file browser" dialog window, in Windows/MacOS/Linux. 
+If you put the above text in a file "index.html", you can open it, eg. by just clicking on it in a "file browser" dialog window, in Windows/MacOS/Linux. 
 	
 You can also write JavaScript in a file external to the HTML and point to that file in a script tag. There can be more than one script. They can also be fetched from the Web.
 
 ```html
 <script type="text/javascript" src="myProcessingCode.js"></script>                    <!-- this is an HTML comment -->
-<script type="text/javascript" src="libraries/p5.js"></script>                        <!-- Our p5 library ! -->
+<script type="text/javascript" src="libraries/p5.js"></script>                        <!-- Our p5 library -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>    <!-- JQuery, a popular utility lib -->
 ```
 
-Note, the 'type="text/javascript"' is not needed in the latest browsers, JavaScript is now the default script type.
+Note, the `type="text/javascript"` is not needed in the latest browsers, JavaScript is now the default script type.
 
-JavaScript can be scattered all through a web page, enclosed in <script> and </script>, or in special tags like \<button\>. Example: here we intercept a mouse click on a button, copy some data around, and change the background colour:
+JavaScript can be scattered all through a web page, enclosed in `<script>` and `</script>`, or in special tags like `<button>`. Example: here we intercept a mouse click on a button, copy some data around, and change the background colour:
 
 ```html
 <html>
@@ -129,96 +127,119 @@ Try the above in an index.html. However this tutorial is not about use of JavaSc
 
 ## JavaScript Console
 
-One of the first things we need is to get some debugging output. You can write to the browser JavaScript console by using the built-in console.log method:
+One of the first things we need is to get some debugging output. You can write to the browser JavaScript console by using the built-in `console.log()` method:
 
 ```javascript
-console.log("hello");
-console.log("variables x, y values", x, y);          // Use the default space separation of args
-console.log("variables x, y values " + x + "," + y); // Concatenate message into a single string, more flexible
+console.log("Setting up scene");                      // A general progress message
+console.log("variables x, y values:", x, y);          // Use the default space separation of args
+console.log("variables x, y values: " + x + "," + y); // Concatenate message into a single string, more flexible
+console.warn("Warning, polygon size is zero");        // This highlights the message, maybe in orange
+console.error("Error, polygon size is negative");     // This highlights maybe in red
 ```
 
-In order to see the console on Chrome, select menu sequence View / Developer / JavaScript Console. Use it often! On other browsers, just search for info on "how to open the JavaScript console in \<whatever\> browser". Note also that Processing has a "print()" function which does a similar job to console.log().
+In order to see the console on Chrome, select menu sequence View -> Developer -> JavaScript Console. Use it often! On other browsers, just search for info on "how to open the JavaScript console in \<whatever\> browser". Note also that Processing has a `print()` function which does a similar job to `console.log()`.
 
-Another useful thing is to find a command-line JavaScript interpreter, to check basic things and follow along with this tutorial. 
+Another useful thing is a command-line JavaScript interpreter, to check basic things and indeed follow along with this tutorial. 
 
 On Mac, there is a JavaScript interpreter at /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc 
 
-You can invoke that directly from a Terminal screen (Finder / Go / Utilities / Terminal). 
+You can invoke that directly from a Terminal screen (Finder -> Go -> Utilities -> Terminal). 
 
 To simplify typing, try "alias myjsc=/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc". Once in jsc, it operates much like the JavaScript console in a browser. Use Ctrl-C (quit) or more elegantly Ctrl-D (end of input) to exit the interpreter.
 
+You can also download Node.js from https://nodejs.org  and install it. Node is a large package of JavaScript utilities, including a standalone JavaScript interpreter.
+
+```
+$ node
+> a = 1;
+> console.log(a + 1);     // prints 2
+```
 
 ## Variables
 
-A variable holds a value in memory. It can be used in calculations, composing some kind of message, updating the appearance of a web-page component, controlling the appearance of a Processing visual entity (very relevant here!), countless things. Variables are a fundamental part of programming languages, like words are part of spoken languages.
+Now we begin the actual syntax of the JavaScript language. The most basic element is a "variable".
 
-A quick swing through setting up variables:
+A variable holds a value in memory. It can be used in calculations, composing some kind of message, updating the appearance of a web-page component, controlling the appearance of a Processing visual object, countless things. Variables are a fundamental part of programming languages, like words are part of spoken languages.
+
+A quick look at setting up variables:
 
 ```javascript
-var x = 5;
-var y = x + 7;                   // y is now 12
+let x = 5;
+let y = x + 7;                   // y is now 12
 
-var a = "some text"; 
-var b = a + " is here";          // b is now "some text is here". Note the + has a different function for strings
+let a = "some text";             // a is a string containing "some text"
+let b = a + " is here";          // b is now "some text is here". Note the + has a different function for strings
 
-var stuff = [1, 22, 333];        // stuff is a three element array, with the values shown
-var s = stuff[2];                // s is 333. Note indexing from zero, not one.
+let stuff = [1, 22, 333];        // stuff is a three element array, with the values shown
+let s = stuff[2];                // s is 333. Note indexing is from zero, not one
 
-var myRecord = { givenName: "Albert", familyName: "Einstein", age: 33 };  // Create an "object" with three key:value pairs
-var name = myRecord.givenName;   // name has string value "Albert"
+let myRecord = { givenName: "Albert", familyName: "Einstein", age: 33 };  // Create an "object" with three key:value pairs
+let name = myRecord.givenName;   // name has string value "Albert"
 
-var delete_file = false;         // var has a Boolean value "false".
-var keep_file = !delete_file     // keepFile has Boolean value "true". (! means negate). Useful for binary options.
+let delete_file = false;         // delete_file has a Boolean value "false".
+let keep_file = !delete_file     // keepFile has the Boolean value "true". (! means negate). Useful for binary options.
 
-var string1 = "";                // One (good) way to initialise a string to an empty value.
-var string2 = null;              // Another way. Be careful, null has tricky properties, see later.
-var string3;                     // Both this ...
-var string4 = undefined;         // ... and this give the var the "undefined" value. Also very tricky, see later.
+let string1 = "";                // One (good) way to initialise a string to an empty value.
+let string2 = null;              // Another way. Be careful, null has tricky properties, see later.
+let string3;                     // Both this ...
+let string4 = undefined;         // ... and this give the var the "undefined" value. Also very tricky, see later.
 
 ```
+`let` creates a new variable. Older versions of JavaScript used the keyword `var`. This still works and is very common, but for new code you should always use `let`. We'll talk about this further down in this tutorial.
+
 Variables should nearly always be given an initial value. Otherwise, like string3 above, they have an "undefined" value until later in the program, which can lead to hard-to-debug errors.
 
 ### Variable names
 
-Variables (and other names in JS, like functions) can be named with lower and uppercase letters, numbers, underscore, or dollar signs. Avoid dollar signs. For multi-component names, there are two favourite styles: my_data and myData. The second is more common. Underscores at the beginning or end of a name can denote something special, often a variable which is similar to a system-provided term. Eg. for some reason you desperately want to name some variable "var" but var is a reserved word in JS, so you can use "var_" or "\_var\_": `var var_ = 123;` Unless you know very well what you're doing, this is not recommended. 
+Variables (and other names in JS, like functions) can be named with lower and uppercase letters, numbers, underscore, or dollar signs. Avoid dollar signs. For multi-component names, there are two favourite styles: my_data and myData. The second is more common. 
+
+Underscores at the beginning or end of a name can denote something special, often a variable which is similar to a system-provided term. Eg. for some reason you desperately want to name some variable "var" but var is a reserved word in JS, so you can use "var_" or "\_var\_": `var var_ = 123;` Unless you know very well what you're doing, this is not recommended. 
 
 
 ## Data Types
 
-JavaScript is a "loosely typed" or "dynamic" language, meaning you don't have to declare the types of variables ahead of time. The type will get determined automatically while the program is being processed. Other languages such as Java, C, C++ are strictly typed, mainly for catching errors at compile time, and each variable must declare the type of the data it will contain. Even though you don't have to declare types, JavaScript does have different data types.
+JavaScript is a "loosely typed" or "dynamic" language - you don't have to declare the types of variables ahead of time. The type will get determined automatically while the program is running. Other languages such as Java, C, C++ are "strictly typed", mainly for catching errors at compile time, and each variable must declare the type of the data it will contain. Even though you don't have to declare types, JavaScript does have different data types.
 
 
 
 ### Data type: Number
 
-A number, optionally with a decimal point, or exponent. In other languages this is typically called a float, short for "floating point number". It can be written with or without the decimal point.
+In computing numbers conventionally come in two types: integer and floating point. An integer is a whole number, like 33, or 0, or -2. A floating point number has a fractional part, like 3.14, or 999.9, or -233.457. Floating point numbers can also be written in Exponential notation, eg. a thousand plus a half could be 1.0005e3, which means 1.0005 times 10 to the power 3, which is ... 1000.5 as required.
+
+JavaScript however has just one Number type, which is used for both integers and floating point numbers. This makes coding a good deal easier.
+ 
+Some examples:
 
 ```javascript
-var x = 5;
-var y = 1.223;
-var z = -300;
-var big = 1.23e82;   // This is a big number, the estimated atoms in the universe, but quite ok to code with, why not?
-var small = 1.6e-35  // The Planck Length, the smallest physical size (in metres) that has any meaning in classical physics.
-var biggest = 1.7976931348623157e+308  // Biggest number JavaScript can hold. I know you wanted to know.
-var smallest = 5e-324                  // Why not symmetrical with biggest ? Small numbers can be "denormalised", we sacrifice
-                                       // digits to get more exponent. You didn't need to know this probs. 
+let x = 5;
+let y = 1.223;
+let z = -300;     // negative numbers are fine
+let big = 1.23e82;   // This is a big number, the estimated atoms in the universe, but quite ok to code with, why not?
+let small = 1.6e-35  // The Planck Length, the smallest physical size (in metres) that has any meaning in classical physics.
+let biggest = 1.7976931348623157e+308  // The biggest number JavaScript can hold. I know you wanted to know.
+let smallest = 5e-324                  // Why is it not symmetrical with biggest ? Small numbers can be "denormalised", we 
+                                       // sacrifice digits to get more exponent. You didn't need to know this probs. 
 ```
-JavaScript stores all numbers as 64-bit floats. You generally get from 15 to 17 decimal digits of accuracy, so you could safely write `x = 1.23456789012345`. This is very accurate but still has limits. Sometimes it can lead to very small inaccuracies. Try this in the JavaScript console: `0.1 + 0.2` You should get `0.30000000000000004` Try `0.362 * 100`  You should get `36.199999999999996`. This is rarely a problem in practice, after all it's accurate to 1 part in a quintillion, usually pretty ok ! Better than my old Engineers slide rule, accurate to 3 sig figs, that I designed those nuclear power stations with (ok not true).
+
+JavaScript actually stores all numbers as 64-bit floats in binary terms. You generally get from 15 to 17 decimal digits of accuracy, so you could safely write `x = 1.23456789012345`. This is very accurate but still has limits. Sometimes it can lead to very small inaccuracies. Try this in the JavaScript console: `0.1 + 0.2` You should get `0.30000000000000004` Try `0.362 * 100`  You should get `36.199999999999996`. This is rarely a problem in practice, after all it's accurate to 1 part in a quintillion, usually pretty ok ! Better than my old Engineers slide rule, accurate to 3 sig figs, that I designed those nuclear power stations with (ok not true).
 
 Although JavaScript doesn't have a specific integer type, it uses special measures to keep integers 100% accurate where possible. Integers up to a magic value of 9007199254740991 (and down to -9007199254740991) are stored and computed with complete accuracy. (9007199254740991 is 2^53 -1, ie. 2 to the power 53, minus 1. This is because the integer is held precisely, in the 53-bit mantissa section of the 64-bit IEEE float word).
 
-This means that counting and looping code will always work correctly. A loop like ` (for i = 0; i < 1000000; i++) ` will stop exactly at the million'th iteration. It won't blow up with 999999.999999996 or 1000000.000000003 issues.
+This means that counting and looping code will always work correctly. A loop like ` (for i = 0; i < 1000000; i++) ` will stop exactly at the million'th iteration. It won't blow up with issues about 999999.999999996 or 1000000.000000003.
 
+**Special numeric values**
+
+The 64-bit word which represents a number has provision for some special values, to signify exception conditions. These include Infinity (both positive and negative) and "Not A Number", to signify an impossible numeric outcome. (Examples to follow...)
 
 ### Data type: String
 
 A series of characters. These can be defined with either single or double quotes. To include a quote character, use the other type of quote around the string. Or use a backslash to escape the quote.
 
 ```javascript
-var x = 'hello';
-var y = "maybe tomorrow";
-var fancy = "we need some 'single quotes' in here";
-var fancy2 = "strings can have \' and \" quotes inside"; 
+let x = 'hello';
+let y = "maybe tomorrow";
+let fancy = "we need some 'single quotes' in here";
+let fancy2 = "strings can have \' and \" quotes inside"; 
 ```
 
 There are a large number of useful built-in JavaScript properties and methods that let you manipulate strings. You can see them all here [w3schools](http://www.w3schools.com/js/js_string_methods.asp), and also here [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/). These two sites, the www3schools site, and the Mozilla Development Network (MDN), are good references. Another useful one is [Javascript.info](https://javascript.info/types#a-string/). A few of the most useful String methods follow:
@@ -229,17 +250,17 @@ Gives the length of the string. Note, this is a direct "property" of the string,
 
 
 ```javascript
-var str = "I like to eat pickles"
-console.log(str.length); // 21
+let str = "I like to eat pickles"
+console.log(str.length);   // 21
 ```
 
 **indexOf(str)**
 
-Returns the index of (the position of) the first occurrence of a specified text in a string. Returns -1 if the search string is not found. All these methods return an indicator if the method fails, see the documentation. This is a callable () method, JS can't precompute anything about this request. 
+Returns the index of (ie. the position of) the first occurrence of a specified text in a string. Returns -1 if the search string is not found. All these methods return an indicator if the method fails, see the documentation. This is a callable () method, JS can't precompute anything about this request. 
 
 ```javascript
-var str = "I like to eat apples.";
-var pos = str.indexOf("eat");   // pos is 10
+let str = "I like to eat apples.";
+let pos = str.indexOf("eat");   // pos is 10
 pos = str.indexOf("pears");     // pos is -1
 ```
 
@@ -248,8 +269,8 @@ pos = str.indexOf("pears");     // pos is -1
 Sometimes the interesting info is the last occurrence of something in a string.
 
 ```javascript
-var str = "long.complicated.filename.txt";
-var suffixPosition = str.lastIndexOf(".");  // 25
+let str = "long.complicated.filename.txt";
+let suffixPosition = str.lastIndexOf(".");  // 25
 ```
 
 **includes(str)**
@@ -257,8 +278,8 @@ var suffixPosition = str.lastIndexOf(".");  // 25
 This method just returns whether the string contains a smaller string, true or false.
 
 ```javascript
-var str = "reallycrazylongstring";
-var maybe = str.includes("zylo");  // returns true
+let str = "reallycrazylongstring";
+let maybe = str.includes("zylo");  // returns true
 ```
 
 **substring(start, end)**
@@ -266,8 +287,8 @@ var maybe = str.includes("zylo");  // returns true
 Extracts a part of a string and returns the extracted part in a new string. The method takes 2 parameters: the starting index, and the ending index+1. So the substring returned is from str(start) to str(end-1) inclusive. Bit tricky.
 
 ```javascript
-var str = "I like to eat apples.";
-var newStr = str.substring(2, 6);  // "like", ie. characters 2,3,4,5
+let str = "I like to eat apples.";
+let newStr = str.substring(2, 6);  // "like", ie. characters 2,3,4,5
 ```
 
 **substr(start, length)**
@@ -275,8 +296,8 @@ var newStr = str.substring(2, 6);  // "like", ie. characters 2,3,4,5
 Another variation of substring. It takes 2 parameters: the starting index, and the length required. Murphy's Law of Programming says you'll always use one when you meant the other.
 
 ```javascript
-var str = "Bananas are yellow";
-var newStr = str.substr(2, 5);    // "nanas"
+let str = "Bananas are yellow";
+let newStr = str.substr(12, 4);    // "yell"
 ```
 
 **toLowerCase(), toUpperCase()**
@@ -284,10 +305,10 @@ var newStr = str.substr(2, 5);    // "nanas"
 These functions convert the string to all lower or all upper case.
 
 ```javascript
-var str = "I like to eat apples.";
-var lowerStr = str.toLowerCase();
+let str = "I like to eat apples.";
+let lowerStr = str.toLowerCase();
 console.log(lowerStr); // "i like to eat apples."
-var upperStr = str.toUpperCase();
+let upperStr = str.toUpperCase();
 console.log(upperStr); // "I LIKE TO EAT APPLES."
 ```
 **split(separator)**
@@ -295,12 +316,12 @@ console.log(upperStr); // "I LIKE TO EAT APPLES."
 This splits a string into an array of substrings, based on the separator, which can be one character or several.
 
 ```javascript
-var str = "a.multi.part.filename";
-var result = str.split(".");   // result is a 4 element array, ["a", "multi", "part", "filename"]
+let str = "a.multi.part.filename";
+let result = str.split(".");   // result is a 4 element array, ["a", "multi", "part", "filename"]
 console.log(result[2]);        // prints "part"
 
-var str = "some; data; structured; like; this";
-var result = str.split("; ");  // result is a 5 element array, ["some", "data", "structured", "like", "this"]
+let str = "some; data; structured; like; this";
+let result = str.split("; ");  // result is a 5 element array, ["some", "data", "structured", "like", "this"]
 console.log(result[3]);        // prints "like"
 ```
 **join(separator)**
@@ -308,10 +329,10 @@ console.log(result[3]);        // prints "like"
 We are jumping ahead to an array method here. The logical opposite of a "split" operation is a "join". These twin operations are available in most languages. In JS arrays have a join() method.
 
 ```javascript
-var str = "cool.image.jpg";
-var result = str.split(".");      // result is a 3 element array, ["cool", "image", "jpg"]
-var newstr = result.join("-");    // newstr is a string "cool-image-jpg"
-var newstr = result.join("...");  // newstr is a string "cool...image...jpg"
+let str = "cool.image.jpg";
+let result = str.split(".");      // result is a 3 element array, ["cool", "image", "jpg"]
+let newstr = result.join("-");    // newstr is a string "cool-image-jpg"
+let newstr = result.join("...");  // newstr is a string "cool...image...jpg"
 ```
 
 **trim()**
@@ -319,8 +340,8 @@ var newstr = result.join("...");  // newstr is a string "cool...image...jpg"
 This method trims whitespace from both ends of a string. Whitespace includes space and tab characters, also CR and NL/LF, and also some uncommon characters like FormFeed and VerticalTab. (Uncommon these days, but common enough in the 50's, 60's, 70's when giant line-printers spewed out reams of 132 character wide line-printer pages. Oh I remember it well. Ok not the 50's or 60's).
 
 ```javascript
-var str = " string with spaces around          ";
-var result = str.trim();   // result is "string with spaces around" (not any more)
+let str = " string with spaces around          ";
+let result = str.trim();   // result is "string with spaces around" (well, not any more)
 ```
 In the console, try `abc = " abc \n";` .. `abc;` .. `trim(abc);`
 
@@ -333,9 +354,9 @@ Here's a suggested code from MDN for replacing trim(), you can modify it to crea
 ```javascript
 if (!String.prototype.trim) {                                       // we don't have trim(), rats
   String.prototype.trim = function () {                             // add a local version
-    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');  // trim all crazy whitespace off both ends
-    //  this.replace(/^[\s\uFEFF\xA0]+/g, '');                      // for trimLeft
-    //  this.replace(/[\s\uFEFF\xA0]+$/g, '');                      // for trimRight
+    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');  // trim all crazy whitespace off both ends with regexp
+    //  this.replace(/^[\s\uFEFF\xA0]+/g, '');                      // for just trimLeft
+    //  this.replace(/[\s\uFEFF\xA0]+$/g, '');                      // for just trimRight
   };
 }
 ```
@@ -344,11 +365,11 @@ if (!String.prototype.trim) {                                       // we don't 
 As you can see above, there is a "replace" method for strings. You can replace just one character or sequence, or all of a particular character or sequence in a string. The syntax is based on regular expressions.
 
 ```javascript
-var str = "a_file_name";  
-var str2 = str.replace(/_/, "-");      // str2 is "a-file_name"  .. note only one underscore replaced
-var str2 = str.replace(/-/g, "-");     // str2 is "a-file-name"  .. all replaced
-var filename = "picture.JPEG";         // annoying suffix
-var filename2 = filename.replace(/JPEG/, "jpg");   // better perhaps
+let str = "a_file_name";  
+let str2 = str.replace(/_/, "-");      // str2 is "a-file_name"  .. note only one underscore replaced
+let str2 = str.replace(/-/g, "-");     // str2 is "a-file-name"  .. all replaced
+let filename = "picture.JPEG";         // annoying suffix
+let filename2 = filename.replace(/JPEG/, "jpg");   // better perhaps
 
 ```
 
@@ -357,10 +378,10 @@ var filename2 = filename.replace(/JPEG/, "jpg");   // better perhaps
 It's a common need when programming to create a string of the same characters, of a particular length. JavaScript introduced the repeat() method rather late at ES6. Before that you had to painfully concatenate characters in a loop.
 
 ```javascript
-var dot = '.';  
-var dots = dot.repeat(8);     // dots is "........"
-var pad = 'x'.repeat(3);      // pad is "xxx"
-var deco = 'OX'.repeat(10);   // deco is "OXOXOXOXOXOXOXOXOXOX"
+let dot = '.';  
+let dots = dot.repeat(8);     // dots is "........"
+let pad = 'x'.repeat(3);      // pad is "xxx"
+let deco = 'OX'.repeat(10);   // deco is "OXOXOXOXOXOXOXOXOXOX"
 ```
 
 An example of its use is to pad a string to a given length, say to make numbers line up in a column of data.
@@ -376,38 +397,40 @@ function padleft(data, width) {
 }
 ```
 
-There are many more String functions but the above would be 99% of what you need in p5.js.
+There are more String functions but the above would be 99% of what you need in p5.js.
 
 ### Converting between number and string
 
 There are some legit ways to convert between numbers and strings. 
 
 ```javascript
-var num = 123;
-var str = num.toString();
-console.log(str);                    // "123", a string
+let num = 123;
+let str = num.toString();
+console.log(str);                    // "123", with the quotes, ie. definitely a string
+typeof num;                          // number
+typeof str;                          // string
 
-var num2 = parseInt(str, 10)         // 10 is the radix. You can use 16 or 8 or 2 for hex, octal, binary
+let num2 = parseInt(str, 10)         // 10 is the radix. You can use 16 or 8 or 2 for hex, octal, binary
 console.log(num2);                   // 123, back to a number
-var num3 = parseFloat("12.34");      // becomes the number 12.34
+let num3 = parseFloat("12.34");      // becomes the number 12.34
 ```
 
-There are also some somewhat clunky ways of forcing conversions between numbers and strings:
+There are also some clunky ways of forcing conversions between numbers and strings. These come from the early days of JavaScript and are somewhat frowned upon.
 
 ```javascript
-var str = "123";  console.log(str);        // "123" ie. in quotes, a string
-var num = +str;   console.log(num);        //  123   a number
-var num2 = 456;
-var str2 = ""+num2; console.log(str2);     // "456"  a string
+let str = "123";  console.log(str);        // "123" ie. in quotes, a string
+let num = +str;   console.log(num);        //  123   a number. The + says make this thing 'str' a positive number.
+let num2 = 456;
+let str2 = ""+num2; console.log(str2);     // "456"  a string. the ""+ says concatenate nothing with num2.
 ```
-Often you won't need these, JavaScript sorts out what to do mostly. But not always ...
+Often you won't need these, JavaScript sorts out what to do mostly. But not always ..
 
 ```javascript
 var x = "12.34";
 var y = 5.67;
 var z1 = x - y;           // 6.67, correct numeric answer
 var z2 = x + y;           // "12.345.67"   Hmmm, surprise !
-var z3 = Math.sqrt(z2)    // NaN ! More surprise !
+var z3 = Math.sqrt(z2)    // NaN ! Bigger surprise !
 ```
 ### Extended character sets: Unicode, UTF
 
