@@ -52,6 +52,8 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
 &nbsp;&nbsp;&nbsp;[Other points about let](#other-points-about-let)    
 &nbsp;&nbsp;&nbsp;[The "const" declaration](#the-const-declaration)      
 [Objects part 2: objects as classes](#objects-part-2-objects-as-classes)   
+&nbsp;&nbsp;&nbsp;[Adding methods to Objects](#adding-methods)   
+&nbsp;&nbsp;&nbsp;[Memory Management and Garbage Collection](#memory-management-and-garbage-collection)   
 &nbsp;&nbsp;&nbsp;[A p5.js example](#a-p5js-example)  
 [The new Class statement](#the-new-class-statement)     
 [Code formatting, style, good practices, common mistakes](#code-formatting-style-good-practices-common-mistakes)  
@@ -1159,7 +1161,7 @@ sayHello(name);  // prints "Hello Jenny"
 
 ```javascript
 function addNumbers(a, b) {
-  var c = a + b;
+  let c = a + b;
   console.log(c);  
 }
 addNumbers(3, -10)  // prints -7
@@ -1219,7 +1221,7 @@ One facility is the `arguments` object. This puts all the arguments the function
 
 ```javascript
 function f1(a,b,c) { 
-  for (var i = 0; i < arguments.length; i++) { 
+  for (let i = 0; i < arguments.length; i++) { 
     print(arguments[i]);     
   }
 }
@@ -1235,7 +1237,7 @@ A neater method introduced in ES6 is the `...rest` syntax. This puts all the tra
 function f2(a, b, ...theRest) { 
   console.log("a = ", a);
   console.log("b = ", b);
-  for (var i = 0; i < theRest.length; i++) { 
+  for (let i = 0; i < theRest.length; i++) { 
     print("trailing arg ", i, " = ", theRest.shift() );     
   }
 }
@@ -1249,11 +1251,11 @@ f2(1, 22, 333, 4444);
 
 ### Returning a value
 
-The functions above take some action or change the state of the program (typically draw something, in p5.js), but they don't return any value. If you want your function to return a value, use `return someValue`. This is often at the end of the function, but can also be anywhere else in the function. 
+The functions above take some action or change the state of the program (typically draw something, in p5.js), but they don't return any value. If you need your function to return a value, use `return someValue`. This is often at the end of the function, but can also be anywhere else in the function. 
 
 ```javascript
 function addNumbers(a, b) {
-  var c = a + b;
+  let c = a + b;
   return c;
 }
 var result = addNumbers(3, -10);
@@ -1271,15 +1273,15 @@ console.log(name);    // "Super Jenny"
 
 ```javascript
 // p5.js has some built-in functions like this
-var x = random(100);
+let x = random(100);
 console.log(x);   // could print 23 or 77 or ...
 
 // You can write your own enhanced function, using p5.js functions
 function addJitter(x) {
-  var y = x + random(-1, 1); // use p5.js random() func. Two args allowed, min and max.
+  let y = x + random(-1, 1); // use p5.js random() func. Two args allowed, min and max.
   return y;
 }
-var result = addJitter(10);
+let result = addJitter(10);
 console.log(result); // 10.3 or 9.8 or ...
 ```
 
@@ -1304,20 +1306,21 @@ severalReturns(-8);  // returns -9
 ```
 ### Recursion
 
-JavaScript copes fine with recursive algorithms. The function calls and their local data just stack up on the "stack" and then unwind in the usual way. Here's the classic factorial(n) function:
+JavaScript copes fine with recursive algorithms. The function calls and their local data just stack up on the "stack" and then unwind in the usual way. Here's the classic factorial(n) function. It's not a proper language tutorial without a recursive factorial function !
 
 ```javascript
 function factorial(n) {   
   if ( n === 1 ) {
     return 1;
   } else {
-    return n * factorial(n-1);   // it's not a proper language tutorial without a recursive factorial function !
+    return n * factorial(n-1);   
   }
 }
 
 fact(1)    //  1
 fact(5)    //  120
 fact(69)   //  1.711224524281413e+98   This was as high as my HP-45 Engineers calculator could go, with a 2 digit exponent 
+fact(170)  //  7.257415615307994e+306  JavaScript can do better
 ```
 <br>  
 Let's try a two-legged recursion: the famous Ackermann function. This recurses down the two arguments, and will stack vast chains of recursive calls on the stack. It looks simple enough, but grows ferociously, in both computational data storage, and the final answer.
@@ -1374,13 +1377,13 @@ At the time of the declaration and definition of update, at line "var update = .
 
 After that, easy peasy. Each call of update() calls the check() code and then updates the counter.  
 
-More sophisticated use of closures can make convenient but safe and reliable code. They are used a lot in Node.js and JQuery, two common JS utility libaries, and no doubt many others. I see mention of closures in libraries/p5.js !
+More sophisticated use of closures can make convenient but safe and reliable code. They are used a lot in Node.js and JQuery, two common JS utility libraries, and no doubt many others. I see mention of closures in libraries/p5.js !
 
 [\[Wikipedia on closures\]](https://en.wikipedia.org/wiki/Closure_(computer_programming))
 
 ## Arrow functions
 
-You may see these in code. They're a convenient short-cut for very simple utility functions. The arrow notation `=>` is used in the function definition.
+You may see these in ES6 code. They have been recently added to the p5.js Reference Page examples as well. They're a convenient short-cut for very simple utility functions. The arrow notation `=>` is used in the function definition. Sometimes they're called "fat arrow functions" since they use `=>` and not `->`. (An aside - just when you think there's no more operators you can squeeze out of the Ascii character set, a new one comes along. `>=` already means "less than or equal to" but `=>` was unused. It also has a mathematical antecedent: A => B has meant "A implies B" or "A leads to B" in mathematical logic for a long time, and we can read an arrow function something like that).
 
 ```javascript
 let x2 = (x) => x * x;               // x2 is a function which returns the square of x
@@ -1401,7 +1404,7 @@ Arrow functions also allow some concise expression of larger but very "regular" 
 ```javascript
 let arr = [5, 6, 13, 0, 1, 18, 23];
 
-let sum = arr.reduce((a, b) => a + b);            // 66
+let sum = arr.reduce((a, b) => a + b);            // 66. A way to add all the array elements.
 
 let even = arr.filter(v => v % 2 == 0);           // [6, 0, 18]
 
@@ -1429,24 +1432,22 @@ Another option is to put all your code in one top level function, say main(). Th
   }
   main();                           // Call our whole code as a single function call: main()
 
-  // Todo: should really make this a full p5.js prog with a setup() and draw() that draws something.
-  // Otherwise the clash with str is not important.
-
 </head>
-<body>Not much of a body, this is a JavaScript example, not HTML</body>
+<body>Not much of a body, this is a JavaScript example, not an HTML one</body>
 </html>
 ```
 
 p5.js has an "instanced" mode, which is another similar way to do this. See the tutorial [Global and Instanced Mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode)
 
+(To do: include here a note about the problems of concatenated JavaScript codes)
 
 Here's another example of global and local scopes:
 
 ```javascript
-var xGlobal = "global";
+let xGlobal = "global";
 	
 function globalLocalTest() {
-  var xLocal = "local";
+  let xLocal = "local";
   console.log("inside function global: " + xGlobal);  // prints "global"
   console.log("inside function local: " + xLocal);    // prints "local"		
 }
@@ -1462,19 +1463,19 @@ console.log("outside function local: " + xLocal);     // prints "ReferenceError:
 If you use the same name as a global variable, and also as a local function variable, the function variable overrides within the function. This is ok in many situations, despite what we said above. For example simple count variables like i, j, k that you are sure have a short life. (Famous last words ?).
 
 ```javascript
-var g_data = [ 1, 22, 333 ]    // global array
-var i,j,k;                     // global simple control vars. A common style from older languages. Not even initialized! 
-var offset = 3;                // global var, but who would know?
+let g_data = [ 1, 22, 333 ]    // global array
+let i,j,k;                     // global simple control vars. A common style from older languages. Not even initialized! 
+let offset = 3;                // global var, but who would know?
 
 for (i = 0; i < g_data.length; i++) {   // a loop at top (global) level
   g_data[i] += 2;          // Adjust g_data values somehow
 }
 
 function adjustData() {
-  var i;                   // This is a different i from the global i, but we have decided to ignore that.
+  let i;                   // This is a different i from the global i, but we ignore that.
                            // For absolutely temporary vars like i, j, k, tmp, str, you can ignore scope if you like.
   for (i = 0; i < g_data.length; i++) {   
-    g_data[i] += offset;   // Ok: offset is still the global var. Could be better as g_offset
+    g_data[i] += offset;   // Ok: offset is still the global var.
   } 
 }
 
@@ -1485,15 +1486,17 @@ console.log(g_data[2]);   // prints 338 (333 + 2 + 3)
 
 ### New scope declaration: let
 
-The issue of the scope of identifiers in programming languages is an important one, as you can see from the hammering it's getting here. 
+The issue of the scope of identifiers in programming languages is an important one.
 
-You can have languages where everything is in a single global scope, as in simple ancient BASIC. Programming is easy, but the possibility of accidental errors is higher.
+[ In earlier versions of this tutorial, all variables up to this point were declared with `var` as it was still the common idiom. You will see `var` everywhere in JavaScript code, and it will survive forever in historic code. However the new style is `let`. Read on .. ]
+
+You can have languages where everything is in a single global scope, as in simple ancient BASIC. Programming is easy, but the possibility of accidental errors is high.
 
 You can have modern languages where scope is very restricted. Errors are reduced, but coding needs more care at times. Nothing wrong with that.
 
-JavaScripts original `var` style was very unusual and much disliked by some. JavaScript has recently (ECMAScript 2015, aka ES6) introduced the `let` keyword to augment and largely replace the `var` keyword. 
+JavaScript's original `var` style was very unusual and much disliked by some. JavaScript has recently (ECMAScript 2015, aka ES6) introduced the `let` keyword to augment and largely replace the `var` keyword. 
 
-Some more explanation of `var`: The scope of a variable declared with `var` is the whole of the function it is in. Even it is declared towards the bottom of a function, or is a trivial loop variable. There is an awful expression called "hoisting", where any `var` declaration is treated as if it was "hoisted" to the top of the enclosing function:
+Some more explanation of `var`: The scope of a variable declared with `var` is the whole of the function it is in. Even if it is declared towards the bottom of a function, or is a trivial loop variable. There is an awful expression called "hoisting", where any `var` declaration is treated as if it was "hoisted" to the top of the enclosing function:
 
 ```javascript
 function hoistingExample() {
@@ -1555,7 +1558,7 @@ console.log(this.y); // undefined. This solves a key problem when using a librar
 ```  
    
 
-Another `let` quirk: you can't redeclare a name in the same scope. This is a good thing, redeclaring the same name in the same scope is sloppy, although it's fine with `var`, and indeed we kind of accepted it with those temp `var` variables i, j, k we talked about before. JavaScript is quite a sloppy language. I didn't want to say that earlier.
+Another `let` quirk: you can't redeclare a name in the same scope. This is a good thing, redeclaring the same name in the same scope is sloppy, although it's fine with `var`. JavaScript is quite a sloppy language. I didn't want to say that earlier.
 
 ```javascript
 let foobar = 1;
@@ -1596,7 +1599,7 @@ switch(x) {
 }
 ```
 
-There are other tiny subtleties with changing from `var` to `let` but I think the average p5.js beginner will have reached their limit by now ! I know I have. Remaining quirks are really for the designers of big systems, like the whole p5.js library. They take many precautions and scope and encapsulate well, so that you can code simply and safely.
+There are other tiny subtleties with changing from `var` to `let` but I think the average p5.js beginner will have reached their limit by now. Remaining quirks are really for the designers of big systems, like the whole p5.js library. They take many precautions and scope and encapsulate well, so that you can code simply and safely.
 
 ### The const declaration
 
@@ -1707,22 +1710,22 @@ The constructor function above sets some properties of Cat, then it adds two met
 It's useful to be completely comfortable with unnamed functions:
 
 ```javascript
-function doSomething() {                     // First definition
+function doSomething() {                     // First definition, a directly named function.
   console.log("I'm doing something!");
 }
 
-var doSomething = function() {               // Second definition. This is identical to the first.
+let doSomething = function() {               // Second definition, an unnamed function.
   console.log("I'm doing something!");
 };
 ```
 
-These two definitions are the same, just written differently. In the second case, the function is saved in the variable "doSomething".  Remember in JS, a variable can be anything - a string, a number, a boolean - but also a function. 
+These two definitions are the same, just written differently. In the second case, the function is saved in the variable "doSomething".  Remember in JS, a variable can be anything - a string, a number, a boolean - and also a function. 
 
 In the first case, this variable name is stuck after the word "function", in the second, the variable is explicitly stated first, then the function is assigned. They mean the same thing, so it's helpful to get used to seeing both forms.
 
 Both forms allow you to invoke the function with `doSomething()`.
 
-So turning back to the method declaration in Cat, it starts to look more familiar. It's very similar to the new function definition format we just saw, but `var functionName = ` is replaced with `this.functionName = `. This is because, just like the properties, we use `this.` to say that the method belongs to the object being created.
+So turning back to the method declaration in Cat, it starts to look more familiar. It's very similar to the new function definition format we just saw, but `let functionName = ` is replaced with `this.functionName = `. This is because, just like the properties, we use `this.` to say that the method belongs to the object being created.
 
 Calling these methods on an instance looks similar to accessing properties, except we use the () notation to order a function call.
 
@@ -1733,36 +1736,21 @@ cats[0].aboutMe();    // "I'm black and aged 8" (or 9)
 
 An "instance" is an OOP term for an instance of an object or class. So cats[0] is an instance of Cat. It's a "thing", ie. an "Object", with internal data: name, age, color - and internal callable methods: greet(), aboutMe().
 
-### The Delete operator and Garbage Collection
+### Memory Management and Garbage Collection
 
-This is a good place to briefly mention the subject of memory management. Languages which allow you to dynamically create things during execution - like arrays, objects, arrays of millions of objects - must provide a way for that memory to be released when necessary. Even a modern JavaScript interpreter only has maybe 500 Mbyte of memory for dynamic data by default. You can configure it up a bit, to maybe 2GByte or 4Gbyte. But if you have a program consuming memory because it allocates dynamic things and doesn't delete them, 4GBbyte might fill very soon after 1/2 GByte.
+This is a good place to briefly mention the subject of memory management. Languages which allow you to dynamically create things during execution - like arrays, objects, arrays of millions of objects - must provide a way for that memory to be released when necessary. Even a modern JavaScript interpreter only has maybe 500 Mbyte of memory for dynamic data by default. You can configure it up a bit, to maybe 2GByte or 4Gbyte. But if you have a program consuming memory because it allocates dynamic things and doesn't delete them, even 4GBbyte might fill very quickly.
 
 Languages like C++ and Java have an ability to "delete" or "free" objects which have been created. This is aimed at cleaning up and removing dynamic data which you have created, and you know is not needed anymore. It's important sometimes to do that, to prevent memory usage building up, and prevent creating slow "memory leaks". Memory leaks are a problem in long-running codes - after days or weeks even the most carefully coded application can gradually increase its memory usage, and eventually fail. These are very pernicious errors and hard to track down - it could be smallest thing which is building up, some inconsequential temporary data.
 
-The alternative approach is very good automatic "garbage collection". What on Earth is that? It's the automatic deletion and clean-up of things which can't be used anymore. If a variable, array, object, or anything else, has gone completely "out of scope" and can't be legally referenced any more, then JavaScript can delete it and free up its memory. 
+The alternative approach is very good automatic "garbage collection". This is the automatic deletion and clean-up of things which can't be used anymore. If a variable, array, object, or anything else, has gone completely "out of scope" and can't be legally referenced any more, then JavaScript can delete it and free up its memory. 
 
 There are other situations where things might appear to be referenced, but the system can still delete them. The textbook example is a "cycle" of references, where say a refers to b, b to c, c back to a. `a = b+1, b = c+1, c = a+1`. (This is not a proper example, we need stronger references, where a is say an Object which must fetch some of its data from b, etc). At a first level, it looks like every item has a reference to it, and can't be cleaned up. But stepping back to a wider view, there might be no other reference to a, b or c anywhere. Hence the whole lot can be cleaned up.
 
-JavaScript has an advanced Garbage Collector system which tracks use of data, and references to data. If nothing references some data any more, it is cleaned up. 
-
-Having said all that, the explicit Delete statement in JavaScript does not in fact free up memory. It only removes the definition of a property.
-
-```javascript
-let astronaut = {
-  firstName = "Neil";
-  LastName = "Armstrong";
-}
-
-console.log(astronaut.firstName)      // shows "Neil"
-delete astronaut.firstName; 
-console.log(astronaut.firstName)      // shows "undefined"
-```
-
-You might never need to use this. If you don't need "firstName" any more, just don't use it. It's ok to leave it sitting there as a property on "astronaut" which you never use. There would be many instances where you don't use some properties which are available on an object, eg. in some pre-packaged code or library you are using.
+JavaScript has an advanced Garbage Collector system which tracks use of data, and references to data. If nothing references some data any more, it is cleaned up. This happens in periodic "sweeps" through the memory pool.
 
 Re memory usage, one good practice is never to create large volumes of data at top level, in the global scope. These never go out of scope and can't be garbage collected. Create large volumes of data in some subsidiary function, and try to return from that function when you are done with it, or return periodically. The Garbage Collector can then clean things up for you.
 
-In a small to medium p5.js application you will never need to think about this !
+In a small p5.js application you will probably not need to worry about this.
 
 The [gory details]:(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management) 
 
@@ -1771,7 +1759,7 @@ The [gory details]:(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memo
 ### A p5.js example
 
 Now that we have described an Object which has properties and methods, we're ready
-to develop a p5.js example using dynamic objects, which will run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture is worth a thousand words and all that. (This code is similar to numerous examples elsewhere in Processing).
+to develop a p5.js example using dynamic objects, which will run and draw something. Graphical toolkits are good for illustrating programming concepts, a picture is worth a thousand words. (This code is similar to numerous examples elsewhere in Processing).
 
 ```javascript
 // This data at the is global to the app.
@@ -1918,7 +1906,7 @@ while ( true ) {
 }
 ```
 
-As a rule of thumb, have a line or two of comment for every 10-30 line paragraph of code, explaining what the block is going to do. Put a few words of explanation to the right of any very important statement. That's -very- subjective.
+As a rule of thumb, have a line or two of comment for every 10-30 line block of code, explaining what the block is going to do. Put a few words of explanation to the right of any very important statement. That's very subjective, you can do whatever seems good to yourself.
 
 Comments in JavaScript are similar to comments in Java or C, C++.  `//` comments are often referred to as C++ comments, and `/*  */` comments as C comments. However C, C++, Java, C#, Objective-C and others all now allow both styles.
 
@@ -1959,13 +1947,13 @@ if (false) {        // This style is also ok for de-activating a piece of code.
 Avoid inter-mixing and nesting comment styles.
 
 ```javascript
-// /* a = 1 */  +2;            // what does this mean ? does the */ terminate the // ?
-   /* /*  b = 1;  */ */        // and this ? who knows. Don't go there.
+// /* a = 1 + */  b = 2;       // what does this mean ? does the */ terminate the // ?
+   /* /*  b = 1;  */ */        // and this ? who knows. Do not go there.
 ```
 
 ### Indentation
 
-There are many popular styles of indenting. (The good thing about standards is, there are so many to choose from!) (That's my favourite Dad tech joke).
+There are many popular styles of indenting. (The good thing about standards is, there are so many to choose from!) (That's my favourite tech joke).
 
 Generally whenever you introduce curly braces, you should indent everything inside. Anything from two to eight spaces is common, but typically 2 to 4. Don't use tabs, they are archaic and will just cause endless problems down the track. If you're accustomed to hitting the Tab key, configure your editor to turn it into n spaces.
 
@@ -1973,7 +1961,7 @@ A great tool is an automatic formatter. I use [AStyle](http://astyle.sourceforge
 
 AStyle doesn't actually claim to be a JavaScript formatter, it relies on its Java/C++ abilities. One gremlin: it turns exact comparisons `===` and `!==` into `== =` and `!= =`. Easily fixed with sed: `cat file.js | sed 's/== =/===/g' | sed 's/!= =/!==/g'`. You can also easily rebuild AStyle from the source to recognize the operator `===` and `!==`.
 
-p5.js developers use [prettier](https://prettier.io/) and [ESlint](https://eslint.org/).  A good guide to installing Prettier on Mac is here: [Installing Prettier](http://blog.teamtreehouse.com/install-node-js-npm-mac). Prettier has only a few style options and is aimed at maintaining a uniform style of code in large collaborative projects, like p5.js on GitHub.  
+p5.js developers use [prettier](https://prettier.io/) and [ESlint](https://eslint.org/).  A good guide to installing Prettier on Mac is here: [Installing Prettier](http://blog.teamtreehouse.com/install-node-js-npm-mac). Prettier has only a few style options and is aimed at maintaining a quite strict and uniform style of code in large collaborative projects, like p5.js on GitHub.  
 
 Academic note: Python uses _nothing but_ spaces to indent and block code. Correct indentation is key.
 ```javascript
@@ -2008,7 +1996,7 @@ cat ~/.astylrec
 
 JavaScript allows some lines to continue with a backslash \ on the end. Not a very clear style in general. But can be useful for some big block of text you need to get into the code.
 
-Also plain statements can run over more than one line. Not usually very clear.
+Also plain statements can run over more than one line without any special continuation indicator. In very obscure cases (see the "return" example further down) this can create problems, avoid it a little if you can.
 
 ```javascript
 let str = "A hugely long text string which you decide to split over \
@@ -2022,9 +2010,13 @@ console.log(str2);   // A long documentation text which needs to be multiline, s
                      // use escaped newlines in it blah blah blah blah blah blah blah blah blah
                      // more blah, the end.
 
-fred = 1 + 2 +       // Very bad practice
-  3 + 4;             
-console.log(fred);   // 10  .. this time
+let str = "A long string built more safely blah blah"    // This is a safe way to build up a long string.
+        + "second chunk ............................"
+        + "third and last chunk";
+
+let xxx = function1(a,b) + longFunctionName(c,d,e) + reallyLongVariableName + imGoingToHaveToBreakThisLine(f,g) +
+          lastCall(h,i,j);
+// This is ok. Break the line at a natural point, eg. an operator.
 ```
 
 ### Semicolons
@@ -2041,7 +2033,7 @@ if (a > 99) {
 
 Semicolons are partly optional in JavaScript. You can read more here [semicolon blog](http://news.codecademy.com/your-guide-to-semicolons-in-javascript), but a strong recommendation is to use always use semicolons. There are rare gotchas which will cause you problems if you leave them off.
 
-There's a nice academic point that comes up here, and in all languages with a statement terminator. Is the semicolon a terminator ? `(a = 1; b = 2;)` or a separator ? `(a = 1; b = 2)`. Aha. Well.
+There's a nice academic point that comes up here, and in all languages with a statement terminator. Is the semicolon a terminator ? `{a = 1; b = 2;}` or a separator ? `{a = 1; b = 2}`. Aha. Well. Answer - in JS it's a generally a terminator.
 
 ### Strict mode
 
@@ -2075,7 +2067,7 @@ This will also prevent unwanted global variables being created. If you have a ro
 
 You should always use Strict mode !
 
-The odd syntax `"use strict";` is so the instruction is ignored by an old JavaScript engine which doesn't know what it is. A statement like `"use strict";` is just an isolated string with no computational effect, like `"cool bananas;"`. It's parsed, created, then thrown away by any engine that isn't looking for it. Some other languages warn about this: "Warning, statement has no effect". Isolated expressions are easy to create: `var x = y;+z;`. You meant `y+z;` but z got orphaned and had no effect.
+Note: the odd syntax `"use strict";` is so the instruction is ignored by an old JavaScript engine which doesn't know what it is. A statement like `"use strict";` is just an isolated string with no computational effect, like `"cool bananas;"`. It's parsed, created, then thrown away by any engine that isn't looking for it. Some other languages warn about this: "Warning, statement has no effect". Isolated expressions are easy to create: `var x = y;+z;`. You meant `y+z;` but z got orphaned and had no effect.
 
 There are a number of other practices which are disallowed in Strict mode: [Strict mode](https://www.w3schools.com/js/js_strict.asp)
 
@@ -2083,9 +2075,9 @@ There are a number of other practices which are disallowed in Strict mode: [Stri
 
 There are quite a few style checkers for JavaScript. Two well-known ones are [JSLint](http://www.jslint.com/) and [JSHint](http://jshint.com/).  You can cut and paste code into their online versions and check quite a lot. You can also download and install locally JSHint. They are best at standalone JavaScript programs. Checking a large p5.js app may throw up lots of complaints like "don't know what function createImage() is". There are ways to tell JS[HL]int what external functions and terms you're using, so you're not flooded with these warnings. I haven't pursued that.
 
-Note the JSLint term comes from the old C style checker "lint", which picked up small imperfections in your code like lint on your clothes.
+Note the JSLint term comes from the old C style checker "lint", which picked up small imperfections in your code like lint on your clothes (or indeed belly-button).
 
-Another good checker is ESlint. This is used by p5.js developers. You can customise the style rules in a config file such as ~/eslintrc.
+Another good checker is ESlint. This is used by p5.js developers in a very strict way within the p5.js source. You can use it a little less strictly in your sketch code. You can customise the style rules in a config file such as ~/.eslintrc. You can tell eslint, by editing .eslintrc, that for example your `draw()` function is 'exported' to the surrounding environment, to be called from somewhere in p5.js, and that `createCanvas()` is defined outside your sketch code, and will be called from your sketch. Otherwise eslint will squawk about all the p5.js function names. See https://eslint.org/docs/rules/
 
 A comparison of style checkers: [lint comparison](https://www.sitepoint.com/comparison-javascript-linting-tools/) 
 
@@ -2144,13 +2136,13 @@ var j = i;   // j = 10. For var variables, the i is still defined after the loop
 
 ### JavaScript versions
 
-Just some background on JavaScript versions - you won't need this much for your p5.js apps.
+Just some background on JavaScript versions - you won't need this much for your p5.js sketches.
 
 JavaScript version naming is very messy. There are terms like JavaScript 1.7, ECMAScript 2015, ES 2015, ES6. These are all approximately the same ! 
 
-JavaScript has moved away from the "JavaScript 1.x" terminology. It's now versioned in terms of ECMAScript. But this has quirks too. The most widespread version, which you can rely on in all browsers, is ECMAScript 2015, or ES 2015, or ES6. This is because the 6th edition of ECMAScript was released in 2015.
+JavaScript has moved away from the "JavaScript 1.x" terminology. It's now versioned in terms of ECMAScript. But this has quirks too. The most widespread version, which you can rely on in all browsers (at Jan 2019), is ECMAScript 2015, or ES 2015, or ES6. This is because the 6th edition of ECMAScript was released in 2015.
 
-There is no easily accessible internal version number in JavaScript. One traditional hack to get a version was to put this in your index.html:
+There is no easily accessible internal version number in JavaScript. One traditional hack to get a version which you may see around was to put this in your index.html:
 
 ```javascript
   <script language="javascript">var js_version="1.0"</script>
@@ -2169,7 +2161,7 @@ So js_version shows up in your main code as perhaps "1.7". But as noted above th
 
 In actuality, all the major browsers try to keep up with the latest ECMAScript spec, currently ES June 2017, aka ES8. Chrome, Firefox, Safari support 95%+ of the latest ES8 features, and also some of their own extensions. Edge is a little behind, and IE even further. 
 
-To test whether your JavaScript engine or browser has a new fancy feature, you have to check for it explicitly. One quick example - check if the "geolocation" feature is in the system. A note here: "navigator" persists in the Web world as an internal term for your browser, from the old Netscape Navigator. 
+To test whether your JavaScript engine or browser has a new fancy feature, you're best to check for it explicitly. One quick example - check if the "geolocation" feature is in the system. A note here: "navigator" persists in the Web world as an internal term for your browser, from the old Netscape Navigator. 
 
 ```javascript
 if("geolocation" in navigator) { // use it }    // just check for the property we want, at the top-level
@@ -2183,7 +2175,7 @@ References:
 
 ### Performance, efficiency, profiling
 
-This is very well treated in another tutorial here.
+This is well treated in another tutorial here.
 
 [Efficiency and profiling](https://github.com/processing/p5.js/wiki/Optimizing-p5.js-Code-for-Performance)
 
@@ -2191,9 +2183,9 @@ This is very well treated in another tutorial here.
 
 In this tutorial we've mentioned a number of times that JavaScript is sloppy, and had fun documenting many hazards ! But that's true of all interpreted languages. They allow loose (creative?) coding, and leave detailed checking of many things until run-time, unlike languages such as C++ and Java which use detailed compile-time checks.
 
-The pay-off is flexible design of course, but also much faster development, rapid turn-around when testing code, and a much more enjoyable experience. For example, compiling a large C++ program can take a loooong time, many minutes or -much- longer if it pulls in vast libraries, subclasses loads of things from those libraries, tries to use multiple inheritance to join two chains of library classes. It explodes a bit like Ackermann's function, literally (you have been paying attention, right?). It's a long time to wait to just find you forgot some small thing. In the development phase of code you want rapid turn-around: edit, run, test in a few seconds.
+The pay-off is flexible design of course, but also much faster development, rapid turn-around when testing code, and a much more enjoyable experience. For example, compiling a large C++ program can take a hugely long time, many minutes or -much- longer if it pulls in vast libraries, subclasses loads of things from those libraries, tries to use multiple inheritance to join two chains of library classes. It explodes a bit like Ackermann's function, literally (you have been paying attention, right?). That's a long time to wait to just find you made a typo. In the development phase of code you want rapid turn-around: edit, run, test in a few seconds.
 
-An interesting paper describing all this is John Ousterhout's seminal paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the original driver behind the scripting language Tcl and its companion gui builder Tk. The paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower, maybe 20x, than script approaches; reliability is not much different in the end; performance may not be much different - your code is usually limited by things you don't have control over: graphics rendering power, disk speed, network speed - and there's plenty of cpu these days to drive the interpreted JavaScript engine.
+An interesting paper describing all this is John Ousterhout's seminal paper from the late 90's [The Rise of Scripting Languages](https://web.stanford.edu/~ouster/cgi-bin/papers/scripting.pdf). Ousterhout is the original driver behind the scripting language Tcl and its companion gui builder Tk. The paper is based a lot on Tcl/Tk but the discussion applies equally to JavaScript. The rigorous compile-time checking of languages like C++ and Java don't always produce that much gain: development is *much* slower, maybe 20x, than script approaches; reliability is not much different in the end, the compile-time checks of C++/Java get replaced ok by run-time checks in the script language; performance may not be much different either - your code is usually limited by things you don't have control over: graphics rendering power, disk speed, network speed - and there's plenty of cpu power these days to drive the interpreted JavaScript engine.
 
 So despite it's looseness and oddities JavaScript is quick and fun and pretty reliable to work with. Get stuck in !
 
@@ -2201,18 +2193,14 @@ So despite it's looseness and oddities JavaScript is quick and fun and pretty re
 ***
 
 ### To do:
-Describe `break label`, `continue`, `continue label` ? Maybe only `continue`, the label options are somewhat messy programming and not a great thing to recommend to beginners.
+Describe `break label`, `continue`, `continue label` ? Decided on only `continue`, the label options are somewhat messy programming and not a great thing to recommend to beginners.
 
-We need to mention the suite of utility functions in p5.js, see the Data section in [p5.js reference page](https://p5js.org/reference/). Too much time spent above on raw JavaScript approaches. The p5.js utility funcs, ported from the originals in Java Processing [Java Processing reference page](https://processing.org/reference/) are designed to be easier for the coding beginner and/or artist.
+We need to mention the suite of utility functions in p5.js, see the Data section in [p5.js reference page](https://p5js.org/reference/). The p5.js utility funcs, ported from the originals in Java Processing [Java Processing reference page](https://processing.org/reference/) are designed to be easier for the coding beginner and/or artist.
 
-This tutorial has become quite large, and may have moved away from the goal of being an easily-digested intro to the absolute basics of JavaScript, ie. just enough to write a simple p5.js app. Perhaps it could be split into two.
+This tutorial has become quite large, and may have moved away from the goal of being an easily-digested intro to the absolute basics of JavaScript, ie. just enough to write a simple p5.js sketch. Perhaps it could be split into two.
 
-- Dec 2018: a project (X) has started in p5.js to update the code examples, and tutorials, and reference pages from ES5 to ES6. (This is independent of updating to ES6 inside p5.js source code). This is primarily expected to involve changing 'var' to 'let' or 'const'. So, we could introduce 'let' earlier in this tut, or indeed at the very beginning, and use 'const' more for appropriate vars. 
+Dec 2018: a project (call it X) has started in p5.js to update the code examples, and tutorials, and reference pages from ES5 to ES6. (This is independent of updating to ES6 inside p5.js source code, which is happening more slowly). This is primarily expected to involve changing 'var' to 'let' or 'const', and using some arrow functions where appropriate. So, I have updated to 'let' all through this tut, and used 'const' in a few places. No arrow functions yet, other than in the section explicitly about arrow functions.
 
-- Also some use may be made of ES6 classes in X. We could explain 'class' more fully above, and use it in the main live example, and maybe elsewhere.
+- We could explain 'class' more fully above, and use it in the main live example, and maybe elsewhere.
 
-- Also there seems to be a view that Arrow Functions are a useful thing in ES6. We could introduce Arrow Functions earlier, and use them in some live examples.
-
-- Other ES6 features may not be of much interest for the general Processing/p5.js community.
-
-- I suggest waiting for a while to see what parts of ES6 end up being used in Project X.
+- Other ES6 features may not be of much interest yet.
