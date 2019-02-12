@@ -850,7 +850,7 @@ for (let i = 0; i < 10 ; i++) {
 
 ### Maths functions
 
-The maths functions are sequestered inside the Math package, to avoid polluting the top level namespace with everyday terms like min, max etc. and to just follow good modern practice.
+The maths functions are sequestered inside the Math package, to avoid polluting the top level namespace with everyday terms like min, max etc., following good modern practice.
 
 However p5.js brings most math functions back out as top level names, eg. `x = sqrt(y)`. See [p5 reference](https://p5js.org/reference/) and follow the Math link. I'm not sure of the rationale for that, easy coding for artists I guess. 
 
@@ -921,7 +921,7 @@ if ( x.length === 8 || x.indexOf("ding") !== -1 ) {   // a couple of silly tests
 }
 ```
 
-Editorial note: in Pedantic World these names are used - () parentheses, [] brackets, {} braces, <> angle brackets. However it's common to just say () round brackets, [] square brackets, {} curly brackets, <> angle brackets. I think there is a fancy name for angle brackets, but it escapes me.
+Editorial note: in Pedantic World these names are used - () parentheses, [] brackets, {} braces, <> chevrons. However it's common to just say () round brackets, [] square brackets, {} curly brackets, <> angle brackets.
 
 ### The Ternary Conditional operator
 
@@ -957,7 +957,7 @@ The consensus seems to be that the ternary `?:` operator is ok for simple one-le
 
 ### Comparison issues
 
-Warning: some comparisons between variables that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use an usual "loose" comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). There's a quaint terminology called "truthy" and "falsy". Values like 0 or "0" or "" or [] or [[]] or [0] are falsy. Values like 1, "1" and [1] are truthy.  
+Warning: some comparisons between variables that you think would return a clear true or false result can be tricky. The "==" and "!="  operators use an unusual "loose" comparison and can produce some surprising results, eg.  `"" == false` is true, but `"false" == false` is false. (There is some logic to that, but it's not great design). There's a quaint terminology called "truthy" and "falsy". Values like 0 or "0" or "" or [] or [[]] or [0] are falsy. Values like 1, "1" and [1] are truthy.  
 
 The "===" and "!==" operator set were introduced at JavaScript 1.3 to provide exact comparison - things must be the same type and the same value to be equal. The only thing that is equal to Boolean `true` is another Boolean `true`, not 1 or "1" or [1]. It's advisable to always use the === and !== versions, but the "==" and "!=" are so common in other languages your fingers will type them without thinking. This is all a legacy from the early days. Here are the gory details: [Comparison tables](http://dorey.github.io/JavaScript-Equality-Table/)
 
@@ -1015,7 +1015,7 @@ do  {
 
 ### For {}
 
-Since this is a very common use of a loop, ie. running through a simple sequence of values, there is a simpler way to do it: the for{} loop. You can read the example below as: a) create variable x and set it to 0;  b) if x is less than 10 do the stuff in the loop body; c) increment x by 1 at the end and go back to b).
+Since the above is a very common use of a loop, ie. running through a simple sequence of values, there is a simpler way to do it: the for{} loop. You can read the example below as: a) create variable x and set it to 0;  b) if x is less than 10 do the stuff in the loop body; c) increment x by 1 at the end and go back to b).
 
 ```javascript
 for (let x = 0; x < 10; x++) {  
@@ -1034,6 +1034,7 @@ while(true) {
   if ( value === 100 ) { break; }  // Don't forget that semicolon
   // do more stuff
 }
+a = b + c;                         // continue here after the break
 ```
 
 ### For in, for of, forEach
@@ -1044,16 +1045,19 @@ There are further loop types that iterate conveniently over the elements of an a
 let arr = [44, 33, 22, 11];
 let obj = { "1st": 1, 2: 2, "3rd": 3, 4: 4 };
 
-for (let n in arr) {            //  let n keeps the scope of n restricted to this loop block. See more later in tut.
+// Iterate through the indices of an array
+for (let n in arr) {            //  let n keeps the scope of n restricted to this loop block. See more later in this tut.
   console.log("index is", n);   //  prints "index is 0, index is 1, index is 2, index 3"
 }
 
+// Iterate through the values of an array
 for (let n of arr) {
   console.log("value is", n);   //  prints "value is 44, value is 33, value is 22, value is 11"
 }
 
+// Iterate through the keys of an object, ie. the keys in the Key:value pairs
 for (let n in obj) {
-  console.log("accessor", n);   //  prints "accessor 2, accessor 4, accessor 1st, accessor 3rd". Note random order.
+  console.log("key", n);   //  Could print "key 2, key 4, key 1st, key 3rd". Note random order.
 }
 
 // forEach has a lot of functionality. Also see array.some(), array.every() etc. Basic example:
@@ -1066,7 +1070,7 @@ arr.forEach(funky);         // prints 44 33 22 11
 
 The above loop types have some things to watch out for. One is that there can be unsuspected extra properties on arrays and objects, that your for-in/on/each loop will hand you. You may have to take precautions that you only iterate over the conventional "iterable" elements, ie. in the case of an array the elements arr[0] to arr[last]. That's if you just want to do conventional processing on array/object data.
 
-However on other occasions you may want to see everything that's there, to do fancy stuff with object-oriented dynamic design. Then you can let the loops show you the works. All this is beyond the scope of this tut.
+However on other occasions you may want to see everything that's there, to do fancy stuff with object-oriented dynamic design. Then you can let the loops show you the works. All this is beyond the scope of this tutorial.
 
 You may not need these loop types in p5.js. (These are not the loops you're looking for ...)
 
@@ -1085,7 +1089,7 @@ A neatly self-contained function can be replaced with a better version at a futu
 
 When you need to sort millions of things, you might need to replace your sort() function with a more sophisticated multi-phase tree/bucket/heap/shell sort, which can be O(n Log n) or better. Just change your sort function !  [\[full monty\]](https://en.wikipedia.org/wiki/Sorting_algorithm) [\[JavaScript monty\]](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
-Here are simple functions:
+Here are some simple functions:
 
 ```javascript
 function sayHello() {
@@ -1107,18 +1111,30 @@ function changeBackground() {
 
 ### Function arguments, or parameters
 
-A function can accept values as input, known as arguments or parameters. Note that within the function code, the parameters are not the names of actual variables in your enclosing program, but are "place holder" variables limited to the scope of the function. To split hairs, the "parameter" is the name of the formal parameter, "person" in the first example below, it's a static term in the code source text. The "argument" is the value that gets passed in, a dynamic run-time thing, "name" in the code below, if talking about it from the callers perspective, or maybe again "person" if talking from the functions perspective.
+A function can accept values as input, known as arguments or parameters. Example:
+
+```javascript
+function add(x, y) {
+  print("Sum of", x, "and", y, "is", x+y);
+}
+let a = 2;
+let b = 3;
+add(a, b);   // prints "Sum of 2 and 3 is 5"
+```
+
+Note that within the function code, the parameters are "place holder" variables limited to the scope of the function. To split hairs, the "parameter" is the name of the formal parameter, x or y in the example below, it's a static term in the function source text. The "argument" is the value that gets passed in, a dynamic run-time thing, a or b in the code above.
 
 When a function is run, the values passed in are temporarily assigned to the parameters defined in the function, until the function completes its execution and returns to the caller. After return, normally all data inside the function just "evaporates", its job is done. (Technically, the "stack frame" with all the function's data is popped off the stack).
 
-In the case of simple variables supplied as function arguments, the value is "copied" to the parameter inside the function, and the caller's value for the variable can't be changed.
+In the case of simple variables supplied as function arguments, the value is "copied" to the parameter inside the function, and the caller's value for the variable can't be changed. So above, nothing you assign to x or y within the function, will change the value of a or b in the calling code.
 
-In the case of arrays or objects supplied as function arguments, a pointer to the actual array or object is passed to the function, and the caller's value _can_ be changed.
+In the case of arrays or objects supplied as function arguments, a pointer to the actual array or object is passed to the function, and the caller's value _can_ be changed. Examples of the different types:
 
 ```javascript
 let var1 = 1;
 let array1 = [1, 22, 333];
 let object1 = { "a":1, "b":22, "c":333 };
+
 function example(v, a, o ) {
    v = 123;
    a[0] = 456;
