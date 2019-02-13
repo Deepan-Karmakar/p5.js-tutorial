@@ -24,3 +24,7 @@ Please add your own!
 
 ## Foreign Languages
 * [introduction to p5.js curriculum in french](https://github.com/b2renger/Introduction_p5js)
+
+## Cheat Sheets:
+https://github.com/bmoren/p5js-cheat-sheet
+https://twitter.com/ryodejaneiro/status/827314983948210176
