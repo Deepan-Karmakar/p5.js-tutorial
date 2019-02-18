@@ -4,11 +4,11 @@ The p5.js language looks very similar to the Processing language with a few chan
 
 + Because you can think of your sketch as more than just the drawing canvas, `size()` has been replaced with `createCanvas()`, to suggest the possibility of creating other elements.
 + `frameRate(num)` sets the frame rate, but the `frameRate` variable has been removed. To get the current frame rate, call `frameRate()` with no arguments.
-+ JavaScript doesn't always load things synchronously, there are a couple options to deal with this:
++ JavaScript doesn't always load things synchronously, so there are a couple options to deal with this:
      + All load methods take an optional callback argument. That is, a function that gets called after the file has been loaded. 
      + Alternatively, you can place load calls in a `preload()` method that happens before `setup()`. If a preload method exists, setup waits until everything inside is loaded, see this [image example](http://p5js.org/examples/image-alpha-mask.html).
 + The variable `mousePressed` has been replaced with `mouseIsPressed`.
-+ In addition to mouse events, there are touch events, the mapping is like this:
++ In addition to mouse events, there are touch events. The mapping is like this:
      + `mouseX` ~ `touchX`
      + `mouseY` ~ `touchY`
      + `mousePressed()` ~ `touchStarted()`
@@ -27,16 +27,20 @@ The p5.js language looks very similar to the Processing language with a few chan
   }
   ```
 
-+ The function println() is not available in p5.js. Use print() or console.log().
++ The function `println()` is not available in p5.js. Use `print()` or `console.log()`.
 + The origin (0, 0, 0) for WEBGL mode is in the center of the canvas, rather than the top left as it is in 2D mode.
 
-+ Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no PShape equivalent. The camera model in p5js is yet very basic, with only eye position and no "look at" or axis direction. See the [reference](http://p5js.org/reference/) for up to date documentation of what functions work.
++ Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no PShape equivalent. The camera model in p5js is yet very basic, with only eye position and no "look at" or axis direction. See the [reference](http://p5js.org/reference/) for up-to-date documentation of what functions work.
  
 # Some things about JavaScript
-+ Variables do not have a type. Use var or let instead of float, int, double, long, char, String, Array, etc. You do not need to specify return types or parameter types for functions.
-+ A var can be anything -- any of the types mentioned, but also functions.
-+ Arrays are constructed very simply (no need for Processing ArrayList anymore) and have many built-in features, see this [array example](http://p5js.org/examples/arrays-array.html) and more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-+ JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/examples/objects-objects.html) and more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
++ Variables do not have a type. Use [`var`], [`let`], or [`const`] instead of `float`, `int`, `double`, `long`, `char`, `String`, `Array`, etc. You do not need to specify return types or parameter types for functions.
++ A var can be anything – any of the types mentioned, but also functions.
++ Arrays are constructed very simply (no need for Processing ArrayList anymore) and have many built-in features. See this [array example](http://p5js.org/examples/arrays-array.html) and learn more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
++ JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/examples/objects-objects.html) and learn more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
+
+[`var`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var
+[`let`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+[`const`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
 
 # Conversion examples
 
@@ -53,7 +57,6 @@ void draw() {
   // draw stuff
 }
 ```
-
 
 ```javascript
 function setup() {
@@ -89,7 +92,6 @@ function draw() {                         // **change** void draw() to function 
     bezier(mouseX-(i/2.0), 40+i, 410, 20, 440, 300, 240-(i/16.0), 300+(i/8.0)); // bezier() is the same
   }
 }
-
 ```
 
 ```javascript
@@ -212,7 +214,7 @@ void segment(float x, float y, float a) {        // **change** function segment(
 
 ## About variables
 
-In p5.js, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using the symbol "var". In Processing, you must specify the variable type. 
+In p5.js, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using the symbol [`var`] (or in newer browsers, [`let`] or [`const`]). Unlike in Processing, you don’t have to specify the variable type.
 
 For example, instead of:
 
@@ -255,5 +257,5 @@ PShape | SVG file | N/A
 
 # What next?
 
-+ Check out the [p5.js reference](http://p5js.org/reference/) for up to date documentation.
++ Check out the [p5.js reference](http://p5js.org/reference/) for up-to-date documentation.
 + Play with the examples and demos on the [tutorials page](https://p5js.org/learn).
