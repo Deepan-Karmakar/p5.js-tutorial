@@ -33,14 +33,10 @@ The p5.js language looks very similar to the Processing language with a few chan
 + Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no PShape equivalent. The camera model in p5js is yet very basic, with only eye position and no "look at" or axis direction. See the [reference](http://p5js.org/reference/) for up-to-date documentation of what functions work.
  
 # Some things about JavaScript
-+ Variables do not have a type. Use [`var`], [`let`], or [`const`] instead of `float`, `int`, `double`, `long`, `char`, `String`, `Array`, etc. You do not need to specify return types or parameter types for functions.
++ Variables do not have a type. Use [`let`] (or the older syntax [`var`]) instead of `float`, `int`, `double`, `long`, `char`, `String`, `Array`, etc. You do not need to specify return types or parameter types for functions.
 + A var can be anything – any of the types mentioned, but also functions.
-+ Arrays are constructed very simply (no need for Processing ArrayList anymore) and have many built-in features. See this [array example](http://p5js.org/examples/arrays-array.html) and learn more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
++ Arrays are constructed very simply (no need for Processing’s `ArrayList` anymore) and have many built-in features. See this [array example](http://p5js.org/examples/arrays-array.html) and learn more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 + JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/examples/objects-objects.html) and learn more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
-
-[`var`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var
-[`let`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
-[`const`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
 
 # Conversion examples
 
@@ -212,7 +208,7 @@ void segment(float x, float y, float a) {        // **change** function segment(
 }
 ```
 
-## About variables
+# Declaring variables
 
 In p5.js, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using the symbol [`var`] (or in newer browsers, [`let`] or [`const`]). Unlike in Processing, you don’t have to specify the variable type.
 
@@ -253,6 +249,9 @@ PImage | PNG, JPG, or GIF image | N/A
 PFont | VLW font; use the Create Font tool to make | N/A
 PShape | SVG file | N/A
 
+[`var`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var
+[`let`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+[`const`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
 
 
 # What next?
