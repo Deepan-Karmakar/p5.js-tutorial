@@ -1,6 +1,6 @@
 # Overview of differences
 
-The p5.js language looks very similar to the Processing language with a few changes:
+The p5.js language looks very similar to the Processing language, with a few changes:
 
 + Because you can think of your sketch as more than just the drawing canvas, `size()` has been replaced with `createCanvas()`, to suggest the possibility of creating other elements.
 + `frameRate(num)` sets the frame rate, but the `frameRate` variable has been removed. To get the current frame rate, call `frameRate()` with no arguments.
