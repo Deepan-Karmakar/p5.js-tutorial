@@ -125,7 +125,7 @@ One important difference between drawing primitives in 3d and drawing primitives
 In the introduction, we mentioned that WEBGL mode supports both 2D and 3D drawing.  While WEBGL is optimized for 3D, you don’t necessarily have to always draw in 3D.  For 2D drawing, there are the point(), line(), triangle() and quad() functions.  For example,
 
 ```javascript
-for(var i = 0; i < 500; i+=100){
+for(let i = 0; i < 500; i+=100){
   push();
   fill(i * 0.1, 100, 100);
 
@@ -168,7 +168,7 @@ endShape();
 At the time of this writing, p5.js supports video, image, and offscreen 2d renderers as textures in WEBGL mode.  A texture is like a “skin” that wraps around a 3D geometry.  For example, if you want a static image to “texture” a box, you would write something like this:
 
 ```javascript
-var img;
+let img;
 function preload(){
   img = loadImage(“path/to/img.jpg”);
 }
@@ -186,7 +186,7 @@ Loading images for texturing inside the preload() method is generally a best pra
 To texture a beginShape() graphic you will need to pass in u,v coordinates. These coordinates map to the texture being applied. Below is an example:
 
 ```javascript
-var img;
+let img;
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   img = loadImage("path/to/img.jpg");
@@ -223,7 +223,7 @@ Disadvantages:
 
 Here is an example of using an offscreen renderer to draw text:
 ```javascript
-  var pg;
+  let pg;
   function setup(){
     createCanvas(100, 100, WEBGL);
     pg = createGraphics(256,256);
@@ -251,7 +251,7 @@ Advantages:
 
 Here is an example of loading an opentype font and using it to draw text with the webgl `text()` method:
 ```javascript
-var myFont;
+let myFont;
 function preload() {
   myFont = loadFont('assets/AvenirNextLTPro-Demi.otf');
 }
@@ -284,8 +284,8 @@ directionalLight(r, g, b, x, y, z):
 ```
 
 ```javascript
-var dirY = (mouseY / height - 0.5) *2;
-var dirX = (mouseX / width - 0.5) *2;
+let dirY = (mouseY / height - 0.5) *2;
+let dirX = (mouseX / width - 0.5) *2;
 directionalLight(250, 250, 250, dirX, -dirY, 0.25);
 ambientMaterial(250);
 sphere(50, 64);
