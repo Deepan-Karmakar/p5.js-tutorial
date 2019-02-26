@@ -64,7 +64,8 @@ JavaScript has an interesting history. It was created in 1995 by Brendan Eich in
 &nbsp;&nbsp;&nbsp;[Semicolons](#semicolons)  
 &nbsp;&nbsp;&nbsp;[Strict mode](#strict-mode)  
 &nbsp;&nbsp;&nbsp;[Style checkers](#style-checkers)  
-&nbsp;&nbsp;&nbsp;[Common mistakes](#common-mistakes)   
+&nbsp;&nbsp;&nbsp;[Common mistakes](#common-mistakes)  
+&nbsp;&nbsp;&nbsp;[JavaScript versions](#javascript-versions)   
 &nbsp;&nbsp;&nbsp;[Performance, efficiency, profiling](#performance-efficiency-profiling)  
 [The Bottom Line](#the-bottom-line)    
 ***
