@@ -42,7 +42,7 @@ In p5, you can call [`frameRate()`](http://p5js.org/reference/#/p5/frameRate) wi
 
 ```javascript
 // Draw FPS (rounded to 2 decimal places) at the bottom left of the screen
-var fps = frameRate();
+let fps = frameRate();
 fill(255);
 stroke(0);
 text("FPS: " + fps.toFixed(2), 10, height - 10);
@@ -65,13 +65,13 @@ To find out how long a piece of code takes to run, you want to know the time whe
 To time a particular piece of code using `millis()`:
 
 ```javascript
-var start = millis();
+let start = millis();
 
 // Do the stuff that you want to time
 random(0, 100);
 
-var end = millis();
-var elapsed = end - start;
+let end = millis();
+let elapsed = end - start;
 console.log("This took: " + elapsed + "ms.")
 ```
 
@@ -231,7 +231,7 @@ Before rewriting your code, make sure that layout thrashing is the problem! The 
 Searching for elements in the DOM can be costly - especially if you are doing the searching during `draw()`. Minimize DOM lookups by storing references to your elements in `setup()`.  For example, if you have a button that you are constantly repositioning so that it runs away from the mouse cursor:
 
 ```js
-var button;
+let button;
 
 function setup () {
   // Store a reference to the element in setup
@@ -239,7 +239,7 @@ function setup () {
 }
 
 function draw() {
-  var x, y;
+  let x, y;
   // Do some stuff to figure out where to move the button
   button.position(x, y);
 }
@@ -253,8 +253,8 @@ See [code/cache-dom-lookups](https://github.com/processing/p5.js-website/blob/ma
 
     ```js
     function distSquared(x1, y1, x2, y2) {
-        var dx = x2 - x1;
-        var dy = y2 - y1;
+        let dx = x2 - x1;
+        let dy = y2 - y1;
         return dx * dx + dy * dy;
     }
     ```
