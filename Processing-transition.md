@@ -3,7 +3,7 @@ float t;
 
 ArrayList points;
 
-void setup() {
+public void setup() {
     size(800, 800, P3D);
     background(255);
 
@@ -13,7 +13,7 @@ void setup() {
     n = 51; //Number of points
 }
 
-void draw() {
+public void draw() {
     t = millis()/500;
 
     background(200);
