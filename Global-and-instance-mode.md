@@ -45,7 +45,7 @@ The above might seem a bit confusing, but let's break it down into smaller eleme
 var myp5 = new p5(s);
 ```
 
-This should make sense to us.  We're making a new object called `myp5` (that's our made up variable name).  We call it via constructor `new p5()`.  The code for `function p5()` can be [found in the p5.js source](https://github.com/lmccart/p5.js/blob/master/src/core/core.js#L28).  But we're not just making a "blank" sketch, we're passing in an argument called `s` that will serve as the basis for the code of that sketch. 
+This should make sense to us.  We're making a new object called `myp5` (that's our made up variable name).  We call it via constructor `new p5()`.  The code for `function p5()` can be [found in the p5.js source](https://github.com/processing/p5.js/blob/master/src/core/main.js#L39).  But we're not just making a "blank" sketch, we're passing in an argument called `s` that will serve as the basis for the code of that sketch. 
 
 And what is `s`?
 
