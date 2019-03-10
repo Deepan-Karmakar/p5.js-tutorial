@@ -1,3 +1,5 @@
+**If you would like to edit this wiki and don't already have edit access, please open an issue or comment on an existing one noting the wiki page you'd like to edit. You will then be added as a repository contributor with edit access.**
+
 ### This wiki is for p5.js tutorial content only.
 
 A complete list of tutorials can be found on the p5.js [learn page](http://p5js.org/learn/). There is one page ([archived content](https://github.com/processing/p5.js/wiki/Archived-Content)) that contains some of the older material that used to be in this wiki, in case you are missing it. Here are some resources for further p5.js learning:
