@@ -223,19 +223,19 @@ Disadvantages:
 
 Here is an example of using an offscreen renderer to draw text:
 ```javascript
-  let pg;
-  function setup(){
-    createCanvas(100, 100, WEBGL);
-    pg = createGraphics(256,256);
-  }
-  function draw(){
-    background(0);
-    pg.background(255);
-    pg.text('hello world!', 50, 50);
-    //pass graphics as texture
-    texture(pg);
-    plane(100);
- }
+let pg;
+function setup(){
+  createCanvas(100, 100, WEBGL);
+  pg = createGraphics(256,256);
+}
+function draw(){
+  background(0);
+  pg.background(255);
+  pg.text('hello world!', 50, 50);
+  //pass graphics as texture
+  texture(pg);
+  plane(100);
+}
 ```
 
 ## webgl `text()`
