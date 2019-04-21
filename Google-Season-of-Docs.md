@@ -3,7 +3,8 @@ Welcome! This page contains a list of ideas and how you can help contribute to t
 For all of our projects, it's incredibly important that things are kept as simple and user-friendly as possible. Our work is not for developers, it's for people who are less familiar with code, and/or just want to get things done. We're especially interested in documentation projects that lower the barrier to entry for new users or contributors and make it easier for them to get started.
 
 In addition to this list, we track specific bugs and enhancements via github issues:
-* [p5.js](https://github.com/processing/p5.js/issues) / [p5.js documentation](https://github.com/processing/p5.js-website/issues)
+* [p5.js](https://github.com/processing/p5.js/issues)
+* [p5.js website / documentation](https://github.com/processing/p5.js-website/issues)
 * [p5.js web editor](https://github.com/processing/p5.js-web-editor)
 
 ## Google Season of Docs 2019
