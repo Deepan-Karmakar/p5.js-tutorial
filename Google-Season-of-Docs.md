@@ -18,6 +18,7 @@ _**If you have questions about an idea or need guidance on forming your proposal
 ### + New contributor onboarding experience
 This project involves thinking about the experience for new contributors to the project. How can the README, developer_docs, and other documentation be improved to make it easier for new people to contribute, especially those without deep experience coding or contributing to open source? This may also involve looking at github community communications and implementing structures that enable new contributors to get help in making their first pull requests.
 * Expected Outcomes: Update of contributor docs, implementation of new community practices for facilitating beginners in contributing.
+* Possible Mentors: Stalgia Grigg
 * Skills Required: JavaScript, GitHub, communication skills
 * Difficulty: beginner, intermediate, or advanced
 
