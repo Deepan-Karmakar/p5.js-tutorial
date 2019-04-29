@@ -23,7 +23,12 @@ This project involves thinking about the experience for new contributors to the 
 * Difficulty: beginner, intermediate, or advanced
 
 ### + Project navigation for contributors
-Coming soon.
+In 2018 working with one of our Fellows, Vijith Assar (https://medium.com/processing-foundation/a-p5-js-dissection-manual-38959ff8522e), we began to add documentation throughout the github repository to aid in project navigation. This resulted in readme files in `src/` directory folders like [this](https://github.com/processing/p5.js/tree/master/src) and [this](https://github.com/processing/p5.js/tree/master/src/core), as well as a readme in the [developer_docs/](https://github.com/processing/p5.js/tree/master/developer_docs) directory that outlines the project structure. The goal of this project would be to extend this documentation to more of the repository, so it's easier for contributors to navigate the project and understand the purpose of the various files and pieces of code.
+* Expected Outcomes: Update of contributor docs, implementation of new community practices for facilitating beginners in contributing.
+* Possible Mentors: Lauren McCarthy
+* Skills Required: JavaScript, GitHub, communication skills
+* Difficulty: intermediate or advanced
+
 
 ### + Internationalization improvements
 Currently the p5.js website supports translations for Spanish and Simplified Chinese. Both of these could use updated translations for sections of the text. [This page gives an overview of the translation process.](https://github.com/processing/p5.js-website/blob/master/contributor_docs/i18n_contribution.md) Alternatively, a participant might propose adding another language that is not currently supported.
