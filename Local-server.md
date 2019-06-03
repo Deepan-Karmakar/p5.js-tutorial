@@ -4,11 +4,11 @@ For the beginners coming from the [Get Started](https://p5js.org/get-started/) p
 
 ## Web Server for Chrome extension
 
-The simplest and fastest solution for anyone using a Chrome web browser is to install the Web Server for Chrome extension. Visit its chrome web store page and install it.
+The simplest and fastest solution for anyone using a Chrome web browser is to install the [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb/) extension. Visit its chrome web store page and install it.
 
-By default, the Web Server won't run in the background, so keep it open for it to work. To launch it on most devices, type chrome://apps in the Chrome address bar and press [Enter] to see all your Chrome apps, then click the Web Server icon. On a Chromebook, press the Search key (🔍) or click the Launcher icon (usually at the bottom left corner of the screen) to find and launch the Web Server.
+By default, the Web Server won't run in the background, so keep it open for it to work. To launch it on [most devices](https://support.google.com/chrome_webstore/answer/3060053), type `chrome://apps` in the Chrome address bar and press [Enter] to see all your Chrome apps, then click the Web Server icon. On a [Chromebook](https://support.google.com/chromebook/answer/6206362), press the Search key (🔍) or click the Launcher icon (usually at the bottom left corner of the screen) to find and launch the Web Server.
 
-After launching the Web Server a new window will open. There you can click [CHOOSE FOLDER] and select the folder with the HTML page for your sketch. Now you can just click on the Web Server URL (http://127.0.0.1:8887 by default) to see and open your sketch. If you name your sketch HTML page index.html and enable Automatically show index.html, your sketch will load as soon as you open the URL!
+After launching the Web Server a new window will open. There you can click [CHOOSE FOLDER] and select the folder with the HTML page for your sketch. Now you can just click on the Web Server URL (`http://127.0.0.1:8887` by default) to see and open your sketch. If you name your sketch HTML page `index.html` and enable `Automatically show index.html`, your sketch will load as soon as you open the URL!
 
 ## Python SimpleHTTPServer (1st option)
 
