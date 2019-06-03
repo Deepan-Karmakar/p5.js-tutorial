@@ -1,8 +1,8 @@
 Until now, we've been declaring everything in the "global" context (note the global context is actually the [window object](https://developer.mozilla.org/en-US/docs/Web/API/Window)).  In p5 lingo, we refer to this as "global mode".
 
 ```javascript
-var x = 100;
-var y = 100;
+let x = 100;
+let y = 100;
 
 function setup() {
   createCanvas(200,200);
@@ -20,37 +20,37 @@ While this is convenient (and friendlier) it's important to note that this can l
 The syntax for instance mode looks like the following (the sketch below is identical to the above example):
 
 ```javascript
-var s = function( sketch ) {
+const s = ( sketch ) => {
 
-  var x = 100; 
-  var y = 100;
+  let x = 100;
+  let y = 100;
 
-  sketch.setup = function() {
+  sketch.setup = () => {
     sketch.createCanvas(200, 200);
   };
 
-  sketch.draw = function() {
+  sketch.draw = () => {
     sketch.background(0);
     sketch.fill(255);
     sketch.rect(x,y,50,50);
   };
 };
 
-var myp5 = new p5(s);
+let myp5 = new p5(s);
 ```
 
 The above might seem a bit confusing, but let's break it down into smaller elements.
 
-```
-var myp5 = new p5(s);
+```javascript
+let myp5 = new p5(s);
 ```
 
-This should make sense to us.  We're making a new object called `myp5` (that's our made up variable name).  We call it via constructor `new p5()`.  The code for `function p5()` can be [found in the p5.js source](https://github.com/processing/p5.js/blob/master/src/core/main.js#L39).  But we're not just making a "blank" sketch, we're passing in an argument called `s` that will serve as the basis for the code of that sketch. 
+This should make sense to us.  We're making a new object called `myp5` (that's our made up variable name).  We call it via constructor `new p5()`.  The code for `function p5()` can be [found in the p5.js source](https://github.com/processing/p5.js/blob/master/src/core/main.js#L39).  But we're not just making a "blank" sketch, we're passing in an argument called `s` that will serve as the basis for the code of that sketch.
 
 And what is `s`?
 
 ```javascript
-var s = function( sketch ) {
+const s = ( sketch ) => {
 
 };
 ```
@@ -58,8 +58,8 @@ var s = function( sketch ) {
 `s` the seed that will spawn our p5 sketch.  It is a function that takes one argument, a `sketch` object and attaches properties to that `sketch`.   The properties are things we will need for a p5 sketch, functions like `setup()` and `draw()`.
 
 ```javascript
-var s = function( sketch ) {
-  sketch.setup = function() {
+const s = ( sketch ) => {
+  sketch.setup = () => {
   };
 };
 ```
@@ -67,9 +67,9 @@ var s = function( sketch ) {
 Those functions have their own context, yet have access to anything declared around them as well.
 
 ```javascript
-var s = function( sketch ) {
-  var x = 100; 
-  var y = 100;
+const s = ( sketch ) => {
+  let x = 100;
+  let y = 100;
 
   sketch.draw = function() {   // draw() is an inner function, a "closure"
     sketch.rect(x,y,50,50);    // draw() uses variables (x,y) declared in the parent function s
@@ -77,26 +77,27 @@ var s = function( sketch ) {
 };
 ```
 
-This is what is known as a [closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures), one of the more powerful features of functional programming languages like JavaScript. 
+This is what is known as a [closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures), one of the more powerful features of functional programming languages like JavaScript.
 
-You can think of the purpose of s as initializing everything we need for a p5 sketch. Once it's all ready to go, it's passed to the `new p5()` constructor and our variable `myp5` takes over keeping track of everything that was originally attached to the `sketch` argument.  Since `myp5` is p5 object instance (and therefore inherits everything we need from the p5 prototype), all of the stuff we wrote into sketch will work. 
+You can think of the purpose of s as initializing everything we need for a p5 sketch. Once it's all ready to go, it's passed to the `new p5()` constructor and our variable `myp5` takes over keeping track of everything that was originally attached to the `sketch` argument.  Since `myp5` is p5 object instance (and therefore inherits everything we need from the p5 prototype), all of the stuff we wrote into sketch will work.
 
+***Note:*** If you're still confused it might be because this example is using ES6 syntax (`let`, `const`, and `=>` also known as arrow function notation). If you've never seen that then [this interactive guide to ES6](http://stack.formidable.com/es6-interactive-guide/) or watching [these videos by Dan Shiffman on ES6](https://thecodingtrain.com/Tutorials/16-javascript-es6/) might be helpful.
 
 ## Anonymous Instance
 
 As we've seen with JavaScript, anytime we pass a function into another function is an opportunity to declare that function anonymously.  Here is how we wrote it above.
 
 ```javascript
-var s = function( sketch ) {
+const s = ( sketch ) => {
    // empty
 };
-var myp5 = new p5(s);
+let myp5 = new p5(s);
 ```
 
 And now without a separate variable holding onto `s` for us.
 
 ```javascript
-var myp5 = new p5( function( sketch ) {
+let myp5 = new p5(( sketch ) => {
   // empty
 });
 ```
@@ -104,16 +105,16 @@ var myp5 = new p5( function( sketch ) {
 Now with everything filled in, it looks like:
 
 ```javascript
-var myp5 = new p5( function( sketch ) {
+let myp5 = new p5(( sketch ) => {
 
-  var x = 100; 
-  var y = 100;
+  let x = 100;
+  let y = 100;
 
-  sketch.setup = function() {
+  sketch.setup = () => {
     sketch.createCanvas(200, 200);
   };
 
-  sketch.draw = function() {
+  sketch.draw = () => {
     sketch.background(0);
     sketch.fill(255);
     sketch.rect(x,y,50,50);
@@ -140,7 +141,7 @@ When creating a p5 instance, you can specify a second argument which acts the pa
 You can now say:
 
 ```javascript
-var myp5 = new p5(s, document.getElementById('p5sketch'));
+let myp5 = new p5(s, document.getElementById('p5sketch'));
 ```
 
 And all elements will be created inside that div.
@@ -150,7 +151,7 @@ Here [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/AP
 Writing all that every time would be tedious, so the second argument can also be just an id:
 
 ```javascript
-var myp5 = new p5(s, 'p5sketch');
+let myp5 = new p5(s, 'p5sketch');
 ```
 
 Virtually always the second, short form is good enough. The long form could be necessary if you wanted to use a loop to create more than one p5 instance.
