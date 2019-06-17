@@ -1361,6 +1361,7 @@ var update = (function () {            // Note, unnamed function here. No name b
        if ( checkAuthorisation() ) {
           return importantCounter += 1;
        }   
+    }
 })();
 
 update();  // returns 1
