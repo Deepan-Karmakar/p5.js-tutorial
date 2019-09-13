@@ -2,7 +2,10 @@ Some functionality (loading external files, for example) works as expected when 
 
 For the beginners coming from the [Get Started](https://p5js.org/get-started/) page, if you opted for [Sublime Text Editor](https://www.sublimetext.com/), a very simple way to set up a Local Server, without having to  know the Command Line interface, is to use the [Browser Sync](https://packagecontrol.io/packages/Browser%20Sync) plugin for Sublime Text 3.
 
-## Web Server for Chrome extension
+# Brackets editor
+If you use the free and open source [Brackets editor](http://brackets.io) to write your code, a local server comes built in. With your HTML file open, select File > Live Preview (or click the "lightning bolt" icon). Brackets will launch Chrome and open your file in a new tab.
+
+# Web Server for Chrome extension
 
 The simplest and fastest solution for anyone using a Chrome web browser is to install the [Web Server for Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb/) extension. Visit its chrome web store page and install it.
 
@@ -10,7 +13,7 @@ By default, the Web Server won't run in the background, so keep it open for it t
 
 After launching the Web Server a new window will open. There you can click [CHOOSE FOLDER] and select the folder with the HTML page for your sketch. Now you can just click on the Web Server URL (`http://127.0.0.1:8887` by default) to see and open your sketch. If you name your sketch HTML page `index.html` and enable `Automatically show index.html`, your sketch will load as soon as you open the URL!
 
-## Python SimpleHTTPServer (1st option)
+# Python SimpleHTTPServer
 
 If you need a quick web server running and you don't want to mess with setting up apache or something similar, then Python can help. Python comes with a simple builtin HTTP server. With the help of this little HTTP server you can turn any directory in your system into your web server directory. The only thing you need to have installed is [Python](https://www.python.org/downloads/) (Python is already installed if you are using Mac OS X).
 
@@ -30,7 +33,7 @@ Then visit `http://localhost:8000` on your browser.
 
 Unfortunately the python simple server is very slow. Loading a local page will often stall and it can't stream video and has trouble with even medium size files like an 8MB mp3 for example. However, it should suffice for loading in most text files, fonts and most images.
 
-## Node http-server (2nd option) 
+## Node http-server 
 
 An alternative is node.js `http-server`. It is much faster than python simple server while requiring a little bit of setup. Just 3 simple steps:
 
@@ -73,7 +76,7 @@ Alternatively, you can setup a `browser-sync` server which has the added benefit
 
 Note 2: If you encountered an error that says `EACCES` when installing either `http-server` or `browser-sync` it means npm is not installed with the right permissions, follow the steps outlined at https://docs.npmjs.com/getting-started/fixing-npm-permissions to fix it.
 
-## Using PHP built-in web server (3rd option)
+# Using PHP built-in web server
 
 [PHP has (since version 5.4.0) a built-in web server](https://secure.php.net/manual/en/features.commandline.webserver.php) for testing purposes that can be used to test P5.js sketches. 
 
