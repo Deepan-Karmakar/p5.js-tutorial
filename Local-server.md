@@ -90,7 +90,7 @@ php -S localhost:8000
 ```
 Then point your browser at `http://localhost:8000/`
 
-## Setting up Browser Sync for Sublime Text (command line free option)
+# Setting up Browser Sync for Sublime Text (command line free option)
 
 The Browser Sync plugin for Sublime Text allows you to launch your project in the browser and having the page refresh each time you save a modification to your file (`Ctrl+s`).
 
