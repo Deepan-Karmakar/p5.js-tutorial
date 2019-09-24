@@ -183,13 +183,16 @@ function draw(){
 ```
 Loading images for texturing inside the preload() method is generally a best practice, but it is especially helpful when working with video since video files are generally larger than static images and can take therefore extra time to load.
 
-To texture a beginShape() graphic you will need to pass in u,v coordinates. These coordinates map to the texture being applied. Below is an example:
+To texture a beginShape() graphic you will need to pass in u,v coordinates. These coordinates map to the texture being applied. With textureMode(NORMAL) we tell p5 to normalize these values between 0 and 1. See the [textureMode() reference](https://p5js.org/reference/#/p5/textureMode) for more info.
+
+Below is an example:
 
 ```javascript
 let img;
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   img = loadImage("path/to/img.jpg");
+  textureMode(NORMAL);
 }
 
 function draw() {
