@@ -20,7 +20,7 @@ The p5.js language looks very similar to the Processing language, with a few cha
 + In global mode, p5 variable and function names are not available outside `setup()`, `draw()`, `mousePressed()`, etc. (Except in the case where they are placed inside functions that are called by one of these methods.) What this means is that when declaring variables before `setup()`, you will need to assign them values inside `setup()` if you wish to use p5 functions. For example:
 
   ```javascript
-  var n;
+  let n;
   function setup() {
     createCanvas(100, 100);
     n = random(100);
@@ -33,8 +33,8 @@ The p5.js language looks very similar to the Processing language, with a few cha
 + Not everything in Processing is implemented in p5.js, but we are working on it! Right now there is no PShape equivalent. The camera model in p5js is yet very basic, with only eye position and no "look at" or axis direction. See the [reference](http://p5js.org/reference/) for up-to-date documentation of what functions work.
  
 # Some things about JavaScript
-+ Variables do not have a type. Use [`let`] (or the older syntax [`var`]) instead of `float`, `int`, `double`, `long`, `char`, `String`, `Array`, etc. You do not need to specify return types or parameter types for functions.
-+ A var can be anything – any of the types mentioned, but also functions.
++ Variables do not have a type. Use [`let`] or [`const`] instead of `float`, `int`, `double`, `long`, `char`, `String`, `Array`, etc. You do not need to specify return types or parameter types for functions.
++ A variable can be anything – any of the types mentioned, but also functions.
 + Arrays are constructed very simply (no need for Processing’s `ArrayList` anymore) and have many built-in features. See this [array example](http://p5js.org/examples/arrays-array.html) and learn more about JS arrays [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 + JavaScript uses something called prototypes to form something similar to Java class objects. See this [objects example](http://p5js.org/examples/objects-objects.html) and learn more about JS objects [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects).
 
@@ -84,7 +84,7 @@ function setup() {           // **change** void setup() to function setup()
 
 function draw() {                         // **change** void draw() to function draw()
   background(0);                          // background() is the same
-  for (var i = 0; i < 200; i += 20) {     // **change** int i to var i
+  for (let i = 0; i < 200; i += 20) {     // **change** int i to let i
     bezier(mouseX-(i/2.0), 40+i, 410, 20, 440, 300, 240-(i/16.0), 300+(i/8.0)); // bezier() is the same
   }
 }
@@ -99,15 +99,15 @@ function draw() {                         // **change** void draw() to function 
  * Adapted by Evelyn Eastmond
  */
 
-var x = new Array(20);  // **change** float[] x = new float[20] to new Array(20)
-var y = new Array(20);  // **change** float[] y = new float[20] to new Array(20)
-var segLength = 18;                                 // **change** float to var
+const x = new Array(20);  // **change** float[] x = new float[20] to new Array(20)
+const y = new Array(20);  // **change** float[] y = new float[20] to new Array(20)
+const segLength = 18;                                 // **change** float to const
 
 function setup() {                          // **change** void setup() to function setup()
   createCanvas(640, 360);                   // **change** size() to createCanvas()
   strokeWeight(9);                          // strokeWeight() is the same
   stroke(255, 100);                         // stroke() is the same
-  for(var i=0; i<x.length; i++) {         // initialize the array
+  for(let i=0; i<x.length; i++) {         // initialize the array
     x[i]=0;
     y[i]=0;
   }
@@ -116,15 +116,15 @@ function setup() {                          // **change** void setup() to functi
 function draw() {                           // **change** void draw() to function draw()
   background(0);                            // background() is the same
   drawSegment(0, mouseX, mouseY);           // functions calls, mouseX and mouseY are the same
-  for(var i=0; i<x.length-1; i++) {         // **change** int i to var i
+  for(let i=0; i<x.length-1; i++) {         // **change** int i to var i
     drawSegment(i+1, x[i], y[i]);           // function calls are the same
   }
 }
 
 function drawSegment(i, xin, yin) {         // **change** void drawSegment() to function drawSegment(), remove type declarations
-  var dx = xin - x[i];                      // **change** float to var
-  var dy = yin - y[i];                      // **change** float to var
-  var angle = atan2(dy, dx);                // **change** float to var, atan2() is the same
+  const dx = xin - x[i];                      // **change** float to const
+  const dy = yin - y[i];                      // **change** float to const
+  const angle = atan2(dy, dx);                // **change** float to const, atan2() is the same
   x[i] = xin - cos(angle) * segLength;      // cos() is the same
   y[i] = yin - sin(angle) * segLength;      // sin() is the same
   segment(x[i], y[i], angle);               // function calls are the same
@@ -158,7 +158,7 @@ void setup() {                         // **change** function setup() to void se
 
 void draw() {                          // **change** function draw() to void draw()
   background(0);
-  for (int i = 0; i < 200; i += 20) {  // **change** var i to int i
+  for (int i = 0; i < 200; i += 20) {  // **change** let i to int i
     bezier(mouseX-(i/2.0), 40+i, 410, 20, 440, 300, 240-(i/16.0), 300+(i/8.0));
   }
 }
@@ -174,7 +174,7 @@ void draw() {                          // **change** function draw() to void dra
 
 float[] x = new float[20];                       // **change** array of 0's to be float[] x = new float[20]
 float[] y = new float[20];                       // **change** array of 0's to be float[] x = new float[20]
-float segLength = 18;                            // **change** var to float
+float segLength = 18;                            // **change** const to float
 
 void setup() {                                   // **change** function setup() to void setup() 
   size(640, 360);                                // **change** createCanvas() to size()
@@ -185,15 +185,15 @@ void setup() {                                   // **change** function setup() 
 void draw() {                                    // **change** function draw() void draw()
   background(0);
   dragSegment(0, mouseX, mouseY);
-  for(int i=0; i<x.length-1; i++) {              // **change** var i to int i
+  for(int i=0; i<x.length-1; i++) {              // **change** let i to int i
     dragSegment(i+1, x[i], y[i]);
   }
 }
 
 void dragSegment(int i, float xin, float yin) {  // **change** function drawSegment() to void drawSegment(). add type declarations.
-  float dx = xin - x[i];                         // **change** var to float
-  float dy = yin - y[i];                         // **change** var to float
-  float angle = atan2(dy, dx);                   // **change** var to float
+  float dx = xin - x[i];                         // **change** const to float
+  float dy = yin - y[i];                         // **change** const to float
+  float angle = atan2(dy, dx);                   // **change** const to float
   x[i] = xin - cos(angle) * segLength;
   y[i] = yin - sin(angle) * segLength;
   segment(x[i], y[i], angle);
@@ -210,7 +210,7 @@ void segment(float x, float y, float a) {        // **change** function segment(
 
 # Declaring variables
 
-In p5.js, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using the symbol [`var`] (or in newer browsers, [`let`] or [`const`]). Unlike in Processing, you don’t have to specify the variable type.
+In p5.js, all variables (whether they are numbers, strings, arrays, functions, objects, whatever!) are declared using [`let`] or [`const`]. Unlike in Processing, you don’t have to specify the variable type.
 
 For example, instead of:
 
@@ -220,7 +220,7 @@ boolean button = false;
 
 you'd write
 ```javascript
-var button = false;
+const button = false;
 ```
 
 or 
@@ -233,7 +233,7 @@ float x = 100.3;
 
 you'd write
 ```javascript
-var x = 100.3;
+const x = 100.3;
 ```
 
 Here is a summary of the supported Processing data types (table borrowed from [Getting Started with Processing](http://shop.oreilly.com/product/0636920000570.do)).
@@ -249,7 +249,6 @@ PImage | PNG, JPG, or GIF image | N/A
 PFont | VLW font; use the Create Font tool to make | N/A
 PShape | SVG file | N/A
 
-[`var`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var
 [`let`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
 [`const`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
 
