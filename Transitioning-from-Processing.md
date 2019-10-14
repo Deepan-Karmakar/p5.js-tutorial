@@ -220,7 +220,7 @@ boolean button = false;
 
 you'd write
 ```javascript
-const button = false;
+let button = false;
 ```
 
 or 
@@ -233,7 +233,7 @@ float x = 100.3;
 
 you'd write
 ```javascript
-const x = 100.3;
+let x = 100.3;
 ```
 
 Here is a summary of the supported Processing data types (table borrowed from [Getting Started with Processing](http://shop.oreilly.com/product/0636920000570.do)).
